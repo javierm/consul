@@ -3,3 +3,87 @@
 // * English: https://github.com/consul/consul/blob/master/CUSTOMIZE_EN.md#css
 // * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md#css
 //
+
+@import 'https://fonts.googleapis.com/css?family=Work+Sans';
+
+body {
+  font-family: 'Work Sans', 'Helvetica', 'Arial', sans-serif !important;
+}
+
+// 01. Logo
+// --------
+
+// this file (custom) is included after mixin is used in top-bar style, so if we change it we have to include again
+@mixin logo {
+  img {
+    @include breakpoint(small) {
+      height: 150px;
+      width: auto;
+    }
+  }
+}
+
+$brand: #212D5D;
+
+header {
+  background-color: $body-background;
+  .top-links {
+    background-color: $body-background;
+    .row {
+      background-color: $brand;
+    }
+  }
+
+  & > .row {
+    .top-bar {
+      background-color: white!important;
+      height: initial;
+      line-height: initial;
+      #responsive-menu {
+        padding-top: 0.7em;
+        .top-bar-title a {
+          color: $text;
+          @include logo;
+        }
+        .top-bar-right li {
+          display: table-row;
+          height: initial;
+          a {
+            color: $text;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Footer main element hidden (only subfooter by now) so push is not needed
+.push {
+  display: none;
+}
+
+.footer {
+  min-height: initial;
+  border-top: 0;
+  padding-top: 0;
+  background-color: $body-background;
+  footer {
+    & > .row:first-child {
+      display: none;
+    }
+    .subfooter {
+      background-color: $brand;
+      border-top: 0;
+      .column {
+        float: right;
+        p {
+          color: $text-light;
+          text-align: right;
+          a {
+            color: $text-light;
+          }
+        }
+      }
+    }
+  }
+}

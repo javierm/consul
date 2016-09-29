@@ -1,0 +1,26 @@
+<section class="top-links hide-for-small-only">
+  <div class="row">
+   <%#  <%= render "shared/locale_switcher" %>
+    <div class="external-links">
+      <%# <%= link_to setting['org_name'], root_path, class: ("selected" unless current_page?("/opendata")) %>
+      <%# <%= link_to t("layouts.header.external_link_transparency"), t("layouts.header.external_link_transparency_url") %>
+      <%# <%= link_to t("layouts.header.external_link_opendata"), "/opendata", class: ("selected" if current_page?("/opendata")) %>
+      <ul class="menu">
+        <li>
+          <%= link_to t("layouts.footer.faq"), page_path('faq') %>
+        </li>
+        <%= render "shared/admin_login_items" %>
+        <li>
+          <%= link_to t("layouts.header.external_link_institution"), t("layouts.header.external_link_institution_url") %>
+        </li>
+        <% if setting['blog_url'] %>
+          <li>
+            <%= link_to setting['blog_url'], title: t('shared.target_blank_html'), target: "_blank" do %>
+              <%= t("layouts.header.external_link_blog") %>
+            <% end %>
+        </li>
+        <% end %>
+      </ul>
+   </div>
+  </div>
+</section>

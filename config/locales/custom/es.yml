@@ -189,8 +189,10 @@ es:
       external_link_opendata: Datos abiertos
       external_link_transparency: Transparencia
       external_link_transparency_url: https://transparency.consul
+      external_link_institution: Cabildo de Gran Canaria
+      external_link_institution_url: http://cabildo.grancanaria.com
       locale: 'Idioma:'
-      logo: Consul
+      logo: Participa Gran Canaria
       management: Gestión
       moderation: Moderar
       valuation: Evaluación
