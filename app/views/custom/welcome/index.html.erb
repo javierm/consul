@@ -1,0 +1,27 @@
+<main>
+  <div class="wrap row">
+    <div class="small-12 medium-9 column">
+      <div id="proposals" class="proposals-list small-12 medium-6 column">
+        <h3><%= t("proposals.index.title") %> <%= t("proposals.index.orders.hot_score") %></h3>
+        <div id="proposals-list">
+          <%= render partial: 'proposals/proposal', collection: @proposals %>
+          <%# <%= paginate @proposals %>
+        </div>
+      </div>
+
+      <div id="debates" class="debates-list small-12 medium-6 column">
+        <h3><%= t("debates.index.title") %> <%= t("debates.index.orders.hot_score") %></h3>
+        <div id="debates-list">
+          <%= render partial: 'debates/debate', collection: @debates %>
+          <%# <%= paginate @debates %>
+        </div>
+      </div>
+    </div>
+
+    <div class="small-12 medium-3 column">
+      <aside class="margin-bottom">
+        <%= link_to t("proposals.index.start_proposal"), new_proposal_path, class: 'button expanded' %>
+      </aside>
+    </div>
+  </div>
+</main>

@@ -1,0 +1,19 @@
+<div class="small-12 medium-9 column">
+  <ul>
+    <li>
+      <%= link_to t("layouts.header.proposals"), proposals_path, class: ("active" if  controller_name == "proposals"), accesskey: "p" %>
+    </li>
+    <li>
+      <%= link_to t("layouts.header.debates"), debates_path, class: ("active" if controller_name == "debates"), accesskey: "d" %>
+    </li>
+    <li>
+      <%= link_to t("layouts.header.city_council_debates"), nil, class: ("active" if controller_name == "city_council_debates"), accesskey: "d" %>
+    </li>
+    <li>
+      <%= link_to t("layouts.header.organizations"), nil, class: ("active" if current_page?("/organizations")), accesskey: "o"  %>
+    </li>
+    <li>
+      <%= link_to t("layouts.header.volunteers"), nil, class: ("active" if current_page?("/volunteers")), accesskey: "v"  %>
+    </li>
+  </ul>
+</div>

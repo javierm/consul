@@ -167,7 +167,7 @@ es:
       conditions: Condiciones de uso
       consul: aplicación Consul
       consul_url: https://github.com/consul/consul
-      contact_us: Para asistencia técnica entra en
+      contact_us: Contacto
       copyright: Consul, %{year}
       description: Este portal usa la %{consul} que es %{open_source}.
       faq: Preguntas frecuentes
@@ -184,7 +184,8 @@ es:
       transparency_url: https://transparency.consul
     header:
       administration: Administrar
-      debates: Debates
+      city_council_debates: Propuesta Ayuntamiento
+      debates: Propuesta del Cabildo
       external_link_blog: Blog
       external_link_opendata: Datos abiertos
       external_link_transparency: Transparencia
@@ -209,10 +210,12 @@ es:
       open_city_title: La ciudad que quieres será la ciudad que quieras.
       open_data: Datos abiertos
       open_gov: Gobierno %{open}
+      organizations: Colectivos
       proposals: Iniciativa popular
       proposal_ballot: Votaciones
       see_all: Ver propuestas
       spending_proposals: Presupuestos ciudadanos
+      volunteers: Voluntarios
   legislation:
     help:
       alt: Selecciona el texto que quieres comentar y pulsa en el botón con el lápiz.

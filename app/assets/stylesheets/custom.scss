@@ -24,6 +24,17 @@ body {
 }
 
 $brand: #212D5D;
+$proposals: #E8001E;
+$debates: #EE4B2A;
+$votes-bg: #EE4B2A;
+$proposals-border: darken($proposals, 10%);;
+$votes-border: darken($debates, 10%);
+@import 'participation';
+
+.wrapper, .footer {
+  max-width: 75rem;
+  margin: auto;
+}
 
 header {
   background-color: $body-background;
@@ -55,11 +66,38 @@ header {
       }
     }
   }
+
+  & .subnavigation {
+    ul li {
+      margin-right: 1rem;
+    }
+  }
+
 }
 
-// Footer main element hidden (only subfooter by now) so push is not needed
+.proposals-list .proposal {
+  margin-bottom: 0.5rem;
+  .panel {
+    border: 1px solid $proposals;
+  }
+  .supports:after {
+    border-color: $proposals transparent transparent transparent;
+  }
+}
+
+.debates-list .debate {
+  margin-bottom: 0.5rem;
+  .panel {
+    border: 1px solid $debates;
+  }
+  .votes:after {
+    border-color: $debates transparent transparent transparent;
+  }
+}
+
+// Main footer section hidden by now, so we reduce push height
 .push {
-  display: none;
+  min-height: 3rem;
 }
 
 .footer {
@@ -76,11 +114,18 @@ header {
       border-top: 0;
       .column {
         float: right;
-        p {
-          color: $text-light;
+        ul.menu li {
+          font-size: 0.875rem;
           text-align: right;
+          color: $text-light;
+          padding-top: 0;
           a {
             color: $text-light;
+            white-space: nowrap;
+            padding-top: 0;
+            span {
+              margin-right: 0.2rem;
+            }
           }
         }
       }

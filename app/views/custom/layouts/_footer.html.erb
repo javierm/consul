@@ -41,14 +41,36 @@
 
   <div class="subfooter row">
     <div class="small-12 medium-8 column">
-      <p>
-        <%= t("layouts.footer.copyright", year: Time.now.year) %>
-        <%= link_to t("layouts.footer.faq"), page_path('faq') %>
-        <%= link_to t("layouts.footer.conditions"), page_path('conditions') %>
-        <%# <%= link_to t("layouts.footer.legal"), page_path('legal') %>
-        <%= link_to t("layouts.footer.privacy"), page_path('privacy') %>
-        <%# <%= link_to t("layouts.footer.contact_us"), page_path('contact_us') %>
-      </p>
+      <ul class="menu">
+        <li>
+          <%= link_to "https://github.com/consul/consul" do %>
+            <%= t("layouts.footer.copyright", year: Time.now.year) %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to page_path('faq') do %>
+            <span class="icon-comments"></span>
+            <%= t("layouts.footer.faq") %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to page_path('conditions') do %>
+            <%= t("layouts.footer.conditions") %>
+          <% end %>
+        </li>
+        <li>
+          <%# <%= link_to t("layouts.footer.legal"), page_path('legal') %>
+          <%= link_to page_path('privacy') do %>
+            <%= t("layouts.footer.privacy") %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to page_path('contact_us') do %>
+            <span class="icon-letter"></span>
+            <%= t("layouts.footer.contact_us") %>
+          <% end %>
+        </li>
+      </ul>
     </div>
   </div>
 </footer>
