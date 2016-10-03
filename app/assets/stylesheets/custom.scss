@@ -29,6 +29,7 @@ $debates: #EE4B2A;
 $votes-bg: #EE4B2A;
 $proposals-border: darken($proposals, 10%);;
 $votes-border: darken($debates, 10%);
+$icons: #FDE91E;
 @import 'participation';
 
 .wrapper, .footer {
@@ -42,6 +43,21 @@ header {
     background-color: $body-background;
     .row {
       background-color: $brand;
+      a {
+        display: inline-block;
+        span {
+          vertical-align: middle;
+          font-size: 16px;
+          color: $icons;
+        }
+        img {
+          vertical-align: -50%;
+          width: 24px;
+          height: 24px;
+          display: inline-block;
+          margin-right: 0;
+        }
+      }
     }
   }
 
@@ -60,7 +76,15 @@ header {
           display: table-row;
           height: initial;
           a {
+            display: inline-block;
             color: $text;
+            img {
+              vertical-align: -50%;
+              width: 24px;
+              height: 24px;
+              display: inline-block;
+              margin-right: 0;
+            }
           }
         }
       }
@@ -120,11 +144,22 @@ header {
           color: $text-light;
           padding-top: 0;
           a {
+            display: inline-block;
             color: $text-light;
             white-space: nowrap;
             padding-top: 0;
             span {
               margin-right: 0.2rem;
+              font-size: 16px;
+              vertical-align: middle;
+              color: $icons;
+            }
+            img {
+              vertical-align: -50%;
+              width: 24px;
+              height: 24px;
+              display: inline-block;
+              margin-right: 0;
             }
           }
         }

@@ -14,7 +14,10 @@
         </li>
         <%= render "shared/admin_login_items" %>
         <li>
-          <%= link_to t("layouts.header.external_link_institution"), t("layouts.header.external_link_institution_url") %>
+          <%= link_to t("layouts.header.external_link_institution_url") do %>
+            <img src="assets/Cabildo Gran Canaria.svg"></img>
+            <%= t("layouts.header.external_link_institution") %>
+          <% end %>
         </li>
         <% if setting['blog_url'] %>
           <li>

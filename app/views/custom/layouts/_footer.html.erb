@@ -40,7 +40,7 @@
   </div>
 
   <div class="subfooter row">
-    <div class="small-12 medium-8 column">
+    <div class="small-12 medium-9 column">
       <ul class="menu">
         <li>
           <%= link_to "https://github.com/consul/consul" do %>
@@ -55,12 +55,14 @@
         </li>
         <li>
           <%= link_to page_path('conditions') do %>
+            <img src="assets/Condiciones uso.svg"></img>
             <%= t("layouts.footer.conditions") %>
           <% end %>
         </li>
         <li>
           <%# <%= link_to t("layouts.footer.legal"), page_path('legal') %>
           <%= link_to page_path('privacy') do %>
+            <img src="assets/Politica privacidad.svg"></img>
             <%= t("layouts.footer.privacy") %>
           <% end %>
         </li>
