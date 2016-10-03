@@ -99,6 +99,19 @@ header {
 
 }
 
+aside.margin-bottom {
+  #search_form {
+    .input-group {
+      input {
+        margin-bottom: 0;
+      }
+      .input-group-button button {
+        padding-bottom: 0.7em;
+      }
+    }
+  }
+}
+
 .proposals-list .proposal {
   margin-bottom: 0.5rem;
   .panel {
