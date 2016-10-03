@@ -7,6 +7,9 @@
           <%= render partial: 'proposals/proposal', collection: @proposals %>
           <%# <%= paginate @proposals %>
         </div>
+        <div class="actions">
+          <%= link_to t("shared.suggest.proposal.see_all"), proposals_path, class: 'button' %>
+        </div>
       </div>
 
       <div id="debates" class="debates-list small-12 medium-6 column">
@@ -14,6 +17,9 @@
         <div id="debates-list">
           <%= render partial: 'debates/debate', collection: @debates %>
           <%# <%= paginate @debates %>
+        </div>
+        <div class="actions">
+          <%= link_to t("shared.suggest.debate.see_all"), debates_path, class: 'button' %>
         </div>
       </div>
     </div>

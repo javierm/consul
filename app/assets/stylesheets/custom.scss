@@ -26,6 +26,9 @@ body {
 $brand: #212D5D;
 $proposals: #E8001E;
 $debates: #EE4B2A;
+$city_council_debates: #652682;
+$organizations: #5FB5AE;
+$volunteers: #96BD2B;
 $votes-bg: #EE4B2A;
 $proposals-border: darken($proposals, 10%);;
 $votes-border: darken($debates, 10%);
@@ -92,8 +95,27 @@ header {
   }
 
   & .subnavigation {
-    ul li {
-      margin-right: 1rem;
+    ul {
+      display: flex;
+      li {
+        flex-grow: 1;
+        white-space: nowrap;
+        a.proposals {
+          color: $proposals;
+        }
+        a.debates {
+          color: $debates;
+        }
+        a.city_council_debates {
+          color: $city_council_debates;
+        }
+        a.organizations {
+          color: $organizations;
+        }
+        a.volunteers {
+          color: $volunteers;
+        }
+      }
     }
   }
 
@@ -112,23 +134,33 @@ aside.margin-bottom {
   }
 }
 
-.proposals-list .proposal {
-  margin-bottom: 0.5rem;
-  .panel {
-    border: 1px solid $proposals;
+.proposals-list {
+  .proposal {
+    margin-bottom: 0.5rem;
+    .panel {
+      border: 1px solid $proposals;
+    }
+    .supports:after {
+      border-color: $proposals transparent transparent transparent;
+    }
   }
-  .supports:after {
-    border-color: $proposals transparent transparent transparent;
+  .actions {
+    text-align: right;
   }
 }
 
-.debates-list .debate {
-  margin-bottom: 0.5rem;
-  .panel {
-    border: 1px solid $debates;
+.debates-list {
+  .debate {
+    margin-bottom: 0.5rem;
+    .panel {
+      border: 1px solid $debates;
+    }
+    .votes:after {
+      border-color: $debates transparent transparent transparent;
+    }
   }
-  .votes:after {
-    border-color: $debates transparent transparent transparent;
+  .actions {
+    text-align: right;
   }
 }
 
