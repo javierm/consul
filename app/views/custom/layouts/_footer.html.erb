@@ -55,14 +55,14 @@
         </li>
         <li>
           <%= link_to page_path('conditions') do %>
-            <img src="assets/Condiciones uso.svg"></img>
+            <%= image_tag("Condiciones uso.svg") %>
             <%= t("layouts.footer.conditions") %>
           <% end %>
         </li>
         <li>
           <%# <%= link_to t("layouts.footer.legal"), page_path('legal') %>
           <%= link_to page_path('privacy') do %>
-            <img src="assets/Politica privacidad.svg"></img>
+            <%= image_tag("Politica privacidad.svg") %>
             <%= t("layouts.footer.privacy") %>
           <% end %>
         </li>

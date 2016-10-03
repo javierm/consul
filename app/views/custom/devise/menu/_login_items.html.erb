@@ -14,32 +14,32 @@
   </li>
   <li>
     <%= link_to user_path(current_user), accesskey: "a" do %>
-      <img src="assets/Mi actividad.svg"></img>
+      <%= image_tag("Mi actividad.svg") %>
       <%= t("layouts.header.my_activity_link") %>
     <% end %>
   </li>
   <li>
     <%= link_to account_path, accesskey: "m" do %>
-      <img src="assets/Mi cuenta.svg"></img>
+      <%= image_tag("Mi cuenta.svg") %>
       <%= t("layouts.header.my_account_link") %>
     <% end %>
   </li>
   <li>
     <%= link_to destroy_user_session_path, method: :delete do %>
-      <img src="assets/Salir.svg"></img>
+      <%= image_tag("Salir.svg") %>
       <%= t("devise_views.menu.login_items.logout") %>
     <% end %>
   </li>
 <% else %>
   <li>
     <%= link_to new_user_session_path do  %>
-      <img src="assets/Entrar.svg"></img>
+      <%= image_tag("Entrar.svg") %>
       <%= t("devise_views.menu.login_items.login") %>
     <% end %>
   </li>
   <li>
     <%= link_to new_user_registration_path do %>
-      <img src="assets/Registro.svg"></img>
+      <%= image_tag("Registro.svg") %>
       <%= t("devise_views.menu.login_items.signup") %>
     <% end %>
   </li>
