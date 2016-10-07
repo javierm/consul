@@ -8,7 +8,9 @@
           <%# <%= paginate @proposals %>
         </div>
         <div class="actions">
-          <%= link_to t("shared.suggest.proposal.see_all"), proposals_path, class: 'button' %>
+          <%= link_to proposals_path do %>
+            <%= image_tag 'button.svg' %>
+          <% end %>
         </div>
       </div>
 
@@ -19,14 +21,18 @@
           <%# <%= paginate @debates %>
         </div>
         <div class="actions">
-          <%= link_to t("shared.suggest.debate.see_all"), debates_path, class: 'button' %>
+          <%= link_to debates_path do %>
+            <%= image_tag 'button.svg' %>
+          <% end %>
         </div>
       </div>
     </div>
 
     <div class="small-12 medium-3 column">
       <aside class="margin-bottom">
-        <%= link_to t("proposals.index.start_proposal"), new_proposal_path, class: 'button expanded' %>
+        <%= link_to new_proposal_path do %>
+          <%= image_tag 'create_proposal.svg' %>
+        <% end %>
       </aside>
     </div>
   </div>
