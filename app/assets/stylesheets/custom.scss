@@ -161,6 +161,7 @@ aside.margin-bottom {
   }
   .actions {
     text-align: right;
+    margin-top: 15px;
     a img {
       width: 60%;
     }
@@ -182,9 +183,18 @@ aside.margin-bottom {
   }
   .actions {
     text-align: right;
+    margin-top: 15px;
     a img {
       width: 60%;
     }
+  }
+}
+
+.social-news {
+  border: 4px solid black;
+  border-radius: 4px;
+  &:last-child {
+    margin-top: 15px;
   }
 }
 

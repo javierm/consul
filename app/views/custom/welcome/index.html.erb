@@ -9,7 +9,7 @@
         </div>
         <div class="actions">
           <%= link_to proposals_path do %>
-            <%= image_tag 'button.svg' %>
+            <%= image_tag 'button_more.svg' %>
           <% end %>
         </div>
       </div>
@@ -22,7 +22,7 @@
         </div>
         <div class="actions">
           <%= link_to debates_path do %>
-            <%= image_tag 'button.svg' %>
+            <%= image_tag 'button_more.svg' %>
           <% end %>
         </div>
       </div>
@@ -33,6 +33,7 @@
         <%= link_to new_proposal_path do %>
           <%= image_tag 'create_proposal.svg' %>
         <% end %>
+        <%= render 'shared/social' %>
       </aside>
     </div>
   </div>
