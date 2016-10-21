@@ -63,11 +63,13 @@
     <div class="small-12 medium-3 column">
       <aside class="margin-bottom">
         <%= yield :header_addon %>
-        <%= link_to t("proposals.index.start_proposal"), new_proposal_path, class: 'button expanded' %>
+        <%= link_to new_proposal_path do %>
+          <%= image_tag 'create_proposal.svg' %>
+        <% end %>
         <% if params[:retired].blank? %>
             <%= render 'categories' %>
             <%= render "shared/tag_cloud", taggable: 'proposal' %>
-            <%= render 'geozones' %>
+            <%= render 'municipalities' %>
           <% end %>
           <%= render 'retired' %>
       </aside>

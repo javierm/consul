@@ -30,10 +30,12 @@ $city_council_debates: #652682;
 $organizations: #5FB5AE;
 $volunteers: #96BD2B;
 $votes-bg: #EE4B2A;
-$proposals-border: darken($proposals, 10%);;
+$proposals-border: darken($proposals, 10%);
 $votes-border: darken($debates, 10%);
 $icons: #FDE91E;
+// we import file again so new values are used
 @import 'participation';
+$municipalities: #212D5D;
 
 .wrapper, .footer {
   max-width: 75rem;
@@ -183,6 +185,13 @@ aside.margin-bottom {
     a img {
       width: 60%;
     }
+  }
+}
+
+.mapa-interactivo-gc {
+  path {
+    fill-opacity: 0.7;
+    fill: $municipalities;
   }
 }
 

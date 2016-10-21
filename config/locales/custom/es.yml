@@ -451,6 +451,7 @@ es:
       districts: "Distritos"
       districts_list: "Listado de distritos"
       categories: "Categorías"
+      municipalities: "Municipios"
     target_blank_html: " (se abre en ventana nueva)"
     unflag: Deshacer denuncia
   social:
