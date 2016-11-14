@@ -3,7 +3,7 @@ es:
   account:
     show:
       change_credentials_link: Cambiar mis datos de acceso
-      email_on_comment_label: Recibir un email cuando alguien comenta en mis iniciativas o debates
+      email_on_comment_label: Recibir un email cuando alguien comenta en mis iniciativas o propuestas
       email_on_comment_reply_label: Recibir un email cuando alguien contesta a mis comentarios
       erase_account_link: Darme de baja
       finish_verification: Finalizar verificación
@@ -18,7 +18,7 @@ es:
       email_digest_label: Recibir resumen de notificaciones sobre iniciativas populares
       official_position_badge_label: Mostrar etiqueta de tipo de usuario
       title: Mi cuenta
-      user_permission_debates: Participar en debates
+      user_permission_debates: Participar en propuestas
       user_permission_info: Con tu cuenta ya puedes...
       user_permission_proposal: Crear nuevas iniciativas populares
       user_permission_support_proposal: Apoyar iniciativas populares*
@@ -66,26 +66,26 @@ es:
   debates:
     create:
       form:
-        submit_button: Empieza un debate
+        submit_button: Empieza una propuesta
     debate:
       comments:
         one: 1 Comentario
         other: "%{count} Comentarios"
         zero: Sin comentarios
-      debate: Debate
+      debate: Propuesta
       votes:
         one: 1 voto
         other: "%{count} votos"
         zero: Sin votos
     edit:
-      editing: Editar debate
+      editing: Editar propuesta
       form:
         submit_button: Guardar cambios
-      show_link: Ver debate
+      show_link: Ver propuesta
     form:
-      debate_text: Texto inicial del debate
-      debate_title: Título del debate
-      tags_instructions: Etiqueta este debate.
+      debate_text: Texto inicial de la propuesta
+      debate_title: Título de la propuesta
+      tags_instructions: Etiqueta esta propuesta.
       tags_label: Temas
       tags_placeholder: "Escribe las etiquetas que desees separadas por coma (',')"
     index:
@@ -101,26 +101,26 @@ es:
         relevance: Más relevantes
       search_form:
         button: Buscar
-        placeholder: Buscar debates...
+        placeholder: Buscar propuestas...
         title: Buscar
       search_results:
         one: " que contiene '%{search_term}'"
         other: " que contienen '%{search_term}'"
       select_order: Ordenar por
-      start_debate: Empieza un debate
+      start_debate: Empieza una propuesta
       title: Debates
     new:
       form:
-        submit_button: Empieza un debate
+        submit_button: Empieza una propuesta
       info: Si lo que quieres es hacer una iniciativa popular, esta es la sección incorrecta, entra en %{info_link}.
       info_link: crear nueva propuesta
       more_info: Más información
       recommendation_four: Disfruta de este espacio, de las voces que lo llenan, también es tuyo.
-      recommendation_one: No escribas el título del debate o frases enteras en mayúsculas. En internet eso se considera gritar. Y a nadie le gusta que le griten.
+      recommendation_one: No escribas el título de la propuesta o frases enteras en mayúsculas. En internet eso se considera gritar. Y a nadie le gusta que le griten.
       recommendation_three: Las críticas despiadadas son muy bienvenidas. Este es un espacio de pensamiento. Pero te recomendamos conservar la elegancia y la inteligencia. El mundo es mejor con ellas presentes.
-      recommendation_two: Cualquier debate o comentario que implique una acción ilegal será eliminado, también los que tengan la intención de sabotear los espacios de debate, todo lo demás está permitido.
-      recommendations_title: Recomendaciones para crear un debate
-      start_new: Empezar un debate
+      recommendation_two: Cualquier propuesta o comentario que implique una acción ilegal será eliminado, también los que tengan la intención de sabotear los espacios de debate, todo lo demás está permitido.
+      recommendations_title: Recomendaciones para crear una propuesta
+      start_new: Empezar una propuesta
     show:
       author_deleted: Usuario eliminado
       comments:
@@ -128,8 +128,8 @@ es:
         other: "%{count} Comentarios"
         zero: Sin comentarios
       comments_title: Comentarios
-      edit_debate_link: Editar debate
-      flag: Este debate ha sido marcado como inapropiado por varios usuarios.
+      edit_debate_link: Editar propuesta
+      flag: Esta propuesta ha sido marcada como inapropiada por varios usuarios.
       login_to_comment: Necesitas %{signin} o %{signup} para comentar.
       share: Compartir
     update:
@@ -142,7 +142,7 @@ es:
     accept_terms: Acepto la %{policy} y las %{conditions}
     accept_terms_title: Acepto la Política de privacidad y las Condiciones de uso
     conditions: Condiciones de uso
-    debate: el debate
+    debate: la propuesta
     direct_message: el mensaje privado
     error: error
     errors: errores
@@ -436,16 +436,16 @@ es:
     suggest:
       debate:
         found:
-          one: "Existe un debate con el término '%{query}', puedes participar en él en vez de abrir uno nuevo."
-          other: "Existen debates con el término '%{query}', puedes participar en ellos en vez de abrir uno nuevo."
-        message: "Estás viendo %{limit} de %{count} debates que contienen el término '%{query}'"
-        see_all: "Ver todos"
+          one: "Existe una propuesta con el término '%{query}', puedes participar en ella en vez de abrir una nueva."
+          other: "Existen propuestas con el término '%{query}', puedes participar en ellas en vez de abrir una nueva."
+        message: "Estás viendo %{limit} de %{count} propuestas que contienen el término '%{query}'"
+        see_all: "Ver más propuestas"
       proposal:
         found:
           one: "Existe una iniciativa popular con el término '%{query}', puedes participar en ella en vez de abrir uno nuevo."
           other: "Existen iniciativas populares con el término '%{query}', puedes participar en ellas en vez de abrir uno nuevo."
         message: "Estás viendo %{limit} de %{count} iniciativas populares que contienen el término '%{query}'"
-        see_all: "Ver todas"
+        see_all: "Ver más iniciativas"
     tags_cloud:
       tags: Tendencias
       districts: "Distritos"
@@ -510,11 +510,11 @@ es:
   stats:
     index:
       visits: Visitas
-      debates: Debates
+      debates: Propuestas
       proposals: Iniciativas populares
       comments: Comentarios
       proposal_votes: Votos en iniciativas populares
-      debate_votes: Votos en debates
+      debate_votes: Votos en propuestas
       comment_votes: Votos en comentarios
       votes: Votos
       verified_users: Usuarios verificados
@@ -540,7 +540,7 @@ es:
         receiver: Mensaje enviado a %{receiver}
     show:
       deleted: Eliminado
-      deleted_debate: Este debate ha sido eliminado
+      deleted_debate: Esta propuesta ha sido eliminada
       deleted_proposal: Este iniciativa popular ha sido eliminada
       delete_spending_proposal: Eliminar
       confirm_deletion_spending_proposal: "¿Seguro que desea eliminar esta iniciativa popular?"
@@ -549,8 +549,8 @@ es:
           one: 1 Comentario
           other: "%{count} Comentarios"
         debates:
-          one: 1 Debate
-          other: "%{count} Debates"
+          one: 1 Propuesta
+          other: "%{count} Propuestas"
         proposals:
           one: 1 Iniciativa popular
           other: "%{count} Iniciativas populares"
@@ -586,7 +586,7 @@ es:
   welcome:
     debates:
       description: Encontrarnos, debatir y compartir lo que nos parece importante en nuestra ciudad.
-      title: Debates
+      title: Propuestas
     decide:
       description: La ciudadanía decide si acepta o rechaza las iniciativas populares más apoyadas.
       title: Decides
@@ -604,7 +604,7 @@ es:
     welcome:
       go_to_index: Ahora no, ver iniciativas populares
       title: Empieza a participar
-      user_permission_debates: Participar en debates
+      user_permission_debates: Participar en propuestas
       user_permission_info: Con tu cuenta ya puedes...
       user_permission_proposal: Crear nuevas iniciativas populares
       user_permission_support_proposal: Apoyar iniciativas populares*

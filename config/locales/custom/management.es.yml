@@ -55,7 +55,7 @@ es:
       user_invites: Invitaciones para usuarios
     permissions:
       create_proposals: Crear nuevas iniciativas populares
-      debates: Participar en debates
+      debates: Participar en propuestas
       support_proposals: Apoyar iniciativas populares
       vote_proposals: Participar en las votaciones finales
     print:
