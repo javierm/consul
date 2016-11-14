@@ -33,18 +33,18 @@ es:
           pending_flag_review: Pendientes
           with_ignored_flag: Marcados como revisados
         headers:
-          debate: Debate
+          debate: Propuesta
           moderate: Moderar
-        hide_debates: Ocultar debates
+        hide_debates: Ocultar propuestas
         ignore_flags: Marcar como revisados
         order: Orden
         orders:
           created_at: Más nuevos
           flags: Más denunciados
-        title: Debates
+        title: Propuestas
     menu:
       flagged_comments: Comentarios
-      flagged_debates: Debates
+      flagged_debates: Propuestas
       proposals: Iniciativas populares
       users: Bloquear usuarios
     proposals:
@@ -73,4 +73,4 @@ es:
         search: Buscar
         search_placeholder: email o nombre de usuario
         title: Bloquear usuarios
-      notice_hide: Usuario bloqueado. Se han ocultado todos sus debates y comentarios.
+      notice_hide: Usuario bloqueado. Se han ocultado todas sus propuestas y comentarios.

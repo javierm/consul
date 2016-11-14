@@ -53,7 +53,7 @@ es:
         filters:
           all: Todo
           on_comments: Comentarios
-          on_debates: Debates
+          on_debates: Propuestas de ayuntamiento
           on_proposals: Iniciativas populares
           on_users: Usuarios
         title: Actividad de los Moderadores
@@ -65,7 +65,7 @@ es:
           all: Todos
           with_confirmed_hide: Confirmados
           without_confirmed_hide: Pendientes
-        hidden_debate: Debate oculto
+        hidden_debate: Propuesta oculta
         hidden_proposal: Propuesta oculta
         title: Comentarios ocultos
     dashboard:
@@ -79,7 +79,7 @@ es:
           all: Todos
           with_confirmed_hide: Confirmados
           without_confirmed_hide: Pendientes
-        title: Debates ocultos
+        title: Propuestas ocultas
     managers:
       index:
         title: Gestores
@@ -96,7 +96,7 @@ es:
       banner: Gestionar banners
       debate_topics: Temas de debate
       hidden_comments: Comentarios ocultos
-      hidden_debates: Debates ocultos
+      hidden_debates: Propuestas ocultas
       hidden_proposals: Propuestas ocultas
       hidden_users: Usuarios bloqueados
       incomplete_verifications: Verificaciones incompletas
@@ -271,8 +271,8 @@ es:
         summary:
           comment_votes: Votos en comentarios
           comments: Comentarios
-          debate_votes: Votos en debates
-          debates: Debates
+          debate_votes: Votos en propuestas
+          debates: Propuestas
           proposal_votes: Votos en propuestas
           proposals: Propuestas
           spending_proposals: Propuestas de inversión
@@ -302,7 +302,7 @@ es:
       index:
         add_tag: Añade un nuevo tema de debate
         title: Temas de debate
-      mark_as_featured: Proponer tema al crear debate
+      mark_as_featured: Proponer tema al crear propuesta
       name:
         placeholder: Escribe el nombre del tema
       update: Actualizar Tema
