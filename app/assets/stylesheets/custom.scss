@@ -37,6 +37,8 @@ $icons: #FDE91E;
 @import 'participation';
 $municipalities: #212D5D;
 
+$button_bck: #73160D;
+
 .wrapper, .footer {
   max-width: 75rem;
   margin: auto;
@@ -50,6 +52,7 @@ header {
       background-color: $brand;
       a {
         display: inline-block;
+        padding: 0;
         span {
           vertical-align: middle;
           font-size: 16px;
@@ -58,7 +61,6 @@ header {
         img {
           vertical-align: -50%;
           width: 24px;
-          height: 24px;
           display: inline-block;
           margin-right: 0;
         }
@@ -73,9 +75,15 @@ header {
       line-height: initial;
       #responsive-menu {
         padding-top: 0.7em;
-        .top-bar-title a {
-          color: $text;
-          @include logo;
+        .top-bar-title {
+          margin-top: 15px;
+          a {
+            color: $text;
+            @include logo;
+          }
+        }
+        .top-bar-right {
+          margin-bottom: 15px;
         }
         .top-bar-right li {
           display: table-row;
@@ -83,12 +91,17 @@ header {
           a {
             display: inline-block;
             color: $text;
+            padding: 0.6rem 1rem;
             img {
               vertical-align: -50%;
               width: 24px;
               height: 24px;
               display: inline-block;
               margin-right: 0;
+              &.icon_button {
+                width: 120px;
+                height: auto;
+              }
             }
           }
         }
@@ -146,6 +159,35 @@ aside.margin-bottom {
   }
 }
 
+.proposals-list, .debates-list {
+  .actions {
+    text-align: right;
+    margin-top: 15px;
+    a img {
+      width: 60%;
+    }
+    a.button {
+      background-color: $button_bck;
+      border: 4px solid black;
+      border-radius: 5px;
+      text-transform: uppercase;
+      &:hover {
+        background-color: lighten($button_bck, 10%);
+      }
+      font-size: 1em;
+      font-weight: 600;
+      padding: 5px 10px;
+      line-height: 25px;
+    }
+  }
+}
+
+img.banner {
+  width: 100%;
+  margin: 0 0.5em;
+  margin-bottom: 1em;
+}
+
 .proposals-list {
   .proposal {
     margin-bottom: 0.5rem;
@@ -157,13 +199,6 @@ aside.margin-bottom {
     }
     .supports .not-logged {
       background-color: rgba($proposals-border, 0.9);
-    }
-  }
-  .actions {
-    text-align: right;
-    margin-top: 15px;
-    a img {
-      width: 60%;
     }
   }
 }
@@ -181,21 +216,11 @@ aside.margin-bottom {
       background-color: rgba($votes-border, 0.9);
     }
   }
-  .actions {
-    text-align: right;
-    margin-top: 15px;
-    a img {
-      width: 60%;
-    }
-  }
 }
 
 .social-news {
-  border: 4px solid black;
-  border-radius: 4px;
-  &:last-child {
-    margin-top: 15px;
-  }
+  border: 1px solid black;
+  margin-top: 15px;
 }
 
 .mapa-interactivo-gc {
@@ -222,6 +247,7 @@ aside.margin-bottom {
     .subfooter {
       background-color: $brand;
       border-top: 0;
+      padding-top: 0;
       .column {
         float: right;
         ul.menu li {
@@ -233,7 +259,7 @@ aside.margin-bottom {
             display: inline-block;
             color: $text-light;
             white-space: nowrap;
-            padding-top: 0;
+            padding: 5px 10px;
             span {
               margin-right: 0.2rem;
               font-size: 16px;
@@ -243,10 +269,12 @@ aside.margin-bottom {
             img {
               vertical-align: -50%;
               width: 24px;
-              height: 24px;
               display: inline-block;
               margin-right: 0;
             }
+          }
+          &:first-child a {
+            padding-bottom: 10px;
           }
         }
       }
