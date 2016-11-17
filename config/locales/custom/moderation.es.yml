@@ -56,16 +56,18 @@ es:
           all: Todas
           pending_flag_review: Pendientes de revisión
           with_ignored_flag: Marcadas como revisadas
+          pending_area_review: Pendientes revisión ámbito
         headers:
           moderate: Moderar
           proposal: Iniciativa popular
-        hide_proposals: Ocultar iniciativas populares
+        hide_proposals: Ocultar iniciativas
         ignore_flags: Marcar como revisadas
         order: Ordenar por
         orders:
           created_at: Más recientes
           flags: Más denunciadas
         title: Iniciativas populares
+        update_areas: Actualizar areas
     users:
       index:
         hidden: Bloqueado

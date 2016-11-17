@@ -8,8 +8,8 @@ es:
         one: "Comentario"
         other: "Comentarios"
       debate:
-        one: "Propuesta de ayuntamiento"
-        other: "Propuestas de ayuntamiento"
+        one: "Propuesta del Cabildo"
+        other: "Propuestas del Cabildo"
       tag:
         one: "Tema"
         other: "Temas"
