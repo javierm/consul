@@ -108,7 +108,7 @@ es:
         other: " que contienen '%{search_term}'"
       select_order: Ordenar por
       start_debate: Empieza una propuesta
-      title: Debates
+      title: Propuestas
     new:
       form:
         submit_button: Empieza una propuesta
@@ -264,6 +264,12 @@ es:
       form:
         submit_button: Guardar cambios
       show_link: Ver iniciativa
+      select_area: Seleccione ámbito
+      area:
+        municipal: Municipal
+        insular: Insular
+        autonomous: Autonómico
+        state: Estatal
     retire_form:
       title: Retirar iniciativa
       warning: "Si sigues adelante tu iniciativa podrá seguir recibiendo apoyos, pero dejará de ser listada en la lista principal, y aparecerá un mensaje para todos los usuarios avisándoles de que el autor considera que esta iniciativa no debe seguir recogiendo apoyos."

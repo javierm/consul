@@ -53,7 +53,7 @@ es:
         filters:
           all: Todo
           on_comments: Comentarios
-          on_debates: Propuestas de ayuntamiento
+          on_debates: Propuestas del Cabildo
           on_proposals: Iniciativas populares
           on_users: Usuarios
         title: Actividad de los Moderadores
@@ -94,10 +94,10 @@ es:
       activity: Actividad de moderadores
       admin: Menú de administración
       banner: Gestionar banners
-      debate_topics: Temas de debate
+      debate_topics: Temas de propuesta
       hidden_comments: Comentarios ocultos
       hidden_debates: Propuestas ocultas
-      hidden_proposals: Propuestas ocultas
+      hidden_proposals: Iniciativas ocultas
       hidden_users: Usuarios bloqueados
       incomplete_verifications: Verificaciones incompletas
       managers: Gestores
@@ -300,8 +300,8 @@ es:
       create: Crear Tema
       destroy: Eliminar Tema
       index:
-        add_tag: Añade un nuevo tema de debate
-        title: Temas de debate
+        add_tag: Añade un nuevo tema de propuesta
+        title: Temas de propuesta
       mark_as_featured: Proponer tema al crear propuesta
       name:
         placeholder: Escribe el nombre del tema
