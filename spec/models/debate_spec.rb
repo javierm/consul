@@ -76,6 +76,14 @@ describe Debate do
     end
   end
 
+  describe "#area" do
+    it "should be not valid without a thematic area" do
+      debate.area = nil 
+      expect(debate).to_not be_valid
+    end
+  end
+
+
   it "should not be valid without accepting terms of service" do
     debate.terms_of_service = nil
     expect(debate).to_not be_valid

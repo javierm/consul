@@ -99,6 +99,7 @@ FactoryGirl.define do
     description          'Debate description'
     terms_of_service     '1'
     association :author, factory: :user
+    area 'Area tematica 1'
 
     trait :hidden do
       hidden_at Time.now

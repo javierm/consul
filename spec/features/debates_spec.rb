@@ -51,6 +51,7 @@ feature 'Debates' do
     expect(page).to have_content I18n.l(debate.created_at.to_date)
     expect(page).to have_selector(avatar(debate.author.name))
     expect(page.html).to include "<title>#{debate.title}</title>"
+    expect(page).to have_content debate.area
 
     within('.social-share-button') do
       expect(page.all('a').count).to be(3) # Twitter, Facebook, Google+
@@ -97,14 +98,18 @@ feature 'Debates' do
     fill_in 'debate_title', with: 'A title for a debate'
     fill_in 'debate_description', with: 'This is very important because...'
     check 'debate_terms_of_service'
+    select  'Area1', from: 'debate_area'
 
     click_button 'Start a debate'
+
 
     expect(page).to have_content 'A title for a debate'
     expect(page).to have_content 'Debate created successfully.'
     expect(page).to have_content 'This is very important because...'
+    expect(page).to have_content 'Area1'
     expect(page).to have_content author.name
     expect(page).to have_content I18n.l(Debate.last.created_at.to_date)
+    
   end
 
   scenario 'Create with invisible_captcha honeypot field' do
