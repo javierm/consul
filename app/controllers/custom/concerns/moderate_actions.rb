@@ -4,7 +4,7 @@ module ModerateActions
 
   def moderate
     set_resource_params
-    @resources = @resources.where(id: params[:resource_ids] || params[:areas].keys)
+    @resources = @resources.where(id: params[:resource_ids] || params[:areas].try(:keys))
 
     if params[:hide_resources].present?
       @resources.accessible_by(current_ability, :hide).each {|resource| hide_resource resource}
@@ -20,7 +20,7 @@ module ModerateActions
       @resources.accessible_by(current_ability, :update_area).each do |resource|
         val = params[:areas][resource.id.to_s]
         next unless val.present?
-        resource.update(area: val)
+        resource.area_revised(val)
       end
 
     end
