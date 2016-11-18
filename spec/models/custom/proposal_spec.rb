@@ -290,11 +290,16 @@ describe Proposal do
       expect(proposal.area_revised_at).to eq nil
     end
 
-    it "sets area_revised_at when area changed from other non empty value" do
-      proposal.area = 'estatal'
-      proposal.save!
+    it "filters proposals with pending area review" do
+      expect(Proposal.pending_area_review).to include(proposal)
+    end
 
+    it "sets area_revised_at when area changed from other non empty value" do
+      proposal.area_revised('estatal')
+
+      expect(proposal.area_revised_at).to_not eq 'estatal'
       expect(proposal.area_revised_at).to_not eq nil
+      expect(proposal.area_revised?).to eq true
     end
   end
 

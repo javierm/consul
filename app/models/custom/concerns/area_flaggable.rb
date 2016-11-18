@@ -9,8 +9,8 @@ module AreaFlaggable
     area_revised_at.present?
   end
 
-  def area_revised
-    update(area_revised_at: Time.now)
+  def area_revised(value)
+    update(area_revised_at: Time.now, area: value)
   end
 
 end
