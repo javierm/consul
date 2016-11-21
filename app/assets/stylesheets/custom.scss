@@ -236,10 +236,15 @@ img.banner {
   border-radius: 4px;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset;
   padding: 10px;
-  p{ 
+  p, ol{ 
     font-size: 0.9rem;
+    line-height: 1.1rem;
   }
 }
+ol{
+  margin-left: 3.25rem;
+}
+
 // Main footer section hidden by now, so we reduce push height
 .push {
   min-height: 3rem;
