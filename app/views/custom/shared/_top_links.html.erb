@@ -1,7 +1,26 @@
-<section class="top-links hide-for-small-only">
+<!-- <section class="top&#45;links hide&#45;for&#45;small&#45;only"> -->
+<section class="top-links">
   <div class="row">
     <%#  <%= render "shared/locale_switcher" %>
-    <div class="external-links">
+    <div class="small-12 medium-3 column social">
+      <% if setting['facebook_handle'] %>
+        <li class="inline-block">
+          <%= link_to "https://www.facebook.com/#{setting['facebook_handle']}/", target: "_blank", title: t("social.facebook") + t('shared.target_blank_html') do %>
+            <span class="sr-only"><%= t("social.facebook") %></span>
+            <%= image_tag("facebook.svg") %>
+          <% end %>
+        </li>
+      <% end %>
+      <% if setting['twitter_handle'] %>
+        <li class="inline-block">
+          <%= link_to "https://twitter.com/#{setting['twitter_handle']}", target: "_blank", title: t("social.twitter") + t('shared.target_blank_html') do %>
+            <span class="sr-only"><%= t("social.twitter") %></span>
+            <%= image_tag("twitter.svg") %>
+          <% end %>
+        </li>
+      <% end %>
+    </div>
+    <div class="external-links small-12 medium-9">
       <%# <%= link_to setting['org_name'], root_path, class: ("selected" unless current_page?("/opendata")) %>
       <%# <%= link_to t("layouts.header.external_link_transparency"), t("layouts.header.external_link_transparency_url") %>
       <%# <%= link_to t("layouts.header.external_link_opendata"), "/opendata", class: ("selected" if current_page?("/opendata")) %>

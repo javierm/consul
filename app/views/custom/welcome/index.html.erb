@@ -27,15 +27,11 @@
 
     <div class="small-12 medium-3 column">
       <aside class="margin-bottom">
-        <%= link_to new_proposal_path, class: 'button expanded button-proposal' do %>
-          <span class="icon-document"></span>
-          <%= t("proposals.index.start_proposal") %>
+        <%= link_to new_proposal_path do %>
+          <%= image_tag 'create_proposal.png' %>
         <% end %>
-        <%#  <%= link_to new_proposal_path do %>
-        <%#<%= image_tag 'create_proposal.svg' %>
-        <%# <% end %>
         <%= render 'shared/summary' %>
-        <%= render 'shared/social' %>
+        <%# <%= render 'shared/social' %>
       </aside>
     </div>
   </div>

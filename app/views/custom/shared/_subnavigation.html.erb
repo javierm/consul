@@ -1,37 +1,22 @@
-<div class="small-12 medium-9 column">
+<div class="small-12 medium-12 column">
   <ul>
     <li>
       <%= link_to t("layouts.header.proposals"), proposals_path, class: "proposals #{"active" if  controller_name == "proposals"}", accesskey: "p" %>
+      <%= image_tag("button_iniciativa.svg") %>
     </li>
     <li>
       <%= link_to t("layouts.header.debates"), debates_path, class: "debates #{"active" if controller_name == "debates"}", accesskey: "d" %>
+      <%= image_tag("button_propuesta.svg") %>
     </li>
-    <li>
-      <%= link_to t("layouts.header.city_council_debates"), nil, class: "city_council_debates #{"active" if controller_name == "city_council_debates"}", accesskey: "d" %>
-    </li>
-    <li>
-      <%= link_to t("layouts.header.organizations"), nil, class: "organizations #{"active" if current_page?("/organizations")}", accesskey: "o"  %>
-    </li>
-    <li>
-      <%= link_to t("layouts.header.volunteers"), nil, class: "volunteers #{"active" if current_page?("/volunteers")}", accesskey: "v"  %>
-    </li>
+    <!-- <li> -->
+    <!--   <%= link_to t("layouts.header.city_council_debates"), nil, class: "city_council_debates #{"active" if controller_name == "city_council_debates"}", accesskey: "d" %> -->
+    <!-- </li> -->
+    <!-- <li> -->
+    <!--   <%= link_to t("layouts.header.organizations"), nil, class: "organizations #{"active" if current_page?("/organizations")}", accesskey: "o"  %> -->
+    <!-- </li> -->
+    <!-- <li> -->
+    <!--   <%= link_to t("layouts.header.volunteers"), nil, class: "volunteers #{"active" if current_page?("/volunteers")}", accesskey: "v"  %> -->
+    <!-- </li> -->
   </ul>
 </div>
-<div class="small-12 medium-3 column social">
-  <% if setting['facebook_handle'] %>
-    <li class="inline-block">
-      <%= link_to "https://www.facebook.com/#{setting['facebook_handle']}/", target: "_blank", title: t("social.facebook") + t('shared.target_blank_html') do %>
-        <span class="sr-only"><%= t("social.facebook") %></span>
-        <%= image_tag("facebook.svg") %>
-      <% end %>
-    </li>
-  <% end %>
-  <% if setting['twitter_handle'] %>
-    <li class="inline-block">
-      <%= link_to "https://twitter.com/#{setting['twitter_handle']}", target: "_blank", title: t("social.twitter") + t('shared.target_blank_html') do %>
-        <span class="sr-only"><%= t("social.twitter") %></span>
-        <%= image_tag("twitter.svg") %>
-      <% end %>
-    </li>
-  <% end %>
-</div>
+

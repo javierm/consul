@@ -17,8 +17,8 @@ body {
 @mixin logo {
   img {
     @include breakpoint(small) {
-      height: 150px;
-      width: auto;
+      height: auto;
+      width: 100%;
     }
   }
 }
@@ -48,6 +48,7 @@ header {
   background-color: $body-background;
   .top-links {
     background-color: $body-background;
+    padding-right: 0;
     .row {
       background-color: $brand;
       a {
@@ -65,18 +66,29 @@ header {
           margin-right: 0;
         }
       }
+      .social {
+        a {
+          margin: 0;
+          img {
+            width: 50px;
+          }
+        }
+      }
+      .external-links{
+        ul.menu{
+          float: right;
+        }
+      }
     }
   }
 
   & > .row {
     .top-bar {
-      background-color: white!important;
-      height: initial;
-      line-height: initial;
+      background-color: #bbb!important;
+      height: auto;
       #responsive-menu {
-        padding-top: 0.7em;
         .top-bar-title {
-          margin-top: 15px;
+          line-height: 0;
           a {
             color: $text;
             @include logo;
@@ -132,16 +144,6 @@ header {
         }
       }
     }
-    .social {
-      text-align: right;
-      a {
-        margin: 0;
-        img {
-          width: 90px;
-          margin-top: -15px;
-        }
-      }
-    }
   }
 
 }
@@ -168,16 +170,16 @@ aside.margin-bottom {
     }
     a.button {
       background-color: $button_bck;
-      border: 4px solid black;
+      border: 2px solid black;
       border-radius: 5px;
       text-transform: uppercase;
       &:hover {
         background-color: lighten($button_bck, 10%);
       }
-      font-size: 1em;
+      font-size: 0.8em;
       font-weight: 600;
       padding: 5px 10px;
-      line-height: 25px;
+      line-height: 1em;
     }
   }
 }
