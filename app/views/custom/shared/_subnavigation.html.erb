@@ -1,12 +1,14 @@
-<div class="small-12 medium-12 column">
+<div class="small-12 medium-12">
   <ul>
     <li>
-      <%= link_to t("layouts.header.proposals"), proposals_path, class: "proposals #{"active" if  controller_name == "proposals"}", accesskey: "p" %>
-      <%= image_tag("button_iniciativa.svg") %>
+      <%= link_to proposals_path, class: "proposals #{"active" if  controller_name == "proposals"}", accesskey: "p" do %>
+        <%= image_tag("button_iniciativa.svg") %>
+      <% end %>
     </li>
     <li>
-      <%= link_to t("layouts.header.debates"), debates_path, class: "debates #{"active" if controller_name == "debates"}", accesskey: "d" %>
-      <%= image_tag("button_propuesta.svg") %>
+      <%= link_to debates_path, class: "debates #{"active" if controller_name == "debates"}", accesskey: "d"  do %>
+        <%= image_tag("button_propuesta.svg") %>
+      <% end %>
     </li>
     <!-- <li> -->
     <!--   <%= link_to t("layouts.header.city_council_debates"), nil, class: "city_council_debates #{"active" if controller_name == "city_council_debates"}", accesskey: "d" %> -->

@@ -143,6 +143,9 @@ header {
           color: $volunteers;
         }
       }
+      li:last-child{
+        margin-right: 0;
+      }
     }
   }
 
@@ -186,8 +189,6 @@ aside.margin-bottom {
 
 img.banner {
   width: 100%;
-  margin: 0 0.5em;
-  margin-bottom: 1em;
 }
 
 .proposals-list {
@@ -241,6 +242,10 @@ img.banner {
   p, ol{ 
     font-size: 0.9rem;
     line-height: 1.1rem;
+  }
+  img{
+    width: 22px;
+    margin: 2px;
   }
 }
 ol{
