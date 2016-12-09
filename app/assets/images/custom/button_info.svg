@@ -1,0 +1,17 @@
+<svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 142.04 41.04">
+	<defs>
+		<style>
+       			@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');       			text {         
+				font-family: "Source Sans Pro";       
+			}     
+			.cls-1{fill:#96bd2a;}
+			.text{fill:white;}
+			.negrita{font-weight:bold;}
+		</style>
+	</defs>
+	<title>botón info</title>
+	<rect class="cls-1" width="142.04" height="29.47"/>
+	<polyline class="cls-1" points="112.81 29.47 121 41.04 131.52 28.41 111.64 28.41"/>		
+	<text class="text" transform="matrix(0.9952 0e-02 1.256000e-02 0.9999 14.1489 19.6339)"><tspan x="0" y="0" class="negrita">más</tspan><tspan> Información </tspan></text>
+
+</svg>

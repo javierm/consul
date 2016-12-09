@@ -1,6 +1,10 @@
 <svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 142.04 41.91">
 	<defs>
 		<style>
+			@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+			text {         
+				font-family: "Source Sans Pro";       
+			}   
 			.cls-1{fill:#ad0e17;}
 			.cls-2{fill:none;stroke:#ad0e17;}
 			.text{fill:white;}

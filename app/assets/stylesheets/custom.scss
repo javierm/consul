@@ -46,6 +46,7 @@ $button_bck: #73160D;
 
 header {
   background-color: $body-background;
+  border-bottom: none;
   .top-links {
     background-color: $body-background;
     padding-right: 0;
@@ -88,6 +89,7 @@ header {
       height: auto;
       #responsive-menu {
         .top-bar-title {
+          margin-right: 0;
           line-height: 0;
           a {
             color: $text;
@@ -124,6 +126,13 @@ header {
   & .subnavigation {
     ul {
       display: flex;
+      @media only screen and (max-width: 639px) {
+        display: inline;
+        li a{
+          line-height: initial;
+        }
+      }
+
       li {
         flex-grow: 1;
         white-space: nowrap;
@@ -187,10 +196,13 @@ aside.margin-bottom {
   }
 }
 
-img.banner {
-  width: 100%;
+.wrap.row.menu > div:first-child{
+  padding: 0;
+  img.banner {
+    width: 100%;
+    padding-left: 0;
+  }
 }
-
 .proposals-list {
   .proposal {
     margin-bottom: 0.5rem;
@@ -272,32 +284,36 @@ ol{
       padding-top: 0;
       .column {
         float: right;
-        ul.menu li {
-          font-size: 0.875rem;
-          text-align: right;
-          color: $text-light;
-          padding-top: 0;
-          a {
-            display: inline-block;
+        ul.menu {
+          float:right;
+          li {
+            font-size: 0.875rem;
+            text-align: right;
             color: $text-light;
-            white-space: nowrap;
-            padding: 5px 10px;
-            span {
-              margin-right: 0.2rem;
-              font-size: 16px;
-              vertical-align: middle;
-              color: $icons;
-            }
-            img {
-              vertical-align: -50%;
-              width: 24px;
+            padding-top: 0;
+            float:left;
+            a {
               display: inline-block;
-              margin-right: 0;
+              color: $text-light;
+              white-space: nowrap;
+              padding: 5px 10px;
+              span {
+                margin-right: 0.2rem;
+                font-size: 16px;
+                vertical-align: middle;
+                color: $icons;
+              }
+              img {
+                vertical-align: -50%;
+                width: 24px;
+                display: inline-block;
+                margin-right: 0;
+              }
             }
-          }
-          &:first-child a {
-            padding-bottom: 10px;
-          }
+            &:first-child a {
+              padding-bottom: 10px;
+            }
+          } 
         }
       }
     }
