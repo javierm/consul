@@ -82,9 +82,29 @@ es:
       form:
         submit_button: Guardar cambios
       show_link: Ver propuesta
+      area:
+        area1: 'Agricultura, Ganadería y Pesca'
+        area2: 'Carreteras y Obras Públicas'
+        area3: 'Ciudadanía y Participación'
+        area4: 'Cultura y ocio'
+        area5: 'Deportes'
+        area6: 'Desarrollo Económico, Energía e I+D+I'
+        area7: 'Economía y Tributos'
+        area8: 'Educación Formación e Investigación'
+        area9: 'Emergencia y Seguridad'
+        area10: 'Empleo y Emprendimiento'
+        area11: 'Igualdad y Violencia de Género'
+        area12: 'Industria, Comercio y Artesanía'
+        area13: 'Juventud'
+        area14: 'Medio Ambiente'
+        area15: 'Ordenación del Territorio y Vivienda'
+        area16: 'Política Social y Salud'
+        area17: 'Transportes y Movilidad'
+
     form:
       debate_text: Texto inicial de la propuesta
       debate_title: Título de la propuesta
+      debate_area: Área temática
       tags_instructions: Etiqueta esta propuesta.
       tags_label: Temas
       tags_placeholder: "Escribe las etiquetas que desees separadas por coma (',')"
