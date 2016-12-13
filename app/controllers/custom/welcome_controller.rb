@@ -8,12 +8,12 @@ class WelcomeController
       redirect_to :proposals
     end
 
-    @proposals = Proposal.all.not_archived
-    @proposals = @proposals.page(1).limit(2).for_render.send("sort_by_confidence_score")
+    @proposals = Proposal.all.not_archived.sort_by_confidence_score
+    @proposals = @proposals.page(1).limit(3).for_render
     set_proposal_votes(@proposals)
 
-    @debates = Debate.all
-    @debates = @debates.page(1).limit(2).for_render.send("sort_by_confidence_score")
+    @debates = Debate.all.sort_by_confidence_score
+    @debates = @debates.page(1).limit(3).for_render
     set_debate_votes(@debates)
   end
 

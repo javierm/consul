@@ -9,7 +9,7 @@ es:
     max_ratio_anon_votes_on_debates: "Porcentaje máximo de votos anónimos por Propuesta"
     max_votes_for_proposal_edit: "Número de votos en que una iniciativa popular deja de poderse editar"
     max_votes_for_debate_edit: "Número de votos en que una Propuesta deja de poderse editar"
-    proposal_code_prefix: "Prefijo para los códigos de iniciativas iopulares"
+    proposal_code_prefix: "Prefijo para los códigos de iniciativas populares"
     votes_for_proposal_success: "Número de votos necesarios para aprobar una iniciativa popular"
     months_to_archive_proposals: "Meses para archivar las iniciativas populares"
     email_domain_for_officials: "Dominio de email para cargos públicos"
