@@ -136,6 +136,12 @@ header {
       li {
         flex-grow: 1;
         white-space: nowrap;
+        a:hover {
+          border-bottom: 3px solid black;
+        }
+        a.active:hover {
+          border-bottom: 2px solid black;
+        }
         a.proposals {
           color: $proposals;
         }
