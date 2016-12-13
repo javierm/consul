@@ -15,6 +15,11 @@
               <span class="bullet">&nbsp;&bull;&nbsp;</span>
               <%= l debate.created_at.to_date %>
 
+              <% if debate.area? %>
+                <span class="bullet">&nbsp;&bull;&nbsp;</span>
+                <%= debate.area %>
+              <%end %>
+
               <% if debate.author.hidden? || debate.author.erased? %>
                 <span class="bullet">&nbsp;&bull;&nbsp;</span>
                 <span class="author">

@@ -1,0 +1,29 @@
+<main>
+  <div class="row">
+    <div id="debates" class="debates-list small-12 column">
+      <a id="print_link" href="javascript:window.print();" class="button warning float-right">
+        <%= t('management.debates.print.print_button') %>
+      </a>
+
+      <%= image_tag "header_print_debates.jpg", class: "for-print-only" %>
+
+      <div class="filters">
+        <span class="for-print-only date-for-print"><%= l Date.today, format: :long %></span>
+
+        <h2 class="inline-block">
+          <span class="not-print"><%= t("debates.index.select_order_long") %></span>
+          <span class="for-print-only"><%= t("management.print.debates_title") %></span>
+        </h2>
+        <%= render 'shared/order_selector', i18n_namespace: "debates.index" %>
+      </div>
+
+      <%= render @debates %>
+      <%= paginate @debates %>
+
+      <div class="for-print-only">
+        <p><strong><%= t("management.print.debates_info") %></strong><br>
+        <%= t("management.print.debates_note") %></p>
+      </div>
+    </div>
+  </div>
+</main>

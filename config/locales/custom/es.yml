@@ -127,6 +127,7 @@ es:
         one: " que contiene '%{search_term}'"
         other: " que contienen '%{search_term}'"
       select_order: Ordenar por
+      select_order_long: Estas viendo las propuestas del cabildo
       start_debate: Empieza una propuesta
       title: Propuestas
     new:

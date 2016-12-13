@@ -255,6 +255,9 @@ Rails.application.routes.draw do
       post :vote, on: :member
       get :print, on: :collection
     end
+    resources :debates, only: [] do
+      get :print, on: :collection
+    end
 
     resources :spending_proposals, only: [:index, :new, :create, :show] do
       post :vote, on: :member

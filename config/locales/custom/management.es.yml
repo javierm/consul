@@ -46,6 +46,7 @@ es:
     menu:
       create_proposal: Crear iniciativa popular
       print_proposals: Imprimir iniciativas populares
+      print_debates: Imprimir propuestas
       support_proposals: Apoyar iniciativas populares
       create_spending_proposal: Crear propuesta de inversión
       print_spending_proposals: Imprimir propts. de inversión

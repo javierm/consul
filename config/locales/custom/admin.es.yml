@@ -66,7 +66,7 @@ es:
           with_confirmed_hide: Confirmados
           without_confirmed_hide: Pendientes
         hidden_debate: Propuesta oculta
-        hidden_proposal: Propuesta oculta
+        hidden_proposal: Iniciativa oculta
         title: Comentarios ocultos
     dashboard:
       index:
@@ -105,6 +105,7 @@ es:
       valuators: Evaluadores
       officials: Cargos públicos
       organizations: Organizaciones
+      proposals: Iniciativas
       settings: Configuración global
       spending_proposals: Propuestas de inversión
       stats: Estadísticas
@@ -184,7 +185,7 @@ es:
           all: Todas
           with_confirmed_hide: Confirmadas
           without_confirmed_hide: Pendientes
-        title: Propuestas ocultas
+        title: Iniciativas ocultas
     settings:
       flash:
         updated: Valor actualizado
@@ -273,15 +274,15 @@ es:
           comments: Comentarios
           debate_votes: Votos en propuestas
           debates: Propuestas
-          proposal_votes: Votos en propuestas
-          proposals: Propuestas
+          proposal_votes: Votos en iniciativas
+          proposals: Iniciativas
           spending_proposals: Propuestas de inversión
           unverified_users: Usuarios sin verificar
           user_level_three: Usuarios de nivel tres
           user_level_two: Usuarios de nivel dos
           users: Usuarios
           verified_users: Usuarios verificados
-          verified_users_who_didnt_vote_proposals: Usuarios verificados que no han votado propuestas
+          verified_users_who_didnt_vote_proposals: Usuarios verificados que no han votado iniciativas
           visits: Visitas
           votes: Votos
         spending_proposals_title: Propuestas de inversión
@@ -293,9 +294,9 @@ es:
         total: Total
         users_who_have_sent_message: Usuarios que han enviado un mensaje privado
       proposal_notifications:
-        title: Notificaciones de propuestas
+        title: Notificaciones de iniciativas
         total: Total
-        proposals_with_notifications: Propuestas con notificaciones
+        proposals_with_notifications: Iniciativas con notificaciones
     tags:
       create: Crear Tema
       destroy: Eliminar Tema
