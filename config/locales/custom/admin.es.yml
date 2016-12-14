@@ -94,7 +94,7 @@ es:
       activity: Actividad de moderadores
       admin: Menú de administración
       banner: Gestionar banners
-      debate_topics: Temas de propuesta
+      debate_topics: Temas de iniciativas populares
       hidden_comments: Comentarios ocultos
       hidden_debates: Propuestas ocultas
       hidden_proposals: Iniciativas ocultas
@@ -301,9 +301,9 @@ es:
       create: Crear Tema
       destroy: Eliminar Tema
       index:
-        add_tag: Añade un nuevo tema de propuesta
-        title: Temas de propuesta
-      mark_as_featured: Proponer tema al crear propuesta
+        add_tag: Añade un nuevo tema para iniciativas populares
+        title: Temas de iniciativas populares 
+      mark_as_featured: Proponer tema al crear iniciativa popular
       name:
         placeholder: Escribe el nombre del tema
       update: Actualizar Tema
