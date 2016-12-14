@@ -67,7 +67,7 @@ es:
           created_at: Más recientes
           flags: Más denunciadas
         title: Iniciativas populares
-        update_areas: Actualizar areas
+        update_areas: Actualizar ámbitos
     users:
       index:
         hidden: Bloqueado
