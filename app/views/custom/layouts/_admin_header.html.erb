@@ -1,7 +1,7 @@
 <header>
   <%= render "shared/top_admin_links" %>
 
-  <div class="expanded row">
+  <div class="expanded row admin">
     <div class="top-bar">
 
       <%= link_to setting['org_name'], admin_root_path, class: "logo show-for-small-only" %>
@@ -14,13 +14,13 @@
       <div id="responsive-menu">
         <div class="top-bar-title">
           <%= link_to admin_root_path, class: "hide-for-small-only" do %>
-            <%= image_tag('logo_header.png', class: 'hide-for-small-only float-left', size: '80x80', alt: t("layouts.header.logo")) %>
+            <%= image_tag('logo_header.png', class: 'hide-for-small-only float-left admin', alt: t("layouts.header.logo")) %>
             <%= setting['org_name'] %>
             &nbsp;|&nbsp;<%= t("admin.dashboard.index.title") %>
           <% end %>
         </div>
 
-        <div class="top-bar-right">
+        <div class="top-bar-right admin">
           <ul class="menu">
             <%= render "devise/menu/login_items" %>
           </ul>

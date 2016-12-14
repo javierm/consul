@@ -21,6 +21,12 @@ body {
       width: 100%;
     }
   }
+  img.admin{
+    @include breakpoint(small) {
+      height: auto;
+      width: 4rem;
+    }
+  }
 }
 
 $brand: #212D5D;
@@ -101,7 +107,11 @@ header {
           @media only screen and (min-width: 639px) {
             margin-top: 15px;
           }
+          &.admin li{
+            display: initial;
+          }
         }
+
         .top-bar-right li {
           display: table-row;
           height: initial;
