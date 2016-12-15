@@ -175,7 +175,7 @@ es:
     user: la cuenta
     verification/sms: el teléfono
   geozones:
-    none: Toda la ciudad
+    none: Toda la isla
     all: Todos los ámbitos
   layouts:
     application:
