@@ -4,7 +4,6 @@ require 'csv'
 csv_text = File.read(Rails.root.join('db', 'demo_users.csv'))
 csv = CSV.parse(csv_text, :headers => false, col_sep: ';')
 
-DatabaseCleaner.clean_with :truncation
 
 puts "Creating Users"
 
