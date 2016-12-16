@@ -24,6 +24,6 @@ end
 csv.each_with_index do |row, i|
     puts row
     a = create_user(row.last, row.first)
-    a.update(residence_verified_at: Time.now, confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1", verified_at: Time.now, document_number:i )
+    a.update(residence_verified_at: Time.now, confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1", verified_at: Time.now, document_number:i.to_s*8 )
 end
 
