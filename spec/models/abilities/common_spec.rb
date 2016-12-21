@@ -9,13 +9,15 @@ describe "Abilities::Common" do
   let(:debate) { create(:debate) }
   let(:comment) { create(:comment) }
   let(:proposal) { create(:proposal) }
-  let(:own_debate) { create(:debate, author: user) }
+  # let(:own_debate) { create(:debate, author: user) }
   let(:own_comment) { create(:comment, author: user) }
   let(:own_proposal) { create(:proposal, author: user) }
 
   it { should be_able_to(:index, Debate) }
   it { should be_able_to(:show, debate) }
   it { should be_able_to(:vote, debate) }
+  it { should_not be_able_to(:edit, debate) }
+  it { should_not be_able_to(:create, Debate)}
 
   it { should be_able_to(:show, user) }
   it { should be_able_to(:edit, user) }
@@ -42,8 +44,8 @@ describe "Abilities::Common" do
   it { should_not be_able_to(:show, DirectMessage) }
 
   describe 'flagging content' do
-    it { should be_able_to(:flag, debate) }
-    it { should be_able_to(:unflag, debate) }
+    # it { should be_able_to(:flag, debate) }
+    # it { should be_able_to(:unflag, debate) }
 
     it { should be_able_to(:flag, comment) }
     it { should be_able_to(:unflag, comment) }
@@ -55,8 +57,8 @@ describe "Abilities::Common" do
       it { should_not be_able_to(:flag, own_comment) }
       it { should_not be_able_to(:unflag, own_comment) }
 
-      it { should_not be_able_to(:flag, own_debate) }
-      it { should_not be_able_to(:unflag, own_debate) }
+      # it { should_not be_able_to(:flag, own_debate) }
+      # it { should_not be_able_to(:unflag, own_debate) }
 
       it { should_not be_able_to(:flag, own_proposal) }
       it { should_not be_able_to(:unflag, own_proposal) }
@@ -69,14 +71,14 @@ describe "Abilities::Common" do
     it { should_not be_able_to(:edit, other_user) }
   end
 
-  describe "editing debates" do
-    let(:own_debate_non_editable) { create(:debate, author: user) }
-    before { allow(own_debate_non_editable).to receive(:editable?).and_return(false) }
-
-    it { should be_able_to(:edit, own_debate) }
-    it { should_not be_able_to(:edit, debate) } # Not his
-    it { should_not be_able_to(:edit, own_debate_non_editable) }
-  end
+  # describe "editing debates" do
+  #   let(:own_debate_non_editable) { create(:debate, author: user) }
+  #   before { allow(own_debate_non_editable).to receive(:editable?).and_return(false) }
+  #
+  #   it { should be_able_to(:edit, own_debate) }
+  #   it { should_not be_able_to(:edit, debate) } # Not his
+  #   it { should_not be_able_to(:edit, own_debate_non_editable) }
+  # end
 
   describe "editing proposals" do
     let(:own_proposal_non_editable) { create(:proposal, author: user) }

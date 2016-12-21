@@ -186,6 +186,7 @@ describe Proposal do
 
     describe "from level two verified users" do
       it "should register vote" do
+        Setting["days_to_archive_proposals"] = 45
         user = create(:user, residence_verified_at: Time.now, confirmed_phone: "666333111")
         expect {proposal.register_vote(user, 'yes')}.to change{proposal.reload.votes_for.size}.by(1)
       end
@@ -193,6 +194,7 @@ describe Proposal do
 
     describe "from level three verified users" do
       it "should register vote" do
+        Setting["days_to_archive_proposals"] = 45
         user = create(:user, verified_at: Time.now)
         expect {proposal.register_vote(user, 'yes')}.to change{proposal.reload.votes_for.size}.by(1)
       end
@@ -231,7 +233,7 @@ describe Proposal do
 
   describe '#hot_score' do
     let(:now) { Time.now }
-
+    Setting["days_to_archive_proposals"] = 45
     it "increases for newer proposals" do
       old = create(:proposal, :with_hot_score, created_at: now - 1.day)
       new = create(:proposal, :with_hot_score, created_at: now)
@@ -264,18 +266,43 @@ describe Proposal do
 
     describe 'actions which affect it' do
       let(:proposal) { create(:proposal, :with_hot_score) }
-
       it "increases with votes" do
+        Setting["days_to_archive_proposals"] = 45
         previous = proposal.hot_score
         5.times { proposal.register_vote(create(:user, verified_at: Time.now), true) }
         expect(previous).to be < proposal.reload.hot_score
       end
 
       it "increases with comments" do
+        Setting["days_to_archive_proposals"] = 45
         previous = proposal.hot_score
         25.times{ Comment.create(user: create(:user), commentable: proposal, body: 'foobarbaz') }
         expect(previous).to be < proposal.reload.hot_score
       end
+    end
+  end
+
+  describe "#area" do
+    let(:proposal) { create(:proposal) }
+
+    it "sets default area value to 'insular'" do
+      expect(proposal.area).to eq 'insular'
+    end
+
+    it "sets default area_revised_at to empty" do
+      expect(proposal.area_revised_at).to eq nil
+    end
+
+    it "filters proposals with pending area review" do
+      expect(Proposal.pending_area_review).to include(proposal)
+    end
+
+    it "sets area_revised_at when area changed from other non empty value" do
+      proposal.area_revised('estatal')
+
+      expect(proposal.area_revised_at).to_not eq 'estatal'
+      expect(proposal.area_revised_at).to_not eq nil
+      expect(proposal.area_revised?).to eq true
     end
   end
 
@@ -316,6 +343,7 @@ describe Proposal do
       let(:proposal) { create(:proposal, :with_confidence_score) }
 
       it "increases with like" do
+        Setting["days_to_archive_proposals"] = 45
         previous = proposal.confidence_score
         5.times { proposal.register_vote(create(:user, verified_at: Time.now), true) }
         expect(previous).to be < proposal.confidence_score
@@ -820,6 +848,7 @@ describe Proposal do
 
   describe "archived" do
     before(:each) do
+      Setting["days_to_archive_proposals"] = 45
       @new_proposal = create(:proposal)
       @archived_proposal = create(:proposal, :archived)
     end
@@ -837,6 +866,7 @@ describe Proposal do
     end
 
     it "scope archived" do
+      Setting["days_to_archive_proposals"] = 45
       not_archived = Proposal.not_archived
 
       expect(not_archived.size).to eq(1)

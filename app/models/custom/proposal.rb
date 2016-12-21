@@ -5,7 +5,7 @@ class Proposal
 
   validates :area, presence: true
 
-  before_validation :set_default_area if :new_record?
+  before_validation :set_default_area, if: :new_record?
 
   AREAS = [ :municipal, :insular, :autonomous, :state ]
   DEFAULT_AREA = :insular

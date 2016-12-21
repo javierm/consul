@@ -78,7 +78,7 @@ describe Debate do
 
   describe "#area" do
     it "should be not valid without a thematic area" do
-      debate.area = nil 
+      debate.update_attribute(:area, nil)
       expect(debate).to_not be_valid
     end
   end
