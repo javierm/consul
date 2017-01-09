@@ -23,6 +23,8 @@ module Abilities
       can :create, Comment
       # can :create, Debate
       can :create, Proposal
+      can :create, AnsweredSurvey
+      can :read, AnsweredSurvey, user_id: user.id
 
       can :suggest, Debate
       can :suggest, Proposal

@@ -1,0 +1,23 @@
+<% provide :title do %><%= @answered_survey.name %><% end %>
+<section class="ansered_survey-show">
+    <div class="row">
+      <div class="small-12 medium-9 column">
+        <h1><%= @answered_survey.name %></h1>
+        <% @answered_survey.survey_question_answers.each do |answer| %>
+          <h2><%= answer.survey_question %></h2>
+          <h3><%= answer.survey_answer %></h3>
+        <% end %>
+      </div>
+    <div class="small-12 medium-3 column">
+      <span class="icon-proposals float-right"></span>
+      <h2><%= t("answered_surveys.new.recommendations_title") %></h2>
+      <ul class="recommendations">
+        <li><%= t("answered_surveys.new.recommendation_one") %></li>
+        <li><%= t("answered_surveys.new.recommendation_two") %></li>
+        <li><%= t("answered_surveys.new.recommendation_three") %></li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+

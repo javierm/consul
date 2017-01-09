@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161120164232) do
+ActiveRecord::Schema.define(version: 20170109092402) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-  enable_extension "unaccent"
   enable_extension "pg_trgm"
+  enable_extension "unaccent"
 
   create_table "activities", force: :cascade do |t|
     t.integer  "user_id"
@@ -62,6 +62,12 @@ ActiveRecord::Schema.define(version: 20161120164232) do
 
   add_index "annotations", ["legislation_id"], name: "index_annotations_on_legislation_id", using: :btree
   add_index "annotations", ["user_id"], name: "index_annotations_on_user_id", using: :btree
+
+  create_table "answered_surveys", force: :cascade do |t|
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "banners", force: :cascade do |t|
     t.string   "title",           limit: 80
@@ -118,24 +124,25 @@ ActiveRecord::Schema.define(version: 20161120164232) do
     t.string   "title",                        limit: 80
     t.text     "description"
     t.integer  "author_id"
-    t.datetime "created_at",                                          null: false
-    t.datetime "updated_at",                                          null: false
+    t.datetime "created_at",                                           null: false
+    t.datetime "updated_at",                                           null: false
     t.string   "visit_id"
     t.datetime "hidden_at"
-    t.integer  "flags_count",                             default: 0
+    t.integer  "flags_count",                              default: 0
+    t.integer  "cached_votes_total",                       default: 0
+    t.integer  "cached_votes_up",                          default: 0
+    t.integer  "cached_votes_down",                        default: 0
     t.datetime "ignored_flag_at"
-    t.integer  "cached_votes_total",                      default: 0
-    t.integer  "cached_votes_up",                         default: 0
-    t.integer  "cached_votes_down",                       default: 0
-    t.integer  "comments_count",                          default: 0
+    t.integer  "comments_count",                           default: 0
     t.datetime "confirmed_hide_at"
-    t.integer  "cached_anonymous_votes_total",            default: 0
-    t.integer  "cached_votes_score",                      default: 0
-    t.integer  "hot_score",                    limit: 8,  default: 0
-    t.integer  "confidence_score",                        default: 0
+    t.integer  "cached_anonymous_votes_total",             default: 0
+    t.integer  "cached_votes_score",                       default: 0
+    t.integer  "hot_score",                    limit: 8,   default: 0
+    t.integer  "confidence_score",                         default: 0
     t.integer  "geozone_id"
     t.tsvector "tsv"
     t.datetime "featured_at"
+    t.string   "external_link",                limit: 100
     t.string   "area"
   end
 
@@ -359,6 +366,39 @@ ActiveRecord::Schema.define(version: 20161120164232) do
   add_index "spending_proposals", ["author_id"], name: "index_spending_proposals_on_author_id", using: :btree
   add_index "spending_proposals", ["geozone_id"], name: "index_spending_proposals_on_geozone_id", using: :btree
   add_index "spending_proposals", ["tsv"], name: "index_spending_proposals_on_tsv", using: :gin
+
+  create_table "survey_question_answers", force: :cascade do |t|
+    t.integer  "survey_question_value_id"
+    t.integer  "answered_survey_id"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  create_table "survey_question_values", force: :cascade do |t|
+    t.text     "text"
+    t.integer  "survey_question_id"
+    t.integer  "order"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
+  create_table "survey_questions", force: :cascade do |t|
+    t.text     "text"
+    t.integer  "code"
+    t.integer  "survey_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "surveys", force: :cascade do |t|
+    t.string   "name"
+    t.string   "code"
+    t.date     "start"
+    t.date     "end"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.text     "description"
+  end
 
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id"

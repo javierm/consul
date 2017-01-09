@@ -4,9 +4,9 @@ class WelcomeController
   include CommentableActions
 
   def index
-    if current_user
-      redirect_to :proposals
-    end
+    # if current_user
+    #   redirect_to :proposals
+    # end
 
     @proposals = Proposal.all.not_archived.sort_by_confidence_score
     @proposals = @proposals.page(1).limit(3).for_render
