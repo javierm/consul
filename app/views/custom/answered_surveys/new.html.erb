@@ -5,6 +5,7 @@
     <%=raw @survey.description%>
     <div class="small-12 column">
       <%= form_for @answered_survey do |f| %>
+        <%= f.hidden_field :survey_id %>
         <%= render "shared/errors", resource: @answered_survey %>
         <%= f.fields_for :survey_question_answers do |answer| %>
           <div class="small-12 column">

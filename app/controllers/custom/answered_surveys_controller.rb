@@ -2,9 +2,12 @@ class AnsweredSurveysController < ApplicationController
   load_and_authorize_resource
 
   def new
-    @survey = Survey.find(params[:survey])
+    @survey = Survey.find(params[:survey_id])
+    # User can answer survey once
+    @answered_survey = @survey.answer_for(current_user) || AnsweredSurvey.new(survey_id: @survey, user_id: current_user.id)
+    redirect_to @answered_survey, notice: I18n.t("flash.actions.new.already_answered_survey") unless @answered_survey.new_record?
+
     @survey_questions = @survey.survey_questions
-    @answered_survey = AnsweredSurvey.new()
     @survey_questions.count.times { @answered_survey.survey_question_answers.build}
   end
 
