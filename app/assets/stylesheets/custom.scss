@@ -252,6 +252,38 @@ aside.margin-bottom {
   }
 }
 
+.survey_banner {
+  display: inline-block;
+  position: relative;
+  .not-logged {
+    background: rgba(125,73,64,.9);
+    color: white;
+    font-size: $small-font-size;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 100%;
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#222222', endColorstr='#222222'); /* IE */
+
+    span {
+      a {
+        color: white;
+        text-decoration: underline;
+      }
+    }
+    &:before {
+      content: '';
+      display: inline-block;
+      height: 100%;
+      vertical-align: middle;
+    }
+  }
+}
+
+
+
 .social-news {
   border: 1px solid black;
   margin-top: 15px;

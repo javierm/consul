@@ -5,3 +5,14 @@
 //
 //
 
+//= require surveys
+
+var initialize_custom_modules = function() {
+  App.Surveys.initialize();
+}
+
+$(function(){
+  $(document).ready(initialize_custom_modules);
+  $(document).on('page:load', initialize_custom_modules);
+  $(document).on('ajax:complete', initialize_custom_modules);
+})

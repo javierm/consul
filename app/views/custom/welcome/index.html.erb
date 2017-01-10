@@ -1,7 +1,18 @@
 <main>
   <div class="wrap row menu">
     <div class="small-12 medium-9 column">
-      <%= link_to image_tag('Banner.png', class: 'banner'), new_answered_survey_path(survey_id: 1) %>
+      <div class="survey_banner">
+        <%= link_to image_tag('Banner.png', class: 'banner'), new_answered_survey_path(survey_id: 1) %>
+        <% if !user_signed_in? %>
+          <div class="not-logged" style='display:none' aria-hidden="false">
+            <span>
+              <%= t("votes.unauthenticated",
+                signin: link_to(t("votes.signin"), new_user_session_path),
+                signup: link_to(t("votes.signup"), new_user_registration_path)).html_safe %>
+            </span>
+          </div>
+        <% end %>
+      </div>
       <div id="proposals" class="proposals-list small-12 medium-6 column">
         <h3><%= t("proposals.index.title") %> <%= t("proposals.index.orders.confidence_score").downcase %></h3>
         <div id="proposals-list">
