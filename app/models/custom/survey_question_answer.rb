@@ -1,16 +1,12 @@
 class SurveyQuestionAnswer < ActiveRecord::Base
   belongs_to :answered_survey
-  belongs_to :survey_question_value
+  belongs_to :value, class_name: 'SurveyQuestionValue', foreign_key: :survey_question_value_id
+  belongs_to :question, class_name: 'SurveyQuestion', inverse_of: :answers, foreign_key: :survey_question_id
 
-  validate :only_one_answer_per_question
+  delegate :text, to: :question, prefix: true
+  delegate :text, to: :value, prefix: true
 
-  def survey_answer
-    self.survey_question_value.text
-  end
-
-  def survey_question
-    self.survey_question_value.survey_question.text
-  end
+  #validate :only_one_answer_per_question
 
   private
 

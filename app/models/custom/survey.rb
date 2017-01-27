@@ -1,7 +1,7 @@
 class Survey < ActiveRecord::Base
   validates :code, presence: true
 
-  has_many :survey_questions
+  has_many :questions, class_name: 'SurveyQuestion'
   has_many :answered_surveys
 
   def answer_for(user)

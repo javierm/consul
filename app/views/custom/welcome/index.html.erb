@@ -2,7 +2,7 @@
   <div class="wrap row menu">
     <div class="small-12 medium-9 column">
       <div class="survey_banner">
-        <%= link_to image_tag('Banner.png', class: 'banner'), new_answered_survey_path(survey_id: 1) %>
+        <%= link_to image_tag('Banner.png', class: 'banner'), new_survey_answered_survey_path(@survey = Survey.find_by_code('ENC-1')) %>
         <% if !user_signed_in? %>
           <div class="not-logged" style='display:none' aria-hidden="false">
             <span>

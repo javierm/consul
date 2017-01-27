@@ -4,14 +4,14 @@
     <h1><%= @survey.name %></h1>
     <%=raw @survey.description%>
     <div class="small-12 column">
-      <%= form_for @answered_survey do |f| %>
-        <%= f.hidden_field :survey_id %>
+      <%= form_for [@survey, @answered_survey] do |f| %>
         <%= render "shared/errors", resource: @answered_survey %>
-        <%= f.fields_for :survey_question_answers do |answer| %>
+        <%= f.fields_for :answers do |answer| %>
           <div class="small-12 column">
-            <h3><%= @survey_questions[answer.index].text %></h3>
+            <h3><%= answer.object.question_text %></h3>
+            <%= answer.hidden_field :survey_question_id %>
             <h3>
-              <%= answer.collection_radio_buttons :survey_question_value_id, @survey_questions[answer.index].survey_question_values, :id, :text do |option| %>
+              <%= answer.collection_radio_buttons :survey_question_value_id, answer.object.question.values, :id, :text do |option| %>
                 <%= option.label(:class => 'radio-inline') {option.radio_button + option.text} %>
               <% end %>
             </h3>

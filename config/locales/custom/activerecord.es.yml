@@ -90,3 +90,6 @@ es:
           attributes:
             minimum_interval:
               invalid: "Debes esperar un mínimo de %{interval} días entre notificaciones"
+        survey_question_answer:
+          not_all_answered: "Debe responder a todas las preguntas de la encuesta"
+            

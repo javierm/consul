@@ -25,6 +25,7 @@ module Abilities
       can :create, Proposal
       can :create, AnsweredSurvey
       can :read, AnsweredSurvey, user_id: user.id
+      can :read, Survey
 
       can :suggest, Debate
       can :suggest, Proposal

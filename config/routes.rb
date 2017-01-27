@@ -101,7 +101,9 @@ Rails.application.routes.draw do
 
   resource :verification, controller: "verification", only: [:show]
 
-  resources :answered_surveys, only: [:new, :create, :show]
+  resources :surveys, only: [:show] do
+    resources :answered_surveys, only: [:new, :create, :show]
+  end
 
   scope module: :verification do
     resource :residence, controller: "residence", only: [:new, :create]

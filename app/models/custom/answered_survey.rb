@@ -1,18 +1,15 @@
 class AnsweredSurvey < ActiveRecord::Base
   belongs_to :user
   belongs_to :survey
-  has_many :survey_question_answers
+  has_many :answers, class_name: 'SurveyQuestionAnswer'
 
   validates :user_id, uniqueness: { scope: :survey_id }
+  validate :validate_all_questions_answered
+  delegate :name, to: :survey
+  accepts_nested_attributes_for :answers, :allow_destroy => true
 
-  accepts_nested_attributes_for :survey_question_answers, :allow_destroy => true
-
-  def name
-    self.survey_question_answers.first.survey_question_value.survey_question.survey.name
+  def validate_all_questions_answered
+    errors.add(:base, I18n.t('activerecord.errors.models.survey_question_answer.not_all_answered')) if answers.any? {|q| q.survey_question_value_id.nil?}
   end
-
-  def survey
-    self.survey_question_answers.first.survey_question_value.survey_question.survey
-  end
-
 end
+

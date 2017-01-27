@@ -1,6 +1,6 @@
 class SurveyQuestionValue < ActiveRecord::Base
   validates :text, presence: true
 
-  belongs_to :survey_question
-  has_many :survey_question_answers
+  belongs_to :question, class_name: 'SurveyQuestion'
+  has_many :answers, class_name: 'SurveyQuestionAnswer'
 end

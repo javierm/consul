@@ -3,9 +3,9 @@
     <div class="row">
       <div class="small-12 medium-9 column">
         <h1><%= @answered_survey.name %></h1>
-        <% @answered_survey.survey_question_answers.each do |answer| %>
-          <h2><%= answer.survey_question %></h2>
-          <h3><%= answer.survey_answer %></h3>
+        <% @answered_survey.answers.each do |answer| %>
+          <h4><%= answer.question_text%></h2>
+          <h5><%= answer.value_text %></h3>
         <% end %>
       </div>
     <div class="small-12 medium-3 column">
