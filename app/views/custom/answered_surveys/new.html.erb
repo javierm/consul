@@ -7,11 +7,15 @@
       <%= form_for [@survey, @answered_survey] do |f| %>
         <%= render "shared/errors", resource: @answered_survey %>
         <%= f.fields_for :answers do |answer| %>
+          <% ans = answer.object %>
           <div class="small-12 column">
-            <h3><%= answer.object.question_text %></h3>
+            <h3><%= ans.question_text %></h3>
+            <% if ans.errors.any? %>
+              <small class="error"><%= ans.errors.full_messages.join("; ") %></small>
+            <% end %>
             <%= answer.hidden_field :survey_question_id %>
             <h3>
-              <%= answer.collection_radio_buttons :survey_question_value_id, answer.object.question.values, :id, :text do |option| %>
+              <%= answer.collection_radio_buttons :survey_question_value_id, ans.question.values, :id, :text do |option| %>
                 <%= option.label(:class => 'radio-inline') {option.radio_button + option.text} %>
               <% end %>
             </h3>

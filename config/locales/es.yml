@@ -154,6 +154,7 @@ es:
     spending_proposal: la propuesta de gasto
     user: la cuenta
     verification/sms: el teléfono
+    answered_survey: la encuesta
   geozones:
     none: Toda la ciudad
     all: Todos los ámbitos

@@ -1,6 +1,6 @@
 class SurveyQuestionValue < ActiveRecord::Base
-  validates :text, presence: true
+  validates :text, :question, presence: true
 
-  belongs_to :question, class_name: 'SurveyQuestion'
-  has_many :answers, class_name: 'SurveyQuestionAnswer'
+  belongs_to :question, class_name: 'SurveyQuestion', foreign_key: 'survey_question_id', inverse_of: :values
+  has_many :answers, class_name: 'SurveyQuestionAnswer', inverse_of: :value
 end

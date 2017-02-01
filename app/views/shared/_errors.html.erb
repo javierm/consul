@@ -11,6 +11,7 @@
         <%= message %>
       <% else %>
         <%= t("form.not_saved", resource: t("form.#{resource.class.to_s.underscore}")) %>
+        <%= resource.errors.full_messages_for(:base).join("; ") %>
       <% end %>
     </strong>
   </div>

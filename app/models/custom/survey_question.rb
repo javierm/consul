@@ -1,5 +1,5 @@
 class SurveyQuestion < ActiveRecord::Base
-  validates :text, presence: true
+  validates :text, :survey, presence: true
 
   belongs_to :survey
   has_many :values, class_name: 'SurveyQuestionValue'

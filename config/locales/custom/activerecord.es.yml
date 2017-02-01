@@ -34,6 +34,9 @@ es:
       spending_proposal:
         one: "Propuesta de inversión"
         other: "Propuestas de inversión"
+      answered_survey:
+        one: "Encuesta"
+        other: "Encuestas"
     attributes:
       comment:
         body: "Comentario"
@@ -68,6 +71,8 @@ es:
         external_url: "Enlace a documentación adicional"
         geozone_id: "Ámbito de actuación"
         title: "Título"
+      survey_question_answer:
+        value: Respuesta
     errors:
       models:
         user:

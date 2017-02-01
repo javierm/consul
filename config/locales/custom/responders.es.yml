@@ -2,6 +2,8 @@
 es:
   flash:
     actions:
+      new:
+        already_answered_survey: "Usted ya ha respondido a esta encuesta anteriormente"
       create:
         notice: "%{resource_name} creado correctamente."
         debate: "Propuesta creada correctamente."
@@ -9,6 +11,7 @@ es:
         proposal: "Iniciativa popular creada correctamente."
         proposal_notification: "Tu message ha sido enviado correctamente."
         spending_proposal: "Propuesta de inversión creada correctamente. Puedes acceder a ella desde %{activity}"
+        answered_survey: "Encuesta rellenada correctamente"
       save_changes:
         notice: Cambios guardados
       update:
