@@ -15,7 +15,7 @@
             <% end %>
             <%= answer.hidden_field :survey_question_id %>
             <h3>
-              <%= answer.collection_radio_buttons :survey_question_value_id, ans.question.values, :id, :text do |option| %>
+              <%= answer.collection_radio_buttons :survey_question_value_id, ans.question.values.order(:order), :id, :text do |option| %>
                 <%= option.label(:class => 'radio-inline') {option.radio_button + option.text} %>
               <% end %>
             </h3>

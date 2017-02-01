@@ -8,7 +8,7 @@ class AnsweredSurveysController < ApplicationController
       @answered_survey = answer_survey 
       redirect_to [@survey, @answered_survey], notice: I18n.t("flash.actions.new.already_answered_survey")
     end
-    @questions = @survey.questions
+    @questions = @survey.questions.order(:code)
     @questions.each do |question|
       ans = @answered_survey.answers.new
       ans.question = question
