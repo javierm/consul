@@ -145,31 +145,59 @@ header {
           line-height: initial;
         }
       }
+      @media only screen and (min-width: 640px) {
+        li.proposals{
+            background-image: url("custom/button_iniciativa.png");
+            background-size: 100% 100%;
+        }
+        li.debates{
+            background-image: url("custom/button_propuesta.png");
+            background-size: 100% 100%;
+        }
+        li.faq{
+            background-image: url("custom/button_info.png");
+            background-size: 100% 100%;
+        }
 
-      li {
-        flex-grow: 1;
-        white-space: nowrap;
-        a:hover {
-          border-bottom: 3px solid black;
+        li {
+          flex-grow: 1;
+          white-space: nowrap;
+          a:hover {
+            border-bottom: 2px solid #004A83;
+          }
+
+          a:hover h1{
+            color: white;
+          }
+          h1 {
+            font-size: 1.8em;
+            padding: 0.2em 0.2em 0.6em 0.3em;
+            text-align: center;
+          }
         }
-        a.active:hover {
-          border-bottom: 2px solid black;
+        a, a.active, a:hover, a:active {
+          color:white;
         }
-        a.proposals {
-          color: $proposals;
+
+        a:hover{
+            text-decoration: none;
         }
-        a.debates {
-          color: $debates;
-        }
-        a.city_council_debates {
-          color: $city_council_debates;
-        }
-        a.organizations {
-          color: $organizations;
-        }
-        a.volunteers {
-          color: $volunteers;
-        }
+
+        // a.proposals {
+        //   color: $proposals;
+        // }
+        // a.debates {
+        //   color: $debates;
+        // }
+        // a.city_council_debates {
+        //   color: $city_council_debates;
+        // }
+        // a.organizations {
+        //   color: $organizations;
+        // }
+        // a.volunteers {
+        //   color: $volunteers;
+        // }
       }
       li:last-child{
         margin-right: 0;
