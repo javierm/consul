@@ -147,15 +147,15 @@ header {
       }
       @media only screen and (min-width: 640px) {
         li.proposals{
-            background-image: url("custom/button_iniciativa.png");
+            background-image: image-url("button_iniciativa.png");
             background-size: 100% 100%;
         }
         li.debates{
-            background-image: url("custom/button_propuesta.png");
+            background-image: image-url("button_propuesta.png");
             background-size: 100% 100%;
         }
         li.faq{
-            background-image: url("custom/button_info.png");
+            background-image: image-url("button_info.png");
             background-size: 100% 100%;
         }
 
