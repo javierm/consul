@@ -37,6 +37,10 @@ FactoryGirl.define do
     trait :with_confirmed_hide do
       confirmed_hide_at Time.now
     end
+
+    trait :residence_requested do
+      residence_requested_at Date.today
+    end
   end
 
   factory :identity do
@@ -55,12 +59,12 @@ FactoryGirl.define do
     user
     document_number
     document_type    "1"
-    date_of_birth    Date.new(1980, 12, 31)
-    postal_code      "28013"
+    date_of_birth    Date.new(1970, 1, 1) # Age verification api stubbed date
+    postal_code      "35013"
     terms_of_service '1'
 
     trait :invalid do
-      postal_code "28001"
+      postal_code "35001"
     end
   end
 

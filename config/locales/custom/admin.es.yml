@@ -322,6 +322,13 @@ es:
         title: Actividad del usuario (%{user})
     verifications:
       index:
+        confirm: '¿Estás seguro?'
         phone_not_given: No ha dado su teléfono
         sms_code_not_confirmed: No ha introducido su código de seguridad
+        pending_verification: Solicitada verificación de mayoría de edad
+        request_verification: Verificar mayoría de edad
         title: Verificaciones incompletas
+        headers:
+          user: Usuario
+          reason: Motivo
+          check: Seleccionar

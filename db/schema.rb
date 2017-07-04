@@ -199,6 +199,17 @@ ActiveRecord::Schema.define(version: 20170126124703) do
 
   add_index "failed_census_calls", ["user_id"], name: "index_failed_census_calls_on_user_id", using: :btree
 
+  create_table "failed_person_calls", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "document_number"
+    t.string   "document_type"
+    t.date     "date_of_birth"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "failed_person_calls", ["user_id"], name: "index_failed_person_calls_on_user_id", using: :btree
+
   create_table "flags", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "flaggable_type"
@@ -510,6 +521,9 @@ ActiveRecord::Schema.define(version: 20170126124703) do
     t.boolean  "email_on_direct_message",                   default: true
     t.boolean  "official_position_badge",                   default: false
     t.datetime "password_changed_at"
+    t.datetime "residence_requested_at"
+    t.string   "postal_code"
+    t.integer  "failed_person_calls_count",                 default: 0
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
@@ -598,6 +612,7 @@ ActiveRecord::Schema.define(version: 20170126124703) do
   add_foreign_key "annotations", "legislations"
   add_foreign_key "annotations", "users"
   add_foreign_key "failed_census_calls", "users"
+  add_foreign_key "failed_person_calls", "users"
   add_foreign_key "flags", "users"
   add_foreign_key "identities", "users"
   add_foreign_key "locks", "users"

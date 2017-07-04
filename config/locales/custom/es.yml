@@ -2,6 +2,7 @@
 es:
   account:
     show:
+      age_verification_failed: La edad mínima exigida es de 16 años
       change_credentials_link: Cambiar mis datos de acceso
       email_on_comment_label: Recibir un email cuando alguien comenta en mis iniciativas o propuestas
       email_on_comment_reply_label: Recibir un email cuando alguien contesta a mis comentarios
@@ -17,6 +18,8 @@ es:
       email_on_direct_message_label: Recibir emails con mensajes privados
       email_digest_label: Recibir resumen de notificaciones sobre iniciativas populares
       official_position_badge_label: Mostrar etiqueta de tipo de usuario
+      residence_verification_failed: Debe ser residente en uno de los 21 municipios de la isla de Gran Canaria
+      residence_verification_pending: Pendiente de verificación de residencia/edad
       title: Mi cuenta
       user_permission_debates: Participar en propuestas
       user_permission_info: Con tu cuenta ya puedes...

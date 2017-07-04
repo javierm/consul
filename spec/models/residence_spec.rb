@@ -4,6 +4,7 @@ describe Verification::Residence do
 
   let!(:geozone) { create(:geozone, census_code: "01") }
   let(:residence) { build(:verification_residence, document_number: "12345678Z") }
+  let(:attrs) { {user: create(:user), official: create(:user, :level_three) } }
 
   describe "validations" do
 
@@ -12,33 +13,52 @@ describe Verification::Residence do
     end
 
     describe "dates" do
-      it "should be valid with a valid date of birth" do
-        residence = Verification::Residence.new({"date_of_birth(3i)"=>"1", "date_of_birth(2i)"=>"1", "date_of_birth(1i)"=>"1980"})
+      it "should be valid if user has allowed age" do
+        new_attrs = { date_of_birth: Date.new(1970, 1, 1) }
+        new_attrs[:user] = create(:user, :residence_requested)
+        residence = build(:verification_residence, attrs.merge(new_attrs))
+        residence.valid?
         expect(residence.errors[:date_of_birth].size).to eq(0)
       end
 
+      it "should not be valid if user has not allowed age" do
+        new_attrs = { date_of_birth: 5.years.ago }
+        new_attrs[:user] = create(:user, :residence_requested)
+        residence = build(:verification_residence, attrs.merge(new_attrs))
+        expect(residence).to_not be_valid
+        expect(residence.errors[:date_of_birth]).to include("You must be at least 16 years old")
+      end
+
       it "should not be valid without a date of birth" do
-        residence = Verification::Residence.new({"date_of_birth(3i)"=>"", "date_of_birth(2i)"=>"", "date_of_birth(1i)"=>""})
+        new_attrs = { date_of_birth: nil }
+        new_attrs[:user] = create(:user, :residence_requested)
+        residence = build(:verification_residence, attrs.merge(new_attrs))
         expect(residence).to_not be_valid
         expect(residence.errors[:date_of_birth]).to include("can't be blank")
       end
     end
 
-    it "should validate user has allowed age" do
-      residence = Verification::Residence.new({"date_of_birth(3i)"=>"1", "date_of_birth(2i)"=>"1", "date_of_birth(1i)"=>"#{5.year.ago.year}"})
-      expect(residence).to_not be_valid
-      expect(residence.errors[:date_of_birth]).to include("You must be at least 16 years old")
-    end
+    describe "document number" do
+      it "should permit duplication of document_number for same user when requesting verification" do
+        user = build(:user, document_number: residence.document_number)
+        residence.user = user
+        residence.valid?
+        expect(residence.errors[:document_number]).to eq([])
+      end
 
-    it "should validate uniquness of document_number" do
-      user = create(:user)
-      residence.user = user
-      residence.save
+      it "should permit duplication of document_number for same user when verifying" do
+        user = build(:user, :residence_requested, document_number: residence.document_number)
+        residence.user = user
+        residence.official = create(:user, :level_three)
+        residence.valid?
+        expect(residence.errors[:document_number]).to eq([])
+      end
 
-      build(:verification_residence)
-
-      residence.valid?
-      expect(residence.errors[:document_number]).to include("has already been taken")
+      it "should validate uniquness of document_number" do
+        user = create(:user, document_number: residence.document_number)
+        residence.valid?
+        expect(residence.errors[:document_number]).to include("has already been taken")
+      end
     end
 
     it "should validate census terms" do
@@ -62,26 +82,38 @@ describe Verification::Residence do
 
   describe "save" do
 
-    it "should store document number, document type, geozone, date of birth and gender" do
-      user = create(:user)
-      residence.user = user
+    it "should store document number, document type, date of birth, geozone_id and residence_requested_at when requesting verification" do
+      residence = build(:verification_residence, attrs.merge({document_number: '12345678Z', geozone_id: geozone.id}))
+      user = residence.user
       residence.save
 
       user.reload
       expect(user.document_number).to eq('12345678Z')
       expect(user.document_type).to eq("1")
-      expect(user.date_of_birth.year).to eq(1980)
-      expect(user.date_of_birth.month).to eq(12)
-      expect(user.date_of_birth.day).to eq(31)
-      expect(user.gender).to eq('male')
+      expect(user.date_of_birth.year).to eq(1970)
+      expect(user.date_of_birth.month).to eq(1)
+      expect(user.date_of_birth.day).to eq(1)
       expect(user.geozone).to eq(geozone)
+      expect(user.residence_requested_at).to_not be(nil)
+    end
+
+    it "should store residence_verified_at when verifying" do
+      user = create(:user, :residence_requested, date_of_birth: '1970-01-01'.to_date)
+      residence = build(:verification_residence, attrs.merge({user: user, document_number: '12345678Z', geozone_id: geozone.id}))
+      residence.mode = :manual # NOTE we skip residence web service verification until we have access
+      residence.save
+
+      user.reload
+      #expect(user.gender).to eq('male')
+      #expect(user.geozone).to eq(geozone)
+      expect(user.residence_verified_at).to_not be(nil)
     end
 
   end
 
   describe "tries" do
     it "should increase tries after a call to the Census" do
-      residence.postal_code = "28011"
+      residence = build(:verification_residence, :invalid, attrs.merge(user: create(:user, :residence_requested), document_number: "12345678Z"))
       residence.valid?
       expect(residence.user.lock.tries).to eq(1)
     end
@@ -95,7 +127,7 @@ describe Verification::Residence do
 
   describe "Failed census call" do
     it "stores failed census API calls" do
-      residence = build(:verification_residence, :invalid, document_number: "12345678Z")
+      residence = build(:verification_residence, :invalid, attrs.merge(user: create(:user, :residence_requested), document_number: "12345678Z"))
       residence.save
 
       expect(FailedCensusCall.count).to eq(1)
@@ -103,8 +135,8 @@ describe Verification::Residence do
         user_id:         residence.user.id,
         document_number: "12345678Z",
         document_type:   "1",
-        date_of_birth:   Date.new(1980, 12, 31),
-        postal_code:     "28001"
+        date_of_birth:   Date.new(1970, 1, 1),
+        postal_code:     "35001"
       })
     end
   end

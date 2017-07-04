@@ -1,0 +1,5 @@
+<div>
+  <%= t('verification.residence.new.error_not_allowed_age') %>
+  (<%= l(failed_person_call.date_of_birth) %>,
+  <%= t('verification.residence.new.verification_date') %> <%= l(failed_person_call.created_at, format: :datetime) %>)
+</div>

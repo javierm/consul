@@ -406,3 +406,13 @@ a.button.expanded.button-debate{
   }
 
 
+.verify-account {
+  .pending-verification {
+    color: blue;
+  }
+
+  .failed-verification {
+    color: red;
+  }
+}
+

@@ -10,6 +10,7 @@ es:
           failure: Hubo un problema enviándote un email a tu cuenta
         flash:
           success: 'Te hemos enviado un email de confirmación a tu cuenta: %{email}'
+          requested: 'Tu solicitud de verificación de residencia ha sido enviada, antes de 48h debería estar resuelta y podrás finalizar tu proceso de verificación desde tu cuenta'
       show:
         alert:
           failure: Código de verificación incorrecto
@@ -48,10 +49,11 @@ es:
         unconfirmed_residency: Aún no has verificado tu residencia
       create:
         flash:
-          success: Residencia verificada
+          requested: 'Tu solicitud de verificación de residencia ha sido enviada, antes de 48h debería estar resuelta y podrás finalizar tu proceso de verificación desde tu cuenta'
+          success: Verificación completada
       new:
-        accept_terms_text: Acepto %{terms_url} al Padrón
-        accept_terms_text_title: Acepto los términos de acceso al Padrón
+        accept_terms_text: Por la presente declaro que soy residente en uno de los 21 municipios de la isla de Gran Canaria,<br>que la información transmitida es exacta y que acepto todas %{terms_url}.
+        accept_terms_text_title: Por la presente declaro que soy residente en uno de los 21 municipios de la isla de Gran Canaria, que la información transmitida es exacta y que acepto todas las condiciones de servicio.
         date_of_birth: Fecha de nacimiento
         document_number: Número de documento
         document_number_help_title: Ayuda
@@ -69,8 +71,10 @@ es:
         form_errors: evitaron verificar tu residencia
         postal_code: Código postal
         postal_code_note: Para verificar tus datos debes estar empadronado
-        terms: los términos de acceso
+        geozone: Municipio
+        terms: las condiciones de servicio
         title: Verificar residencia
+        verification_date: verif. el
         verify_residence: Verificar residencia
     sms:
       create:

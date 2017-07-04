@@ -1,0 +1,52 @@
+<h2><%= t("admin.verifications.index.title") %></h2>
+
+<%= render 'admin/shared/user_search', url: search_admin_verifications_path %>
+
+<h3><%= page_entries_info @users %></h3>
+
+<%= form_tag request_verification_admin_verifications_path(request.query_parameters), method: :put do %>
+  <p class="js-check">
+    <%= t('shared.check') %>:
+    <%= link_to t('shared.check_all'), '#', data: {check_all: "user_ids[]"} %>
+    |
+    <%= link_to t('shared.check_none'), '#', data: {check_none: "user_ids[]"} %>
+  </p>
+
+  <table>
+    <tr>
+      <th>
+        <%= t("admin.verifications.index.headers.user") %>
+      </th>
+      <th>
+       <%= t("admin.verifications.index.headers.reason") %>
+      </th>
+      <th class="text-center">
+       <%= t("verification.users.index.headers.check") %>
+      </th>
+    </tr>
+    <% @users.each do |user| %>
+      <tr id="<%= dom_id(user) %>">
+        <td>
+          <%= link_to user.name, admin_user_path(user) %>
+        </td>
+        <td>
+          <%= render "pending_step", user: user %>
+        </td>
+        <td class="text-center">
+          <% if user.pending_verification? %>
+            <%= check_box_tag "user_ids[]", user.id, nil, id: "#{dom_id(user)}_check" %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+
+  <div class="float-right">
+    <%= submit_tag t('admin.verifications.index.request_verification'),
+      name: "request_verification",
+      class: "button hollow alert",
+      data: {confirm: t('admin.verifications.index.confirm')}
+    %>
+  </div>
+  <%= paginate @users %>
+<% end %>
