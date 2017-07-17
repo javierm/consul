@@ -27,7 +27,7 @@
 
     <div class="small-12 column">
       <%= f.label :area, t("debates.form.debate_area") %>
-      <%= f.select :area, thematics_areas, label: false %>
+      <%= f.select :area, thematics_areas, label: false, include_blank: t('debates.form.select_area') %>
     </div>
 
     <div class="small-12 column">

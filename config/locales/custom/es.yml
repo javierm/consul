@@ -115,7 +115,8 @@ es:
     form:
       debate_text: Texto inicial de la propuesta
       debate_title: Título de la propuesta
-      debate_area: Área temática
+      debate_area: Área de gobierno
+      select_area: -- seleccione área --
       tags_instructions: Etiqueta esta propuesta.
       tags_label: Temas
       tags_placeholder: "Escribe las etiquetas que desees separadas por coma (',')"
