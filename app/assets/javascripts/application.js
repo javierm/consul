@@ -45,6 +45,7 @@
 //= require valuation_spending_proposal_form
 //= require embed_video
 //= require banners
+//= require cookies_eu
 //= require custom
 
 var initialize_modules = function() {

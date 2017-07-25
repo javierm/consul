@@ -22,6 +22,7 @@
     <%= setting['per_page_code'].try(:html_safe) %>
   </head>
   <body>
+    <%= render 'cookies_eu/consent_banner', link: '/cookies' %>
     <div class="wrapper">
       <%= render 'layouts/header' %>
 
