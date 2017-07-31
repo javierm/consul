@@ -20,6 +20,7 @@
     <%= content_for :social_media_meta_tags %>
 
     <%= setting['per_page_code'].try(:html_safe) %>
+    <%= render "shared/facebook_pixel" %>
   </head>
   <body>
     <%= render 'cookies_eu/consent_banner', link: '/cookies' %>
