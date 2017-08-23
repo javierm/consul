@@ -7,7 +7,7 @@
         <span class="icon-notification" aria-hidden="true" title="<%= t('layouts.header.new_notifications', count: current_user.notifications_count).html_safe %>">
         </span>
       <% else %>
-        <span class="icon-no-notification" aria-hidden="true" title="<%= t('layouts.header.no_notifications') %>"></span>
+        <span class="icon-no-notification hide-for-small-only" aria-hidden="true" title="<%= t('layouts.header.no_notifications') %>"></span>
       <% end %>
       <%= t("layouts.header.notifications") %>
     <% end %>

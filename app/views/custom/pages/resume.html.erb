@@ -1,7 +1,7 @@
 <main>
   <div class="wrap row">
     <div class="small-12 large-9 column">
-      <div class="survey_banner">
+      <div class="survey_banner large-12">
         <%= link_to image_tag('Banner.png', class: 'banner'), new_survey_answered_survey_path(@survey = Survey.find_by_code('ENC-1')) %>
         <% if !user_signed_in? %>
           <div class="not-logged" style='display:none' aria-hidden="false">
@@ -14,7 +14,7 @@
         <% end %>
       </div>
       <div id="proposals" class="proposals-list small-12 large-6 column">
-        <h3><%= t("proposals.index.title") %> <%= t("proposals.index.orders.confidence_score").downcase %></h3>
+        <h3><span class="proposals"><%= t("proposals.index.title") %></span> <%= t("proposals.index.orders.confidence_score").downcase %></h3>
         <div id="proposals-list">
           <%= render partial: 'proposals/proposal', collection: @proposals %>
           <%# <%= paginate @proposals %>
@@ -25,7 +25,7 @@
       </div>
 
       <div id="debates" class="debates-list small-12 large-6 column">
-        <h3><%= t("debates.index.title") %> <%= t("debates.index.orders.confidence_score").downcase %></h3>
+        <h3><span><%= t("debates.index.title") %></span> <%= t("debates.index.orders.confidence_score").downcase %></h3>
         <div id="debates-list">
           <%= render partial: 'debates/debate', collection: @debates %>
           <%# <%= paginate @debates %>
@@ -35,10 +35,12 @@
         </div>
       </div>
     </div>
-
     <div class="small-12 large-3 column">
       <aside class="margin-bottom">
-        <%= link_to new_proposal_path do %>
+        <div class="hide-for-large-only">
+          <%= link_to t("proposals.index.start_proposal"), new_proposal_path, class: 'button expanded' %>
+        </div>
+        <%= link_to new_proposal_path, class: "show-for-large-only" do %>
           <%= image_tag 'create_proposal.png' %>
         <% end %>
         <%= render 'shared/summary' %>

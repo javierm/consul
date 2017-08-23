@@ -29,7 +29,6 @@ body {
   }
 }
 
-$brand: #212D5D;
 $proposals: #ad0e17;
 $debates: #d68700;
 $city_council_debates: #652682;
@@ -42,166 +41,158 @@ $icons: #FDE91E;
 // we import file again so new values are used
 @import 'participation';
 $municipalities: #212D5D;
-
+$header-color: #F9C822;
 $button_bck: #73160D;
-
-.wrapper, .footer {
-  max-width: 75rem;
-  margin: auto;
-}
-
+$header-small-font-color: #273877;
+$text-summary: #273877;
 header {
-  background-color: $body-background;
-  border-bottom: none;
-  .top-links {
-    background-color: $body-background;
-    padding-right: 0;
-    .row {
-      background-color: $brand;
-      a {
-        display: inline-block;
-        padding: 0;
-        span {
-          vertical-align: middle;
-          font-size: 16px;
-          color: $icons;
-        }
-        img {
-          vertical-align: -50%;
-          width: 24px;
-          display: inline-block;
-          margin-right: 0;
-        }
-      }
-      .social {
-        a {
-          margin: 0;
-          img {
-            width: 50px;
-          }
-        }
-      }
-      .external-links{
-        ul.menu{
-          float: right;
-        }
-      }
-    }
-  }
-
+  border: none;
+  background: $header-color;
+  background-image: url("background_header.png") !important;
   & > .row {
     .top-bar {
-      background-color: #bbb!important;
-      height: auto;
+      background-color: transparent!important;
       #responsive-menu {
         .top-bar-title {
           margin-right: 0;
           line-height: 0;
+          img.logo{
+            margin-bottom: -50px;
+            width: 220px;
+            height: 180px;
+          }
           a {
             color: $text;
             @include logo;
           }
         }
-        .top-bar-right {
-          margin-bottom: 15px;
-          @media only screen and (min-width: 639px) {
-            margin-top: 15px;
-          }
-          &.admin li{
-            display: initial;
-          }
+      }
+      .top-bar-right{
+        margin-top: 1em;
+        img.logo{
+          width: 180px;
+          height: 85px;
         }
-
-        .top-bar-right li {
-          display: table-row;
-          height: initial;
-          a {
+        ul.manu-admin{
+        }
+        ul.menu{
+          display: inline;
+          li {
+            height: auto;
             display: inline-block;
-            color: $text;
-            padding: 0.6rem 1rem;
-            img {
-              vertical-align: -50%;
-              width: 24px;
-              height: 24px;
-              display: inline-block;
-              margin-right: 0;
-              &.icon_button {
-                width: 120px;
-                height: auto;
+            border-right: 1px solid white;
+            a {
+              padding: 0.5rem;
+              color: $header-small-font-color;
+              img{
+                width: 16px;
+              }
+            }
+          }
+          li:last-child{
+            border:none;
+          } 
+        }
+        @media only screen and (max-width: 639px) {
+          text-align: right;
+          padding: 0;
+          margin-top: 0;
+          line-height: 1;
+          .principal-menu ul {
+            display: inline;
+            margin: 0;
+            padding: 0;
+            li a{
+              display: block;
+              width: 100%;
+              text-transform: uppercase;
+              background-color: white;
+              margin-bottom: 2px;
+              padding: 0.3em 1em;
+            }
+            li a.active{
+              text-decoration: underline;
+              color: $header-small-font-color;
+              font-weight: bold;
+            }
+          }
+          ul.menu{
+            li{
+             border-right: none; 
+              a {
+                font-size: 0.8em;
               }
             }
           }
         }
+
       }
+
     }
   }
 
   & .subnavigation {
+    border-top: 1px solid $header-color;
+    .social{
+      ul li a{
+        font-size: 1.3rem;
+        margin: 0.5rem;
+        img{
+          height: 1.6em;
+          background-color: $header-color;
+          border-radius: 50%;
+          padding: 15%;
+        }
+      }
+    }
+    &:last-child ul{
+        font-size: 0.8em;
+      } 
     ul {
-      display: flex;
+      display: inline-flex;
+      li{ margin: 0}
+      li a{
+        line-height: initial;
+        text-transform: uppercase;
+        font-weight: 400;
+        color:  $header-small-font-color;
+      }
+      li a:hover{
+        text-decoration: none;
+      }
+      li a.proposals.active, li a.proposals:hover{
+        h1 { color: $proposals;}
+        border-bottom: none;
+      }
+      li a.debates.active, li.debates:hover{
+        h1 { color: $debates;}
+        border-bottom: none;
+      }
+      li a.index.active, li.index:hover{
+        h1 { color: $city_council_debates;}
+        border-bottom: none;
+
+      }
+
+      h1 {
+        margin-top: 0.5rem;
+        border-right: 1px solid $header-color;
+        text-align: center;
+        color:  $header-small-font-color;
+        text-transform: uppercase;
+        word-spacing: 100vw;
+        font-size: 1em;
+        line-height: 1em;
+      } 
+      li:last-child h1{
+        border-right: none;
+      }
       @media only screen and (max-width: 639px) {
-        display: inline;
         li a{
           line-height: initial;
         }
       }
-      @media only screen and (min-width: 640px) {
-        li.proposals{
-            background-image: image-url("button_iniciativa.png");
-            background-size: 100% 100%;
-        }
-        li.debates{
-            background-image: image-url("button_propuesta.png");
-            background-size: 100% 100%;
-        }
-        li.faq{
-            background-image: image-url("button_info.png");
-            background-size: 100% 100%;
-        }
 
-        li {
-          flex-grow: 1;
-          white-space: nowrap;
-          a:hover {
-            border-bottom: 2px solid #004A83;
-          }
-
-          a:hover h1{
-            color: white;
-          }
-          h1 {
-            font-size: 1.8em;
-            padding: 0.2em 0.2em 0.6em 0.3em;
-            text-align: center;
-          }
-        }
-        a, a.active, a:hover, a:active {
-          color:white;
-        }
-
-        a:hover{
-            text-decoration: none;
-        }
-
-        // a.proposals {
-        //   color: $proposals;
-        // }
-        // a.debates {
-        //   color: $debates;
-        // }
-        // a.city_council_debates {
-        //   color: $city_council_debates;
-        // }
-        // a.organizations {
-        //   color: $organizations;
-        // }
-        // a.volunteers {
-        //   color: $volunteers;
-        // }
-      }
-      li:last-child{
-        margin-right: 0;
-      }
     }
   }
 
@@ -221,6 +212,9 @@ aside.margin-bottom {
 }
 
 .proposals-list, .debates-list {
+  h3{
+    text-transform: uppercase;
+  }
   .actions {
     text-align: right;
     margin-top: 15px;
@@ -228,20 +222,47 @@ aside.margin-bottom {
       width: 60%;
     }
     a.button {
-      background-color: $button_bck;
-      border: 2px solid black;
-      border-radius: 5px;
-      text-transform: uppercase;
-      &:hover {
-        background-color: lighten($button_bck, 10%);
-      }
       font-size: 0.8em;
       font-weight: 600;
       padding: 5px 10px;
       line-height: 1em;
+      border-radius: 5px;
+      background-color: transparent;
+      text-transform: uppercase;
     }
   }
 }
+.proposals-list{
+  h3 span{
+    color: $proposals;
+  }
+  a.button{
+    color: $proposals;
+    border: 2px solid $proposals;
+    background-color: transparent;
+    &:hover {
+      background-color: $proposals;
+      color: white;
+    }
+  }
+}
+
+.debates-list {
+  h3 span{
+    color: $debates;
+  }
+
+  a.button{
+    color: $debates;
+    border: 2px solid $debates;
+    background-color: transparent;
+    &:hover {
+      background-color: $debates;
+      color: white;
+    }
+  }
+}
+
 
 .wrap.row.menu > div:first-child{
   padding: 0;
@@ -283,6 +304,9 @@ aside.margin-bottom {
 .survey_banner {
   display: inline-block;
   position: relative;
+  img{
+    width: 100%;
+  }
   .not-logged {
     background: rgba(125,73,64,.9);
     color: white;
@@ -325,17 +349,33 @@ aside.margin-bottom {
 }
 
 .summary{
-  background-color: #f5f5f5;
-  border: 1px solid #e3e3e3;
-  border-radius: 4px;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset;
   padding: 10px;
+  color: $text-summary;
+  h5{
+    &:first-child{
+      background-color: $text-summary;
+      color: white;
+    } 
+    background-color: $header-color;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    font-weight: 400;
+  }
+  .medium-3.column{
+    text-align: right;
+    padding-right: 0;
+  }
+  .summary-2{
+    background-color: #aaa;
+    margin-bottom: 0.3em;
+    padding-top: 0.5em;
+    p{ font-weight: 700;}
+  }
   p, ol{ 
     font-size: 0.9rem;
     line-height: 1.1rem;
   }
   img{
-    width: 22px;
     margin: 2px;
   }
 }
@@ -352,13 +392,13 @@ ol{
   min-height: initial;
   border-top: 0;
   padding-top: 0;
-  background-color: $body-background;
+  margin-top: 0;
+  background-color: $header-color;
   footer {
     & > .row:first-child {
       display: none;
     }
     .subfooter {
-      background-color: $brand;
       border-top: 0;
       padding-top: 0;
       .column {
@@ -368,19 +408,19 @@ ol{
           li {
             font-size: 0.875rem;
             text-align: right;
-            color: $text-light;
+            color: $text;
             padding-top: 0;
             float:left;
             a {
               display: inline-block;
-              color: $text-light;
+              color: $header-small-font-color;
               white-space: nowrap;
               padding: 5px 10px;
               span {
                 margin-right: 0.2rem;
                 font-size: 16px;
                 vertical-align: middle;
-                color: $icons;
+                color: $header-small-font-color;
               }
               img {
                 vertical-align: -50%;
@@ -393,17 +433,20 @@ ol{
               padding-bottom: 10px;
             }
           } 
+          @media only screen and (max-width: 639px) {
+            float: initial;
+            li{
+              float: initial;
+              display: inherit;
+              text-align: center;
+            }
+          } 
+
         }
       }
     }
   }
 }
-a.button.expanded.button-proposal{
-    background: $proposals none repeat scroll 0 0;
-  }
-a.button.expanded.button-debate{
-    background: $debates none repeat scroll 0 0;
-  }
 
 
 .verify-account {
@@ -415,4 +458,26 @@ a.button.expanded.button-debate{
     color: red;
   }
 }
+.wrapper{margin: 0 auto;}
+.row { max-width: 85rem;}
+@media only screen and (max-width: 639px) {
+  h1{
+    font-size: 2rem;
+  }
+  h2{
+    font-size: 1.4rem;
+  }
+  .social ul{
+    background-color: white;
+    margin-bottom: 3px;
+}
+} 
+@media only screen and (max-width: 1023px) {
+  h1{
+    font-size: 1.8rem;
+  }
 
+  h2{
+    font-size: 1.2rem;
+  } 
+}

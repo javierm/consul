@@ -1,6 +1,43 @@
-<div class="small-12 medium-12">
+<div class="small-4 medium-3 large-3 float-right social column">
   <ul>
-    <li class="proposals">
+    <% if setting['blog_url'] %>
+      <li class="inline-block">
+        <%= link_to setting['blog_url'], target: "_blank",  title: t('shared.target_blank_html') do %>
+          <span class="sr-only"><%= t("layouts.header.external_link_blog") %></span>
+          <%= image_tag("blog.png") %>
+        <% end %>
+      </li>
+    <% end %>
+
+    <% if setting['facebook_handle'] %>
+      <li class="inline-block">
+        <%= link_to "https://www.facebook.com/#{setting['facebook_handle']}/", target: "_blank", title: t("social.facebook") + t('shared.target_blank_html') do %>
+          <span class="sr-only"><%= t("social.facebook") %></span>
+          <%= image_tag("facebook.png") %>
+        <% end %>
+      </li>
+    <% end %>
+    <% if setting['twitter_handle'] %>
+      <li class="inline-block">
+        <%= link_to "https://twitter.com/#{setting['twitter_handle']}", target: "_blank", title: t("social.twitter") + t('shared.target_blank_html') do %>
+          <span class="sr-only"><%= t("social.twitter") %></span>
+          <%= image_tag("twitter.png") %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+<div class="principal-menu small-12 medium-7 large-7 column float-right">
+  <ul>
+    <li class= "index">
+      <%= link_to page_path('resume'), class: "index #{"active" if controller_name == "pages"}", accesskey: "d"  do %>
+        <h1 class="hide-for-small-only"> <%= t("layouts.header.participate")%></h1>
+        <span class="show-for-small-only"><%= t("layouts.header.participate")%> </span>
+      <% end %>
+    </li>
+
+    <li class="proposals ">
       <%= link_to proposals_path, class: "proposals #{"active" if  controller_name == "proposals"}", accesskey: "p" do %>
         <h1 class="hide-for-small-only"> <%= t("layouts.header.proposals")%></h1>
         <span class="show-for-small-only"><%= t("layouts.header.proposals")%> </span>
@@ -10,11 +47,6 @@
       <%= link_to debates_path, class: "debates #{"active" if controller_name == "debates"}", accesskey: "d"  do %>
         <h1 class="hide-for-small-only"> <%= t("layouts.header.debates")%></h1>
         <span class="show-for-small-only"><%= t("layouts.header.debates")%> </span>
-      <% end %>
-    </li>
-   <li class= "hide-for-small-only faq">
-      <%= link_to page_path('faq'), class: "faq #{"active" if controller_name == "pages"}", accesskey: "d"  do %>
-        <h1 class="hide-for-small-only"> <%= t("layouts.header.more_information")%></h1>
       <% end %>
     </li>
     <!-- <li> -->

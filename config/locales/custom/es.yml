@@ -16,15 +16,15 @@ es:
       save_changes_submit: Guardar cambios
       subscription_to_website_newsletter_label: Recibir emails con información interesante sobre la web
       email_on_direct_message_label: Recibir emails con mensajes privados
-      email_digest_label: Recibir resumen de notificaciones sobre iniciativas populares
+      email_digest_label: Recibir resumen de notificaciones sobre iniciativas ciudadanas
       official_position_badge_label: Mostrar etiqueta de tipo de usuario
       residence_verification_failed: Debe ser residente en uno de los 21 municipios de la isla de Gran Canaria
       residence_verification_pending: Pendiente de verificación de residencia/edad
       title: Mi cuenta
       user_permission_debates: Participar en propuestas
       user_permission_info: Con tu cuenta ya puedes...
-      user_permission_proposal: Crear nuevas iniciativas populares
-      user_permission_support_proposal: Apoyar iniciativas populares*
+      user_permission_proposal: Crear nuevas iniciativas ciudadanas
+      user_permission_support_proposal: Apoyar iniciativas ciudadanas*
       user_permission_title: Participación
       user_permission_verify: Para poder realizar todas las acciones verifica tu cuenta.
       user_permission_verify_info: "* Sólo usuarios empadronados."
@@ -145,7 +145,7 @@ es:
     new:
       form:
         submit_button: Empieza una propuesta
-      info: Si lo que quieres es hacer una iniciativa popular, esta es la sección incorrecta, entra en %{info_link}.
+      info: Si lo que quieres es hacer una iniciativa ciudadana, esta es la sección incorrecta, entra en %{info_link}.
       info_link: crear nueva propuesta
       more_info: Más información
       recommendation_four: Disfruta de este espacio, de las voces que lo llenan, también es tuyo.
@@ -218,7 +218,7 @@ es:
     header:
       administration: Administrar
       city_council_debates: Propuesta Ayuntamiento
-      debates: Propuesta del Cabildo
+      debates: Propuestas Cabildo
       external_link_blog: Blog
       external_link_opendata: Datos abiertos
       external_link_transparency: Transparencia
@@ -244,7 +244,8 @@ es:
       open_data: Datos abiertos
       open_gov: Gobierno %{open}
       organizations: Colectivos
-      proposals: Iniciativa popular
+      participate: Resumen participación
+      proposals: Iniciativas ciudadanas
       proposal_ballot: Votaciones
       see_all: Ver propuestas
       spending_proposals: Presupuestos ciudadanos
@@ -330,7 +331,7 @@ es:
       proposal_title: Título de la iniciativa
       proposal_video_url: Enlace a vídeo externo
       proposal_video_url_note: Puedes añadir un enlace a YouTube o Vimeo
-      tags_instructions: "Etiqueta esta iniciativa popular. Puedes elegir entre las categorías propuestas o introducir las que desees"
+      tags_instructions: "Etiqueta esta iniciativa ciudadana. Puedes elegir entre las categorías propuestas o introducir las que desees"
       tags_label: Temas
       tag_category_label: "Categorías"
       tags_placeholder: "Escribe las etiquetas que desees separadas por una coma (',')"
@@ -363,32 +364,32 @@ es:
         one: " que contiene '%{search_term}'"
         other: " que contienen '%{search_term}'"
       select_order: Ordenar por
-      select_order_long: Estas viendo las iniciativas populares
+      select_order_long: Estas viendo las iniciativas ciudadanas
       start_proposal: Crea una iniciativa
-      title: Iniciativas populares
+      title: Iniciativas ciudadanas
       top: Top semanal
-      top_link_proposals: Iniciativas populares más apoyadas por categoría
+      top_link_proposals: Iniciativas ciudadanas más apoyadas por categoría
     new:
       form:
         submit_button: Crear iniciativa
-      more_info: "¿Cómo funcionan las iniciativas populares?"
+      more_info: "¿Cómo funcionan las iniciativas ciudadanas?"
       recommendation_one: No escribas el título de la iniciativa o frases enteras en mayúsculas. En internet eso se considera gritar. Y a nadie le gusta que le griten.
       recommendation_three: Disfruta de este espacio, de las voces que lo llenan, también es tuyo.
-      recommendation_two: Cualquier iniciativa popular o comentario que implique una acción ilegal será eliminada, también las que tengan la intención de sabotear los espacios de propuesta, todo lo demás está permitido.
-      recommendations_title: Recomendaciones para crear una iniciativa popular
-      start_new: Crear una iniciativa popular
+      recommendation_two: Cualquier iniciativa ciudadana o comentario que implique una acción ilegal será eliminada, también las que tengan la intención de sabotear los espacios de propuesta, todo lo demás está permitido.
+      recommendations_title: Recomendaciones para crear una iniciativa ciudadana
+      start_new: Crear una iniciativa ciudadana
     notice:
-      retired: Iniciativa popular retirada
+      retired: Iniciativa ciudadana retirada
     proposal:
-      already_supported: "¡Ya has apoyado esta iniciativa popular, compártela!"
+      already_supported: "¡Ya has apoyado esta iniciativa ciudadana, compártela!"
       comments:
         one: 1 Comentario
         other: "%{count} Comentarios"
         zero: Sin comentarios
-      proposal: Iniciativa popular
+      proposal: Iniciativa ciudadana
       reason_for_supports_necessary: 2% del Censo
       support: Apoyar
-      support_title: Apoyar esta iniciativa popular
+      support_title: Apoyar esta iniciativa ciudadana
       supports:
         one: 1 apoyo
         other: "%{count} apoyos"
@@ -398,19 +399,19 @@ es:
       archived: "Esta iniciativa ha sido archivada y ya no puede recoger apoyos."
     show:
       author_deleted: Usuario eliminado
-      code: 'Código de la iniciativa popular:'
+      code: 'Código de la iniciativa ciudadana:'
       comments:
         one: 1 Comentario
         other: "%{count} Comentarios"
         zero: Sin comentarios
       comments_tab: Comentarios
       edit_proposal_link: Editar iniciativa
-      flag: Esta iniciativa popular ha sido marcada como inapropiada por varios usuarios.
+      flag: Esta iniciativa ciudadana ha sido marcada como inapropiada por varios usuarios.
       login_to_comment: Necesitas %{signin} o %{signup} para comentar.
       notifications_tab: Notificaciones
       retired_warning: "El autor de esta iniciativa considera que ya no debe seguir recogiendo apoyos."
       retired_warning_link_to_explanation: Revisa su explicación antes de apoyarla.
-      retired: Iniciativa popular retirada por el autor
+      retired: Iniciativa ciudadana retirada por el autor
       send_notification: Enviar notificación
       share: Compartir
       no_notifications: "Esta iniciativa no tiene notificaciones."
@@ -419,14 +420,14 @@ es:
         submit_button: Guardar cambios
   proposal_ballots:
     title: "Votaciones"
-    description_html: "Las siguientes iniciativas populares han alcanzado el <strong>número de apoyos necesarios</strong> y pasarán a votación."
+    description_html: "Las siguientes iniciativas ciudadanas han alcanzado el <strong>número de apoyos necesarios</strong> y pasarán a votación."
     date_title: "Fechas de participación"
-    date: "En breve anunciaremos la fecha de votación de estas iniciativas populares."
-    successfull: "Esta iniciativa popular ha alcanzado los apoyos necesarios y pasará a la %{voting}."
+    date: "En breve anunciaremos la fecha de votación de estas iniciativas ciudadanas."
+    successfull: "Esta iniciativa ciudadana ha alcanzado los apoyos necesarios y pasará a la %{voting}."
     voting: "próxima votación"
     featured_title: "#PróximaVotación"
     nothing_to_vote: "No hay nada que votar en este momento."
-    info: "Nuevas iniciativas populares han llegado a la fase de votación."
+    info: "Nuevas iniciativas ciudadanas han llegado a la fase de votación."
     button: "Quiero decidir"
   proposal_notifications:
     new:
@@ -434,8 +435,8 @@ es:
       title_label: "Título"
       body_label: "Mensaje"
       submit_button: "Enviar mensaje"
-      info_about_receivers_html: "Este mensaje se enviará a <strong>%{count} usuarios</strong> y se publicará en %{proposal_page}.<br> El mensaje no se enviará inmediatamente, los usuarios recibirán periódicamente un email con todas las notificaciones de iniciativas populares."
-      proposal_page: "la página de la iniciativa popular"
+      info_about_receivers_html: "Este mensaje se enviará a <strong>%{count} usuarios</strong> y se publicará en %{proposal_page}.<br> El mensaje no se enviará inmediatamente, los usuarios recibirán periódicamente un email con todas las notificaciones de iniciativas ciudadanas."
+      proposal_page: "la página de la iniciativa ciudadana"
     show:
       back: "Volver a mi actividad"
   shared:
@@ -478,13 +479,13 @@ es:
           one: "Existe una propuesta con el término '%{query}', puedes participar en ella en vez de abrir una nueva."
           other: "Existen propuestas con el término '%{query}', puedes participar en ellas en vez de abrir una nueva."
         message: "Estás viendo %{limit} de %{count} propuestas que contienen el término '%{query}'"
-        see_all: "Ver más propuestas"
+        see_all: "+ propuestas"
       proposal:
         found:
-          one: "Existe una iniciativa popular con el término '%{query}', puedes participar en ella en vez de abrir uno nuevo."
-          other: "Existen iniciativas populares con el término '%{query}', puedes participar en ellas en vez de abrir uno nuevo."
-        message: "Estás viendo %{limit} de %{count} iniciativas populares que contienen el término '%{query}'"
-        see_all: "Ver más iniciativas"
+          one: "Existe una iniciativa ciudadana con el término '%{query}', puedes participar en ella en vez de abrir uno nuevo."
+          other: "Existen iniciativas ciudadanas con el término '%{query}', puedes participar en ellas en vez de abrir uno nuevo."
+        message: "Estás viendo %{limit} de %{count} iniciativas ciudadanas que contienen el término '%{query}'"
+        see_all: "+ iniciativas"
     tags_cloud:
       tags: Tendencias
       districts: "Distritos"
@@ -550,9 +551,9 @@ es:
     index:
       visits: Visitas
       debates: Propuestas
-      proposals: Iniciativas populares
+      proposals: Iniciativas ciudadanas
       comments: Comentarios
-      proposal_votes: Votos en iniciativas populares
+      proposal_votes: Votos en iniciativas ciudadanas
       debate_votes: Votos en propuestas
       comment_votes: Votos en comentarios
       votes: Votos
@@ -580,9 +581,9 @@ es:
     show:
       deleted: Eliminado
       deleted_debate: Esta propuesta ha sido eliminada
-      deleted_proposal: Este iniciativa popular ha sido eliminada
+      deleted_proposal: Este iniciativa ciudadana ha sido eliminada
       delete_spending_proposal: Eliminar
-      confirm_deletion_spending_proposal: "¿Seguro que desea eliminar esta iniciativa popular?"
+      confirm_deletion_spending_proposal: "¿Seguro que desea eliminar esta iniciativa ciudadana?"
       filters:
         comments:
           one: 1 Comentario
@@ -591,8 +592,8 @@ es:
           one: 1 Propuesta
           other: "%{count} Propuestas"
         proposals:
-          one: 1 Iniciativa popular
-          other: "%{count} Iniciativas populares"
+          one: 1 Iniciativa ciudadana
+          other: "%{count} Iniciativas ciudadanas"
         spending_proposals:
           one: 1 Propuesta de inversión
           other: "%{count} Propuestas de inversión"
@@ -614,7 +615,7 @@ es:
     signup: registrarte
     supports: Apoyos
     unauthenticated: Necesitas %{signin} o %{signup} para continuar.
-    verified_only: Las iniciativas populares sólo pueden ser votadas por usuarios verificados, %{verify_account}.
+    verified_only: Las iniciativas ciudadanas sólo pueden ser votadas por usuarios verificados, %{verify_account}.
     verify_account: verifica tu cuenta
     spending_proposals:
       not_logged_in: Necesitas %{signin} o %{signup} para continuar.
@@ -627,13 +628,13 @@ es:
       description: Encontrarnos, debatir y compartir lo que nos parece importante en nuestra ciudad.
       title: Propuestas
     decide:
-      description: La ciudadanía decide si acepta o rechaza las iniciativas populares más apoyadas.
+      description: La ciudadanía decide si acepta o rechaza las iniciativas ciudadanas más apoyadas.
       title: Decides
     do:
-      description: Si la iniciativa popular es aceptada mayoritariamente, el Ayuntamiento la asume como propia y se hace.
+      description: Si la iniciativa ciudadana es aceptada mayoritariamente, el Ayuntamiento la asume como propia y se hace.
       title: Se hace
     proposal:
-      description: Espacio abierto para iniciativas populares sobre el tipo de ciudad en el que queremos vivir.
+      description: Espacio abierto para iniciativas ciudadanas sobre el tipo de ciudad en el que queremos vivir.
       title: Propones
     verification:
       i_dont_have_an_account: No tengo cuenta, quiero crear una y verificarla
@@ -641,12 +642,12 @@ es:
       question: ¿Tienes ya una cuenta en %{org_name}?
       title: Verificación de cuenta
     welcome:
-      go_to_index: Ahora no, ver iniciativas populares
+      go_to_index: Ahora no, ver iniciativas ciudadanas
       title: Empieza a participar
       user_permission_debates: Participar en propuestas
       user_permission_info: Con tu cuenta ya puedes...
-      user_permission_proposal: Crear nuevas iniciativas populares
-      user_permission_support_proposal: Apoyar iniciativas populares*
+      user_permission_proposal: Crear nuevas iniciativas ciudadanas
+      user_permission_support_proposal: Apoyar iniciativas ciudadanas*
       user_permission_verify: Para poder realizar todas las acciones, verifica tu cuenta.
       user_permission_verify_info: "* Sólo usuarios empadronados."
       user_permission_verify_my_account: Verificar mi cuenta

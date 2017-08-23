@@ -49,20 +49,20 @@
         </li>
         <li>
           <%= link_to page_path('faq') do %>
-            <span class="icon-comments"></span>
+            <span class="icon-help"></span>
             <%= t("layouts.footer.faq") %>
           <% end %>
         </li>
         <li>
           <%= link_to page_path('conditions') do %>
-            <%= image_tag("Condiciones uso.svg") %>
+            <span class="icon-settings"></span>
             <%= t("layouts.footer.conditions") %>
           <% end %>
         </li>
         <li>
           <%# <%= link_to t("layouts.footer.legal"), page_path('legal') %>
           <%= link_to page_path('privacy') do %>
-            <%= image_tag("Politica privacidad.svg") %>
+            <span class="icon-document"></span>
             <%= t("layouts.footer.privacy") %>
           <% end %>
         </li>

@@ -63,7 +63,7 @@
     <div class="small-12 medium-3 column">
       <aside class="margin-bottom">
         <%= yield :header_addon %>
-        <%= link_to new_proposal_path do %>
+        <%= link_to new_proposal_path, class: "hide-for-small-only" do %>
           <%= image_tag 'create_proposal.png' %>
         <% end %>
         <%# <%= link_to new_proposal_path do %>
