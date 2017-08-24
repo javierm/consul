@@ -31,7 +31,7 @@
 <div class="principal-menu small-12 medium-7 large-7 column float-right">
   <ul>
     <li class= "index">
-      <%= link_to page_path('resume'), class: "index #{"active" if controller_name == "pages"}", accesskey: "d"  do %>
+      <%= link_to resume_path, class: "index #{"active" if controller_name == "pages"}", accesskey: "d"  do %>
         <h1 class="hide-for-small-only"> <%= t("layouts.header.participate")%></h1>
         <span class="show-for-small-only"><%= t("layouts.header.participate")%> </span>
       <% end %>

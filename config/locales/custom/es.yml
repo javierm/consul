@@ -239,15 +239,15 @@ es:
         other: Tienes %{count} notificaciones nuevas
       no_notifications: No tienes notificaciones nuevas
       open: abierto
-      open_city_slogan_html: Existen ciudades gobernadas directamente por sus habitantes, que <strong>debaten</strong> sobre temas que les preocupan, <strong>proponen</strong> ideas para mejorar sus vidas y <strong>deciden</strong> entre todas y todos las que se llevan a cabo.
-      open_city_title: La ciudad que quieres será la ciudad que quieras.
+      open_city_slogan_html: Lo decides tú
+      open_city_title: El futuro de Gran Canaria
       open_data: Datos abiertos
       open_gov: Gobierno %{open}
       organizations: Colectivos
       participate: Resumen participación
       proposals: Iniciativas ciudadanas
       proposal_ballot: Votaciones
-      see_all: Ver propuestas
+      see_all: Entra y participa
       spending_proposals: Presupuestos ciudadanos
       volunteers: Voluntarios
   legislation:
@@ -626,7 +626,7 @@ es:
   welcome:
     debates:
       description: Encontrarnos, debatir y compartir lo que nos parece importante en nuestra ciudad.
-      title: Propuestas
+      title: Se debate 
     decide:
       description: La ciudadanía decide si acepta o rechaza las iniciativas ciudadanas más apoyadas.
       title: Decides
@@ -652,6 +652,10 @@ es:
       user_permission_verify_info: "* Sólo usuarios empadronados."
       user_permission_verify_my_account: Verificar mi cuenta
       user_permission_votes: Participar en las votaciones finales*
+    speak:
+      title: Gran Canaria
+      subtitle: habla
+      description: ¿Qué quieres para Gran Canaria? Seguimos midiendo la temperatura y la ilusión por la participación ciudadana en la isla. 
   omniauth:
     finish_signup:
       title: "Detalles adicionales de tu cuenta"

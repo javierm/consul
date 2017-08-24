@@ -481,3 +481,61 @@ ol{
     font-size: 1.2rem;
   } 
 }
+
+.highlight{
+  background: transparent url("background_portada.jpg") no-repeat scroll 0 100% / cover ;
+  color: white;
+  h1 {
+    font-weight: 400;
+    span{
+      font-weight: 700;
+      color: $header-color;
+      text-transform: uppercase;
+    }
+  }
+  div{
+    margin: auto;
+    .button{
+      background-color: #BC242A;
+      text-transform: uppercase;
+      font-weight: bold;
+      padding: 0.4em;
+      border-radius: 0;
+    }
+  }
+  @media only screen and (min-width: 640px) {
+    .flex{
+      display: flex;
+      justify-content: center;
+      vertical-align: middle;
+    }
+  }
+  .medium-6 .videoWrapper > iframe{
+    height: calc(45vw / 1.77);
+    width: 45vw;
+  }
+}
+.medium-9 .medium-6 .videoWrapper > iframe{
+  height: calc(30vw / 1.77);
+  width: 30vw;
+}
+
+@media only screen and (max-width: 639px) {
+  .videoWrapper{
+    height: calc(90vw / 1.77);
+    width: 90vw;
+  }
+}
+.welcome{
+  h3, h2, p{
+    color: $header-small-font-color;
+    font-weight: 400;
+  }
+  h3{
+  
+    text-transform: uppercase;
+  }
+  h1{
+    color: $header-color;
+  }
+}

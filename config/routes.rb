@@ -30,6 +30,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
   get '/welcome', to: 'welcome#welcome'
   get '/cuentasegura', to: 'welcome#verification', as: :cuentasegura
+  get '/resume', to: 'welcome#resume', as: :resume
 
   resources :debates do
     member do

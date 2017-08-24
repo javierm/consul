@@ -1,49 +1,70 @@
-<main>
-  <div class="wrap row">
-    <div class="small-12 large-9 column">
-      <div class="survey_banner">
-        <%= link_to image_tag('Banner.png', class: 'banner'), new_survey_answered_survey_path(@survey = Survey.find_by_code('ENC-1')) %>
-        <% if !user_signed_in? %>
-          <div class="not-logged" style='display:none' aria-hidden="false">
-            <span>
-              <%= t("votes.unauthenticated",
-                signin: link_to(t("votes.signin"), new_user_session_path),
-                signup: link_to(t("votes.signup"), new_user_registration_path)).html_safe %>
-            </span>
-          </div>
-        <% end %>
-      </div>
-      <div id="proposals" class="proposals-list small-12 large-6 column">
-        <h3><%= t("proposals.index.title") %> <%= t("proposals.index.orders.confidence_score").downcase %></h3>
-        <div id="proposals-list">
-          <%= render partial: 'proposals/proposal', collection: @proposals %>
-          <%# <%= paginate @proposals %>
-        </div>
-        <div class="actions">
-          <%= link_to t("shared.suggest.proposal.see_all"), proposals_path, class: 'button' %>
-        </div>
-      </div>
+<div class="expanded highlight padding no-margin-top">
+  <div class="row text-center flex">
+    <div class="small-12 medium-6 large-6 column">
+      <div class="medium-4">
+        <%= link_to t("layouts.header.see_all"), resume_path, class: "button see-more expanded" %>
 
-      <div id="debates" class="debates-list small-12 large-6 column">
-        <h3><%= t("debates.index.title") %> <%= t("debates.index.orders.confidence_score").downcase %></h3>
-        <div id="debates-list">
-          <%= render partial: 'debates/debate', collection: @debates %>
-          <%# <%= paginate @debates %>
-        </div>
-        <div class="actions">
-          <%= link_to t("shared.suggest.debate.see_all"), debates_path, class: 'button' %>
-        </div>
       </div>
+      <h1><%= t("layouts.header.open_city_title") %></h1>
+      <h1><span><%= t("layouts.header.open_city_slogan_html") %></span></h1>
     </div>
 
-    <div class="small-12 large-3 column">
-      <aside class="margin-bottom">
-        <%= link_to new_proposal_path do %>
-          <%= image_tag 'create_proposal.png' %>
-        <% end %>
-        <%= render 'shared/summary' %>
-        <%# <%= render 'shared/social' %>
-      </aside>
+    <div class="small-12 medium-6 large-6 column text-center">
+      <div class="videoWrapper">
+        <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FParticipaGC%2Fvideos%2F468350506853083%2F&show_text=0&width=560" width="560" height="315" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
+      </div>
     </div>
   </div>
-</main>
+</div>
+
+<% cache [locale_and_user_status, @featured_debates, @featured_proposals, 'featured'] do %>
+  <main>
+    <div class="row text-center margin welcome">
+      <div class="small-12 medium-3 column">
+        <%= image_tag("icon_home_debate.png", size: "168x168", alt: "", title: t("welcome.debates.title")) %>
+        <h3><%= t("welcome.debates.title") %></h3>
+        <!-- <p><%= t("welcome.debates.description") %></p> -->
+
+      </div>
+      <div class="small-12 medium-3 column">
+        <%= image_tag("icon_home_proposal.png", size: "168x168", alt: "", title: t("welcome.proposal.title"))  %>
+        <h3><%= t("welcome.proposal.title") %></h3>
+        <!-- <p><%= t("welcome.proposal.description") %></p> -->
+      </div>
+
+      <div class="small-12 medium-3 column">
+        <%= image_tag("icon_home_decide.png", size: "168x168", alt: "", title: t("welcome.decide.title")) %>
+        <h3><%= t("welcome.decide.title") %></h3>
+        <!-- <p><%= t("welcome.decide.description") %></p> -->
+      </div>
+      <div class="small-12 medium-3 column">
+        <%= image_tag("icon_home_do.png", size: "168x168", alt: "", title: t("welcome.do.title")) %>
+        <h3><%= t("welcome.do.title") %></h3>
+        <!-- <p><%= t("welcome.do.description") %></p> -->
+      </div>
+    </div>
+  </main>
+<% end %>
+<div class="row margin welcome">
+  <div class="small-12 medium-3 column">
+    <h2><%= t("welcome.speak.title") %></h2>
+    <h1><%= t("welcome.speak.subtitle") %></h1>
+    <p><%= t("welcome.speak.description") %></p>
+  </div>
+
+  <div class="small-12 medium-9 column">
+    <div class="small-12 medium-6 column">
+      <div class="videoWrapper">
+        <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FParticipaGC%2Fvideos%2F484678355220298%2F&show_text=0&width=560" width="560" height="315" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
+      </div>
+    </div>
+
+    <div class="small-12 medium-6 column">
+      <div class="videoWrapper">
+        <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FParticipaGC%2Fvideos%2F484678355220298%2F&show_text=0&width=560" width="560" height="315" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+

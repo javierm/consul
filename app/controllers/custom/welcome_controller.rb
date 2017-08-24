@@ -8,6 +8,9 @@ class WelcomeController
     #   redirect_to :proposals
     # end
 
+  end
+
+  def resume
     @proposals = Proposal.all.not_archived.sort_by_confidence_score
     @proposals = @proposals.page(1).limit(3).for_render
     set_proposal_votes(@proposals)
