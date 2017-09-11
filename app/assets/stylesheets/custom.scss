@@ -349,7 +349,6 @@ aside.margin-bottom {
 }
 
 .summary{
-  padding: 10px;
   color: $text-summary;
   h5{
     &:first-child{
@@ -459,7 +458,7 @@ ol{
   }
 }
 .wrapper{margin: 0 auto;}
-.row { max-width: 85rem;}
+.row { max-width: 83rem;}
 @media only screen and (max-width: 639px) {
   h1{
     font-size: 2rem;
@@ -532,7 +531,7 @@ ol{
     font-weight: 400;
   }
   h3{
-  
+    font-size: 1.2rem;  
     text-transform: uppercase;
   }
   h1{

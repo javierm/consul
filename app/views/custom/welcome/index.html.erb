@@ -19,7 +19,7 @@
 
 <% cache [locale_and_user_status, @featured_debates, @featured_proposals, 'featured'] do %>
   <main>
-    <div class="row text-center margin welcome">
+    <div class="row text-center margin welcome medium-8 small-12">
       <div class="small-12 medium-3 column">
         <%= image_tag("icon_home_debate.png", size: "168x168", alt: "", title: t("welcome.debates.title")) %>
         <h3><%= t("welcome.debates.title") %></h3>
@@ -52,7 +52,7 @@
     <p><%= t("welcome.speak.description") %></p>
   </div>
 
-  <div class="small-12 medium-9 column">
+  <div class="small-12 medium-9 text-right column">
     <div class="small-12 medium-6 column">
       <div class="videoWrapper">
         <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FParticipaGC%2Fvideos%2F484678355220298%2F&show_text=0&width=560" width="560" height="315" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
