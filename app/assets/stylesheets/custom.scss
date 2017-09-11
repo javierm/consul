@@ -48,7 +48,7 @@ $text-summary: #273877;
 header {
   border: none;
   background: $header-color;
-  background-image: url("background_header.png") !important;
+  background-image: image-url("background_header.png") !important;
   & > .row {
     .top-bar {
       background-color: transparent!important;
@@ -482,7 +482,7 @@ ol{
 }
 
 .highlight{
-  background: transparent url("background_portada.jpg") no-repeat scroll 0 100% / cover ;
+  background: transparent image-url("background_portada.jpg") no-repeat scroll 0 100% / cover ;
   color: white;
   h1 {
     font-weight: 400;
