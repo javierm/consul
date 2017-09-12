@@ -30,7 +30,7 @@ body {
 }
 
 $proposals: #ad0e17;
-$debates: #d68700;
+$debates: #FBEBBC;
 $city_council_debates: #652682;
 $organizations: #5FB5AE;
 $volunteers: #96BD2B;
@@ -486,6 +486,8 @@ ol{
   color: white;
   h1 {
     font-weight: 400;
+    line-height: 0.8em;
+
     span{
       font-weight: 700;
       color: $header-color;
@@ -499,6 +501,7 @@ ol{
       text-transform: uppercase;
       font-weight: bold;
       padding: 0.4em;
+      margin-bottom: 3em;
       border-radius: 0;
     }
   }
@@ -533,8 +536,11 @@ ol{
   h3{
     font-size: 1.2rem;  
     text-transform: uppercase;
+    line-height: 1;
   }
   h1{
+    line-height: 0.5em;
     color: $header-color;
+    margin-bottom: 1em;
   }
 }
