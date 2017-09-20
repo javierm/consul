@@ -630,6 +630,9 @@ es:
     decide:
       description: La ciudadanía decide si acepta o rechaza las iniciativas ciudadanas más apoyadas.
       title: Decides
+    tutorial:
+      description: Manual para la utilización de la plataforma
+      title: Tutorial
     do:
       description: Si la iniciativa ciudadana es aceptada mayoritariamente, el Ayuntamiento la asume como propia y se hace.
       title: Se hace
