@@ -6,7 +6,7 @@
     <div class="top-bar">
 
       <%= link_to root_path, class: "logo show-for-small-only"  do %>
-        <%= image_tag('logo_participaGC.png', class: 'show-for-small-only float-left logo', alt: t("layouts.header.logo")) %>
+        <%= image_tag('logo_participaGC.png', class: 'show-for-small-only float-left logo', alt: t("layouts.header.logo"), title: t("layouts.header.logo")) %>
       <% end %>
       <span data-responsive-toggle="responsive-menu" data-hide-for="medium" class="float-right">
         <span class="menu-icon dark" data-toggle></span>
@@ -16,7 +16,7 @@
       <div id="responsive-menu">
         <div class="top-bar-title large-3 medium-2 hide-for-small-only column">
           <%= link_to root_path, class: "hide-for-small-only", accesskey: "/" do %>
-            <%= image_tag('logo_participaGC.png', class: 'hide-for-small-only float-left logo', alt: t("layouts.header.logo")) %>
+            <%= image_tag('logo_participaGC.png', class: 'hide-for-small-only float-left logo', alt: t("layouts.header.logo"), title: t("layouts.header.logo")) %>
             <% if opendata_page? %>
               <%= t("layouts.header.open_gov", open: "#{t('layouts.header.open')}") %> <span>|</span>
               <span class="logo-site"><%= t("layouts.header.open_data") %></span>
@@ -26,7 +26,7 @@
 
         <div class="top-bar-right  medium-2 hide-for-small-only column">
           <%= link_to t("layouts.header.external_link_institution_url") do %>
-            <%= image_tag(("CabildoGranCanaria.jpg"), class: 'logo', alt: t("layouts.header.external_link_institution_url")) %>
+            <%= image_tag(("CabildoGranCanaria.jpg"), class: 'logo', alt: t('layouts.header.external_link_institution'), title: t('layouts.header.external_link_institution')) %>
           <% end %>
         </div>
 
