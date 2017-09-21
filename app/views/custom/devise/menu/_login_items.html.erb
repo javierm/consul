@@ -13,33 +13,28 @@
     <% end %>
   </li>
   <li>
-    <%= link_to user_path(current_user), accesskey: "a" do %>
-      <%= image_tag("Mi actividad.svg", class: "hide-for-small-only") %>
+    <%= link_to user_path(current_user), class: 'activity', accesskey: "a" do %>
       <%= t("layouts.header.my_activity_link") %>
     <% end %>
   </li>
   <li>
-    <%= link_to account_path, accesskey: "m" do %>
-      <%= image_tag("Mi cuenta.svg", class: "hide-for-small-only") %>
+    <%= link_to account_path, class: 'profile', accesskey: "m" do %>
       <%= t("layouts.header.my_account_link") %>
     <% end %>
   </li>
   <li>
-    <%= link_to destroy_user_session_path, method: :delete do %>
-      <%= image_tag("Salir.svg", class: "hide-for-small-only") %>
+    <%= link_to destroy_user_session_path, class: 'sign_out', method: :delete do %>
       <%= t("devise_views.menu.login_items.logout") %>
     <% end %>
   </li>
 <% else %>
   <li>
-    <%= link_to new_user_session_path do  %>
-      <%= image_tag("Entrar.svg", class: "hide-for-small-only") %>
+    <%= link_to new_user_session_path, class: 'sign_in' do  %>
       <%= t("devise_views.menu.login_items.login") %>
     <% end %>
   </li>
   <li>
-    <%= link_to new_user_registration_path do %>
-      <%= image_tag("Registro.svg", class: "hide-for-small-only") %>
+    <%= link_to new_user_registration_path, class: 'sign_up' do %>
       <%= t("devise_views.menu.login_items.signup") %>
     <% end %>
   </li>

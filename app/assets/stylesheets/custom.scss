@@ -196,7 +196,32 @@ header {
 
     }
   }
+}
 
+@media only screen and (min-width: 640px) {
+  .top-bar ul.menu li a:before {
+    content: '';
+    height: 16px;
+    width: 16px;
+    vertical-align: sub;
+    display: inline-block;
+    background-repeat: no-repeat;
+  }
+  a.sign_in:before {
+    background-image: image-url('Entrar.svg');
+  }
+  a.sign_up:before {
+    background-image: image-url('Registro.svg');
+  }
+  a.sign_out:before {
+    background-image: image-url('Salir.svg');
+  }
+  a.profile:before {
+    background-image: image-url('Mi_cuenta.svg');
+  }
+  a.activity:before {
+    background-image: image-url('Mi_actividad.svg');
+  }
 }
 
 aside.margin-bottom {
