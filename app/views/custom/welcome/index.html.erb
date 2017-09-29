@@ -23,31 +23,31 @@
 
 <% cache [locale_and_user_status, @featured_debates, @featured_proposals, 'featured'] do %>
   <main>
-    <div class="row text-center margin welcome medium-8 small-12 large-up-5">
+    <div class="row text-center margin welcome medium-8 small-12">
 
-      <div class="small-12 column">
+      <div class="small-12 medium-2 column">
         <%= image_tag("icon_home_debate.png", size: "168x168", alt: t("welcome.debates.title"), title: t("welcome.debates.title")) %>
         <h3><%= t("welcome.debates.title") %></h3>
         <!-- <p><%= t("welcome.debates.description") %></p> -->
 
       </div>
-      <div class="small-12  column">
+      <div class="small-12 medium-2 column">
         <%= image_tag("icon_home_proposal.png", size: "168x168", alt: t("welcome.proposal.title"), title: t("welcome.proposal.title"))  %>
         <h3><%= t("welcome.proposal.title") %></h3>
         <!-- <p><%= t("welcome.proposal.description") %></p> -->
       </div>
 
-      <div class="small-12  column">
+      <div class="small-12 medium-2 column">
         <%= image_tag("icon_home_decide.png", size: "168x168", alt: t("welcome.decide.title"), title: t("welcome.decide.title")) %>
         <h3><%= t("welcome.decide.title") %></h3>
         <!-- <p><%= t("welcome.decide.description") %></p> -->
       </div>
-      <div class="small-12  column">
+      <div class="small-12 medium-2 column">
         <%= image_tag("icon_home_do.png", size: "168x168", alt: t("welcome.do.title"), title: t("welcome.do.title")) %>
         <h3><%= t("welcome.do.title") %></h3>
         <!-- <p><%= t("welcome.do.description") %></p> -->
       </div>
-      <div class="small-12 column">
+      <div class="small-12 medium-2 column">
         <div class="show-for-small-only">
           <a class="youtube-media" href="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FParticipaGC%2Fvideos%2F484678355220298%2F">
             <%= image_tag("icon_home_tutorial.png", size: "168x168", alt: t("welcome.tutorial.title"), title: t("welcome.tutorial.title")) %>
