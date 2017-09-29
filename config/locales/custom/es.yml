@@ -607,7 +607,7 @@ es:
       retired: "Retirada"
   votes:
     agree: Estoy de acuerdo
-    anonymous: Demasiados votos anónimos, para poder votar %{verify_account}.
+    anonymous: Las propuestas del Cabildo sólo pueden ser votadas por usuarios verificados, %{verify_account}.
     comment_unauthenticated: Necesitas %{signin} o %{signup} para poder votar.
     disagree: No estoy de acuerdo
     organizations: Las organizaciones no pueden votar
