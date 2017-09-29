@@ -29,8 +29,8 @@ es:
         one: "Organización"
         other: "Organizaciones"
       proposal:
-        one: "Iniciativa popular"
-        other: "Iniciativas populares"
+        one: "Iniciativa ciudadana"
+        other: "Iniciativas ciudadanas"
       spending_proposal:
         one: "Propuesta de inversión"
         other: "Propuestas de inversión"

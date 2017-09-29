@@ -45,7 +45,7 @@ es:
     menu:
       flagged_comments: Comentarios
       flagged_debates: Propuestas
-      proposals: Iniciativas populares
+      proposals: Iniciativas ciudadanas
       users: Bloquear usuarios
     proposals:
       index:
@@ -59,14 +59,14 @@ es:
           pending_area_review: Pendientes revisión ámbito
         headers:
           moderate: Moderar
-          proposal: Iniciativa popular
+          proposal: Iniciativa ciudadana
         hide_proposals: Ocultar iniciativas
         ignore_flags: Marcar como revisadas
         order: Ordenar por
         orders:
           created_at: Más recientes
           flags: Más denunciadas
-        title: Iniciativas populares
+        title: Iniciativas ciudadanas
         update_areas: Actualizar ámbitos
     users:
       index:

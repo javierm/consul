@@ -46,7 +46,7 @@ es:
           password_label: Contraseña
           phone_number_label: Teléfono
           responsible_name_label: Nombre y apellidos de la persona responsable del colectivo
-          responsible_name_note: Será la persona representante de la asociación/colectivo en cuyo nombre se presenten las iniciativas populares
+          responsible_name_note: Será la persona representante de la asociación/colectivo en cuyo nombre se presenten las iniciativas ciudadanas
           submit: Registrarse
           title: Registrarse como organización / colectivo
         success:

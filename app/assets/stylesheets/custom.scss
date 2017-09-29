@@ -327,6 +327,13 @@ aside.margin-bottom {
   }
 }
 
+.anonymous-votes, .organizations-votes, .no-supports-allowed {
+  p {
+    line-height: 1.1rem;
+    font-size: 0.9rem;
+  }
+}
+
 .survey_banner {
   display: inline-block;
   position: relative;
@@ -487,6 +494,9 @@ ol{
 .row { max-width: 83rem;}
 .highlight{
   background: transparent image-url("background_portada.jpg") no-repeat scroll 0 100% / cover ;
+  div.row div.curtain {
+    background-color: rgba(0,0,0,0.4);
+  }
   h1{
     a {
 

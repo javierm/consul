@@ -54,7 +54,7 @@ es:
           all: Todo
           on_comments: Comentarios
           on_debates: Propuestas del Cabildo
-          on_proposals: Iniciativas populares
+          on_proposals: Iniciativas ciudadanas
           on_users: Usuarios
         title: Actividad de los Moderadores
         type: Tipo
@@ -94,7 +94,7 @@ es:
       activity: Actividad de moderadores
       admin: Menú de administración
       banner: Gestionar banners
-      debate_topics: Temas de iniciativas populares
+      debate_topics: Temas de iniciativas ciudadanas
       hidden_comments: Comentarios ocultos
       hidden_debates: Propuestas ocultas
       hidden_proposals: Iniciativas ocultas
@@ -301,9 +301,9 @@ es:
       create: Crear Tema
       destroy: Eliminar Tema
       index:
-        add_tag: Añade un nuevo tema para iniciativas populares
-        title: Temas de iniciativas populares 
-      mark_as_featured: Proponer tema al crear iniciativa popular
+        add_tag: Añade un nuevo tema para iniciativas ciudadanas
+        title: Temas de iniciativas ciudadanas 
+      mark_as_featured: Proponer tema al crear iniciativa ciudadana
       name:
         placeholder: Escribe el nombre del tema
       update: Actualizar Tema

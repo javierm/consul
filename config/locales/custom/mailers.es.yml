@@ -32,11 +32,11 @@ es:
       subject: "Tu propuesta de inversión '%{code}' ha sido marcada como inviable"
       unfeasible_html: "Desde el Ayuntamiento queremos agradecer tu participación en los <strong>Presupuestos Participativos</strong>. Lamentamos informarte de que tu propuesta <strong>'%{title}'</strong> quedará excluida de este proceso participativo por el siguiente motivo:"
     proposal_notification_digest:
-      info: "A continuación te mostramos las nuevas notificaciones que han publicado los autores de las iniciativas populares que estás apoyando en %{org_name}."
-      title: "Notificaciones de iniciativas populares en %{org_name}"
-      share: Compartir iniciativa popular
-      comment: Comentar iniciativa popular
-      unsubscribe: "Si no quieres recibir notificaciones de iniciativas populares, puedes entrar en %{account} y desmarcar la opción 'Recibir resumen de notificaciones sobre iniciativas populares'."
+      info: "A continuación te mostramos las nuevas notificaciones que han publicado los autores de las iniciativas ciudadanas que estás apoyando en %{org_name}."
+      title: "Notificaciones de iniciativas ciudadanas en %{org_name}"
+      share: Compartir iniciativa ciudadana
+      comment: Comentar iniciativa ciudadana
+      unsubscribe: "Si no quieres recibir notificaciones de iniciativas ciudadanas, puedes entrar en %{account} y desmarcar la opción 'Recibir resumen de notificaciones sobre iniciativas ciudadanas'."
       unsubscribe_account: Mi cuenta
     direct_message_for_receiver:
       subject: "Has recibido un nuevo mensaje privado"
