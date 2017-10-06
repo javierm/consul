@@ -3,6 +3,7 @@ require_dependency Rails.root.join('app', 'controllers', 'admin', 'verifications
 class Admin::VerificationsController
 
   def request_verification
+    failed = false
     users = User.where(id: params[:user_ids])
     users.each do |user|
       user.terms_of_service = '1' # Admin operation
@@ -12,9 +13,13 @@ class Admin::VerificationsController
         permit(:document_number, :document_type, :date_of_birth, :postal_code, :terms_of_service).
         merge(user: user, official: current_user, mode: :manual, terms_of_service: '1')
       residence = Verification::Residence.new(residence_params)
-      residence.save
+      failed = true unless residence.save
     end
-    redirect_to admin_verifications_path, notice: t('verification.residence.create.flash.success')
+    if failed
+      redirect_to admin_verifications_path, warning: t('verification.residence.create.flash.failure')
+    else
+      redirect_to admin_verifications_path, notice: t('verification.residence.create.flash.success')
+    end
   end
 
 end

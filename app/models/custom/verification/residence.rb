@@ -12,7 +12,7 @@ class Verification::Residence
 
   validate :postal_code_in_gran_canaria
   validate :residence_in_gran_canaria, if: Proc.new { |vr| vr.user.residence_requested_at? && mode != :manual }
-  validate :allowed_age, if: Proc.new { |vr| vr.user.residence_requested_at? }
+  validate :allowed_age
 
   def postal_code_in_gran_canaria
     errors.add(:postal_code, I18n.t('verification.residence.new.error_not_allowed_postal_code')) unless valid_postal_code?
@@ -32,17 +32,19 @@ class Verification::Residence
   def allowed_age
     return if errors[:date_of_birth].any?
 
-    if !age_valid? || self.date_of_birth > 16.years.ago
+    if self.date_of_birth > 16.years.ago
       errors.add(:date_of_birth, I18n.t('verification.residence.new.error_not_allowed_age'))
+    end
+
+    if user.residence_requested_at? && !age_valid?
+      errors.add(:date_of_birth, I18n.t('verification.residence.new.error_wrong_age'))
       store_failed_attempt(:person)
       Lock.increase_tries(user) if mode == :manual || residency_valid? # Only increase lock if not already increased by residency
     end
   end
 
   def save
-    unless valid?
-      return user
-    end
+    return false unless valid?
 
     if user.residence_requested_at?
       # Updates user data with verified attributes
