@@ -20,4 +20,8 @@ class WelcomeController
     set_debate_votes(@debates)
   end
 
+  def closed
+    render layout: 'closed'
+  end
+
 end

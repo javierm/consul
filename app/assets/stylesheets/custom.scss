@@ -492,6 +492,32 @@ ol{
 }
 .wrapper{margin: 0 auto;}
 .row { max-width: 83rem;}
+.wrapper {
+  header {
+    z-index: 999;
+  }
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  .closed {
+    background-color: rgba(26, 48, 102, 0.9);
+    display: flex;
+    align-items: center;
+    flex: 1 1 auto;
+    .row {
+      min-height: 100%;
+      div {
+        color: white;
+        width: 100%;
+        text-align: center;
+        h1 {
+          margin: auto;
+        }
+      }
+    }
+  }
+}
+
 .highlight{
   background: transparent image-url("background_portada.jpg") no-repeat scroll 0 100% / cover ;
   div.row div.curtain {
