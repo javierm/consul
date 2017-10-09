@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="<%= I18n.locale %>" data-current-user-id="<%= current_user.try(:id) %>">
+<html lang="<%= I18n.locale %>" data-current-user-id="<%= defined?(current_user) && current_user.try(:id) %>">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <%=render "layouts/tracking_data"%>
     <title><%= content_for?(:title) ? yield(:title) : setting['org_name'] %></title>
     <%= stylesheet_link_tag    "application" %>
     <!--[if lt IE 9]>
@@ -23,7 +22,7 @@
     <%= render "shared/facebook_pixel" %>
   </head>
   <body>
-    <div class="wrapper">
+    <div class="wrapper closed">
       <%= render 'layouts/closed_header' %>
 
       <!--[if lt IE 9]>
