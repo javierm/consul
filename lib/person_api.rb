@@ -67,9 +67,10 @@ class PersonApi
     end
 
     def request(document_type, document_number, first_surname, official_name, official_document_number)
+      ident_type = ['DNI', 'Pasaporte', 'Tarjeta de residencia'][document_type.to_i - 1]
       ActiveSupport::OrderedHash[
         'Solicitante', ActiveSupport::OrderedHash[
-          'tipoIdentificacion', document_type,
+          'tipoIdentificacion', ident_type,
           'identificacion', document_number,
           'apellido1', first_surname,
         ],
