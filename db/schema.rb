@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170213101349) do
+ActiveRecord::Schema.define(version: 20171010095050) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -524,9 +524,12 @@ ActiveRecord::Schema.define(version: 20170213101349) do
     t.datetime "residence_requested_at"
     t.string   "postal_code"
     t.integer  "failed_person_calls_count",                 default: 0
+    t.string   "name"
+    t.string   "first_surname"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
+  add_index "users", ["document_number"], name: "users_document_number_idx", using: :btree
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["geozone_id"], name: "index_users_on_geozone_id", using: :btree
   add_index "users", ["hidden_at"], name: "index_users_on_hidden_at", using: :btree

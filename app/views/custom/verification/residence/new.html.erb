@@ -41,27 +41,69 @@
 
       <div class="row">
         <div class="small-12 medium-8">
+          <div class="small-12 medium-5 column end">
+
+            <div class="inline-block">
+              <%= f.label t("verification.residence.new.name") %>
+            </div>
+
+            <div class="inline-block" data-toggle="info-name">
+              <span class="icon-help"></span>
+              <span class="sr-only"><%= t("verification.residence.new.name_help_title") %></span>
+            </div>
+
+            <div class="dropdown-pane" id="info-name" data-dropdown
+                data-hover="true" data-hover-pane="true">
+              <%= t("verification.residence.new.name_help_text_html") %>
+            </div>
+
+            <%= f.text_field :name, label: false %>
+          </div>
+
+          <div class="small-12 medium-5 column end">
+
+            <div class="inline-block">
+              <%= f.label t("verification.residence.new.first_surname") %>
+            </div>
+
+            <div class="inline-block" data-toggle="info-first_surname">
+              <span class="icon-help"></span>
+              <span class="sr-only"><%= t("verification.residence.new.first_surname_help_title") %></span>
+            </div>
+
+            <div class="dropdown-pane" id="info-first_surname" data-dropdown
+                data-hover="true" data-hover-pane="true">
+              <%= t("verification.residence.new.first_surname_help_text_html") %>
+            </div>
+
+            <%= f.text_field :first_surname, label: false %>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="small-12 medium-8">
           <div class="small-12 medium-3 column">
-          <%= f.label t("verification.residence.new.document_type_label") %>
-          <%= f.select :document_type, document_types, prompt: "", label: false %>
+            <%= f.label t("verification.residence.new.document_type_label") %>
+            <%= f.select :document_type, document_types, prompt: "", label: false %>
           </div>
           <div class="small-12 medium-5 column end">
 
-          <div class="inline-block">
-            <%= f.label t("verification.residence.new.document_number") %>
-          </div>
+            <div class="inline-block">
+              <%= f.label t("verification.residence.new.document_number") %>
+            </div>
 
-          <div class="inline-block" data-toggle="info-document-number">
-            <span class="icon-help"></span>
-            <span class="sr-only"><%= t("verification.residence.new.document_number_help_title") %></span>
-          </div>
+            <div class="inline-block" data-toggle="info-document-number">
+              <span class="icon-help"></span>
+              <span class="sr-only"><%= t("verification.residence.new.document_number_help_title") %></span>
+            </div>
 
-          <div class="dropdown-pane" id="info-document-number" data-dropdown
-               data-hover="true" data-hover-pane="true">
-            <%= t("verification.residence.new.document_number_help_text_html") %>
-          </div>
+            <div class="dropdown-pane" id="info-document-number" data-dropdown
+                data-hover="true" data-hover-pane="true">
+              <%= t("verification.residence.new.document_number_help_text_html") %>
+            </div>
 
-          <%= f.text_field :document_number, label: false %>
+            <%= f.text_field :document_number, label: false %>
           </div>
         </div>
       </div>

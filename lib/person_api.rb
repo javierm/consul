@@ -1,9 +1,9 @@
 class PersonApi
 
-  def call(document_type, document_number, official_name, official_document_number)
+  def call(document_type, document_number, first_surname, official_name, official_document_number)
     response = nil
     get_document_number_variants(document_type, document_number).each do |variant|
-      response = Response.new(get_response_body(document_type, variant, official_name, official_document_number))
+      response = Response.new(get_response_body(document_type, variant, first_surname, official_name, official_document_number))
       return response if response.valid?
     end
     response
@@ -53,23 +53,25 @@ class PersonApi
 
   private
 
-    def get_response_body(document_type, document_number, official_name, official_document_number)
+    def get_response_body(document_type, document_number, first_surname, official_name, official_document_number)
       if end_point_available?
-        client.call(:consultar_datos, message: request(document_type, document_number, official_name, official_document_number)).body
+        client.call(:consultar_datos, message: request(document_type, document_number, first_surname, official_name, official_document_number)).body
       else
         stubbed_response_body
       end
     end
 
     def client
-      @client = Savon.client(wsdl: Rails.application.secrets.person_api_end_point, endpoint: Rails.application.secrets.person_api_end_point)
+      # NOTE: Add {log: true, pretty_print_xml: true} for debugging
+      @client = Savon.client(wsdl: "#{Rails.application.secrets.person_api_end_point}?wsdl", endpoint: Rails.application.secrets.person_api_end_point)
     end
 
-    def request(document_type, document_number, official_name, official_document_number)
+    def request(document_type, document_number, first_surname, official_name, official_document_number)
       ActiveSupport::OrderedHash[
         'Solicitante', ActiveSupport::OrderedHash[
           'tipoIdentificacion', document_type,
-          'identificacion', document_number
+          'identificacion', document_number,
+          'apellido1', first_surname,
         ],
         'Finalidad', ActiveSupport::OrderedHash[
           'codProcedimiento', 'N-125',

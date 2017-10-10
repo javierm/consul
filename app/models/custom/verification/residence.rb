@@ -3,7 +3,9 @@ require_dependency Rails.root.join('app', 'models', 'verification', 'residence')
 
 class Verification::Residence
 
-  attr_accessor :user, :document_number, :document_type, :date_of_birth, :postal_code, :geozone_id, :terms_of_service, :official, :mode
+  attr_accessor :user, :document_number, :document_type, :name, :first_surname, :date_of_birth, :postal_code, :geozone_id, :terms_of_service, :official, :mode
+
+  # NOTE mode == :manual indicates use of age verification request only
 
   validates_presence_of :official, if: Proc.new { |vr| vr.user.residence_requested_at? }
 
@@ -57,6 +59,8 @@ class Verification::Residence
       # Saves user form data from verification request
       user.update(document_number:        document_number,
                   document_type:          document_type,
+                  name:                   name,
+                  first_surname:          first_surname,
                   geozone_id:             geozone_id,
                   postal_code:            postal_code,
                   date_of_birth:          date_of_birth,
@@ -87,7 +91,7 @@ class Verification::Residence
   private
 
     def call_person_api
-      @person_api_response = PersonApi.new.call(document_type, document_number, official.username, official.document_number)
+      @person_api_response = PersonApi.new.call(document_type, document_number, first_surname, official.username, official.document_number)
     end
 
     def residency_valid?

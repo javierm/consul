@@ -16,7 +16,7 @@ class Admin::VerificationsController
       failed = true unless residence.save
     end
     if failed
-      redirect_to admin_verifications_path, warning: t('verification.residence.create.flash.failure')
+      redirect_to admin_verifications_path, alert: t('verification.residence.create.flash.failure')
     else
       redirect_to admin_verifications_path, notice: t('verification.residence.create.flash.success')
     end
