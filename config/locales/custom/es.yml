@@ -21,7 +21,7 @@ es:
       residence_verification_failed: Debe ser residente en uno de los 21 municipios de la isla de Gran Canaria
       residence_verification_pending: Pendiente de verificación de residencia/edad
       title: Mi cuenta
-      user_permission_debates: Comentar iniciativas ciudadanas y propuestas del Cabildo
+      user_permission_debates: Comentar iniciativas ciudadanas
       user_permission_info: Con tu cuenta ya puedes...
       user_permission_proposal: Crear nuevas iniciativas ciudadanas
       user_permission_support_proposal: Apoyar iniciativas ciudadanas y propuestas del Cabildo *
@@ -647,7 +647,7 @@ es:
     welcome:
       go_to_index: Ahora no, ver iniciativas ciudadanas
       title: Empieza a participar
-      user_permission_debates: Comentar iniciativas ciudadanas y propuestas del Cabildo
+      user_permission_debates: Comentar iniciativas ciudadanas
       user_permission_info: Con tu cuenta ya puedes...
       user_permission_proposal: Crear nuevas iniciativas ciudadanas
       user_permission_support_proposal: Apoyar iniciativas ciudadanas y propuestas del Cabildo *
