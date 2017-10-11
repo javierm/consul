@@ -12,8 +12,12 @@ class Admin::VerificationsController
         require(:residence).
         permit(:document_number, :document_type, :first_surname, :date_of_birth, :postal_code, :terms_of_service).
         merge(user: user, official: current_user, mode: :manual, terms_of_service: '1')
-      residence = Verification::Residence.new(residence_params)
-      failed = true unless residence.save
+      begin
+        residence = Verification::Residence.new(residence_params)
+        failed = true unless residence.save
+      rescue Exception => e
+        failed = true
+      end
     end
     if failed
       redirect_to admin_verifications_path, alert: t('verification.residence.create.flash.failure')
