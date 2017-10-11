@@ -4,7 +4,7 @@ es:
     show:
       age_verification_failed: La edad mínima exigida es de 16 años
       change_credentials_link: Cambiar mis datos de acceso
-      email_on_comment_label: Recibir un email cuando alguien comenta en mis iniciativas o propuestas
+      email_on_comment_label: Recibir un email cuando alguien comenta en mis iniciativas
       email_on_comment_reply_label: Recibir un email cuando alguien contesta a mis comentarios
       erase_account_link: Darme de baja
       finish_verification: Finalizar verificación
