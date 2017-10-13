@@ -6,16 +6,18 @@ module VerificationImproved
     scope :residence_requested, -> { where("users.residence_requested_at is not null and users.residence_verified_at is null") }
   end
 
-  def pending_verification?
-    residence_requested_at? && !residence_verified? && failed_census_calls_count == 0 && failed_person_calls_count == 0
-  end
-
   def residence_requested?
-    residence_requested_at? && !residence_verified?
+    residence_requested_at? && !residence_verified? &&
+      (failed_person_calls.empty? && failed_census_calls.empty? ||
+      residence_requested_at > [failed_person_calls.last.try(:created_at), failed_census_calls.last.try(:created_at)].compact.max)
   end
 
   def failed_age_verification?
-    !residence_verified? && failed_person_calls_count > 0
+    !residence_verified? && failed_person_calls_count > 0 && !residence_requested?
+  end
+
+  def can_request_verification?
+    !residence_verified?
   end
 
 end

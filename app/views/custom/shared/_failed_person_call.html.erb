@@ -1,0 +1,3 @@
+<%= t('verification.residence.new.error_not_allowed_age',
+      last_attempt: l(failed_person_call.created_at, format: :datetime),
+      attempt_number: failed_person_call.user.failed_person_calls.count) %>

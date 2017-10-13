@@ -10,7 +10,7 @@ class Admin::VerificationsController
       # NOTE 'mode: :manual' in merged attributes bypass residence web service verification
       residence_params = ActionController::Parameters.new({ residence: user.attributes }).
         require(:residence).
-        permit(:document_number, :document_type, :first_surname, :date_of_birth, :postal_code, :terms_of_service).
+        permit(:document_number, :document_type, :common_name, :first_surname, :date_of_birth, :postal_code, :terms_of_service).
         merge(user: user, official: current_user, mode: :manual, terms_of_service: '1')
       begin
         residence = Verification::Residence.new(residence_params)

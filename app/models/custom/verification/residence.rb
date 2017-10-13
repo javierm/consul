@@ -3,17 +3,17 @@ require_dependency Rails.root.join('app', 'models', 'verification', 'residence')
 
 class Verification::Residence
 
-  attr_accessor :user, :document_number, :document_type, :name, :first_surname, :date_of_birth, :postal_code, :geozone_id, :terms_of_service, :official, :mode
+  attr_accessor :user, :document_number, :document_type, :common_name, :first_surname, :date_of_birth, :postal_code, :geozone_id, :terms_of_service, :official, :mode
 
   # NOTE mode == :manual indicates use of age verification request only
 
-  validates_presence_of :official, if: Proc.new { |vr| vr.user.residence_requested_at? }
+  validates_presence_of :official, if: Proc.new { |vr| vr.user.residence_requested? }
 
-  before_validation :call_census_api, if: Proc.new { |vr| vr.user.residence_requested_at? && mode != :manual }
-  before_validation :call_person_api, if: Proc.new { |vr| vr.user.residence_requested_at? }
+  before_validation :call_census_api, if: Proc.new { |vr| vr.user.residence_requested? && mode != :manual }
+  before_validation :call_person_api, if: Proc.new { |vr| vr.user.residence_requested? }
 
   validate :postal_code_in_gran_canaria
-  validate :residence_in_gran_canaria, if: Proc.new { |vr| vr.user.residence_requested_at? && mode != :manual }
+  validate :residence_in_gran_canaria, if: Proc.new { |vr| vr.user.residence_requested? && mode != :manual }
   validate :allowed_age
 
   def postal_code_in_gran_canaria
@@ -38,7 +38,7 @@ class Verification::Residence
       errors.add(:date_of_birth, I18n.t('verification.residence.new.error_not_allowed_age'))
     end
 
-    if user.residence_requested_at? && !age_valid?
+    if user.residence_requested? && !age_valid?
       errors.add(:date_of_birth, I18n.t('verification.residence.new.error_wrong_age'))
       store_failed_attempt(:person)
       Lock.increase_tries(user) if mode == :manual || residency_valid? # Only increase lock if not already increased by residency
@@ -48,7 +48,7 @@ class Verification::Residence
   def save
     return false unless valid?
 
-    if user.residence_requested_at?
+    if user.residence_requested?
       # Updates user data with verified attributes
       attrs = { residence_verified_at: Time.now }
       # TODO Revisar el guardado de geozone
@@ -59,7 +59,7 @@ class Verification::Residence
       # Saves user form data from verification request
       user.update(document_number:        document_number,
                   document_type:          document_type,
-                  name:                   name,
+                  common_name:            common_name,
                   first_surname:          first_surname,
                   geozone_id:             geozone_id,
                   postal_code:            postal_code,
@@ -81,6 +81,10 @@ class Verification::Residence
       date_of_birth:   date_of_birth,
     }
     attrs[:postal_code] = postal_code if klass_name == :census
+    if klass_name == :person
+      attrs[:common_name] = common_name
+      attrs[:first_surname] = first_surname
+    end
     klass.create(attrs)
   end
 

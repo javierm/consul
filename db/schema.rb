@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171010095050) do
+ActiveRecord::Schema.define(version: 20171013131146) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -206,6 +206,8 @@ ActiveRecord::Schema.define(version: 20171010095050) do
     t.date     "date_of_birth"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.string   "common_name"
+    t.string   "first_surname"
   end
 
   add_index "failed_person_calls", ["user_id"], name: "index_failed_person_calls_on_user_id", using: :btree
@@ -524,7 +526,7 @@ ActiveRecord::Schema.define(version: 20171010095050) do
     t.datetime "residence_requested_at"
     t.string   "postal_code"
     t.integer  "failed_person_calls_count",                 default: 0
-    t.string   "name"
+    t.string   "common_name"
     t.string   "first_surname"
   end
 

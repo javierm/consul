@@ -145,22 +145,27 @@
                   </p>
                 <% elsif current_user.level_two_verified? %>
                   <%= link_to t("account.show.finish_verification"), verification_path, class: "button success" %>
-                <% elsif current_user.failed_residence_verification? %>
-                  <p class="failed-verification">
-                    <span class="icon-x"></span>
-                    <%= t("account.show.residence_verification_failed") %>
-                  </p>
-                <% elsif current_user.failed_age_verification? %>
-                  <p class="failed-verification">
-                    <span class="icon-x"></span>
-                    <%= t("account.show.age_verification_failed") %>
-                  </p>
-                <% elsif current_user.pending_verification? %>
+                <% elsif current_user.residence_requested? %>
                   <p class="pending-verification">
                     <span class="icon-eye"></span>
                     <%= t("account.show.residence_verification_pending") %>
                   </p>
                 <% else %>
+                  <% if current_user.failed_age_verification? %>
+                    <p class="failed-verification">
+                      <span class="icon-x">
+                        <%= render "shared/pending_step", user: current_user %>
+                        <br />
+                        <%= render 'shared/residence_data', user: current_user %>
+                      </span>
+                    </p>
+                  <% elsif current_user.failed_residence_verification? %>
+                    <p class="failed-verification">
+                      <span class="icon-x">
+                        <%= render "shared/pending_step", user: current_user %>
+                      </span>
+                    </p>
+                  <% end %>
                   <%= link_to t("account.show.verify_my_account"), verification_path, class: "button success" %>
                 <% end %>
               </span>

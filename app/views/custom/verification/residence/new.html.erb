@@ -44,20 +44,20 @@
           <div class="small-12 medium-5 column end">
 
             <div class="inline-block">
-              <%= f.label t("verification.residence.new.name") %>
+              <%= f.label t("verification.residence.new.common_name") %>
             </div>
 
-            <div class="inline-block" data-toggle="info-name">
+            <div class="inline-block" data-toggle="info-common_name">
               <span class="icon-help"></span>
               <span class="sr-only"><%= t("verification.residence.new.name_help_title") %></span>
             </div>
 
-            <div class="dropdown-pane" id="info-name" data-dropdown
+            <div class="dropdown-pane" id="info-common_name" data-dropdown
                 data-hover="true" data-hover-pane="true">
-              <%= t("verification.residence.new.name_help_text_html") %>
+              <%= t("verification.residence.new.common_name_help_text_html") %>
             </div>
 
-            <%= f.text_field :name, label: false %>
+            <%= f.text_field :common_name, label: false %>
           </div>
 
           <div class="small-12 medium-5 column end">

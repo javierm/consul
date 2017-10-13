@@ -1,0 +1,4 @@
+<strong><%= t("admin.users.show.date_of_birth") %></strong> <%= l(user.date_of_birth.to_date, format: :default) rescue '-' %> |
+<strong><%= t("admin.users.show.document_number") %></strong> <%= user.document_number %> |
+<strong><%= t("admin.users.show.common_name") %></strong> <%= user.common_name %> |
+<strong><%= t("admin.users.show.first_surname") %></strong> <%= user.first_surname %>

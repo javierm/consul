@@ -30,10 +30,10 @@
           <%= link_to user.name, admin_user_path(user) %>
         </td>
         <td>
-          <%= render "pending_step", user: user %>
+          <%= render "shared/pending_step", user: user %>
         </td>
         <td class="text-center">
-          <% if user.pending_verification? %>
+          <% if user.residence_requested? %>
             <%= check_box_tag "user_ids[]", user.id, nil, id: "#{dom_id(user)}_check" %>
           <% end %>
         </td>

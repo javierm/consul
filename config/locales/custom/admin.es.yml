@@ -316,16 +316,22 @@ es:
           without_confirmed_hide: Pendientes
         title: Usuarios bloqueados
       show:
+        username: 'Usuario:'
         email: 'Email:'
         hidden_at: 'Bloqueado:'
         registered_at: 'Fecha de alta:'
-        title: Actividad del usuario (%{user})
+        title: Actividad del usuario
+        personal_data: Datos personales
+        common_name: "Nombre:"
+        first_surname: "Apellido1:"
+        document_number: "Documento identidad:"
+        date_of_birth: "F. nacimiento:"
     verifications:
       index:
         confirm: '¿Estás seguro?'
         phone_not_given: No ha dado su teléfono
         sms_code_not_confirmed: No ha introducido su código de seguridad
-        pending_verification: Solicitada verificación de mayoría de edad
+        pending_verification: Solicitada verificación de mayoría de edad (%{count}º intento)
         request_verification: Verificar mayoría de edad
         title: Verificaciones incompletas
         headers:
