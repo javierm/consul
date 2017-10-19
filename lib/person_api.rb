@@ -63,7 +63,7 @@ class PersonApi
 
     def client
       # NOTE: Add {log: true, pretty_print_xml: true} for debugging
-      @client = Savon.client(wsdl: "#{Rails.application.secrets.person_api_end_point}?wsdl", endpoint: Rails.application.secrets.person_api_end_point)
+      @client = Savon.client(wsdl: "#{Rails.application.secrets.person_api_end_point}?wsdl", endpoint: Rails.application.secrets.person_api_end_point, raise_errors: false)
     end
 
     def request(document_type, document_number, first_surname, official_name, official_document_number)
