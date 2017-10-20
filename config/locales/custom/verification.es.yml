@@ -71,6 +71,7 @@ es:
         error_verifying_census: El Padrón no pudo verificar tu información. Por favor, confirma que tus datos de empadronamiento sean correctos llamando al Ayuntamiento o visitando una %{offices}.
         error_verifying_census_offices: oficina de Atención al ciudadano
         error_verifying_census_offices_url: http://offices.consul
+        error_invalid_spanish_id: El número de DNI y/o la letra no son correctos, revíselos por favor.
         first_surname: Primer apellido
         first_surname_label: Primer apellido
         first_surname_help_text_html: Tal como aparece en su documento de identidad

@@ -18,6 +18,7 @@ class Admin::VerificationsController
       rescue Exception => e
         failed = true
       end
+      Mailer.email_verification_residence(user.email, failed).deliver_later
     end
     if failed
       redirect_to admin_verifications_path, alert: t('verification.residence.create.flash.failure')

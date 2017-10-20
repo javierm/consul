@@ -15,6 +15,7 @@ class Verification::Residence
   validate :postal_code_in_gran_canaria
   validate :residence_in_gran_canaria, if: Proc.new { |vr| vr.user.residence_requested? && mode != :manual }
   validate :allowed_age
+  validate :spanish_id, if: Proc.new { |vr| vr.document_type == "1"}
 
   def postal_code_in_gran_canaria
     errors.add(:postal_code, I18n.t('verification.residence.new.error_not_allowed_postal_code')) unless valid_postal_code?
@@ -43,6 +44,11 @@ class Verification::Residence
       store_failed_attempt(:person)
       Lock.increase_tries(user) if mode == :manual || residency_valid? # Only increase lock if not already increased by residency
     end
+  end
+
+  def spanish_id
+    return if errors.any?
+    errors.add(:document_number, I18n.t('verification.residence.new.error_invalid_spanish_id')) unless valid_spanish_id?
   end
 
   def save
@@ -112,4 +118,12 @@ class Verification::Residence
       postal_code =~ /^35/
     end
 
+    def valid_spanish_id?
+      value = document_number.upcase
+      return false unless value.match(/^[0-9]{8}[a-z]$/i)
+      letters = "TRWAGMYFPDXBNJZSQVHLCKE"
+      check = value.slice!(value.length - 1)
+      calculated_letter = letters[value.to_i % 23].chr
+      return check === calculated_letter
+    end
 end
