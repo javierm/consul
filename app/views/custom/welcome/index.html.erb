@@ -45,23 +45,16 @@
         <!-- <p><%= t("welcome.do.description") %></p> -->
       </div>
       <div class="small-12 medium-2 column">
-        <div class="show-for-small-only">
-          <a class="youtube-media" href="https://www.youtube.com/embed/7oWzZ6i1AEA?rel=0&showinfo=0&controls=1" onclick="ga('send', 'event','Vídeos','Click','video_tutorial_mobile', 1);" >
-            <%= image_tag("icon_home_tutorial.png", size: "168x168", alt: t("welcome.tutorial.title"), title: t("welcome.tutorial.title")) %>
-            <h3><%= t("welcome.tutorial.title") %></h3>
-          </a>
-        </div>
-
-        <div data-toggle="modal-video" style="cursor:pointer;" class="hide-for-small-only">
+        <div data-toggle="modal-video" style="cursor:pointer;" class="">
           <%= image_tag("icon_home_tutorial.png", size: "168x168", alt: t("welcome.tutorial.title"), title: t("welcome.tutorial.title")) %>
           <h3><%= t("welcome.tutorial.title") %></h3>
         </div>
         <!-- <p><%= t("welcome.tutorial.description") %></p> -->
 
         <div class="reveal" id="modal-video" data-reveal data-reset-on-close="true">
-          <span>Vídeo Tutorial Participación Ciudadana.</span>
+          <span>Tutorial Participación Ciudadana.</span>
           <p>
-          <iframe title="Video Tutorial Participación Ciudadana" src="https://www.youtube.com/embed/7oWzZ6i1AEA?rel=0&showinfo=0&controls=1" width="560" height="315" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
+          <iframe title="Tutorial Participación Ciudadana" src="https://www.youtube.com/embed/7oWzZ6i1AEA?rel=0&showinfo=0&controls=1" width="560" height="315" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
 
           </p>
           <button class="close-button" data-close aria-label="Close modal" type="button">
