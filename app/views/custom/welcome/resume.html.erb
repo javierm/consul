@@ -29,7 +29,7 @@
     <div class="small-12 large-3 column">
       <aside class="margin-bottom">
         <div class="hide-for-large-only">
-          <%= link_to t("proposals.index.start_proposal"), new_proposal_path, class: 'button expanded' %>
+          <%= link_to t("proposals.index.start_proposal"), new_proposal_path, class: 'button expanded', onclick: "ga('send', 'event','Enlaces','Click','enlace_desde_resumen_participacion', 1);" %>
         </div>
         <%= link_to new_proposal_path, class: "show-for-large-only" do %>
           <%= image_tag 'create_proposal.png' %>

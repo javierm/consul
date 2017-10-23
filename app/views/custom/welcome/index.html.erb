@@ -2,20 +2,17 @@
   <div class="row text-center flex">
     <div class="small-12 medium-6 large-6 column padding">
       <h1>
-        <%= link_to t("layouts.header.open_city_title"), new_user_session_path %>
+        <%= link_to t("layouts.header.open_city_title"), new_user_session_path, onclick: "ga('send', 'event','Enlaces','Click','enlace_futuro_de_GC', 1);" %>
       </h1>
-      
-      <h1><span><%= link_to t("layouts.header.open_city_slogan_html"), new_user_session_path %></span></h1>
+      <h1><span><%= link_to t("layouts.header.open_city_slogan_html"), new_user_session_path, onclick: "ga('send', 'event','Enlaces','Click','enlace_lo_decides_tu', 1);" %></span></h1>
       <div class="medium-4">
-        <%= link_to t("layouts.header.see_all"), new_user_session_path, class: "button see-more expanded" %>
-
+        <%= link_to t("layouts.header.see_all"), new_user_session_path, class: "button see-more expanded", onclick: "ga('send', 'event','Enlaces','Click','enlace_entra_y_participa', 1);" %>
       </div>
-
     </div>
 
     <div class="small-12 medium-6 large-6 column text-center">
       <div class="videoWrapper">
-        <iframe title="Video Participación Ciudadana" src="https://www.youtube.com/embed/nm7sbKQpq9k?showinfo=0&controls=0" width="560" height="315" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
+        <iframe title= "Spot Participa Gran Canaria" width="560" height="315" src="https://www.youtube.com/embed/sK0KIbn8zyg?rel=0&showinfo=0&controls=1" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
       </div>
     </div>
   </div>
@@ -49,7 +46,7 @@
       </div>
       <div class="small-12 medium-2 column">
         <div class="show-for-small-only">
-          <a class="youtube-media" href="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FParticipaGC%2Fvideos%2F484678355220298%2F">
+          <a class="youtube-media" href="https://www.youtube.com/embed/7oWzZ6i1AEA?rel=0&showinfo=0&controls=1" onclick="ga('send', 'event','Vídeos','Click','video_tutorial_mobile', 1);" >
             <%= image_tag("icon_home_tutorial.png", size: "168x168", alt: t("welcome.tutorial.title"), title: t("welcome.tutorial.title")) %>
             <h3><%= t("welcome.tutorial.title") %></h3>
           </a>
@@ -64,7 +61,7 @@
         <div class="reveal" id="modal-video" data-reveal data-reset-on-close="true">
           <span>Vídeo Tutorial Participación Ciudadana.</span>
           <p>
-          <iframe title="Video Tutorial Participación Ciudadana" src="https://www.youtube.com/embed/R2xTdoCTwic?showinfo=0&controls=0" width="560" height="315" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
+          <iframe title="Video Tutorial Participación Ciudadana" src="https://www.youtube.com/embed/7oWzZ6i1AEA?rel=0&showinfo=0&controls=1" width="560" height="315" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
 
           </p>
           <button class="close-button" data-close aria-label="Close modal" type="button">

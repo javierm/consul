@@ -525,8 +525,8 @@ ol{
 
 @media only screen and (max-width: 639px) {
   .medium-9 .medium-6 .videoWrapper > iframe, .highlight .medium-6 .videoWrapper > iframe{
-    height: calc(90vw / 1.77);
-    width: 90vw;
+    height: calc(90vw / 1.77)!important;
+    width: 90vw!important;
   }
 }
 

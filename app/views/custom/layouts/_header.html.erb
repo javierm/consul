@@ -25,7 +25,7 @@
         </div>
 
         <div class="top-bar-right  medium-2 hide-for-small-only column">
-          <%= link_to t("layouts.header.external_link_institution_url") do %>
+          <%= link_to t("layouts.header.external_link_institution_url"), onclick: "ga('send', 'event','Enlaces','Click','enlace_cabildo', 1);" do %>
             <%= image_tag(("CabildoGranCanaria.jpg"), class: 'logo', alt: t('layouts.header.external_link_institution'), title: t('layouts.header.external_link_institution')) %>
           <% end %>
         </div>
