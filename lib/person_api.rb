@@ -1,5 +1,7 @@
 class PersonApi
 
+  DOCUMENT_TYPES = %w[ DNI OTRO NIE ]
+
   def call(document_type, document_number, first_surname, official_name, official_document_number)
     response = nil
     get_document_number_variants(document_type, document_number).each do |variant|
@@ -67,7 +69,7 @@ class PersonApi
     end
 
     def request(document_type, document_number, first_surname, official_name, official_document_number)
-      ident_type = ['DNI', 'Pasaporte', 'Tarjeta de residencia'][document_type.to_i - 1]
+      ident_type = DOCUMENT_TYPES[document_type.to_i - 1]
       ActiveSupport::OrderedHash[
         'Solicitante', ActiveSupport::OrderedHash[
           'tipoIdentificacion', ident_type,
