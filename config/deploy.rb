@@ -16,14 +16,14 @@ set :full_app_name, deploysecret(:full_app_name)
 set :server_name, deploysecret(:server_name)
 #set :repo_url, 'git@github.com:consul/consul.git'
 # If ssh access is restricted, probably you need to use https access
-set :repo_url, 'https://github.com/consul/consul.git'
+set :repo_url, 'https://github.com/usabi/consul.git'
 
 set :scm, :git
 set :revision, `git rev-parse --short #{fetch(:branch)}`.strip
 
 set :log_level, :info
 set :pty, true
-set :use_sudo, false
+set :use_sudo, true
 
 set :linked_files, %w{config/database.yml config/secrets.yml}
 set :linked_dirs, %w{log tmp public/system public/assets}
@@ -46,6 +46,8 @@ set(:config_files, %w(
   sidekiq.yml
 ))
 
+set :symlinks, []
+
 set :whenever_roles, -> { :cron }
 
 namespace :deploy do
@@ -59,7 +61,16 @@ namespace :deploy do
 
   after :finishing, 'deploy:cleanup'
   # Restart unicorn
-  after 'deploy:publishing', 'deploy:restart'
+  # after 'deploy:publishing', 'deploy:restart'
+  after :publishing, 'restart_tmp'
   # Restart Delayed Jobs
   after 'deploy:published', 'delayed_job:restart'
 end
+
+desc "Restart application"
+  task :restart_tmp do
+    on roles(:app) do
+    execute "touch #{ File.join(current_path, 'tmp', 'restart.txt') }"
+  end
+end
+

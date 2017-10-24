@@ -50,13 +50,16 @@ header {
   background: $header-color;
   background-image: image-url("background_header.png") !important;
   & > .row {
+    .logo.show-for-small-only img {
+      width: auto;
+    }
     .top-bar {
       background-color: transparent!important;
       #responsive-menu {
         .top-bar-title {
           margin-right: 0;
           line-height: 0;
-          img.logo{
+          img.logo {
             margin-bottom: -50px;
             width: 220px;
             height: 180px;
@@ -91,7 +94,7 @@ header {
           }
           li:last-child{
             border:none;
-          } 
+          }
         }
         @media only screen and (max-width: 639px) {
           text-align: right;
@@ -109,7 +112,7 @@ header {
               text-transform: uppercase;
               margin-bottom: 2px;
               padding: 0.5em 1em;
-              border-top: 1px solid $header-color; 
+              border-top: 1px solid $header-color;
             }
             li a.active{
               text-decoration: underline;
@@ -119,7 +122,7 @@ header {
           }
           ul.menu{
             li{
-             border-right: none; 
+             border-right: none;
               a {
                 font-size: 0.8em;
               }
@@ -148,7 +151,7 @@ header {
     }
     &:last-child ul{
         font-size: 0.8em;
-      } 
+      }
     ul {
       display: inline-flex;
       li{ margin: 0}
@@ -184,7 +187,7 @@ header {
         word-spacing: 100vw;
         font-size: 1em;
         line-height: 1em;
-      } 
+      }
       li:last-child h1{
         border-right: none;
       }
@@ -387,7 +390,7 @@ aside.margin-bottom {
     &:first-child{
       background-color: $text-summary;
       color: white;
-    } 
+    }
     background-color: $header-color;
     font-size: 1.1rem;
     padding: 0.5rem 1rem;
@@ -403,7 +406,7 @@ aside.margin-bottom {
     padding-top: 0.5em;
     p{ font-weight: 700;}
   }
-  p, ol{ 
+  p, ol{
     font-size: 0.9rem;
     line-height: 1.1rem;
   }
@@ -464,7 +467,7 @@ ol{
             &:first-child a {
               padding-bottom: 10px;
             }
-          } 
+          }
           @media only screen and (max-width: 639px) {
             float: initial;
             li{
@@ -472,7 +475,7 @@ ol{
               display: inherit;
               text-align: center;
             }
-          } 
+          }
 
         }
       }
@@ -528,6 +531,9 @@ ol{
     height: calc(90vw / 1.77)!important;
     width: 90vw!important;
   }
+  header .subnavigation {
+    border-top: none;
+  }
 }
 
 @media only screen and (min-width: 1540px) {
@@ -548,7 +554,7 @@ ol{
       line-height: 0.8em;
       text-shadow: 3px 3px 3px #000;
       color: white;
-    } 
+    }
     span a{
       font-weight: 700;
       color: $header-color;
@@ -588,7 +594,7 @@ ol{
   font-size: 1.6rem;
   }
   h3{
-    font-size: 1.2rem;  
+    font-size: 1.2rem;
     text-transform: uppercase;
     line-height: 1;
   }
@@ -609,9 +615,16 @@ ol{
     background-color: white;
     margin-bottom: 3px;
   }
-  .top-bar .menu-icon.dark::after, .top-bar .menu-icon.dark:hover::after {
-    background: $header-small-font-color none repeat scroll 0 0;
-    box-shadow: 0 7px 0 $header-small-font-color, 0 14px 0 $header-small-font-color;
+  .top-bar .menu-icon.dark {
+    height: 20px;
+    width: 25px;
+    right: 5px;
+    left: unset;
+    &::after, &:hover::after {
+      background: $header-small-font-color none repeat scroll 0 0;
+      box-shadow: 0 8px 0 $header-small-font-color, 0 16px 0 $header-small-font-color;
+      height: 4px;
+    }
   }
   .top-bar{
     color: #273877;
@@ -630,8 +643,8 @@ ol{
   }
   #modal-video iframe{
     max-width: 100%;
-  } 
-} 
+  }
+}
 @media only screen and (max-width: 1023px) {
   h1{
     font-size: 1.8rem;
@@ -639,7 +652,13 @@ ol{
 
   h2{
     font-size: 1.2rem;
-  } 
+  }
 }
 
-
+@media screen and (max-width: 767px) {
+  body .cookies-eu.js-cookies-eu {
+    position: fixed;
+    padding: 0.5em 0;
+    line-height: 24px;
+  }
+}
