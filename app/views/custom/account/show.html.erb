@@ -119,14 +119,6 @@
               <% end %>
               <%= t("account.show.user_permission_support_proposal") %>
             </li>
-            <li>
-              <% if current_user.level_three_verified? %>
-                <span class="icon-check"></span>
-              <% else %>
-                <span class="icon-x"></span>
-              <% end %>
-              <%= t("account.show.user_permission_votes") %>
-            </li>
           </ul>
 
           <p>
