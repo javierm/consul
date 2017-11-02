@@ -1,12 +1,13 @@
+<% url = current_user ? new_proposal_path : new_user_registration_path %>
 <div class="expanded highlight padding no-margin-top">
   <div class="row text-center flex">
     <div class="small-12 medium-6 large-6 column padding">
       <h1>
-        <%= link_to t("layouts.header.open_city_title"), new_user_session_path, onclick: "ga('send', 'event','Enlaces','Click','enlace_futuro_de_GC', 1);" %>
+        <%= link_to t("layouts.header.open_city_title"), url, onclick: "ga('send', 'event','Enlaces','Click','enlace_futuro_de_GC', 1);" %>
       </h1>
-      <h1><span><%= link_to t("layouts.header.open_city_slogan_html"), new_user_session_path, onclick: "ga('send', 'event','Enlaces','Click','enlace_lo_decides_tu', 1);" %></span></h1>
+      <h1><span><%= link_to t("layouts.header.open_city_slogan_html"), url, onclick: "ga('send', 'event','Enlaces','Click','enlace_lo_decides_tu', 1);" %></span></h1>
       <div class="medium-4">
-        <%= link_to t("layouts.header.see_all"), new_user_session_path, class: "button see-more expanded", onclick: "ga('send', 'event','Enlaces','Click','enlace_entra_y_participa', 1);" %>
+        <%= link_to t("layouts.header.see_all"), url, class: "button see-more expanded", onclick: "ga('send', 'event','Enlaces','Click','enlace_entra_y_participa', 1);" %>
       </div>
     </div>
 
