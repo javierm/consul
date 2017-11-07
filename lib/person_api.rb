@@ -46,6 +46,10 @@ class PersonApi
       Date.new(year.to_i, month.to_i, day.to_i)
     end
 
+    def error
+      data
+    end
+
     private
 
       def data

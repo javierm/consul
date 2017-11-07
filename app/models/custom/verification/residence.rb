@@ -90,6 +90,7 @@ class Verification::Residence
     if klass_name == :person
       attrs[:common_name] = common_name
       attrs[:first_surname] = first_surname
+      attrs[:response] = @person_api_response.error
     end
     klass.create(attrs)
   end
