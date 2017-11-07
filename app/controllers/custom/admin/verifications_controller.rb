@@ -16,7 +16,14 @@ class Admin::VerificationsController
         residence = Verification::Residence.new(residence_params)
         failed = true unless residence.save
       rescue Exception => e
-        failed = true
+        STDERR.puts ""
+        STDERR.puts "****** ERROR querying residence web service for user #{user.id}"
+        STDERR.puts e.message
+        STDERR.puts e.backtrace[0..9]
+        STDERR.puts "****** /ERROR querying residence web service"
+        STDERR.puts ""
+        redirect_to admin_verifications_path, alert: t('verification.residence.create.flash.error')
+        return
       end
       Mailer.email_verification_residence(user.email, failed).deliver_later
     end
