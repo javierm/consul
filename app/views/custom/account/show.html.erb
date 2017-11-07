@@ -140,7 +140,7 @@
                 <% elsif current_user.residence_requested? %>
                   <p class="pending-verification">
                     <span class="icon-eye"></span>
-                    <%= t("account.show.residence_verification_pending") %>
+                    <%= t("account.show.residence_verification_pending_html", contact_link: mail_to(Rails.application.secrets.contact_email)) %>
                   </p>
                 <% else %>
                   <% if current_user.failed_age_verification? %>

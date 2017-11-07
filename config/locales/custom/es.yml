@@ -19,7 +19,7 @@ es:
       email_digest_label: Recibir resumen de notificaciones sobre iniciativas ciudadanas
       official_position_badge_label: Mostrar etiqueta de tipo de usuario
       residence_verification_failed: Debe ser residente en uno de los 21 municipios de la isla de Gran Canaria
-      residence_verification_pending: Pendiente de verificación de residencia/edad
+      residence_verification_pending_html: Su solicitud de verificación de residencia/edad está pendiente de procesado, si en 48h no ha finalizado póngase en contacto con nosotros en %{contact_link}.
       title: Mi cuenta
       user_permission_debates: Comentar iniciativas ciudadanas
       user_permission_info: Con tu cuenta ya puedes...

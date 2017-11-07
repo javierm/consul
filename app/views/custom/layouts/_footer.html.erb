@@ -67,7 +67,7 @@
           <% end %>
         </li>
         <li>
-          <%= link_to page_path('contact_us') do %>
+          <%= mail_to Rails.application.secrets.contact_email do %>
             <span class="icon-letter"></span>
             <%= t("layouts.footer.contact_us") %>
           <% end %>
