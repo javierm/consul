@@ -8,6 +8,10 @@
 <main>
   <div class="wrap row">
     <div id="debates" class="debates-list small-12 medium-9 column">
+      <div class="survey_banner large-12">
+        <%= link_to image_tag('Banner.png', class: 'banner'), 'https://goo.gl/forms/8bVdOvdsIcFct7yZ2', target: '_blank' %>
+      </div>
+
       <% if @debates.any? %>
         <div class="small-12 search-results">
           <% if @search_terms || @advanced_search_terms %>
