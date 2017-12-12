@@ -54,8 +54,8 @@ es:
           failure: Algunas verificaciones no se completaron, los errores se muestran en cada usuario
           error: Se produjo un error al consultar el servicio de verificación de residencia, por favor inténtelo de nuevo en unos minutos, y en caso de que siga fallando contacte con el administrador
       new:
-        accept_terms_text: Por la presente declaro que soy residente en uno de los 21 municipios de la isla de Gran Canaria,<br>que la información transmitida es exacta y que acepto todas %{terms_url}.
-        accept_terms_text_title: Por la presente declaro que soy residente en uno de los 21 municipios de la isla de Gran Canaria, que la información transmitida es exacta y que acepto todas las condiciones de servicio.
+        accept_terms_text: Por la presente declaro que soy mayor de 16 años y resido en uno de los 21 municipios de la isla de Gran Canaria,<br>que la información transmitida es exacta y que acepto todas %{terms_url}.
+        accept_terms_text_title: Por la presente declaro que soy mayor de 16 años y resido en uno de los 21 municipios de la isla de Gran Canaria, que la información transmitida es exacta y que acepto todas las condiciones de servicio.
         date_of_birth: Fecha de nacimiento
         document_number: Número de documento
         document_number_help_title: Ayuda
@@ -66,7 +66,7 @@ es:
           spanish_id: DNI
         document_type_label: Tipo de documento
 
-        error_not_allowed_age: Datos declarados son incorrectos o es menor de 16 años (%{attempt_number}º intento %{last_attempt})
+        error_not_allowed_age: Datos declarados son incorrectos o es menor de 16 años
         error_wrong_age: La edad declarada no es correcta
         error_not_allowed_postal_code: El código postal no pertenece a Gran Canaria.
         error_verifying_census: El Padrón no pudo verificar tu información. Por favor, confirma que tus datos de empadronamiento sean correctos llamando al Ayuntamiento o visitando una %{offices}.

@@ -17,12 +17,13 @@ class Verification::ResidenceController
       return
     end
 
-    @residence = Verification::Residence.new(residence_params.merge(user: current_user, mode: :manual))
+    @residence = Verification::Residence.new(residence_params.merge(user: current_user, mode: :check))
     if @residence.save
-      # TODO Esto no se usa actualmente, pues el segundo paso de verificación es desde admin de forma masiva
       if @residence.user.residence_verified?
+        # NOTE: Mode :check always enters here. Mode empty if verification succeded
         redirect_to verified_user_path, notice: t('verification.residence.create.flash.success')
       else
+        # NOTE: Mode :manual always enters here. Mode empty if verification failed
         redirect_to account_path, notice: t('verification.residence.create.flash.requested')
       end
     else

@@ -6,14 +6,15 @@ class Verification::Residence
   attr_accessor :user, :document_number, :document_type, :common_name, :first_surname, :date_of_birth, :postal_code, :geozone_id, :terms_of_service, :official, :mode
 
   # NOTE mode == :manual indicates use of age verification request only
+  # NOTE mode == :check indicates no verification needed (user declares residence)
 
-  validates_presence_of :official, if: Proc.new { |vr| vr.user.residence_requested? }
+  validates_presence_of :official, if: Proc.new { |vr| vr.user.residence_requested? && mode == :manual }
 
-  before_validation :call_census_api, if: Proc.new { |vr| vr.user.residence_requested? && mode != :manual }
-  before_validation :call_person_api, if: Proc.new { |vr| vr.user.residence_requested? }
+  before_validation :call_census_api, if: Proc.new { |vr| mode.nil? }
+  before_validation :call_person_api, if: Proc.new { |vr| vr.user.residence_requested? && mode == :manual }
 
   validate :postal_code_in_gran_canaria
-  validate :residence_in_gran_canaria, if: Proc.new { |vr| vr.user.residence_requested? && mode != :manual }
+  validate :residence_in_gran_canaria, if: Proc.new { |vr| mode.nil? }
   validate :allowed_age
   validate :spanish_id, if: Proc.new { |vr| vr.document_type == "1"}
 
@@ -54,7 +55,7 @@ class Verification::Residence
   def save
     return false unless valid?
 
-    if user.residence_requested?
+    if user.residence_requested? && mode == :manual
       # Updates user data with verified attributes
       attrs = { residence_verified_at: Time.now }
       # TODO Revisar el guardado de geozone
@@ -70,7 +71,8 @@ class Verification::Residence
                   geozone_id:             geozone_id,
                   postal_code:            postal_code,
                   date_of_birth:          date_of_birth,
-                  residence_requested_at: Time.now)
+                  residence_verified_at:  (Time.now if mode != :manual),
+                  residence_requested_at: (Time.now if mode == :manual))
     end
   end
 
@@ -111,8 +113,9 @@ class Verification::Residence
     end
 
     def age_valid?
-      @person_api_response.valid? &&
-      @person_api_response.date_of_birth == date_of_birth.to_date
+      api_response = @person_api_response || @census_api_response
+      api_response.valid? &&
+      api_response.date_of_birth == date_of_birth.to_date
     end
 
     def valid_postal_code?

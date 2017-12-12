@@ -9,6 +9,10 @@ describe Verification::Residence do
   describe "validations" do
 
     it "should be valid" do
+      # FIXME Factory data fails with mode nil
+      residence.mode = :check
+      expect(residence).to be_valid
+      residence.mode = :manual
       expect(residence).to be_valid
     end
 
@@ -17,6 +21,7 @@ describe Verification::Residence do
         new_attrs = { date_of_birth: Date.new(1970, 1, 1) }
         new_attrs[:user] = create(:user, :residence_requested)
         residence = build(:verification_residence, attrs.merge(new_attrs))
+        residence.mode = :manual
         residence.valid?
         expect(residence.errors[:date_of_birth].size).to eq(0)
       end
@@ -25,6 +30,7 @@ describe Verification::Residence do
         new_attrs = { date_of_birth: 5.years.ago }
         new_attrs[:user] = create(:user, :residence_requested)
         residence = build(:verification_residence, attrs.merge(new_attrs))
+        residence.mode = :manual
         expect(residence).to_not be_valid
         expect(residence.errors[:date_of_birth]).to include("You must be at least 16 years old")
       end
@@ -33,6 +39,7 @@ describe Verification::Residence do
         new_attrs = { date_of_birth: nil }
         new_attrs[:user] = create(:user, :residence_requested)
         residence = build(:verification_residence, attrs.merge(new_attrs))
+        residence.mode = :manual
         expect(residence).to_not be_valid
         expect(residence.errors[:date_of_birth]).to include("can't be blank")
       end
@@ -85,6 +92,7 @@ describe Verification::Residence do
     it "should store document number, document type, date of birth, geozone_id and residence_requested_at when requesting verification" do
       residence = build(:verification_residence, attrs.merge({document_number: '12345678Z', geozone_id: geozone.id}))
       user = residence.user
+      residence.mode = :manual
       residence.save
 
       user.reload
@@ -97,10 +105,22 @@ describe Verification::Residence do
       expect(user.residence_requested_at).to_not be(nil)
     end
 
-    it "should store residence_verified_at when verifying" do
+    it "should store residence_verified_at when verifying in manual mode" do
       user = create(:user, :residence_requested, date_of_birth: '1970-01-01'.to_date)
       residence = build(:verification_residence, attrs.merge({user: user, document_number: '12345678Z', geozone_id: geozone.id}))
       residence.mode = :manual # NOTE we skip residence web service verification until we have access
+      residence.save
+
+      user.reload
+      #expect(user.gender).to eq('male')
+      #expect(user.geozone).to eq(geozone)
+      expect(user.residence_verified_at).to_not be(nil)
+    end
+
+    it "should verify always with :check mode" do
+      user = create(:user, date_of_birth: '1970-01-01'.to_date)
+      residence = build(:verification_residence, attrs.merge({user: user, document_number: '12345678Z', geozone_id: geozone.id}))
+      residence.mode = :check # NOTE we skip residence web service verification until we have access
       residence.save
 
       user.reload
@@ -113,7 +133,7 @@ describe Verification::Residence do
 
   describe "tries" do
     it "should increase tries after a call to the Census" do
-      residence = build(:verification_residence, :invalid, attrs.merge(user: create(:user, :residence_requested), document_number: "12345678Z"))
+      residence = build(:verification_residence, :invalid, attrs.merge(user: create(:user), document_number: "12345678Z"))
       residence.valid?
       expect(residence.user.lock.tries).to eq(1)
     end
@@ -127,13 +147,13 @@ describe Verification::Residence do
 
   describe "Failed census call" do
     it "stores failed census API calls" do
-      residence = build(:verification_residence, :invalid, attrs.merge(user: create(:user, :residence_requested), document_number: "12345678Z"))
+      residence = build(:verification_residence, :invalid, attrs.merge(user: create(:user), document_number: "12345678Y"))
       residence.save
 
       expect(FailedCensusCall.count).to eq(1)
       expect(FailedCensusCall.first).to have_attributes({
         user_id:         residence.user.id,
-        document_number: "12345678Z",
+        document_number: "12345678Y",
         document_type:   "1",
         date_of_birth:   Date.new(1970, 1, 1),
         postal_code:     "35001"
