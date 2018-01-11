@@ -3,7 +3,7 @@ require 'rails_helper'
 feature 'SMS Verification' do
 
   scenario 'Verify' do
-    user = create(:user, residence_verified_at: Time.now)
+    user = create(:user, residence_verified_at: Time.current)
     login_as(user)
 
     visit new_sms_path
@@ -21,7 +21,7 @@ feature 'SMS Verification' do
   end
 
   scenario 'Errors on phone number' do
-    user = create(:user, residence_verified_at: Time.now)
+    user = create(:user, residence_verified_at: Time.current)
     login_as(user)
 
     visit new_sms_path
@@ -32,7 +32,7 @@ feature 'SMS Verification' do
   end
 
   scenario 'Errors on verification code' do
-    user = create(:user, residence_verified_at: Time.now)
+    user = create(:user, residence_verified_at: Time.current)
     login_as(user)
 
     visit new_sms_path
@@ -54,11 +54,11 @@ feature 'SMS Verification' do
     visit new_sms_path
 
     expect(page).to have_content 'You have not yet confirmed your residency'
-    expect(current_path).to eq(new_residence_path)
+    expect(page).to have_current_path(new_residence_path)
   end
 
   scenario '5 tries allowed' do
-    user = create(:user, residence_verified_at: Time.now)
+    user = create(:user, residence_verified_at: Time.current)
     login_as(user)
 
     visit new_sms_path
@@ -70,11 +70,11 @@ feature 'SMS Verification' do
     end
 
     expect(page).to have_content "You have reached the maximum number of attempts. Please try again later."
-    expect(current_path).to eq(account_path)
+    expect(page).to have_current_path(account_path)
 
     visit new_sms_path
     expect(page).to have_content "You have reached the maximum number of attempts. Please try again later."
-    expect(current_path).to eq(account_path)
+    expect(page).to have_current_path(account_path)
   end
 
 end

@@ -4,7 +4,7 @@ feature 'Verified users' do
 
   scenario "Verified emails" do
     user = create(:user,
-                  residence_verified_at: Time.now,
+                  residence_verified_at: Time.current,
                   document_number:       '12345678Z')
 
     create(:verified_user,
@@ -29,7 +29,7 @@ feature 'Verified users' do
 
   scenario "Verified phones" do
     user = create(:user,
-                  residence_verified_at: Time.now,
+                  residence_verified_at: Time.current,
                   document_number:       '12345678Z')
 
     create(:verified_user,
@@ -54,7 +54,7 @@ feature 'Verified users' do
 
   scenario "No emails or phones" do
     user = create(:user,
-                  residence_verified_at: Time.now,
+                  residence_verified_at: Time.current,
                   document_number:       '12345678Z')
 
     create(:verified_user,
@@ -66,13 +66,12 @@ feature 'Verified users' do
     login_as(user)
     visit verified_user_path
 
-    expect(current_path).to eq new_sms_path
+    expect(page).to have_current_path(new_sms_path)
   end
-
 
   scenario "Select a verified email" do
     user = create(:user,
-              residence_verified_at: Time.now,
+              residence_verified_at: Time.current,
               document_number:       '12345678Z')
 
     verified_user = create(:verified_user,
@@ -87,12 +86,12 @@ feature 'Verified users' do
     end
 
     expect(page).to have_content 'We have sent a confirmation email to your account: rock@example.com'
-    expect(current_path).to eq(account_path)
+    expect(page).to have_current_path(account_path)
   end
 
   scenario "Select a verified phone" do
     user = create(:user,
-                  residence_verified_at: Time.now,
+                  residence_verified_at: Time.current,
                   document_number:       '12345678Z')
 
     verified_user = create(:verified_user,
@@ -111,7 +110,7 @@ feature 'Verified users' do
 
   scenario "Continue without selecting any verified information" do
     user = create(:user,
-                  residence_verified_at: Time.now,
+                  residence_verified_at: Time.current,
                   document_number:       '12345678Z')
 
     create(:verified_user,
@@ -123,16 +122,16 @@ feature 'Verified users' do
 
     click_link "Use other phone"
 
-    expect(current_path).to eq(new_sms_path)
+    expect(page).to have_current_path(new_sms_path)
   end
 
   scenario "No verified information" do
-    user = create(:user, residence_verified_at: Time.now)
+    user = create(:user, residence_verified_at: Time.current)
 
     login_as(user)
     visit verified_user_path
 
-    expect(current_path).to eq(new_sms_path)
+    expect(page).to have_current_path(new_sms_path)
   end
 
 end

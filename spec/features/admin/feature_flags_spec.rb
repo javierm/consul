@@ -3,7 +3,14 @@ require 'rails_helper'
 feature 'Admin feature flags' do
 
   background do
+    Setting['feature.spending_proposals'] = true
+    Setting['feature.spending_proposal_features.voting_allowed'] = true
     login_as(create(:administrator).user)
+  end
+
+  after do
+    Setting['feature.spending_proposals'] = nil
+    Setting['feature.spending_proposal_features.voting_allowed'] = nil
   end
 
   scenario 'Enabled features are listed on menu' do
@@ -22,13 +29,14 @@ feature 'Admin feature flags' do
 
     within("#edit_setting_#{setting_id}") do
       expect(page).to have_button "Disable"
-      expect(page).to_not have_button "Enable"
+      expect(page).not_to have_button "Enable"
       click_button 'Disable'
     end
 
     visit admin_root_path
 
     within('#side_menu') do
+      expect(page).not_to have_link "Budgets"
       expect(page).not_to have_link "Spending proposals"
     end
 
@@ -43,6 +51,7 @@ feature 'Admin feature flags' do
     visit admin_root_path
 
     within('#side_menu') do
+      expect(page).not_to have_link "Budgets"
       expect(page).not_to have_link "Spending proposals"
     end
 
@@ -50,7 +59,7 @@ feature 'Admin feature flags' do
 
     within("#edit_setting_#{setting_id}") do
       expect(page).to have_button "Enable"
-      expect(page).to_not have_button "Disable"
+      expect(page).not_to have_button "Disable"
       click_button 'Enable'
     end
 
@@ -60,4 +69,5 @@ feature 'Admin feature flags' do
       expect(page).to have_link "Spending proposals"
     end
   end
+
 end
