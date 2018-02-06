@@ -178,6 +178,8 @@ Rails.application.routes.draw do
 
   resources :surveys, only: [:show] do
     resources :answered_surveys, only: [:new, :create, :show]
+  end
+
   resources :communities, only: [:show] do
     resources :topics
   end
