@@ -338,3 +338,5 @@ es:
           user: Usuario
           reason: Motivo
           check: Seleccionar
+    newsletters:
+      empty_email: '<usuario borrado>'
