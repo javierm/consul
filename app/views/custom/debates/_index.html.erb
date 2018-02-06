@@ -1,0 +1,75 @@
+<% provide :title do %><%= t('debates.index.title') %><% end %>
+<% content_for :header_addon do %>
+  <%= render "shared/search_form",
+             search_path: debates_path(page: 1),
+             i18n_namespace: "debates.index.search_form" %>
+<% end %>
+
+<main>
+  <div class="wrap row">
+    <div id="debates" class="debates-list small-12 medium-9 column">
+      <div class="survey_banner large-12 margin-bottom">
+        <%= link_to image_tag('Banner.png', class: 'banner'), 'https://goo.gl/forms/8bVdOvdsIcFct7yZ2', target: '_blank' %>
+      </div>
+
+      <% if @debates.any? %>
+        <div class="small-12 search-results">
+          <% if @search_terms || @advanced_search_terms %>
+            <h2>
+              <%= page_entries_info @debates %>
+              <% if !@advanced_search_terms %>
+                <%= t("debates.index.search_results", count: @debates.size, search_term: @search_terms) %>
+              <% end %>
+            </h2>
+          <% elsif @tag_filter %>
+            <h2>
+              <%= page_entries_info @debates %>
+              <%= t("debates.index.filter_topic", count: @debates.size, topic: @tag_filter) %>
+            </h2>
+          <% end %>
+        </div>
+
+        <% if has_banners %>
+          <%= render "shared/banner" %>
+        <% end %>
+
+        <% if @proposal_successfull_exists %>
+          <%= render "proposals/proposal_ballots_banner" %>
+        <% end %>
+
+        <% unless @tag_filter || @search_terms || !has_featured? || @proposal_ballots.present? || @proposal_successfull_exists %>
+          <%= render "featured_debates" %>
+        <% end %>
+
+        <%= render "shared/advanced_search", search_path: debates_path(page: 1) %>
+
+        <%= render 'shared/order_links', i18n_namespace: "debates.index" %>
+
+        <div class="show-for-small-only">
+          <%= link_to t("debates.index.start_debate"), new_debate_path, class: 'button expanded button-debate' %>
+        </div>
+
+        <%= render @debates %>
+        <%= paginate @debates %>
+      <% else %>
+        <p>Próximamente podrás encontrar en esta sección propuestas planteadas a la ciudadanía por parte del Cabildo de Gran Canaria que deben contribuir a facilitar los procesos participativos que mejoren la eficacia y eficiencia de la acción de este Gobierno Insular.</p>
+        <p>Con este fin, tanto la presidencia como las consejerías dispondrán de la iniciativa para promover procesos de deliberación participativa en las materias propias de su competencia, como proyectos, programas, planes y normas, principalmente a través de dos mecanismos:</p>
+        <ul>
+          <li><strong>Consulta ciudadana.</strong> La consulta ciudadana es un instrumento participativo que permite al Cabildo conocer la opinión de la ciudadanía en materias de su competencia, la cual se expresa mediante el voto directo, libre, igual y secreto en las urnas presenciales o electrónicas establecidas al efecto.</li>
+          <li><strong>Sondeos y encuestas de opinión.</strong> El Cabildo podrá acordar la realización de sondeos, encuestas, estudios de opinión o cualquier otro instrumento basado en técnicas demoscópicas, que sirva para recabar y conocer la opinión de la ciudadanía acerca de las decisiones o políticas públicas que pretenda adoptar la Corporación en el ámbito de sus competencias propias.</li>
+        </ul>
+      <% end %>
+    </div>
+
+    <div class="small-12 medium-3 column">
+
+      <aside class="margin-bottom">
+        <% if can? :create, Debate %>
+          <%= link_to t("debates.index.start_debate"), new_debate_path, class: 'button expanded button-debate' %>
+        <% end %>
+        <%= render "shared/tag_cloud", taggable: 'debate' %>
+      </aside>
+    </div>
+
+  </div>
+</main>

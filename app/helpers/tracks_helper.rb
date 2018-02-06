@@ -1,5 +1,6 @@
 module TracksHelper
-  def track_event(data={})
+
+  def track_event(data = {})
     track_data = ""
     prefix = " data-track-event-"
     data.each do |key, value|
@@ -9,4 +10,5 @@ module TracksHelper
       track_data
     end
   end
+
 end

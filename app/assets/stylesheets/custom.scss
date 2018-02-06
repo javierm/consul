@@ -313,6 +313,9 @@ aside.margin-bottom {
     .supports .not-logged {
       background-color: rgba($proposals-border, 0.9);
     }
+    .supports .button-support{
+      color: white;
+    }
   }
 }
 
@@ -331,13 +334,27 @@ aside.margin-bottom {
   }
 }
 
+.participation-not-allowed{
+  font-size: 0.9rem; 
+}
 .anonymous-votes, .organizations-votes, .no-supports-allowed {
   p {
     line-height: 1.1rem;
     font-size: 0.9rem;
   }
 }
+.featured-proposals .supports .button-support {
+  background: white;
+  color: black;
+  margin-top: 0;
+}
 
+.submenu{
+  margin: 0.75rem 0;
+}
+.debate-show .supports .button-support, .proposal-show .supports .button-support, .poll-question-show .supports .button-support, .investment-project-show .supports .button-support, .budget-investment-show .supports .button-support, .polls-show .supports .button-support, .debate-quiz .supports .button-support, .budget-investment-show .supports .button-support, .draft-panels .supports .button-support, .debate-questions .supports .button-support, .communities-show .supports .button-support, .topic-show .supports .button-support, .milestone-content .supports .button-support{
+  color: white;
+}
 .survey_banner {
   display: inline-block;
   position: relative;
@@ -562,6 +579,10 @@ ol{
       text-transform: uppercase;
     }
   }
+  h2, p{
+    color: white;
+    text-shadow: 2px 2px 2px #000;
+  }
   div{
     margin: auto;
     .button{
@@ -661,5 +682,17 @@ ol{
     position: fixed;
     padding: 0.5em 0;
     line-height: 24px;
+  }
+}
+
+.auth-page {
+  background-image: image-url("auth_bg.jpg") !important;
+  background-repeat: no-repeat;
+  background-size: cover;
+  .wrapper{
+    margin: auto;
+    .row.auth > main > div{
+      background-color: white;
+    }
   }
 }

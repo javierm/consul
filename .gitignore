@@ -20,6 +20,7 @@
 /config/database.yml
 /config/secrets.yml
 /config/deploy-secrets.yml
+/config/maintenance.yml
 
 /coverage
 
@@ -29,3 +30,6 @@
 # Mac finder artifacts
 .DS_Store
 .ruby-gemset
+
+public/sitemap.xml
+public/system/

@@ -19,13 +19,14 @@ ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
-  config.after :each do
+  config.after do
     Warden.test_reset!
   end
 end
 
 Capybara.register_driver :poltergeist do |app|
   Capybara::Poltergeist::Driver.new(app,
+    timeout: 1.minute,
     inspector: true, # allows remote debugging by executing page.driver.debug
     phantomjs_logger: File.open(File::NULL, "w"), # don't print console.log calls in console
     phantomjs_options: ['--load-images=no', '--disk-cache=false'],

@@ -17,8 +17,8 @@ feature 'Incomplete verifications' do
 
     expect(page).to have_content(incompletely_verified_user1.username)
     expect(page).to have_content(incompletely_verified_user2.username)
-    expect(page).to_not have_content(never_tried_to_verify_user.username)
-    expect(page).to_not have_content(verified_user.username)
+    expect(page).not_to have_content(never_tried_to_verify_user.username)
+    expect(page).not_to have_content(verified_user.username)
   end
 
   scenario 'Search' do
@@ -32,10 +32,9 @@ feature 'Incomplete verifications' do
     click_button "Search"
 
     expect(page).to have_content("Juan_anonymous")
-    expect(page).to_not have_content("Juan Carlos")
-    expect(page).to_not have_content("Isabel_anonymous")
+    expect(page).not_to have_content("Juan Carlos")
+    expect(page).not_to have_content("Isabel_anonymous")
   end
-
 
   scenario "Residence unverified" do
     incompletely_verified_user = create(:user, :incomplete_verification)
@@ -51,7 +50,7 @@ feature 'Incomplete verifications' do
   end
 
   scenario "Phone not given" do
-    incompletely_verified_user = create(:user, residence_verified_at: Time.now, unconfirmed_phone: nil)
+    incompletely_verified_user = create(:user, residence_verified_at: Time.current, unconfirmed_phone: nil)
 
     visit admin_verifications_path
 
@@ -61,7 +60,7 @@ feature 'Incomplete verifications' do
   end
 
   scenario "SMS code not confirmed" do
-    incompletely_verified_user = create(:user, residence_verified_at: Time.now,
+    incompletely_verified_user = create(:user, residence_verified_at: Time.current,
                                                unconfirmed_phone:     "611111111",
                                                sms_confirmation_code: "1234",
                                                confirmed_phone:       nil)

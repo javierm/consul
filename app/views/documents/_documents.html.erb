@@ -1,0 +1,11 @@
+<div class="row <% 'documents-list' if documents.any? %>">
+  <div class="small-12 column">
+    <% if documents.any? %>
+      <%= render partial: "documents/document", collection: documents %>
+    <% else %>
+      <div class="callout primary text-center">
+        <%= t('documents.no_documents') %>
+      </div>
+    <% end %>
+  </div>
+</div>
