@@ -10,8 +10,8 @@ class Verification::Residence
 
   validates_presence_of :official, if: Proc.new { |vr| vr.user.residence_requested? && mode == :manual }
 
-  before_validation :call_census_api, if: Proc.new { |vr| mode.nil? }
-  before_validation :call_person_api, if: Proc.new { |vr| vr.user.residence_requested? && mode == :manual }
+  before_validation :retrieve_census_data, if: Proc.new { |vr| mode.nil? }
+  before_validation :retrieve_person_data, if: Proc.new { |vr| vr.user.residence_requested? && mode == :manual }
 
   validate :postal_code_in_gran_canaria
   validate :residence_in_gran_canaria, if: Proc.new { |vr| mode.nil? }
@@ -103,7 +103,7 @@ class Verification::Residence
 
   private
 
-    def call_person_api
+    def retrieve_person_data
       @person_api_response = PersonApi.new.call(document_type, document_number, first_surname, official.username, official.document_number)
     end
 
