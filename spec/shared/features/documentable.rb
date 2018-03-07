@@ -84,8 +84,7 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
 
   context "Destroy" do
 
-    scenario "Should show success notice after successfull document upload" do
-
+    scenario "Should show success notice after successful document upload" do
       login_as documentable.author
 
       visit send(documentable_path, arguments)
