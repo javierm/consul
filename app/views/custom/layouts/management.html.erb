@@ -33,18 +33,20 @@
 
           <div id="responsive-menu">
             <div class="top-bar-title">
-              <%= link_to management_root_path, class: "hide-for-small-only" do %>
-                <%= image_tag('logo_header.png', class: 'hide-for-small-only float-left admin', alt: t("layouts.header.logo")) %>
-                <%= setting['org_name'] %>
-                &nbsp;|&nbsp;<%= t("management.dashboard.index.title") %>
-              <% end %>
+              <h1>
+                <%= link_to management_root_path do %>
+                  <%= image_tag('logo_header.png', class: 'hide-for-small-only float-left admin', alt: t("layouts.header.logo")) %>
+                  <%= setting['org_name'] %>
+                  <br><small><%= t("management.dashboard.index.title") %></small>
+                <% end %>
+              </h1>
             </div>
           </div>
         </div>
       </div>
     </header>
 
-    <main class="no-margin-top row no-max-width collapse">
+    <main class="no-margin-top row expanded collapse">
       <div class="small-12 medium-3 column">
         <%= render "/management/menu" %>
       </div>

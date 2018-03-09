@@ -138,6 +138,8 @@ namespace :admin do
 
   resources :verifications, controller: :verifications, only: :index do
     get :search, on: :collection
+    # Added by usabi for two phase verification
+    put :request_verification, on: :collection
   end
 
   resource :activity, controller: :activity, only: :show

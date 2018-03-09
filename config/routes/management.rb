@@ -41,4 +41,8 @@ namespace :management do
       get :print, on: :collection
     end
   end
+
+  resources :debates, only: :index do
+    get :print, on: :collection
+  end
 end
