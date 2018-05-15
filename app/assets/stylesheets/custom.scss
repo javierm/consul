@@ -706,3 +706,8 @@ ol{
   &::before{content: unset;}
   border: none !important;
 }
+.comment-body .icon-like{
+  &::before{content: '\6b';}
+}
+
+
