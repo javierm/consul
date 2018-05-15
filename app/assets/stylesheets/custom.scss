@@ -562,7 +562,7 @@ ol{
 }
 
 .highlight{
-  background: transparent image-url("background_portada.jpg") no-repeat 100% / cover ;
+  background: transparent image-url("background_portada.jpg") no-repeat center 100% / cover ;
   height: 400px;
   div.row div.curtain {
     background-color: rgba(0,0,0,0.4);
@@ -663,7 +663,7 @@ ol{
 
     }
 
-    background: transparent image-url("background_portada_m.jpg") no-repeat 100% / cover ;
+    background: transparent image-url("background_portada_m.jpg") no-repeat center 100% / cover ;
     background-position: top;
   }
   #modal-video iframe{
