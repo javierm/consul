@@ -115,6 +115,29 @@
                         label: false %>
       </div>
 
+      <div class="small-12 clear">
+        <%= f.label :terms_of_service do %>
+          <%= f.check_box :terms_of_service, title: t('verification.residence.new.accept_terms_text_title'), label: false %>
+          <span class="checkbox">
+            <%= t("verification.residence.new.accept_terms_text",
+                terms_url: link_to(t("verification.residence.new.terms"), "/census_terms",
+                title: t('shared.target_blank_html'),
+                target: "_blank")).html_safe
+            %>
+          </span>
+        <% end %>
+      </div>
+
+      <div class="small-12">
+        <%= f.label :no_resident do %>
+          <%= f.check_box :no_resident, title: t('verification.residence.new.no_resident'), label: false %>
+          <span class="checkbox">
+            <%= t("verification.residence.new.accept_no_resident_text").html_safe %>
+          </span>
+        <% end %>
+      </div>
+
+
       <div class="small-12 medium-5 clear">
         <%= f.label t("verification.residence.new.geozone") %>
         <p class="note"><%= t("verification.residence.new.postal_code_note") %></p>
@@ -128,19 +151,6 @@
         <div class="medium-6">
           <%= f.text_field :postal_code, label: false %>
         </div>
-      </div>
-
-      <div class="small-12">
-        <%= f.label :terms_of_service do %>
-          <%= f.check_box :terms_of_service, title: t('verification.residence.new.accept_terms_text_title'), label: false %>
-          <span class="checkbox">
-            <%= t("verification.residence.new.accept_terms_text",
-                terms_url: link_to(t("verification.residence.new.terms"), "/census_terms",
-                title: t('shared.target_blank_html'),
-                target: "_blank")).html_safe
-            %>
-          </span>
-        <% end %>
       </div>
 
       <div class="small-12 medium-3 clear">

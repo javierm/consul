@@ -12,6 +12,10 @@ class Proposal
   AREAS = [ :municipal, :insular, :autonomous, :state ]
   DEFAULT_AREA = :insular
 
+  def votable_by?(user)
+    user && user.level_two_or_three_verified? && !user.no_resident
+  end
+
 
   private
 

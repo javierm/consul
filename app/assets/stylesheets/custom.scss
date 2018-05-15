@@ -562,7 +562,8 @@ ol{
 }
 
 .highlight{
-  background: transparent image-url("background_portada.jpg") no-repeat scroll 0 100% / cover ;
+  background: transparent image-url("background_portada.jpg") no-repeat 100% / cover ;
+  height: 400px;
   div.row div.curtain {
     background-color: rgba(0,0,0,0.4);
   }
@@ -661,7 +662,9 @@ ol{
       text-shadow: 1px 1px 1px #000;
 
     }
-    background: #eee;
+
+    background: transparent image-url("background_portada_m.jpg") no-repeat 100% / cover ;
+    background-position: top;
   }
   #modal-video iframe{
     max-width: 100%;
@@ -695,4 +698,11 @@ ol{
       background-color: white;
     }
   }
+}
+
+
+/*DEBATES*/
+.icon-like{
+  &::before{content: unset;}
+  border: none !important;
 }

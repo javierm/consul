@@ -1,6 +1,6 @@
 class WYSIWYGSanitizer
 
-  ALLOWED_TAGS = %w(p ul ol li strong em u s)
+  ALLOWED_TAGS = %w(p ul ol li strong em u s iframe)
   ALLOWED_ATTRIBUTES = []
 
   def sanitize(html)

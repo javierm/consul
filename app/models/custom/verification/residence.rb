@@ -2,8 +2,9 @@
 require_dependency Rails.root.join('app', 'models', 'verification', 'residence').to_s
 
 class Verification::Residence
+  include ManageValidations
+  attr_accessor :user, :document_number, :document_type, :common_name, :first_surname, :date_of_birth, :postal_code, :geozone_id, :terms_of_service, :official, :mode, :no_resident
 
-  attr_accessor :user, :document_number, :document_type, :common_name, :first_surname, :date_of_birth, :postal_code, :geozone_id, :terms_of_service, :official, :mode
 
   # NOTE mode == :manual indicates use of age verification request only
   # NOTE mode == :check indicates no verification needed (user declares residence)
@@ -13,10 +14,17 @@ class Verification::Residence
   before_validation :retrieve_census_data, if: Proc.new { |vr| mode.nil? }
   before_validation :retrieve_person_data, if: Proc.new { |vr| vr.user.residence_requested? && mode == :manual }
 
-  validate :postal_code_in_gran_canaria
+  validate :postal_code_in_gran_canaria, if: Proc.new { |vr| no_resident != "1"}
   validate :residence_in_gran_canaria, if: Proc.new { |vr| mode.nil? }
   validate :allowed_age
   validate :spanish_id, if: Proc.new { |vr| vr.document_type == "1"}
+
+  cancel_validates(:postal_code)
+  cancel_validates(:terms_of_service)
+
+  validates :postal_code, presence: true, if: Proc.new { |vr| no_resident != "1" }
+  validates :terms_of_service, acceptance: { allow_nil: false }, if: Proc.new { |vr| no_resident != "1"}
+  validates :postal_code, length: { is: 5 }, if: Proc.new { |vr| no_resident != "1" }
 
   def postal_code_in_gran_canaria
     errors.add(:postal_code, I18n.t('verification.residence.new.error_not_allowed_postal_code')) unless valid_postal_code?
@@ -71,6 +79,7 @@ class Verification::Residence
                   geozone_id:             geozone_id,
                   postal_code:            postal_code,
                   date_of_birth:          date_of_birth,
+                  no_resident:            no_resident,
                   residence_verified_at:  (Time.now if mode != :manual),
                   residence_requested_at: (Time.now if mode == :manual))
     end

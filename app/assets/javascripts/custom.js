@@ -8,9 +8,11 @@
 //= require surveys
 //= require cookies_eu
 //= require js.cookie
+//= require verification_form
 
 var initialize_custom_modules = function() {
   App.Surveys.initialize();
+  App.VerificationForm.initialize();
 }
 
 $(function(){

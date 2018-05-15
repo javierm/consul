@@ -1,21 +1,23 @@
-<% url = current_user ? new_proposal_path : new_user_registration_path %>
+<% url = '/debates/2-risco-caido-patrimonio-cultural-de-la-humanidad' %>
 <div class="expanded highlight padding no-margin-top">
-  <div class="row text-center flex">
-    <div class="small-12 medium-6 large-6 column padding">
-      <h1>
-        <%= link_to t("layouts.header.open_city_title"), url, onclick: "ga('send', 'event','Enlaces','Click','enlace_futuro_de_GC', 1);" %>
-      </h1>
-      <h1><span><%= link_to t("layouts.header.open_city_slogan_html"), url, onclick: "ga('send', 'event','Enlaces','Click','enlace_lo_decides_tu', 1);" %></span></h1>
-      <div class="medium-4">
-        <%= link_to t("layouts.header.see_all"), url, class: "button see-more expanded", onclick: "ga('send', 'event','Enlaces','Click','enlace_entra_y_participa', 1);" %>
+  <div class="row">
+    <div class="small-12 medium-6 large-6 column padding" style='margin-top: 250px;'>
+      <!-- <h1> -->
+      <!--   <%= link_to t("layouts.header.open_city_title"), url, onclick: "ga('send', 'event','Enlaces','Click','enlace_futuro_de_GC', 1);" %> -->
+      <!-- </h1> -->
+      <!-- <h1><span><%= link_to t("layouts.header.open_city_slogan_html"), url, onclick: "ga('send', 'event','Enlaces','Click','enlace_lo_decides_tu', 1);" %></span></h1> -->
+      <div class="medium-4 small-6">
+        <%= link_to(url, html_options = {onclick: "ga('send', 'event','Enlaces','Click','enlace_entra_y_participa', 1);"}) do
+          image_tag('sumate.png',  alt: 'sumate')
+        end %>
       </div>
     </div>
 
-    <div class="small-12 medium-6 large-6 column text-center">
-      <div class="videoWrapper">
-        <iframe title= "Spot Participa Gran Canaria" width="560" height="315" src="https://www.youtube.com/embed/QNw2MFKZxvk?rel=0&showinfo=0&controls=1" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
-      </div>
-    </div>
+    <!-- <div class="small&#45;12 medium&#45;6 large&#45;6 column text&#45;center"> -->
+    <!--   <div class="videoWrapper"> -->
+    <!--     <iframe title= "Spot Participa Gran Canaria" width="560" height="315" src="https://www.youtube.com/embed/QNw2MFKZxvk?rel=0&#38;showinfo=0&#38;controls=1" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe> -->
+    <!--   </div> -->
+    <!-- </div> -->
   </div>
 </div>
 

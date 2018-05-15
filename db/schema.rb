@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180129190950) do
+ActiveRecord::Schema.define(version: 20180510103811) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -936,8 +936,6 @@ ActiveRecord::Schema.define(version: 20180129190950) do
     t.string "value"
   end
 
-  add_index "settings", ["key"], name: "index_settings_on_key", using: :btree
-
   create_table "signature_sheets", force: :cascade do |t|
     t.integer  "signable_id"
     t.string   "signable_type"
@@ -1166,6 +1164,7 @@ ActiveRecord::Schema.define(version: 20180129190950) do
     t.integer  "failed_email_digests_count",                default: 0
     t.text     "former_users_data_log",                     default: ""
     t.boolean  "public_interests",                          default: false
+    t.boolean  "no_resident",                               default: false
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree

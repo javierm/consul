@@ -68,6 +68,8 @@ es:
         terms: los términos de acceso
         title: Verificar residencia
         verify_residence: Verificar residencia
+        no_resident: No soy residente 
+        accept_no_resident_text: 'No soy residente en Gran Canaria, pero quiero participar en consultas/propuestas/iniciativas que no exijan ser residente'
     sms:
       create:
         flash:

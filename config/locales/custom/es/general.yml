@@ -178,7 +178,7 @@ es:
       comments_title: Comentarios
       edit_debate_link: Editar propuesta
       flag: Esta propuesta ha sido marcada como inapropiada por varios usuarios.
-      login_to_comment: Necesitas %{signin} o %{signup} para comentar.
+      login_to_comment: Necesitas %{signin}, %{signup} y apoyar la candidatura antes de poder comentar.
       share: Compartir
       author: Autor
     update:
@@ -799,7 +799,7 @@ es:
     signup: registrarte
     supports: Apoyos
     unauthenticated: Necesitas %{signin} o %{signup} para continuar.
-    verified_only: Debe ser usuario verificado, %{verify_account}.
+    verified_only: Debe ser usuario residente verificado, %{verify_account}.
     verify_account: verifica tu cuenta
     spending_proposals:
       not_logged_in: Necesitas %{signin} o %{signup} para continuar.
