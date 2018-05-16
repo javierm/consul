@@ -12,4 +12,8 @@ class Debate
       anonymous_votes_ratio < Setting['max_ratio_anon_votes_on_debates'].to_i ||
       user.voted_for?(self)
   end
+
+  protected
+  def sanitize_description; end
+
 end
