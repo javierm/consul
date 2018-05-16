@@ -29,6 +29,9 @@
           <!--   <%= render 'debates/flag_actions', debate: @debate %> -->
           <!-- </span> -->
         </div>
+        <div id="<%= dom_id(@debate) %>_votes"  class='show-for-small-only'>
+          <%= render 'debates/votes', debate: @debate %>
+        </div>
 
         <%= safe_html_with_links @debate.description %>
 

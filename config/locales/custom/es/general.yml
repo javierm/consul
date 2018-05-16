@@ -790,7 +790,7 @@ es:
       retired: "Retirada"
       see: "Ver"
   votes:
-    agree: Estoy de acuerdo
+    agree: Ya me he sumado
     anonymous: Debe ser usuario verificado, %{verify_account}.
     comment_unauthenticated: Necesitas %{signin} o %{signup} para poder votar.
     disagree: No estoy de acuerdo

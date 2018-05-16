@@ -6,7 +6,7 @@
           class: "like #{voted_classes[:in_favor]}", title: t('votes.agree'), method: "post", remote: true do %>
         <span class="icon-like">
           <%= image_tag('sumate.png',  alt: 'sumate') %>
-          <span class="show-for-sr"><%= t('votes.agree') %></span>
+          <p><b><%= t('votes.agree') %></b></p>
         </span>
       <% end %>
     <% else %>
