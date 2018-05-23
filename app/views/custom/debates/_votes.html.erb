@@ -3,7 +3,8 @@
   <div class="in-favor inline-block">
     <% if user_signed_in? %>
       <%= link_to vote_debate_path(debate, value: 'yes'),
-          class: "like #{voted_classes[:in_favor]}", title: t('votes.agree'), method: "post", remote: true do %>
+        class: "like #{voted_classes[:in_favor]}", title: t('votes.agree'), method: "post", remote: true,
+        onclick: "ga('send', 'event','Enlaces','Click','sumate', 1);" do %>
         <span class="icon-like">
           <%= image_tag('sumate.png',  alt: 'sumate') %>
           <p><b><%= t('votes.agree') %></b></p>
