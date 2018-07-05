@@ -65,6 +65,10 @@ FactoryBot.define do
     end
   end
 
+  factory :valuator_group, class: ValuatorGroup do
+    sequence(:name) { |n| "Valuator Group #{n}" }
+  end
+
   factory :identity do
     user nil
     provider "Twitter"
@@ -343,6 +347,10 @@ FactoryBot.define do
       winner true
     end
 
+    trait :visible_to_valuators do
+      visible_to_valuators true
+    end
+
     trait :incompatible do
       selected
       incompatible true
@@ -401,8 +409,14 @@ FactoryBot.define do
     reason "unfeasible"
   end
 
+  factory :budget_investment_status, class: 'Budget::Investment::Status' do
+    sequence(:name)        { |n| "Budget investment status #{n} name" }
+    sequence(:description) { |n| "Budget investment status #{n} description" }
+  end
+
   factory :budget_investment_milestone, class: 'Budget::Investment::Milestone' do
     association :investment, factory: :budget_investment
+    association :status, factory: :budget_investment_status
     sequence(:title)     { |n| "Budget investment milestone #{n} title" }
     description          'Milestone description'
     publication_date     Date.current
@@ -643,13 +657,13 @@ FactoryBot.define do
   factory :poll_partial_result, class: 'Poll::PartialResult' do
     association :question, factory: [:poll_question, :with_answers]
     association :author, factory: :user
-    origin { 'web' }
+    origin 'web'
     answer { question.question_answers.sample.title }
   end
 
   factory :poll_recount, class: 'Poll::Recount' do
     association :author, factory: :user
-    origin { 'web' }
+    origin 'web'
   end
 
   factory :officing_residence, class: 'Officing::Residence' do
@@ -710,6 +724,10 @@ FactoryBot.define do
   factory :notification do
     user
     association :notifiable, factory: :proposal
+
+    trait :read do
+      read_at Time.current
+    end
   end
 
   factory :geozone do
@@ -736,6 +754,23 @@ FactoryBot.define do
     sequence(:title) { |n| "Thank you for supporting my proposal #{n}" }
     sequence(:body) { |n| "Please let others know so we can make it happen #{n}" }
     proposal
+    association :author, factory: :user
+
+    trait :moderated do
+      moderated true
+    end
+
+    trait :ignored do
+      ignored_at Date.current
+    end
+
+    trait :hidden do
+      hidden_at Date.current
+    end
+
+    trait :with_confirmed_hide do
+      confirmed_hide_at Time.current
+    end
   end
 
   factory :direct_message do
@@ -807,8 +842,17 @@ FactoryBot.define do
       result_publication_date Date.current + 5.days
     end
 
+    trait :published do
+      published true
+    end
+
     trait :not_published do
       published false
+    end
+
+    trait :open do
+      start_date 1.week.ago
+      end_date   1.week.from_now
     end
 
   end
@@ -946,6 +990,34 @@ LOREM_IPSUM
   end
 
   factory :related_content do
+  end
+
+  factory :newsletter do
+    sequence(:subject) { |n| "Subject #{n}" }
+    segment_recipient  UserSegments::SEGMENTS.sample
+    sequence(:from)    { |n| "noreply#{n}@consul.dev" }
+    sequence(:body)    { |n| "Body #{n}" }
+  end
+
+  factory :widget_card, class: 'Widget::Card' do
+    sequence(:title)       { |n| "Title #{n}" }
+    sequence(:description) { |n| "Description #{n}" }
+    sequence(:link_text)   { |n| "Link text #{n}" }
+    sequence(:link_url)    { |n| "Link url #{n}" }
+
+    trait :header do
+      header true
+      sequence(:button_text)   { |n| "Button text #{n}" }
+      sequence(:button_url)    { |n| "Button url #{n}" }
+      sequence(:alignment)   { |n| "background" }
+    end
+
+    after :create do |widget_card|
+      create(:image, imageable: widget_card)
+    end
+  end
+
+  factory :widget_feed, class: 'Widget::Feed' do
   end
 
 end
