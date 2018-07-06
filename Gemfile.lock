@@ -572,8 +572,8 @@ DEPENDENCIES
   savon (~> 2.11.1)
   scss_lint (~> 0.54.0)
   selenium-webdriver (~> 3.10)
-  sitemap_generator (~> 6.0.1)
-  social-share-button (~> 1.1)
+  sitemap_generator (~> 6.0.0)
+  social-share-button (~> 0.9)
   spring (~> 2.0.1)
   spring-commands-rspec (~> 1.0.4)
   sprockets (~> 3.7.1)
@@ -583,3 +583,6 @@ DEPENDENCIES
   unicorn (~> 5.4.0)
   web-console (~> 3.3.0)
   whenever (~> 0.10.0)
+
+BUNDLED WITH
+   1.15.4
