@@ -388,7 +388,10 @@ aside.margin-bottom {
   }
 }
 
-
+figure img {
+  height: inherit;
+  width: inherit;
+}
 
 .social-news {
   border: 1px solid black;
