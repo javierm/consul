@@ -47,6 +47,34 @@ feature 'Debates' do
     expect(page).to have_selector('#debates .debate', count: 2)
   end
 
+  scenario 'Index view mode' do
+    debates = [create(:debate), create(:debate), create(:debate)]
+
+    visit debates_path
+
+    click_button 'View mode'
+
+    click_link 'List'
+
+    debates.each do |debate|
+      within('#debates') do
+        expect(page).to     have_link debate.title
+        expect(page).to_not have_content debate.description
+      end
+    end
+
+    click_button 'View mode'
+
+    click_link 'Cards'
+
+    debates.each do |debate|
+      within('#debates') do
+        expect(page).to have_link debate.title
+        expect(page).to have_content debate.description
+      end
+    end
+  end
+
   scenario 'Show' do
     debate = create(:debate)
 
@@ -65,11 +93,15 @@ feature 'Debates' do
     end
   end
 
-  scenario 'Show: "Back" link directs to previous page', :js do
+  scenario 'Show: "Back" link directs to previous page' do
     debate = create(:debate, title: 'Test Debate 1')
 
     visit debates_path(order: :hot_score, page: 1)
-    first(:link, debate.title).click
+
+    within("#debate_#{debate.id}") do
+      click_link debate.title
+    end
+
     link_text = find_link('Go back')[:href]
 
     expect(link_text).to include(debates_path(order: :hot_score, page: 1))
@@ -338,7 +370,7 @@ feature 'Debates' do
       visit debates_path
       click_link 'highest rated'
 
-      expect(page).to have_selector('a.active', text: 'highest rated')
+      expect(page).to have_selector('a.is-active', text: 'highest rated')
 
       within '#debates' do
         expect(best_debate.title).to appear_before(medium_debate.title)
@@ -357,7 +389,7 @@ feature 'Debates' do
       visit debates_path
       click_link 'newest'
 
-      expect(page).to have_selector('a.active', text: 'newest')
+      expect(page).to have_selector('a.is-active', text: 'newest')
 
       within '#debates' do
         expect(best_debate.title).to appear_before(medium_debate.title)
@@ -420,7 +452,7 @@ feature 'Debates' do
 
         click_link 'recommendations'
 
-        expect(page).to have_selector('a.active', text: 'recommendations')
+        expect(page).to have_selector('a.is-active', text: 'recommendations')
 
         within '#debates' do
           expect(best_debate.title).to appear_before(medium_debate.title)
@@ -787,14 +819,14 @@ feature 'Debates' do
           click_link "Advanced search"
 
           select "Customized", from: "js-advanced-search-date-min"
-          fill_in "advanced_search_date_min", with: 7.days.ago
-          fill_in "advanced_search_date_max", with: 1.day.ago
+          fill_in "advanced_search_date_min", with: 7.days.ago.strftime('%d/%m/%Y')
+          fill_in "advanced_search_date_max", with: 1.day.ago.strftime('%d/%m/%Y')
           click_button "Filter"
 
           within "#js-advanced-search" do
             expect(page).to have_select('advanced_search[date_min]', selected: 'Customized')
-            expect(page).to have_selector("input[name='advanced_search[date_min]'][value*='#{7.days.ago.strftime('%Y-%m-%d')}']")
-            expect(page).to have_selector("input[name='advanced_search[date_max]'][value*='#{1.day.ago.strftime('%Y-%m-%d')}']")
+            expect(page).to have_selector("input[name='advanced_search[date_min]'][value*='#{7.days.ago.strftime('%d/%m/%Y')}']")
+            expect(page).to have_selector("input[name='advanced_search[date_max]'][value*='#{1.day.ago.strftime('%d/%m/%Y')}']")
           end
         end
 
@@ -810,7 +842,7 @@ feature 'Debates' do
       fill_in "search", with: "Show you got"
       click_button "Search"
 
-      expect(page).to have_selector("a.active", text: "relevance")
+      expect(page).to have_selector("a.is-active", text: "relevance")
 
       within("#debates") do
         expect(all(".debate")[0].text).to match "Show you got"
@@ -829,7 +861,7 @@ feature 'Debates' do
       fill_in "search", with: "Show you got"
       click_button "Search"
       click_link 'newest'
-      expect(page).to have_selector("a.active", text: "newest")
+      expect(page).to have_selector("a.is-active", text: "newest")
 
       within("#debates") do
         expect(all(".debate")[0].text).to match "Show you got"
@@ -854,7 +886,7 @@ feature 'Debates' do
       fill_in "search", with: "Show you got"
       click_button "Search"
       click_link 'recommendations'
-      expect(page).to have_selector("a.active", text: "recommendations")
+      expect(page).to have_selector("a.is-active", text: "recommendations")
 
       within("#debates") do
         expect(all(".debate")[0].text).to match "Show you got"
