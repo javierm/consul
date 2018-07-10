@@ -3,10 +3,10 @@ es:
     census_terms: Para verificar la cuenta hay que tener 16 años o más y estar empadronado aportando los datos indicados anteriormente, los cuales serán contrastados. Aceptando el proceso de verificación acepta dar su consentimiento para contrastar dicha información, así como medios de contacto que figuren en dichos ficheros. Los datos aportados serán incorporados y tratados en un fichero indicado anteriormente en las condiciones de uso del portal.
     conditions: Condiciones de uso
     general_terms: Términos y Condiciones
-    more_info:
-      title: "Descubre %{org_name}"
+    help:
+      title: "Descubre %{org}"
       subtitle: "Aprende todo lo que puedes hacer en esta web."
-      guide: 'Esta guía explica cada una de las secciones de %{org_name}. Puedes ampliar la información en los enlaces de "Información detallada".'
+      guide: 'Esta guía explica cada una de las secciones de %{org}. Puedes ampliar la información en los enlaces de "Información detallada".'
       menu:
         debates: "Propuestas de Cabildo"
         proposals: "Iniciativas Ciudadanas"
@@ -16,7 +16,7 @@ es:
         title: "Propuestas de Cabildo"
         description: "El Cabildo de Gran Canaria creará propuestas planteadas a la ciudadanía que deben contribuir a facilitar los procesos participativos que mejoren la eficacia y eficiencia de la acción de este Gobierno Insular."
         feature_1: "Para participar en una Propuesta de Cabildo tienes que %{link}"
-        feature_1_link: "registrarte en %{org_name}"
+        feature_1_link: "registrarte en %{org}"
         feature_2_html: "Las Propuestas de Cabildo pueden ser valorados utilizando los botones de <strong>Estoy de acuerdo</strong> o <strong>No estoy de acuerdo</strong> que encontrarás en cada uno de ellos."
         image_alt: "Botones para valorar las propuestas de Cabildo"
         figcaption: 'Botones "Estoy de acuerdo" y "No estoy de acuerdo" para valorar las propuestas de Cabildo.'
@@ -24,7 +24,7 @@ es:
         title: "Iniciativas ciudadanas"
         description: "Propón lo que quieres que el Cabildo de Gran Canaria lleve a cabo y apoya iniciativas de otras personas."
         feature_1: "Para crear una iniciativa tienes que %{link}, además para apoyarlas debes verificar tu cuenta."
-        feature_1_link: "registrarte en %{org_name}"
+        feature_1_link: "registrarte en %{org}"
         feature_2_html: "Las iniciativas que consigan <strong>el apoyo del 1% de la gente</strong> (mayor de 16 años empadronada en la isla de Gran Canaria) podrán ser llevada a Pleno para su votación."
         feature_3_html: "En el Pleno Pleno será votada y pasar a convertirse en una acción de gobierno."
         image_alt: "Botón para apoyar una iniciativa"
@@ -33,7 +33,7 @@ es:
         title: "Presupuestos participativos"
         description: "Los primeros seis meses de cada año puedes decidir cómo gastar parte del presupuesto."
         feature_1: "Para crear un proyecto de gasto tienes que %{link} y verificar tu cuenta."
-        feature_1_link: "registrarte en %{org_name}"
+        feature_1_link: "registrarte en %{org}"
         feature_2_html: "En primer lugar empieza la <strong>fase de aceptación</strong> de proyectos de gasto."
         feature_3_html: "Después hay una <strong>fase de apoyos</strong> para priorizar lo más interesante, las más apoyadas son evaluadas por el Ayuntamiento para ver si son viables y cuánto valen."
         feature_4_html: "Al final hay una <strong>fase de votación</strong> donde se decide en cuáles se gasta esa parte del presupuesto."
@@ -77,7 +77,7 @@ es:
     titles:
       accessibility: Accesibilidad
       conditions: Condiciones de uso
-      more_info: "Más información sobre %{org_name}"
+      more_info: "Más información sobre %{org}"
       privacy: Política de Privacidad
     verify:
       code: Código que has recibido en tu carta

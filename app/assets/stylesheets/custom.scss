@@ -57,6 +57,7 @@ header {
     .top-bar {
       background-color: transparent!important;
       #responsive-menu {
+        width: 100%;
         .top-bar-title {
           margin-right: 0;
           line-height: 0;
@@ -73,11 +74,10 @@ header {
       }
       .top-bar-right{
         margin-top: 1em;
+        text-align: right;
         img.logo{
           width: 180px;
           height: 85px;
-        }
-        ul.manu-admin{
         }
         ul.menu{
           display: inline;

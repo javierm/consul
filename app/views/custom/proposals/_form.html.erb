@@ -42,9 +42,12 @@
       </div>
     <% end %>
 
-    <div class="documents small-12 column">
-      <%= render 'documents/nested_documents', documentable: @proposal, f: f %>
-    </div>
+    <% if feature?(:allow_attached_documents) %>
+      <div class="documents small-12 column">
+        <%= render 'documents/nested_documents', documentable: @proposal, f: f %>
+      </div>
+    <% end %>
+
     <div class="small-12 medium-6 column">
       <%= f.label :geozone_id,  t("proposals.form.geozone") %>
       <%= f.select :geozone_id, geozone_select_options, {include_blank: t("geozones.none"), label: false} %>
@@ -59,7 +62,8 @@
                    label:    t("proposals.form.map_location"),
                    help:     t("proposals.form.map_location_instructions"),
                    remove_marker_label: t("proposals.form.map_remove_marker"),
-                   parent_class: "proposal" %>
+                   parent_class: "proposal",
+                   i18n_namespace: "proposals" %>
 
       </div>
     <% end %>
