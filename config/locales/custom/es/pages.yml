@@ -13,7 +13,7 @@ es:
         budgets: "Presupuestos participativos"
         other: "Otra información de interés"
       debates:
-        title: "Propuestas de Cabildo"
+        title: "%{link_to_debates}"
         description: "El Cabildo de Gran Canaria creará propuestas planteadas a la ciudadanía que deben contribuir a facilitar los procesos participativos que mejoren la eficacia y eficiencia de la acción de este Gobierno Insular."
         feature_1: "Para participar en una Propuesta de Cabildo tienes que %{link}"
         feature_1_link: "registrarte en %{org}"
@@ -23,10 +23,10 @@ es:
       proposals:
         title: "Iniciativas ciudadanas"
         description: "Propón lo que quieres que el Cabildo de Gran Canaria lleve a cabo y apoya iniciativas de otras personas."
-        feature_1: "Para crear una iniciativa tienes que %{link}, además para apoyarlas debes verificar tu cuenta."
+        feature_1: "Para crear una iniciativa debes %{signup} en Participa Gran Canaria"
         feature_1_link: "registrarte en %{org}"
-        feature_2_html: "Las iniciativas que consigan <strong>el apoyo del 1% de la gente</strong> (mayor de 16 años empadronada en la isla de Gran Canaria) podrán ser llevada a Pleno para su votación."
-        feature_3_html: "En el Pleno Pleno será votada y pasar a convertirse en una acción de gobierno."
+        feature_2_html: "Las iniciativas que consigan <strong>el apoyo del 1% de la gente</strong> (mayor de 16 años empadronada en la isla de Gran Canaria) podrán ser defendidas en el pleno del Cabildo, previo estudio técnico y jurídico."
+        feature_3_html: "Para apoyar iniciativas es necesario verificar tu cuenta. La verificación se realiza desde la sección Mi cuenta %{verify_account}, si no tienes puedes %{signup} y si ya está verificado, %{signin}"
         image_alt: "Botón para apoyar una iniciativa"
         figcaption_html: 'Botón para "Apoyar" una iniciativa.<br>Cuando alcance el número de apoyos podrá ser llevada a Pleno para su votación y pasar a convertirse en una acción de gobierno.'
       budgets:
@@ -52,15 +52,15 @@ es:
         button: "Ver preguntas frecuentes"
         page:
           title: "Preguntas Frecuentes"
-          description: El sitio donde los grancanarios podrán proponer, debatir y valorar el tipo de isla que desean tener. Una plataforma digital puesto en marcha por la Unidad de Participación Ciudadana del Cabildo de Gran Canaria en la que facilitar información y participación en los procesos de deliberación participativa e impulsar espacios para construir, pensar y debatir actuaciones y prioridades para lograr una Gran Canaria mejor, más justa y democrática.
+          description: Participa.grancanaria.com es el sitio donde l@s grancanari@s podrán proponer, debatir y valorar el tipo de isla que desean tener. Una plataforma puesta en marcha por la Unidad de Participación Ciudadana del Cabildo de Gran Canaria para facilitar procesos de deliberación participativa e impulsar espacios para construir, pensar y debatir actuaciones y prioridades para lograr una Gran Canaria mejor, más justa y democrática.
           faq_1_title: "¿Quién puede acceder este portal de participación ciudadana?"
-          faq_1_description: "El acceso es libre para todos los ciudadanos. No establece limitaciones. Simplemente se requiere darse de alta en la sección de registro."
+          faq_1_description: "El acceso es libre para todos los ciudadanos. No establece limitaciones. Simplemente se requiere darse de alta en la sección de registro. Aquí puedes %{signup} ."
           faq_2_title: "¿Quién puede participar en debates y crear iniciativas ciudadanas?"
           faq_2_description: "Podrán crear iniciativas ciudadanas y participar en debates todos los residentes de los 21 municipios de Gran Canaria, mayores de 16 años."
           faq_3_title: "¿Cómo darse de alta?"
-          faq_3_description: "1. Entra en la sección de Registro, 2. Crea tu cuenta, 3. Crea y rellena los datos referentes a Nombre de usuario, correo electrónico y contraseña. También puedes acceder a través de tu cuenta de Facebook, Twitter o Google+. No olvides marcar la casilla de aceptación de las condiciones de uso. Una vez creada la nueva cuenta te llegará un correo electrónico a la dirección que hayas especificado, y tendrás que hacer clic en el enlace que contiene (el enlace que pone Confirmar mi cuenta) para finalizar la creación de la cuenta. ¡Desde este momento ya puedes estar al día sobre todos los procesos participativos de tu isla, puedes crear iniciativas ciudadanas y realizar comentarios sobre las existentes!"
+          faq_3_description_html: "1. Entra en la sección de Registro y podrás %{signup} </br>2. Crea tu cuenta, </br>3. Crea y rellena los datos referentes a Nombre de usuario, correo electrónico y contraseña. No olvides marcar la casilla de aceptación de las condiciones de uso. Una vez creada la nueva cuenta te llegará un correo electrónico a la dirección que hayas especificado, y tendrás que hacer clic en el enlace que contiene (el enlace que pone Confirmar mi cuenta) para finalizar la creación de la cuenta. Desde este momento ya puedes estar al día sobre todos los procesos participativos de tu isla, puedes crear iniciativas ciudadanas y realizar comentarios sobre las existentes."
           faq_4_title: "Una vez dado de alta, ¿Cómo participar en un proceso participativo?"
-          faq_4_description: "Una vez creada la cuenta básica, y después de entrar con tu correo y contraseña, para poder ejercer tu voto sobre un proceso participativo abierto, el sistema te pedirá que introduzcas tus datos de residencia (DNI), fecha de nacimiento y código postal, para verificar que estás empadronado en uno de los 21 municipio de la Isla (es importante introducir el número de documento con la letra, y marcar la casilla de aceptación de acceso al Padrón). Para completar esta fase del proceso tendrás que aceptar los términos de acceso al Padrón para que podamos verificarlo, y si los datos son correctos, desde que haya sido verificada la residencia, recibirás SMS con un código de verificación confirmando ser residente que deberás introducir para apoyar iniciativas y propuestas. ¡ENHORABUENA!, ya puedes participar en las decisiones importantes de tu Isla." 
+          faq_4_description: "Para poder votar procesos en marcha o iniciativas ciudadanas, deberás verificar tu cuenta haciendo clic en el botón verde 'Verificar mi cuenta' de la sección Mi Cuenta, %{verify_account}. Sigue los pasos y recibirás un SMS con un código de verificación confirmando ser residente, código que deberás introducir para apoyar iniciativas y propuestas." 
       other:
         title: "Otra información de interés"
         how_to_use: "Utiliza %{org_name} en tu municipio"

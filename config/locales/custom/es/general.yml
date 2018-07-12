@@ -161,7 +161,7 @@ es:
       form:
         submit_button: Empieza una propuesta
       info: Si lo que quieres es hacer una iniciativa ciudadana, esta es la sección incorrecta, entra en %{info_link}.
-      info_link: crear nueva propuesta
+      info_link: crear nueva iniciativa ciudadana
       more_info: Más información
       recommendation_four: Disfruta de este espacio, de las voces que lo llenan, también es tuyo.
       recommendation_one: No escribas el título de la propuesta o frases enteras en mayúsculas. En internet eso se considera gritar. Y a nadie le gusta que le griten.
@@ -424,9 +424,9 @@ es:
       section_footer:
         title: Ayuda sobre las iniciativas ciudadanas
         description: Haz una iniciativa ciudadana. Si obtiene los apoyos suficientes y pasa a votación, puedes conseguir que todos los habitantes decidan cómo quieren que sea nuestra isla.
-        help_text_1: "Las iniciativas ciudadanas son una oportunidad para que los vecinos y colectivos decidan directamente cómo quieren que sea su ciudad. Cualquier persona puede hacer una propuesta sobre un tema que le interese o preocupe para que el Cabildo la lleve a cabo, después de conseguir los apoyos suficientes y de someterse a votación ciudadana."
-        help_text_2: "Para crear una iniciativa hay que registrarse en %{org}. Las iniciativas que consigan el apoyo del 1% de la gente en la web, pasan a votación. Para apoyar iniciativas es necesario tener una cuenta verificada."
-        help_text_3: "Se convoca una votación ciudadana cuando las iniciativas consiguen los apoyos necesarios. Una vez celebrada, si hay más gente a favor que en contra, el Cabildo asume la iniciativa y la lleva a cabo."
+        help_text_1: "Las iniciativas ciudadanas son una oportunidad para que los vecinos y colectivos decidan directamente cómo quieren que sea su ciudad. Cualquier persona puede crear una iniciativa sobre un tema que le interese o le preocupe, para que el Cabildo de Gran Canaria la lleve a cabo."
+        help_text_2: "Para ello, la iniciativa debe conseguir los apoyos suficientes (el 1% de las personas mayores de 16 años empadronadas en Gran Canaria). Si consigue ese mínimo, la iniciativa ciudadana será sometida a estudio técnico y jurídico por el Cabildo de Gran Canaria, y la persona que la creó podrá defenderla en el Pleno del Cabildo para su votación."
+        help_text_3: "Para crear una iniciativa debes %{signup} en Participa Gran Canaria. Para apoyar iniciativas es necesario tener una cuenta verificada. La verificación se realiza desde la sección Mi cuenta %{verify_account}, y si está verificado debe %{signin}."
     new:
       form:
         submit_button: Crear iniciativa

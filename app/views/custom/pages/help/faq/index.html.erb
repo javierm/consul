@@ -19,13 +19,15 @@
     <p><%= t("pages.help.faq.page.description") %></p>
 
     <h2 id="1"><%= t("pages.help.faq.page.faq_1_title") %></h2>
-    <p><%= t("pages.help.faq.page.faq_1_description") %></p>
+    <p><%= t("pages.help.faq.page.faq_1_description",
+            signup: link_to(t("votes.signup"), new_user_registration_path)).html_safe %></p>
     <h2 id="2"><%= t("pages.help.faq.page.faq_2_title") %></h2>
     <p><%= t("pages.help.faq.page.faq_2_description") %></p>
     <h2 id="3"><%= t("pages.help.faq.page.faq_3_title") %></h2>
-    <p><%= t("pages.help.faq.page.faq_3_description") %></p>
+    <p><%= t("pages.help.faq.page.faq_3_description_html",
+      signup: link_to(t("votes.signup"), new_user_registration_path)).html_safe %></p>
     <h2 id="4"><%= t("pages.help.faq.page.faq_4_title") %></h2>
-    <p><%= t("pages.help.faq.page.faq_4_description") %></p>
-
+    <p><%= t("pages.help.faq.page.faq_4_description",
+             verify_account: link_to(t("votes.verify_account"), verification_path )).html_safe %></p>
   </div>
 </div>

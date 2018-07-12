@@ -1,13 +1,14 @@
 <div class="row section-content">
   <div class="small-12 column">
     <h3 id="debates" data-magellan-target="debates">
-      <%= t("pages.help.debates.title") %>
+      <%= t("pages.help.debates.title",
+          link_to_debates: link_to(t("pages.help.menu.debates"), debates_path)
+           ).html_safe %>
     </h3>
     <p>
       <%= t("pages.help.debates.description",
-          org: setting['org_name'],
-          link: link_to(t("pages.help.debates.link"),
-                              debates_path)).html_safe %>
+          org: setting['org_name'])
+      %>
     </p>
   </div>
 </div>

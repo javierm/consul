@@ -43,6 +43,7 @@ $icons: #FDE91E;
 @import 'participation';
 $municipalities: #212D5D;
 $header-color: #F9C822;
+$header-color-transparent: #F9C822dd;
 $button_bck: #73160D;
 $header-small-font-color: #273877;
 $text-summary: #273877;
@@ -87,7 +88,9 @@ header {
             border-right: 1px solid white;
             a {
               padding: 0.5rem;
+              background: transparent;
               color: $header-small-font-color;
+              text-align: right;
               img{
                 width: 16px;
               }
@@ -555,6 +558,14 @@ ol{
   header .subnavigation {
     border-top: none;
   }
+  .auth-page {
+    .wrapper{
+      margin: auto;
+      .auth-form {
+        background-color: white;
+      }
+    }
+  }
 }
 
 @media only screen and (min-width: 1540px) {
@@ -708,17 +719,6 @@ ol{
   }
 }
 
-.auth-page {
-  background-image: image-url("auth_bg.jpg") !important;
-  background-repeat: no-repeat;
-  background-size: cover;
-  .wrapper{
-    margin: auto;
-    .row.auth > main > div{
-      background-color: white;
-    }
-  }
-}
 
 
 /*DEBATES*/

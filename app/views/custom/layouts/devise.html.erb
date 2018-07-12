@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title><%= content_for?(:title) ? yield(:title) : "Gobierno abierto" %></title>
+    <%= render "layouts/meta_tags" %>
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
@@ -13,13 +14,19 @@
 
   <body class="auth-page">
     <div class="wrapper margin-top">
+      <div class="auth-image small-12 medium-3 column text-center">
+        <%= link_to root_path do %>
+          <%= image_tag('CabildoGranCanaria.jpg', class: 'hide-for-medium ', alt: t("layouts.header.logo")) %>
+        <% end %>
+      </div>
+
       <%= render "shared/google_analytics" %>
-      <div class="row auth">
-        <main>
 
-          <div class="small-12 medium-8 large-5 column small-centered panel padding margin-bottom">
-
-            <div class="text-center margin-bottom">
+      <div class="small-12 medium-9 column">
+        <div class="row">
+          <div class="small-12 medium-9 large-7 small-centered column">
+            <div class="auth-form margin text-center">
+              <%= render 'layouts/flash' %>
 
             <%= link_to root_path do %>
               <%= image_tag('CabildoGranCanaria.jpg', class: 'show-for-medium ', alt: t("layouts.header.logo")) %></div>
@@ -28,7 +35,7 @@
 
             <%= yield %>
           </div>
-        </main>
+        </div>
       </div>
       <div class="push"></div>
     </div>
