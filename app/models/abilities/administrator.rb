@@ -105,6 +105,8 @@ module Abilities
 
       can :manage, LocalCensusRecord
       can [:create, :read], LocalCensusRecords::Import
+
+      can [:index, :create, :edit, :update, :destroy, :switch], Tenant
     end
   end
 end
