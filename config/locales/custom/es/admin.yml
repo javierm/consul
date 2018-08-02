@@ -1,3 +1,4 @@
+---
 es:
   admin:
     actions:
@@ -301,7 +302,7 @@ es:
       destroy: Eliminar Tema
       index:
         add_tag: Añade un nuevo tema para iniciativas ciudadanas
-        title: Temas de iniciativas ciudadanas 
+        title: Temas de iniciativas ciudadanas
       mark_as_featured: Proponer tema al crear iniciativa ciudadana
       name:
         placeholder: Escribe el nombre del tema
@@ -352,9 +353,6 @@ es:
         state_residence: 'Residencia'
         state_email: 'Email confirmado'
         state_created: 'Alta'
-        n_iniciativas: 'Num. iniciativas'      
+        n_iniciativas: 'Num. iniciativas'
     segment_recipient:
-      newsletter_users_list: 'Lista de usuarios de Newsletter '
-        
-
-
+      newsletter_users_list: 'Lista de usuarios de Newsletter'

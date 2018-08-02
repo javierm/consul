@@ -22,14 +22,14 @@ class UserSegments
 
   def self.headers
     [
-      I18n.t("admin.newsletters.csv.id"),
-      I18n.t("admin.newsletters.csv.email"),
-      I18n.t("admin.newsletters.csv.state_created"),
-      I18n.t("admin.newsletters.csv.state"),
-      I18n.t("admin.newsletters.csv.confirmed"),
-      I18n.t("admin.newsletters.csv.phone_and_home"),
-      I18n.t("admin.newsletters.csv.confirmed_phone"),
-      I18n.t("admin.newsletters.csv.n_iniciativas")
+      I18n.t('admin.newsletters.csv.id'),
+      I18n.t('admin.newsletters.csv.email'),
+      I18n.t('admin.newsletters.csv.state_created'),
+      I18n.t('admin.newsletters.csv.state'),
+      I18n.t('admin.newsletters.csv.confirmed'),
+      I18n.t('admin.newsletters.csv.phone_and_home'),
+      I18n.t('admin.newsletters.csv.confirmed_phone'),
+      I18n.t('admin.newsletters.csv.n_iniciativas')
     ]
   end
 
@@ -41,24 +41,20 @@ class UserSegments
       user_state(user),
       user.confirmed?,
       user.residence_verified?,
-      user.sms_verified?,     
+      user.sms_verified?,
       user.proposals.count.to_s
     ]
   end
 
   def self.user_state(u)
     if u.sms_verified?
-      traduct("admin.newsletters.csv.state_residence_and_phone")
-        elsif u.residence_verified?
-          traduct("admin.newsletters.csv.state_residence")
-        elsif u.confirmed?
-          traduct("admin.newsletters.csv.state_email")
-        elsif u.created_at?
-          traduct("admin.newsletters.csv.state_created")
+      I18n.t('admin.newsletters.csv.state_residence_and_phone')
+    elsif u.residence_verified?
+      I18n.t('admin.newsletters.csv.state_residence')
+    elsif u.confirmed?
+      I18n.t('admin.newsletters.csv.state_email')
+    elsif u.created_at?
+      I18n.t('admin.newsletters.csv.state_created')
     end
-  end
-
-  def self.traduct(s)
-    I18n.t(s)
   end
 end
