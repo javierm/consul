@@ -326,6 +326,17 @@ es:
         first_surname: "Apellido1:"
         document_number: "Documento identidad:"
         date_of_birth: "F. nacimiento:"
+      geozone_validation:
+        title: Verificación de residencia de usuarios en %{geozone}
+        resident: Residencia en %{geozone}
+        confirm: '¿Estás seguro?'
+        state:
+          confirmed: Confirmada
+          denied: Denegada
+        actions:
+          confirm: Confirmar
+          deny: Denegar
+          reset: Limpiar valores
     verifications:
       index:
         confirm: '¿Estás seguro?'
