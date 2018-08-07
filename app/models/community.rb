@@ -13,20 +13,6 @@ class Community < ActiveRecord::Base
     communitable_type.split("::").last.underscore
   end
 
-  # @deprecated Please use {#communitable} instead
-  def proposal
-    warn "[DEPRECATION] `Community#proposal` is deprecated. " +
-         "Please use `Community#communitable` instead."
-    communitable
-  end
-
-  # @deprecated Please use {#communitable} instead
-  def investment
-    warn "[DEPRECATION] `Community#investment` is deprecated. " +
-         "Please use `Community#communitable` instead."
-    communitable
-  end
-
   private
 
   def users_who_commented
