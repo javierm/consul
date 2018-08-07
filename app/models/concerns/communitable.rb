@@ -9,9 +9,6 @@ module Communitable
   def associate_community
     community = Community.create
     self.community = community
-
-    # TODO: remove once databases migrate to communitable columns.
-    self.community_id = community.id
   end
 
 end
