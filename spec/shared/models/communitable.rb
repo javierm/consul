@@ -12,10 +12,6 @@ shared_examples "communitable" do
       expect(community.communitable).to eq communitable
     end
 
-    it "assigns the community id to the communitable object" do
-      expect(communitable.community_id).to eq community.id
-    end
-
     it "assigns the communitable id to the community" do
       expect(community.communitable_id).to eq communitable.id
     end
