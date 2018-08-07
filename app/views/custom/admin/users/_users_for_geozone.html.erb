@@ -10,12 +10,7 @@
     </thead>
     <tbody>
       <% @users.each do |user| %>
-        <tr id="user-<%= user.id%>">
-          <td><%= user.document_number %></td>
-          <td class="geozone-controls">
-            <%= render 'geozone_controls', user: user %>
-          </td>
-        </tr>
+        <tr id="user-<%= user.id%>"><%= render 'users_for_geozone_item', user: user %></tr>
       <% end %>
     </tbody>
   </table>

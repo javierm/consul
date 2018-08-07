@@ -336,7 +336,6 @@ es:
         actions:
           confirm: Confirmar
           deny: Denegar
-          reset: Limpiar valores
     verifications:
       index:
         confirm: '¿Estás seguro?'

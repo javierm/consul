@@ -1,4 +1,4 @@
-<% if user.geozone_residence == true %>
+<% if user.residence_verified? %>
   <a class="button primary disabled" rel="nofollow"><%= t('admin.users.geozone_validation.state.confirmed') %></a>
 <% else %>
   <%= link_to t('admin.users.geozone_validation.actions.confirm'),
@@ -12,7 +12,7 @@
               } %>
 <% end %>
 
-<% if user.geozone_residence == false %>
+<% if !user.residence_verified? && !user.residence_requested_at.present? %>
   <a class="button alert disabled" rel="nofollow"><%= t('admin.users.geozone_validation.state.denied') %></a>
 <% else %>
   <%= link_to t('admin.users.geozone_validation.actions.deny'),
@@ -25,13 +25,3 @@
                 remote: true
               } %>
 <% end %>
-
-<%= link_to t('admin.users.geozone_validation.actions.reset'),
-            verify_geozone_residence_admin_user_path(user, residence: nil),
-            method: :put,
-            class: 'button hollow float-right',
-            rel: 'nofollow',
-            data: {
-              confirm: t('admin.users.geozone_validation.confirm'),
-              remote: true
-            } %>
