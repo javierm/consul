@@ -13,7 +13,7 @@ class Admin::UsersController < Admin::BaseController
   def index_for_geozone
     @users = User.by_username_email_or_document_number(params[:search]) if params[:search]
     @users = @users.page(params[:page])
-    @geozone = Geozone.find(params[:geozone])
+    @geozone = current_user.geozone
     @users = @users.where(geozone_id: @geozone).order('created_at DESC')
     respond_to do |format|
       format.html
