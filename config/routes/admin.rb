@@ -103,10 +103,7 @@ namespace :admin do
     get :search, on: :collection
   end
 
-  resources :users, only: [:index, :show] do
-    get :index_for_geozone, on: :collection
-    put :verify_geozone_residence, on: :member
-  end
+  resources :users, only: [:index, :show]
 
   scope module: :poll do
     resources :polls do

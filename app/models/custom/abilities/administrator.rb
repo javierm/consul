@@ -91,9 +91,6 @@ module Abilities
       can [:create, :destroy], Document
       can [:destroy], Image
       can [:create, :destroy], DirectUpload
-
-      can :index_for_geozone, User
-      can :verify_geozone_residence, User
     end
   end
 end

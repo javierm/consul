@@ -1,13 +1,22 @@
-class Admin::UsersController < Admin::BaseController
+class Moderation::UsersController < Moderation::BaseController
+
+  before_action :load_users, only: :index
+
   load_and_authorize_resource
 
   def index
-    @users = User.by_username_email_or_document_number(params[:search]) if params[:search]
-    @users = @users.page(params[:page])
-    respond_to do |format|
-      format.html
-      format.js
-    end
+  end
+
+  def hide_in_moderation_screen
+    block_user
+
+    redirect_to request.query_parameters.merge(action: :index), notice: I18n.t('moderation.users.notice_hide')
+  end
+
+  def hide
+    block_user
+
+    redirect_to debates_path
   end
 
   def index_for_geozone
@@ -33,4 +42,16 @@ class Admin::UsersController < Admin::BaseController
     end
     @user.save
   end
+
+  private
+
+    def load_users
+      @users = User.with_hidden.search(params[:name_or_email]).page(params[:page]).for_render
+    end
+
+    def block_user
+      @user.block
+      Activity.log(current_user, :block, @user)
+    end
+
 end

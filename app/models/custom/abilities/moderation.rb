@@ -46,6 +46,9 @@ module Abilities
 
       can :update_area, Proposal, area_revised_at: nil, hidden_at: nil
       cannot :update_area, Proposal, author_id: user.id
+
+      can :index_for_geozone, User
+      can :verify_geozone_residence, User
     end
   end
 end

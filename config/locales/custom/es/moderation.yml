@@ -76,3 +76,13 @@ es:
         search_placeholder: email o nombre de usuario
         title: Bloquear usuarios
       notice_hide: Usuario bloqueado. Se han ocultado todas sus propuestas y comentarios.
+      geozone_validation:
+        title: Residentes en %{geozone}
+        resident: Residencia en %{geozone}
+        confirm: '¿Estás seguro?'
+        state:
+          confirmed: Confirmada
+          denied: Denegada
+        actions:
+          confirm: Confirmar
+          deny: Denegar
