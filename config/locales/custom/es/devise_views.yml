@@ -15,8 +15,9 @@ es:
         title: Confirmar mi cuenta
     mailer:
       confirmation_instructions:
-        confirm_link: Confirmar mi cuenta
-        text: 'Puedes confirmar tu cuenta de correo electrónico en el siguiente enlace:'
+        confirm_link: Pincha aquí
+        text: para confirmar tu cuenta en Participa Gran Canaria.
+        text2: Recuerda que para poder votar, tendrás que confirmar tu residencia siguiendo los pasos indicados.
         title: Te damos la bienvenida al Portal de Participa Gran Canaria
         welcome: Bienvenido/a
       reset_password_instructions:
