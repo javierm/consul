@@ -51,6 +51,11 @@ module Abilities
         can :create, SpendingProposal
         can :create, DirectMessage
         can :show, DirectMessage, sender_id: user.id
+        Verification::Residence::GEOZONE_PROTECTIONS.each do |protection|
+          if user.geozone_id != protection[:geozone_id] && protection[:action].present? && protection[:model_name].present? && protection[:model_id].present?
+              cannot protection[:action], protection[:model_name].constantize, id: protection[:model_id]
+          end
+        end
       end
 
       can [:create, :show], ProposalNotification, proposal: { author_id: user.id }

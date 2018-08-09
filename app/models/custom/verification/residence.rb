@@ -9,9 +9,11 @@ class Verification::Residence
   # NOTE mode == :manual indicates use of age verification request only
   # NOTE mode == :check indicates no verification needed (user declares residence)
 
-  # Geozones with manual residence verification
-  GEOZONES_WITH_MANUAL_VERIFICATION = [
-    1
+  # Only users of the geozone can interact with these models (see abilities/common)
+  # Can also specify the :geozone_id only, in order to manually validate geozone residence
+  GEOZONE_PROTECTIONS = [
+    # {geozone_id: 1},
+    # {geozone_id: 2, model_name: 'Proposal', model_id: 2, action: :vote},
   ].freeze
 
   validates_presence_of :official, if: Proc.new { |vr| vr.user.residence_requested? && mode == :manual }
@@ -85,8 +87,8 @@ class Verification::Residence
                   postal_code:            postal_code,
                   date_of_birth:          date_of_birth,
                   no_resident:            no_resident,
-                  residence_verified_at:  (Time.now if mode != :manual && !GEOZONES_WITH_MANUAL_VERIFICATION.include?(geozone_id.to_i)),
-                  residence_requested_at: (Time.now if mode == :manual || GEOZONES_WITH_MANUAL_VERIFICATION.include?(geozone_id.to_i)))
+                  residence_verified_at:  (Time.now if mode != :manual && !protected_geozones.include?(geozone_id.to_i)),
+                  residence_requested_at: (Time.now if mode == :manual || protected_geozones.include?(geozone_id.to_i)))
     end
   end
 
@@ -143,5 +145,9 @@ class Verification::Residence
       check = value.slice!(value.length - 1)
       calculated_letter = letters[value.to_i % 23].chr
       return check === calculated_letter
+    end
+
+    def protected_geozones
+      Verification::Residence::GEOZONE_PROTECTIONS.map {|protection| protection[:geozone_id]}.uniq
     end
 end
