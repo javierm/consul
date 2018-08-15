@@ -577,6 +577,11 @@ ol{
     background: transparent image-url("background_portada.jpg") no-repeat 100% / cover ;
     height: 530px!important;
   }
+  .slide2{
+    background: transparent image-url("foto_ingenio.jpg") no-repeat 100% / cover ;
+    height: 530px!important;
+  }
+
   .highlight .padding{ padding-top: 6rem !important;}
 }
 @media only screen and (min-width: 2000px) {
@@ -585,11 +590,18 @@ ol{
     height: 700px!important;
   }
 
+  .slide2{
+    background: transparent image-url("foto_ingenio.jpg") no-repeat 100% / cover ;
+    height: 700px!important;
+  }
 .highlight .padding {
       padding-top: 15rem!important;
     }
   }
-
+.slide2 {
+  background: transparent image-url("foto_ingenio.jpg") no-repeat 100% / cover ;
+  cursor: pointer;
+}
 .highlight{
   background: transparent image-url("background_portada.jpg") no-repeat 100% / cover ;
   background-position: center center;
