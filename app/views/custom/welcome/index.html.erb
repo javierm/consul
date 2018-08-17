@@ -1,8 +1,15 @@
 <% url = '/debates/3-risco-caido-patrimonio-cultural-de-la-humanidad' %>
+<% url2 = 'http://www.ingenio.es/index.php?option=com_jdownloads&view=category&catid=23' %>
 <div class="orbit no-margin-top" role="region" aria-label="banner" data-orbit>
   <div class="orbit-wrapper">
     <ul class="orbit-container">
- 
+      <li class="orbit-slide">
+        <figure class="orbit-figure">
+          <%= link_to(url2, html_options = {target: '_blank', onclick: "ga('send', 'event','Enlaces','Click','enlace_entra_y_participa', 1);"}) do
+            image_tag('foto2.jpg', class: 'orbit-image', alt: 'Actividades participación ciudadana')
+          end %>
+        </figure>
+      </li>
       <li class="orbit-slide">
         <!-- <div class="row banner"> -->
         <!--   <div class="small&#45;12 medium&#45;12 small&#45;centered column text&#45;center"> -->

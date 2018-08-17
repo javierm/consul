@@ -575,10 +575,10 @@ ol{
   }
 }
 .highlight{
-  background: transparent image-url("background_portada.jpg") no-repeat 100% / cover ;
-  background-position: center center;
-  height: 480px;
   .padding {padding-top: 4rem}
+}
+
+@media only screen and (min-width: 2000px) {
   div.row div.curtain {
     background-color: rgba(0,0,0,0.4);
   }
@@ -666,20 +666,6 @@ ol{
   }
   .top-bar{
     color: #273877;
-  }
-  .highlight{
-    h1 a{
-      color: $header-small-font-color;
-      font-size: 2.6rem;
-      font-weight: 400;
-      line-height: 0.8em;
-      text-decoration: none;
-      text-shadow: 1px 1px 1px #000;
-
-    }
-
-    background: transparent image-url("background_portada_m.jpg") no-repeat center 100% / cover ;
-    background-position: top;
   }
   #modal-video iframe{
     max-width: 100%;
