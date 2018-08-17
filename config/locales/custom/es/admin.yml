@@ -302,7 +302,7 @@ es:
       destroy: Eliminar Tema
       index:
         add_tag: Añade un nuevo tema para iniciativas ciudadanas
-        title: Temas de iniciativas ciudadanas 
+        title: Temas de iniciativas ciudadanas
       mark_as_featured: Proponer tema al crear iniciativa ciudadana
       name:
         placeholder: Escribe el nombre del tema
@@ -340,3 +340,19 @@ es:
           check: Seleccionar
     newsletters:
       empty_email: '<usuario borrado>'
+      newsletters_users: 'Lista de Usuarios'
+      csv:
+        id: 'Id Usuario'
+        email: 'Correo'
+        state: 'Estado'
+        phone_and_home: 'Residencia y Movil'
+        confirmed: 'confirmed'
+        confirmed_phone: 'sms_verificado'
+        residence_verified: 'residencia_verificada'
+        state_residence_and_phone: 'Residencia y movil'
+        state_residence: 'Residencia'
+        state_email: 'Email confirmado'
+        state_created: 'Alta'
+        n_iniciativas: 'Num. iniciativas'
+    segment_recipient:
+      newsletter_users_list: 'Lista de usuarios de Newsletter'
