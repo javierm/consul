@@ -338,7 +338,7 @@ aside.margin-bottom {
 }
 
 .participation-not-allowed{
-  font-size: 0.9rem; 
+  font-size: 0.9rem;
 }
 .anonymous-votes, .organizations-votes, .no-supports-allowed {
   p {
@@ -573,28 +573,12 @@ ol{
     height: calc(24vw / 1.77);
     width: 22vw;
   }
-  .highlight{
-    background: transparent image-url("background_portada.jpg") no-repeat 100% / cover ;
-    height: 530px!important;
-  }
-  .highlight .padding{ padding-top: 6rem !important;}
 }
-@media only screen and (min-width: 2000px) {
-  .highlight{
-    background: transparent image-url("background_portada.jpg") no-repeat 100% / cover ;
-    height: 700px!important;
-  }
-
-.highlight .padding {
-      padding-top: 15rem!important;
-    }
-  }
-
 .highlight{
-  background: transparent image-url("background_portada.jpg") no-repeat 100% / cover ;
-  background-position: center center;
-  height: 480px;
   .padding {padding-top: 4rem}
+}
+
+@media only screen and (min-width: 2000px) {
   div.row div.curtain {
     background-color: rgba(0,0,0,0.4);
   }
@@ -683,20 +667,6 @@ ol{
   .top-bar{
     color: #273877;
   }
-  .highlight{
-    h1 a{
-      color: $header-small-font-color;
-      font-size: 2.6rem;
-      font-weight: 400;
-      line-height: 0.8em;
-      text-decoration: none;
-      text-shadow: 1px 1px 1px #000;
-
-    }
-
-    background: transparent image-url("background_portada_m.jpg") no-repeat center 100% / cover ;
-    background-position: top;
-  }
   #modal-video iframe{
     max-width: 100%;
   }
@@ -733,4 +703,23 @@ ol{
 
 .debate-description {
   height: 24rem!important;
+}
+
+//Orbit
+.orbit .row.banner, .orbit .row.register {
+  position: absolute;
+  max-width: 100%;
+  color: white;
+  width: 100%;
+}
+
+.orbit .row.banner{
+  bottom: 15%;
+}
+.orbit .row.register {
+  bottom: 5%;
+}
+
+.orbit .orbit-wrapper .orbit-slide img {
+  image-rendering: inherit;
 }
