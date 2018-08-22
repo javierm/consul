@@ -36,6 +36,8 @@ class Moderation::UsersController < Moderation::BaseController
     if residence
       @user.residence_verified_at = Time.current
       @user.residence_requested_at = nil
+      @sms = Verification::Sms.new(phone: @user.unconfirmed_phone, user: @user)
+      @sms.save
     else
       @user.residence_verified_at = nil
       @user.residence_requested_at = nil

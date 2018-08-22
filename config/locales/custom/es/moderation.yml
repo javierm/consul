@@ -80,6 +80,7 @@ es:
         title: Residentes en %{geozone}
         resident: Residencia en %{geozone}
         confirm: '¿Estás seguro?'
+        sms_notice: ¡Atención! Confirmar la residencia de un ciudadano enviará un SMS a su teléfono, con el código que debe insertar en el siguiente paso del registro.
         state:
           confirmed: Confirmada
           denied: Denegada

@@ -153,6 +153,16 @@
         </div>
       </div>
 
+      <div class="small-12 medium-5 clear">
+        <%= f.label :unconfirmed_phone, t("verification.sms.new.phone"), class: "inline-block" %>
+        <span class="inline-block"><%= t("verification.sms.new.phone_format_html") %></span>
+        <p class="help-text" id="phone-text-help"><%= t("verification.sms.new.phone_note") %></p>
+        <%= f.text_field :unconfirmed_phone, label: false,
+                                 placeholder: t("verification.sms.new.phone_placeholder"),
+                                 aria: {describedby: "phone-help-text"},
+                                 required: true %>
+      </div>
+
       <div class="small-12 medium-3 clear">
         <%= f.submit t("verification.residence.new.verify_residence"), class: "button success expanded" %>
       </div>

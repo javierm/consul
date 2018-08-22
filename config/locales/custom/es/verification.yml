@@ -114,10 +114,10 @@ es:
     step_1: Residencia
     step_2: SMS de confirmación
     step_3: Verificación final
-    user_permission_debates: Comentar iniciativas ciudadanas y propuestas del Cabildo
+    user_permission_debates: Comentar iniciativas ciudadanas
     user_permission_info: Al verificar tus datos podrás...
     user_permission_proposal: Crear nuevas iniciativas ciudadanas
-    user_permission_support_proposal: Apoyar iniciativas ciudadanas y propuestas del Cabildo *
+    user_permission_support_proposal: Votar *
     user_permission_votes: Participar en las votaciones finales
     verified_user:
       form:
