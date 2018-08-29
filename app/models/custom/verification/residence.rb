@@ -118,6 +118,10 @@ class Verification::Residence
     Geozone.where(census_code: postal_code).first
   end
 
+  def self.geozone_is_protected?(geozone)
+    Verification::Residence::GEOZONE_PROTECTIONS.select{|protection| protection[:geozone_id] == geozone.id}.length.positive?
+  end
+
   private
 
     def retrieve_person_data

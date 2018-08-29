@@ -77,6 +77,8 @@ es:
         title: Bloquear usuarios
       notice_hide: Usuario bloqueado. Se han ocultado todas sus propuestas y comentarios.
       geozone_validation:
+        no_geozone_error: Tu usuario (%{login}) no pertenece a ningún municipio, por lo que no puedes realizar validaciones de residencia.
+        geozone_not_protected: El municipio de %{geozone} no admite verificación manual de residencia.
         title: Residentes en %{geozone}
         resident: Residencia en %{geozone}
         confirm: '¿Estás seguro?'

@@ -43,7 +43,7 @@
       <% end %>
     </li>
 
-    <% if current_user.geozone.present? %>
+    <% if current_user.geozone.present? && Verification::Residence.geozone_is_protected?(current_user.geozone) %>
       <li <%= "class=is-active" if controller_name == "users" && action_name == "index_for_geozone" %>>
         <%= link_to index_for_geozone_moderation_users_path do %>
           <span class="icon-map-marker"></span>

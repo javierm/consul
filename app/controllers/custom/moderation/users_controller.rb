@@ -23,7 +23,15 @@ class Moderation::UsersController < Moderation::BaseController
     @users = User.by_username_email_or_document_number(params[:search]) if params[:search]
     @users = @users.page(params[:page])
     @geozone = current_user.geozone
-    @users = @users.where(geozone_id: @geozone).order('created_at DESC')
+    unless @geozone
+      flash[:error] = t('moderation.users.geozone_validation.no_geozone_error', login: current_user.email)
+      redirect_to moderation_root_path and return
+    end
+    unless Verification::Residence.geozone_is_protected?(@geozone)
+      flash[:error] = t('moderation.users.geozone_validation.geozone_not_protected', geozone: @geozone.name)
+      redirect_to moderation_root_path and return
+    end
+    @users = @users.where(geozone_id: @geozone).where('document_number IS NOT NULL').order('created_at DESC')
     respond_to do |format|
       format.html
       format.js
