@@ -6,7 +6,7 @@ class Users::SessionsController < Devise::SessionsController
       if !verifying_via_email? && resource.show_welcome_screen?
         welcome_path
       else
-        resource.level_two_or_three_verified? ? super : new_residence_path
+        resource.level_two_or_three_verified? || resource.organization.present? ? super : new_residence_path
       end
     end
 
