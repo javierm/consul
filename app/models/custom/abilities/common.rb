@@ -11,7 +11,7 @@ module Abilities
       # can :update, Debate do |debate|
       #   debate.editable_by?(user)
       # end
-      #
+
       can :read, Proposal
       can :update, Proposal do |proposal|
         proposal.editable_by?(user)
@@ -19,6 +19,11 @@ module Abilities
       can [:retire_form, :retire], Proposal, author_id: user.id
 
       can :read, SpendingProposal
+      can :read, Legislation::Proposal
+      cannot [:edit, :update], Legislation::Proposal do |proposal|
+        proposal.editable_by?(user)
+      end
+      can [:retire_form, :retire], Legislation::Proposal, author_id: user.id
 
       can :create, Comment
       # can :create, Debate
@@ -39,6 +44,17 @@ module Abilities
       can [:flag, :unflag], Proposal
       cannot [:flag, :unflag], Proposal, author_id: user.id
 
+      can [:flag, :unflag], Legislation::Proposal
+      cannot [:flag, :unflag], Legislation::Proposal, author_id: user.id
+
+      can [:create, :destroy], Follow
+
+      can [:destroy], Document, documentable: { author_id: user.id }
+
+      can [:destroy], Image, imageable: { author_id: user.id }
+
+      can [:create, :destroy], DirectUpload
+
       unless user.organization?
         can :vote, Debate
         can :vote, Comment
@@ -51,6 +67,12 @@ module Abilities
         can :create, SpendingProposal
         can :create, DirectMessage
         can :show, DirectMessage, sender_id: user.id
+        can :answer, Poll do |poll|
+          poll.answerable_by?(user)
+        end
+        can :answer, Poll::Question do |question|
+          question.answerable_by?(user)
+        end
         Verification::Residence::GEOZONE_PROTECTIONS.each do |protection|
           if user.geozone_id != protection[:geozone_id] && protection[:action].present? && protection[:model_name].present? && protection[:model_id].present?
               cannot protection[:action], protection[:model_name].constantize, id: protection[:model_id]
