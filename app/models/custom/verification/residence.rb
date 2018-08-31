@@ -14,6 +14,7 @@ class Verification::Residence
   GEOZONE_PROTECTIONS = [
     # {geozone_id: 1},
     # {geozone_id: 2, model_name: 'Proposal', model_id: 2, action: :vote},
+    {geozone_id: 7}, # Ingenio
   ].freeze
 
   validates_presence_of :official, if: Proc.new { |vr| vr.user.residence_requested? && mode == :manual }
