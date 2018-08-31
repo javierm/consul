@@ -38,11 +38,31 @@ module Abilities
       can :moderate, Proposal
       cannot :moderate, Proposal, author_id: user.id
 
+      can :hide, Legislation::Proposal, hidden_at: nil
+      cannot :hide, Legislation::Proposal, author_id: user.id
+
+      can :ignore_flag, Legislation::Proposal, ignored_flag_at: nil, hidden_at: nil
+      cannot :ignore_flag, Legislation::Proposal, author_id: user.id
+
+      can :moderate, Legislation::Proposal
+      cannot :moderate, Legislation::Proposal, author_id: user.id
+
       can :hide, User
       cannot :hide, User, id: user.id
 
       can :block, User
       cannot :block, User, id: user.id
+
+      can :hide, ProposalNotification, hidden_at: nil
+      cannot :hide, ProposalNotification, author_id: user.id
+
+      can :ignore_flag, ProposalNotification, ignored_at: nil, hidden_at: nil
+      cannot :ignore_flag, ProposalNotification, author_id: user.id
+
+      can :moderate, ProposalNotification
+      cannot :moderate, ProposalNotification, author_id: user.id
+
+      can :index, ProposalNotification
 
       can :update_area, Proposal, area_revised_at: nil, hidden_at: nil
       cannot :update_area, Proposal, author_id: user.id

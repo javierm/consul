@@ -34,6 +34,8 @@ module Abilities
 
       can :suggest, Debate
       can :suggest, Proposal
+      can :suggest, Legislation::Proposal
+      can :suggest, ActsAsTaggableOn::Tag
 
       can [:flag, :unflag], Comment
       cannot [:flag, :unflag], Comment, user_id: user.id
@@ -65,6 +67,19 @@ module Abilities
         can :vote_featured, Proposal
         can :vote, SpendingProposal
         can :create, SpendingProposal
+
+        can :vote, Legislation::Proposal
+        can :vote_featured, Legislation::Proposal
+        can :create, Legislation::Answer
+
+        can :create, Budget::Investment,               budget: { phase: "accepting" }
+        can :suggest, Budget::Investment,              budget: { phase: "accepting" }
+        can :destroy, Budget::Investment,              budget: { phase: ["accepting", "reviewing"] }, author_id: user.id
+        can :vote, Budget::Investment,                 budget: { phase: "selecting" }
+
+        can [:show, :create], Budget::Ballot,          budget: { phase: "balloting" }
+        can [:create, :destroy], Budget::Ballot::Line, budget: { phase: "balloting" }
+
         can :create, DirectMessage
         can :show, DirectMessage, sender_id: user.id
         can :answer, Poll do |poll|
@@ -73,6 +88,7 @@ module Abilities
         can :answer, Poll::Question do |question|
           question.answerable_by?(user)
         end
+
         Verification::Residence::GEOZONE_PROTECTIONS.each do |protection|
           if user.geozone_id != protection[:geozone_id] && protection[:action].present? && protection[:model_name].present? && protection[:model_id].present?
               cannot protection[:action], protection[:model_name].constantize, id: protection[:model_id]
@@ -84,6 +100,9 @@ module Abilities
 
       can :create, Annotation
       can [:update, :destroy], Annotation, user_id: user.id
+
+      can [:create], Topic
+      can [:update, :destroy], Topic, author_id: user.id
     end
   end
 end
