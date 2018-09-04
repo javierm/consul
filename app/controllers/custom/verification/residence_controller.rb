@@ -21,7 +21,9 @@ class Verification::ResidenceController
     if @residence.save
       if @residence.user.residence_verified?
         # NOTE: Mode :check always enters here. Mode empty if verification succeded
-        redirect_to verified_user_path, notice: t('verification.residence.create.flash.success')
+        @sms = Verification::Sms.new(phone: current_user.unconfirmed_phone, user: current_user)
+        @sms.save
+        redirect_to edit_sms_path, notice: t('verification.residence.create.flash.success')
       else
         # NOTE: Mode :manual always enters here. Mode empty if verification failed
         redirect_to account_path, notice: t('verification.residence.create.flash.requested')
@@ -34,6 +36,6 @@ class Verification::ResidenceController
   private
 
     def residence_params
-      params.require(:residence).permit(:document_number, :document_type, :common_name, :first_surname, :date_of_birth, :postal_code, :terms_of_service, :geozone_id, :no_resident)
+      params.require(:residence).permit(:document_number, :document_type, :common_name, :first_surname, :date_of_birth, :postal_code, :terms_of_service, :geozone_id, :no_resident, :unconfirmed_phone)
     end
 end

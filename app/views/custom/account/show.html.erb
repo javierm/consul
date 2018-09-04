@@ -109,8 +109,6 @@
           <p><%= t("account.show.user_permission_info") %></p>
 
           <ul>
-            <li><span class="icon-check"></span>&nbsp;<%= t("account.show.user_permission_debates") %></li>
-            <li><span class="icon-check"></span>&nbsp;<%= t("account.show.user_permission_proposal") %></li>
             <li>
               <% if current_user.level_two_or_three_verified? %>
                 <span class="icon-check"></span>
@@ -119,13 +117,11 @@
               <% end %>
               <%= t("account.show.user_permission_support_proposal") %>
             </li>
+            <li><span class="icon-check"></span>&nbsp;<%= t("account.show.user_permission_debates") %></li>
+            <li><span class="icon-check"></span>&nbsp;<%= t("account.show.user_permission_proposal") %></li>
           </ul>
 
-          <p>
-            <span><%= t("account.show.user_permission_verify_info") %></span>
-            <br>
-            <%= t("account.show.user_permission_verify") %>
-          </p>
+          <p><span><%= t("account.show.user_permission_verify_info") %></span></p>
 
           <% unless @account.organization? %>
             <div>

@@ -3,11 +3,19 @@ require_dependency Rails.root.join('app', 'models', 'verification', 'residence')
 
 class Verification::Residence
   include ManageValidations
-  attr_accessor :user, :document_number, :document_type, :common_name, :first_surname, :date_of_birth, :postal_code, :geozone_id, :terms_of_service, :official, :mode, :no_resident
+  attr_accessor :user, :document_number, :document_type, :common_name, :first_surname, :date_of_birth, :postal_code, :geozone_id, :terms_of_service, :official, :mode, :no_resident, :unconfirmed_phone
 
 
   # NOTE mode == :manual indicates use of age verification request only
   # NOTE mode == :check indicates no verification needed (user declares residence)
+
+  # Only users of the geozone can interact with these models (see abilities/common)
+  # Can also specify the :geozone_id only, in order to manually validate geozone residence
+  GEOZONE_PROTECTIONS = [
+    # {geozone_id: 1},
+    # {geozone_id: 2, model_name: 'Proposal', model_id: 2, action: :vote},
+    {geozone_id: 7}, # Ingenio
+  ].freeze
 
   validates_presence_of :official, if: Proc.new { |vr| vr.user.residence_requested? && mode == :manual }
 
@@ -80,8 +88,9 @@ class Verification::Residence
                   postal_code:            postal_code,
                   date_of_birth:          date_of_birth,
                   no_resident:            no_resident,
-                  residence_verified_at:  (Time.now if mode != :manual),
-                  residence_requested_at: (Time.now if mode == :manual))
+                  unconfirmed_phone:      unconfirmed_phone,
+                  residence_verified_at:  (Time.now if mode != :manual && !protected_geozones.include?(geozone_id.to_i)),
+                  residence_requested_at: (Time.now if mode == :manual || protected_geozones.include?(geozone_id.to_i)))
     end
   end
 
@@ -108,6 +117,10 @@ class Verification::Residence
 
   def geozone
     Geozone.where(census_code: postal_code).first
+  end
+
+  def self.geozone_is_protected?(geozone)
+    Verification::Residence::GEOZONE_PROTECTIONS.select{|protection| protection[:geozone_id] == geozone.id}.length.positive?
   end
 
   private
@@ -138,5 +151,9 @@ class Verification::Residence
       check = value.slice!(value.length - 1)
       calculated_letter = letters[value.to_i % 23].chr
       return check === calculated_letter
+    end
+
+    def protected_geozones
+      Verification::Residence::GEOZONE_PROTECTIONS.map {|protection| protection[:geozone_id]}.uniq
     end
 end
