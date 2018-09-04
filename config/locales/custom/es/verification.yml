@@ -100,7 +100,7 @@ es:
       new:
         phone: Introduce tu teléfono móvil para recibir el código
         phone_format_html: "<strong><em>(Ejemplo: 612345678 ó +34612345678)</em></strong>"
-        phone_note: Sólo usaremos tu teléfono para enviarte un código, nunca te contactaremos.
+        phone_note: Sólo usaremos tu teléfono para enviarte un código, nunca te contactaremos. Recibirás un SMS cuando tu residencia sea verificada.
         phone_placeholder: "Ejemplo: 612345678 ó +34612345678"
         submit_button: Enviar
         title: SMS de confirmación
@@ -114,10 +114,10 @@ es:
     step_1: Residencia
     step_2: SMS de confirmación
     step_3: Verificación final
-    user_permission_debates: Comentar iniciativas ciudadanas y propuestas del Cabildo
+    user_permission_debates: Comentar iniciativas ciudadanas
     user_permission_info: Al verificar tus datos podrás...
     user_permission_proposal: Crear nuevas iniciativas ciudadanas
-    user_permission_support_proposal: Apoyar iniciativas ciudadanas y propuestas del Cabildo *
+    user_permission_support_proposal: Votar *
     user_permission_votes: Participar en las votaciones finales
     verified_user:
       form:

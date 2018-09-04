@@ -1,0 +1,6 @@
+<h2><%= t("moderation.users.geozone_validation.title", geozone: @geozone.name) %></h2>
+<p class="callout warning"><%= t("moderation.users.geozone_validation.sms_notice") %></p>
+
+<div id="users">
+  <%= render "users_for_geozone" %>
+</div>

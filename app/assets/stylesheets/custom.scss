@@ -705,6 +705,12 @@ ol{
   height: 24rem!important;
 }
 
+.auth-page form [type]:not([type=submit]):not([type=file]):not([type=checkbox]):not([type=radio]):not(.close-button) {
+  background: #fffdf7;
+  height: 3.5rem;
+  margin-bottom: 2rem;
+  border: 2px solid #f9c822;
+
 //Orbit
 .orbit .row.banner, .orbit .row.register {
   position: absolute;

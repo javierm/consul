@@ -13,7 +13,7 @@ class SMSApi
       password: Rails.application.secrets.sms_password,
       mobile: phone,
       name: "Participa Gran Canaria",
-      text: "Clave para verificarte: #{code}. Participa Gran Canaria"}
+      text: "Tu residencia ha sido verificada. Para completar el proceso, introduce el siguiente código: #{code}. Participa Gran Canaria"}
   end
 
   def success?(response)

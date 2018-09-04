@@ -1,0 +1,23 @@
+<% if @users.any? %>
+  <h3 class="margin"><%= page_entries_info @users %></h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th scope="col"><%= t('admin.users.columns.document_number') %></th>
+        <th scope="col"><%= t('moderation.users.geozone_validation.resident', geozone: @geozone.name) %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr id="user-<%= user.id%>"><%= render 'users_for_geozone_item', user: user %></tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= paginate @users %>
+<% else %>
+  <div class="callout primary">
+    <%= t('admin.users.index.no_users') %>
+  </div>
+<% end %>

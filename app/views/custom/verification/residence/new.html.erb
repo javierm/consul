@@ -29,9 +29,9 @@
       <p><%= t("verification.user_permission_info") %></p>
 
       <ul>
+        <li><span class="icon-check"></span>&nbsp;<%= t("verification.user_permission_support_proposal") %></li>
         <li><span class="icon-check"></span>&nbsp;<%= t("verification.user_permission_debates") %></li>
         <li><span class="icon-check"></span>&nbsp;<%= t("verification.user_permission_proposal") %></li>
-        <li><span class="icon-check"></span>&nbsp;<%= t("verification.user_permission_support_proposal") %></li>
       </ul>
     </div>
 
@@ -151,6 +151,16 @@
         <div class="medium-6">
           <%= f.text_field :postal_code, label: false %>
         </div>
+      </div>
+
+      <div class="small-12 medium-5 clear">
+        <%= f.label :unconfirmed_phone, t("verification.sms.new.phone"), class: "inline-block" %>
+        <span class="inline-block"><%= t("verification.sms.new.phone_format_html") %></span>
+        <p class="help-text" id="phone-text-help"><%= t("verification.sms.new.phone_note") %></p>
+        <%= f.text_field :unconfirmed_phone, label: false,
+                                 placeholder: t("verification.sms.new.phone_placeholder"),
+                                 aria: {describedby: "phone-help-text"},
+                                 required: true %>
       </div>
 
       <div class="small-12 medium-3 clear">

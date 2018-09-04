@@ -1,0 +1,4 @@
+$('#user-<%= @user.id %>').fadeOut(function() {
+  $('#user-<%= @user.id %>').html("<%= j render 'users_for_geozone_item', user: @user %>");
+  $('#user-<%= @user.id %>').fadeIn();
+});
