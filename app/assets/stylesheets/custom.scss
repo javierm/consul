@@ -727,6 +727,15 @@ ol{
   bottom: 5%;
 }
 
+.orbit-caption{
+  display: none;
+}
+.poll-more-info-answers .answer-description.short{
+  height: 3.75rem;
+}
+.answer{
+    margin: 1rem 0;
+}
 .orbit .orbit-wrapper .orbit-slide img {
   image-rendering: inherit;
 }
