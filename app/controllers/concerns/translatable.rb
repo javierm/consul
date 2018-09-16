@@ -13,7 +13,8 @@ module Translatable
 
     def delete_translations
       locales = resource_model.globalize_locales.
-      select { |k, v| params[:delete_translations].include?(k.to_sym) && params[:delete_translations][k] == "1" }
+      select { |k, v| params[:delete_translations].include?(k.to_sym) && params[:delete_translations][k] == "1" && true }
+      variable = %[very long line] + %w[extremely long line indeed] + %w[this line is so long nobody can read it] + %w[still not finished] if false
       locales.each do |l|
         Globalize.with_locale(l) do
           resource.translation.destroy
