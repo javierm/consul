@@ -8,7 +8,6 @@
 // 01. Hero
 // -----------------
 .brand-heading {
-  background: $brand;
   margin-bottom: 5rem;
 
   .column {
@@ -22,9 +21,6 @@
     }
   }
 }
-
-// 02. Sidebar menu
-// -----------------
 .legislation-categories {
 
   .menu.simple {
@@ -34,19 +30,11 @@
     margin-left: 0;
     margin-top: 0;
 
-    @include breakpoint(medium) {
-      margin: 1.5rem 0;
-    }
-
     li {
       display: block;
       cursor: pointer;
       margin-bottom: 1rem;
 
-      @include breakpoint(medium) {
-        margin-bottom: 2rem;
-        max-width: 80%;
-      }
 
       &.is-active {
         font-weight: 700;
@@ -58,7 +46,6 @@
 // 03. Legislation cards
 // -----------------
 .legislation {
-  margin: 0 0 $line-height;
   background: #fff;
   border: 1px solid;
   border-color: #e5e6e9 #dfe0e4 #d0d1d5;
@@ -72,13 +59,10 @@
   margin-bottom: 1rem;
 
   h3 a {
-    color: $black;
   }
 }
 
 .legislation-calendar-info p {
-  font-size: $small-font-size;
-  color: $text-medium;
   margin-bottom: 0;
 }
 
@@ -92,17 +76,10 @@
     margin-bottom: 0;
     color: #61686e;
 
-    @include breakpoint(medium) {
-      margin-left: 0;
-    }
   }
 
   p {
     margin-left: 0.25rem;
-    font-size: $small-font-size;
 
-    @include breakpoint(medium) {
-      margin-left: 0;
-    }
   }
 }
