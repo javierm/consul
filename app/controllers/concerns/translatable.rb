@@ -18,6 +18,9 @@ module Translatable
      3.times {
        puts "here"
      }
+      
+      wrong_array = %w(without square brackets)
+      right_array = %w[with square brackets]
       locales.each do |l|
         Globalize.with_locale(l) do
           resource.translation.destroy
