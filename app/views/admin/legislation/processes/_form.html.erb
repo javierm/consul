@@ -173,6 +173,10 @@
     <hr>
   </div>
 
+  <% if lookup_context.find_all("#{lookup_context.prefixes.first}/_custom_fields").any? %>
+    <%= render "custom_fields", process: @process, f: f %>
+  <% end %>
+
   <div class="small-12 medium-9 column">
     <%= f.translatable_text_field :title,
                                   placeholder: t("admin.legislation.processes.form.title_placeholder") %>
