@@ -1,2 +1,5 @@
 <td><%= user.document_number %></td>
+<td title="<%= I18n.l(user.created_at, format: :long) %>">
+  Hace <%= time_ago_in_words user.created_at %>
+</td>
 <td class="residence_validation_controls"><%= render 'residence_validation_controls', user: user %></td>
