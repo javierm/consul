@@ -11,13 +11,11 @@ class Verification::Residence
 
   # Only users of the geozone can interact with these models (see abilities/common)
   # Can also specify the :geozone_id only, in order to manually validate geozone residence
-  
+
   GEOZONE_PROTECTIONS = [
     # {geozone_id: 1},
     # {geozone_id: 2, model_name: 'Proposal', model_id: 2, action: :vote},
     {geozone_id: 7}, # Ingenio
-    {geozone_id: 4},
-    {geozone_id: 4, model_name: 'Budget', model_id: 1, action: :vote}
   ].freeze
 
   validates_presence_of :official, if: Proc.new { |vr| vr.user.residence_requested? && mode == :manual }
