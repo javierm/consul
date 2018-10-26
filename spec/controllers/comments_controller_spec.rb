@@ -24,7 +24,7 @@ describe CommentsController do
 
       expect do
         xhr :post, :create, comment: {commentable_id: @question.id, commentable_type: "Legislation::Question", body: "a comment"}
-      end.not_to change { @question.reload.comments_count }
+      end.to_not change { @question.reload.comments_count }
     end
 
     it 'does not create a comment for unverified users when the commentable requires it' do
