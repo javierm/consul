@@ -1,5 +1,5 @@
 class Widget::Card < ActiveRecord::Base
-  include Imageable
+  include Imageable   
 
   # table_name must be set before calls to 'translates'
   self.table_name = "widget_cards"
