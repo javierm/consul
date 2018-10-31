@@ -3,8 +3,103 @@
 3;Otras opciones;Sexo;radio
 1;18 años o menos;¿Podría indicarnos en qué grupo de edad se encuentra usted?;radio
 2;De 19 a 24 años;¿Podría indicarnos en qué grupo de edad se encuentra usted?;radio
+3;De 25 a 44 años;¿Podría indicarnos en qué grupo de edad se encuentra usted?;radio
+4;De 45 a 54 años;¿Podría indicarnos en qué grupo de edad se encuentra usted?;radio
+5;55 y 64 años;¿Podría indicarnos en qué grupo de edad se encuentra usted?;radio
+6;65 y más años;¿Podría indicarnos en qué grupo de edad se encuentra usted?;radio
+7;No contesta;¿Podría indicarnos en qué grupo de edad se encuentra usted?;radio
+1;Sin estudio/Certificado de Escolaridad;Señale, por favor, su nivel de estudios finalizados;radio
+2;Enseñanza Primaria;Señale, por favor, su nivel de estudios finalizados;radio
+3;EGB;Señale, por favor, su nivel de estudios finalizados;radio
+4;ESO;Señale, por favor, su nivel de estudios finalizados;radio
+5;Bachillerato/BUP;Señale, por favor, su nivel de estudios finalizados;radio
+6;Formación Profesional;Señale, por favor, su nivel de estudios finalizados;radio
+7;Universitarios;Señale, por favor, su nivel de estudios finalizados;radio
+8;Otros;Señale, por favor, su nivel de estudios finalizados;radio
+1;Especificar;Si ha seleccionado Otros por favor indique que nivel de estudios a finalizado;text
+1;Dirección/ gerencia;¿Cuál es su actividad u ocupación actual?;radio
+2;Técnico/ a o profesional;¿Cuál es su actividad u ocupación actual?;radio
+3;Empleado/ a administrativo/as y otro/a empleado/a;¿Cuál es su actividad u ocupación actual?;radio
+4;Trabajador/a de los servicios;¿Cuál es su actividad u ocupación actual?;radio
+5;Trabajador/a de la industria;¿Cuál es su actividad u ocupación actual?;radio
+6;Trabajador/a del sector primario;¿Cuál es su actividad u ocupación actual?;radio
+7;Trabajo doméstico/de cuidados no remunerado;¿Cuál es su actividad u ocupación actual?;radio
+8;Desempleado/a;¿Cuál es su actividad u ocupación actual?;radio
+9;Pensionista;¿Cuál es su actividad u ocupación actual?;radio
+10;Estudiante;¿Cuál es su actividad u ocupación actual?;radio
+11;Otras ocupaciones;¿Cuál es su actividad u ocupación actual?;radio
+1;Especificar;Si ha seleccionado Otras ocupaciones, por favor indique su actidad u ocupación actual;text
 1;Escriba su respuesta;¿Cuáles son las principales dificultades que se encuentra en la vida cotidiana en relación con la igualdad entre mujeres y hombres? (Descríbalas, por favor, con la mayor precisión posible).;text
+1;Escriba su respuesta;¿Cuáles son las principales dificultades que se encuentra en relación con la discriminación por razón de identidad de género/orientación sexual? (Descríbalas, por favor, con la mayor precisión posible).;text
+1;Escriba su respuesta;¿Cuáles son las principales dificultades que se encuentra en relación con la violencia de género? (Descríbalas, por favor, con la mayor precisión posible).;text
+1;Escriba su respuesta;En este mismo sentido ¿cuáles son las principales dificultades que se encuentra en relación con la violencia sexual, abuso sexual, agresiones sexuales? (Descríbalas, por favor, con la mayor precisión posible).;text
+1;Escriba su respuesta;En otro sentido, describa, por favor, cuáles son los principales logros/ éxitos que, con más frecuencia, se encuentra en el ámbito de la igualdad entre mujeres y hombres.;text
+1;Escriba su respuesta;Describa, por favor, cuáles son los principales logros/ éxitos que, con más frecuencia, se encuentra en el ámbito de la no discriminación por razón de identidad de género/ orientación sexual.;text
+1;Escriba su respuesta;Describa, por favor, cuáles son los principales logros/ éxitos que, con más frecuencia, se encuentra en relación a la violencia de género.;text
+1;Escriba su respuesta;Describa, por favor, cuáles son los principales logros/ éxitos que, con más frecuencia, se encuentra en relación con la violencia sexual, abuso sexual, agresiones sexuales.;text
 1;Escriba su respuesta;Indique, por favor, los factores que considera más relevantes para la consecución de la igualdad entre mujeres y hombres (Seleccione las 5 opciones más relevantes).;
-1;Si;Mayor educación para las mujeres;radio
-2;No;Mayor educación para las mujeres;radio
-1;;Mayor educación para las mujeres2;input
+1;Escriba su respuesta;Mayor educación para las mujeres;input
+1;Escriba su respuesta;Mayor participación de las mujeres en el mercado laboral;input
+1;Escriba su respuesta;Mejorar las condiciones laborales de las mujeres;input
+1;Escriba su respuesta;Mejorar la conciliación de la vida laboral, familiar y personal;input
+1;Escriba su respuesta;Mayor participación política y social de las mujeres;input
+1;Escriba su respuesta;Potenciar acciones culturales desde y para las mujeres;input
+1;Escriba su respuesta;Sensibilizar a los medios de comunicación;input
+1;Escriba su respuesta;Sensibilizar a la población masculina;input
+1;Escriba su respuesta;Promocionar la educación en valores igualitarios entre el profesorado;input
+1;Escriba su respuesta;Promocionar la educación en valores igualitarios en todos los niveles educativos (co-educación);input
+1;Escriba su respuesta;Introducir en los currículos oficiales del sistema educativo la educación afectivo-sexual;input
+1;Escriba su respuesta;Formar/ sensibilizar en igualdad de género al personal de los servicios públicos (cuerpos y fuerzas de seguridad, sanidad, ámbito judicial…);input
+1;Escriba su respuesta;Mejorar el conocimiento mutuo y la coordinación entre las distintas instancias que trabajan en pro de la igualdad entre mujeres y hombres;input
+1;Escriba su respuesta;Evaluar elementos/ protocolos, que desde las instituciones, reproduzcan situaciones de desigualdad y/ o discriminación;input
+1;Escriba su respuesta;1- Otra (especificar);input
+1;Escriba su respuesta;2- Otra (especificar);input
+1;Escriba su respuesta;3- Otra (especificar);input
+1;Escriba su respuesta;En este mismo sentido, indique, por favor, los tres factores que considera más relevantes para luchar contra la discriminación sobre orientación sexual e identidad de género (Seleccione, las tres más relevantes).;
+1;Escriba su respuesta;Implantar la formación al profesorado sobre libertad y orientación sexual en todos los niveles educativos;input
+1;Escriba su respuesta;Implantar la formación al alumnado sobre libertad y orientación sexual en todos los niveles educativos;input
+1;Escriba su respuesta;Mejorar los derechos laborales de las personas LGTBI;input
+1;Escriba su respuesta;Mayor participación política y social de las personas LGTBI;input
+1;Escriba su respuesta;Potenciar acciones culturales desde y para las personas LGTBI;input
+1;Escriba su respuesta;Sensibilizar a los medios de comunicación;input
+1;Escriba su respuesta;Sensibilizar a la población general;input
+1;Escriba su respuesta;Desarrollar campañas informativas sobre la diversidad sexual;input
+1;Escriba su respuesta;Asegurar el reconocimiento de todos los derechos para las personas LGTBI;input
+1;Escriba su respuesta;Otra (especificar);input
+1;Escriba su respuesta;Otra (especificar);input
+1;Escriba su respuesta;Indique, por favor, los tres factores que considera más relevantes para la erradicación de la violencia de género (Seleccione los tres más relevantes).;
+1;Escriba su respuesta;Aplicar la legislación al respecto;input
+1;Escriba su respuesta;Garantizar la protección a las mujeres, menores y personas dependientes de ellas en situación de violencia de género;input
+1;Escriba su respuesta;Fomentar la prevención y sensibilización frente a la violencia de género;input
+1;Escriba su respuesta;Ampliar los recursos de acogida/ prestaciones/servicios;input
+1;Escriba su respuesta;Mejorar la formación de las y los profesionales del área;input
+1;Escriba su respuesta;Sensibilizar a los medios de comunicación;input
+1;Escriba su respuesta;Sensibilizar a la población masculina;input
+1;Escriba su respuesta;Intervenir con maltratadores en la reducción de la conducta violenta;input
+1;Escriba su respuesta;Formar al profesorado sobre detección precoz de la violencia de género;input
+1;Escriba su respuesta;Formar al personal sanitario sobre detección precoz de la violencia de género;input
+1;Escriba su respuesta;Ampliar las medidas de apoyo a la autonomía de las mujeres (ayudas a la vivienda, al empleo,…);input
+1;Escriba su respuesta;1- Otra (especificar):;text
+1;Escriba su respuesta;2- Otra (especificar):;text
+1;Escriba su respuesta;3- Otra (especificar):;text
+1;Escriba su respuesta;¿Qué factores de riesgo, cree usted, pueden frenar el proceso de igualdad plena entre mujeres y hombres? (Por favor, descríbalos con la mayor precisión posible).;text
+1;Escriba su respuesta;¿Qué factores de riesgo, cree usted, pueden frenar el proceso de libertad de género y orientación sexual? (Por favor, descríbalos con la mayor precisión posible).;text
+1;Escriba su respuesta;¿Qué factores de riesgo, cree usted, pueden frenar el proceso de erradicación de la violencia de género? (Por favor, descríbalos con la mayor precisión posible).;text
+1;Escriba su respuesta;¿Qué factores de riesgo, cree usted, pueden frenar el proceso de erradicación de la violencia sexual, abuso sexual, agresiones sexuales? (Por favor, descríbalos con la mayor precisión posible).;text
+1;Escriba su respuesta;A continuación podría describir con la mayor concreción posible ¿qué nuevas demandas o necesidades deberían ser abordadas en los servicios públicos relativos a la igualdad de género y la violencia de género?;text
+1;Escriba su respuesta;¿Qué necesidades sociales y culturales en la vida de las mujeres detecta usted cuya satisfacción ayudaría a su mejor integración económica?;text
+1;Escriba su respuesta;¿Qué acciones específicas en el ámbito social y cultural propone usted para lograr una mayor integración económica de la mujer en la comunidad?;text
+1;Escriba su respuesta;¿Qué necesidades de ámbito político-legal detecta usted en cuanto a una mejor integración económica de las mujeres en la comunidad?;text
+1;Escriba su respuesta;¿Qué acciones específicas en el ámbito político-legal propone usted para lograr una mayor integración económica de la mujer?;text
+1;Escriba su respuesta;¿Qué necesidades de ámbito social y cultural tienen las mujeres en los procesos de reconocimiento individual y social, en su vida cotidiana, y en la comunidad?;text
+1;Escriba su respuesta;¿Qué acciones específicas en el ámbito social y cultural propone usted para lograr el reconocimiento y el respeto que se merecen las mujeres?;text
+1;Escriba su respuesta;¿Qué necesidades de ámbito político-legal detecta usted para mejorar el reconocimiento de las mujeres, a nivel individual y en la comunidad?;text
+1;Escriba su respuesta;¿Qué acciones específicas en el ámbito político-legal propone usted para lograr el pleno reconocimiento social de las mujeres?;text
+1;Escriba su respuesta;¿Qué necesidades de ámbito social y cultural tienen las mujeres para el logro de una mayor participación y poder en las áreas importantes de toma de decisiones?;text
+1;Escriba su respuesta;¿Qué acciones específicas en el ámbito social y cultural propone usted para lograr esa mayor participación y poder de las mujeres?;text
+1;Escriba su respuesta;¿Qué necesidades detecta usted en el ámbito político-legal para aumentar la representación y la participación de las mujeres en las áreas importantes de toma de decisiones, como la política, la empresa o la sociedad civil?;text
+1;Escriba su respuesta;¿Qué acciones específicas de tipo político-legal propone usted para lograr una mayor representación y participación de las mujeres en los diversos ámbitos de poder?;text
+1;Escriba su respuesta;¿Qué necesidades en el ámbito social y cultural tienen las personas LGTBI?;text
+1;Escriba su respuesta;¿Qué acciones específicas en el ámbito social y cultural propone usted para garantizar la libertad de orientación sexual de todas las personas?;text
+1;Escriba su respuesta;¿Qué necesidades detecta usted en el ámbito político-legal para facilitar la diversidad y la libertad de orientación sexual?;text
+1;Escriba su respuesta;¿Qué acciones específicas de tipo político-legal propone usted para lograr la libertad de orientación sexual de las personas?;text
