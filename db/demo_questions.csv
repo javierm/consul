@@ -1,49 +1,10 @@
-1;Mujer;SEXO
-2;Hombre;SEXO
-1;15 a 29 años;INTERVALO DE EDAD
-2;30 a 44 años;INTERVALO DE EDAD
-3;45 a 59 años;INTERVALO DE EDAD
-4;60 a 74 años;INTERVALO DE EDAD
-5;Más de 75;INTERVALO DE EDAD
-1;Primera vez;¿CON QUÉ FRECUENCIA VISITA EL CONFITAL?
-2;Entre 2 y 5 veces al año;¿CON QUÉ FRECUENCIA VISITA EL CONFITAL?
-3;1 vez al mes;¿CON QUÉ FRECUENCIA VISITA EL CONFITAL?
-4;2 veces al mes;¿CON QUÉ FRECUENCIA VISITA EL CONFITAL?
-5;1 vez a la semana;¿CON QUÉ FRECUENCIA VISITA EL CONFITAL?
-6;Entre 2 y 5 veces por semana;¿CON QUÉ FRECUENCIA VISITA EL CONFITAL?
-7;Todos los días;¿CON QUÉ FRECUENCIA VISITA EL CONFITAL?
-1;Menos  de una hora;¿CUÁNTO DURA APROXIMADAMENTE LA VISITA?
-2;Entre 1 y 2 horas;¿CUÁNTO DURA APROXIMADAMENTE LA VISITA?
-3;Más de 2 horas;¿CUÁNTO DURA APROXIMADAMENTE LA VISITA?
-4;Todo el día;¿CUÁNTO DURA APROXIMADAMENTE LA VISITA?
-1;En verano;¿EN QUÉ ÉPOCA DEL AÑO VISITA EL CONFITAL?
-2;En Semana Santa;¿EN QUÉ ÉPOCA DEL AÑO VISITA EL CONFITAL?
-3;Todo el año;¿EN QUÉ ÉPOCA DEL AÑO VISITA EL CONFITAL?
-4;Me es indiferente;¿EN QUÉ ÉPOCA DEL AÑO VISITA EL CONFITAL?
-5;Otras épocas;¿EN QUÉ ÉPOCA DEL AÑO VISITA EL CONFITAL?
-1;Pasear;¿QUÉ ACTIVIDAD REALIZA PRINCIPALMENTE?
-2;Bañarse;¿QUÉ ACTIVIDAD REALIZA PRINCIPALMENTE?
-3;Observar la naturaleza;¿QUÉ ACTIVIDAD REALIZA PRINCIPALMENTE?
-4;Pescar;¿QUÉ ACTIVIDAD REALIZA PRINCIPALMENTE?
-5;Correr;¿QUÉ ACTIVIDAD REALIZA PRINCIPALMENTE?
-6;Montar en bici;¿QUÉ ACTIVIDAD REALIZA PRINCIPALMENTE?
-7;Otras actividades deportivas;¿QUÉ ACTIVIDAD REALIZA PRINCIPALMENTE?
-8;Picnic;¿QUÉ ACTIVIDAD REALIZA PRINCIPALMENTE?
-9;Pasear al perro;¿QUÉ ACTIVIDAD REALIZA PRINCIPALMENTE?
-10;Otras;¿QUÉ ACTIVIDAD REALIZA PRINCIPALMENTE?
-1;La Isleta;¿DE QUÉ ZONA DE LA CIUDAD PROCEDE?
-2;Guanarteme-Puerto;¿DE QUÉ ZONA DE LA CIUDAD PROCEDE?
-3;Ciudad Alta;¿DE QUÉ ZONA DE LA CIUDAD PROCEDE?
-4;Vegueta, Cono Sur y Tafira;¿DE QUÉ ZONA DE LA CIUDAD PROCEDE?
-5;Tamaraceite-San Lorenzo-Tenoya;¿DE QUÉ ZONA DE LA CIUDAD PROCEDE?
-6;Otros municipios;¿DE QUÉ ZONA DE LA CIUDAD PROCEDE?
-1;Caminando;¿QUÉ MEDIO DE TRANSPORTE UTILIZA PARA LLEGAR?
-2;En Bicicleta;¿QUÉ MEDIO DE TRANSPORTE UTILIZA PARA LLEGAR?
-3;En guagua;¿QUÉ MEDIO DE TRANSPORTE UTILIZA PARA LLEGAR?
-4;En coche;¿QUÉ MEDIO DE TRANSPORTE UTILIZA PARA LLEGAR?
-5;Otros;¿QUÉ MEDIO DE TRANSPORTE UTILIZA PARA LLEGAR?
-1;Amigos;¿QUE PERSONAS SUELEN ACOMPAÑARLE?
-2;Hijos;¿QUE PERSONAS SUELEN ACOMPAÑARLE?
-3;Pareja;¿QUE PERSONAS SUELEN ACOMPAÑARLE?
-4;Familiares;¿QUE PERSONAS SUELEN ACOMPAÑARLE?
-5;Otras personas ;¿QUE PERSONAS SUELEN ACOMPAÑARLE?
+1;Mujer;Sexo;radio
+2;Hombre;Sexo;radio
+3;Otras opciones;Sexo;radio
+1;18 años o menos;¿Podría indicarnos en qué grupo de edad se encuentra usted?;radio
+2;De 19 a 24 años;¿Podría indicarnos en qué grupo de edad se encuentra usted?;radio
+1;Escriba su respuesta;¿Cuáles son las principales dificultades que se encuentra en la vida cotidiana en relación con la igualdad entre mujeres y hombres? (Descríbalas, por favor, con la mayor precisión posible).;text
+1;Escriba su respuesta;Indique, por favor, los factores que considera más relevantes para la consecución de la igualdad entre mujeres y hombres (Seleccione las 5 opciones más relevantes).;
+1;Si;Mayor educación para las mujeres;radio
+2;No;Mayor educación para las mujeres;radio
+1;;Mayor educación para las mujeres2;input

@@ -42,6 +42,10 @@ Rails.application.routes.draw do
   resources :documents, only: [:destroy]
   resources :follows, only: [:create, :destroy]
 
+  resources :surveys, only: [:show] do
+    resources :answered_surveys, only: [:new, :create, :show]
+  end
+
   # More info pages
   get 'help',             to: 'pages#show', id: 'help/index',             as: 'help'
   get 'help/how-to-use',  to: 'pages#show', id: 'help/how_to_use/index',  as: 'how_to_use'
