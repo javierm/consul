@@ -4,9 +4,9 @@ class SurveyQuestionAnswer < ActiveRecord::Base
   belongs_to :question, class_name: 'SurveyQuestion', inverse_of: :answers, foreign_key: :survey_question_id
 
   delegate :text, to: :question, prefix: true
-  delegate :text, to: :value, prefix: true
+  delegate :text, to: :value, prefix: true, allow_nil: true
 
-  validates :value, :question, presence: true
+  # validates :value, :question, presence: true
   validates :answered_survey, presence: true, if: :value
   validate :only_one_answer_per_question
 

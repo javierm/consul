@@ -5,7 +5,7 @@ class AnsweredSurvey < ActiveRecord::Base
 
   validates :survey, :user, presence: true
   validates :user_id, uniqueness: { scope: :survey_id }
-  validate :validate_all_questions_answered
+  # validate :validate_all_questions_answered
 
   delegate :name, to: :survey
   accepts_nested_attributes_for :answers, :allow_destroy => true

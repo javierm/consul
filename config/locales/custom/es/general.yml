@@ -898,3 +898,11 @@ es:
     content_title:
       proposal: "Propuesta"
       debate: "Debate"
+  answered_surveys:
+    new:
+      submit_button: Enviar respuestas
+      recommendation_four: Disfruta de este espacio, conociendo tus preferencias construimos una isla mejor.
+      recommendation_one: Responde cada pregunta con la respuesta más se acerque a tu realidad.
+      recommendation_three: Si quieres plantear alguna inciativa sobre la encuesta, no dudes en crear una nueva inicitavia ciudadana
+      recommendation_two: No te olvides de contestar todas las preguntas, pues una vez enviada la encuesta no podrás modificarla.
+      recommendations_title: Recomendaciones para rellenar la encuesta.

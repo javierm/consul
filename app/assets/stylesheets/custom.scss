@@ -741,3 +741,11 @@ div#groups_and_headings {
 .orbit .orbit-wrapper .orbit-slide img {
   image-rendering: inherit;
 }
+
+
+.new_answered_survey {
+  input[type='text'] {
+    max-width: 4rem;
+    float: right;
+  }
+}

@@ -5,20 +5,18 @@
         <h1><%= @answered_survey.name %></h1>
         <%=raw @survey.description%>
         <% @answered_survey.answers.each do |answer| %>
-          <h4><%= answer.question_text%></h4>
-          <h5><%= answer.value_text %></h5>
+          <strong><%= answer.question_text%></strong>
+          <p> - 
+            <% if answer.value_text.present? %>
+              <%= answer.value_text %>
+            <% end %>
+            <% if answer.comment.present? %>
+              <%= answer.comment %>
+            <% end %>
+          </p>
         <% end %>
       </div>
-    <div class="small-12 medium-3 column">
-      <span class="icon-proposals float-right"></span>
-      <h2><%= t("answered_surveys.new.recommendations_title") %></h2>
-      <ul class="recommendations">
-        <li><%= t("answered_surveys.new.recommendation_one") %></li>
-        <li><%= t("answered_surveys.new.recommendation_two") %></li>
-        <li><%= t("answered_surveys.new.recommendation_three") %></li>
-      </ul>
     </div>
-
   </div>
 </section>
 
