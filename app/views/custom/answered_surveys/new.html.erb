@@ -24,7 +24,7 @@
               <% end %>
 
               <% if ans.question.input_type.present? && ans.question.input_type == 'text' %>
-                <%= answer.text_area :comment %>
+                <%= answer.text_area :comment, label: false %>
               <% end %>
 
             </p>
