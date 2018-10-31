@@ -738,7 +738,7 @@ es:
   unauthorized:
     default: No tienes permiso para acceder a esta página.
     manage:
-      all: "No tienes permiso para realizar la acción '%{action}' sobre %{subject}."
+      all: "No tienes permisos, por favor regístrese o inicie sesión"
   users:
     direct_messages:
       new:

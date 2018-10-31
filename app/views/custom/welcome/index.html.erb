@@ -7,6 +7,14 @@
       <li class="orbit-slide">
         <figure class="orbit-figure">
           <%= link_to new_survey_answered_survey_path(@survey = Survey.find_by_code('ENC-3')) do
+            image_tag('foto4.jpg', class: 'orbit-image', alt: 'Actividades participación ciudadana')
+          end %>
+        </figure>
+      </li>
+
+      <li class="orbit-slide">
+        <figure class="orbit-figure">
+          <%= link_to(url3, html_options = {target: '_blank', onclick: "ga('send', 'event','Enlaces','Click','enlace_entra_y_participa', 1);"}) do
             image_tag('foto3.jpg', class: 'orbit-image', alt: 'Actividades participación ciudadana')
           end %>
         </figure>
@@ -45,6 +53,7 @@
 
       <button data-slide="1"><span class="show-for-sr">Second slide details.</span></button>
       <button data-slide="2"><span class="show-for-sr">Second slide details.</span></button>
+      <button data-slide="3"><span class="show-for-sr">Second slide details.</span></button>
     </nav>
   </div>
 </div>
