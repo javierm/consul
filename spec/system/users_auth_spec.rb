@@ -237,11 +237,14 @@ describe "Users" do
 
         click_link "Sign up with Twitter"
 
-        expect(page).to have_current_path(new_user_session_path)
-        expect(page).to have_content "To continue, please click on the confirmation link that we have sent you via email"
+        expect(page).to have_current_path(root_path)
+        expect(page).to have_content "Successfully identified"
 
-        confirm_email
-        expect(page).to have_content "Your account has been confirmed"
+        expect_to_be_signed_in
+
+        click_link "Sign out"
+
+        expect_not_to_be_signed_in
 
         visit "/"
         click_link "Sign in"
@@ -266,10 +269,11 @@ describe "Users" do
         fill_in "user_email", with: "manueladelascarmenas@example.com"
         click_button "Register"
 
-        expect(page).to have_content "To continue, please click on the confirmation link that we have sent you via email"
+        expect_to_be_signed_in
 
-        confirm_email
-        expect(page).to have_content "Your account has been confirmed"
+        click_link "Sign out"
+
+        expect_not_to_be_signed_in
 
         visit "/"
         click_link "Sign in"
@@ -361,10 +365,11 @@ describe "Users" do
         fill_in "user_email", with: "somethingelse@example.com"
         click_button "Register"
 
-        expect(page).to have_content "To continue, please click on the confirmation link that we have sent you via email"
+        expect_to_be_signed_in
 
-        confirm_email
-        expect(page).to have_content "Your account has been confirmed"
+        click_link "Sign out"
+
+        expect_not_to_be_signed_in
 
         visit "/"
         click_link "Sign in"
@@ -392,10 +397,11 @@ describe "Users" do
         fill_in "user_email", with: "somethingelse@example.com"
         click_button "Register"
 
-        expect(page).to have_content "To continue, please click on the confirmation link that we have sent you via email"
+        expect_to_be_signed_in
 
-        confirm_email
-        expect(page).to have_content "Your account has been confirmed"
+        click_link "Sign out"
+
+        expect_not_to_be_signed_in
 
         visit "/"
         click_link "Sign in"
@@ -429,11 +435,12 @@ describe "Users" do
 
         click_link "Sign up with Wordpress"
 
-        expect(page).to have_current_path(new_user_session_path)
-        expect(page).to have_content "To continue, please click on the confirmation link that we have sent you via email"
+        expect(page).to have_current_path(root_path)
+        expect_to_be_signed_in
 
-        confirm_email
-        expect(page).to have_content "Your account has been confirmed"
+        click_link "Sign out"
+
+        expect_not_to_be_signed_in
 
         visit "/"
         click_link "Sign in"
@@ -467,11 +474,12 @@ describe "Users" do
         fill_in "Email", with: "manuela@consul.dev"
         click_button "Register"
 
-        expect(page).to have_current_path(new_user_session_path)
-        expect(page).to have_content "To continue, please click on the confirmation link that we have sent you via email"
+        expect(page).to have_current_path(root_path)
+        expect_to_be_signed_in
 
-        confirm_email
-        expect(page).to have_content "Your account has been confirmed"
+        click_link "Sign out"
+
+        expect_not_to_be_signed_in
 
         visit "/"
         click_link "Sign in"
