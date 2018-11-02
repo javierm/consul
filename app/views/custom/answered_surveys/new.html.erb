@@ -8,14 +8,14 @@
         <%= f.fields_for :answers do |answer| %>
           <% ans = answer.object %>
           <div class="small-12 column">
-            <strong><%= ans.question_text %></strong>
+            <%= answer.hidden_field :survey_question_id %>
+            <span class="basic <%= ans.question.input_type %>"><%= ans.question_text %></span>
             <% if ans.errors.any? %>
               <small class="error"><%= ans.errors.full_messages.join("; ") %></small>
             <% end %>
-            <%= answer.hidden_field :survey_question_id %>
-              <% if ans.question.input_type.present? && ans.question.input_type == 'input' %>
-                <%= answer.text_field :comment, label: false %>
-              <% end %>
+            <% if ans.question.input_type.present? && ans.question.input_type == 'input' %>
+              <%= answer.text_field :comment, label: false %>
+            <% end %>
             <p>
               <% if ans.question.input_type.present? && ans.question.input_type == 'radio' %>
                 <%= answer.collection_radio_buttons :survey_question_value_id, ans.question.values.order(:order), :id, :text do |option| %>

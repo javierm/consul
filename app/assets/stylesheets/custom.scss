@@ -745,7 +745,32 @@ div#groups_and_headings {
 
 .new_answered_survey {
   input[type='text'] {
-    max-width: 4rem;
+    width: 30px;
+    height: 30px!important;
     float: right;
   }
+  span{
+    &.basic {
+      font-weight: bold;
+      display: inline-block;
+    }
+    &.basic.radio, &.basic.text {
+      font-weight: normal;
+      display: inline-block;
+    }
+    &.basic.input {
+      padding-left: 15px;
+      width: 95%;
+      font-weight: normal;
+    }
+    &.basic.text_p{
+          font-weight: normal;
+        }
+  }
+  p {padding-bottom: 1.3rem;}
+  label.radio-inline{
+    font-weight: normal;
+  }
 }
+
+
