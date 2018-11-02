@@ -202,7 +202,7 @@ describe "Emails" do
     end
   end
 
-  scenario "Email depending on user's locale" do
+  scenario "Email depending on user's locale", skip: "Sign up is disabled" do
     visit root_path(locale: :es)
 
     click_link "Registrarse"
