@@ -1,43 +1,47 @@
-1;Mujer;Sexo;radio
-2;Hombre;Sexo;radio
-3;Otras opciones;Sexo;radio
-1;18 años o menos;¿Podría indicarnos en qué grupo de edad se encuentra usted?;radio
-2;De 19 a 24 años;¿Podría indicarnos en qué grupo de edad se encuentra usted?;radio
-3;De 25 a 44 años;¿Podría indicarnos en qué grupo de edad se encuentra usted?;radio
-4;De 45 a 54 años;¿Podría indicarnos en qué grupo de edad se encuentra usted?;radio
-5;55 y 64 años;¿Podría indicarnos en qué grupo de edad se encuentra usted?;radio
-6;65 y más años;¿Podría indicarnos en qué grupo de edad se encuentra usted?;radio
-7;No contesta;¿Podría indicarnos en qué grupo de edad se encuentra usted?;radio
-1;Sin estudio/Certificado de Escolaridad;Señale, por favor, su nivel de estudios finalizados;radio
-2;Enseñanza Primaria;Señale, por favor, su nivel de estudios finalizados;radio
-3;EGB;Señale, por favor, su nivel de estudios finalizados;radio
-4;ESO;Señale, por favor, su nivel de estudios finalizados;radio
-5;Bachillerato/BUP;Señale, por favor, su nivel de estudios finalizados;radio
-6;Formación Profesional;Señale, por favor, su nivel de estudios finalizados;radio
-7;Universitarios;Señale, por favor, su nivel de estudios finalizados;radio
-8;Otros;Señale, por favor, su nivel de estudios finalizados;radio
+1;Texto;DATOS DE CLASIFICACIÓN;
+1;Mujer;1. Sexo;radio
+2;Hombre;1. Sexo;radio
+3;Otras opciones;1. Sexo;radio
+1;18 años o menos;2. ¿Podría indicarnos en qué grupo de edad se encuentra usted?;radio
+2;De 19 a 24 años;2. ¿Podría indicarnos en qué grupo de edad se encuentra usted?;radio
+3;De 25 a 44 años;2. ¿Podría indicarnos en qué grupo de edad se encuentra usted?;radio
+4;De 45 a 54 años;2. ¿Podría indicarnos en qué grupo de edad se encuentra usted?;radio
+5;55 y 64 años;2. ¿Podría indicarnos en qué grupo de edad se encuentra usted?;radio
+6;65 y más años;2. ¿Podría indicarnos en qué grupo de edad se encuentra usted?;radio
+7;No contesta;2. ¿Podría indicarnos en qué grupo de edad se encuentra usted?;radio
+1;Sin estudio/Certificado de Escolaridad;3. Señale, por favor, su nivel de estudios finalizados;radio
+2;Enseñanza Primaria;3. Señale, por favor, su nivel de estudios finalizados;radio
+3;EGB;3. Señale, por favor, su nivel de estudios finalizados;radio
+4;ESO;3. Señale, por favor, su nivel de estudios finalizados;radio
+5;Bachillerato/BUP;3. Señale, por favor, su nivel de estudios finalizados;radio
+6;Formación Profesional;3. Señale, por favor, su nivel de estudios finalizados;radio
+7;Universitarios;3. Señale, por favor, su nivel de estudios finalizados;radio
+8;Otros;3. Señale, por favor, su nivel de estudios finalizados;radio
 1;Especificar;Si ha seleccionado Otros por favor indique que nivel de estudios a finalizado;text
-1;Dirección/ gerencia;¿Cuál es su actividad u ocupación actual?;radio
-2;Técnico/ a o profesional;¿Cuál es su actividad u ocupación actual?;radio
-3;Empleado/ a administrativo/as y otro/a empleado/a;¿Cuál es su actividad u ocupación actual?;radio
-4;Trabajador/a de los servicios;¿Cuál es su actividad u ocupación actual?;radio
-5;Trabajador/a de la industria;¿Cuál es su actividad u ocupación actual?;radio
-6;Trabajador/a del sector primario;¿Cuál es su actividad u ocupación actual?;radio
-7;Trabajo doméstico/de cuidados no remunerado;¿Cuál es su actividad u ocupación actual?;radio
-8;Desempleado/a;¿Cuál es su actividad u ocupación actual?;radio
-9;Pensionista;¿Cuál es su actividad u ocupación actual?;radio
-10;Estudiante;¿Cuál es su actividad u ocupación actual?;radio
-11;Otras ocupaciones;¿Cuál es su actividad u ocupación actual?;radio
+1;Dirección/ gerencia;4. ¿Cuál es su actividad u ocupación actual?;radio
+2;Técnico/ a o profesional;4. ¿Cuál es su actividad u ocupación actual?;radio
+3;Empleado/ a administrativo/as y otro/a empleado/a;4. ¿Cuál es su actividad u ocupación actual?;radio
+4;Trabajador/a de los servicios;4. ¿Cuál es su actividad u ocupación actual?;radio
+5;Trabajador/a de la industria;4. ¿Cuál es su actividad u ocupación actual?;radio
+6;Trabajador/a del sector primario;4. ¿Cuál es su actividad u ocupación actual?;radio
+7;Trabajo doméstico/de cuidados no remunerado;4. ¿Cuál es su actividad u ocupación actual?;radio
+8;Desempleado/a;4. ¿Cuál es su actividad u ocupación actual?;radio
+9;Pensionista;4. ¿Cuál es su actividad u ocupación actual?;radio
+10;Estudiante;4. ¿Cuál es su actividad u ocupación actual?;radio
+11;Otras ocupaciones;4. ¿Cuál es su actividad u ocupación actual?;radio
 1;Especificar;Si ha seleccionado Otras ocupaciones, por favor indique su actidad u ocupación actual;text
-1;Escriba su respuesta;¿Cuáles son las principales dificultades que se encuentra en la vida cotidiana en relación con la igualdad entre mujeres y hombres? (Descríbalas, por favor, con la mayor precisión posible).;text
-1;Escriba su respuesta;¿Cuáles son las principales dificultades que se encuentra en relación con la discriminación por razón de identidad de género/orientación sexual? (Descríbalas, por favor, con la mayor precisión posible).;text
-1;Escriba su respuesta;¿Cuáles son las principales dificultades que se encuentra en relación con la violencia de género? (Descríbalas, por favor, con la mayor precisión posible).;text
-1;Escriba su respuesta;En este mismo sentido ¿cuáles son las principales dificultades que se encuentra en relación con la violencia sexual, abuso sexual, agresiones sexuales? (Descríbalas, por favor, con la mayor precisión posible).;text
-1;Escriba su respuesta;En otro sentido, describa, por favor, cuáles son los principales logros/ éxitos que, con más frecuencia, se encuentra en el ámbito de la igualdad entre mujeres y hombres.;text
-1;Escriba su respuesta;Describa, por favor, cuáles son los principales logros/ éxitos que, con más frecuencia, se encuentra en el ámbito de la no discriminación por razón de identidad de género/ orientación sexual.;text
-1;Escriba su respuesta;Describa, por favor, cuáles son los principales logros/ éxitos que, con más frecuencia, se encuentra en relación a la violencia de género.;text
-1;Escriba su respuesta;Describa, por favor, cuáles son los principales logros/ éxitos que, con más frecuencia, se encuentra en relación con la violencia sexual, abuso sexual, agresiones sexuales.;text
-1;Escriba su respuesta;Indique, por favor, los factores que considera más relevantes para la consecución de la igualdad entre mujeres y hombres (Seleccione las 5 opciones más relevantes).;
+1;Texto;BLOQUE I. PERCEPCIONES SOBRE LA DESIGUALDAD Y LAS DISCRIMINACIONES POR RAZÓN DEL SEXO, ORIENTACIÓN SEXUAL E IDENTIDAD DE GÉNERO;
+1;Texto;PRINCIPALES DIFICULTADES;
+1;Escriba su respuesta;5. ¿Cuáles son las principales dificultades que se encuentra en la vida cotidiana en relación con la igualdad entre mujeres y hombres? (Descríbalas, por favor, con la mayor precisión posible).;text
+1;Escriba su respuesta;6. ¿Cuáles son las principales dificultades que se encuentra en relación con la discriminación por razón de identidad de género/orientación sexual? (Descríbalas, por favor, con la mayor precisión posible).;text
+1;Escriba su respuesta;7. ¿Cuáles son las principales dificultades que se encuentra en relación con la violencia de género? (Descríbalas, por favor, con la mayor precisión posible).;text
+1;Escriba su respuesta;8. En este mismo sentido ¿cuáles son las principales dificultades que se encuentra en relación con la violencia sexual, abuso sexual, agresiones sexuales? (Descríbalas, por favor, con la mayor precisión posible).;text
+1;Texto;PRINCIPALES LOGROS;
+1;Escriba su respuesta;9. En otro sentido, describa, por favor, cuáles son los principales logros/ éxitos que, con más frecuencia, se encuentra en el ámbito de la igualdad entre mujeres y hombres.;text
+1;Escriba su respuesta;10. Describa, por favor, cuáles son los principales logros/ éxitos que, con más frecuencia, se encuentra en el ámbito de la no discriminación por razón de identidad de género/ orientación sexual.;text
+1;Escriba su respuesta;11. Describa, por favor, cuáles son los principales logros/ éxitos que, con más frecuencia, se encuentra en relación a la violencia de género.;text
+1;Escriba su respuesta;12. Describa, por favor, cuáles son los principales logros/ éxitos que, con más frecuencia, se encuentra en relación con la violencia sexual, abuso sexual, agresiones sexuales.;text
+1;Escriba su respuesta;13. Indique, por favor, los factores que considera más relevantes para la consecución de la igualdad entre mujeres y hombres (Seleccione las 5 opciones más relevantes con una 'X').;text_p
 1;Escriba su respuesta;Mayor educación para las mujeres;input
 1;Escriba su respuesta;Mayor participación de las mujeres en el mercado laboral;input
 1;Escriba su respuesta;Mejorar las condiciones laborales de las mujeres;input
@@ -52,10 +56,10 @@
 1;Escriba su respuesta;Formar/ sensibilizar en igualdad de género al personal de los servicios públicos (cuerpos y fuerzas de seguridad, sanidad, ámbito judicial…);input
 1;Escriba su respuesta;Mejorar el conocimiento mutuo y la coordinación entre las distintas instancias que trabajan en pro de la igualdad entre mujeres y hombres;input
 1;Escriba su respuesta;Evaluar elementos/ protocolos, que desde las instituciones, reproduzcan situaciones de desigualdad y/ o discriminación;input
-1;Escriba su respuesta;1- Otra (especificar);input
-1;Escriba su respuesta;2- Otra (especificar);input
-1;Escriba su respuesta;3- Otra (especificar);input
-1;Escriba su respuesta;En este mismo sentido, indique, por favor, los tres factores que considera más relevantes para luchar contra la discriminación sobre orientación sexual e identidad de género (Seleccione, las tres más relevantes).;
+1;Escriba su respuesta;Otra (especificar);text
+1;Escriba su respuesta;Otra (especificar);text
+1;Escriba su respuesta;Otra (especificar);text
+1;Escriba su respuesta;14. En este mismo sentido, indique, por favor, los tres factores que considera más relevantes para luchar contra la discriminación sobre orientación sexual e identidad de género (Seleccione, las tres más relevantes con una 'X').;text_p
 1;Escriba su respuesta;Implantar la formación al profesorado sobre libertad y orientación sexual en todos los niveles educativos;input
 1;Escriba su respuesta;Implantar la formación al alumnado sobre libertad y orientación sexual en todos los niveles educativos;input
 1;Escriba su respuesta;Mejorar los derechos laborales de las personas LGTBI;input
@@ -65,9 +69,9 @@
 1;Escriba su respuesta;Sensibilizar a la población general;input
 1;Escriba su respuesta;Desarrollar campañas informativas sobre la diversidad sexual;input
 1;Escriba su respuesta;Asegurar el reconocimiento de todos los derechos para las personas LGTBI;input
-1;Escriba su respuesta;Otra (especificar);input
-1;Escriba su respuesta;Otra (especificar);input
-1;Escriba su respuesta;Indique, por favor, los tres factores que considera más relevantes para la erradicación de la violencia de género (Seleccione los tres más relevantes).;
+1;Escriba su respuesta;Otra (especificar);text
+1;Escriba su respuesta;Otra (especificar);text
+1;Escriba su respuesta;15. Indique, por favor, los tres factores que considera más relevantes para la erradicación de la violencia de género (Seleccione los tres más relevantes con una 'X').;text_p
 1;Escriba su respuesta;Aplicar la legislación al respecto;input
 1;Escriba su respuesta;Garantizar la protección a las mujeres, menores y personas dependientes de ellas en situación de violencia de género;input
 1;Escriba su respuesta;Fomentar la prevención y sensibilización frente a la violencia de género;input
@@ -79,27 +83,45 @@
 1;Escriba su respuesta;Formar al profesorado sobre detección precoz de la violencia de género;input
 1;Escriba su respuesta;Formar al personal sanitario sobre detección precoz de la violencia de género;input
 1;Escriba su respuesta;Ampliar las medidas de apoyo a la autonomía de las mujeres (ayudas a la vivienda, al empleo,…);input
-1;Escriba su respuesta;1- Otra (especificar):;text
-1;Escriba su respuesta;2- Otra (especificar):;text
-1;Escriba su respuesta;3- Otra (especificar):;text
-1;Escriba su respuesta;¿Qué factores de riesgo, cree usted, pueden frenar el proceso de igualdad plena entre mujeres y hombres? (Por favor, descríbalos con la mayor precisión posible).;text
-1;Escriba su respuesta;¿Qué factores de riesgo, cree usted, pueden frenar el proceso de libertad de género y orientación sexual? (Por favor, descríbalos con la mayor precisión posible).;text
-1;Escriba su respuesta;¿Qué factores de riesgo, cree usted, pueden frenar el proceso de erradicación de la violencia de género? (Por favor, descríbalos con la mayor precisión posible).;text
-1;Escriba su respuesta;¿Qué factores de riesgo, cree usted, pueden frenar el proceso de erradicación de la violencia sexual, abuso sexual, agresiones sexuales? (Por favor, descríbalos con la mayor precisión posible).;text
-1;Escriba su respuesta;A continuación podría describir con la mayor concreción posible ¿qué nuevas demandas o necesidades deberían ser abordadas en los servicios públicos relativos a la igualdad de género y la violencia de género?;text
-1;Escriba su respuesta;¿Qué necesidades sociales y culturales en la vida de las mujeres detecta usted cuya satisfacción ayudaría a su mejor integración económica?;text
-1;Escriba su respuesta;¿Qué acciones específicas en el ámbito social y cultural propone usted para lograr una mayor integración económica de la mujer en la comunidad?;text
-1;Escriba su respuesta;¿Qué necesidades de ámbito político-legal detecta usted en cuanto a una mejor integración económica de las mujeres en la comunidad?;text
-1;Escriba su respuesta;¿Qué acciones específicas en el ámbito político-legal propone usted para lograr una mayor integración económica de la mujer?;text
-1;Escriba su respuesta;¿Qué necesidades de ámbito social y cultural tienen las mujeres en los procesos de reconocimiento individual y social, en su vida cotidiana, y en la comunidad?;text
-1;Escriba su respuesta;¿Qué acciones específicas en el ámbito social y cultural propone usted para lograr el reconocimiento y el respeto que se merecen las mujeres?;text
-1;Escriba su respuesta;¿Qué necesidades de ámbito político-legal detecta usted para mejorar el reconocimiento de las mujeres, a nivel individual y en la comunidad?;text
-1;Escriba su respuesta;¿Qué acciones específicas en el ámbito político-legal propone usted para lograr el pleno reconocimiento social de las mujeres?;text
-1;Escriba su respuesta;¿Qué necesidades de ámbito social y cultural tienen las mujeres para el logro de una mayor participación y poder en las áreas importantes de toma de decisiones?;text
-1;Escriba su respuesta;¿Qué acciones específicas en el ámbito social y cultural propone usted para lograr esa mayor participación y poder de las mujeres?;text
-1;Escriba su respuesta;¿Qué necesidades detecta usted en el ámbito político-legal para aumentar la representación y la participación de las mujeres en las áreas importantes de toma de decisiones, como la política, la empresa o la sociedad civil?;text
-1;Escriba su respuesta;¿Qué acciones específicas de tipo político-legal propone usted para lograr una mayor representación y participación de las mujeres en los diversos ámbitos de poder?;text
-1;Escriba su respuesta;¿Qué necesidades en el ámbito social y cultural tienen las personas LGTBI?;text
-1;Escriba su respuesta;¿Qué acciones específicas en el ámbito social y cultural propone usted para garantizar la libertad de orientación sexual de todas las personas?;text
-1;Escriba su respuesta;¿Qué necesidades detecta usted en el ámbito político-legal para facilitar la diversidad y la libertad de orientación sexual?;text
-1;Escriba su respuesta;¿Qué acciones específicas de tipo político-legal propone usted para lograr la libertad de orientación sexual de las personas?;text
+1;Escriba su respuesta;Otra (especificar):;text
+1;Escriba su respuesta;Otra (especificar):;text
+1;Escriba su respuesta;Otra (especificar):;text
+1;Texto;FACTORES DE RIESGO;
+1;Escriba su respuesta;16. ¿Qué factores de riesgo, cree usted, pueden frenar el proceso de igualdad plena entre mujeres y hombres? (Por favor, descríbalos con la mayor precisión posible).;text
+1;Escriba su respuesta;17. ¿Qué factores de riesgo, cree usted, pueden frenar el proceso de libertad de género y orientación sexual? (Por favor, descríbalos con la mayor precisión posible).;text
+1;Escriba su respuesta;18. ¿Qué factores de riesgo, cree usted, pueden frenar el proceso de erradicación de la violencia de género? (Por favor, descríbalos con la mayor precisión posible).;text
+1;Escriba su respuesta;19. ¿Qué factores de riesgo, cree usted, pueden frenar el proceso de erradicación de la violencia sexual, abuso sexual, agresiones sexuales? (Por favor, descríbalos con la mayor precisión posible).;text
+1;Texto;NUEVAS DEMANDAS;
+1;Escriba su respuesta;20. A continuación podría describir con la mayor concreción posible ¿qué nuevas demandas o necesidades deberían ser abordadas en los servicios públicos relativos a la igualdad de género y la violencia de género?;text
+1;Texto;BLOQUE II.- PROPUESTAS DE CAMBIO, APORTACIONES, MEJORAS;
+1;Texto;En esta parte del cuestionario se busca la participación de la ciudadanía en la Estrategia de Igualdad del Cabildo Insular. La Estrategia pretende aunar y poner en marcha líneas de intervención públicas la eliminación de las discriminaciones y violencias por razón del sexo, orientación sexual e identidad de género y destinadas al logro de una igualdad real.;
+1;Texto;Para incorporar la visión de las personas interesadas en participar en esta Estrategia, vamos a realizar una serie de preguntas sobre necesidades detectadas, acciones que pudieran emprenderse, y aportaciones a la Estrategia de Igualdad de Gran Canaria.;
+1;Texto;Las preguntas que siguen son secuenciales en torno a 4 grandes objetivos estratégicos, y para cada uno de ellos se cuestiona por necesidades detectadas y acciones específicas propuestas para cada necesidad.;
+1;Texto;INTEGRACIÓN ECONÓMICA DE LAS MUJERES;
+1;Texto;Un primer objetivo de la Estrategia de Igualdad de Gran Canaria es impulsar una mayor y mejor integración económica de la mujer, tanto en el ámbito socio-laboral, como, en general, en cualquier aspecto relacionado con la actividad y los recursos económicos (prestaciones públicas, emprendeduría, formación, uso del tiempo, etc.).;
+1;Escriba su respuesta;21. ¿Qué necesidades sociales y culturales en la vida de las mujeres detecta usted cuya satisfacción ayudaría a su mejor integración económica?;text
+1;Escriba su respuesta;22. ¿Qué acciones específicas en el ámbito social y cultural propone usted para lograr una mayor integración económica de la mujer en la comunidad?;text
+1;Texto;Pensando en el primer objetivo de la ESTRATEGIA, que es impulsar una mayor y mejor integración económica de la mujer, ahora vamos a preguntar por las propuestas de tipo político-institucional, y legal-normativas.;
+1;Escriba su respuesta;23. ¿Qué necesidades de ámbito político-legal detecta usted en cuanto a una mejor integración económica de las mujeres en la comunidad?;text
+1;Escriba su respuesta;24. ¿Qué acciones específicas en el ámbito político-legal propone usted para lograr una mayor integración económica de la mujer?;text
+1;Texto;RECONOCIMIENTO Y RESPETO DE LAS MUJERES;
+1;Texto;Un segundo objetivo de la Estrategia de Igualdad de Gran Canaria es fomentar el reconocimiento y el respeto individual y social de las mujeres. Es decir, se trata de lograr que se valore con justicia los papeles (roles) y los estatus, que desempeñan las mujeres en la vida cotidiana, y en la sociedad en general.;
+1;Escriba su respuesta;25. ¿Qué necesidades de ámbito social y cultural tienen las mujeres en los procesos de reconocimiento individual y social, en su vida cotidiana, y en la comunidad?;text
+1;Escriba su respuesta;26. ¿Qué acciones específicas en el ámbito social y cultural propone usted para lograr el reconocimiento y el respeto que se merecen las mujeres?;text
+1;Texto;Pensando en el segundo objetivo de la ESTRATEGIA, que es fomentar el reconocimiento social de la mujer,;
+1;Escriba su respuesta;27. ¿Qué necesidades de ámbito político-legal detecta usted para mejorar el reconocimiento de las mujeres, a nivel individual y en la comunidad?;text
+1;Escriba su respuesta;28. ¿Qué acciones específicas en el ámbito político-legal propone usted para lograr el pleno reconocimiento social de las mujeres?;text
+1;Texto;REPRESENTACIÓN Y PARTICIPACIÓN DE LAS MUJERES;
+1;Texto;Un tercer objetivo de la Estrategia de Igualdad de Gran Canaria es aumentar la representación y la participación activas de las mujeres, en las áreas políticas y empresariales, y en general en toda la sociedad. Es decir, se trataría de lograr mayor representación y poder de las mujeres en las diversas áreas de toma de decisiones.;
+1;Escriba su respuesta;29. ¿Qué necesidades de ámbito social y cultural tienen las mujeres para el logro de una mayor participación y poder en las áreas importantes de toma de decisiones?;text
+1;Escriba su respuesta;30. ¿Qué acciones específicas en el ámbito social y cultural propone usted para lograr esa mayor participación y poder de las mujeres?;text
+1;Escriba su respuesta;31. ¿Qué necesidades detecta usted en el ámbito político-legal para aumentar la representación y la participación de las mujeres en las áreas importantes de toma de decisiones, como la política, la empresa o la sociedad civil?;text
+1;Texto;Pensando en el tercer objetivo de la ESTRATEGIA, que es aumentar el poder político y social de la mujer,;
+1;Escriba su respuesta;32. ¿Qué acciones específicas de tipo político-legal propone usted para lograr una mayor representación y participación de las mujeres en los diversos ámbitos de poder?;text
+1;Texto;DIVERSIDAD SEXUAL;
+1;Texto;Un cuarto objetivo de la Estrategia de Igualdad de Gran Canaria, es actuar en el ámbito de la diversidad sexual, atendiendo a las orientaciones sexuales no normativas y a la libertad de elección de identidad de género, tales como las que encarnan las personas lesbianas, gais, transexuales, bisexuales, o intersexuales (LGTBI).;
+1;Escriba su respuesta;33. ¿Qué necesidades en el ámbito social y cultural tienen las personas LGTBI?;text
+1;Escriba su respuesta;34. ¿Qué acciones específicas en el ámbito social y cultural propone usted para garantizar la libertad de orientación sexual de todas las personas?;text
+1;Texto;Pensando en el cuarto objetivo de la ESTRATEGIA, que es garantizar la libertad de orientación sexual de las personas,;
+1;Escriba su respuesta;35. ¿Qué necesidades detecta usted en el ámbito político-legal para facilitar la diversidad y la libertad de orientación sexual?;text
+1;Escriba su respuesta;36. ¿Qué acciones específicas de tipo político-legal propone usted para lograr la libertad de orientación sexual de las personas?;text
