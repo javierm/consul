@@ -49,6 +49,18 @@
         <span class="show-for-small-only"><%= t("layouts.header.debates")%> </span>
       <% end %>
     </li>
+    <li class="debates">
+      <%= link_to budgets_path, class: "municipios #{"active" if controller_name == "budgets"}", accesskey: "d"  do %>
+        <h1 class="hide-for-small-only"> <%= t("layouts.header.budgets")%></h1>
+        <span class="show-for-small-only"><%= t("layouts.header.budgets")%> </span>
+      <% end %>
+    </li>
+    <li class="debates">
+      <%= link_to polls_path, class: "polls #{"active" if controller_name == "budgets"}", accesskey: "d"  do %>
+        <h1 class="hide-for-small-only">Encuestas Participativas</h1>
+        <span class="show-for-small-only">Encuestas Participativas</span>
+      <% end %>
+    </li>
     <!-- <li> -->
     <!--   <%= link_to t("layouts.header.city_council_debates"), nil, class: "city_council_debates #{"active" if controller_name == "city_council_debates"}", accesskey: "d" %> -->
     <!-- </li> -->
