@@ -29,6 +29,7 @@ module Abilities
       # can :create, Debate
       can :create, Proposal
       can :create, AnsweredSurvey
+      can :create, Budget::Investment,               budget: { phase: "accepting" }
       can :read, AnsweredSurvey, user_id: user.id
       can :read, Survey
 
@@ -72,7 +73,7 @@ module Abilities
         can :vote_featured, Legislation::Proposal
         can :create, Legislation::Answer
 
-        can :create, Budget::Investment,               budget: { phase: "accepting" }
+        # can :create, Budget::Investment,               budget: { phase: "accepting" }
         can :suggest, Budget::Investment,              budget: { phase: "accepting" }
         can :destroy, Budget::Investment,              budget: { phase: ["accepting", "reviewing"] }, author_id: user.id
         can :vote, Budget::Investment,                 budget: { phase: "selecting" }
