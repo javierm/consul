@@ -1,11 +1,12 @@
 class Shared::MapLocationComponent < ApplicationComponent
-  attr_reader :remove_marker_label, :investments_coordinates
+  attr_reader :remove_marker_label, :investments_coordinates, :polygons_data
   delegate :map_location_input_id, to: :helpers
 
-  def initialize(map_location, remove_marker_label: nil, investments_coordinates: nil)
+  def initialize(map_location, remove_marker_label: nil, investments_coordinates: nil, polygons_data: nil)
     @map_location = map_location
     @remove_marker_label = remove_marker_label
     @investments_coordinates = investments_coordinates
+    @polygons_data = polygons_data
   end
 
   def map_location
@@ -57,7 +58,8 @@ class Shared::MapLocationComponent < ApplicationComponent
         zoom_input_selector: "##{map_location_input_id(map_location, "zoom")}",
         marker_investments_coordinates: investments_coordinates,
         marker_latitude: map_location.latitude.presence,
-        marker_longitude: map_location.longitude.presence
+        marker_longitude: map_location.longitude.presence,
+        polygons_data: polygons_data
       }
     end
 end

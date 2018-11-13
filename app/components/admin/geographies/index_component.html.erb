@@ -1,0 +1,25 @@
+<%= header do %>
+  <%= link_to t("admin.geographies.index.create"), new_admin_geography_path %>
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= attribute_name(:name) %></th>
+      <th><%= attribute_name(:headings) %></th>
+      <th><%= t("admin.actions.actions") %></th>
+    </tr>
+ </thead>
+
+  <tbody>
+    <% geographies.each do |geography| %>
+      <tr id="<%= dom_id(geography) %>">
+        <td><%= geography.name %></td>
+        <td><%= headings(geography) %></td>
+        <td>
+          <%= render Admin::TableActionsComponent.new(geography) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,32 @@
+<%= form_for [:admin, geography] do |f| %>
+
+  <%= render "shared/errors", resource: geography %>
+
+  <div class="row">
+    <div class="small-12 medium-6 large-4 column">
+      <%= f.text_field :name %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 medium-6 large-4 column">
+      <%= f.collection_select :heading_ids, headings, :id, :name_with_budget, {}, { multiple: true } %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 medium-6 large-4 column">
+      <%= f.color_field :color %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="documents small-12 medium-6 large-4 column">
+      <%= f.text_area :geojson, rows: "10" %>
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

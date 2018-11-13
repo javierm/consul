@@ -79,6 +79,7 @@
       }
 
       App.Map.addInvestmentsMarkers(investmentsMarkers, createMarker);
+      App.Map.addPolygons(map);
     },
     leafletMap: function(element) {
       var centerData, mapCenterLatLng, map;
@@ -198,6 +199,37 @@
       L.tileLayer(mapTilesProvider, {
         attribution: mapAttribution
       }).addTo(map);
+    },
+    addPolygons: function(map) {
+      var polygonsData = $(map._container).data("polygons-data");
+
+      if (polygonsData) {
+        polygonsData.forEach(function(polygonData) {
+          App.Map.createPolygon(polygonData, map);
+        });
+      }
+    },
+    createPolygon: function(polygonData, map) {
+      var polygon = L.polygon(polygonData.outline_points, {
+        color: polygonData.color
+      });
+
+      if (polygonData.headings.length > 0) {
+        polygon.on("click", App.Map.openPolygonPopup);
+        polygon.options.headings = polygonData.headings;
+        polygon.options.fillOpacity = 0.3;
+      } else {
+        polygon.options.fillOpacity = 0;
+      }
+
+      polygon.addTo(map);
+    },
+    openPolygonPopup: function(e) {
+      var polygon = e.target;
+
+      if (polygon.options.headings.length > 0) {
+        e.target.bindPopup(polygon.options.headings.join("<br>")).openPopup();
+      }
     },
     openMarkerPopup: function(e) {
       var marker = e.target;

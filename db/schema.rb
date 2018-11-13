@@ -238,9 +238,11 @@ ActiveRecord::Schema.define(version: 2023_02_06_141152) do
     t.boolean "allow_custom_content", default: false
     t.text "latitude"
     t.text "longitude"
+    t.integer "geography_id"
     t.integer "max_ballot_lines", default: 1
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.index ["geography_id"], name: "index_budget_headings_on_geography_id"
     t.index ["group_id"], name: "index_budget_headings_on_group_id"
   end
 
@@ -626,6 +628,14 @@ ActiveRecord::Schema.define(version: 2023_02_06_141152) do
     t.index ["followable_type", "followable_id"], name: "index_follows_on_followable_type_and_followable_id"
     t.index ["user_id", "followable_type", "followable_id"], name: "access_follows"
     t.index ["user_id"], name: "index_follows_on_user_id"
+  end
+
+  create_table "geographies", id: :serial, force: :cascade do |t|
+    t.string "name"
+    t.text "geojson"
+    t.string "color"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "geozones", id: :serial, force: :cascade do |t|
@@ -1776,6 +1786,7 @@ ActiveRecord::Schema.define(version: 2023_02_06_141152) do
   add_foreign_key "administrators", "users"
   add_foreign_key "budget_administrators", "administrators"
   add_foreign_key "budget_administrators", "budgets"
+  add_foreign_key "budget_headings", "geographies"
   add_foreign_key "budget_investments", "communities"
   add_foreign_key "budget_valuators", "budgets"
   add_foreign_key "budget_valuators", "valuators"

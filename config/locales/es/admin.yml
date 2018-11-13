@@ -190,6 +190,7 @@ es:
         new_button: "Añadir un grupo nuevo"
     budget_headings:
       no_headings: "El grupo <strong>%{group}</strong> no tiene ninguna partida."
+      no_related_geography: "No hay geografías relacionadas"
       create:
         notice: "¡Partida presupuestaria creada con éxito!"
       update:
@@ -722,6 +723,7 @@ es:
       proposals_topics: Temas de propuestas
       budgets: Presupuestos participativos
       geozones: Gestionar zonas
+      geographies: "Gestionar geografías"
       hidden_comments: Comentarios ocultos
       hidden_debates: Debates ocultos
       hidden_proposals: Propuestas ocultas
@@ -1404,6 +1406,21 @@ es:
       delete:
         success: Zona borrada correctamente
         error: No se puede borrar la zona porque ya tiene elementos asociados
+    geographies:
+      form:
+        invalid_format: "El GeoJSON proporcionado no tiene el formato correcto. Debe tener un tipo del formato \"Polygon\" o \"MultiPolygon\"."
+      index:
+        title: "Geografías"
+        create: "Crear geografía"
+        no_related_headings: "Sin partidas relacionadas"
+      new:
+        title: "Nueva geografía"
+      create:
+        notice: "Geografía creada correctamente!"
+      update:
+        notice: "Geografía actualizada correctamente!"
+      delete:
+        notice: "Geografía borrada correctamente!"
     signature_sheets:
       author: Autor
       created_at: Fecha de creación
