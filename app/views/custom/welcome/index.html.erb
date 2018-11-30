@@ -6,8 +6,16 @@
     <ul class="orbit-container">
       <li class="orbit-slide">
         <figure class="orbit-figure">
-          <%= link_to new_survey_answered_survey_path(@survey = Survey.find_by_code('ENC-3')) do
-            image_tag('foto4.jpg', class: 'orbit-image', alt: 'Actividades participación ciudadana')
+          <%# <%= link_to new_survey_answered_survey_path(@survey = survey.find_by_code('enc-3')) do
+          image_tag('foto5.jpg', class: 'orbit-image', alt: 'actividades participación ciudadana')
+          <%# end %>
+        </figure>
+      </li>
+
+      <li class="orbit-slide">
+        <figure class="orbit-figure">
+          <%= link_to new_survey_answered_survey_path(@survey = survey.find_by_code('enc-3')) do
+            image_tag('foto4.jpg', class: 'orbit-image', alt: 'actividades participación ciudadana')
           end %>
         </figure>
       </li>
@@ -50,10 +58,10 @@
     </ul>
     <nav class="orbit-bullets">
       <button class="is-active" data-slide="0"><span class="show-for-sr">First slide details.</span><span class="show-for-sr">Current Slide</span></button>
-
       <button data-slide="1"><span class="show-for-sr">Second slide details.</span></button>
       <button data-slide="2"><span class="show-for-sr">Second slide details.</span></button>
       <button data-slide="3"><span class="show-for-sr">Second slide details.</span></button>
+      <button data-slide="4"><span class="show-for-sr">Second slide details.</span></button>
     </nav>
   </div>
 </div>
