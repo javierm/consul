@@ -6,15 +6,15 @@
     <ul class="orbit-container">
       <li class="orbit-slide">
         <figure class="orbit-figure">
-          <%# <%= link_to new_survey_answered_survey_path(@survey = survey.find_by_code('enc-3')) do
-          image_tag('foto5.jpg', class: 'orbit-image', alt: 'actividades participación ciudadana')
-          <%# end %>
+          <%= link_to '#' do
+            image_tag('foto5.jpg', class: 'orbit-image', alt: 'actividades participación ciudadana')
+          end %>
         </figure>
       </li>
 
       <li class="orbit-slide">
         <figure class="orbit-figure">
-          <%= link_to new_survey_answered_survey_path(@survey = survey.find_by_code('enc-3')) do
+          <%= link_to new_survey_answered_survey_path(@survey = Survey.find_by_code('ENC-3')) do
             image_tag('foto4.jpg', class: 'orbit-image', alt: 'actividades participación ciudadana')
           end %>
         </figure>
