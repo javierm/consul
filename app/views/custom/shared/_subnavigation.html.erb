@@ -30,12 +30,12 @@
 
 <div class="principal-menu small-12 medium-7 large-7 column float-right">
   <ul>
-    <li class= "index">
-      <%= link_to resume_path, class: "index #{"active" if controller_name == "pages"}", accesskey: "d"  do %>
-        <h1 class="hide-for-small-only"> <%= t("layouts.header.participate")%></h1>
-        <span class="show-for-small-only"><%= t("layouts.header.participate")%> </span>
-      <% end %>
-    </li>
+    <!-- <li class= "index"> -->
+    <!--   <%= link_to resume_path, class: "index #{"active" if controller_name == "pages"}", accesskey: "d"  do %> -->
+    <!--     <h1 class="hide&#45;for&#45;small&#45;only"> <%= t("layouts.header.participate")%></h1> -->
+    <!--     <span class="show&#45;for&#45;small&#45;only"><%= t("layouts.header.participate")%> </span> -->
+    <!--   <% end %> -->
+    <!-- </li> -->
 
     <li class="proposals ">
       <%= link_to proposals_path, class: "proposals #{"active" if  controller_name == "proposals"}", accesskey: "p" do %>
@@ -61,6 +61,13 @@
         <span class="show-for-small-only">Encuestas Participativas</span>
       <% end %>
     </li>
+    <li class="proposals ">
+      <%= link_to '/proposals?search=corto', class: "proposals #{"active" if  controller_name == "proposals"}", accesskey: "p" do %>
+        <h1 class="hide-for-small-only"> Concurso Cortos</h1>
+        <span class="show-for-small-only">Concurso de Cortos</span>
+      <% end %>
+    </li>
+
     <!-- <li> -->
     <!--   <%= link_to t("layouts.header.city_council_debates"), nil, class: "city_council_debates #{"active" if controller_name == "city_council_debates"}", accesskey: "d" %> -->
     <!-- </li> -->
