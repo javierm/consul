@@ -127,7 +127,8 @@ class Setting < ActiveRecord::Base
         "url":                                                      "https://decide.madrid.es", # Public-facing URL of the app.
         "verification_offices_url":                                 'http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Atencion-al-ciudadano/Oficinas-de-Atencion-al-Ciudadano?vgnextfmt=default&vgnextchannel=5b99cde2e09a4310VgnVCM1000000b205a0aRCRD',
         "votes_for_proposal_success":                               53726,
-        "youtube_handle":                                           "channel/UCFmaChI9quIY7lwHplnacfg"
+        "youtube_handle":                                           "channel/UCFmaChI9quIY7lwHplnacfg",
+        "zzzzz": "sleep"
       }
     end
 
