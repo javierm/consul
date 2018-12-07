@@ -16,11 +16,18 @@
     },
     initializeMap: function(element) {
       var createMarker, editable, investmentsMarkers, markerData, map, marker,
-        markerIcon, moveOrPlaceMarker, removeMarker, removeMarkerSelector;
+        markers, markerIcon, moveOrPlaceMarker, removeMarker, removeMarkerSelector,
+        markerClustering;
       App.Map.cleanInvestmentCoordinates(element);
       removeMarkerSelector = $(element).data("marker-remove-selector");
       investmentsMarkers = $(element).data("marker-investments-coordinates");
       editable = $(element).data("marker-editable");
+      markerClustering = $(element).data("marker-clustering");
+      if (markerClustering) {
+        markers = L.markerClusterGroup();
+      } else {
+        markers = L.layerGroup();
+      }
       marker = null;
       markerIcon = L.divIcon({
         className: "map-marker",
@@ -40,7 +47,7 @@
             App.Map.updateFormfields(map, newMarker);
           });
         }
-        newMarker.addTo(map);
+        markers.addLayer(newMarker);
         return newMarker;
       };
       removeMarker = function() {
@@ -79,6 +86,7 @@
 
       App.Map.addInvestmentsMarkers(investmentsMarkers, createMarker);
       App.Map.addGeozones(map);
+      map.addLayer(markers);
     },
     leafletMap: function(element) {
       var centerData, mapCenterLatLng, map;

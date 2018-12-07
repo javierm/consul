@@ -1728,6 +1728,22 @@ describe "Budget Investments" do
       end
     end
 
+    scenario "when the marker clustering feature is enabled the map shows clusters instead of markers" do
+      Setting["map.marker_clustering"] = true
+      create_list(:budget_investment, 3, :selected, :with_map_location, heading: heading)
+
+      visit budget_investments_path(budget, heading_id: heading.id)
+
+      within ".map-location" do
+        expect(page).to have_css ".marker-cluster div span", text: "3"
+        expect(page).not_to have_css ".map-icon"
+
+        find(".marker-cluster").click
+
+        expect(page).to have_css ".map-icon", visible: :all, count: 3
+      end
+    end
+
     context "Author actions section" do
       scenario "Is not shown if investment is not editable or does not have an image" do
         budget.update!(phase: "reviewing")

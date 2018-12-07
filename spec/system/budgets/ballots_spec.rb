@@ -207,6 +207,22 @@ describe "Ballots" do
           expect(page).to have_css ".map-icon", visible: :all, count: 2
         end
       end
+
+      scenario "when the marker clustering feature is enabled the map shows clusters instead of markers" do
+        Setting["map.marker_clustering"] = true
+        create_list(:budget_investment, 3, :selected, :with_map_location, heading: new_york)
+
+        visit budget_investments_path(budget, heading_id: new_york)
+
+        within("#sidebar") do
+          expect(page).to have_css ".marker-cluster div span", text: "3"
+          expect(page).not_to have_css ".map-icon"
+
+          find(".marker-cluster").click
+
+          expect(page).to have_css ".map-icon", visible: :all, count: 3
+        end
+      end
     end
 
     #Break up or simplify with helpers
