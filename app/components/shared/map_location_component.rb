@@ -1,5 +1,6 @@
 class Shared::MapLocationComponent < ApplicationComponent
   attr_reader :investments_coordinates, :form, :geozones_data
+  delegate :feature?, to: :helpers
 
   def initialize(map_location, investments_coordinates: nil, form: nil, geozones_data: nil)
     @map_location = map_location
@@ -58,6 +59,7 @@ class Shared::MapLocationComponent < ApplicationComponent
         marker_investments_coordinates: investments_coordinates,
         marker_latitude: map_location.latitude.presence,
         marker_longitude: map_location.longitude.presence,
+        marker_clustering: feature?("map.marker_clustering"),
         geozones: geozones_data
       }.merge(input_selectors)
     end
