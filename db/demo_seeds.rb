@@ -32,10 +32,11 @@ csv_questions = CSV.parse(csv_survey, :headers => false, col_sep: ';')
 puts "Creating Survey"
 
 def create_survey
-  survey = Survey.where(code: "ENC-3").first_or_initialize
+
+  survey = Survey.where(code: "ENC-4").first_or_initialize
   if survey.new_record?
     survey.name = "Encuesta Igualdad"
-    survey.description ="<p>Un equipo de investigadoras e investigadores de la Universidad de Las Palmas de Gran Canaria está realizando un análisis diagnóstico de la <strong>(Des) Igualdad por razón de sexo, orientación sexual o identidad de género en la isla de Gran Canaria</strong>. Este análisis forma parte del <strong>Marco Estratégico de Igualdad</strong> que el Cabildo Insular, a través de la Consejería de Igualdad y Participación Ciudadana, pondrá en marcha a partir del próximo año 2019.</p>\n\n<p>La participación ciudadana es una aportación esencial en este proceso. Por este motivo, se establece un proceso de consulta ciudadana a través del Portal de Participación del Cabildo de Gran Canaria, invitando a la ciudadanía a responder al cuestionario.</p>\n\n<p>En el cuestionario se solicita que responda a una serie de cuestiones agrupadas en dos Bloques. El primero referido a sus percepciones sobre la desigualdad y las discriminaciones por razón del sexo, orientación sexual e identidad de género, y en el Bloque II sus aportacione<p>En el cé necesidades y acciones debieran tratarse en el Marco Estratégico de Igualdad a diseñar para el próximo año. Previamente le solicitamos algunos datos de clasificación.</p>\n\n<p>Para la cumplimentación del cuestionario, se ruega se ajuste a las indicaciones en cada una de las preguntas (elegir una única opción; elegir las 3 opciones más importantes…). No obstante, nos ponemos a su disposición para aclararle cualquier cuestión relativa a la cumplimentación del presente documento (e-mail: jorgeg.cuesta@gmail.com, teléfono: 928 219421 | Ext 54014 | Ext 44514, en horario de 8 a 14 h). <strong>Le agradecemos de antemano la atención y el tiempo empleado.</strong></p>"
+    survey.description ="<p>Desde la Consejería de Área de Política Social y Accesibilidad del Cabildo de Gran Canaria nos encontramos en la fase de diseño del I Plan Insular de Drogas y Adicciones de Gran Canaria. Desde nuestra visión, la participación de la ciudadanía es fundamental para la elaboración de dicho plan, por lo que les pedimos su colaboración respondiendo a este breve cuestionario. La información obtenida de este sondeo nos resultará de gran utilidad para establecer un diagnóstico de la cuestión.</p>\n\n<p>Para contestar a las preguntas deberá registrarse en la plataforma (le llevará solo dos minutos de su tiempo). Asimismo, les informamos que el cuestionario es totalmente anónimo, por lo que sus datos no se verán expuestos.</p>"
     survey.start = Date.today
     survey.end = '15/12/2018'
   end
@@ -47,7 +48,7 @@ survey = create_survey()
 question_num = 0
 csv_questions.each_with_index do |row, i|
   puts row
-  survey_question = SurveyQuestion.where(text: row[2]).first_or_initialize
+  survey_question = SurveyQuestion.where(text: row[2], survey_id: survey.id).first_or_initialize
   if survey_question.new_record?
     survey_question.code = question_num
     survey_question.input_type = row[3]
@@ -56,7 +57,7 @@ csv_questions.each_with_index do |row, i|
     survey_question.save!
   end
   if !row[1].blank?
-    survey_value = SurveyQuestionValue.where(text: row[1], order: row[0]).first_or_initialize
+    survey_value = SurveyQuestionValue.where(text: row[1], order: row[0], survey_question_id: survey_question).first_or_initialize
     survey_value.question = survey_question
     survey_value.save!
   end
