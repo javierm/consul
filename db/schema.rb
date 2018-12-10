@@ -308,24 +308,25 @@ ActiveRecord::Schema.define(version: 20181030121557) do
     t.string   "title",                        limit: 80
     t.text     "description"
     t.integer  "author_id"
-    t.datetime "created_at",                                          null: false
-    t.datetime "updated_at",                                          null: false
+    t.datetime "created_at",                                           null: false
+    t.datetime "updated_at",                                           null: false
     t.string   "visit_id"
     t.datetime "hidden_at"
-    t.integer  "flags_count",                             default: 0
+    t.integer  "flags_count",                              default: 0
+    t.integer  "cached_votes_total",                       default: 0
+    t.integer  "cached_votes_up",                          default: 0
+    t.integer  "cached_votes_down",                        default: 0
     t.datetime "ignored_flag_at"
-    t.integer  "cached_votes_total",                      default: 0
-    t.integer  "cached_votes_up",                         default: 0
-    t.integer  "cached_votes_down",                       default: 0
-    t.integer  "comments_count",                          default: 0
+    t.integer  "comments_count",                           default: 0
     t.datetime "confirmed_hide_at"
-    t.integer  "cached_anonymous_votes_total",            default: 0
-    t.integer  "cached_votes_score",                      default: 0
-    t.integer  "hot_score",                    limit: 8,  default: 0
-    t.integer  "confidence_score",                        default: 0
+    t.integer  "cached_anonymous_votes_total",             default: 0
+    t.integer  "cached_votes_score",                       default: 0
+    t.integer  "hot_score",                    limit: 8,   default: 0
+    t.integer  "confidence_score",                         default: 0
     t.integer  "geozone_id"
     t.tsvector "tsv"
     t.datetime "featured_at"
+    t.string   "external_link",                limit: 100
     t.string   "area"
   end
 
@@ -336,6 +337,7 @@ ActiveRecord::Schema.define(version: 20181030121557) do
   add_index "debates", ["cached_votes_total"], name: "index_debates_on_cached_votes_total", using: :btree
   add_index "debates", ["cached_votes_up"], name: "index_debates_on_cached_votes_up", using: :btree
   add_index "debates", ["confidence_score"], name: "index_debates_on_confidence_score", using: :btree
+  add_index "debates", ["description"], name: "index_debates_on_description", using: :btree
   add_index "debates", ["geozone_id"], name: "index_debates_on_geozone_id", using: :btree
   add_index "debates", ["hidden_at"], name: "index_debates_on_hidden_at", using: :btree
   add_index "debates", ["hot_score"], name: "index_debates_on_hot_score", using: :btree
@@ -938,6 +940,7 @@ ActiveRecord::Schema.define(version: 20181030121557) do
   add_index "proposals", ["cached_votes_up"], name: "index_proposals_on_cached_votes_up", using: :btree
   add_index "proposals", ["community_id"], name: "index_proposals_on_community_id", using: :btree
   add_index "proposals", ["confidence_score"], name: "index_proposals_on_confidence_score", using: :btree
+  add_index "proposals", ["description"], name: "index_proposals_on_description", using: :btree
   add_index "proposals", ["geozone_id"], name: "index_proposals_on_geozone_id", using: :btree
   add_index "proposals", ["hidden_at"], name: "index_proposals_on_hidden_at", using: :btree
   add_index "proposals", ["hot_score"], name: "index_proposals_on_hot_score", using: :btree
@@ -979,8 +982,6 @@ ActiveRecord::Schema.define(version: 20181030121557) do
     t.string "key"
     t.string "value"
   end
-
-  add_index "settings", ["key"], name: "index_settings_on_key", using: :btree
 
   create_table "signature_sheets", force: :cascade do |t|
     t.integer  "signable_id"
