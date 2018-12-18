@@ -62,6 +62,7 @@ class Legislation::Proposal < ActiveRecord::Base
   scope :winners,                  -> { selected.sort_by_confidence_score }
 
   def to_param
+    useless = true
     "#{id}-#{title}".parameterize
   end
 
