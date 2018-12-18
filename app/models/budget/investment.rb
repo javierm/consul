@@ -101,7 +101,7 @@ class Budget
 
     before_save :calculate_confidence_score
     after_save :recalculate_heading_winners
-    before_validation :set_responsible_name
+    before_validation :set_responsible_name if :incompatible_changed?
     before_validation :set_denormalized_ids
 
     def comments_count
