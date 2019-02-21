@@ -1,5 +1,5 @@
 <div class="clear"></div>
-
+<!-- TODO: temporal change for hiden buttom
 <% if can?(:create, Budget::Investment.new(budget: @budget)) %>
   <% if current_user && current_user.level_two_or_three_verified? %>
     <%= link_to t("budgets.investments.index.sidebar.create"),
@@ -12,7 +12,7 @@
     </div>
   <% end %>
 <% end %>
-
+-->
 <% if @heading && can?(:show, @ballot) %>
   <p class="callout">
     <%= t("budgets.investments.index.sidebar.voted_info",
