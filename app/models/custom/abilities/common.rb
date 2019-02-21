@@ -29,8 +29,7 @@ module Abilities
       # can :create, Debate
       can :create, Proposal
       can :create, AnsweredSurvey
-      # TODO: remove temporal  #  can :create, Budget::Investment,               budget: { phase: "accepting" }
-      can :create, Budget::Investment
+      can :create, Budget::Investment,               budget: { phase: "accepting" }
       can :read, AnsweredSurvey, user_id: user.id
       can :read, Survey
 
