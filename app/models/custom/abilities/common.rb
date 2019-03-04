@@ -91,8 +91,12 @@ module Abilities
         end
 
         Verification::Residence::GEOZONE_PROTECTIONS.each do |protection|
-          if user.geozone_id != protection[:geozone_id] && protection[:action].present? && protection[:model_name].present? && protection[:model_id].present?
+          if protection[:action].present? && protection[:model_name].present? && protection[:model_id].present?
+            if user.geozone_id == protection[:geozone_id]
+              can protection[:action], protection[:model_name].constantize, id: protection[:model_id]
+            else
               cannot protection[:action], protection[:model_name].constantize, id: protection[:model_id]
+            end
           end
         end
       end
