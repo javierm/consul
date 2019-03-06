@@ -69,6 +69,8 @@ module Budgets
     end
 
     def vote
+      return head(:forbidden) unless current_user.can? :vote, @budget
+
       @investment.register_selection(current_user)
       load_investment_votes(@investment)
       respond_to do |format|
