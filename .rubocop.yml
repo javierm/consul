@@ -195,15 +195,6 @@ Performance/EndWith:
 Performance/StartWith:
   Enabled: true
 
-Rails/ActionFilter:
-  Enabled: true
-
-Rails/ApplicationJob:
-  Enabled: true
-
-Rails/ApplicationRecord:
-  Enabled: true
-
 Rails/CreateTableWithTimestamps:
   Enabled: true
   Exclude:
@@ -234,9 +225,6 @@ Rails/HasAndBelongsToMany:
 Rails/HasManyOrHasOneDependent:
   Enabled: true
   Severity: refactor
-
-Rails/HttpPositionalArguments:
-  Enabled: true
 
 Rails/InverseOf:
   Enabled: true
