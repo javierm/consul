@@ -319,7 +319,7 @@ class Budget
     end
 
     def recalculate_heading_winners
-      Budget::Result.new(budget, heading).calculate_winners if incompatible_changed?
+      Budget::Result.new(budget, heading).calculate_winners if saved_change_to_incompatible?
     end
 
     def set_responsible_name
@@ -405,14 +405,14 @@ class Budget
       end
 
       def change_log
-        self.changed.each do |field|
+        changed.each do |field|
           unless field == "updated_at"
             log = Budget::Investment::ChangeLog.new
             log.field = field
             log.author_id = User.current_user.id unless User.current_user.nil?
-            log.investment_id = self.id
-            log.new_value = self.send field
-            log.old_value = self.send "#{field}_was"
+            log.investment_id = id
+            log.new_value = send field
+            log.old_value = send "#{field}_was"
             !log.save
           end
         end
