@@ -1,6 +1,6 @@
 include DocumentParser
 class CensusApi
-  def initialize(tenant)
+  def initialize(tenant = Tenant.current)
     @tenant = tenant
   end
 
