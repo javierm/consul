@@ -45,9 +45,6 @@ set(:config_files, %w[
 set :whenever_roles, -> { :app }
 
 namespace :deploy do
-  after :updating, "rvm1:install:rvm"
-  after :updating, "rvm1:install:ruby"
-  after :updating, "install_bundler_gem"
   before "deploy:migrate", "remove_local_census_records_duplicates"
 
   after "deploy:migrate", "add_new_settings"
@@ -65,14 +62,6 @@ namespace :deploy do
   task :upgrade do
     after "add_new_settings", "execute_release_tasks"
     invoke "deploy"
-  end
-end
-
-task :install_bundler_gem do
-  on roles(:app) do
-    within release_path do
-      execute :rvm, fetch(:rvm1_ruby_version), "do", "gem install bundler"
-    end
   end
 end
 
