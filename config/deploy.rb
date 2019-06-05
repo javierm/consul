@@ -56,8 +56,6 @@ namespace :deploy do
   before "deploy:restart", "puma:smart_restart"
   before "deploy:restart", "delayed_job:restart"
 
-  after :finished, "refresh_sitemap"
-
   desc "Deploys and runs the tasks needed to upgrade to a new release"
   task :upgrade do
     after "add_new_settings", "execute_release_tasks"
@@ -70,16 +68,6 @@ task :remove_local_census_records_duplicates do
     within release_path do
       with rails_env: fetch(:rails_env) do
         execute :rake, "local_census_records:remove_duplicates"
-      end
-    end
-  end
-end
-
-task :refresh_sitemap do
-  on roles(:app) do
-    within release_path do
-      with rails_env: fetch(:rails_env) do
-        execute :rake, "sitemap:refresh:no_ping"
       end
     end
   end
