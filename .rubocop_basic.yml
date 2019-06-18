@@ -67,5 +67,8 @@ Rails/TimeZone:
 RSpec/NotToNot:
   Enabled: true
 
+Style/PercentLiteralDelimiters:
+  Enabled: true
+
 Style/StringLiterals:
   EnforcedStyle: double_quotes
