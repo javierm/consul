@@ -137,6 +137,9 @@ Rails/Presence:
 Rails/RelativeDateConstant:
   Enabled: true
 
+Rails/RequestReferer:
+  Enabled: true
+
 Rails/TimeZone:
   Enabled: true
 
