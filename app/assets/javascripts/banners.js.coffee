@@ -1,3 +1,5 @@
+"use strict"
+
 App.Banners =
 
   update_banner: (selector, text) ->
