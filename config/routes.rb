@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   mount Ckeditor::Engine => "/ckeditor"
+  mount ActionCable.server => "/cable"
 
   if Rails.env.development? || Rails.env.staging?
     get "/sandbox" => "sandbox#index"
