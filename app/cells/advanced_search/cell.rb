@@ -1,15 +1,12 @@
 class AdvancedSearch::Cell < ApplicationCell
   include ActionView::Helpers::FormOptionsHelper
+  locals :search_path
 
   def show
     render
   end
 
   private
-
-    def search_path
-      @options[:search_path]
-    end
 
     def official_level_search_options
       options_for_select((1..5).map { |i| [setting["official_level_#{i}_name"], i] },
