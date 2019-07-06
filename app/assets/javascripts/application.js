@@ -50,7 +50,7 @@
 //= require embed_video
 //= require fixed_bar
 //= require banners
-//= require social_share
+//= require social_share/social_share
 //= require checkbox_toggle
 //= require markdown-it
 //= require markdown_editor

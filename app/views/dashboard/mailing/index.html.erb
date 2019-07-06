@@ -32,7 +32,7 @@
 
       <div class="text-center">
         <h3><%= t("dashboard.mailer.forward.share_in") %></h3>
-        <%= render "shared/social_share",
+        <%= cell "social_share/",
                    title: @proposal.title,
                    url: proposal_url(@proposal),
                    description: @proposal.summary %>

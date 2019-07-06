@@ -1,4 +1,5 @@
 class ApplicationCell < Cell::ViewModel
+  include ERB::Util
   include ActionView::Helpers::UrlHelper
   include ActionView::Helpers::TranslationHelper
   include SettingsHelper
