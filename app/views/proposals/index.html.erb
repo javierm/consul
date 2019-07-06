@@ -78,8 +78,7 @@
       </div>
 
       <% unless params[:retired].present? || params[:selected].present? %>
-        <%= render "shared/advanced_search",
-                   search_path: proposals_path(page: 1) %>
+        <%= cell "advanced_search/", search_path: proposals_path(page: 1) %>
       <% end %>
 
       <% unless params[:selected].present? %>
