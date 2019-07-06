@@ -55,7 +55,7 @@
 //= require markdown-it
 //= require markdown_editor
 //= require cocoon
-//= require answers
+//= require dashboard/polls/answers/answers
 //= require questions
 //= require legislation_admin
 //= require legislation
