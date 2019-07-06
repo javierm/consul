@@ -103,7 +103,7 @@
           <%= render "votes",
                     { proposal: @proposal, vote_url: vote_legislation_process_proposal_path(@proposal.legislation_process_id, @proposal, value: "yes") } %>
         </div>
-        <%= render "shared/social_share",
+        <%= cell "social_share/",
           share_title: t("proposals.show.share"),
           title: @proposal.title,
           url: legislation_process_proposal_url(process_id: @process),

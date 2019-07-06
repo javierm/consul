@@ -56,7 +56,7 @@
         <div id="<%= dom_id(@debate) %>_votes">
           <%= render "debates/votes", debate: @debate %>
         </div>
-        <%= render "shared/social_share",
+        <%= cell "social_share/",
           share_title: t("debates.show.share"),
           title: @debate.title,
           url: debate_url(@debate),
