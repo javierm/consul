@@ -36,7 +36,7 @@
     </div>
 
     <aside class="small-12 medium-3 column">
-      <%= render "shared/social_share",
+      <%= cell "social_share/",
         share_title: t("proposals.show.share"),
         title: @process.title,
         url: legislation_process_url(@process),

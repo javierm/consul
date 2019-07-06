@@ -37,7 +37,7 @@
   <% if voted_for?(@featured_proposals_votes, proposal) %>
     <% if setting["twitter_handle"] %>
       <div class="share-supported">
-        <%= render "shared/social_share",
+        <%= cell "social_share/",
           title: proposal.title,
           url: proposal_url(proposal),
           description: proposal.summary,
