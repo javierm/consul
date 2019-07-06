@@ -42,7 +42,7 @@
 //= require users
 //= require votes
 //= require allow_participation
-//= require advanced_search
+//= require advanced_search/advanced_search
 //= require registration_form
 //= require suggest
 //= require forms
