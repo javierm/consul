@@ -2,30 +2,30 @@
   "use strict";
   App.WatchFormChanges = {
     forms: function() {
-      return $("form[data-watch-changes]");
+      return document.querySelectorAll("form[data-watch-changes]");
     },
     msg: function() {
-      return $("[data-watch-form-message]").data("watch-form-message");
+      return document.querySelector("[data-watch-form-message]").dataset.watchFormMessage;
     },
     hasChanged: function() {
-      return App.WatchFormChanges.forms().is(function() {
-        return $(this).serialize() !== $(this).data("watchChanges");
+      // TODO: use [...App.WatchFormChanges.forms()] or Array.from() in ES6
+      return Array.prototype.slice.call(App.WatchFormChanges.forms()).some(function(form) {
+        return $(form).serialize() !== form.dataset.watchChanges;
       });
     },
-    checkChanges: function() {
-      if (App.WatchFormChanges.hasChanged()) {
-        return confirm(App.WatchFormChanges.msg());
-      } else {
-        return true;
+    checkChanges: function(event) {
+      if (App.WatchFormChanges.hasChanged() && !confirm(App.WatchFormChanges.msg())) {
+        event.preventDefault();
       }
     },
     initialize: function() {
       if (App.WatchFormChanges.forms().length === 0 || App.WatchFormChanges.msg() === undefined) {
         return;
       }
-      $(document).off("page:before-change").on("page:before-change", App.WatchFormChanges.checkChanges);
-      App.WatchFormChanges.forms().each(function() {
-        $(this).data("watchChanges", $(this).serialize());
+      document.removeEventListener("page:before-change", App.WatchFormChanges.checkChanges);
+      document.addEventListener("page:before-change", App.WatchFormChanges.checkChanges);
+      App.WatchFormChanges.forms().forEach(function(form) {
+        form.dataset.watchChanges = $(form).serialize();
       });
     }
   };
