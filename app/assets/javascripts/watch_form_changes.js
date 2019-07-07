@@ -22,7 +22,6 @@
       if (App.WatchFormChanges.forms().length === 0 || App.WatchFormChanges.msg() === undefined) {
         return;
       }
-      document.removeEventListener("page:before-change", App.WatchFormChanges.checkChanges);
       document.addEventListener("page:before-change", App.WatchFormChanges.checkChanges);
       App.WatchFormChanges.forms().forEach(function(form) {
         form.dataset.watchChanges = $(form).serialize();
