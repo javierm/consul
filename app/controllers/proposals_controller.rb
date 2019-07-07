@@ -59,6 +59,7 @@ class ProposalsController < ApplicationController
   def vote
     @proposal.register_vote(current_user, "yes")
     set_proposal_votes(@proposal)
+    ActionCable.server.broadcast("proposal_channel", id: "proposal_#{@proposal.id}_supports", supports: ApplicationController.renderer.render(partial: "proposals/supports", locals: { proposal: @proposal }))
   end
 
   def retire

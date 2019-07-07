@@ -1,5 +1,7 @@
 <div class="supports text-center">
-  <%= render "proposals/supports", proposal: proposal %>
+  <div id="<%= "proposal_#{proposal.id}_supports" %>">
+    <%= render "proposals/supports", proposal: proposal %>
+  </div>
 
   <div class="in-favor">
     <% if voted_for?(@proposal_votes, proposal) %>
