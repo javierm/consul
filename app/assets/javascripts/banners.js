@@ -4,23 +4,23 @@
     initialize: function() {
       $("[data-js-banner-title]").on({
         change: function() {
-          $("#js-banner-title").html($(this).val());
+          document.getElementById("js-banner-title").innerHTML = this.value;
         }
       });
       $("[data-js-banner-description]").on({
         change: function() {
-          $("#js-banner-description").html($(this).val());
+          document.getElementById("js-banner-description").innerHTML = this.value;
         }
       });
       $("[name='banner[background_color]']").on({
         change: function() {
-          $("#js-banner-background").css("background-color", $(this).val());
+          document.getElementById("js-banner-background").style.backgroundColor = this.value;
         }
       });
       $("[name='banner[font_color]']").on({
         change: function() {
-          $("#js-banner-title").css("color", $(this).val());
-          $("#js-banner-description").css("color", $(this).val());
+          document.getElementById("js-banner-title").style.color = this.value;
+          document.getElementById("js-banner-description").style.color = this.value;
         }
       });
     }
