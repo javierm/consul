@@ -11,6 +11,8 @@ require "spec_helper"
 require "capybara/rails"
 require "capybara/rspec"
 require "selenium/webdriver"
+require "webmock/rspec"
+WebMock.disable_net_connect!(allow_localhost: true)
 
 Rails.application.load_tasks if Rake::Task.tasks.empty?
 
