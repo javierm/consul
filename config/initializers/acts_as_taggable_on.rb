@@ -1,4 +1,5 @@
 module ActsAsTaggableOn
+  ActsAsTaggableOn.strict_case_match = true
 
   Tagging.class_eval do
 

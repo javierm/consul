@@ -34,4 +34,35 @@ describe Tag do
       expect(tag).to be_valid
     end
   end
+
+  context "Same tag uppercase and lowercase" do
+    before do
+      create(:tag, name: "Health")
+      create(:tag, name: "health")
+    end
+
+    it "assigns the tag created first for debates" do
+      debate = create(:debate, tag_list: "Health")
+
+      expect(debate.reload.tag_list).to eq ["Health"]
+    end
+
+    it "assigns the tag created last for debates" do
+      debate = create(:debate, tag_list: "health")
+
+      expect(debate.reload.tag_list).to eq ["health"]
+    end
+
+    it "assigns the tag created first for proposals" do
+      proposal = create(:proposal, tag_list: "Health")
+
+      expect(proposal.reload.tag_list).to eq ["Health"]
+    end
+
+    it "assigns the tag created last for proposals" do
+      proposal = create(:proposal, tag_list: "health")
+
+      expect(proposal.reload.tag_list).to eq ["health"]
+    end
+  end
 end
