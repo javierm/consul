@@ -22,6 +22,12 @@ describe Budget::Ballot::Line do
         expect(ballot_line).not_to be_valid
       end
 
+      it "is valid if insufficient funds with approval voting" do
+        budget.update! voting_style: "approval"
+        investment.update! price: (heading.price + 1)
+        expect(ballot_line).to be_valid
+      end
+
       it "is valid if sufficient funds" do
         investment.update!(price: heading.price - 1)
         expect(ballot_line).to be_valid
