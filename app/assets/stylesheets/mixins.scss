@@ -26,21 +26,56 @@
 // -------------------------
 
 @mixin side-menu-and-content {
+  $side-menu-width: 250px;
   display: flex;
+
+  @include breakpoint(small only) {
+    left: 0;
+    position: relative;
+    transition: left 0.5s ease;
+
+    &.has-menu {
+      left: $side-menu-width;
+
+      > :first-child {
+        left: 0;
+      }
+    }
+
+    .has-menu-wrapper {
+      @include reveal-overlay;
+      cursor: pointer;
+      display: block;
+      z-index: 11;
+    }
+  }
 
   > :first-child {
     flex: 25%;
-    min-width: 250px;
+    min-width: $side-menu-width;
 
-    > :first-child {
+    @include breakpoint(small only) {
       height: 100%;
+      left: -$side-menu-width;
+      overflow: auto;
+      position: fixed;
+      top: 0;
+      transition: left 0.5s ease;
+      z-index: 12;
     }
   }
 
   > :last-child {
     flex: 75%;
-    overflow-x: auto;
     padding: $line-height !important;
+  }
+
+  [href="#side_menu"] {
+    display: none;
+
+    @include breakpoint(small only) {
+      display: block;
+    }
   }
 }
 
