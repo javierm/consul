@@ -151,7 +151,7 @@ describe Poll::Voter do
 
   end
 
-  describe "save" do
+  describe "before validation" do
 
     it "sets demographic info" do
       geozone = create(:geozone)
@@ -161,7 +161,8 @@ describe Poll::Voter do
                     gender: "female")
 
       voter = build(:poll_voter, user: user)
-      voter.save
+
+      expect(voter).not_to be_valid
 
       expect(voter.geozone).to eq(geozone)
       expect(voter.age).to eq(30)
@@ -171,7 +172,8 @@ describe Poll::Voter do
     it "sets user info" do
       user = create(:user, document_number: "1234A", document_type: "1")
       voter = build(:poll_voter, user: user, token: "1234abcd")
-      voter.save
+
+      expect(voter).to be_valid
 
       expect(voter.document_number).to eq("1234A")
       expect(voter.document_type).to eq("1")
