@@ -66,7 +66,7 @@ module ActsAsTaggableOn
     def recalculate_custom_counter_for(taggable_type)
       visible_taggables = taggable_type.constantize.includes(:taggings).where("taggings.taggable_type" => taggable_type, "taggings.tag_id" => id)
 
-      update(custom_counter_field_name_for(taggable_type) => visible_taggables.count)
+      update!(custom_counter_field_name_for(taggable_type) => visible_taggables.count)
     end
 
     def self.category_names

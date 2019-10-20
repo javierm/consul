@@ -181,6 +181,9 @@ Rails/SafeNavigation:
   Enabled: true
   ConvertTry: true
 
+Rails/SaveBang:
+  Enabled: true
+
 Rails/TimeZone:
   Enabled: true
 

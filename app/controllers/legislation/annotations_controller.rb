@@ -39,7 +39,7 @@ class Legislation::AnnotationsController < Legislation::BaseController
 
     @annotation = existing_annotation
     if @annotation.present?
-      comment = @annotation.comments.create(body: annotation_params[:text], user: current_user)
+      comment = @annotation.comments.create!(body: annotation_params[:text], user: current_user)
       if comment.present?
         render json: @annotation.to_json
       else

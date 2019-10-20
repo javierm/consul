@@ -23,7 +23,7 @@ describe "Cross-Site Scripting protection", :js do
   end
 
   scenario "hacked translations" do
-    I18nContent.create(key: "admin.budget_investments.index.list.title", value: attack_code)
+    I18nContent.create!(key: "admin.budget_investments.index.list.title", value: attack_code)
 
     login_as(create(:administrator).user)
     visit admin_budget_budget_investments_path(create(:budget_investment).budget)
@@ -32,7 +32,7 @@ describe "Cross-Site Scripting protection", :js do
   end
 
   scenario "accept terms label" do
-    I18nContent.create(key: "form.accept_terms", value: attack_code)
+    I18nContent.create!(key: "form.accept_terms", value: attack_code)
 
     login_as(create(:user))
     visit new_debate_path
@@ -41,7 +41,7 @@ describe "Cross-Site Scripting protection", :js do
   end
 
   scenario "link to sign in" do
-    I18nContent.create(key: "budgets.investments.index.sidebar.not_logged_in", value: attack_code)
+    I18nContent.create!(key: "budgets.investments.index.sidebar.not_logged_in", value: attack_code)
     create(:budget, phase: "accepting")
 
     visit budgets_path
