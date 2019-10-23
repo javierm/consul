@@ -46,7 +46,6 @@ class Polls::QuestionsController < ApplicationController
 
     def vote_stored(answer, new_answer, token)
       answer.answer = new_answer
-      answer.touch if answer.persisted?
       answer.save!
       answer.record_voter_participation(token)
       @question.question_answers.visibles.where(question_id: @question).each do |question_answer|
