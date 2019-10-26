@@ -14,7 +14,7 @@ RSpec.describe I18nContent, type: :model do
     expect(i18n_content.errors.size).to eq(1)
   end
 
-  context "Globalize" do
+  context "Multilanguage" do
     it "translates key into multiple languages" do
       key = "devise_views.mailer.confirmation_instructions.welcome"
       welcome = build(:i18n_content, key: key, value_en: "Welcome", value_es: "Bienvenido")

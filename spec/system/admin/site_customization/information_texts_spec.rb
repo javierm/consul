@@ -55,7 +55,7 @@ describe "Admin custom information texts" do
           .to have_content "Proposals"
   end
 
-  context "Globalization" do
+  context "Multilanguage" do
     scenario "Add a translation", :js do
       key = "debates.index.section_footer.title"
 

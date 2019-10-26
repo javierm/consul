@@ -1,13 +1,13 @@
-module GlobalizeFallbacks
+module I18nFallbacks
   extend ActiveSupport::Concern
 
   included do
-    before_action :initialize_globalize_fallbacks
+    before_action :initialize_i18n_fallbacks
   end
 
   private
 
-    def initialize_globalize_fallbacks
+    def initialize_i18n_fallbacks
       Globalize.set_fallbacks_to_all_available_locales
     end
 end

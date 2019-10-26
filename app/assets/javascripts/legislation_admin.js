@@ -18,7 +18,7 @@
         }
       });
       $("#nested_question_options").on("cocoon:after-insert", function() {
-        App.Globalize.refresh_visible_translations();
+        App.Translations.refresh_visible_translations();
       });
     }
   };

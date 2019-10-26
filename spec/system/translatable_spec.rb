@@ -108,7 +108,7 @@ describe "Public area translatable records" do
     end
   end
 
-  context "Globalize javascript interface", :js do
+  context "Translations javascript interface", :js do
     scenario "Highlight current locale" do
       visit new_debate_path
 
@@ -168,7 +168,7 @@ describe "Public area translatable records" do
       scenario "Is enabled translation interface should be rendered" do
         visit new_budget_investment_path(create(:budget))
 
-        expect(page).to have_css ".globalize-languages"
+        expect(page).to have_css ".translation-languages"
       end
 
       scenario "Is disabled translation interface should not be rendered" do
@@ -176,7 +176,7 @@ describe "Public area translatable records" do
 
         visit new_debate_path
 
-        expect(page).not_to have_css ".globalize-languages"
+        expect(page).not_to have_css ".translation-languages"
       end
     end
   end
@@ -237,14 +237,14 @@ describe "Public area translatable records" do
       end
     end
 
-    context "Globalize javascript interface" do
+    context "Translations javascript interface" do
       let(:translatable) { create(:debate) }
       let(:path) { edit_debate_path(translatable) }
 
       scenario "Is rendered with translation interface feature enabled" do
         visit path
 
-        expect(page).to have_css ".globalize-languages"
+        expect(page).to have_css ".translation-languages"
       end
 
       scenario "Is not rendered with translation interface feature disabled" do
@@ -252,7 +252,7 @@ describe "Public area translatable records" do
 
         visit path
 
-        expect(page).not_to have_css ".globalize-languages"
+        expect(page).not_to have_css ".translation-languages"
       end
     end
   end

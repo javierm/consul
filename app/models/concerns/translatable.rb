@@ -65,7 +65,7 @@ module Translatable
         translation.errors.add(:base, :translations_too_short)
       end
 
-      def searchable_globalized_values
+      def searchable_translated_values
         values = {}
         translations.each do |translation|
           Globalize.with_locale(translation.locale) do

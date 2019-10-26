@@ -455,7 +455,7 @@ describe "Admin edit translatable records" do
     end
   end
 
-  context "Globalize javascript interface", :js do
+  context "Translations javascript interface", :js do
     let(:translatable) { create(:i18n_content) }
     let(:content) { translatable }
     let(:path) { admin_site_customization_information_texts_path }
@@ -524,7 +524,7 @@ describe "Admin edit translatable records" do
       scenario "Is enabled translation interface should be rendered" do
         visit path
 
-        expect(page).to have_css ".globalize-languages"
+        expect(page).to have_css ".translation-languages"
       end
 
       scenario "Is disabled translation interface should be rendered" do
@@ -532,7 +532,7 @@ describe "Admin edit translatable records" do
 
         visit path
 
-        expect(page).to have_css ".globalize-languages"
+        expect(page).to have_css ".translation-languages"
       end
     end
   end

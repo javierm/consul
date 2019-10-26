@@ -1,7 +1,7 @@
 require "application_responder"
 
 class ApplicationController < ActionController::Base
-  include GlobalizeFallbacks
+  include I18nFallbacks
   include HasFilters
   include HasOrders
   include AccessDeniedHandler

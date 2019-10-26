@@ -80,7 +80,7 @@
 //= require investment_report_alert
 //= require send_newsletter_alert
 //= require managers
-//= require globalize
+//= require translations
 //= require send_admin_notification_alert
 //= require modal_download
 //= require settings
@@ -135,7 +135,7 @@ var initialize_modules = function() {
   App.InvestmentReportAlert.initialize();
   App.SendNewsletterAlert.initialize();
   App.Managers.initialize();
-  App.Globalize.initialize();
+  App.Translations.initialize();
   App.SendAdminNotificationAlert.initialize();
   App.ModalDownload.initialize();
   App.Settings.initialize();

@@ -1,17 +1,17 @@
 (function() {
   "use strict";
-  App.Globalize = {
+  App.Translations = {
     selected_language: function() {
       return $("#select_language").val();
     },
     display_locale: function(locale) {
-      App.Globalize.enable_locale(locale);
-      App.Globalize.add_language(locale);
+      App.Translations.enable_locale(locale);
+      App.Translations.add_language(locale);
       $(".js-add-language option:selected").removeAttr("selected");
     },
     display_translations: function(locale) {
       $(".js-select-language option[value=" + locale + "]").prop("selected", true);
-      $(".js-globalize-attribute").each(function() {
+      $(".js-translatable-attribute").each(function() {
         if ($(this).data("locale") === locale) {
           $(this).show();
         } else {
@@ -32,15 +32,15 @@
     },
     remove_language: function(locale) {
       var next;
-      $(".js-globalize-attribute[data-locale=" + locale + "]").each(function() {
+      $(".js-translatable-attribute[data-locale=" + locale + "]").each(function() {
         $(this).val("").hide();
-        App.Globalize.resetEditor(this);
+        App.Translations.resetEditor(this);
       });
       $(".js-select-language option[value=" + locale + "]").remove();
       next = $(".js-select-language option:not([value=''])").first();
-      App.Globalize.display_translations(next.val());
-      App.Globalize.disable_locale(locale);
-      App.Globalize.update_description();
+      App.Translations.display_translations(next.val());
+      App.Translations.disable_locale(locale);
+      App.Translations.update_description();
       if ($(".js-select-language option").length === 1) {
         $(".js-select-language option").prop("selected", true);
       }
@@ -51,12 +51,12 @@
       }
     },
     enable_locale: function(locale) {
-      App.Globalize.destroy_locale_field(locale).val(false);
-      App.Globalize.site_customization_enable_locale_field(locale).val(1);
+      App.Translations.destroy_locale_field(locale).val(false);
+      App.Translations.site_customization_enable_locale_field(locale).val(1);
     },
     disable_locale: function(locale) {
-      App.Globalize.destroy_locale_field(locale).val(true);
-      App.Globalize.site_customization_enable_locale_field(locale).val(0);
+      App.Translations.destroy_locale_field(locale).val(true);
+      App.Translations.site_customization_enable_locale_field(locale).val(0);
     },
     enabled_locales: function() {
       return $.map($(".js-select-language:first option:not([value=''])"), function(element) {
@@ -72,12 +72,12 @@
     refresh_visible_translations: function() {
       var locale;
       locale = $(".js-select-language").val();
-      App.Globalize.display_translations(locale);
+      App.Translations.display_translations(locale);
     },
     update_description: function() {
       var count, description;
-      count = App.Globalize.enabled_locales().length;
-      description = $(App.Globalize.language_description(count)).filter(".description").text();
+      count = App.Translations.enabled_locales().length;
+      description = $(App.Translations.language_description(count)).filter(".description").text();
 
       $(".js-languages-description .description").text(description);
       $(".js-languages-description .count").text(count);
@@ -85,32 +85,32 @@
     language_description: function(count) {
       switch (count) {
       case 0:
-        return $(".globalize-languages").data("zero-languages-description");
+        return $(".translation-languages").data("zero-languages-description");
       case 1:
-        return $(".globalize-languages").data("one-languages-description");
+        return $(".translation-languages").data("one-languages-description");
       default:
-        return $(".globalize-languages").data("other-languages-description");
+        return $(".translation-languages").data("other-languages-description");
       }
     },
     initialize: function() {
       $(".js-add-language").on("change", function() {
         var locale;
         locale = $(this).val();
-        App.Globalize.display_translations(locale);
-        App.Globalize.display_locale(locale);
-        App.Globalize.update_description();
+        App.Translations.display_translations(locale);
+        App.Translations.display_locale(locale);
+        App.Translations.update_description();
       });
       $(".js-select-language").on("change", function() {
-        App.Globalize.display_translations($(this).val());
+        App.Translations.display_translations($(this).val());
       });
       $(".js-delete-language").on("click", function(e) {
         e.preventDefault();
-        App.Globalize.remove_language($(this).data("locale"));
+        App.Translations.remove_language($(this).data("locale"));
         $(this).hide();
       });
       $(".js-add-fields-container").on("cocoon:after-insert", function() {
-        App.Globalize.enabled_locales().forEach(function(locale) {
-          App.Globalize.enable_locale(locale);
+        App.Translations.enabled_locales().forEach(function(locale) {
+          App.Translations.enable_locale(locale);
         });
       });
     }

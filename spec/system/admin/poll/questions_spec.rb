@@ -372,7 +372,7 @@ describe "Admin poll questions" do
     end
 
     scenario "uses fallback if name is not translated to current locale", :js do
-      unless globalize_french_fallbacks.first == :es
+      unless french_fallbacks.first == :es
         skip("Spec only useful when French falls back to Spanish")
       end
 
@@ -391,7 +391,7 @@ describe "Admin poll questions" do
     end
   end
 
-  def globalize_french_fallbacks
+  def french_fallbacks
     Globalize.fallbacks(:fr).reject { |locale| locale.match(/fr/) }
   end
 end

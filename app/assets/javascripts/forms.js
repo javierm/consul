@@ -43,14 +43,14 @@
       $("[name='progress_bar[kind]']").on({
         change: function() {
           var locale, title_field;
-          locale = App.Globalize.selected_language();
+          locale = App.Translations.selected_language();
           title_field = $(".translatable-fields[data-locale=" + locale + "]");
           if (this.value === "primary") {
             title_field.hide();
-            $(".globalize-languages").hide();
+            $(".translation-languages").hide();
           } else {
             title_field.show();
-            $(".globalize-languages").show();
+            $(".translation-languages").show();
           }
         }
       });

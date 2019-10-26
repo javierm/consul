@@ -214,7 +214,7 @@ class Budget
       { author.username    => "B",
         heading.name       => "B",
         tag_list.join(" ") => "B"
-      }.merge(searchable_globalized_values)
+      }.merge(searchable_translated_values)
     end
 
     def self.search(terms)

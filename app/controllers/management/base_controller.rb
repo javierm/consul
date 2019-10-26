@@ -1,5 +1,5 @@
 class Management::BaseController < ActionController::Base
-  include GlobalizeFallbacks
+  include I18nFallbacks
   layout "management"
   default_form_builder ConsulFormBuilder
 

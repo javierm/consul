@@ -1,4 +1,4 @@
-<%= render "shared/globalize_locales", resource: @page %>
+<%= render "shared/translation_locales", resource: @page %>
 
 <%= translatable_form_for [:admin, @page], html: { class: "edit_page", data: { watch_changes: true } } do |f| %>
   <%= render "shared/errors", resource: @page %>
