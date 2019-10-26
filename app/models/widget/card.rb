@@ -12,7 +12,7 @@ class Widget::Card < ApplicationRecord
   translates :title,       touch: true
   translates :description, touch: true
   translates :link_text,   touch: true
-  include Globalizable
+  include Translatable
 
   def self.header
     where(header: true)

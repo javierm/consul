@@ -1,5 +1,5 @@
 class Admin::Poll::PollsController < Admin::Poll::BaseController
-  include Translatable
+  include TranslationParams
   include ImageAttributes
   include ReportAttributes
   load_and_authorize_resource

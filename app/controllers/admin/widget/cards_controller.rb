@@ -1,5 +1,5 @@
 class Admin::Widget::CardsController < Admin::BaseController
-  include Translatable
+  include TranslationParams
   include ImageAttributes
 
   def new

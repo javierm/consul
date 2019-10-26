@@ -4,7 +4,7 @@ class Legislation::Question < ApplicationRecord
   include Notifiable
 
   translates :title, touch: true
-  include Globalizable
+  include Translatable
 
   belongs_to :author, -> { with_hidden }, class_name: "User", inverse_of: :legislation_questions
   belongs_to :process, foreign_key: "legislation_process_id", inverse_of: :questions

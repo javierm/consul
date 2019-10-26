@@ -8,7 +8,7 @@ class Budget
 
     translates :summary, touch: true
     translates :description, touch: true
-    include Globalizable
+    include Translatable
     include Sanitizable
 
     belongs_to :budget, touch: true

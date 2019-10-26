@@ -1,5 +1,5 @@
 class Admin::Poll::ActivePollsController < Admin::Poll::BaseController
-  include Translatable
+  include TranslationParams
 
   before_action :load_active_poll
 

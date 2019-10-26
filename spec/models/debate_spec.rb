@@ -3,7 +3,7 @@ require "rails_helper"
 describe Debate do
   let(:debate) { build(:debate) }
 
-  it_behaves_like "globalizable", :debate
+  it_behaves_like "translatable", :debate
 
   describe "Concerns" do
     it_behaves_like "has_public_author"

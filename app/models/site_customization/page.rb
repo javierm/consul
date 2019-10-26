@@ -8,7 +8,7 @@ class SiteCustomization::Page < ApplicationRecord
   translates :title,       touch: true
   translates :subtitle,    touch: true
   translates :content,     touch: true
-  include Globalizable
+  include Translatable
 
   validates_translation :title, presence: true
   validates :slug, presence: true,

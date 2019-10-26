@@ -5,7 +5,7 @@ class Poll::Question::Answer < ApplicationRecord
 
   translates :title,       touch: true
   translates :description, touch: true
-  include Globalizable
+  include Translatable
 
   accepts_nested_attributes_for :documents, allow_destroy: true
 

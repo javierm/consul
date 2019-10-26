@@ -5,7 +5,7 @@ module Budgets
     include FlagActions
     include RandomSeed
     include ImageAttributes
-    include Translatable
+    include TranslationParams
 
     PER_PAGE = 10
 

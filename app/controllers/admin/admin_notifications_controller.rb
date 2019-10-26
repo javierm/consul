@@ -1,5 +1,5 @@
 class Admin::AdminNotificationsController < Admin::BaseController
-  include Translatable
+  include TranslationParams
 
   def index
     @admin_notifications = AdminNotification.all

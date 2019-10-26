@@ -19,7 +19,7 @@ class Comment < ApplicationRecord
   attr_accessor :as_moderator, :as_administrator
 
   translates :body, touch: true
-  include Globalizable
+  include Translatable
 
   validates_translation :body, presence: true
   validates :user, presence: true

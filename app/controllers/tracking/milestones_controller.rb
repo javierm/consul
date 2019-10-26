@@ -1,5 +1,5 @@
 class Tracking::MilestonesController < Tracking::BaseController
-  include Translatable
+  include TranslationParams
   include ImageAttributes
 
   before_action :load_milestoneable, only: [:index, :new, :create, :edit, :update, :destroy]

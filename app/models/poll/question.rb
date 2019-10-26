@@ -6,7 +6,7 @@ class Poll::Question < ApplicationRecord
   include ActsAsParanoidAliases
 
   translates :title, touch: true
-  include Globalizable
+  include Translatable
 
   belongs_to :poll
   belongs_to :author, -> { with_hidden }, class_name: "User", inverse_of: :poll_questions

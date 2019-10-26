@@ -1,4 +1,4 @@
-module Globalizable
+module Translatable
   MIN_TRANSLATIONS = 1
   extend ActiveSupport::Concern
 

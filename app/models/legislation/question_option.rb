@@ -3,7 +3,7 @@ class Legislation::QuestionOption < ApplicationRecord
   include ActsAsParanoidAliases
 
   translates :value, touch: true
-  include Globalizable
+  include Translatable
 
   belongs_to :question, foreign_key: "legislation_question_id", inverse_of: :question_options
   has_many :answers, foreign_key: "legislation_question_id", dependent: :destroy, inverse_of: :question

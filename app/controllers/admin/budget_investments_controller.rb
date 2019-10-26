@@ -3,7 +3,7 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
   include CommentableActions
   include DownloadSettingsHelper
   include ChangeLogHelper
-  include Translatable
+  include TranslationParams
 
   feature_flag :budgets
 

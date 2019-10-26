@@ -1,4 +1,4 @@
-module Translatable
+module TranslationParams
   extend ActiveSupport::Concern
 
   private

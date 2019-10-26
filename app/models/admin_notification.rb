@@ -3,7 +3,7 @@ class AdminNotification < ApplicationRecord
 
   translates :title, touch: true
   translates :body,  touch: true
-  include Globalizable
+  include Translatable
 
   validates_translation :title, presence: true
   validates_translation :body, presence: true

@@ -5,7 +5,7 @@ describe Budget do
 
   it_behaves_like "sluggable", updatable_slug_trait: :drafting
   it_behaves_like "reportable"
-  it_behaves_like "globalizable", :budget
+  it_behaves_like "translatable", :budget
 
   describe "name" do
     before do

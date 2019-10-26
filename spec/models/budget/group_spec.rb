@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe Budget::Group do
   it_behaves_like "sluggable", updatable_slug_trait: :drafting_budget
-  it_behaves_like "globalizable", :budget_group
+  it_behaves_like "translatable", :budget_group
 
   describe "Validations" do
     let(:budget) { create(:budget) }

@@ -12,7 +12,7 @@ class Poll < ApplicationRecord
   translates :name,        touch: true
   translates :summary,     touch: true
   translates :description, touch: true
-  include Globalizable
+  include Translatable
 
   RECOUNT_DURATION = 1.week
 

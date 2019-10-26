@@ -1,5 +1,5 @@
 class Admin::Legislation::QuestionsController < Admin::Legislation::BaseController
-  include Translatable
+  include TranslationParams
 
   load_and_authorize_resource :process, class: "Legislation::Process"
   load_and_authorize_resource :question, class: "Legislation::Question", through: :process

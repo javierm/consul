@@ -1,5 +1,5 @@
 class Management::Budgets::InvestmentsController < Management::BaseController
-  include Translatable
+  include TranslationParams
   before_action :load_budget
 
   load_resource :budget

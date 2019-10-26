@@ -1,6 +1,6 @@
 require "spec_helper"
 
-shared_examples_for "globalizable" do |factory_name|
+shared_examples_for "translatable" do |factory_name|
   let(:record) do
     if factory_name == :budget_phase
       create(:budget).phases.last

@@ -3,7 +3,7 @@ require "rails_helper"
 describe ProgressBar do
   let(:progress_bar) { build(:progress_bar) }
 
-  it_behaves_like "globalizable", :secondary_progress_bar
+  it_behaves_like "translatable", :secondary_progress_bar
 
   it "is valid" do
     expect(progress_bar).to be_valid

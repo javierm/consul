@@ -1,5 +1,5 @@
 class Admin::BudgetsController < Admin::BaseController
-  include Translatable
+  include TranslationParams
   include ReportAttributes
   include FeatureFlags
   feature_flag :budgets

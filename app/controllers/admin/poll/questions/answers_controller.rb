@@ -1,5 +1,5 @@
 class Admin::Poll::Questions::AnswersController < Admin::Poll::BaseController
-  include Translatable
+  include TranslationParams
 
   before_action :load_answer, only: [:show, :edit, :update, :documents]
 

@@ -7,7 +7,7 @@ describe Poll do
     it_behaves_like "notifiable"
     it_behaves_like "acts as paranoid", :poll
     it_behaves_like "reportable"
-    it_behaves_like "globalizable", :poll
+    it_behaves_like "translatable", :poll
   end
 
   describe "validations" do

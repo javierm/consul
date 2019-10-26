@@ -8,7 +8,7 @@ describe Budget::Phase do
   let(:fourth_phase)  { budget.phases.reviewing }
   let(:final_phase) { budget.phases.finished }
 
-  it_behaves_like "globalizable", :budget_phase
+  it_behaves_like "translatable", :budget_phase
 
   describe "validates" do
     it "is not valid without a budget" do

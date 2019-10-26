@@ -7,7 +7,7 @@ class Legislation::DraftVersion < ApplicationRecord
   translates :title,     touch: true
   translates :changelog, touch: true
   translates :body,      touch: true
-  include Globalizable
+  include Translatable
 
   belongs_to :process, foreign_key: "legislation_process_id", inverse_of: :draft_versions
   has_many :annotations,

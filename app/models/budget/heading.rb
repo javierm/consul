@@ -5,7 +5,7 @@ class Budget
     include Sluggable
 
     translates :name, touch: true
-    include Globalizable
+    include Translatable
     translation_class_delegate :budget
 
     class Translation

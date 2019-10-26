@@ -1,5 +1,5 @@
 class Admin::BudgetPhasesController < Admin::BaseController
-  include Translatable
+  include TranslationParams
 
   before_action :load_phase, only: [:edit, :update]
 

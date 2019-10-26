@@ -1,5 +1,5 @@
 class Admin::BannersController < Admin::BaseController
-  include Translatable
+  include TranslationParams
 
   has_filters %w[all with_active with_inactive], only: :index
 

@@ -1,5 +1,5 @@
 class Tracking::ProgressBarsController < Tracking::BaseController
-  include Translatable
+  include TranslationParams
 
   before_action :load_progressable
   before_action :load_progress_bar, only: [:edit, :update, :destroy]

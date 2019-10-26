@@ -1,5 +1,5 @@
 class Admin::Legislation::DraftVersionsController < Admin::Legislation::BaseController
-  include Translatable
+  include TranslationParams
 
   load_and_authorize_resource :draft_version, class: "Legislation::DraftVersion", through: :process, prepend: true
   load_and_authorize_resource :process, class: "Legislation::Process", prepend: true

@@ -1,5 +1,5 @@
 class Admin::Legislation::ProcessesController < Admin::Legislation::BaseController
-  include Translatable
+  include TranslationParams
   include ImageAttributes
   include DownloadSettingsHelper
 

@@ -22,7 +22,7 @@ class Debate < ApplicationRecord
 
   translates :title, touch: true
   translates :description, touch: true
-  include Globalizable
+  include Translatable
 
   belongs_to :author, -> { with_hidden }, class_name: "User", inverse_of: :debates
   belongs_to :geozone

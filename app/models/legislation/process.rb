@@ -16,7 +16,7 @@ class Legislation::Process < ApplicationRecord
   translates :additional_info,    touch: true
   translates :milestones_summary, touch: true
   translates :homepage,           touch: true
-  include Globalizable
+  include Translatable
   extend DownloadSettings::LegislationProcessCsv
 
   PHASES_AND_PUBLICATIONS = %i[homepage_phase draft_phase debate_phase allegations_phase

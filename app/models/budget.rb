@@ -5,7 +5,7 @@ class Budget < ApplicationRecord
   include Reportable
 
   translates :name, touch: true
-  include Globalizable
+  include Translatable
 
   class Translation
     validate :name_uniqueness_by_budget
