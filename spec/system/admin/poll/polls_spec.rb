@@ -6,6 +6,11 @@ describe "Admin polls" do
     login_as(admin.user)
   end
 
+  it_behaves_like "edit_translatable",
+                  "poll",
+                  "edit_admin_poll_path",
+                  %w[name summary description]
+
   scenario "Index empty", :js do
     visit admin_root_path
 

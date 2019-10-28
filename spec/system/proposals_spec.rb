@@ -13,6 +13,16 @@ describe "Proposals" do
   context "Concerns" do
     it_behaves_like "notifiable in-app", :proposal
     it_behaves_like "relationable", Proposal
+    it_behaves_like "new_translatable",
+                    "proposal",
+                    "new_proposal_path",
+                    %w[title summary],
+                    { "description" => :ckeditor }
+    it_behaves_like "edit_translatable",
+                    "proposal",
+                    "edit_proposal_path",
+                    %w[title summary],
+                    { "description" => :ckeditor }
     it_behaves_like "remotely_translatable",
                     :proposal,
                     "proposals_path",
