@@ -34,7 +34,7 @@ module GlobalizeHelper
   end
 
   def first_i18n_content_translation_locale
-    if I18nContentTranslation.existing_languages.count == 0 ||
+    if I18nContentTranslation.existing_languages.empty? ||
         I18nContentTranslation.existing_languages.include?(I18n.locale)
       I18n.locale
     else
