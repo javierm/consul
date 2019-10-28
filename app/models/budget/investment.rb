@@ -419,14 +419,14 @@ class Budget
       end
 
       def change_log
-        changed.each do |field|
+        saved_changes.each do |field, (old_value, new_value)|
           unless field == "updated_at"
             log = Budget::Investment::ChangeLog.new
             log.field = field
             log.author_id = User.current_user.id unless User.current_user.nil?
             log.investment_id = id
-            log.new_value = send field
-            log.old_value = send "#{field}_was"
+            log.new_value = new_value
+            log.old_value = old_value
             !log.save
           end
         end
