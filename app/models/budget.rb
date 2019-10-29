@@ -11,9 +11,7 @@ class Budget < ApplicationRecord
     validate :name_uniqueness_by_budget
 
     def name_uniqueness_by_budget
-      if Budget.joins(:translations)
-               .where(name: name)
-               .where.not("budget_translations.budget_id": budget_id).any?
+      if self.class.where(name: name).where.not(budget_id: budget_id).any?
         errors.add(:name, I18n.t("errors.messages.taken"))
       end
     end
