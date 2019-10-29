@@ -8,6 +8,7 @@ class Widget::Card < ApplicationRecord
   # table_name must be set before calls to 'translates'
   self.table_name = "widget_cards"
 
+  extend Mobility
   translates :label,       touch: true
   translates :title,       touch: true
   translates :description, touch: true

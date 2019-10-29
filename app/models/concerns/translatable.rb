@@ -2,8 +2,34 @@ module Translatable
   MIN_TRANSLATIONS = 1
   extend ActiveSupport::Concern
 
+  class_methods do
+    def translation_class
+      "#{name}::Translation".constantize
+    end
+
+    def validates_translation(method, options = {})
+      validates(method, options.merge(if: lambda { |resource| resource.translations.blank? }))
+      if options.include?(:length)
+        lenght_validate = { length: options[:length] }
+        translation_class.instance_eval do
+          validates method, lenght_validate.merge(if: lambda { |translation| translation.locale == I18n.default_locale })
+        end
+        if options.count > 1
+          translation_class.instance_eval do
+            validates method, options.reject { |key| key == :length }
+          end
+        end
+      else
+        translation_class.instance_eval { validates method, options }
+      end
+    end
+
+    def translation_class_delegate(method)
+      translation_class.instance_eval { delegate method, to: :translated_model }
+    end
+  end
+
   included do
-    globalize_accessors
     accepts_nested_attributes_for :translations, allow_destroy: true
 
     validate :check_translations_number, on: :update, if: :translations_required?
@@ -23,6 +49,10 @@ module Translatable
 
     def translations_required?
       translated_attribute_names.any? { |attr| required_attribute?(attr) }
+    end
+
+    def translation_for(locale)
+      translations.in_locale(locale) || translations.build(locale: locale)
     end
 
     if self.paranoid? && translation_class.attribute_names.include?("hidden_at")
@@ -68,34 +98,11 @@ module Translatable
       def searchable_translated_values
         values = {}
         translations.each do |translation|
-          Globalize.with_locale(translation.locale) do
+          Mobility.with_locale(translation.locale) do
             values.merge! searchable_translations_definitions
           end
         end
         values
       end
-  end
-
-  class_methods do
-    def validates_translation(method, options = {})
-      validates(method, options.merge(if: lambda { |resource| resource.translations.blank? }))
-      if options.include?(:length)
-        lenght_validate = { length: options[:length] }
-        translation_class.instance_eval do
-          validates method, lenght_validate.merge(if: lambda { |translation| translation.locale == I18n.default_locale })
-        end
-        if options.count > 1
-          translation_class.instance_eval do
-            validates method, options.reject { |key| key == :length }
-          end
-        end
-      else
-        translation_class.instance_eval { validates method, options }
-      end
-    end
-
-    def translation_class_delegate(method)
-      translation_class.instance_eval { delegate method, to: :globalized_model }
-    end
   end
 end

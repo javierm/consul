@@ -7,7 +7,7 @@
   <% contents.each do |group| %>
     <% group.each do |content| %>
       <b><%= content.key %></b>
-      <% content.globalize_locales.each do |locale| %>
+      <% I18n.available_locales.each do |locale| %>
         <%= render "form_field", content: content, locale: locale %>
       <% end %>
     <% end %>

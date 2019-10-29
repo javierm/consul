@@ -3,6 +3,7 @@ class Legislation::Question < ApplicationRecord
   include ActsAsParanoidAliases
   include Notifiable
 
+  extend Mobility
   translates :title, touch: true
   include Translatable
 

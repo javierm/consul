@@ -2,6 +2,7 @@ class Legislation::QuestionOption < ApplicationRecord
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
 
+  extend Mobility
   translates :value, touch: true
   include Translatable
 

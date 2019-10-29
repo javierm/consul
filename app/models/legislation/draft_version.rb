@@ -4,6 +4,7 @@ class Legislation::DraftVersion < ApplicationRecord
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
 
+  extend Mobility
   translates :title,     touch: true
   translates :changelog, touch: true
   translates :body,      touch: true

@@ -13,7 +13,7 @@ describe "Remote Translations" do
     context "with locale that has :en fallback" do
       before do
         allow(I18n.fallbacks).to receive(:[]).and_return([:en])
-        Globalize.set_fallbacks_to_all_available_locales
+        Mobility.set_fallbacks_to_all_available_locales
       end
 
       scenario "should display text in English" do
@@ -34,7 +34,7 @@ describe "Remote Translations" do
     context "with locale that has :en fallback" do
       before do
         allow(I18n.fallbacks).to receive(:[]).and_return([:es])
-        Globalize.set_fallbacks_to_all_available_locales
+        Mobility.set_fallbacks_to_all_available_locales
       end
 
       scenario "with locale that has :es fallback" do

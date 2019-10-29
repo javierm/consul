@@ -4,7 +4,7 @@ module TranslationsHelper
   end
 
   def available_locales(resource)
-    I18n.available_locales.select { |locale| enabled_locale?(resource, locale) }.map do |locale|
+    I18n.available_locales.map(&:to_s).select { |locale| enabled_locale?(resource, locale) }.map do |locale|
       [name_for_locale(locale), locale, { data: { locale: locale }}]
     end
   end
@@ -17,7 +17,7 @@ module TranslationsHelper
     elsif resource.locales_persisted_and_marked_for_destruction.any?
       locale == first_marked_for_destruction_translation(resource)
     else
-      locale == I18n.locale
+      locale == I18n.locale.to_s
     end
   end
 
@@ -29,30 +29,30 @@ module TranslationsHelper
     elsif resource.locales_persisted_and_marked_for_destruction.any?
       first_marked_for_destruction_translation(resource)
     else
-      I18n.locale
+      I18n.locale.to_s
     end
   end
 
   def first_i18n_content_translation_locale
     if I18nContentTranslation.existing_languages.empty? ||
-        I18nContentTranslation.existing_languages.include?(I18n.locale)
-      I18n.locale
+        I18nContentTranslation.existing_languages.include?(I18n.locale.to_s)
+      I18n.locale.to_s
     else
       I18nContentTranslation.existing_languages.first
     end
   end
 
   def first_translation(resource)
-    if resource.locales_not_marked_for_destruction.include? I18n.locale
-      I18n.locale
+    if resource.locales_not_marked_for_destruction.include?(I18n.locale.to_s)
+      I18n.locale.to_s
     else
       resource.locales_not_marked_for_destruction.first
     end
   end
 
   def first_marked_for_destruction_translation(resource)
-    if resource.locales_persisted_and_marked_for_destruction.include? I18n.locale
-      I18n.locale
+    if resource.locales_persisted_and_marked_for_destruction.include?(I18n.locale.to_s)
+      I18n.locale.to_s
     else
       resource.locales_persisted_and_marked_for_destruction.first
     end
@@ -97,14 +97,14 @@ module TranslationsHelper
   end
 
   def display_translation?(resource, locale)
-    return locale == I18n.locale if resource.blank?
+    return locale == I18n.locale.to_s if resource.blank?
 
     if resource.locales_not_marked_for_destruction.any?
       locale == first_translation(resource)
     elsif resource.locales_persisted_and_marked_for_destruction.any?
       locale == first_marked_for_destruction_translation(resource)
     else
-      locale == I18n.locale
+      locale == I18n.locale.to_s
     end
   end
 
@@ -113,7 +113,7 @@ module TranslationsHelper
   end
 
   def display_destroy_locale_link?(resource, locale)
-    selected_locale(resource) == locale
+    selected_locale(resource) == locale.to_s
   end
 
   def options_for_add_language

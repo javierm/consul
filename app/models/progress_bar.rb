@@ -6,6 +6,7 @@ class ProgressBar < ApplicationRecord
 
   belongs_to :progressable, polymorphic: true
 
+  extend Mobility
   translates :title, touch: true
   include Translatable
   translation_class_delegate :primary?

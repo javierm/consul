@@ -50,7 +50,7 @@ describe Budget::Group do
     context "fallback locales" do
       before do
         allow(I18n.fallbacks).to receive(:[]).and_return([:es])
-        Globalize.set_fallbacks_to_all_available_locales
+        Mobility.set_fallbacks_to_all_available_locales
       end
 
       it "orders by name considering fallback locale," do

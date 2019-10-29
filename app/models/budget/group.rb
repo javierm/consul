@@ -2,6 +2,7 @@ class Budget
   class Group < ApplicationRecord
     include Sluggable
 
+    extend Mobility
     translates :name, touch: true
     include Translatable
     translation_class_delegate :budget

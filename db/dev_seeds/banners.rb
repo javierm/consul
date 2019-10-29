@@ -10,7 +10,7 @@ section "Creating banners" do
                         post_ended_at:   rand((Time.current - 1.day)..(Time.current + 1.week)),
                         created_at: rand((Time.current - 1.week)..Time.current))
     I18n.available_locales.map do |locale|
-      Globalize.with_locale(locale) do
+      Mobility.with_locale(locale) do
         banner.description = "Description for locale #{locale}"
         banner.title = "Title for locale #{locale}"
         banner.save!

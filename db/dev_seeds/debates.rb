@@ -11,7 +11,7 @@ section "Creating Debates" do
                             geozone: Geozone.all.sample,
                             terms_of_service: "1")
     random_locales.map do |locale|
-      Globalize.with_locale(locale) do
+      Mobility.with_locale(locale) do
         debate.title = "Title for locale #{locale}"
         debate.description = "<p>Description for locale #{locale}</p>"
         debate.save!
@@ -32,7 +32,7 @@ section "Creating Debates" do
                             geozone: Geozone.all.sample,
                             terms_of_service: "1")
     random_locales.map do |locale|
-      Globalize.with_locale(locale) do
+      Mobility.with_locale(locale) do
         debate.title = "Title for locale #{locale}"
         debate.description = "<p>Description for locale #{locale}</p>"
         debate.save!

@@ -392,6 +392,6 @@ describe "Admin poll questions" do
   end
 
   def french_fallbacks
-    Globalize.fallbacks(:fr).reject { |locale| locale.match(/fr/) }
+    I18n.fallbacks[:fr].reject { |locale| locale.match(/fr/) }
   end
 end

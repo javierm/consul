@@ -59,7 +59,7 @@ module Consul
     config.i18n.load_path += Dir[Rails.root.join("config", "locales", "custom", "**", "*.{rb,yml}")]
 
     config.after_initialize do
-      Globalize.set_fallbacks_to_all_available_locales
+      Mobility.set_fallbacks_to_all_available_locales
       GraphQLApi::Loader.setup
     end
 

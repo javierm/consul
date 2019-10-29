@@ -28,6 +28,7 @@ class Budget
 
     extend DownloadSettings::BudgetInvestmentCsv
 
+    extend Mobility
     translates :title, touch: true
     translates :description, touch: true
     include Translatable
@@ -204,7 +205,7 @@ class Budget
     end
 
     def self.search_by_title_or_id(title_or_id)
-      with_joins = with_translations(Globalize.fallbacks(I18n.locale))
+      with_joins = with_translations(I18n.fallbacks[I18n.locale])
 
       with_joins.where(id: title_or_id).
         or(with_joins.where("budget_investment_translations.title ILIKE ?", "%#{title_or_id}%"))

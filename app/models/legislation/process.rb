@@ -10,6 +10,7 @@ class Legislation::Process < ApplicationRecord
   acts_as_paranoid column: :hidden_at
   acts_as_taggable_on :customs
 
+  extend Mobility
   translates :title,              touch: true
   translates :summary,            touch: true
   translates :description,        touch: true

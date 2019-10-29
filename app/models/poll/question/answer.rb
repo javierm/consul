@@ -3,6 +3,7 @@ class Poll::Question::Answer < ApplicationRecord
   include Documentable
   paginates_per 10
 
+  extend Mobility
   translates :title,       touch: true
   translates :description, touch: true
   include Translatable

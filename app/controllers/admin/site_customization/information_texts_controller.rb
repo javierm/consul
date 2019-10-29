@@ -18,7 +18,7 @@ class Admin::SiteCustomization::InformationTextsController < Admin::SiteCustomiz
             next
           else
             text = I18nContent.find_or_create_by!(key: content[:id])
-            Globalize.with_locale(locale) { text.update!(value: value) }
+            Mobility.with_locale(locale) { text.update!(value: value) }
           end
         end
       end
@@ -49,7 +49,7 @@ class Admin::SiteCustomization::InformationTextsController < Admin::SiteCustomiz
 
     def translation_params
       I18nContent.translated_attribute_names.product(enabled_translations).map do |attr_name, loc|
-        I18nContent.localized_attr_name_for(attr_name, loc)
+        "#{attr_name}_#{loc.to_s.underscore}"
       end
     end
 

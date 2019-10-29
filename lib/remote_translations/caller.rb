@@ -13,7 +13,7 @@ class RemoteTranslations::Caller
   private
 
     def update_resource
-      Globalize.with_locale(locale) do
+      Mobility.with_locale(locale) do
         resource.translated_attribute_names.each_with_index do |field, index|
           resource.send(:"#{field}=", translations[index])
         end

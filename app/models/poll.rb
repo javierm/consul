@@ -9,6 +9,7 @@ class Poll < ApplicationRecord
   include StatsVersionable
   include Reportable
 
+  extend Mobility
   translates :name,        touch: true
   translates :summary,     touch: true
   translates :description, touch: true

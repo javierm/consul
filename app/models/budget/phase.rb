@@ -6,6 +6,7 @@ class Budget
     SUMMARY_MAX_LENGTH = 1000
     DESCRIPTION_MAX_LENGTH = 2000
 
+    extend Mobility
     translates :summary, touch: true
     translates :description, touch: true
     include Translatable

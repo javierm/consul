@@ -27,7 +27,7 @@ module TranslatableFormHelper
         @translations[locale] = translation_for(locale)
       end
       safe_join(visible_locales.map do |locale|
-        Globalize.with_locale(locale) { fields_for_locale(locale, &block) }
+        Mobility.with_locale(locale) { fields_for_locale(locale, &block) }
       end)
     end
 
@@ -38,7 +38,7 @@ module TranslatableFormHelper
           @template.content_tag :div, translations_options(translations_form.object, locale) do
             @template.concat translations_form.hidden_field(
               :_destroy,
-              value: !@template.enabled_locale?(translations_form.object.globalized_model, locale),
+              value: !@template.enabled_locale?(translations_form.object.translated_model, locale),
               data: { locale: locale }
             )
 
@@ -60,7 +60,7 @@ module TranslatableFormHelper
       end
 
       def existing_translation_for(locale)
-        @object.translations.find { |translation| translation.locale == locale }
+        @object.translations.in_locale(locale)
       end
 
       def new_translation_for(locale)
@@ -74,7 +74,7 @@ module TranslatableFormHelper
       def translations_options(resource, locale)
         {
           class: "translatable-fields js-translatable-attribute #{highlight_translation_html_class}",
-          style: @template.display_translation_style(resource.globalized_model, locale),
+          style: @template.display_translation_style(resource.translated_model, locale),
           data:  { locale: locale }
         }
       end
@@ -85,9 +85,9 @@ module TranslatableFormHelper
 
       def visible_locales
         if @template.translations_interface_enabled?
-          @object.globalize_locales
+          I18n.available_locales.map(&:to_s)
         else
-          [I18n.locale]
+          [I18n.locale.to_s]
         end
       end
   end

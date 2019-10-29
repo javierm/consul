@@ -5,6 +5,7 @@ class Poll::Question < ApplicationRecord
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
 
+  extend Mobility
   translates :title, touch: true
   include Translatable
 
@@ -58,7 +59,7 @@ class Poll::Question < ApplicationRecord
       self.author = proposal.author
       self.author_visible_name = proposal.author.name
       self.proposal_id = proposal.id
-      send(:"#{localized_attr_name_for(:title, Globalize.locale)}=", proposal.title)
+      send(:"title_#{Mobility.locale.to_s.underscore}=", proposal.title)
     end
   end
 
@@ -93,6 +94,6 @@ class Poll::Question < ApplicationRecord
   end
 
   def possible_answers
-    question_answers.visibles.joins(:translations).pluck("poll_question_answer_translations.title")
+    question_answers.visibles.i18n.pluck(:title)
   end
 end

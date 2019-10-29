@@ -2,6 +2,7 @@ class Milestone < ApplicationRecord
   include Imageable
   include Documentable
 
+  extend Mobility
   translates :title, :description, touch: true
   include Translatable
   translation_class_delegate :status_id

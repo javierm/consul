@@ -8,6 +8,6 @@ module I18nFallbacks
   private
 
     def initialize_i18n_fallbacks
-      Globalize.set_fallbacks_to_all_available_locales
+      Mobility.set_fallbacks_to_all_available_locales
     end
 end

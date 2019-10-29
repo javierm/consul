@@ -4,6 +4,7 @@ class Budget < ApplicationRecord
   include StatsVersionable
   include Reportable
 
+  extend Mobility
   translates :name, touch: true
   include Translatable
 

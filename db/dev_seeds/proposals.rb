@@ -41,7 +41,7 @@ section "Creating Proposals" do
                                 terms_of_service: "1",
                                 published_at: Time.current)
     random_locales.map do |locale|
-      Globalize.with_locale(locale) do
+      Mobility.with_locale(locale) do
         proposal.title = "Title for locale #{locale}"
         proposal.summary = "Summary for locale #{locale}"
         proposal.description = "<p>Description for locale #{locale}</p>"
@@ -70,7 +70,7 @@ section "Creating Archived Proposals" do
                                 created_at: months_to_archive_proposals.to_i.months.ago,
                                 published_at: months_to_archive_proposals.to_i.months.ago)
     random_locales.map do |locale|
-      Globalize.with_locale(locale) do
+      Mobility.with_locale(locale) do
         proposal.title = "Archived proposal title for locale #{locale}"
         proposal.summary = "Archived proposal title summary for locale #{locale}"
         proposal.description = "<p>Archived proposal description for locale #{locale}</p>"
@@ -99,7 +99,7 @@ section "Creating Successful Proposals" do
                                 cached_votes_up: Setting["votes_for_proposal_success"],
                                 published_at: Time.current)
     random_locales.map do |locale|
-      Globalize.with_locale(locale) do
+      Mobility.with_locale(locale) do
         proposal.title = "Successful proposal title for locale #{locale}"
         proposal.summary = "Successful proposal title summary for locale #{locale}"
         proposal.description = "<p>Successful proposal description for locale #{locale}</p>"
@@ -125,7 +125,7 @@ section "Creating Successful Proposals" do
                                 terms_of_service: "1",
                                 published_at: Time.current)
     random_locales.map do |locale|
-      Globalize.with_locale(locale) do
+      Mobility.with_locale(locale) do
         proposal.title = "Tagged proposal title for locale #{locale}"
         proposal.summary = "Tagged proposal title summary for locale #{locale}"
         proposal.description = "<p>Tagged proposal description for locale #{locale}</p>"

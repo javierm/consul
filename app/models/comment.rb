@@ -18,6 +18,7 @@ class Comment < ApplicationRecord
 
   attr_accessor :as_moderator, :as_administrator
 
+  extend Mobility
   translates :body, touch: true
   include Translatable
 

@@ -2,6 +2,7 @@ class Banner < ApplicationRecord
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
 
+  extend Mobility
   translates :title,       touch: true
   translates :description, touch: true
   include Translatable

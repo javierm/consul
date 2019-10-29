@@ -42,7 +42,7 @@ section "Creating Budgets" do
   Budget.find_each do |budget|
     budget.phases.each do |phase|
       random_locales.map do |locale|
-        Globalize.with_locale(locale) do
+        Mobility.with_locale(locale) do
           phase.description = "Description for locale #{locale}"
           phase.summary = "Summary for locale #{locale}"
           phase.save!
@@ -139,7 +139,7 @@ section "Creating Investments" do
     )
 
     random_locales.map do |locale|
-      Globalize.with_locale(locale) do
+      Mobility.with_locale(locale) do
         investment.title = "Title for locale #{locale}"
         investment.description = "<p>Description for locale #{locale}</p>"
         investment.save!

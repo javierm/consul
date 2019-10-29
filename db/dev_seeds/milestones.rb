@@ -15,7 +15,7 @@ section "Creating investment milestones" do
         )
 
         random_locales.map do |locale|
-          Globalize.with_locale(locale) do
+          Mobility.with_locale(locale) do
             milestone.description = "Description for locale #{locale}"
             milestone.title = I18n.l(Time.current, format: :datetime)
             milestone.save!
@@ -34,7 +34,7 @@ section "Creating investment milestones" do
         )
 
         random_locales.map do |locale|
-          Globalize.with_locale(locale) do
+          Mobility.with_locale(locale) do
             progress_bar.title = "Description for locale #{locale}"
             progress_bar.save!
           end

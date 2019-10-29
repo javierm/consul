@@ -1,6 +1,7 @@
 class AdminNotification < ApplicationRecord
   include Notifiable
 
+  extend Mobility
   translates :title, touch: true
   translates :body,  touch: true
   include Translatable

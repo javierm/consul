@@ -41,7 +41,7 @@ RSpec.describe Poll::Question, type: :model do
 
         expect(poll_question.title).to eq(proposal.title)
         expect(translation.title).to eq(proposal.title)
-        expect(translation.locale).to eq(:"pt-BR")
+        expect(translation.locale).to eq("pt-BR")
       end
     end
   end

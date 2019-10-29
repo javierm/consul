@@ -28,6 +28,7 @@ class Proposal < ApplicationRecord
 
   RETIRE_OPTIONS = %w[duplicated started unfeasible done other].freeze
 
+  extend Mobility
   translates :title, touch: true
   translates :description, touch: true
   translates :summary, touch: true
