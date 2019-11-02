@@ -1,10 +1,11 @@
 namespace :secrets do
   desc "Add SMTP settings to secrets.yml"
-  task smtp_and_ssl: :environment do
+  task smtp_ssl_and_delay_jobs: :environment do
     current_settings = {
       "mailer_deliver_method" => ActionMailer::Base.delivery_method.to_s,
       "smtp_settings"         => ActionMailer::Base.smtp_settings.stringify_keys,
-      "force_ssl"             => Rails.application.config.force_ssl
+      "force_ssl"             => Rails.application.config.force_ssl,
+      "delay_jobs"            => Delayed::Worker.delay_jobs
     }
 
     settings_to_add = current_settings.select do |name, _|
