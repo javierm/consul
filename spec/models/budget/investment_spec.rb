@@ -756,7 +756,7 @@ describe Budget::Investment do
   end
 
   describe "search" do
-    context "attributes" do
+    context "attributes", :spanish_search do
       let(:attributes) do
         { title: "save the world",
           description: "in order to save the world one must think about...",
@@ -785,7 +785,7 @@ describe Budget::Investment do
     end
 
     context "tags" do
-      it "searches by tags" do
+      it "searches by tags", :spanish_search do
         investment = create(:budget_investment, tag_list: "Latina")
 
         results = Budget::Investment.search("Latina")
