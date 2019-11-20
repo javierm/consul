@@ -17,7 +17,7 @@ module StatsHelper
 
   def graph_link_text(event)
     text = t("admin.stats.graph.#{event}")
-    if text.to_s.match(/translation missing/)
+    if text.to_s.match?(/translation missing/)
       text = event
     end
     text

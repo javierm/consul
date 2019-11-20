@@ -118,11 +118,11 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
     end
 
     def valid_price_params?
-      if /\D/.match params[:budget_investment][:price]
+      if /\D/.match? params[:budget_investment][:price]
         @investment.errors.add(:price, I18n.t("budgets.investments.wrong_price_format"))
       end
 
-      if /\D/.match params[:budget_investment][:price_first_year]
+      if /\D/.match? params[:budget_investment][:price_first_year]
         @investment.errors.add(:price_first_year, I18n.t("budgets.investments.wrong_price_format"))
       end
 
