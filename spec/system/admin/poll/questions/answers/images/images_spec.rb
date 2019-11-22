@@ -26,7 +26,7 @@ describe "Images" do
     end
   end
 
-  scenario "Add image to answer", :js do
+  scenario "Add image to answer" do
     answer = create(:poll_question_answer)
     image = create(:image)
 
@@ -42,7 +42,7 @@ describe "Images" do
     expect(page).to have_content("clippy.jpg")
   end
 
-  scenario "Remove image from answer", :js do
+  scenario "Remove image from answer" do
     answer = create(:poll_question_answer)
     image = create(:image, imageable: answer)
 

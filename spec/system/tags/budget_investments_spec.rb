@@ -80,7 +80,7 @@ describe "Tags" do
     expect(page).to have_content tag_medio_ambiente.name
   end
 
-  scenario "Category with category tags", :js do
+  scenario "Category with category tags" do
     login_as(author)
 
     visit new_budget_investment_path(budget_id: budget.id)
@@ -101,7 +101,7 @@ describe "Tags" do
     end
   end
 
-  scenario "Turbolinks sanity check from budget's show", :js do
+  scenario "Turbolinks sanity check from budget's show" do
     create(:tag, name: "Education", kind: "category")
     create(:tag, name: "Health",    kind: "category")
 
@@ -125,7 +125,7 @@ describe "Tags" do
     end
   end
 
-  scenario "Turbolinks sanity check from budget heading's show", :js do
+  scenario "Turbolinks sanity check from budget heading's show" do
     create(:tag, name: "Education", kind: "category")
     create(:tag, name: "Health",    kind: "category")
 

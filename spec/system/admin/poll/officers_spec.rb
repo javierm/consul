@@ -15,7 +15,7 @@ describe "Admin poll officers" do
     expect(page).not_to have_content user.name
   end
 
-  scenario "Create", :js do
+  scenario "Create" do
     fill_in "email", with: user.email
     click_button "Search"
 

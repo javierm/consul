@@ -9,7 +9,7 @@ describe "Admin budget phases" do
       login_as(admin.user)
     end
 
-    scenario "Update phase", :js do
+    scenario "Update phase" do
       visit edit_admin_budget_budget_phase_path(budget, budget.current_phase)
 
       fill_in "start_date", with: Date.current + 1.day

@@ -345,7 +345,7 @@ describe "Debates" do
     expect(page).to have_content error_message
   end
 
-  scenario "Flagging", :js do
+  scenario "Flagging" do
     user = create(:user)
     debate = create(:debate)
 
@@ -362,7 +362,7 @@ describe "Debates" do
     expect(Flag.flagged?(user, debate)).to be
   end
 
-  scenario "Unflagging", :js do
+  scenario "Unflagging" do
     user = create(:user)
     debate = create(:debate)
     Flag.flag(user, debate)
@@ -381,7 +381,7 @@ describe "Debates" do
   end
 
   describe "Debate index order filters" do
-    scenario "Default order is hot_score", :js do
+    scenario "Default order is hot_score" do
       best_debate = create(:debate, title: "Best")
       best_debate.update_column(:hot_score, 10)
       worst_debate = create(:debate, title: "Worst")
@@ -395,7 +395,7 @@ describe "Debates" do
       expect(medium_debate.title).to appear_before(worst_debate.title)
     end
 
-    scenario "Debates are ordered by confidence_score", :js do
+    scenario "Debates are ordered by confidence_score" do
       best_debate = create(:debate, title: "Best")
       best_debate.update_column(:confidence_score, 10)
       worst_debate = create(:debate, title: "Worst")
@@ -417,7 +417,7 @@ describe "Debates" do
       expect(current_url).to include("page=1")
     end
 
-    scenario "Debates are ordered by newest", :js do
+    scenario "Debates are ordered by newest" do
       best_debate = create(:debate, title: "Best", created_at: Time.current)
       medium_debate = create(:debate, title: "Medium", created_at: Time.current - 1.hour)
       worst_debate = create(:debate, title: "Worst", created_at: Time.current - 1.day)
@@ -514,7 +514,7 @@ describe "Debates" do
         expect(page).not_to have_link("recommendations")
       end
 
-      scenario "are automatically disabled when dismissed from index", :js do
+      scenario "are automatically disabled when dismissed from index" do
         proposal = create(:proposal, tag_list: "Sport")
         user     = create(:user, followables: [proposal])
 
@@ -580,7 +580,7 @@ describe "Debates" do
     end
 
     context "Advanced search" do
-      scenario "Search by text", :js do
+      scenario "Search by text" do
         debate1 = create(:debate, title: "Get Schwifty")
         debate2 = create(:debate, title: "Schwifty Hello")
         debate3 = create(:debate, title: "Do not show me")
@@ -601,7 +601,7 @@ describe "Debates" do
       end
 
       context "Search by author type" do
-        scenario "Public employee", :js do
+        scenario "Public employee" do
           ana = create :user, official_level: 1
           john = create :user, official_level: 2
 
@@ -624,7 +624,7 @@ describe "Debates" do
           end
         end
 
-        scenario "Municipal Organization", :js do
+        scenario "Municipal Organization" do
           ana = create :user, official_level: 2
           john = create :user, official_level: 3
 
@@ -647,7 +647,7 @@ describe "Debates" do
           end
         end
 
-        scenario "General director", :js do
+        scenario "General director" do
           ana = create :user, official_level: 3
           john = create :user, official_level: 4
 
@@ -670,7 +670,7 @@ describe "Debates" do
           end
         end
 
-        scenario "City councillor", :js do
+        scenario "City councillor" do
           ana = create :user, official_level: 4
           john = create :user, official_level: 5
 
@@ -693,7 +693,7 @@ describe "Debates" do
           end
         end
 
-        scenario "Mayoress", :js do
+        scenario "Mayoress" do
           ana = create :user, official_level: 5
           john = create :user, official_level: 4
 
@@ -719,7 +719,7 @@ describe "Debates" do
 
       context "Search by date" do
         context "Predefined date ranges" do
-          scenario "Last day", :js do
+          scenario "Last day" do
             debate1 = create(:debate, created_at: 1.minute.ago)
             debate2 = create(:debate, created_at: 1.hour.ago)
             debate3 = create(:debate, created_at: 2.days.ago)
@@ -739,7 +739,7 @@ describe "Debates" do
             end
           end
 
-          scenario "Last week", :js do
+          scenario "Last week" do
             debate1 = create(:debate, created_at: 1.day.ago)
             debate2 = create(:debate, created_at: 5.days.ago)
             debate3 = create(:debate, created_at: 8.days.ago)
@@ -759,7 +759,7 @@ describe "Debates" do
             end
           end
 
-          scenario "Last month", :js do
+          scenario "Last month" do
             debate1 = create(:debate, created_at: 10.days.ago)
             debate2 = create(:debate, created_at: 20.days.ago)
             debate3 = create(:debate, created_at: 33.days.ago)
@@ -779,7 +779,7 @@ describe "Debates" do
             end
           end
 
-          scenario "Last year", :js do
+          scenario "Last year" do
             debate1 = create(:debate, created_at: 300.days.ago)
             debate2 = create(:debate, created_at: 350.days.ago)
             debate3 = create(:debate, created_at: 370.days.ago)
@@ -800,7 +800,7 @@ describe "Debates" do
           end
         end
 
-        scenario "Search by custom date range", :js do
+        scenario "Search by custom date range" do
           debate1 = create(:debate, created_at: 2.days.ago)
           debate2 = create(:debate, created_at: 3.days.ago)
           debate3 = create(:debate, created_at: 9.days.ago)
@@ -822,7 +822,7 @@ describe "Debates" do
           end
         end
 
-        scenario "Search by custom invalid date range", :js do
+        scenario "Search by custom invalid date range" do
           debate1 = create(:debate, created_at: 2.years.ago)
           debate2 = create(:debate, created_at: 3.days.ago)
           debate3 = create(:debate, created_at: 9.days.ago)
@@ -844,7 +844,7 @@ describe "Debates" do
           end
         end
 
-        scenario "Search by multiple filters", :js do
+        scenario "Search by multiple filters" do
           ana  = create :user, official_level: 1
           john = create :user, official_level: 1
 
@@ -867,7 +867,7 @@ describe "Debates" do
           end
         end
 
-        scenario "Maintain advanced search criteria", :js do
+        scenario "Maintain advanced search criteria" do
           visit debates_path
           click_link "Advanced search"
 
@@ -884,7 +884,7 @@ describe "Debates" do
           end
         end
 
-        scenario "Maintain custom date search criteria", :js do
+        scenario "Maintain custom date search criteria" do
           visit debates_path
           click_link "Advanced search"
 
@@ -902,7 +902,7 @@ describe "Debates" do
       end
     end
 
-    scenario "Order by relevance by default", :js do
+    scenario "Order by relevance by default" do
       create(:debate, title: "Show you got",      cached_votes_up: 10)
       create(:debate, title: "Show what you got", cached_votes_up: 1)
       create(:debate, title: "Show you got",      cached_votes_up: 100)
@@ -920,7 +920,7 @@ describe "Debates" do
       end
     end
 
-    scenario "Reorder results maintaing search", :js do
+    scenario "Reorder results maintaing search" do
       create(:debate, title: "Show you got",      cached_votes_up: 10,  created_at: 1.week.ago)
       create(:debate, title: "Show what you got", cached_votes_up: 1,   created_at: 1.month.ago)
       create(:debate, title: "Show you got",      cached_votes_up: 100, created_at: Time.current)
@@ -1066,7 +1066,7 @@ describe "Debates" do
   end
 
   context "Suggesting debates" do
-    scenario "Shows up to 5 suggestions", :js do
+    scenario "Shows up to 5 suggestions" do
       create(:debate, title: "First debate has 1 vote", cached_votes_up: 1)
       create(:debate, title: "Second debate has 2 votes", cached_votes_up: 2)
       create(:debate, title: "Third debate has 3 votes", cached_votes_up: 3)
@@ -1085,7 +1085,7 @@ describe "Debates" do
       end
     end
 
-    scenario "No found suggestions", :js do
+    scenario "No found suggestions" do
       create(:debate, title: "First debate has 10 vote", cached_votes_up: 10)
       create(:debate, title: "Second debate has 2 votes", cached_votes_up: 2)
 

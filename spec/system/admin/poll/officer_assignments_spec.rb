@@ -24,7 +24,7 @@ describe "Officer Assignments" do
     end
   end
 
-  scenario "Search", :js do
+  scenario "Search" do
     poll = create(:poll)
 
     create(:poll_officer, name: "John Snow", polls: [poll])

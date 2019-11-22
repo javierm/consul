@@ -30,7 +30,7 @@ describe "Admin shifts" do
     expect(page).to have_content officer.email
   end
 
-  scenario "Create Vote Collection Shift and Recount & Scrutiny Shift on same date", :js do
+  scenario "Create Vote Collection Shift and Recount & Scrutiny Shift on same date" do
     create(:poll)
     poll = create(:poll, :current)
     booth = create(:poll_booth, polls: [poll, create(:poll, :expired)])
@@ -93,7 +93,7 @@ describe "Admin shifts" do
     end
   end
 
-  scenario "Vote Collection Shift and Recount & Scrutiny Shift don't include already assigned dates to officer", :js do
+  scenario "Vote Collection Shift and Recount & Scrutiny Shift don't include already assigned dates to officer" do
     poll = create(:poll, :current)
     booth = create(:poll_booth, polls: [poll])
     officer = create(:poll_officer)
@@ -125,7 +125,7 @@ describe "Admin shifts" do
     expect(page).to have_select("shift_date_recount_scrutiny_date", options: ["Select day", *recount_scrutiny_dates])
   end
 
-  scenario "Change option from Recount & Scrutinity to Collect Votes", :js do
+  scenario "Change option from Recount & Scrutinity to Collect Votes" do
     booth = create(:poll_booth)
     officer = create(:poll_officer)
 
@@ -143,7 +143,7 @@ describe "Admin shifts" do
     expect(page).to have_select("shift_date_vote_collection_date", options: ["Voting days ended"])
   end
 
-  scenario "Error on create", :js do
+  scenario "Error on create" do
     poll = create(:poll, :current)
     booth = create(:poll_booth, polls: [poll])
     officer = create(:poll_officer)

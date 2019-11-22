@@ -15,7 +15,7 @@ describe "Admin managers" do
     expect(page).not_to have_content user.name
   end
 
-  scenario "Create Manager", :js do
+  scenario "Create Manager" do
     fill_in "name_or_email", with: user.email
     click_button "Search"
 

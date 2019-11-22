@@ -130,7 +130,7 @@ describe "Proposals" do
   context "Voting" do
     let!(:proposal) { create(:proposal) }
 
-    scenario "Voting proposals on behalf of someone in index view", :js do
+    scenario "Voting proposals on behalf of someone in index view" do
       user = create(:user, :level_two)
       login_managed_user(user)
 
@@ -145,7 +145,7 @@ describe "Proposals" do
       expect(page).to have_current_path(management_proposals_path)
     end
 
-    scenario "Voting proposals on behalf of someone in show view", :js do
+    scenario "Voting proposals on behalf of someone in show view" do
       user = create(:user, :level_two)
       login_managed_user(user)
 
@@ -180,7 +180,7 @@ describe "Proposals" do
       expect(page).to have_css("a[href='javascript:window.print();']", text: "Print")
     end
 
-    scenario "Filtering proposals to be printed", :js do
+    scenario "Filtering proposals to be printed" do
       worst_proposal = create(:proposal, title: "Worst proposal")
       worst_proposal.update_column(:confidence_score, 2)
       best_proposal = create(:proposal, title: "Best proposal")

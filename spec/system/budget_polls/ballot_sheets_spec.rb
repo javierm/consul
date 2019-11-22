@@ -123,7 +123,7 @@ describe "Poll budget ballot sheets" do
       expect(page).to have_content("CSV data can't be blank")
     end
 
-    scenario "Shift booth has to be selected", :js do
+    scenario "Shift booth has to be selected" do
       visit new_officing_poll_ballot_sheet_path(poll)
 
       fill_in "data", with: "1234;5678"

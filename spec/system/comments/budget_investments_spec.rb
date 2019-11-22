@@ -57,7 +57,7 @@ describe "Commenting Budget::Investments" do
     expect(page).to have_current_path(comment_path(comment))
   end
 
-  scenario "Collapsable comments", :js do
+  scenario "Collapsable comments" do
     parent_comment = create(:comment, body: "Main comment", commentable: investment)
     child_comment  = create(:comment, body: "First subcomment", commentable: investment, parent: parent_comment)
     grandchild_comment = create(:comment, body: "Last subcomment", commentable: investment, parent: child_comment)
@@ -190,7 +190,7 @@ describe "Commenting Budget::Investments" do
     end
   end
 
-  scenario "Create", :js do
+  scenario "Create" do
     login_as(user)
     visit budget_investment_path(investment.budget, investment)
 
@@ -206,7 +206,7 @@ describe "Commenting Budget::Investments" do
     end
   end
 
-  scenario "Errors on create", :js do
+  scenario "Errors on create" do
     login_as(user)
     visit budget_investment_path(investment.budget, investment)
 
@@ -215,7 +215,7 @@ describe "Commenting Budget::Investments" do
     expect(page).to have_content "Can't be blank"
   end
 
-  scenario "Reply", :js do
+  scenario "Reply" do
     citizen = create(:user, username: "Ana")
     manuela = create(:user, username: "Manuela")
     comment = create(:comment, commentable: investment, user: citizen)
@@ -237,7 +237,7 @@ describe "Commenting Budget::Investments" do
     expect(page).not_to have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
   end
 
-  scenario "Errors on reply", :js do
+  scenario "Errors on reply" do
     comment = create(:comment, commentable: investment, user: user)
 
     login_as(user)
@@ -251,7 +251,7 @@ describe "Commenting Budget::Investments" do
     end
   end
 
-  scenario "N replies", :js do
+  scenario "N replies" do
     parent = create(:comment, commentable: investment)
 
     7.times do
@@ -263,7 +263,7 @@ describe "Commenting Budget::Investments" do
     expect(page).to have_css(".comment.comment.comment.comment.comment.comment.comment.comment")
   end
 
-  scenario "Flagging as inappropriate", :js do
+  scenario "Flagging as inappropriate" do
     comment = create(:comment, commentable: investment)
 
     login_as(user)
@@ -279,7 +279,7 @@ describe "Commenting Budget::Investments" do
     expect(Flag.flagged?(user, comment)).to be
   end
 
-  scenario "Undoing flagging as inappropriate", :js do
+  scenario "Undoing flagging as inappropriate" do
     comment = create(:comment, commentable: investment)
     Flag.flag(user, comment)
 
@@ -296,7 +296,7 @@ describe "Commenting Budget::Investments" do
     expect(Flag.flagged?(user, comment)).not_to be
   end
 
-  scenario "Flagging turbolinks sanity check", :js do
+  scenario "Flagging turbolinks sanity check" do
     investment = create(:budget_investment, title: "Should we change the world?")
     comment = create(:comment, commentable: investment)
 
@@ -323,7 +323,7 @@ describe "Commenting Budget::Investments" do
   end
 
   describe "Moderators" do
-    scenario "can create comment as a moderator", :js do
+    scenario "can create comment as a moderator" do
       moderator = create(:moderator)
 
       login_as(moderator.user)
@@ -341,7 +341,7 @@ describe "Commenting Budget::Investments" do
       end
     end
 
-    scenario "can create reply as a moderator", :js do
+    scenario "can create reply as a moderator" do
       citizen = create(:user, username: "Ana")
       manuela = create(:user, username: "Manuela")
       moderator = create(:moderator, user: manuela)
@@ -380,7 +380,7 @@ describe "Commenting Budget::Investments" do
 
   describe "Administrators" do
     context "comment as administrator" do
-      scenario "can create comment", :js do
+      scenario "can create comment" do
         admin = create(:administrator)
 
         login_as(admin.user)
@@ -398,7 +398,7 @@ describe "Commenting Budget::Investments" do
         end
       end
 
-      scenario "display administrator description on admin views", :js do
+      scenario "display administrator description on admin views" do
         admin = create(:administrator, description: "user description")
 
         login_as(admin.user)
@@ -423,7 +423,7 @@ describe "Commenting Budget::Investments" do
         end
       end
 
-      scenario "display administrator id on public views", :js do
+      scenario "display administrator id on public views" do
         admin = create(:administrator, description: "user description")
 
         login_as(admin.user)
@@ -441,7 +441,7 @@ describe "Commenting Budget::Investments" do
         end
       end
 
-      scenario "can create reply as an administrator", :js do
+      scenario "can create reply as an administrator" do
         citizen = create(:user, username: "Ana")
         manuela = create(:user, username: "Manuela")
         admin   = create(:administrator, user: manuela)
@@ -468,7 +468,7 @@ describe "Commenting Budget::Investments" do
         expect(page).to have_css "div.is-admin"
       end
 
-      scenario "public users not see admin description", :js do
+      scenario "public users not see admin description" do
         manuela = create(:user, username: "Manuela")
         admin   = create(:administrator, user: manuela)
         comment = create(:comment,
@@ -527,7 +527,7 @@ describe "Commenting Budget::Investments" do
       end
     end
 
-    scenario "Create", :js do
+    scenario "Create" do
       visit budget_investment_path(budget, investment)
 
       within("#comment_#{comment.id}_votes") do
@@ -545,7 +545,7 @@ describe "Commenting Budget::Investments" do
       end
     end
 
-    scenario "Update", :js do
+    scenario "Update" do
       visit budget_investment_path(budget, investment)
 
       within("#comment_#{comment.id}_votes") do
@@ -569,7 +569,7 @@ describe "Commenting Budget::Investments" do
       end
     end
 
-    scenario "Trying to vote multiple times", :js do
+    scenario "Trying to vote multiple times" do
       visit budget_investment_path(budget, investment)
 
       within("#comment_#{comment.id}_votes") do

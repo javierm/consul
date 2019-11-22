@@ -58,7 +58,7 @@ describe "Internal valuation comments on Budget::Investments" do
       end
     end
 
-    scenario "Collapsable comments", :js do
+    scenario "Collapsable comments" do
       parent_comment = create(:comment, :valuation, author: valuator_user, body: "Main comment",
                                                     commentable: investment)
       child_comment  = create(:comment, :valuation, author: valuator_user, body: "First child",
@@ -165,7 +165,7 @@ describe "Internal valuation comments on Budget::Investments" do
       expect(comment.errors.size).to eq(1)
     end
 
-    scenario "Create comment", :js do
+    scenario "Create comment" do
       visit valuation_budget_budget_investment_path(budget, investment)
 
       fill_in "Leave your comment", with: "Have you thought about...?"
@@ -179,7 +179,7 @@ describe "Internal valuation comments on Budget::Investments" do
       expect(page).not_to have_content("Have you thought about...?")
     end
 
-    scenario "Errors on create without comment text", :js do
+    scenario "Errors on create without comment text" do
       visit valuation_budget_budget_investment_path(budget, investment)
 
       click_button "Publish comment"
@@ -187,7 +187,7 @@ describe "Internal valuation comments on Budget::Investments" do
       expect(page).to have_content "Can't be blank"
     end
 
-    scenario "Reply to existing valuation", :js do
+    scenario "Reply to existing valuation" do
       comment = create(:comment, :valuation, author: admin_user, commentable: investment)
 
       login_as(valuator_user)
@@ -210,7 +210,7 @@ describe "Internal valuation comments on Budget::Investments" do
       expect(page).not_to have_content("It will be done next week.")
     end
 
-    scenario "Errors on reply without comment text", :js do
+    scenario "Errors on reply without comment text" do
       comment = create(:comment, :valuation, author: admin_user, commentable: investment)
 
       visit valuation_budget_budget_investment_path(budget, investment)
@@ -223,7 +223,7 @@ describe "Internal valuation comments on Budget::Investments" do
       end
     end
 
-    scenario "Multiple nested replies", :js do
+    scenario "Multiple nested replies" do
       parent = create(:comment, :valuation, author: valuator_user, commentable: investment)
 
       7.times do
@@ -253,7 +253,7 @@ describe "Internal valuation comments on Budget::Investments" do
   end
 
   describe "Administrators" do
-    scenario "can create valuation comment as an administrator", :js do
+    scenario "can create valuation comment as an administrator" do
       login_as(admin_user)
       visit valuation_budget_budget_investment_path(budget, investment)
 
@@ -269,7 +269,7 @@ describe "Internal valuation comments on Budget::Investments" do
       end
     end
 
-    scenario "can create valuation reply as an administrator", :js do
+    scenario "can create valuation reply as an administrator" do
       comment = create(:comment, :valuation, author: valuator_user, commentable: investment)
 
       login_as(admin_user)
@@ -294,7 +294,7 @@ describe "Internal valuation comments on Budget::Investments" do
     end
   end
 
-  scenario "Send email notification", :js do
+  scenario "Send email notification" do
     ActionMailer::Base.deliveries = []
 
     login_as(admin_user)

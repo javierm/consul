@@ -81,7 +81,7 @@ describe "Tags" do
     expect(page).to have_content "Hacienda"
   end
 
-  scenario "Category with category tags", :js do
+  scenario "Category with category tags" do
     create(:tag, :category, name: "Education")
     create(:tag, :category, name: "Health")
 

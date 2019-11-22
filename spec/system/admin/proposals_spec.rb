@@ -27,7 +27,7 @@ describe "Admin proposals" do
       expect(page).not_to have_content "Build a monument"
     end
 
-    scenario "Select a proposal", :js do
+    scenario "Select a proposal" do
       proposal = create(:proposal)
 
       visit admin_proposals_path
@@ -38,7 +38,7 @@ describe "Admin proposals" do
       expect(proposal.reload.selected?).to be true
     end
 
-    scenario "Unselect a proposal", :js do
+    scenario "Unselect a proposal" do
       proposal = create(:proposal, :selected)
 
       visit admin_proposals_path

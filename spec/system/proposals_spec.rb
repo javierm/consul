@@ -212,7 +212,7 @@ describe "Proposals" do
       Capybara.current_window.resize_to(*window_size)
     end
 
-    scenario "Show support button sticky at bottom", :js do
+    scenario "Show support button sticky at bottom" do
       proposal = create(:proposal)
       visit proposal_path(proposal)
 
@@ -537,7 +537,7 @@ describe "Proposals" do
       expect(page).to have_content "There are three other better proposals with the same subject"
     end
 
-    scenario "Fields are mandatory", :js do
+    scenario "Fields are mandatory" do
       proposal = create(:proposal)
       login_as(proposal.author)
 
@@ -678,7 +678,7 @@ describe "Proposals" do
   end
 
   describe "Proposal index order filters" do
-    scenario "Default order is hot_score", :js do
+    scenario "Default order is hot_score" do
       best_proposal = create(:proposal, title: "Best proposal")
       best_proposal.update_column(:hot_score, 10)
       worst_proposal = create(:proposal, title: "Worst proposal")
@@ -692,7 +692,7 @@ describe "Proposals" do
       expect(medium_proposal.title).to appear_before(worst_proposal.title)
     end
 
-    scenario "Proposals are ordered by confidence_score", :js do
+    scenario "Proposals are ordered by confidence_score" do
       best_proposal = create(:proposal, title: "Best proposal")
       best_proposal.update_column(:confidence_score, 10)
       worst_proposal = create(:proposal, title: "Worst proposal")
@@ -713,7 +713,7 @@ describe "Proposals" do
       expect(current_url).to include("page=1")
     end
 
-    scenario "Proposals are ordered by newest", :js do
+    scenario "Proposals are ordered by newest" do
       best_proposal = create(:proposal, title: "Best proposal", created_at: Time.current)
       medium_proposal = create(:proposal, title: "Medium proposal", created_at: Time.current - 1.hour)
       worst_proposal = create(:proposal, title: "Worst proposal", created_at: Time.current - 1.day)
@@ -809,7 +809,7 @@ describe "Proposals" do
         expect(page).not_to have_link("recommendations")
       end
 
-      scenario "are automatically disabled when dismissed from index", :js do
+      scenario "are automatically disabled when dismissed from index" do
         proposal = create(:proposal, tag_list: "Sport")
         user     = create(:user, followables: [proposal])
 
@@ -1083,7 +1083,7 @@ describe "Proposals" do
     end
 
     context "Advanced search" do
-      scenario "Search by text", :js do
+      scenario "Search by text" do
         proposal1 = create(:proposal, title: "Get Schwifty")
         proposal2 = create(:proposal, title: "Schwifty Hello")
         proposal3 = create(:proposal, title: "Do not show me")
@@ -1104,7 +1104,7 @@ describe "Proposals" do
       end
 
       context "Search by author type" do
-        scenario "Public employee", :js do
+        scenario "Public employee" do
           ana = create :user, official_level: 1
           john = create :user, official_level: 2
 
@@ -1127,7 +1127,7 @@ describe "Proposals" do
           end
         end
 
-        scenario "Municipal Organization", :js do
+        scenario "Municipal Organization" do
           ana = create :user, official_level: 2
           john = create :user, official_level: 3
 
@@ -1150,7 +1150,7 @@ describe "Proposals" do
           end
         end
 
-        scenario "General director", :js do
+        scenario "General director" do
           ana = create :user, official_level: 3
           john = create :user, official_level: 4
 
@@ -1173,7 +1173,7 @@ describe "Proposals" do
           end
         end
 
-        scenario "City councillor", :js do
+        scenario "City councillor" do
           ana = create :user, official_level: 4
           john = create :user, official_level: 5
 
@@ -1196,7 +1196,7 @@ describe "Proposals" do
           end
         end
 
-        scenario "Mayoress", :js do
+        scenario "Mayoress" do
           ana = create :user, official_level: 5
           john = create :user, official_level: 4
 
@@ -1222,7 +1222,7 @@ describe "Proposals" do
 
       context "Search by date" do
         context "Predefined date ranges" do
-          scenario "Last day", :js do
+          scenario "Last day" do
             proposal1 = create(:proposal, created_at: 1.minute.ago)
             proposal2 = create(:proposal, created_at: 1.hour.ago)
             proposal3 = create(:proposal, created_at: 2.days.ago)
@@ -1242,7 +1242,7 @@ describe "Proposals" do
             end
           end
 
-          scenario "Last week", :js do
+          scenario "Last week" do
             proposal1 = create(:proposal, created_at: 1.day.ago)
             proposal2 = create(:proposal, created_at: 5.days.ago)
             proposal3 = create(:proposal, created_at: 8.days.ago)
@@ -1262,7 +1262,7 @@ describe "Proposals" do
             end
           end
 
-          scenario "Last month", :js do
+          scenario "Last month" do
             proposal1 = create(:proposal, created_at: 10.days.ago)
             proposal2 = create(:proposal, created_at: 20.days.ago)
             proposal3 = create(:proposal, created_at: 33.days.ago)
@@ -1282,7 +1282,7 @@ describe "Proposals" do
             end
           end
 
-          scenario "Last year", :js do
+          scenario "Last year" do
             proposal1 = create(:proposal, created_at: 300.days.ago)
             proposal2 = create(:proposal, created_at: 350.days.ago)
             proposal3 = create(:proposal, created_at: 370.days.ago)
@@ -1303,7 +1303,7 @@ describe "Proposals" do
           end
         end
 
-        scenario "Search by custom date range", :js do
+        scenario "Search by custom date range" do
           proposal1 = create(:proposal, created_at: 2.days.ago)
           proposal2 = create(:proposal, created_at: 3.days.ago)
           proposal3 = create(:proposal, created_at: 9.days.ago)
@@ -1325,7 +1325,7 @@ describe "Proposals" do
           end
         end
 
-        scenario "Search by custom invalid date range", :js do
+        scenario "Search by custom invalid date range" do
           proposal1 = create(:proposal, created_at: 2.days.ago)
           proposal2 = create(:proposal, created_at: 3.days.ago)
           proposal3 = create(:proposal, created_at: 9.days.ago)
@@ -1347,7 +1347,7 @@ describe "Proposals" do
           end
         end
 
-        scenario "Search by multiple filters", :js do
+        scenario "Search by multiple filters" do
           ana  = create :user, official_level: 1
           john = create :user, official_level: 1
 
@@ -1371,7 +1371,7 @@ describe "Proposals" do
           end
         end
 
-        scenario "Maintain advanced search criteria", :js do
+        scenario "Maintain advanced search criteria" do
           visit proposals_path
           click_link "Advanced search"
 
@@ -1390,7 +1390,7 @@ describe "Proposals" do
           end
         end
 
-        scenario "Maintain custom date search criteria", :js do
+        scenario "Maintain custom date search criteria" do
           visit proposals_path
           click_link "Advanced search"
 
@@ -1410,7 +1410,7 @@ describe "Proposals" do
       end
     end
 
-    scenario "Order by relevance by default", :js do
+    scenario "Order by relevance by default" do
       create(:proposal, title: "Show you got",      cached_votes_up: 10)
       create(:proposal, title: "Show what you got", cached_votes_up: 1)
       create(:proposal, title: "Show you got",      cached_votes_up: 100)
@@ -1428,7 +1428,7 @@ describe "Proposals" do
       end
     end
 
-    scenario "Reorder results maintaing search", :js do
+    scenario "Reorder results maintaing search" do
       create(:proposal, title: "Show you got",      cached_votes_up: 10,  created_at: 1.week.ago)
       create(:proposal, title: "Show what you got", cached_votes_up: 1,   created_at: 1.month.ago)
       create(:proposal, title: "Show you got",      cached_votes_up: 100, created_at: Time.current)
@@ -1503,7 +1503,7 @@ describe "Proposals" do
     expect(page).not_to have_content "This proposal has been flagged as inappropriate by several users."
   end
 
-  scenario "Flagging", :js do
+  scenario "Flagging" do
     user = create(:user)
     proposal = create(:proposal)
 
@@ -1520,7 +1520,7 @@ describe "Proposals" do
     expect(Flag.flagged?(user, proposal)).to be
   end
 
-  scenario "Unflagging", :js do
+  scenario "Unflagging" do
     user = create(:user)
     proposal = create(:proposal)
     Flag.flag(user, proposal)
@@ -1538,7 +1538,7 @@ describe "Proposals" do
     expect(Flag.flagged?(user, proposal)).not_to be
   end
 
-  scenario "Flagging/Unflagging AJAX", :js do
+  scenario "Flagging/Unflagging AJAX" do
     user = create(:user)
     proposal = create(:proposal)
 
@@ -1696,7 +1696,7 @@ describe "Proposals" do
   end
 
   context "Suggesting proposals" do
-    scenario "Show up to 5 suggestions", :js do
+    scenario "Show up to 5 suggestions" do
       create(:proposal, title: "First proposal, has search term")
       create(:proposal, title: "Second title")
       create(:proposal, title: "Third proposal, has search term")
@@ -1715,7 +1715,7 @@ describe "Proposals" do
       end
     end
 
-    scenario "No found suggestions", :js do
+    scenario "No found suggestions" do
       create(:proposal, title: "First proposal").update_column(:confidence_score, 10)
       create(:proposal, title: "Second proposal").update_column(:confidence_score, 8)
 

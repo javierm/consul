@@ -163,7 +163,7 @@ describe "Admin budget groups" do
       expect(page).to have_field "Maximum number of headings in which a user can vote", with: "2"
     end
 
-    scenario "Changing name for current locale will update the slug if budget is in draft phase", :js do
+    scenario "Changing name for current locale will update the slug if budget is in draft phase" do
       group = create(:budget_group, budget: budget)
       old_slug = group.slug
 

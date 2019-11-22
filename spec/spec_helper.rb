@@ -33,6 +33,7 @@ RSpec.configure do |config|
 
   config.before(:each, type: :system) do
     Capybara::Webmock.start
+    driven_by :headless_chrome
   end
 
   config.after(:suite) do
@@ -41,14 +42,6 @@ RSpec.configure do |config|
 
   config.after(:each, :page_driver) do
     page.driver.reset!
-  end
-
-  config.before(:each, type: :system) do |example|
-    driven_by :rack_test
-  end
-
-  config.before(:each, type: :system, js: true) do
-    driven_by :headless_chrome
   end
 
   config.before(:each, type: :system) do

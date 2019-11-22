@@ -63,7 +63,7 @@ describe "Admin legislation draft versions" do
   end
 
   context "Update" do
-    scenario "Valid legislation draft version", :js do
+    scenario "Valid legislation draft version" do
       process = create(:legislation_process, title: "An example legislation process")
       create(:legislation_draft_version, title: "Version 1", process: process)
 

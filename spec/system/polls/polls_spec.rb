@@ -67,7 +67,7 @@ describe "Polls" do
       expect(page).not_to have_link("Expired")
     end
 
-    scenario "Displays icon correctly", :js do
+    scenario "Displays icon correctly" do
       create_list(:poll, 3)
 
       visit polls_path
@@ -94,7 +94,7 @@ describe "Polls" do
       expect(page).to have_content("This poll is not available on your geozone")
     end
 
-    scenario "Already participated in a poll", :js do
+    scenario "Already participated in a poll" do
       poll_with_question = create(:poll)
       question = create(:poll_question, :yes_no, poll: poll_with_question)
 
@@ -291,7 +291,7 @@ describe "Polls" do
       end
     end
 
-    scenario "Level 2 users answering", :js do
+    scenario "Level 2 users answering" do
       poll.update!(geozone_restricted: true)
       poll.geozones << geozone
 
@@ -309,7 +309,7 @@ describe "Polls" do
       end
     end
 
-    scenario "Level 2 users changing answer", :js do
+    scenario "Level 2 users changing answer" do
       poll.update!(geozone_restricted: true)
       poll.geozones << geozone
 
@@ -332,7 +332,7 @@ describe "Polls" do
       end
     end
 
-    scenario "Level 2 votes, signs out, signs in, votes again", :js do
+    scenario "Level 2 votes, signs out, signs in, votes again" do
       poll.update!(geozone_restricted: true)
       poll.geozones << geozone
 
@@ -376,7 +376,7 @@ describe "Polls" do
     let(:booth) { create(:poll_booth) }
     let(:officer) { create(:poll_officer) }
 
-    scenario "Already voted on booth cannot vote on website", :js do
+    scenario "Already voted on booth cannot vote on website" do
       create(:poll_shift, officer: officer, booth: booth, date: Date.current, task: :vote_collection)
       create(:poll_officer_assignment, officer: officer, poll: poll, booth: booth, date: Date.current)
       question = create(:poll_question, :yes_no, poll: poll)

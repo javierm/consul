@@ -9,7 +9,7 @@ describe "Moderate proposals" do
     expect { visit moderation_proposals_path }.to raise_exception(FeatureFlags::FeatureDisabled)
   end
 
-  scenario "Hide", :js do
+  scenario "Hide" do
     citizen   = create(:user)
     proposal  = create(:proposal)
     moderator = create(:moderator)
@@ -88,7 +88,7 @@ describe "Moderate proposals" do
         end
       end
 
-      scenario "select all/none", :js do
+      scenario "select all/none" do
         create_list(:proposal, 2)
 
         visit moderation_proposals_path

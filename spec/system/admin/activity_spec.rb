@@ -8,7 +8,7 @@ describe "Admin activity" do
   end
 
   context "Proposals" do
-    scenario "Shows moderation activity on proposals", :js do
+    scenario "Shows moderation activity on proposals" do
       proposal = create(:proposal)
 
       visit proposal_path(proposal)
@@ -71,7 +71,7 @@ describe "Admin activity" do
   end
 
   context "Debates" do
-    scenario "Shows moderation activity on debates", :js do
+    scenario "Shows moderation activity on debates" do
       debate = create(:debate)
 
       visit debate_path(debate)
@@ -134,7 +134,7 @@ describe "Admin activity" do
   end
 
   context "Comments" do
-    scenario "Shows moderation activity on comments", :js do
+    scenario "Shows moderation activity on comments" do
       debate = create(:debate)
       comment = create(:comment, commentable: debate)
 

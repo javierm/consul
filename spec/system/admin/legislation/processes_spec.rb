@@ -156,7 +156,7 @@ describe "Admin collaborative legislation" do
       expect(page).not_to have_content "Describing the process"
     end
 
-    scenario "Create a legislation process with an image", :js do
+    scenario "Create a legislation process with an image" do
       visit new_admin_legislation_process_path
       fill_in "Process Title", with: "An example legislation process"
       fill_in "Summary", with: "Summary of the process"
@@ -251,7 +251,7 @@ describe "Admin collaborative legislation" do
       expect(page).to have_field("Categories", with: "bicycles, recycling")
     end
 
-    scenario "Edit milestones summary", :js do
+    scenario "Edit milestones summary" do
       visit admin_legislation_process_milestones_path(process)
 
       expect(page).not_to have_link "Remove language"

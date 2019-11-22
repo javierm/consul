@@ -136,7 +136,7 @@ describe "Budget Investments" do
     end
   end
 
-  scenario "Index should show a map if heading has coordinates defined", :js do
+  scenario "Index should show a map if heading has coordinates defined" do
     create(:budget_investment, heading: heading)
     visit budget_investments_path(budget, heading_id: heading.id)
     within("#sidebar") do
@@ -175,7 +175,7 @@ describe "Budget Investments" do
     end
 
     context "Advanced search" do
-      scenario "Search by text", :js do
+      scenario "Search by text" do
         bdgt_invest1 = create(:budget_investment, heading: heading, title: "Get Schwifty")
         bdgt_invest2 = create(:budget_investment, heading: heading, title: "Schwifty Hello")
         bdgt_invest3 = create(:budget_investment, heading: heading, title: "Do not show me")
@@ -196,7 +196,7 @@ describe "Budget Investments" do
       end
 
       context "Search by author type" do
-        scenario "Public employee", :js do
+        scenario "Public employee" do
           ana = create :user, official_level: 1
           john = create :user, official_level: 2
 
@@ -219,7 +219,7 @@ describe "Budget Investments" do
           end
         end
 
-        scenario "Municipal Organization", :js do
+        scenario "Municipal Organization" do
           ana = create :user, official_level: 2
           john = create :user, official_level: 3
 
@@ -242,7 +242,7 @@ describe "Budget Investments" do
           end
         end
 
-        scenario "General director", :js do
+        scenario "General director" do
           ana = create :user, official_level: 3
           john = create :user, official_level: 4
 
@@ -265,7 +265,7 @@ describe "Budget Investments" do
           end
         end
 
-        scenario "City councillor", :js do
+        scenario "City councillor" do
           ana = create :user, official_level: 4
           john = create :user, official_level: 5
 
@@ -288,7 +288,7 @@ describe "Budget Investments" do
           end
         end
 
-        scenario "Mayoress", :js do
+        scenario "Mayoress" do
           ana = create :user, official_level: 5
           john = create :user, official_level: 4
 
@@ -314,7 +314,7 @@ describe "Budget Investments" do
 
       context "Search by date" do
         context "Predefined date ranges" do
-          scenario "Last day", :js do
+          scenario "Last day" do
             bdgt_invest1 = create(:budget_investment, heading: heading, created_at: 1.minute.ago)
             bdgt_invest2 = create(:budget_investment, heading: heading, created_at: 1.hour.ago)
             bdgt_invest3 = create(:budget_investment, heading: heading, created_at: 2.days.ago)
@@ -334,7 +334,7 @@ describe "Budget Investments" do
             end
           end
 
-          scenario "Last week", :js do
+          scenario "Last week" do
             bdgt_invest1 = create(:budget_investment, heading: heading, created_at: 1.day.ago)
             bdgt_invest2 = create(:budget_investment, heading: heading, created_at: 5.days.ago)
             bdgt_invest3 = create(:budget_investment, heading: heading, created_at: 8.days.ago)
@@ -354,7 +354,7 @@ describe "Budget Investments" do
             end
           end
 
-          scenario "Last month", :js do
+          scenario "Last month" do
             bdgt_invest1 = create(:budget_investment, heading: heading, created_at: 10.days.ago)
             bdgt_invest2 = create(:budget_investment, heading: heading, created_at: 20.days.ago)
             bdgt_invest3 = create(:budget_investment, heading: heading, created_at: 33.days.ago)
@@ -374,7 +374,7 @@ describe "Budget Investments" do
             end
           end
 
-          scenario "Last year", :js do
+          scenario "Last year" do
             bdgt_invest1 = create(:budget_investment, heading: heading, created_at: 300.days.ago)
             bdgt_invest2 = create(:budget_investment, heading: heading, created_at: 350.days.ago)
             bdgt_invest3 = create(:budget_investment, heading: heading, created_at: 370.days.ago)
@@ -395,7 +395,7 @@ describe "Budget Investments" do
           end
         end
 
-        scenario "Search by custom date range", :js do
+        scenario "Search by custom date range" do
           bdgt_invest1 = create(:budget_investment, heading: heading, created_at: 2.days.ago)
           bdgt_invest2 = create(:budget_investment, heading: heading, created_at: 3.days.ago)
           bdgt_invest3 = create(:budget_investment, heading: heading, created_at: 9.days.ago)
@@ -417,7 +417,7 @@ describe "Budget Investments" do
           end
         end
 
-        scenario "Search by custom invalid date range", :js do
+        scenario "Search by custom invalid date range" do
           bdgt_invest1 = create(:budget_investment, heading: heading, created_at: 2.days.ago)
           bdgt_invest2 = create(:budget_investment, heading: heading, created_at: 3.days.ago)
           bdgt_invest3 = create(:budget_investment, heading: heading, created_at: 9.days.ago)
@@ -439,7 +439,7 @@ describe "Budget Investments" do
           end
         end
 
-        scenario "Search by multiple filters", :js do
+        scenario "Search by multiple filters" do
           ana  = create :user, official_level: 1
           john = create :user, official_level: 1
 
@@ -463,7 +463,7 @@ describe "Budget Investments" do
           end
         end
 
-        scenario "Maintain advanced search criteria", :js do
+        scenario "Maintain advanced search criteria" do
           visit budget_investments_path(budget)
           click_link "Advanced search"
 
@@ -482,7 +482,7 @@ describe "Budget Investments" do
           end
         end
 
-        scenario "Maintain custom date search criteria", :js do
+        scenario "Maintain custom date search criteria" do
           visit budget_investments_path(budget)
           click_link "Advanced search"
 
@@ -590,7 +590,7 @@ describe "Budget Investments" do
         end
       end
 
-      scenario "unfeasible", :js do
+      scenario "unfeasible" do
         investment1 = create(:budget_investment, :unfeasible, :finished, heading: heading)
         investment2 = create(:budget_investment, :feasible, heading: heading)
 
@@ -912,7 +912,7 @@ describe "Budget Investments" do
       expect(page).to have_content "Build a skyscraper"
     end
 
-    scenario "Edit", :js do
+    scenario "Edit" do
       daniel = create(:user, :level_two)
 
       create(:budget_investment, heading: heading, title: "Get Schwifty", author: daniel, created_at: 1.day.ago)
@@ -971,7 +971,7 @@ describe "Budget Investments" do
     context "Suggest" do
       factory = :budget_investment
 
-      scenario "Show up to 5 suggestions", :js do
+      scenario "Show up to 5 suggestions" do
         %w[first second third fourth fifth sixth].each do |ordinal|
           create(factory, title: "#{ordinal.titleize} #{factory}, has search term", budget: budget)
         end
@@ -986,7 +986,7 @@ describe "Budget Investments" do
         end
       end
 
-      scenario "No found suggestions", :js do
+      scenario "No found suggestions" do
         %w[first second third fourth fifth sixth].each do |ordinal|
           create(factory, title: "#{ordinal.titleize} #{factory}, has search term", budget: budget)
         end
@@ -1000,7 +1000,7 @@ describe "Budget Investments" do
         end
       end
 
-      scenario "Don't show suggestions from a different budget", :js do
+      scenario "Don't show suggestions from a different budget" do
         %w[first second third fourth fifth sixth].each do |ordinal|
           create(factory, title: "#{ordinal.titleize} #{factory}, has search term", budget: budget)
         end
@@ -1372,7 +1372,7 @@ describe "Budget Investments" do
     end
 
     context "Popup alert to vote only in one heading per group" do
-      scenario "When supporting in the first heading group", :js do
+      scenario "When supporting in the first heading group" do
         carabanchel = create(:budget_heading, group: group)
         salamanca   = create(:budget_heading, group: group)
 
@@ -1387,7 +1387,7 @@ describe "Budget Investments" do
         end
       end
 
-      scenario "When already supported in the group", :js do
+      scenario "When already supported in the group" do
         carabanchel = create(:budget_heading, group: group)
         salamanca   = create(:budget_heading, group: group)
 
@@ -1402,7 +1402,7 @@ describe "Budget Investments" do
         end
       end
 
-      scenario "When supporting in another group", :js do
+      scenario "When supporting in another group" do
         heading = create(:budget_heading, group: group)
 
         group2 = create(:budget_group, budget: budget)
@@ -1420,7 +1420,7 @@ describe "Budget Investments" do
         end
       end
 
-      scenario "When supporting in a group with a single heading", :js do
+      scenario "When supporting in a group with a single heading" do
         all_city_investment = create(:budget_investment, heading: heading)
 
         login_as(author)
@@ -1570,7 +1570,7 @@ describe "Budget Investments" do
       end
     end
 
-    scenario "Confirm", :js do
+    scenario "Confirm" do
       budget.update!(phase: "balloting")
       user = create(:user, :level_two)
 
@@ -1635,7 +1635,7 @@ describe "Budget Investments" do
       end
     end
 
-    scenario "Highlight voted heading except with unfeasible filter", :js do
+    scenario "Highlight voted heading except with unfeasible filter" do
       budget.update!(phase: "balloting")
       user = create(:user, :level_two)
 
@@ -1797,7 +1797,7 @@ describe "Budget Investments" do
     end
   end
 
-  scenario "Flagging an investment as innapropriate", :js do
+  scenario "Flagging an investment as innapropriate" do
     user       = create(:user)
     investment = create(:budget_investment, heading: heading)
 
@@ -1815,7 +1815,7 @@ describe "Budget Investments" do
     expect(Flag.flagged?(user, investment)).to be
   end
 
-  scenario "Unflagging an investment", :js do
+  scenario "Unflagging an investment" do
     user       = create(:user)
     investment = create(:budget_investment, heading: heading)
     Flag.flag(user, investment)
@@ -1834,7 +1834,7 @@ describe "Budget Investments" do
     expect(Flag.flagged?(user, investment)).not_to be
   end
 
-  scenario "Flagging an investment updates the DOM properly", :js do
+  scenario "Flagging an investment updates the DOM properly" do
     user       = create(:user)
     investment = create(:budget_investment, heading: heading)
 
@@ -1862,7 +1862,7 @@ describe "Budget Investments" do
   end
 
   context "sidebar map" do
-    scenario "Display 6 investment's markers on sidebar map", :js do
+    scenario "Display 6 investment's markers on sidebar map" do
       investment1 = create(:budget_investment, heading: heading)
       investment2 = create(:budget_investment, heading: heading)
       investment3 = create(:budget_investment, heading: heading)
@@ -1884,7 +1884,7 @@ describe "Budget Investments" do
       end
     end
 
-    scenario "Display 2 investment's markers on sidebar map", :js do
+    scenario "Display 2 investment's markers on sidebar map" do
       investment1 = create(:budget_investment, heading: heading)
       investment2 = create(:budget_investment, heading: heading)
 
@@ -1898,7 +1898,7 @@ describe "Budget Investments" do
       end
     end
 
-    scenario "Display only investment's related to the current heading", :js do
+    scenario "Display only investment's related to the current heading" do
       heading_2 = create(:budget_heading, name: "Madrid", group: group)
 
       investment1 = create(:budget_investment, heading: heading)
@@ -1922,7 +1922,7 @@ describe "Budget Investments" do
       end
     end
 
-    scenario "Do not display investment's, since they're all related to other heading", :js do
+    scenario "Do not display investment's, since they're all related to other heading" do
       heading_2 = create(:budget_heading, name: "Madrid", group: group)
 
       investment1 = create(:budget_investment, heading: heading_2)
@@ -1940,7 +1940,7 @@ describe "Budget Investments" do
       end
     end
 
-    scenario "Shows all investments and not only the ones on the current page", :js do
+    scenario "Shows all investments and not only the ones on the current page" do
       stub_const("#{Budgets::InvestmentsController}::PER_PAGE", 2)
 
       3.times do

@@ -113,7 +113,7 @@ describe "Users" do
       end
     end
 
-    scenario "Show alert when user wants to delete a budget investment", :js do
+    scenario "Show alert when user wants to delete a budget investment" do
       user = create(:user, :level_two)
       budget = create(:budget, :accepting)
       budget_investment = create(:budget_investment, author_id: user.id, budget: budget)
@@ -408,7 +408,7 @@ describe "Users" do
       expect(page).not_to have_content("0 Following")
     end
 
-    scenario "Active following tab by default when follows filters selected", :js do
+    scenario "Active following tab by default when follows filters selected" do
       create(:proposal, author: user, followers: [user])
 
       visit user_path(user, filter: "follows")
@@ -459,7 +459,7 @@ describe "Users" do
         expect(page).to have_content proposal.title
       end
 
-      scenario "Retired proposals do not have a link to the dashboard", js: true do
+      scenario "Retired proposals do not have a link to the dashboard" do
         proposal = create(:proposal, :retired, author: user)
         login_as user
 

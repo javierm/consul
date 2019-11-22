@@ -206,7 +206,7 @@ describe "Admin budgets" do
       end
     end
 
-    scenario "Changing name for current locale will update the slug if budget is in draft phase", :js do
+    scenario "Changing name for current locale will update the slug if budget is in draft phase" do
       budget.update!(phase: "drafting")
       old_slug = budget.slug
 
@@ -242,7 +242,7 @@ describe "Admin budgets" do
       expect(page).to have_current_path(admin_budgets_path)
     end
 
-    scenario "Deselect all selected staff", :js do
+    scenario "Deselect all selected staff" do
       admin = Administrator.first
       valuator = create(:valuator)
 
@@ -268,7 +268,7 @@ describe "Admin budgets" do
   end
 
   context "Calculate Budget's Winner Investments" do
-    scenario "For a Budget in reviewing balloting", :js do
+    scenario "For a Budget in reviewing balloting" do
       budget = create(:budget, :reviewing_ballots)
       heading = create(:budget_heading, budget: budget, price: 4)
       unselected = create(:budget_investment, :unselected, heading: heading, price: 1,

@@ -221,7 +221,7 @@ describe "Stats" do
   end
 
   context "graphs" do
-    scenario "event graphs", :js do
+    scenario "event graphs" do
       campaign = create(:campaign)
 
       visit root_path(track_id: campaign.track_id)

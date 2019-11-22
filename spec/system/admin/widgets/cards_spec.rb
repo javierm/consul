@@ -6,7 +6,7 @@ describe "Cards" do
     login_as(admin)
   end
 
-  scenario "Create", :js do
+  scenario "Create" do
     visit admin_homepage_path
     click_link "Create card"
 
@@ -92,7 +92,7 @@ describe "Cards" do
     end
   end
 
-  scenario "Remove", :js do
+  scenario "Remove" do
     card = create(:widget_card)
 
     visit admin_homepage_path
@@ -138,7 +138,7 @@ describe "Cards" do
     context "Page card" do
       let!(:custom_page) { create(:site_customization_page, :published) }
 
-      scenario "Create", :js do
+      scenario "Create" do
         visit admin_site_customization_pages_path
 
         within "#site_customization_page_#{custom_page.id}" do
@@ -183,7 +183,7 @@ describe "Cards" do
         end
       end
 
-      scenario "Edit", :js do
+      scenario "Edit" do
         create(:widget_card, page: custom_page, title: "Original title")
 
         visit admin_site_customization_page_cards_path(custom_page)
@@ -203,7 +203,7 @@ describe "Cards" do
         expect(page).not_to have_content "Original title"
       end
 
-      scenario "Destroy", :js do
+      scenario "Destroy" do
         create(:widget_card, page: custom_page, title: "Card title")
 
         visit admin_site_customization_page_cards_path(custom_page)

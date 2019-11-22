@@ -10,7 +10,7 @@ describe "Admin booths assignments" do
     let!(:poll) { create(:poll) }
     let!(:booth) { create(:poll_booth) }
 
-    scenario "List Polls and Booths to manage", :js do
+    scenario "List Polls and Booths to manage" do
       second_poll = create(:poll)
       second_booth = create(:poll_booth)
 
@@ -39,7 +39,7 @@ describe "Admin booths assignments" do
       expect(page).not_to have_content "Poll from user's proposal"
     end
 
-    scenario "Assign booth to poll", :js do
+    scenario "Assign booth to poll" do
       visit admin_poll_path(poll)
       within("#poll-resources") do
         click_link "Booths (0)"
@@ -76,7 +76,7 @@ describe "Admin booths assignments" do
       expect(page).to have_content booth.name
     end
 
-    scenario "Unassign booth from poll", :js do
+    scenario "Unassign booth from poll" do
       create(:poll_booth_assignment, poll: poll, booth: booth)
 
       visit admin_poll_path(poll)
@@ -115,7 +115,7 @@ describe "Admin booths assignments" do
       expect(page).not_to have_content booth.name
     end
 
-    scenario "Unassing booth whith associated shifts", :js do
+    scenario "Unassing booth whith associated shifts" do
       officer = create(:poll_officer)
       create(:poll_officer_assignment, officer: officer, poll: poll, booth: booth)
       create(:poll_shift, booth: booth, officer: officer)
