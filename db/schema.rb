@@ -70,8 +70,15 @@ ActiveRecord::Schema.define(version: 20181030121557) do
     t.integer  "survey_id"
   end
 
+  create_table "banner_sections", force: :cascade do |t|
+    t.integer  "banner_id"
+    t.integer  "web_section_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
   create_table "banners", force: :cascade do |t|
-    t.string   "title",           limit: 80
+    t.string   "title",            limit: 80
     t.string   "description"
     t.string   "target_url"
     t.string   "style"
@@ -79,8 +86,10 @@ ActiveRecord::Schema.define(version: 20181030121557) do
     t.date     "post_started_at"
     t.date     "post_ended_at"
     t.datetime "hidden_at"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.text     "background_color"
+    t.text     "font_color"
   end
 
   add_index "banners", ["hidden_at"], name: "index_banners_on_hidden_at", using: :btree
@@ -1213,6 +1222,8 @@ ActiveRecord::Schema.define(version: 20181030121557) do
     t.text     "former_users_data_log",                     default: ""
     t.boolean  "public_interests",                          default: false
     t.boolean  "no_resident",                               default: false
+    t.boolean  "recommended_debates",                       default: true
+    t.boolean  "recommended_proposals",                     default: true
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
@@ -1322,6 +1333,12 @@ ActiveRecord::Schema.define(version: 20181030121557) do
     t.integer  "limit",      default: 3
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+  end
+
+  create_table "web_sections", force: :cascade do |t|
+    t.text     "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "administrators", "users"
