@@ -89,19 +89,6 @@ ActiveRecord::Schema.define(version: 20190205131722) do
   add_index "ahoy_events", ["user_id"], name: "index_ahoy_events_on_user_id", using: :btree
   add_index "ahoy_events", ["visit_id"], name: "index_ahoy_events_on_visit_id", using: :btree
 
-  create_table "annotations", force: :cascade do |t|
-    t.string   "quote"
-    t.text     "ranges"
-    t.text     "text"
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
-    t.integer  "user_id"
-    t.integer  "legacy_legislation_id"
-  end
-
-  add_index "annotations", ["legacy_legislation_id"], name: "index_annotations_on_legacy_legislation_id", using: :btree
-  add_index "annotations", ["user_id"], name: "index_annotations_on_user_id", using: :btree
-
   create_table "answered_surveys", force: :cascade do |t|
     t.integer  "user_id"
     t.datetime "created_at", null: false
@@ -208,7 +195,7 @@ ActiveRecord::Schema.define(version: 20190205131722) do
   create_table "budget_headings", force: :cascade do |t|
     t.integer "group_id"
     t.string  "name",                 limit: 50
-    t.integer "price",                limit: 8
+    t.float   "price"
     t.integer "population"
     t.string  "slug"
     t.boolean "allow_custom_content",            default: false
@@ -258,40 +245,40 @@ ActiveRecord::Schema.define(version: 20190205131722) do
     t.string   "title"
     t.text     "description"
     t.string   "external_url"
-    t.integer  "price",                            limit: 8
-    t.string   "feasibility",                      limit: 15, default: "undecided"
+    t.decimal  "price",                                       precision: 16, scale: 2, default: 0.0
+    t.string   "feasibility",                      limit: 15,                          default: "undecided"
     t.text     "price_explanation"
     t.text     "unfeasibility_explanation"
-    t.boolean  "valuation_finished",                          default: false
-    t.integer  "valuator_assignments_count",                  default: 0
-    t.integer  "price_first_year",                 limit: 8
+    t.boolean  "valuation_finished",                                                   default: false
+    t.integer  "valuator_assignments_count",                                           default: 0
+    t.decimal  "price_first_year",                            precision: 16, scale: 2, default: 0.0
     t.string   "duration"
     t.datetime "hidden_at"
-    t.integer  "cached_votes_up",                             default: 0
-    t.integer  "comments_count",                              default: 0
-    t.integer  "confidence_score",                            default: 0,           null: false
-    t.integer  "physical_votes",                              default: 0
+    t.integer  "cached_votes_up",                                                      default: 0
+    t.integer  "comments_count",                                                       default: 0
+    t.integer  "confidence_score",                                                     default: 0,           null: false
+    t.integer  "physical_votes",                                                       default: 0
     t.tsvector "tsv"
-    t.datetime "created_at",                                                        null: false
-    t.datetime "updated_at",                                                        null: false
+    t.datetime "created_at",                                                                                 null: false
+    t.datetime "updated_at",                                                                                 null: false
     t.integer  "heading_id"
     t.string   "responsible_name"
     t.integer  "budget_id"
     t.integer  "group_id"
-    t.boolean  "selected",                                    default: false
+    t.boolean  "selected",                                                             default: false
     t.string   "location"
     t.string   "organization_name"
     t.datetime "unfeasible_email_sent_at"
-    t.integer  "ballot_lines_count",                          default: 0
+    t.integer  "ballot_lines_count",                                                   default: 0
     t.integer  "previous_heading_id"
-    t.boolean  "winner",                                      default: false
-    t.boolean  "incompatible",                                default: false
+    t.boolean  "winner",                                                               default: false
+    t.boolean  "incompatible",                                                         default: false
     t.integer  "community_id"
-    t.boolean  "visible_to_valuators",                        default: false
-    t.integer  "valuator_group_assignments_count",            default: 0
+    t.boolean  "visible_to_valuators",                                                 default: false
+    t.integer  "valuator_group_assignments_count",                                     default: 0
     t.datetime "confirmed_hide_at"
     t.datetime "ignored_flag_at"
-    t.integer  "flags_count",                                 default: 0
+    t.integer  "flags_count",                                                          default: 0
   end
 
   add_index "budget_investments", ["administrator_id"], name: "index_budget_investments_on_administrator_id", using: :btree
@@ -1225,9 +1212,9 @@ ActiveRecord::Schema.define(version: 20190205131722) do
     t.datetime "retired_at"
     t.string   "retired_reason"
     t.text     "retired_explanation"
+    t.integer  "community_id"
     t.string   "area"
     t.datetime "area_revised_at"
-    t.integer  "community_id"
   end
 
   add_index "proposals", ["author_id", "hidden_at"], name: "index_proposals_on_author_id_and_hidden_at", using: :btree
@@ -1513,18 +1500,18 @@ ActiveRecord::Schema.define(version: 20190205131722) do
     t.boolean  "email_on_direct_message",                   default: true
     t.boolean  "official_position_badge",                   default: false
     t.datetime "password_changed_at",                       default: '2015-01-01 01:01:01', null: false
+    t.boolean  "created_from_signature",                    default: false
+    t.integer  "failed_email_digests_count",                default: 0
+    t.text     "former_users_data_log",                     default: ""
+    t.boolean  "public_interests",                          default: false
+    t.boolean  "recommended_debates",                       default: true
+    t.boolean  "recommended_proposals",                     default: true
     t.datetime "residence_requested_at"
     t.string   "postal_code"
     t.integer  "failed_person_calls_count",                 default: 0
     t.string   "common_name"
     t.string   "first_surname"
-    t.boolean  "created_from_signature",                    default: false
-    t.integer  "failed_email_digests_count",                default: 0
-    t.text     "former_users_data_log",                     default: ""
-    t.boolean  "public_interests",                          default: false
     t.boolean  "no_resident",                               default: false
-    t.boolean  "recommended_debates",                       default: true
-    t.boolean  "recommended_proposals",                     default: true
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree

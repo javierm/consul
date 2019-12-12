@@ -2,9 +2,10 @@ require_dependency Rails.root.join('app', 'models', 'abilities', 'administrator'
 
 module Abilities
   class Administrator
+    include CanCan::Ability
 
     def initialize(user)
-      self.merge Abilities::Moderation.new(user)
+      merge Abilities::Moderation.new(user)
 
       can :restore, Comment
       cannot :restore, Comment, hidden_at: nil
@@ -22,8 +23,15 @@ module Abilities
       can :restore, Proposal
       cannot :restore, Proposal, hidden_at: nil
 
+      can :create, Legislation::Proposal
+      can :show, Legislation::Proposal
+      can :proposals, ::Legislation::Process
+
       can :restore, Legislation::Proposal
       cannot :restore, Legislation::Proposal, hidden_at: nil
+
+      can :restore, Budget::Investment
+      cannot :restore, Budget::Investment, hidden_at: nil
 
       can :restore, User
       cannot :restore, User, hidden_at: nil
@@ -40,6 +48,9 @@ module Abilities
       can :confirm_hide, Legislation::Proposal
       cannot :confirm_hide, Legislation::Proposal, hidden_at: nil
 
+      can :confirm_hide, Budget::Investment
+      cannot :confirm_hide, Budget::Investment, hidden_at: nil
+
       can :confirm_hide, User
       cannot :confirm_hide, User, hidden_at: nil
 
@@ -51,20 +62,17 @@ module Abilities
 
       can [:search, :create, :index, :destroy], ::Administrator
       can [:search, :create, :index, :destroy], ::Moderator
-
       can [:search, :show, :edit, :update, :create, :index, :destroy, :summary], ::Valuator
       can [:search, :create, :index, :destroy], ::Manager
       can [:search, :index], ::User
 
-      can :manage, Annotation
-
       can [:read, :update, :valuate, :destroy, :summary], SpendingProposal
-
+      can [:index, :read, :new, :create, :update, :destroy, :calculate_winners], Budget
       can [:index, :read, :new, :create, :update, :destroy, :calculate_winners, :read_results], Budget
       can [:read, :create, :update, :destroy], Budget::Group
       can [:read, :create, :update, :destroy], Budget::Heading
       can [:hide, :update, :toggle_selection], Budget::Investment
-      can :valuate, Budget::Investment
+      can [:valuate, :comment_valuation], Budget::Investment
       can :create, Budget::ValuatorAssignment
 
       can [:search, :edit, :update, :create, :index, :destroy], Banner
@@ -83,14 +91,17 @@ module Abilities
       can :manage, SiteCustomization::Image
       can :manage, SiteCustomization::ContentBlock
 
+      can :access, :ckeditor
+      can :manage, Ckeditor::Picture
+
       can [:manage], ::Legislation::Process
       can [:manage], ::Legislation::DraftVersion
       can [:manage], ::Legislation::Question
       can [:manage], ::Legislation::Proposal
       cannot :comment_as_moderator, [::Legislation::Question, Legislation::Annotation, ::Legislation::Proposal]
 
-      can [:create, :destroy], Document
-      can [:destroy], Image
+      can [:create], Document
+      can [:destroy], Document, documentable_type: "Poll::Question::Answer"
       can [:create, :destroy], DirectUpload
 
       can [:deliver], Newsletter, hidden_at: nil
