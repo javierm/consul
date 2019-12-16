@@ -3,9 +3,14 @@ class Budget < ActiveRecord::Base
   include Measurable
   include Sluggable
 
+  translates :name, touch: true
+  include Globalizable
+
   CURRENCY_SYMBOLS = %w(€ $ £ ¥).freeze
 
-  validates :name, presence: true, uniqueness: true
+  before_validation :assign_model_to_translations
+
+  validates_translation :name, presence: true
   validates :phase, inclusion: { in: Budget::Phase::PHASE_KINDS }
   validates :currency_symbol, presence: true
   validates :slug, presence: true, format: /\A[a-z0-9\-_]+\z/
@@ -105,8 +110,8 @@ class Budget < ActiveRecord::Base
     Budget::Phase::PUBLISHED_PRICES_PHASES.include?(phase)
   end
 
-  def valuating_or_later?
-    valuating? || publishing_prices? || balloting_or_later?
+  def publishing_prices_or_later?
+    publishing_prices? || balloting_or_later?
   end
 
   def balloting_process?
@@ -146,19 +151,21 @@ class Budget < ActiveRecord::Base
       %w{random}
     when 'publishing_prices', 'balloting', 'reviewing_ballots'
       %w{random price}
+    when 'finished'
+      %w{random}
     else
       %w{random confidence_score}
     end
   end
 
   def email_selected
-    investments.selected.each do |investment|
+    investments.selected.order(:id).each do |investment|
       Mailer.budget_investment_selected(investment).deliver_later
     end
   end
 
   def email_unselected
-    investments.unselected.each do |investment|
+    investments.unselected.order(:id).each do |investment|
       Mailer.budget_investment_unselected(investment).deliver_later
     end
   end
@@ -193,5 +200,3 @@ class Budget < ActiveRecord::Base
     slug.nil? || drafting?
   end
 end
-
-
