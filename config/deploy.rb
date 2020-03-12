@@ -7,7 +7,7 @@ def deploysecret(key)
 end
 
 set :rails_env, fetch(:stage)
-set :rvm1_map_bins, -> { fetch(:rvm_map_bins).to_a.concat(%w[rake gem bundle ruby]).uniq }
+# set :rvm1_map_bins, -> { fetch(:rvm_map_bins).to_a.concat(%w[rake gem bundle ruby]).uniq }
 
 set :application, "consul"
 set :full_app_name, deploysecret(:full_app_name)
@@ -46,8 +46,8 @@ set :whenever_roles, -> { :app }
 
 namespace :deploy do
   # after :updating, "rvm1:install:rvm"
-  after :updating, "rvm1:install:ruby"
-  after :updating, "install_bundler_gem"
+  # after :updating, "rvm1:install:ruby"
+  # after :updating, "install_bundler_gem"
   before "deploy:migrate", "remove_local_census_records_duplicates"
 
   after "deploy:migrate", "add_new_settings"
