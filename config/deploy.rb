@@ -16,7 +16,7 @@ set :server_name, deploysecret(:server_name)
 set :db_server, deploysecret(:db_server)
 set :ssh_options, port: deploysecret(:ssh_port)
 
-set :repo_url, "https://github.com/consul/consul.git"
+set :repo_url, "https://github.com/Usabi/consul_arucas.git"
 
 set :revision, `git rev-parse --short #{fetch(:branch)}`.strip
 
@@ -45,7 +45,7 @@ set(:config_files, %w[
 set :whenever_roles, -> { :app }
 
 namespace :deploy do
-  after :updating, "rvm1:install:rvm"
+  # after :updating, "rvm1:install:rvm"
   after :updating, "rvm1:install:ruby"
   after :updating, "install_bundler_gem"
   before "deploy:migrate", "remove_local_census_records_duplicates"
@@ -53,10 +53,10 @@ namespace :deploy do
   after "deploy:migrate", "add_new_settings"
 
   before :publishing, "smtp_ssl_and_delay_jobs_secrets"
-  after  :publishing, "setup_puma"
+  # after  :publishing, "setup_puma"
 
   after :published, "deploy:restart"
-  before "deploy:restart", "puma:smart_restart"
+  # before "deploy:restart", "puma:smart_restart"
   before "deploy:restart", "delayed_job:restart"
 
   after :finished, "refresh_sitemap"
@@ -132,6 +132,13 @@ task :setup_puma do
         execute "ln -sf #{shared_path}/tmp/sockets/puma.sock #{shared_path}/sockets/unicorn.sock; true"
       end
     end
+  end
+end
+
+desc 'Restart passenger application'
+task :restart do
+  on roles(:app), in: :sequence, wait: 5 do
+    execute :touch, release_path.join('tmp/restart.txt')
   end
 end
 
