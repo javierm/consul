@@ -1,4 +1,7 @@
 class Budget < ApplicationRecord
+  def self.use_relative_model_naming?
+    true
+  end
   include Measurable
   include Sluggable
   include StatsVersionable

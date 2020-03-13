@@ -1,4 +1,7 @@
 class Poll < ApplicationRecord
+  def self.use_relative_model_naming?
+    true
+  end
   require_dependency "poll/answer"
 
   include Imageable
