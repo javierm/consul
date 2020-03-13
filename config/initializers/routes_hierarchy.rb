@@ -27,6 +27,37 @@ module ActionDispatch::Routing::UrlFor
   end
 
   def polymorphic_hierarchy_path(resource, options = {})
-    polymorphic_path(resource_hierarchy_for(resource), options)
+    # Unfortunately, we can't use polymorphic routes because there
+    # are cases where polymorphic_path doesn't get the named routes properly.
+    # Example:
+    #
+    # polymorphic_path([legislation_proposal.process, legislation_proposal])
+    #
+    # That line tries to find legislation_process_legislation_proposal_path
+    # while the correct route would be legislation_process_proposal_path
+    #
+    # We probably need to define routes differently in order to be able to use
+    # polymorphic_path which might be possible with Rails 5.1 `direct` and
+    # `resolve` methods.
+
+    resources = resource_hierarchy_for(resource)
+
+    case resource.class.name
+    when "Legislation::Annotation"
+      # polymorphic_path would return:
+      # "legislation_process_legislation_draft_version_legislation_annotation_path"
+      legislation_process_draft_version_annotation_path(*resources)
+    when "Legislation::Proposal"
+      # polymorphic_path would return legislation_process_legislation_proposal_path
+      legislation_process_proposal_path(*resources)
+    when "Legislation::Question"
+      # polymorphic_path would return legislation_process_legislation_question_path
+      legislation_process_question_path(*resources)
+    when "Poll::Question"
+      # polymorphic_path would return poll_question_path
+      question_path(*resources)
+    else
+      polymorphic_path(resources, options)
+    end
   end
 end
