@@ -26,6 +26,14 @@ class Admin::Budgets::IndexComponent < ApplicationComponent
       budget.phases.enabled.order(:id).pluck(:kind).index(budget.phase) || -1
     end
 
+    def type(budget)
+      if budget.single_heading?
+        t("admin.budgets.index.type_single")
+      else
+        t("admin.budgets.index.type_multiple")
+      end
+    end
+
     def dates(budget)
       Admin::Budgets::DurationComponent.new(budget).dates
     end
