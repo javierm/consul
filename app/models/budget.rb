@@ -161,6 +161,10 @@ class Budget < ApplicationRecord
     current_phase&.balloting_or_later?
   end
 
+  def single_heading?
+    groups.count == 1 && headings.count == 1
+  end
+
   def heading_price(heading)
     heading_ids.include?(heading.id) ? heading.price : -1
   end

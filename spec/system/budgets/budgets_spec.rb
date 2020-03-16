@@ -198,6 +198,7 @@ describe "Budgets" do
     visit budgets_path
 
     expect(page).not_to have_content "Description of reviewing phase"
+    expect(page).not_to have_content "Custom name for reviewing phase"
     expect(page).not_to have_content "January 11, 2018 - January 20, 2018"
     expect(page).not_to have_content "Description of valuating phase"
     expect(page).not_to have_content "February 10, 2018 - February 20, 2018"
@@ -209,8 +210,10 @@ describe "Budgets" do
     expect(page).to have_content "Description of informing phase"
     expect(page).to have_content "December 30, 2017 - December 31, 2017"
     expect(page).to have_content "Description of accepting phase"
+    expect(page).to have_content "Custom name for accepting phase"
     expect(page).to have_content "January 01, 2018 - January 20, 2018"
     expect(page).to have_content "Description of selecting phase"
+    expect(page).to have_content "Custom name for selecting phase"
     expect(page).to have_content "January 21, 2018 - March 01, 2018"
     expect(page).to have_content "Description of balloting phase"
     expect(page).to have_content "March 02, 2018 - March 20, 2018"
