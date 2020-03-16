@@ -275,6 +275,7 @@ describe "Admin budgets", :admin do
         within_table "Phases" do
           within "tr", text: "Information" do
             expect(page).to have_link "Edit phase"
+            expect(page).to have_field "Enable Selecting projects phase"
           end
         end
       end

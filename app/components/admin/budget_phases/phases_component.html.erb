@@ -26,7 +26,13 @@
           <% end %>
         </td>
         <td class="text-center">
-          <%= enabled_text(phase) %>
+          <%= check_box :phase, :enabled, checked: phase.enabled?,
+                        aria: {
+                          label: t("admin.budgets.edit.enable_phase", phase: t("budgets.phase.#{phase.kind}"))
+                        },
+                        data: {
+                          url: toggle_enable_admin_budget_budget_phase_path(phase.budget, phase)
+                        } %>
         </td>
         <td>
           <%= render Admin::TableActionsComponent.new(phase,

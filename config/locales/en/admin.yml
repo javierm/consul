@@ -106,6 +106,7 @@ en:
         enabled: Enabled
         actions: Actions
         edit_phase: Edit phase
+        enable_phase: "Enable %{phase} phase"
         active: Active
         blank_dates: Dates are blank
         administrators:
