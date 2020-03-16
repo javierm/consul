@@ -5,11 +5,14 @@
   <div class="budget-header">
 <% end %>
   <div class="row">
-    <div class="small-12 column">
+    <div class="small-12 column text-center">
+      <span class="budget-title"><%= t("budgets.index.title") %></span>
       <h1><%= budget.name %></h1>
-      <div class="description">
-        <%= auto_link_already_sanitized_html wysiwyg(budget.description) %>
-      </div>
+
+      <% if current_budget.main_button_text.present? && current_budget.main_button_url.present? %>
+        <%= link_to current_budget.main_button_text, current_budget.main_button_url,
+                    class: "button large" %>
+      <% end %>
 
       <p>
         <%= link_to t("budgets.index.section_header.help"), "#section_help" %>
