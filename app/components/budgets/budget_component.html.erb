@@ -1,4 +1,9 @@
-<div class="budget-header">
+<% if current_budget.image.present? %>
+  <div class="budget-header with-background-image"
+       style="background-image: url(<%= asset_url current_budget.image.attachment.url(:large) %>);">
+<% else %>
+  <div class="budget-header">
+<% end %>
   <div class="row">
     <div class="small-12 column">
       <h1><%= budget.name %></h1>

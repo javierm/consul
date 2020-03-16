@@ -1142,6 +1142,12 @@
   padding-bottom: $line-height;
   padding-top: $line-height;
 
+  &.with-background-image {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
   h1,
   h2,
   p,
