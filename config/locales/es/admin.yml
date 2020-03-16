@@ -71,25 +71,41 @@ es:
         preview: "Previsualizar presupuesto"
       index:
         title: Presupuestos participativos
-        new_link: Crear nuevo presupuesto
+        new_button: Crear nuevo presupuesto
         filter: Filtro
         filters:
           all: Todos
           open: Abiertos
           finished: Terminados
+        heading_mode:
+          multiple:
+          multiple:
+            description: "Crea un proceso con múltiples grupos, distritos o temas. Tienes algo como varias bolsas de dinero. Por ejemplo, 25.000€ para \"Distrito norte\", 30.000€ para \"Distrito centro\", 28.000€ para \"Distrito sur\" y toda la ciudad. O para varios temas como deporte, cultura o salud."
+            link: "Crear presupuesto de múltiples partidas"
+            title: "Presupuesto de <strong>múltiples partidas</strong>"
+          single:
+            description: "Crea un proceso con un grupo, distrito o tema. Tienes algo como una bolsa de dinero. Por ejemplo, 25.000€ para un distrito, o 10.000€ para cultura."
+            link: "Crear presupuesto de partida única"
+            title: "Presupuesto de <strong>partida única</strong>"
+          title: Tipo de presupuesto participativo
         help: "Los presupuestos participativos permiten que los ciudadanos propongan y decidan de manera directa cómo gastar parte del presupuesto, con un seguimiento y evaluación riguroso de las propuestas por parte de la institución."
         budget_investments: Gestionar proyectos de gasto
+        table_budget_type: Tipo
         table_completed: Completado
         table_draft: "Borrador"
         table_duration: "Duración"
         table_name: Nombre
-        table_phase: Fase
+        table_phase: Fase actual
         table_phase_progress: "(%{current_phase_number}/%{total_phases})"
         edit_groups: Editar grupos de partidas
         edit_budget: Editar presupuesto
         admin_ballots: Gestionar urnas
         no_budgets: "No hay presupuestos participativos."
+        type_single: Partida única
+        type_multiple: Múltiples partidas
       create:
+        button:
+          continue: "Continuar"
         notice: '¡Presupuestos participativos creados con éxito!'
       update:
         notice: Presupuestos participativos actualizados
@@ -103,10 +119,9 @@ es:
         phase: Fase
         phases_caption: "Fases"
         duration: "Duración"
-        enabled: Habilitada
-        actions: Acciones
-        edit_phase: Editar fase
+        enabled: "Fase habilitada"
         enable_phase: "Habilitar fase de %{phase}"
+        phase_content: "Editar contenido"
         active: Activa
         blank_dates: Sin fechas
         administrators:
@@ -125,6 +140,7 @@ es:
         main_call_to_action_description: "Este botón aparecerá en la cabecera de este presupuesto participativo y permite al usuario ejecutar una acción específica como crear una nueva propuesta, votar las existentes, o leer más sobre el funcionamiento de los presupuestos participativos."
         info:
           budget_settings: "Configuración genérica del presupuesto participativo"
+          heading_settings: "Configuración de la partida"
           phases_settings: "Configuración de las fases"
           staff_settings: "Administradores y Evaluadores asigandos al presupuesto"
       destroy:
@@ -132,11 +148,16 @@ es:
         unable_notice: No se puede eliminar un presupuesto con proyectos asociados
         unable_notice_polls: No se puede eliminar un presupuesto con una votación asociada
       new:
-        title: Nuevo presupuesto ciudadano
+        title_single: Nuevo presupuesto de partida única
+        title_multiple: Nuevo presupuesto de múltiples partidas
       winners:
         calculate: Calcular proyectos ganadores
         calculated: Calculando ganadores, puede tardar un minuto.
         recalculate: Recalcular proyectos ganadores
+      shared:
+        timeline_budget: Presupuesto
+        timeline_groups: Grupos
+        timeline_headings: Partidas
     budget_groups:
       name: "Nombre"
       headings_name: "Partidas"
@@ -147,6 +168,8 @@ es:
         other: "Hay %{count} grupos de partidas presupuestarias"
       create:
         notice: "¡Grupo creado con éxito!"
+        button:
+          continue: "Continuar"
       update:
         notice: "Grupo actualizado"
       destroy:
@@ -167,6 +190,8 @@ es:
         other: "Hay %{count} partidas presupuestarias"
       create:
         notice: "¡Partida presupuestaria creada con éxito!"
+        button:
+          continue: "Continuar"
       update:
         notice: "Partida presupuestaria actualizada"
       destroy:
@@ -1326,6 +1351,8 @@ es:
       example_url: "https://consulproject.org"
       show_results_and_stats: "Mostrar resultados y estadísticas"
       results_and_stats_reminder: "Si marcas estas casillas los resultados y/o estadísticas serán públicos y podrán verlos todos los usuarios."
+      close_modal: Cerrar ventana emergente
+      example_url: "https://consulproject.org"
     geozones:
       index:
         title: Zonas

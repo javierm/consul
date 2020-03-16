@@ -454,6 +454,41 @@ code {
   }
 }
 
+.timeline-steps {
+  display: flex;
+  list-style-type: none;
+  margin: $line-height * 2 0;
+  position: relative;
+
+  li {
+    border-top: 4px solid $admin-border-color;
+    display: inline-block;
+    font-size: $small-font-size;
+    font-weight: bold;
+    padding: $line-height / 2 $line-height * 3 0;
+    text-transform: uppercase;
+
+    &::before {
+      background: $admin-border-color;
+      border-radius: rem-calc(20);
+      content: "";
+      height: 20px;
+      margin-left: $line-height / 2;
+      position: absolute;
+      top: -8px;
+      width: 20px;
+    }
+
+    &.step-active {
+      border-top: 4px solid $brand;
+
+      &::before {
+        background: $brand;
+      }
+    }
+  }
+}
+
 // 02. Sidebar
 // -----------
 
@@ -668,7 +703,8 @@ code {
   display: flex;
   flex-wrap: wrap;
 
-  a {
+  a,
+  button {
     @include regular-button;
     margin-left: auto;
   }

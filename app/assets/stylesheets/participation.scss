@@ -1165,6 +1165,7 @@
   h2,
   p,
   a,
+  span,
   .back,
   .icon-angle-left,
   .description {
@@ -1251,6 +1252,37 @@
 
 .current-phase {
   @include brand-text;
+}
+
+.single-heading {
+  margin-bottom: $line-height * 2;
+  padding-bottom: $line-height;
+  position: relative;
+
+  &::after {
+    background: $brand;
+    bottom: 0;
+    content: "";
+    height: rem-calc(6);
+    position: absolute;
+    width: 20%;
+  }
+
+  h2 {
+    font-size: rem-calc(60);
+    font-weight: normal;
+  }
+
+  a {
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .heading-amount {
+    font-size: rem-calc(48);
+  }
 }
 
 .progress-votes {
@@ -1642,38 +1674,41 @@
   }
 }
 
-.orbit-bullets button {
-  background-color: #ccc;
-  height: $line-height / 2;
-  width: $line-height / 2;
+.section-recommended {
 
-  &.is-active {
-    background-color: $brand;
+  .orbit-bullets button {
+    background-color: #ccc;
+    height: $line-height / 2;
+    width: $line-height / 2;
+
+    &.is-active {
+      background-color: $brand;
+    }
   }
-}
 
-.orbit-container {
-  height: 100% !important;
-  max-height: none !important;
+  .orbit-container {
+    height: 100% !important;
+    max-height: none !important;
 
-  li {
-    margin-bottom: 0 !important;
+    li {
+      margin-bottom: 0 !important;
+    }
   }
-}
 
-.orbit-slide {
-  max-height: none !important;
-  position: relative;
-}
+  .orbit-slide {
+    max-height: none !important;
+    position: relative;
+  }
 
-.orbit-caption {
-  background: #eee;
-  color: $text;
-}
+  .orbit-caption {
+    background: #eee;
+    color: $text;
+  }
 
-.orbit-next,
-.orbit-previous {
-  background: rgba(34, 34, 34, 0.25);
+  .orbit-next,
+  .orbit-previous {
+    background: rgba(34, 34, 34, 0.25);
+  }
 }
 
 .zoom-link {
