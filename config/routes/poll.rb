@@ -8,3 +8,7 @@ resources :polls, only: [:show, :index] do
     post :answer, on: :member
   end
 end
+
+resolve "Poll::Question" do |question|
+  [:question, id: question]
+end

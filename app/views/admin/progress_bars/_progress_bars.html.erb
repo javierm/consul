@@ -2,7 +2,7 @@
 
 <%= link_to t("admin.progress_bars.index.new_progress_bar"),
             polymorphic_path(
-              [:admin, *resource_hierarchy_for(ProgressBar.new(progressable: progressable))],
+              ProgressBar.new(progressable: progressable),
               action: :new
             ),
             class: "button float-right" %>
@@ -37,12 +37,11 @@
           </td>
           <td>
             <%= link_to t("admin.actions.edit"),
-                        polymorphic_path([:admin, *resource_hierarchy_for(progress_bar)],
-                                         action: :edit),
+                        polymorphic_path(progress_bar, action: :edit),
                         class: "button hollow" %>
 
             <%= link_to t("admin.actions.delete"),
-                        polymorphic_path([:admin, *resource_hierarchy_for(progress_bar)]),
+                        polymorphic_path(progress_bar),
                         method: :delete,
                         class: "button hollow alert" %>
           </td>

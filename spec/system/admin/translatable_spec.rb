@@ -17,7 +17,7 @@ describe "Admin edit translatable records" do
   context "Add a translation", :js do
     context "Input fields" do
       let(:translatable) { create(:budget_heading) }
-      let(:path) { edit_admin_budget_group_heading_path(*resource_hierarchy_for(translatable)) }
+      let(:path) { edit_admin_budget_group_heading_path(translatable.budget, translatable.group, translatable) }
 
       scenario "Maintains existing translations" do
         visit path

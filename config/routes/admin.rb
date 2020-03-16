@@ -253,3 +253,19 @@ namespace :admin do
     resources :imports, only: [:new, :create, :show]
   end
 end
+
+resolve "Budget::Heading" do |heading|
+  [:admin, heading.budget, :group, :heading, group_id: heading.group, id: heading]
+end
+
+resolve "Milestone" do |milestone, options|
+  [:admin, *resource_hierarchy_for(milestone.milestoneable), milestone, options]
+end
+
+resolve "ProgressBar" do |progress_bar, options|
+  [:admin, *resource_hierarchy_for(progress_bar.progressable), progress_bar, options]
+end
+
+resolve "Audit" do |audit|
+  [:admin, *resource_hierarchy_for(audit.associated || audit.auditable), audit]
+end

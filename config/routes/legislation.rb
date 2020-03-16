@@ -36,3 +36,15 @@ namespace :legislation do
     end
   end
 end
+
+resolve "Legislation::Proposal" do |proposal|
+  [proposal.process, :proposal, id: proposal]
+end
+
+resolve "Legislation::Question" do |question|
+  [question.process, :question, id: question]
+end
+
+resolve "Legislation::Annotation" do |annotation|
+  [annotation.draft_version.process, :draft_version, :annotation, draft_version_id: annotation.draft_version, id: annotation]
+end
