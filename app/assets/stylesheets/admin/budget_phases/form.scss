@@ -22,4 +22,8 @@
       }
     }
   }
+
+  .images {
+    @include direct-uploads;
+  }
 }
