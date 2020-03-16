@@ -47,6 +47,10 @@
             <h3><%= phase.name %></h3>
             <p><%= start_date(phase) %> - <%= end_date(phase) %></p>
             <%= auto_link_already_sanitized_html(wysiwyg(phase.description)) %>
+
+            <% if phase.main_button_text.present? && phase.main_button_url.present? %>
+              <%= link_to phase.main_button_text, phase.main_button_url, class: "button" %>
+            <% end %>
           </div>
 
           <% if phase.image.present? %>
