@@ -43,16 +43,6 @@ module ActionDispatch::Routing::UrlFor
     resources = resource_hierarchy_for(resource)
 
     case resource.class.name
-    when "Legislation::Annotation"
-      # polymorphic_path would return:
-      # "legislation_process_legislation_draft_version_legislation_annotation_path"
-      legislation_process_draft_version_annotation_path(*resources)
-    when "Legislation::Proposal"
-      # polymorphic_path would return legislation_process_legislation_proposal_path
-      legislation_process_proposal_path(*resources)
-    when "Legislation::Question"
-      # polymorphic_path would return legislation_process_legislation_question_path
-      legislation_process_question_path(*resources)
     when "Poll::Question"
       # polymorphic_path would return poll_question_path
       question_path(*resources)

@@ -1,8 +1,5 @@
 class Budget
   class Investment < ApplicationRecord
-    def self.model_name
-      ActiveModel::Name.new(self, nil, "Investment")
-    end
     SORTING_OPTIONS = { id: "id", supports: "cached_votes_up" }.freeze
 
     include Rails.application.routes.url_helpers

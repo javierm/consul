@@ -1,13 +1,16 @@
 resources :budgets, only: [:show, :index] do
   resources :groups, controller: "budgets/groups", only: [:show]
-  resources :investments, controller: "budgets/investments" do
-    member do
-      post :vote
-      put :flag
-      put :unflag
-    end
 
-    collection { get :suggest }
+  %i[investments budget_investments].each do |name_convention|
+    resources :investments, controller: "budgets/investments", as: name_convention do
+      member do
+        post :vote
+        put :flag
+        put :unflag
+      end
+
+      collection { get :suggest }
+    end
   end
 
   resource :ballot, only: :show, controller: "budgets/ballots" do
