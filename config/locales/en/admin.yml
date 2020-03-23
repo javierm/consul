@@ -96,7 +96,6 @@ en:
         table_name: Name
         table_phase: Current phase
         table_phase_progress: "(%{current_phase_number}/%{total_phases})"
-        edit_groups: Edit headings groups
         edit_budget: Edit budget
         admin_ballots: Admin ballots
         no_budgets: "There are no budgets."
