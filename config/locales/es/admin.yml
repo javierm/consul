@@ -167,6 +167,7 @@ es:
           timeline_budget: Presupuesto
           timeline_groups: Grupos
           timeline_headings: Partidas
+          timeline_phases: Fases
       budget_groups:
         name: "Nombre"
         headings_name: "Partidas"
@@ -238,10 +239,15 @@ es:
         duration_description: "El período de tiempo que esta fase estará activa."
         enabled_help_text: Esta fase será pública en el calendario de fases del presupuesto y estará activa para otros propósitos
         image_description: "Si se proporciona una imagen se mostrará junto a la descripción de esta fase."
+        index:
+          help_block: "Los presupuestos participativos tienen distintas fases. Aquí puedes habilitar o deshabilitar fases y también personalizar cada una de las fases."
+          button:
+            continue: "Finalizar"
         main_call_to_action: "Botón de acción principal (opcional)"
         main_call_to_action_description: "Este botón aparecerá en la cabecera de este presupuesto participativo cuando esta fase esté activa y permite al usuario ejecutar una acción específica como crear una nueva propuesta, votar las existentes, o leer más sobre el funcionamiento de los presupuestos participativos."
         name_help_text: "Este es el título de la fase que los usuarios leerán en el encabezado cuando la fase esté activa."
         save_changes: Guardar cambios
+        title: "Editar fase"
       index:
         help: "Los presupuestos participativos tienen distintas fases. Aquí puedes habilitar o deshabilitar fases y también personalizar cada una de las fases."
     budget_investments:
