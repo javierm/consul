@@ -14,6 +14,7 @@ en:
       edit: Edit
       configure: Configure
       delete: Delete
+      confirm_delete: "Are you sure? This action will delete %{resource_name} '%{name}' and can't be undone."
     officing_booth:
       title: "You are officing the booth located at %{booth}. If this is not correct, do not continue and call the help phone number. Thank you."
     banners:
@@ -96,6 +97,7 @@ en:
         table_name: Name
         table_phase: Current phase
         table_phase_progress: "(%{current_phase_number}/%{total_phases})"
+        delete: "Delete budget"
         edit_budget: Edit budget
         admin_ballots: Admin ballots
         no_budgets: "There are no budgets."
@@ -167,6 +169,7 @@ en:
         timeline_groups: Groups
         timeline_headings: Headings
         timeline_phases: Phases
+        resource_name: "the budget"
     budget_groups:
       name: "Name"
       headings_name: "Headings"
