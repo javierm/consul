@@ -15,7 +15,7 @@ module Budgets
       def investments_by_heading
         base = @budget.investments.winners
         base = base.joins(milestones: :translations).includes(:milestones)
-        base = base.tagged_with(params[:milestone_tag]) if params[:milestone_tag].present?
+        base = base.by_tag(params[:milestone_tag]) if params[:milestone_tag].present?
 
         if params[:status].present?
           base = base.with_milestone_status_id(params[:status])
