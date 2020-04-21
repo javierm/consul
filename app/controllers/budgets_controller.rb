@@ -5,6 +5,7 @@ class BudgetsController < ApplicationController
 
   before_action :load_budget, only: :show
   before_action :load_current_budget, only: :index
+  before_action :load_investments, only: [:index, :show]
   load_and_authorize_resource
 
   respond_to :html, :js
@@ -25,5 +26,10 @@ class BudgetsController < ApplicationController
 
     def load_current_budget
       @budget = current_budget
+    end
+
+    def load_investments
+      @investments = @budget&.investments_preview_list
+      @investments ||= @current_budget&.investments_preview_list
     end
 end
