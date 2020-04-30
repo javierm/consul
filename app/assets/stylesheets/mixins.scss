@@ -29,7 +29,7 @@
   $side-menu-width: 250px;
   display: flex;
 
-  > :first-child {
+  > nav {
     flex: 25%;
     min-width: $side-menu-width;
 
@@ -41,19 +41,21 @@
       top: 0;
       transition: left 0.5s ease;
       z-index: 12;
+    }
+  }
 
-      &:target {
-        left: 0;
+  [name="show_menu"]:checked + nav {
+    @include breakpoint(small only) {
+      left: 0;
 
-        + * {
-          left: $side-menu-width;
+      + * {
+        left: $side-menu-width;
 
-          [href="#hide_side_menu"] {
-            @include reveal-overlay;
-            cursor: pointer;
-            display: block;
-            z-index: 11;
-          }
+        .hide-menu[for="show_menu"] {
+          @include reveal-overlay;
+          cursor: pointer;
+          display: block;
+          z-index: 11;
         }
       }
     }
@@ -70,16 +72,20 @@
     }
   }
 
-  [href="#side_menu"] {
+  [name="show_menu"] {
+    display: none;
+  }
+
+  [for="show_menu"] {
     display: none;
 
     @include breakpoint(small only) {
       display: block;
-    }
-  }
 
-  [href="#hide_side_menu"] {
-    display: none;
+      &.hide-menu {
+        display: none;
+      }
+    }
   }
 }
 
