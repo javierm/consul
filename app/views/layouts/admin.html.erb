@@ -16,6 +16,7 @@
 
       <div class="admin-content">
         <a href="#side_menu" class="button hollow expanded"><%= t("admin.menu.admin") %></a>
+        <a href="#hide_side_menu" title="<%= t("admin.menu.admin") %>"></a>
 
         <%= render "layouts/flash" %>
         <%= render "layouts/officing_booth" if controller.class.parent == Officing && session[:booth_id].present? %>

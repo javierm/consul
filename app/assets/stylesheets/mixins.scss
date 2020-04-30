@@ -47,6 +47,13 @@
 
         + * {
           left: $side-menu-width;
+
+          [href="#hide_side_menu"] {
+            @include reveal-overlay;
+            cursor: pointer;
+            display: block;
+            z-index: 11;
+          }
         }
       }
     }
@@ -69,6 +76,10 @@
     @include breakpoint(small only) {
       display: block;
     }
+  }
+
+  [href="#hide_side_menu"] {
+    display: none;
   }
 }
 
