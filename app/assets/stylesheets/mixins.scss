@@ -29,27 +29,6 @@
   $side-menu-width: 250px;
   display: flex;
 
-  @include breakpoint(small only) {
-    left: 0;
-    position: relative;
-    transition: left 0.5s ease;
-
-    &.has-menu {
-      left: $side-menu-width;
-
-      > :first-child {
-        left: 0;
-      }
-    }
-
-    .has-menu-wrapper {
-      @include reveal-overlay;
-      cursor: pointer;
-      display: block;
-      z-index: 11;
-    }
-  }
-
   > :first-child {
     flex: 25%;
     min-width: $side-menu-width;
@@ -62,12 +41,26 @@
       top: 0;
       transition: left 0.5s ease;
       z-index: 12;
+
+      &.has-menu {
+        left: 0;
+
+        + * {
+          left: $side-menu-width;
+        }
+      }
     }
   }
 
   > :last-child {
     flex: 75%;
     padding: $line-height !important;
+
+    @include breakpoint(small only) {
+      left: 0;
+      position: relative;
+      transition: left 0.5s ease;
+    }
   }
 
   [href="#side_menu"] {
