@@ -53,7 +53,6 @@
 //= require foundation_extras
 //= require ie_alert
 //= require location_changer
-//= require menu
 //= require moderator_comment
 //= require moderator_debates
 //= require moderator_proposals
@@ -160,7 +159,6 @@ var initialize_modules = function() {
   App.Managers.initialize();
   App.Globalize.initialize();
   App.SendAdminNotificationAlert.initialize();
-  App.Menu.initialize();
   App.Settings.initialize();
   if ($("#js-columns-selector").length) {
     App.ColumnsSelector.initialize();

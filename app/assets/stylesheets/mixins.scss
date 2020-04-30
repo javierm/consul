@@ -42,7 +42,7 @@
       transition: left 0.5s ease;
       z-index: 12;
 
-      &.has-menu {
+      &:target {
         left: 0;
 
         + * {
