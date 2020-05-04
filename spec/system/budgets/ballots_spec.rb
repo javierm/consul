@@ -71,6 +71,8 @@ describe "Ballots" do
         visit budget_path(budget)
 
         within("#groups_and_headings") do
+          # expect(page).to have_content "Investments Type1"
+          # expect(page).to have_content "Investments Type2"
           expect(page).to have_link "Investments Type1"
           expect(page).to have_link "Investments Type2"
           expect(page).to have_link "District 1"
@@ -96,6 +98,7 @@ describe "Ballots" do
         end
 
         visit budget_path(budget)
+        # click_link "See all investments"
         click_link "Above the city"
 
         expect(page).to have_css(".budget-investment", count: 2)
@@ -103,6 +106,7 @@ describe "Ballots" do
         expect(page).to have_content "Observatory"
 
         visit budget_path(budget)
+        # click_link "See all investments"
         click_link "District 1"
 
         expect(page).to have_css(".budget-investment", count: 2)
@@ -110,6 +114,7 @@ describe "Ballots" do
         expect(page).to have_content "Zero-emission zone"
 
         visit budget_path(budget)
+        # click_link "See all investments"
         click_link "District 2"
 
         expect(page).to have_css(".budget-investment", count: 1)
