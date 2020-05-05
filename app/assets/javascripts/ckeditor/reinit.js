@@ -1,7 +1,10 @@
-$(document).on("page:change", function() {
-  if (typeof(CKEDITOR) != "undefined"){
-    for(name in CKEDITOR.instances){
-      try{CKEDITOR.replace(name);}catch(err){};
-    }
-  }
+$(function() {
+  "use strict";
+  $(document).on("page:before-unload", function() {
+    App.HTMLEditor.destroy();
+  });
+
+  $(document).on("page:restore", function() {
+    App.HTMLEditor.initialize();
+  });
 });
