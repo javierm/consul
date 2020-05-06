@@ -151,6 +151,41 @@ describe "Budget Investments" do
     end
   end
 
+  scenario "Index filter by status", :js do
+    budget.update!(phase: "finished")
+
+    create_list(:budget_investment, 2, :feasible, heading: heading)
+    create_list(:budget_investment, 2, :unfeasible, heading: heading)
+    create_list(:budget_investment, 2, :unselected, heading: heading)
+    create_list(:budget_investment, 2, :selected, heading: heading)
+    create_list(:budget_investment, 2, :winner, heading: heading)
+
+    visit budget_investments_path(budget, heading_id: heading.id)
+
+    expect(page).to have_select "Filtering projects by",
+                                options: ["Not unfeasible", "Unfeasible", "Unselected", "Selected", "Winners"]
+
+    select "Unfeasible", from: "Filtering projects by"
+
+    expect(page).to have_css(".budget-investment", count: 2)
+
+    select "Unselected", from: "Filtering projects by"
+
+    expect(page).to have_css(".budget-investment", count: 4)
+
+    select "Selected", from: "Filtering projects by"
+
+    expect(page).to have_css(".budget-investment", count: 4)
+
+    select "Winners", from: "Filtering projects by"
+
+    expect(page).to have_css(".budget-investment", count: 2)
+
+    select "Not unfeasible", from: "Filtering projects by"
+
+    expect(page).to have_css(".budget-investment", count: 8)
+  end
+
   context("Search") do
     scenario "Search by text" do
       investment1 = create(:budget_investment, heading: heading, title: "Get Schwifty")
