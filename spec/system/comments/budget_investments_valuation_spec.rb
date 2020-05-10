@@ -61,7 +61,7 @@ describe "Internal valuation comments on Budget::Investments" do
     scenario "Collapsable comments", :js do
       parent_comment = create(:comment, :valuation, author: valuator_user, body: "Main comment",
                                                     commentable: investment)
-      child_comment  = create(:comment, :valuation, author: valuator_user, body: "First child",
+      child_comment  = create(:comment, :valuation, author: valuator_user, body: "First subcomment",
                                                     commentable: investment, parent: parent_comment)
       grandchild_comment = create(:comment, :valuation, author: valuator_user,
                                                         parent: child_comment,
