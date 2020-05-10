@@ -1,0 +1,7 @@
+<% valuation = local_assigns.fetch(:valuation, false) %>
+
+<ul class="no-bullet comment-list"><%-
+  comments.each do |comment| %>
+    <li><%= render "comments/comment", { comment: comment, valuation: valuation } %></li>
+  <% end
+%></ul>
