@@ -64,7 +64,6 @@ describe "CKEditor" do
 
       go_back
 
-      wait_for_ckeditor("Email content")
       within_frame(0) do
         expect(page).to have_content "This is an unsaved body"
       end
