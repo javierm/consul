@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "rails", "5.1.7"
+gem "rails", "5.2.4.3"
 
 gem "acts-as-taggable-on", "~> 6.5.0"
 gem "acts_as_votable", "~> 0.11.1"
@@ -13,7 +13,7 @@ gem "cancancan", "~> 2.3.0"
 gem "ckeditor", "~> 4.3.0"
 gem "cocoon", "~> 1.2.14"
 gem "daemons", "~> 1.3.1"
-gem "dalli", "~> 2.7.6"
+gem "dalli", "~> 2.7.10"
 gem "delayed_job_active_record", "~> 4.1.3"
 gem "devise", "~> 4.7.1"
 gem "devise-async", "~> 1.0.0"
