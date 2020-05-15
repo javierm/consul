@@ -99,4 +99,8 @@ module BudgetsHelper
       }
     end
   end
+
+  def budget_investments_total_supports(user)
+    Vote.where(votable_type: "Budget::Investment", voter_id: user.id).count
+  end
 end
