@@ -7,16 +7,18 @@
           class: "like #{voted_classes[:in_favor]}", title: t('votes.agree'), method: "post", remote: true,
           onclick: "ga('send', 'event','Enlaces','Click','sumate', 1);" do %>
           <span class="icon-like">
-            <%= image_tag('sumate.png',  alt: 'sumate') %>
+            <%= image_tag('participa.png',  alt: 'participa') %>
+            <%= image_tag('participa-hover.png', class: 'hover', alt: 'participa') %>
             <p><b><%= t('votes.agree') %></b></p>
           </span>
         <% end %>
       <% else %>
         <%= link_to vote_debate_path(debate, value: 'yes'),
-          class: "like #{voted_classes[:in_favor]}", title: 'súmate', method: "post", remote: true,
+          class: "like #{voted_classes[:in_favor]}", title: 'participa', method: "post", remote: true,
           onclick: "ga('send', 'event','Enlaces','Click','sumate', 1);" do %>
           <span class="icon-like">
-            <%= image_tag('sumate.png',  alt: 'sumate') %>
+            <%= image_tag('boton-participa.png',  alt: 'participa') %>
+            <%= image_tag('boton-participa-hover.png', class: 'hover', alt: 'participa') %>
           </span>
         <% end %>
 

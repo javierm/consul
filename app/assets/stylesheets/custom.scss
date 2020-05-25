@@ -53,7 +53,7 @@ header {
   background-image: image-url("background_header.png") !important;
   & > .row {
     .logo.show-for-small-only img {
-      width: auto;
+      width: 100px;
     }
     .top-bar {
       background-color: transparent!important;
@@ -695,6 +695,10 @@ div#groups_and_headings {
 .comment-body .icon-like{
   &::before{content: '\6b';}
 }
+.debate-show .votes .icon-like:hover {
+  background-color: initial;
+  border-color: initial;
+}
 
 
 .debate-description {
@@ -736,6 +740,19 @@ div#groups_and_headings {
   image-rendering: inherit;
 }
 
+.orbit-figure.culture-covid, .votes a.like {
+  img.hover {
+    display: none;
+  }
+  &:hover {
+    img {
+      display: none;
+    }
+    img.hover {
+      display: inline-block;
+    }
+  }
+}
 
 .new_answered_survey {
   input[type='text'] {

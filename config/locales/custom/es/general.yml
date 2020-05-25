@@ -143,7 +143,7 @@ es:
         other: " que contienen '%{search_term}'"
       select_order: Ordenar por
       select_order_long: Estas viendo las propuestas del cabildo
-      start_debate: Empieza una propue
+      start_debate: Empieza una propuesta
       title: Propuestas
       section_header:
         icon_alt: Icono de Propuestas

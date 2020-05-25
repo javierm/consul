@@ -15,12 +15,16 @@
           </div>
         </div>
 
-        <figure class="orbit-figure">
-          <%= image_tag('fondo.jpg', class: 'orbit-image', alt: 'Actividades participación ciudadana') %>
+        <figure class="orbit-figure culture-covid">
+          <%= link_to debate_path('1-prop-1'), class: "index #{"active" if controller_name == "proposals"}", accesskey: "d"  do %>
+            <%= image_tag('fondo-cultura-y-covid.jpg', class: 'orbit-image hide-for-small-only', alt: 'Actividades participación ciudadana') %>
+            <%= image_tag('fondo-cultura-y-covid-hover.jpg', class: 'orbit-image hide-for-small-only hover', alt: 'Actividades participación ciudadana') %>
+            <%= image_tag('fondo-cultura-y-covid-movil.jpg', class: 'orbit-image show-for-small-only', alt: 'Actividades participación ciudadana') %>
+            <% end %>
         </figure>
       </li>
     </ul>
-    <nav class="orbit-bullets">
+    <nav class="orbit-bullets hide">
       <button class="is-active" data-slide="0"><span class="show-for-sr">First slide details.</span><span class="show-for-sr">Current Slide</span></button>
       <!--<button data-slide="2"><span class="show-for-sr">Second slide details.</span></button>-->
     </nav>
@@ -31,7 +35,7 @@
   <main>
     <div class="row text-center margin welcome medium-8 small-12">
 
-      <div class="small-12 medium-2 column">
+      <div class="small-6 medium-2 column">
         <%= link_to proposals_path, class: "index #{"active" if controller_name == "proposals"}", accesskey: "d"  do %>
           <%= image_tag("icon_home_debate.png", size: "168x168", alt: t("welcome.debates.title"), title: t("welcome.debates.title")) %>
           <h3><%= t("welcome.debates.title") %></h3>
@@ -39,7 +43,7 @@
         <!-- <p><%= t("welcome.debates.description") %></p> -->
 
       </div>
-      <div class="small-12 medium-2 column">
+      <div class="small-6 medium-2 column">
         <%= link_to proposals_path, class: "index #{"active" if controller_name == "proposals"}", accesskey: "d"  do %>
           <%= image_tag("icon_home_proposal.png", size: "168x168", alt: t("welcome.proposal.title"), title: t("welcome.proposal.title"))  %>
           <h3><%= t("welcome.proposal.title") %></h3>
@@ -47,14 +51,14 @@
         <!-- <p><%= t("welcome.proposal.description") %></p> -->
       </div>
 
-      <div class="small-12 medium-2 column">
+      <div class="small-6 medium-2 column">
         <%= link_to proposals_path, class: "index #{"active" if controller_name == "proposals"}", accesskey: "d"  do %>
           <%= image_tag("icon_home_decide.png", size: "168x168", alt: t("welcome.decide.title"), title: t("welcome.decide.title")) %>
           <h3><%= t("welcome.decide.title") %></h3>
         <% end %>
         <!-- <p><%= t("welcome.decide.description") %></p> -->
       </div>
-      <div class="small-12 medium-2 column">
+      <div class="small-6 medium-2 column">
         <%= link_to proposals_path, class: "index #{"active" if controller_name == "proposals"}", accesskey: "d"  do %>
           <%= image_tag("icon_home_do.png", size: "168x168", alt: t("welcome.do.title"), title: t("welcome.do.title")) %>
           <h3><%= t("welcome.do.title") %></h3>
