@@ -79,7 +79,7 @@ group :development, :test do
 end
 
 group :test do
-  gem "capybara", "~> 3.29.0"
+  gem "capybara", "~> 3.32.2"
   gem "capybara-webmock", "~> 0.5.3"
   gem "coveralls", "~> 0.8.22", require: false
   gem "email_spec", "~> 2.2.0"
