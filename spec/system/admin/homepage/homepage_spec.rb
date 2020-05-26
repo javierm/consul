@@ -39,6 +39,8 @@ describe "Homepage" do
         accept_confirm { click_button "Enable" }
       end
 
+      expect(page).to have_content "Value updated"
+
       visit root_path
 
       within("#feed_proposals") do
@@ -57,6 +59,8 @@ describe "Homepage" do
         select "2", from: "widget_feed_limit"
         accept_confirm { click_button "Enable" }
       end
+
+      expect(page).to have_content "Value updated"
 
       visit root_path
 
@@ -84,6 +88,8 @@ describe "Homepage" do
         accept_confirm { click_button "Enable" }
       end
 
+      expect(page).to have_content "Value updated"
+
       visit root_path
 
       within("#feed_proposals") do
@@ -108,6 +114,8 @@ describe "Homepage" do
         select "3", from: "widget_feed_limit"
         accept_confirm { click_button "Enable" }
       end
+
+      expect(page).to have_content "Value updated"
 
       visit root_path
 
