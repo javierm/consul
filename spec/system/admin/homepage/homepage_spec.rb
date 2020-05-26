@@ -1,4 +1,5 @@
 require "rails_helper"
+# Com1
 
 describe "Homepage" do
   before do
