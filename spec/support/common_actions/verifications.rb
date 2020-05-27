@@ -58,7 +58,5 @@ module Verifications
         ckeditor.focus()
         ckeditor.updateElement()
     SCRIPT
-
-    expect(page).to have_ckeditor label, with: with
   end
 end
