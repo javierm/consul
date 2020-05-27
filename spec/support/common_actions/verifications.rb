@@ -51,12 +51,8 @@ module Verifications
       sleep 0.01
     end
 
-    # Fill the editor content
-    page.execute_script <<-SCRIPT
-        var ckeditor = CKEDITOR.instances.#{locator}
-        ckeditor.setData("#{with}")
-        ckeditor.focus()
-        ckeditor.updateElement()
-    SCRIPT
+    within("#cke_#{locator}") do
+      within_frame(0) { find("body").set(with) }
+    end
   end
 end
