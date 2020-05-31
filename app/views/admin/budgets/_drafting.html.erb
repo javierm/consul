@@ -1,4 +1,4 @@
-<% if @budget.drafting? %>
+<% if can? :publish, @budget %>
   <%= link_to t("admin.budgets.edit.publish"),
               publish_admin_budget_path(@budget),
               method: :patch, class: "button float-right",
