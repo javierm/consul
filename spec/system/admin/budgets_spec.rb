@@ -20,18 +20,20 @@ describe "Admin budgets" do
     let!(:budget) { create(:budget, slug: "budget_slug") }
 
     scenario "finds budget by slug" do
-      visit admin_budget_path("budget_slug")
+      visit edit_admin_budget_path("budget_slug")
+
+      expect(page).to have_content("Edit Participatory budget")
     end
 
     scenario "raises an error if budget slug is not found" do
       expect do
-        visit admin_budget_path("wrong_budget")
+        visit edit_admin_budget_path("wrong_budget")
       end.to raise_error ActiveRecord::RecordNotFound
     end
 
     scenario "raises an error if budget id is not found" do
       expect do
-        visit admin_budget_path(0)
+        visit edit_admin_budget_path(0)
       end.to raise_error ActiveRecord::RecordNotFound
     end
   end
@@ -143,13 +145,13 @@ describe "Admin budgets" do
     let(:budget) { create(:budget, :drafting) }
 
     scenario "Can preview budget before and after it is published" do
-      visit admin_budget_path(budget)
+      visit edit_admin_budget_path(budget)
 
       click_link "Preview"
 
       expect(page).to have_current_path budget_path(budget)
 
-      visit admin_budget_path(budget)
+      visit edit_admin_budget_path(budget)
       budget.update!(published: true)
 
       click_link "Preview"
@@ -158,7 +160,7 @@ describe "Admin budgets" do
     end
 
     scenario "Publishing a budget" do
-      visit admin_budget_path(budget)
+      visit edit_admin_budget_path(budget)
 
       click_link "Publish"
 

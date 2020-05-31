@@ -27,7 +27,7 @@ class Admin::BudgetsController < Admin::BaseController
 
   def publish
     @budget.publish!
-    redirect_to admin_budget_path(@budget), notice: t("admin.budgets.publish.notice")
+    redirect_to edit_admin_budget_path(@budget), notice: t("admin.budgets.publish.notice")
   end
 
   def calculate_winners
@@ -52,7 +52,7 @@ class Admin::BudgetsController < Admin::BaseController
   def create
     @budget = Budget.new(budget_params.merge(published: false))
     if @budget.save
-      redirect_to admin_budget_path(@budget), notice: t("admin.budgets.create.notice")
+      redirect_to edit_admin_budget_path(@budget), notice: t("admin.budgets.create.notice")
     else
       load_staff
       render :new
