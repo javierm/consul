@@ -360,7 +360,7 @@ ActiveRecord::Schema.define(version: 20200519120717) do
     t.text "description_drafting"
     t.text "description_publishing_prices"
     t.text "description_informing"
-    t.boolean "published", default: true
+    t.boolean "published"
   end
 
   create_table "campaigns", id: :serial, force: :cascade do |t|

@@ -1,5 +1,5 @@
-class AddPublishedStatusToBudgets < ActiveRecord::Migration[5.0]
+class AddPublishedStatusToBudgets < ActiveRecord::Migration[5.1]
   def change
-    add_column :budgets, :published, :boolean, default: true
+    add_column :budgets, :published, :boolean
   end
 end

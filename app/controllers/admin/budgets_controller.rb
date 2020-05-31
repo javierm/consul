@@ -50,7 +50,7 @@ class Admin::BudgetsController < Admin::BaseController
   end
 
   def create
-    @budget = Budget.new(budget_params)
+    @budget = Budget.new(budget_params.merge(published: false))
     if @budget.save
       redirect_to admin_budget_path(@budget), notice: t("admin.budgets.create.notice")
     else
@@ -76,7 +76,6 @@ class Admin::BudgetsController < Admin::BaseController
       descriptions = Budget::Phase::PHASE_KINDS.map { |p| "description_#{p}" }.map(&:to_sym)
       valid_attributes = [:phase,
                           :currency_symbol,
-                          :published,
                           administrator_ids: [],
                           valuator_ids: []
       ] + descriptions

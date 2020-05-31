@@ -32,6 +32,36 @@ describe Budget do
         expect(Budget.valuating_or_later).to be_empty
       end
     end
+
+    describe ".drafting" do
+      it "returns unpublished budgets" do
+        undefined = create(:budget, published: nil)
+        drafting = create(:budget, published: false)
+
+        expect(Budget.drafting).to match_array([undefined, drafting])
+      end
+
+      it "does not return published budgets" do
+        create(:budget, published: true)
+
+        expect(Budget.drafting).to be_empty
+      end
+    end
+
+    describe ".published" do
+      it "does not return unpublished budgets" do
+        create(:budget, published: nil)
+        create(:budget, published: false)
+
+        expect(Budget.published).to be_empty
+      end
+
+      it "returns published budgets" do
+        published = create(:budget, published: true)
+
+        expect(Budget.published).to eq [published]
+      end
+    end
   end
 
   describe "name" do

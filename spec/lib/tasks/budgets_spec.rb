@@ -2,15 +2,22 @@ require "rails_helper"
 
 describe Budget do
   let(:run_rake_task) do
-    Rake::Task["budgets:update_drafting_budgets"].reenable
-    Rake.application.invoke_task("budgets:update_drafting_budgets")
+    Rake::Task["budgets:set_published"].reenable
+    Rake.application.invoke_task("budgets:set_published")
   end
 
-  it "does not change anything if there are not budgets in draft mode" do
-    budget = create(:budget)
+  it "does not change anything if the published attribute is set" do
+    budget = create(:budget, published: false, phase: "accepting")
+
+    run_rake_task
+    budget.reload
 
     expect(budget.phase).to eq "accepting"
-    expect(budget.published).to be true
+    expect(budget.published).to be false
+  end
+
+  it "publishes budgets which are not in draft mode" do
+    budget = create(:budget, published: nil, phase: "accepting")
 
     run_rake_task
     budget.reload
@@ -19,11 +26,9 @@ describe Budget do
     expect(budget.published).to be true
   end
 
-  it "changes the published attribut to false" do
-    budget = create(:budget)
-    budget.update_columns(phase: "drafting")
-
-    expect(budget.published).to be true
+  it "changes the published attribute to false" do
+    budget = create(:budget, published: nil)
+    budget.update_column(:phase, "drafting")
 
     run_rake_task
     budget.reload
@@ -32,8 +37,8 @@ describe Budget do
   end
 
   it "changes the phase to the first enabled phase" do
-    budget = create(:budget)
-    budget.update_columns(phase: "drafting")
+    budget = create(:budget, published: nil)
+    budget.update_column(:phase, "drafting")
     budget.phases.informing.update!(enabled: false)
 
     expect(budget.phase).to eq "drafting"
@@ -42,11 +47,12 @@ describe Budget do
     budget.reload
 
     expect(budget.phase).to eq "accepting"
+    expect(budget.published).to be false
   end
 
   it "enables and select the informing phase if there are not any enabled phases" do
-    budget = create(:budget)
-    budget.update_columns(phase: "drafting")
+    budget = create(:budget, published: nil)
+    budget.update_column(:phase, "drafting")
     budget.phases.each { |phase| phase.update!(enabled: false) }
 
     expect(budget.phase).to eq "drafting"
@@ -56,5 +62,6 @@ describe Budget do
 
     expect(budget.phase).to eq "informing"
     expect(budget.phases.informing.enabled).to be true
+    expect(budget.published).to be false
   end
 end

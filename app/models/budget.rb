@@ -41,8 +41,8 @@ class Budget < ApplicationRecord
 
   after_create :generate_phases
 
-  scope :drafting,  -> { where(published: false) }
   scope :published, -> { where(published: true) }
+  scope :drafting,  -> { where.not(id: published) }
   scope :informing, -> { where(phase: "informing") }
   scope :accepting, -> { where(phase: "accepting") }
   scope :reviewing, -> { where(phase: "reviewing") }
@@ -90,7 +90,7 @@ class Budget < ApplicationRecord
   end
 
   def drafting?
-    published == false
+    !published?
   end
 
   def informing?
