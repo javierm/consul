@@ -152,8 +152,7 @@ describe "Admin budgets" do
       visit admin_budget_path(budget)
       budget.update!(published: true)
 
-      expect(page).to have_link "Preview budget"
-      click_link "Preview budget"
+      click_link "Preview"
 
       expect(page).to have_current_path budget_path(budget)
     end
@@ -163,8 +162,8 @@ describe "Admin budgets" do
 
       click_link "Publish"
 
-      expect(page).to have_content "Participaroty budget published successfully"
-      expect(page).to have_link "Preview budget"
+      expect(page).to have_content "Participatory budget published successfully"
+      expect(page).to have_link "Preview"
       expect(page).not_to have_content "This participatory budget is in draft mode"
       expect(page).not_to have_link "Publish budget"
     end
