@@ -13,7 +13,8 @@ namespace :db do
   task extensions: :environment do
     ActiveRecord::Base.connection.execute "CREATE SCHEMA IF NOT EXISTS shared_extensions;"
 
-    %w[plpgsql unaccent pg_trgm].each do |extension|
+    %w[unaccent pg_trgm].each do |extension|
+      ActiveRecord::Base.connection.execute "DROP EXTENSION IF EXISTS #{extension};"
       ActiveRecord::Base.connection.execute "CREATE EXTENSION IF NOT EXISTS #{extension} SCHEMA shared_extensions;"
     end
 
