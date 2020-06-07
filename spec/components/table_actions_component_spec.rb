@@ -30,4 +30,13 @@ describe TableActionsComponent, type: :component do
       expect(page).not_to have_link "Edit"
     end
   end
+
+  it "allows custom texts for actions" do
+    render_inline TableActionsComponent.new(banner, edit_text: "Change banner", destroy_text: "Annihilate")
+
+    expect(page).to have_link "Annihilate"
+    expect(page).to have_link "Change banner"
+    expect(page).not_to have_link "Delete"
+    expect(page).not_to have_link "Edit"
+  end
 end
