@@ -36,6 +36,20 @@ $sidebar-active: #f4fcd0;
     }
   }
 
+  a {
+
+    &.icon-link {
+
+      &:hover {
+        text-decoration: none;
+      }
+
+      .fa-trash-alt {
+        color: $delete;
+      }
+    }
+  }
+
   .back {
     float: none;
   }

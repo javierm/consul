@@ -1,11 +1,10 @@
 <% if actions.include?(:edit) %>
-  <%= link_to edit_text, edit_path, class: "button hollow" %>
+  <%= icon_link_to edit_text, edit_path, icon: "edit" %>
 <% end %>
 
 <% if actions.include?(:destroy) %>
-  <%= link_to destroy_text,
-              destroy_path,
-              method: :delete,
-              class: "button hollow alert",
-              data: { confirm: destroy_confirmation } %>
+  <%= icon_link_to destroy_text, destroy_path,
+    icon: "trash-alt",
+    method: :delete,
+    data: { confirm: destroy_confirmation } %>
 <% end %>
