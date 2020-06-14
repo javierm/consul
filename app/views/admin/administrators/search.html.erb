@@ -21,12 +21,9 @@
               <% if user.administrator? && user.administrator.persisted? %>
                 <%= render Admin::TableActionsComponent.new(user.administrator, actions: [:destroy]) %>
               <% else %>
-                <%= link_to t("admin.administrators.administrator.add"),
-                            { controller: "admin/administrators",
-                              action: :create,
-                              user_id: user },
-                            method: :post,
-                            class: "button success expanded" %>
+                <%= Admin::TableActionsComponent.new.link_to_add_user t("admin.administrators.administrator.add"),
+                  admin_administrators_path(user_id: user.id)
+                %>
               <% end %>
             </td>
           </tr>

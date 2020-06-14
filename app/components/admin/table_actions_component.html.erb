@@ -1,10 +1,10 @@
 <% if actions.include?(:edit) %>
-  <%= icon_link_to edit_text, edit_path, icon: "edit" %>
+  <%= icon_link_to edit_text, edit_path, icon: "far fa-edit" %>
 <% end %>
 
 <% if actions.include?(:destroy) %>
   <%= icon_link_to destroy_text, destroy_path,
-    icon: "trash-alt",
+    icon: "far fa-trash-alt",
     method: :delete,
     data: { confirm: destroy_confirmation } %>
 <% end %>

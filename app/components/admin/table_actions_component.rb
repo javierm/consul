@@ -6,6 +6,10 @@ class Admin::TableActionsComponent < ApplicationComponent
     @options = options
   end
 
+  def link_to_add_user(text, path)
+    icon_link_to text, path, icon: "fas fa-user-plus", method: :post
+  end
+
   private
 
     def actions
