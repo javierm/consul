@@ -13,9 +13,10 @@
   <td>
     <%= render Admin::TableActionsComponent.new(poll,
       destroy_confirmation: t("admin.polls.destroy.alert")
-    ) %>
-    <%= link_to t("admin.actions.configure"),
-                admin_poll_path(poll),
-                class: "button hollow " %>
+    ) do |actions| %>
+      <%= actions.icon_link_to t("admin.actions.configure"),
+        admin_poll_path(poll),
+        icon: "fas fa-tools" %>
+    <% end %>
   </td>
 </tr>

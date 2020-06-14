@@ -30,9 +30,11 @@
           <% end %>
         </td>
         <td>
-          <%= link_to t("admin.polls.show.edit_answers"), admin_question_path(question),
-                                                            class: "button hollow" %>
-          <%= render Admin::TableActionsComponent.new(question) %>
+          <%= render Admin::TableActionsComponent.new(question) do |actions| %>
+            <%= actions.icon_link_to t("admin.polls.show.edit_answers"),
+              admin_question_path(question),
+              icon: "fas fa-tools" %>
+          <% end %>
         </td>
       </tr>
     <% end %>
