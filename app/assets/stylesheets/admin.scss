@@ -44,12 +44,20 @@ $sidebar-active: #f4fcd0;
         text-decoration: none;
       }
 
-      .fa-trash-alt {
+      .fa-trash-alt,
+      .fa-flag,
+      .fa-user-times {
         color: $delete;
       }
 
-      .fa-user-plus {
+      .fa-user-plus,
+      .fa-user-check,
+      .fa-share-square {
         color: $color-success;
+      }
+
+      .fa-undo {
+        color: $warning-color;
       }
     }
   }

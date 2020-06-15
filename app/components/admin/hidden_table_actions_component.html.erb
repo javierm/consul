@@ -1,10 +1,12 @@
-<%= link_to restore_text, restore_path,
+<%= icon_link_to restore_text, restore_path,
+  icon: "fas fa-undo",
   method: :put,
-  data: { confirm: t("admin.actions.confirm") },
-  class: "button hollow warning" %>
+  data: { confirm: t("admin.actions.confirm") }
+%>
 
 <% unless record.confirmed_hide? %>
-  <%= link_to confirm_hide_text, confirm_hide_path,
-    method: :put,
-    class: "button" %>
+  <%= icon_link_to confirm_hide_text, confirm_hide_path,
+    icon: "far fa-flag",
+    method: :put
+  %>
 <% end %>
