@@ -1,0 +1,19 @@
+<% content_for :body_class, "home-page" %>
+
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: root_url %>
+<% end %>
+
+<%= render 'slider' %>
+<%= render 'sub_banner' %>
+
+<main>
+  <%= render 'sections_icons' %>
+  <%= render 'presentation' %>
+
+  <% if feature?("user.recommendations") && (@recommended_debates.present? || @recommended_proposals.present?) %>
+    <%= render "recommended",
+                recommended_debates: @recommended_debates,
+                recommended_proposals: @recommended_proposals %>
+  <% end %>
+</main>
