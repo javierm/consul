@@ -10,7 +10,7 @@ class AdvancedSearchComponent < ApplicationComponent
 
     def official_level_search_options
       options_for_select((1..5).map { |i| [setting["official_level_#{i}_name"], i] },
-                         params[:advanced_search].try(:[], :official_level))
+                         advanced_search_terms[:official_level])
     end
 
     def date_range_options
@@ -24,10 +24,18 @@ class AdvancedSearchComponent < ApplicationComponent
     end
 
     def selected_date_range
-      custom_date_range? ? "custom" : params[:advanced_search].try(:[], :date_min)
+      date_max.present? ? "custom" : date_min
     end
 
-    def custom_date_range?
-      params[:advanced_search].try(:[], :date_max).present?
+    def date_min
+      advanced_search_terms[:date_min]
+    end
+
+    def date_max
+      advanced_search_terms[:date_max]
+    end
+
+    def advanced_search_terms
+      params[:advanced_search] || {}
     end
 end
