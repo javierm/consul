@@ -65,6 +65,7 @@ module Consul
     end
 
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
+    config.assets.paths << Rails.root.join("app", "components")
     config.assets.paths << Rails.root.join("vendor", "assets", "fonts")
 
     # Add lib to the autoload path

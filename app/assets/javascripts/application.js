@@ -66,7 +66,6 @@
 //= require users
 //= require votes
 //= require allow_participation
-//= require advanced_search
 //= require registration_form
 //= require suggest
 //= require forms
@@ -110,6 +109,7 @@
 //= require cookies
 //= require columns_selector
 //= require budget_edit_associations
+//= require advanced_search_component/advanced_search_component
 
 var initialize_modules = function() {
   "use strict";
