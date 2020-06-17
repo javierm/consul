@@ -1,5 +1,5 @@
 <% init_advanced_menu %>
-<%= form_tag(admin_budget_budget_investments_path(budget: @budget), method: :get, enforce_utf8: false) do %>
+<%= form_tag(admin_budget_budget_investments_path(budget: budget), method: :get, enforce_utf8: false) do %>
   <div class="small-12 column">
     <%= link_to "#advanced_filters_content",
                 data: { toggle: "advanced_filters" },
@@ -44,18 +44,18 @@
   </div>
   <div class="small-12 medium-3 column">
     <%= select_tag :heading_id,
-                   options_for_select(budget_heading_select_options(@budget), params[:heading_id]),
+                   options_for_select(budget_heading_select_options(budget), params[:heading_id]),
                    { prompt: t("admin.budget_investments.index.heading_filter_all") } %>
   </div>
   <div class="small-12 medium-3 column">
     <%= select_tag :tag_name,
-                   options_for_select(investment_tags_select_options(@budget, "valuation_tags"), params[:tag_name]),
+                   options_for_select(investment_tags_select_options("valuation_tags"), params[:tag_name]),
                    { prompt: t("admin.budget_investments.index.tags_filter_all") } %>
   </div>
 
   <div class="small-12 medium-3 column">
     <%= select_tag :milestone_tag_name,
-                   options_for_select(investment_tags_select_options(@budget, "milestone_tags"), params[:milestone_tag_name]),
+                   options_for_select(investment_tags_select_options("milestone_tags"), params[:milestone_tag_name]),
                    { prompt: t("admin.budget_investments.index.milestone_tags_filter_all") } %>
   </div>
 
