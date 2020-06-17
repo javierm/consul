@@ -1,6 +1,9 @@
 class Admin::BudgetInvestments::SearchFormComponent < ApplicationComponent
   include BudgetHeadingsHelper
 
+  AVAILABLE_FILTERS = %w[feasible selected undecided unfeasible without_admin
+                         without_valuator under_valuation valuation_finished winners].freeze
+
   attr_reader :budget
 
   def initialize(budget)
@@ -10,7 +13,7 @@ class Admin::BudgetInvestments::SearchFormComponent < ApplicationComponent
   private
 
     def advanced_menu_visibility
-      if params[:advanced_filters].empty? &&
+      if filters.empty? &&
           params["min_total_supports"].blank? &&
           params["max_total_supports"].blank?
         "hide"
@@ -19,8 +22,8 @@ class Admin::BudgetInvestments::SearchFormComponent < ApplicationComponent
       end
     end
 
-    def init_advanced_menu
-      params[:advanced_filters] = [] unless params[:advanced_filters]
+    def filters
+      params[:advanced_filters] || []
     end
 
     def admin_select_options
