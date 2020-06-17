@@ -76,14 +76,6 @@ module AdminHelper
     (controller_name == "imports" && controller.class.parent == Admin::LocalCensusRecords)
   end
 
-  def official_level_options
-    options = [["", 0]]
-    (1..5).each do |i|
-      options << [[t("admin.officials.level_#{i}"), setting["official_level_#{i}_name"]].compact.join(": "), i]
-    end
-    options
-  end
-
   def admin_submit_action(resource)
     resource.persisted? ? "edit" : "new"
   end
