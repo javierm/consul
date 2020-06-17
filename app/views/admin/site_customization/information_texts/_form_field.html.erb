@@ -1,4 +1,4 @@
-<% globalize(locale) do %>
+<% Globalize.with_locale(locale) do %>
   <%= hidden_field_tag "contents[content_#{content.key}][id]", content.key %>
   <%= text_area_tag "contents[content_#{content.key}]values[value_#{locale}]",
                     translation_for_locale(content, locale) || t(content.key, locale: locale),
