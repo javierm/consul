@@ -1,4 +1,3 @@
-<% init_advanced_menu %>
 <%= form_tag(admin_budget_budget_investments_path(budget: budget), method: :get, enforce_utf8: false) do %>
   <div class="small-12 column">
     <%= link_to "#advanced_filters_content",
@@ -8,13 +7,13 @@
     <% end %>
   </div>
 
-  <div id="advanced_filters" class="<%= advanced_menu_visibility %>" data-toggler=".hide">
+  <div id="advanced_filters" class="<%= visibility_class %>" data-toggler=".hide">
     <div class="small-12 column">
       <div class="advanced-filters-content">
         <% %w[feasible selected undecided unfeasible without_admin without_valuator under_valuation
               valuation_finished winners].each do |filter| %>
           <div class="filter">
-            <%= check_box_tag "advanced_filters[]", filter, params[:advanced_filters].index(filter), id: "advanced_filters_#{filter}" %>
+            <%= check_box_tag "advanced_filters[]", filter, filters.index(filter), id: "advanced_filters_#{filter}" %>
             <%= label_tag "advanced_filters[#{filter}]", t("admin.budget_investments.index.filters.#{filter}") %>
           </div>
         <% end %>

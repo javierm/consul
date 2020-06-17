@@ -9,8 +9,8 @@ class Admin::BudgetInvestments::SearchFormComponent < ApplicationComponent
 
   private
 
-    def advanced_menu_visibility
-      if params[:advanced_filters].empty? &&
+    def visibility_class
+      if filters.empty? &&
           params["min_total_supports"].blank? &&
           params["max_total_supports"].blank?
         "hide"
@@ -19,8 +19,8 @@ class Admin::BudgetInvestments::SearchFormComponent < ApplicationComponent
       end
     end
 
-    def init_advanced_menu
-      params[:advanced_filters] = [] unless params[:advanced_filters]
+    def filters
+      params[:advanced_filters] || []
     end
 
     def admin_select_options
