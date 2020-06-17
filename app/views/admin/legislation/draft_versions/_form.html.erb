@@ -1,4 +1,4 @@
-<%= render "shared/globalize_locales", resource: @draft_version %>
+<%= render GlobalizeLocalesComponent.new(@draft_version) %>
 
 <%= translatable_form_for [:admin, @process, @draft_version], url: url, html: { data: { watch_changes: true }} do |f| %>
 

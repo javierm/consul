@@ -1,4 +1,4 @@
-<%= render "shared/globalize_locales", resource: @progress_bar %>
+<%= render GlobalizeLocalesComponent.new(@progress_bar) %>
 
 <%= translatable_form_for @progress_bar, url: admin_polymorphic_path(@progress_bar) do |f| %>
 

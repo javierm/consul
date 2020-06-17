@@ -1,4 +1,4 @@
-<%= render "shared/globalize_locales", resource: @milestone %>
+<%= render GlobalizeLocalesComponent.new(@milestone) %>
 
 <%= translatable_form_for @milestone, url: admin_polymorphic_path(@milestone) do |f| %>
 

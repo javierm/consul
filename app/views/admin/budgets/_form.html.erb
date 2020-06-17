@@ -1,4 +1,4 @@
-<%= render "shared/globalize_locales", resource: @budget %>
+<%= render GlobalizeLocalesComponent.new(@budget) %>
 
 <%= translatable_form_for [:admin, @budget] do |f| %>
 

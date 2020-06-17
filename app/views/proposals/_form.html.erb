@@ -1,4 +1,4 @@
-<%= render "shared/globalize_locales", resource: @proposal %>
+<%= render GlobalizeLocalesComponent.new(@proposal) %>
 
 <%= translatable_form_for(@proposal, url: form_url) do |f| %>
 

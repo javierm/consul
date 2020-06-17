@@ -2,7 +2,7 @@
   <span class="icon-angle-left"></span> <%= t("shared.back") %>
 <% end %>
 
-<%= render "shared/globalize_locales", resource: @investment %>
+<%= render GlobalizeLocalesComponent.new(@investment) %>
 
 <div class="row">
   <%= translatable_form_for @investment,
