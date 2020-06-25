@@ -1177,6 +1177,49 @@ describe "Budget Investments" do
         expect(page).to have_content "SUPPORTS"
       end
     end
+
+    scenario "Remove a support from show view" do
+      investment = create(:budget_investment, budget: budget)
+
+      login_as(author)
+      visit budget_investment_path(budget, investment)
+
+      within("aside") do
+        expect(page).to have_content "No supports"
+
+        click_button "Support"
+
+        expect(page).to have_content "1 support"
+        expect(page).to have_content "You have already supported this investment project."
+
+        click_button "Remove your support"
+
+        expect(page).to have_content "No supports"
+        expect(page).to have_button "Support"
+      end
+    end
+
+    scenario "Is possible to remove a support from list view" do
+      investment = create(:budget_investment, budget: budget)
+
+      login_as(author)
+      visit budget_investments_path(budget)
+
+      within("#budget_investment_#{investment.id}") do
+        expect(page).to have_content "No supports"
+        click_link "Support"
+      end
+
+      expect(page).to have_content "You have already supported this investment project."
+
+      within("#budget_investment_#{investment.id}") do
+        expect(page).to have_content "1 support"
+        click_link "Remove your support"
+      end
+
+      expect(page).to have_content "No supports"
+      within("#budget_investment_#{investment.id}") { expect(page).to have_link "Support" }
+    end
   end
 
   context "Evaluating Phase" do

@@ -16,6 +16,17 @@ class Budgets::Investments::VotesComponent < ApplicationComponent
     end
   end
 
+  def remove_support_path
+    vote = investment.votes_for.find_by!(voter: current_user)
+
+    case namespace
+    when "management"
+      management_budget_investment_vote_path(investment.budget, investment, vote)
+    else
+      budget_investment_vote_path(investment.budget, investment, vote)
+    end
+  end
+
   private
 
     def reason
