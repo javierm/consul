@@ -226,6 +226,12 @@
           });
         });
       });
+    },
+    destroy: function() {
+      if ($(".legislation-annotatable").length === 0) {
+        return;
+      }
+      App.LegislationAnnotatable.app.destroy();
     }
   };
 }).call(this);
