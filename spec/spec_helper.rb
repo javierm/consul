@@ -30,6 +30,15 @@ RSpec.configure do |config|
     Setting["feature.user.skip_verification"] = nil
   end
 
+  config.around(:each, :race_conditions) do |example|
+    self.use_transactional_tests = false
+    example.run
+    self.use_transactional_tests = true
+
+    DatabaseCleaner.clean_with(:deletion)
+    Rails.application.load_seed
+  end
+
   config.before(:each, type: :system) do
     Capybara::Webmock.start
   end
