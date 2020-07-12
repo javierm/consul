@@ -61,7 +61,7 @@ describe Budget::Ballot::Line do
 
       create(:budget_ballot_line, ballot: ballot, investment: investment)
 
-      expect(user.balloted_heading_id).to eq(investment.heading.id)
+      expect(user.reload.balloted_heading_id).to eq(investment.heading.id)
     end
   end
 
