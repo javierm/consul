@@ -71,7 +71,8 @@ Rails.application.configure do
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.default_url_options = { host: Rails.application.secrets.server_name }
-  config.action_mailer.asset_host = "https://#{Rails.application.secrets.server_name}"
+  protocol = Rails.application.secrets.force_ssl ? 'https' : 'http'
+  config.action_mailer.asset_host = "#{protocol}://#{Rails.application.secrets.server_name}"
 
   # Configure your SMTP service credentials in secrets.yml
   if Rails.application.secrets.smtp_settings
