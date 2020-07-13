@@ -237,6 +237,7 @@ es:
       debates: Debates
       locale: "Idioma:"
       logo: Logo de CONSUL
+      townhall: Logo de ayuntamiento
       management: Gestión
       moderation: Moderar
       more_info: Más información
@@ -883,16 +884,16 @@ es:
     sections:
       debate:
         title: Debatimos
-        description: Encontrarnos, debatir y compartir lo que nos parece importante en nuestra ciudad.
+        description: Opina, comenta y comparte sobre lo que necesita actualmente tu ciudad.
       decide:
         title: Decidimos
-        description: La ciudadanía decide si acepta o rechaza las propuestas más apoyadas.
+        description: Entre todas las propuestas presentadas podrás elegir la más interesante para tu ciudad.
       do:
         title: Hacemos
-        description: Si la propuesta es aceptada mayoritariamente, el Ayuntamiento la asume como propia y se hace.
+        description: La propuesta mejor valorada será ejecutada en tiempo y forma por el Ayuntamiento.
       propose:
         title: Proponemos
-        description: Espacio abierto para propuestas ciudadanas sobre el tipo de ciudad en el que queremos vivir.
+        description: ¿Qué necesita tu ciudad? Presenta ahora tu propuesta para que pueda ser valorada.
     feed:
       most_active:
         debates: "Debates más activos"
