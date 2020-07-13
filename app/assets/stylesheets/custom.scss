@@ -19,9 +19,10 @@ header {
   .top-bar {
     background-color: $white!important;
     padding: 0.5em 0;
-    .top-bar-title a {
+    .top-bar-title a,
+    .top-bar-right-title a {
       img {
-        max-height: 50px;
+        max-height: 130px;
       }
     }
     .top-bar-right {
@@ -38,6 +39,26 @@ header {
   }
   #navigation_bar {
     background-color: $grey;
+  }
+  #responsive-menu {
+    width: 95%;
+    .subnavigation.row {
+      margin: auto;
+      margin-top: 1em;
+      border-top: 1px solid $brand-green;
+    }
+    .top-bar-right {
+      float: right;
+    }
+  }
+}
+
+.menu-icon.dark {
+  margin-left: 0.5em;
+  &:hover::after,
+  &::after {
+    box-shadow: 0 7px 0 #000, 0 14px 0 #000;
+    background: #000;
   }
 }
 
@@ -146,5 +167,35 @@ main {
   background-color: $brand-pink;
   footer, footer a, footer a:active, footer a:focus {
     color: $white;
+  }
+  .bottom-bar-title a img {
+    margin-left: 1em;
+    max-height: 50px;
+    padding-bottom: 0.2em;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .top-bar-right {
+    width: 95%;
+  }
+
+  .orbit {
+    .orbit-wrapper {
+      .orbit-container {
+        height: 250px!important;
+        .orbit-slide img {
+          image-rendering: inherit;
+        }
+      }
+    }
+    .row {
+      &.slogan {
+        bottom: 5em;
+      }
+      &.register {
+        bottom: 1em;
+      }
+    }
   }
 }
