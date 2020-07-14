@@ -1,18 +1,18 @@
 require_dependency Rails.root.join("app", "models", "verification", "residence").to_s
 
 class Verification::Residence
-  validate :postal_code_in_madrid
-  validate :residence_in_madrid
+  validate :postal_code_in_arucas
+  validate :residence_in_arucas
 
-  def postal_code_in_madrid
+  def postal_code_in_arucas
     errors.add(:postal_code, I18n.t("verification.residence.new.error_not_allowed_postal_code")) unless valid_postal_code?
   end
 
-  def residence_in_madrid
+  def residence_in_arucas
     return if errors.any?
 
     unless residency_valid?
-      errors.add(:residence_in_madrid, false)
+      errors.add(:residence_in_arucas, false)
       store_failed_attempt
       Lock.increase_tries(user)
     end
@@ -21,6 +21,6 @@ class Verification::Residence
   private
 
     def valid_postal_code?
-      postal_code =~ /^280/
+      postal_code.in?(%w[35000 35400 35404 35411 35412 35413 35414 35415 35418])
     end
 end
