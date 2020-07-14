@@ -175,15 +175,11 @@ main {
   }
 }
 
-@media screen and (max-width: 639px) {
-  .top-bar-right {
-    width: 95%;
-  }
-
+@media screen and (max-width: 1024px) {
   .orbit {
     .orbit-wrapper {
       .orbit-container {
-        height: 250px!important;
+        height: 425px!important;
         .orbit-slide img {
           image-rendering: inherit;
         }
@@ -195,6 +191,22 @@ main {
       }
       &.register {
         bottom: 1em;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .top-bar-right {
+    width: 95%;
+  }
+  .orbit {
+    .orbit-wrapper {
+      .orbit-container {
+        height: 250px!important;
+        .orbit-slide img {
+          image-rendering: inherit;
+        }
       }
     }
   }
