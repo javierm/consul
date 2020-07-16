@@ -59,8 +59,8 @@ namespace :deploy do
   # before "deploy:restart", "puma:smart_restart"
   before "deploy:restart", "delayed_job:restart"
 
-  after :finished, "refresh_sitemap"
-  after :finished, "restart"
+  # after :finished, "refresh_sitemap"
+  after :publishing, "restart"
 
   desc "Deploys and runs the tasks needed to upgrade to a new release"
   task :upgrade do
