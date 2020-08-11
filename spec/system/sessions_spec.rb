@@ -6,8 +6,10 @@ describe "Sessions" do
     debate = create(:debate)
 
     visit debate_path(debate)
-
-    login_through_form_as(user)
+    click_link "Sign in"
+    fill_in "user_login", with: user.email
+    fill_in "user_password", with: user.password
+    click_button "Enter"
 
     expect(page).to have_content("You have been signed in successfully")
     expect(page).to have_current_path(debate_path(debate))
@@ -16,5 +18,18 @@ describe "Sessions" do
 
     expect(page).to have_content("You have been signed out successfully")
     expect(page).to have_current_path(debate_path(debate))
+  end
+
+  scenario "Sign in redirects to the homepage if the user was there" do
+    user = create(:user, :level_two)
+
+    visit debates_path
+    visit "/"
+    click_link "Sign in"
+    fill_in "user_login", with: user.email
+    fill_in "user_password", with: user.password
+    click_button "Enter"
+
+    expect(page).to have_current_path "/"
   end
 end
