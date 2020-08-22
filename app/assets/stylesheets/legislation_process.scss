@@ -450,6 +450,9 @@
     }
 
     .draft-index {
+      position: sticky;
+      top: $line-height;
+
       ul:first-child {
         font-size: rem-calc(16);
         text-decoration: underline;

@@ -55,17 +55,15 @@
           <span class="panel-title"><%= t("legislation.draft_versions.show.text_toc") %></span>
         </div>
 
-        <div data-sticky-container>
-          <div data-sticky data-anchor="sticky-panel" class="draft-index sticky" data-tree-navigator>
-            <%= AdminLegislationSanitizer.new.sanitize(@draft_version.toc_html) %>
-          </div>
+        <div class="draft-index" data-tree-navigator>
+          <%= AdminLegislationSanitizer.new.sanitize(@draft_version.toc_html) %>
         </div>
       </div>
       <div class="small-12 calc-text column border-right border-left">
         <div class="draft-panel">
           <div><span class="panel-title"><%= t("legislation.draft_versions.show.text_body") %></span></div>
         </div>
-        <div id="sticky-panel" class="draft-text">
+        <div class="draft-text">
           <% if @draft_version.final_version? %>
           <section>
           <% else %>
