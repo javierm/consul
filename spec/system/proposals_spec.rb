@@ -215,84 +215,28 @@ describe "Proposals" do
   describe "Sticky support button on medium and up screens", :js do
     scenario "is shown anchored to top" do
       proposal = create(:proposal)
-      visit proposals_path
+      visit proposal_path(proposal)
 
-      click_link proposal.title
-
-      within("#proposal_sticky") do
-        expect(find(".is-anchored")).to match_style(top: "0px")
-      end
+      expect(find(".proposal-supports")).to match_style(position: "static")
     end
   end
 
-  describe "Show sticky support button on mobile screens", :js do
+  describe "Support button on mobile screens", :js do
     let!(:window_size) { Capybara.current_window.size }
 
     before do
-      Capybara.current_window.resize_to(640, 480)
+      Capybara.current_window.resize_to(639, 479)
     end
 
     after do
       Capybara.current_window.resize_to(*window_size)
     end
 
-    scenario "On a first visit" do
+    scenario "sticks to the bottom" do
       proposal = create(:proposal)
       visit proposal_path(proposal)
 
-      within("#proposal_sticky") do
-        expect(page).to have_css(".is-stuck")
-        expect(page).not_to have_css(".is-anchored")
-      end
-    end
-
-    scenario "After visiting another page" do
-      proposal = create(:proposal)
-
-      visit proposal_path(proposal)
-      click_link "Go back"
-      click_link proposal.title
-
-      within("#proposal_sticky") do
-        expect(page).to have_css(".is-stuck")
-        expect(page).not_to have_css(".is-anchored")
-      end
-    end
-
-    scenario "After using the browser's back button" do
-      proposal = create(:proposal)
-
-      visit proposal_path(proposal)
-      click_link "Go back"
-
-      expect(page).to have_link proposal.title
-
-      go_back
-
-      within("#proposal_sticky") do
-        expect(page).to have_css(".is-stuck")
-        expect(page).not_to have_css(".is-anchored")
-      end
-    end
-
-    scenario "After using the browser's forward button" do
-      proposal = create(:proposal)
-
-      visit proposals_path
-      click_link proposal.title
-
-      expect(page).not_to have_link proposal.title
-
-      go_back
-
-      expect(page).to have_link proposal.title
-
-      go_forward
-
-      within("#proposal_sticky") do
-        expect(page).to have_css(".is-stuck")
-        expect(page).not_to have_css(".is-anchored")
-      end
+      expect(find(".proposal-supports")).to match_style(position: "sticky")
     end
   end
 
@@ -1032,11 +976,13 @@ describe "Proposals" do
       expect(page).not_to have_content not_selected_proposal.title
     end
 
-    scenario "show a selected proposal message in show view" do
+    scenario "show a selected proposal message in show view", :js do
       visit proposal_path(selected_proposal)
 
-      within("aside") { expect(page).not_to have_content "SUPPORTS" }
-      within("aside") { expect(page).to have_content "Selected proposal" }
+      within(".proposal-supports") do
+        expect(page).not_to have_content "SUPPORTS"
+        expect(page).to have_content "Selected proposal"
+      end
     end
 
     scenario "do not show featured proposal in selected proposals list" do

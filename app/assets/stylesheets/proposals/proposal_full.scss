@@ -1,0 +1,36 @@
+.proposal-full {
+  @include grid-row;
+
+  @include breakpoint(small only) {
+    > * {
+      padding: 0 rem-calc(12);
+    }
+
+    .proposal-supports {
+      background-color: $body-background;
+      bottom: 0;
+      position: sticky;
+    }
+  }
+
+  @include breakpoint(medium) {
+    > * {
+      padding: 0 rem-calc(15);
+    }
+
+    > :first-child {
+      float: left;
+      width: 75%;
+    }
+
+    > :not(:first-child) {
+      clear: right;
+      float: right;
+      width: 25%;
+    }
+  }
+
+  .proposal-supports {
+    margin-bottom: $line-height;
+  }
+}
