@@ -12,7 +12,7 @@
           t("management.account.menu.reset_password_email"),
           edit_password_email_management_account_path,
           menu_edit_password_email?
-        ] if managed_user.email
+        ] if managed_user&.email
       ),
       [
         t("management.account.menu.reset_password_manually"),

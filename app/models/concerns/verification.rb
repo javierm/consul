@@ -11,7 +11,7 @@ module Verification
   end
 
   def skip_verification?
-    persisted? && Setting["feature.user.skip_verification"].present?
+    Setting["feature.user.skip_verification"].present?
   end
 
   def verification_email_sent?

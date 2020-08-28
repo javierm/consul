@@ -83,6 +83,8 @@ describe "DocumentVerifications" do
   end
 
   scenario "Document number is format-standarized" do
+    create(:user, :level_two, document_number: "12345H")
+
     visit management_document_verifications_path
     fill_in "document_verification_document_number", with: "12345 - h"
     click_button "Check document"

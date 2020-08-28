@@ -1,4 +1,4 @@
-<% if managed_user.document_number.present? %>
+<% if managed_user&.document_number.present? %>
   <section class="account-info">
     <%= link_to(t("management.account_info.change_user"),
                   logout_management_users_path,

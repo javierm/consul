@@ -50,24 +50,14 @@ describe "Managed User" do
     end
 
     scenario "User becomes verified as level two (pending email confirmation for level three)" do
-      login_as_manager
-
       user = create(:user)
+      login_as_manager
 
       visit management_document_verifications_path
       fill_in "document_verification_document_number", with: "12345678Z"
       click_button "Check document"
 
-      within(".account-info") do
-        expect(page).not_to have_content "Identified as"
-        expect(page).not_to have_content "Username"
-        expect(page).not_to have_content "Email"
-        expect(page).to have_content "Document type"
-        expect(page).to have_content "Document number"
-        expect(page).to have_content "12345678Z"
-      end
-
-      expect(page).to have_content "Please introduce the email used on the account"
+      expect(page).to have_content "This document was found in the census, but it has no user account associated to it."
 
       fill_in "email_verification_email", with: user.email
       click_button "Send verification email"
