@@ -33,7 +33,7 @@ class Management::BaseController < ActionController::Base
     end
 
     def check_verified_user(alert_msg)
-      if managed_user.new_record? || !managed_user.level_two_or_three_verified?
+      unless managed_user.level_two_or_three_verified?
         redirect_to management_document_verifications_path, alert: alert_msg
       end
     end
