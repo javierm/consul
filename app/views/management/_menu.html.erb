@@ -11,7 +11,7 @@
           <%= link_to t("management.menu.select_user"), management_document_verifications_path %>
         </li>
 
-        <% if managed_user.email %>
+        <% if managed_user&.email %>
           <li <%= "class=is-active" if menu_edit_password_email? %>>
             <%= link_to t("management.account.menu.reset_password_email"), edit_password_email_management_account_path %>
           </li>
