@@ -27,7 +27,7 @@ class Admin::BudgetInvestments::SearchFormComponent < ApplicationComponent
     end
 
     def admin_select_options
-      Administrator.with_user.map { |v| [v.description_or_name, v.id] }.sort_by { |a| a[0] }
+      budget.administrators.with_user.map { |v| [v.description_or_name, v.id] }.sort_by { |a| a[0] }
     end
 
     def valuator_or_group_select_options
@@ -35,7 +35,7 @@ class Admin::BudgetInvestments::SearchFormComponent < ApplicationComponent
     end
 
     def valuator_select_options
-      Valuator.order("description ASC").order("users.email ASC").includes(:user).
+      budget.valuators.order("description ASC").order("users.email ASC").includes(:user).
         map { |v| [v.description_or_email, "valuator_#{v.id}"] }
     end
 
