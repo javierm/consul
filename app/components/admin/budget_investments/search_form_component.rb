@@ -12,7 +12,7 @@ class Admin::BudgetInvestments::SearchFormComponent < ApplicationComponent
 
   private
 
-    def advanced_menu_visibility
+    def visibility_class
       if filters.empty? &&
           params["min_total_supports"].blank? &&
           params["max_total_supports"].blank?
