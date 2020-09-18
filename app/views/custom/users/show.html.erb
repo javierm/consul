@@ -1,0 +1,74 @@
+<main>
+  <div class="activity row margin-top">
+    <div class="small-12 column">
+
+      <% if @user != current_user %>
+        <% if @user.email_on_direct_message? %>
+          <%= link_to t("users.show.send_private_message"),
+                      new_user_direct_message_path(@user),
+                      class: "button hollow float-right" %>
+        <% else %>
+          <div class="callout primary float-right">
+            <%= t("users.show.no_private_messages") %>
+          </div>
+        <% end %>
+      <% end %>
+
+      <h2 class="inline-block">
+        <%= avatar_image(@user, seed: @user.id, size: 60) %>
+        <%= @user.name %>
+        <% if current_administrator? %>
+          <small><%= @user.email %></small>
+        <% end %>
+      </h2>
+      <% if current_valuator? %>
+        <div class="external_activity row margin-top">
+          <div class="small-8 column">
+            <h1>Directorio del grupo de trabajo</h1>
+            <iframe src="<%= Rails.application.secrets.drive_src %>" style="width:100%; height:600px; border:0;"></iframe>
+          </div>
+          <div class="small-4 column">
+            <h1>Agenda</h1>
+            <iframe style="width:100%; height:600px; border:0;" src="<%= Rails.application.secrets.calendar_src %>" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+          </div>
+        </div>
+
+        <div class="typeform-widget" data-url="https://form.typeform.com/to/uI7Oiq4m" style="width: 100%; height: 500px;"></div> <script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm", b="https://embed.typeform.com/"; if(!gi.call(d,id)) { js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script> <div style="font-family: Sans-Serif;font-size: 12px;color: #999;opacity: 0.5; padding-top: 5px;"> </div>
+
+      <% end %>
+      <% if @user.public_activity || @authorized_current_user %>
+        <div class="row margin-top">
+          <h1>ACTIVIDAD EN LA PLATAFORMA</h1>
+          <ul class="menu simple margin-top">
+            <% @valid_filters.each do |filter| %>
+              <% if @activity_counts[filter] > 0 %>
+                <% if @current_filter == filter %>
+                  <li class="is-active">
+                    <h2><%= t("users.show.filters.#{filter}", count: @activity_counts[filter]) %></h2>
+                  </li>
+                <% else %>
+                  <li>
+                    <%= link_to t("users.show.filters.#{filter}", count: @activity_counts[filter]),
+                                current_path_with_query_params(filter: filter, page: 1) %>
+                  </li>
+                <% end %>
+              <% end %>
+            <% end %>
+          </ul>
+
+          <% if @activity_counts.values.inject(&:+) == 0 %>
+            <div class="callout primary">
+              <%= t("users.show.no_activity") %>
+            </div>
+          <% end %>
+
+          <%= render "activity_page" %>
+        <% else %>
+          <div class="callout warning margin">
+            <%= t("users.show.private_activity") %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</main>
