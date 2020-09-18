@@ -29,12 +29,12 @@
           </div>
           <div class="small-4 column">
             <h1>Agenda</h1>
-            <iframe style="width:100%; height:600px; border:0;" src="<%= Rails.application.secrets.calendar_src %>" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+            <iframe style="width:100%; height:600px; border:0;" src="<%= Rails.application.secrets.calendar_src %>" width="800" height="600" frameborder="0" scrolling="no"></iframe>
           </div>
-        </div>
-
-        <div class="typeform-widget" data-url="https://form.typeform.com/to/uI7Oiq4m" style="width: 100%; height: 500px;"></div> <script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm", b="https://embed.typeform.com/"; if(!gi.call(d,id)) { js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script> <div style="font-family: Sans-Serif;font-size: 12px;color: #999;opacity: 0.5; padding-top: 5px;"> </div>
-
+          <div class="small-12 column">
+            <h1>Encuesta actual</h1>
+            <div class="typeform-widget" data-url="<%= Rails.application.secrets.typeform_src %>" style="width: 100%; height: 500px;"></div> <script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm", b="https://embed.typeform.com/"; if(!gi.call(d,id)) { js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script> <div style="font-family: Sans-Serif;font-size: 12px;color: #999;opacity: 0.5; padding-top: 5px;"> </div>
+          </div>
       <% end %>
       <% if @user.public_activity || @authorized_current_user %>
         <div class="row margin-top">
