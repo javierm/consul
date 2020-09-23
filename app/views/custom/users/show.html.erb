@@ -25,15 +25,26 @@
         <div class="external_activity row margin-top">
           <div class="small-8 column">
             <h1>Directorio del grupo de trabajo</h1>
-            <iframe src="<%= Rails.application.secrets.drive_src %>" style="width:100%; height:600px; border:0;"></iframe>
+            <iframe src="https://drive.google.com/embeddedfolderview?id=1M4vjbeEKgBjEql4YFXEB2ShDBh67C3AI#grid" style="width:100%; height:600px; border:0;"></iframe>
+            <!--<iframe src="<%= Rails.application.secrets.drive_src %>" style="width:100%; height:600px; border:0;"></iframe> -->
           </div>
           <div class="small-4 column">
             <h1>Agenda</h1>
-            <iframe style="width:100%; height:600px; border:0;" src="<%= Rails.application.secrets.calendar_src %>" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+            <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Europe%2FLondon&amp;src=aW5mb0Bjb25qdW50b2hpc3Rvcmljb3B1ZXJ0b2RlbGFjcnV6LmVz&amp;src=ZXMuc3BhaW4jaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&amp;color=%23F09300&amp;color=%230B8043&amp;showTz=0&amp;showCalendars=0&amp;showPrint=0&amp;showDate=0&amp;showTitle=0" style="border:solid 1px #777" width="400" height="600" frameborder="0" scrolling="no"></iframe>
+            <!-- <iframe style="width:100%; height:600px; border:0;" src="<%= Rails.application.secrets.calendar_src %>" width="800" height="600" frameborder="0" scrolling="no"></iframe> -->
+          </div>
+          <div class="small-12 column">
+            <h1> Galería de imágenes </h1>
+            <script src="https://cdn.jsdelivr.net/npm/publicalbum@latest/embed-ui.min.js" async></script>
+            <div class="pa-gallery-player-widget" style="width:100%; height:480px; display:none;"
+              data-link="https://photos.app.goo.gl/qhWviw16Uy4ethVS9"
+              data-title="Taller 23/09"
+              data-description="0 new photos added to shared album">
+            </div>
           </div>
           <div class="small-12 column">
             <h1>Encuesta actual</h1>
-            <div class="typeform-widget" data-url="<%= Rails.application.secrets.typeform_src %>" style="width: 100%; height: 500px;"></div> <script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm", b="https://embed.typeform.com/"; if(!gi.call(d,id)) { js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script> <div style="font-family: Sans-Serif;font-size: 12px;color: #999;opacity: 0.5; padding-top: 5px;"> </div>
+            <div class="typeform-widget" data-url="https://form.typeform.com/to/WgaxgYEd" style="width: 100%; height: 500px;"></div> <script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm", b="https://embed.typeform.com/"; if(!gi.call(d,id)) { js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script> <div style="font-family: Sans-Serif;font-size: 12px;color: #999;opacity: 0.5; padding-top: 5px;"> powered by <a href="https://admin.typeform.com/signup?utm_campaign=WgaxgYEd&utm_source=typeform.com-01EJGDGFF2VDMSEW0Q01T9BXYQ-free&utm_medium=typeform&utm_content=typeform-embedded-poweredbytypeform&utm_term=ES" style="color: #999" target="_blank">Typeform</a> </div>
           </div>
       <% end %>
       <% if @user.public_activity || @authorized_current_user %>
