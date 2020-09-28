@@ -17,4 +17,59 @@
 .legislation-calendar h4{
   color: #282520;
 }
+header {
+    margin-bottom: 0;
+}
+
+.banner-img{
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  &.banner1 {
+    box-shadow:inset 0 0 0 2000px #CCA43C99 ;
+  }
+  &.banner2 {
+    box-shadow:inset 0 0 0 2000px #C55C3B99;
+  }
+  &.banner3 {
+    box-shadow:inset 0 0 0 2000px #4B844B99;
+  }
+  &.banner4 {
+    box-shadow:inset 0 0 0 2000px #97D2A299;
+  }
+  &.banner5 {
+    box-shadow:inset 0 0 0 2000px #377E7F99;
+  }
+  &.banner6 {
+    box-shadow:inset 0 0 0 2000px #11326399;
+  }
+}
+
+.banner-title {
+  color: white;
+}
+
+.banner-title.banner1 {
+  background-color: #CCA43C;
+}
+
+.banner-title.banner2 {
+  background-color: #C55C3B;
+}
+
+.banner-title.banner3 {
+  background-color: #4B844B;
+}
+
+.banner-title.banner4 {
+  background-color: #97D2A2;
+}
+
+.banner-title.banner5 {
+  background-color: #377E7F;
+}
+
+.banner-title.banner6 {
+  background-color: #113263;
+}
 

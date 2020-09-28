@@ -1,0 +1,33 @@
+<%= content_for :body_class, "custom-page" %>
+<% provide :title do %><%= @custom_page.title %><% end %>
+
+<% if @custom_page.subtitle.present? %>
+  <div class="banner-img <%= @custom_page.subtitle %>" style='background-image: url("/ckeditor_assets/pictures/1/<%= @custom_page.subtitle %>.jpg")'>
+  </div>
+  <div class="banner-title <%= @custom_page.subtitle %>">
+    <div class="row">
+      <div class="small-12 medium-12 column">
+        <h1 class="title-banner"><%= @custom_page.title %></h1>
+      </div>
+    </div>
+  </div>
+<% end %>
+<div class="row margin-top">
+
+  <div class="small-12 medium-12 column">
+    <%= auto_link_already_sanitized_html AdminWYSIWYGSanitizer.new.sanitize(@custom_page.content) %>
+  </div>
+
+  <% if @custom_page.print_content_flag %>
+    <div class="small-12 medium-3 column">
+      <%= render "/shared/print" %>
+    </div>
+  <% end %>
+
+  <% if @cards.any? %>
+    <div class="small-12 column">
+      <%= render "shared/cards" %>
+    </div>
+  <% end %>
+
+</div>
