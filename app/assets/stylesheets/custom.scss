@@ -25,22 +25,29 @@ header {
   height: 200px;
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   &.banner1 {
+    background-image: image-url('banner1.jpg');
     box-shadow:inset 0 0 0 2000px #CCA43C99 ;
   }
   &.banner2 {
+    background-image: image-url('banner2.jpg');
     box-shadow:inset 0 0 0 2000px #C55C3B99;
   }
   &.banner3 {
+    background-image: image-url('banner3.jpg');
     box-shadow:inset 0 0 0 2000px #4B844B99;
   }
   &.banner4 {
+    background-image: image-url('banner4.jpg');
     box-shadow:inset 0 0 0 2000px #97D2A299;
   }
   &.banner5 {
+    background-image: image-url('banner5.jpg');
     box-shadow:inset 0 0 0 2000px #377E7F99;
   }
   &.banner6 {
+    background-image: image-url('banner6.jpg');
     box-shadow:inset 0 0 0 2000px #11326399;
   }
 }

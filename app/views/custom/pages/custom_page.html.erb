@@ -2,7 +2,7 @@
 <% provide :title do %><%= @custom_page.title %><% end %>
 
 <% if @custom_page.subtitle.present? %>
-  <div class="banner-img <%= @custom_page.subtitle %>" style='background-image: url("/ckeditor_assets/pictures/1/<%= @custom_page.subtitle %>.jpg")'>
+  <div class="banner-img <%= @custom_page.subtitle %>" >
   </div>
   <div class="banner-title <%= @custom_page.subtitle %>">
     <div class="row">
