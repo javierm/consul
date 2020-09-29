@@ -5,3 +5,12 @@
 //
 //
 
+
+$(document).ready(function(e) {
+    $('img[usemap]').rwdImageMaps();
+
+    $('area').on('focus', function(e) {
+      e.preventDefault();
+      $('.selection p').html($(this).attr('class'));
+    });
+});

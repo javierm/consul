@@ -1,7 +1,6 @@
 <div class="small-12 medium-9 column">
-  <ul>
+  <ul class="dropdown menu" data-dropdown-menu>
     <%= raw content_block("subnavigation_left", I18n.locale) %>
-
     <li>
       <a href="/"> Incio</a>
     </li>
@@ -9,16 +8,39 @@
       <a href="/pepch">PEPCH</a>
     </li>
     <li>
-      <a href="/participa">Participa</a>
+      <a href="#">Participa</a>
+      <ul class="menu vertical">
+        <li>
+          <a href="/proceso">Proceso</a>
+        </li>
+
+        <li>
+          <a href="/consulta">Consulta</a>
+        </li>
+
+        <li>
+          <a href="/opina">Opina</a>
+        </li>
+      </ul>
     </li>
     <li>
-      <a href="/espacios-participativos">Espacios participativos</a>
+      <a href="#">Espacios participativos</a>
+      <ul class="menu vertical">
+        <li>
+          <a href="/talleres">Talleres</a>
+        </li>
+
+        <li>
+          <a href="/transectos">Transectos</a>
+        </li>
+
+        <li>
+          <a href="/foro">Foro de opinión</a>
+        </li>
+      </ul>
     </li>
     <li>
       <a href="/fotogaleria">Fotogalería</a>
-    </li>
-    <li>
-      <a href="/documentacion">Documentos</a>
     </li>
   </ul>
     <%= raw content_block("subnavigation_right", I18n.locale) %>

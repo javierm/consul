@@ -73,3 +73,18 @@ header {
   background-color: #113263;
 }
 
+.dropdown.menu > li.is-active > a{
+  color: $text;
+}
+
+.dropdown.menu > li.opens-right > .is-dropdown-submenu{
+  margin: 0;
+  padding: 0;
+  li {
+    margin-bottom: 0;
+    a {
+      margin-right: 0.5rem;
+      margin-left: 0.5rem;
+    }
+  }
+}
