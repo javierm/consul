@@ -133,45 +133,4 @@ describe RemoteCensusApi do
                             })
     end
   end
-
-  describe "get_response_body" do
-    before do
-      Setting["feature.remote_census"] = true
-    end
-
-    it "return expected stubbed_response" do
-      document_type = "1"
-      document_number = "12345678Z"
-
-      response = RemoteCensusApi.new.send(:get_response_body, document_type, document_number, nil, nil)
-
-      expect(response).to eq({ response: {
-                                 data: {
-                                   date_of_birth: "31-12-1980",
-                                   document_number: "12345678Z",
-                                   gender: "Male",
-                                   name: "William",
-                                   surname: "Widmore",
-                                   postal_code: "28013"
-                                 }
-                               }
-                             })
-    end
-  end
-
-  describe "RemoteCensusApi::Response", :remote_census do
-    it "return expected response methods with default values" do
-      document_type = "1"
-      document_number = "12345678Z"
-
-      get_response_body = RemoteCensusApi.new.send(:get_response_body, document_type, document_number, nil, nil)
-      response = RemoteCensusApi::Response.new(get_response_body)
-
-      expect(response.valid?).to eq true
-      expect(response.date_of_birth).to eq Time.zone.local(1980, 12, 31).to_date
-      expect(response.postal_code).to eq "28013"
-      expect(response.gender).to eq "male"
-      expect(response.name).to eq "William Widmore"
-    end
-  end
 end

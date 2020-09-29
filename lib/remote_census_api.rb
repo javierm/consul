@@ -51,9 +51,9 @@ class RemoteCensusApi
       path_value = Setting["remote_census.response.gender"]
 
       case extract_value(path_value)
-      when "Male", "Varón"
+      when "Varón"
         "male"
-      when "Female", "Mujer"
+      when "Mujer"
         "female"
       end
     end
@@ -76,8 +76,6 @@ class RemoteCensusApi
       if end_point_available?
         request = request(document_type, document_number, date_of_birth, postal_code)
         client.call(Setting["remote_census.request.method_name"].to_sym, message: request).body
-      else
-        stubbed_response(document_type, document_number)
       end
     end
 
@@ -119,33 +117,6 @@ class RemoteCensusApi
     end
 
     def end_point_available?
-      Rails.env.staging? || Rails.env.preproduction? || Rails.env.production?
-    end
-
-    def stubbed_response(document_type, document_number)
-      if (document_number == "12345678Z" || document_number == "12345678Y") && document_type == "1"
-        stubbed_valid_response
-      else
-        stubbed_invalid_response
-      end
-    end
-
-    def stubbed_valid_response
-      {
-        response: {
-          data: {
-            date_of_birth: "31-12-1980",
-            document_number: "12345678Z",
-            gender: "Male",
-            name: "William",
-            surname: "Widmore",
-            postal_code: "28013"
-          }
-        }
-      }
-    end
-
-    def stubbed_invalid_response
-      { response: { data: {}}}
+      !Rails.env.development?
     end
 end
