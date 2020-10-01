@@ -25,4 +25,4 @@ jobs:
           bundle install --jobs 4 --retry 3
       - name: Run Pronto
         run: |
-          PRONTO_PULL_REQUEST_ID="$(jq --raw-output .number "$GITHUB_EVENT_PATH")" PRONTO_GITHUB_ACCESS_TOKEN="${{ github.token }}" bundle exec pronto run -f github_status github_pr_review -c origin/${{ github.base_ref }}
+          PRONTO_PULL_REQUEST_ID="$(jq --raw-output .number "$GITHUB_EVENT_PATH")" PRONTO_GITHUB_ACCESS_TOKEN="${{ github.token }}" bundle exec pronto run -f github_status github_pr -c origin/${{ github.base_ref }}
