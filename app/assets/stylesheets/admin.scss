@@ -21,7 +21,7 @@ $sidebar:        #245b80;
 $sidebar-hover:  #25597c;
 $sidebar-active: #f4fcd0;
 
-.admin {
+body.admin {
   @include admin-layout;
 
   h2 {

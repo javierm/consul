@@ -56,10 +56,10 @@ class Budget < ApplicationRecord
   scope :finished, -> { where(phase: "finished") }
 
   class << self; undef :open; end
-  scope :open, -> { where.not(phase: "finished") }
+  scope :open, ->{ where.not(phase: "finished") }
 
   def self.current
-    where.not(phase: "drafting").order(:created_at).last
+    where.not(phase:"drafting").order(:created_at).last
   end
 
   def current_phase

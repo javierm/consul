@@ -8,7 +8,7 @@
       }).map(function() {
         return Math.random().toString(36).substr(2); // remove `0.`
       });
-      return strings.join("").substring(0, 64);
+      return strings.join("").substring(0,64);
     },
     replaceToken: function(token) {
       $(".js-question-answer").each(function() {
