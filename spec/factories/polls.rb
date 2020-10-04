@@ -142,13 +142,14 @@ FactoryBot.define do
       transient { booth { association(:poll_booth) } }
 
       booth_assignment do
-        association :poll_booth_assignment, poll: poll, booth: booth
+        association :poll_booth_assignment, poll: poll, booth: booth, strategy: :create
       end
 
       officer_assignment do
         association :poll_officer_assignment,
           booth_assignment: booth_assignment,
-          officer: officer || association(:poll_officer)
+          officer: officer || association(:poll_officer, strategy: :create),
+          strategy: :create
       end
     end
 
