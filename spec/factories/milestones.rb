@@ -6,7 +6,7 @@ FactoryBot.define do
 
   factory :milestone do
     association :milestoneable, factory: :budget_investment
-    association :status, factory: :milestone_status
+    association :status, factory: :milestone_status, strategy: :create
     sequence(:title)     { |n| "Milestone #{n} title" }
     description          { "Milestone description" }
     publication_date     { Date.current }
