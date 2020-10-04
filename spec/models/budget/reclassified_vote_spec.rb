@@ -9,12 +9,14 @@ describe Budget::ReclassifiedVote do
     end
 
     it "is not valid without a user" do
-      reclassified_vote.user_id = nil
+      reclassified_vote.user = nil
+
       expect(reclassified_vote).not_to be_valid
     end
 
     it "is not valid without an investment" do
-      reclassified_vote.investment_id = nil
+      reclassified_vote.investment = nil
+
       expect(reclassified_vote).not_to be_valid
     end
 
