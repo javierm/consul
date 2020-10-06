@@ -453,7 +453,7 @@ a {
 // ----------
 
 header {
-  background: $brand;
+  background: $highlight;
   border-bottom: 1px solid $border;
   margin-bottom: $line-height;
 
@@ -516,7 +516,7 @@ header {
 }
 
 .top-bar {
-  background: $brand !important;
+  background: $highlight !important;
   color: #fff;
   padding-bottom: 0;
   padding-top: 0;
@@ -664,7 +664,7 @@ header {
 }
 
 .top-links {
-  background: $dark;
+  background: $highlight;
   color: #fff;
   font-size: $small-font-size;
   padding-right: $line-height / 2;
