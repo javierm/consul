@@ -23,4 +23,9 @@ class Verification::Residence
     def valid_postal_code?
       postal_code.in?(%w[35000 35400 35404 35411 35412 35413 35414 35415 35418])
     end
+
+    def residency_valid?
+      @census_data.valid? &&
+        @census_data.date_of_birth == date_of_birth
+    end
 end
