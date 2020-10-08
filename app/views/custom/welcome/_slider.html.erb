@@ -3,8 +3,22 @@
     <ul class="orbit-container">
       <li class="orbit-slide">
         <figure class="orbit-figure">
-          <%= link_to '/debates/1', title: t("devise_views.shared.links.signup_link") do %>
-            <%= image_tag('slider/slide1.jpg', class: 'orbit-image', alt: 'Participa') %>
+          <%= link_to budgets_path, title: t("devise_views.shared.links.signup_link") do %>
+            <%= image_tag('slider/slide2.jpg', class: 'orbit-image', alt: 'Participa') %>
+          <% end %>
+        </figure>
+      </li>
+      <li class="orbit-slide">
+        <figure class="orbit-figure">
+          <%= link_to budgets_path, title: t("devise_views.shared.links.signup_link") do %>
+            <%= image_tag('slider/slide3.jpg', class: 'orbit-image', alt: 'Participa') %>
+          <% end %>
+        </figure>
+      </li>
+      <li class="orbit-slide">
+        <figure class="orbit-figure">
+          <%= link_to budgets_path, title: t("devise_views.shared.links.signup_link") do %>
+            <%= image_tag('slider/slide4.jpg', class: 'orbit-image', alt: 'Participa') %>
           <% end %>
         </figure>
       </li>
@@ -15,10 +29,20 @@
           <% end %>
         </figure>
       </li>
+      <li class="orbit-slide">
+        <figure class="orbit-figure">
+          <%= link_to '/debates/1', title: t("devise_views.shared.links.signup_link") do %>
+            <%= image_tag('slider/slide1.jpg', class: 'orbit-image', alt: 'Participa') %>
+          <% end %>
+        </figure>
+      </li>
     </ul>
     <nav class="orbit-bullets">
       <button class="is-active" data-slide="0"><span class="show-for-sr">First slide details.</span><span class="show-for-sr">Current Slide</span></button>
       <button data-slide="1"><span class="show-for-sr">Second slide details.</span></button>
+      <button data-slide="2"><span class="show-for-sr">Second slide details.</span></button>
+      <button data-slide="3"><span class="show-for-sr">Second slide details.</span></button>
+      <button data-slide="4"><span class="show-for-sr">Second slide details.</span></button>
     </nav>
   </div>
 </div>
