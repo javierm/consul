@@ -102,7 +102,7 @@
     }
 
     &.current-phase-tab a {
-      background: $brand;
+      background: $brand-secondary;
       color: $white;
       padding-top: $line-height / 2;
 
@@ -191,6 +191,25 @@
       .budget-phase-image {
         text-align: center;
       }
+    }
+  }
+
+  img {
+    margin-top: rem-calc(100);
+  }
+
+  .button {
+    margin-top: $line-height * 2;
+    padding-right: $line-height * 1.5;
+    position: relative;
+
+    &::after {
+      content: "\f054";
+      font-family: "Font Awesome 5 Free";
+      font-weight: bold;
+      position: absolute;
+      right: 12px;
+      top: 19px;
     }
   }
 }
