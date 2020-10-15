@@ -1,4 +1,5 @@
 language: ruby
+arch: arm64-graviton2
 addons:
   postgresql: "9.4"
   chrome: stable
