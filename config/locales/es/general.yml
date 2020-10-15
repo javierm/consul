@@ -880,6 +880,16 @@ es:
       see_all_processes: Ver todos los procesos
       process_label: Proceso
       see_process: Ver proceso
+    sections:
+      info:
+        title: "Infórmate"
+        description: "¿qué es un BIC? ¿Qué es un Plan Especial de Protección del Conjunto Histórico (PEPCH)?"
+      opina:
+        title: Opina
+        description: "¿qué necesita el Conjunto Histórico de Puerto de La Cruz?"
+      participa:
+        title: "Participa"
+        description: "Únete y sé protagonista"
     cards:
       title: Destacados
     recommended:
