@@ -55,25 +55,6 @@
                                 title: t("shared.go_to_page") + t("layouts.header.help") %>
       </li>
     <% end %>
-<%# <%=begin%> 
-    <div class="top-bar-right">
-          <ul class="menu" data-responsive-menu="medium-dropdown">
-            <%= render "shared/admin_login_items" %>
-            <%= render "layouts/notification_item" %>
-            <%= render "devise/menu/login_items" %>
-          </ul>
-
-          <div class="show-for-small-only">
-            <div class="subnavigation row">
-              <%= render "shared/subnavigation" %>
-              <div class="small-12 column">
-                <%= render "shared/top_links" %>
-              </div>
-            </div>
-          </div>
-       </div>
-<%# <%
-=end%> %>
 
     <%= raw content_block("subnavigation_right", I18n.locale) %>
   </ul>
