@@ -12,7 +12,7 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
   before_action :load_investment, only: [:show, :edit, :update, :toggle_selection]
   before_action :load_ballot, only: [:show, :index]
   before_action :parse_valuation_filters
-  before_action :load_investments, only: [:index, :toggle_selection]
+  before_action :load_investments, only: [:index]
 
   def index
     load_tags
@@ -56,7 +56,6 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
     authorize! :toggle_selection, @investment
     @investment.toggle :selected
     @investment.save!
-    load_investments
   end
 
   private
