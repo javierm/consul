@@ -1,0 +1,48 @@
+.sections-cards {
+  &__title {
+    font-size: 30px;
+    font-weight: 500;
+    color: $red-gva;
+  }
+
+  .card {
+    a {
+      &:hover {
+        border-radius: 18px;
+        box-shadow: 4px 6px 43px 0 rgba(0, 0, 0, 0.21);
+        img {
+          border-top-left-radius: 18px;
+          border-top-right-radius: 18px;
+          transform: None !important;
+        }
+      }
+    }
+
+    &__title {
+      margin: 0.5em 0.375rem;
+      font-size: 18px;
+      font-weight: bold;
+      color: $blue-gva;
+    }
+
+    &__description {
+      margin-left: 0.5em;
+      font-size: 12px;
+      line-height: 1.42;
+      color: $black-gva;
+    }
+    &__link {
+      color: $red-gva;
+      text-align: center;
+    }
+  }
+  // &__card {
+  //   a {
+  //     &:hover {
+  //       img {
+  //         transform: scale(1);
+  //       }
+  //     }
+  //   }
+  // }
+}
