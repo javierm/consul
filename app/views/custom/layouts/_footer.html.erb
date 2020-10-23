@@ -2,9 +2,8 @@
   <div class="row">
     <%# TODO Columna Logos %>
     <div class="column small-12 large-2 logos">
-      <h1 class="logo">
-        <%= link_to t("layouts.header.open_gov"), root_path %>
-      </h1>
+      <%= image_tag("logos/logo-gva.png") %>
+      <%= image_tag("logos/logo-participa.png") %>
     </div>
     <%# TODO columna Texto año y quien lo hace %>
     <div class="column small-12 large-3 gobierno">
@@ -19,7 +18,7 @@
         <li><%= link_to t("welcome.sections.debate.title"), page_path("debates") %></li>
         <li><%= link_to t("welcome.sections.propone.title"), page_path("proposals") %></li>
         <li><%= link_to t("welcome.sections.vota.title"), page_path("polls") %></li>
-        <li><%= link_to t("welcome.sections.normativa.title"), page_path("polls") %></li>
+        <li><%= link_to t("welcome.sections.normativa.title"), page_path("processes") %></li>
         <li><%= link_to t("welcome.sections.presupuesto.title"), page_path("budgets") %></li>
       </ul>
     </div>

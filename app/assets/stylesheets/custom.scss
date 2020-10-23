@@ -4,7 +4,8 @@
 // * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md#css
 //
 
-// Bloque central
+// 1. Header
+// 2. Banner
 
 $red-gva: #c80f2e;
 $blue-gva: #1c9799;
@@ -15,6 +16,8 @@ body {
   font-family: "Roboto", sans-serif;
   // border: 5px solid blue;
 }
+
+// 1. Header
 header {
   background: $white-gva;
 }
@@ -86,7 +89,7 @@ header {
       @include breakpoint(medium) {
         border-radius: 10px;
         border: solid 2px $red-gva;
-        background: #fff;
+        background: $white-gva;
         color: $red-gva;
         text-align: center;
       }
@@ -151,142 +154,251 @@ header {
   }
 }
 
-main {
-  // .row .sections-cards .title {
-  //   max-width: 396px;
-  //   // font-family: Roboto;
-  //   font-size: 30px;
-  //   font-weight: 500;
-  //   font-stretch: normal;
-  //   font-style: normal;
-  //   line-height: normal;
-  //   letter-spacing: normal;
-  //   color: $red-gva;
-  // }
-  .sections-icon {
-    padding: 0 1.5em;
-    text-align: center;
+// 2. Banner
 
-    &__title {
-      text-align: center;
-      margin: 0 auto;
-      font-size: 30px;
-      font-weight: 500;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.5;
-      font-style: normal;
-      line-height: normal;
-      letter-spacing: normal;
-      color: $black-gva;
-
-      &__higlight {
-        color: $red-gva;
-      }
-    }
-
-    &__item {
-      text-align: center;
-
-      img {
-        margin-bottom: 1.5em;
-      }
-
-      &__title {
-        text-align: center;
-        font-style: normal;
-        line-height: normal;
-        letter-spacing: normal;
-        font-size: 21px;
-        font-weight: bold;
-        font-stretch: normal;
-        color: $blue-gva;
-      }
-      &__description {
-        text-align: center;
-        margin: 0 auto;
-        max-width: 256px;
-        font-style: normal;
-        line-height: normal;
-        letter-spacing: normal;
-        font-size: 16px;
-        line-height: 1.38;
-        font-weight: normal;
-        color: $black-gva;
-      }
-    }
+.banner-gva {
+  position: relative;
+  width: auto;
+  height: 610px;
+  background-image: image-url("custom/banner.jpg");
+  &__title {
+    // font-family: Roboto;
+    position: absolute;
+    top: 50px;
+    left: 35px;
+    max-width: 588px;
+    max-height: 142px;
+    font-size: 60px;
+    font-weight: bold;
+    color: $white-gva;
+  }
+  &__txt {
+    // font-family: Roboto;
+    position: absolute;
+    top: 270px;
+    max-width: 441px;
+    max-height: 110px;
+    left: 35px;
+    font-size: 16px;
+    line-height: 1.38;
+    color: $blue-gva;
   }
 
-  .sections-cards {
-    &__title {
-      width: 396px;
-      font-family: Roboto;
-      font-size: 30px;
+  &__buttons {
+    position: absolute;
+    top: 452px;
+    left: 185px;
+    &__btn {
+      border-radius: 19px;
+      border: solid 2px $red-gva;
+      background: $white-gva;
+      font-size: 18px;
       font-weight: 500;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: normal;
-      letter-spacing: normal;
+      text-align: center;
       color: $red-gva;
     }
+  }
+}
 
-    .card {
-      width: 367px;
-      height: 344px;
-      border-radius: 18px;
+// Sections Icons
+
+.sections-icon {
+  padding: 0 1.5em;
+  text-align: center;
+
+  &__title {
+    text-align: center;
+    margin: 0 auto;
+    font-size: 30px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: $black-gva;
+
+    &__higlight {
+      color: $red-gva;
+    }
+  }
+
+  &__item {
+    text-align: center;
+
+    img {
+      margin-bottom: 1.5em;
+    }
+
+    &__title {
+      text-align: center;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      font-size: 21px;
+      font-weight: bold;
+      font-stretch: normal;
+      color: $blue-gva;
+    }
+    &__description {
+      text-align: center;
+      margin: 0 auto;
+      max-width: 256px;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      font-size: 16px;
+      line-height: 1.38;
+      font-weight: normal;
+      color: $black-gva;
+    }
+  }
+}
+
+// Slider
+
+.slider-gva {
+  position: relative;
+  height: 610px;
+  background-image: image-url("custom/slider.jpg");
+  
+
+  &__title {
+    position: absolute;
+    top: 50px;
+    right: 225px;
+    .month {
+      max-width: 203px;
+      // height: 117px;
+      // font-family: Roboto;
+      font-size: 100px;
+      font-weight: bold;
+      color: $blue-gva;
+    }
+    .budget-gva {
+      display: inline-block;
+      max-width: 224px;
+      // height: 84px;
+      // font-family: Roboto;
+      font-size: 36px;
+      font-weight: bold;
+      color: $blue-gva;
+    }
+  }
+  &__txt {
+    position: absolute;
+    top: 200px;
+    right: 177px;
+    // width: 50%;
+    max-width: 452px;
+    // height: 110px;
+    // font-family: Roboto;
+    font-size: 16px;
+    line-height: 1.38;
+    color: $black-gva;
+  }
+
+  &__btn {
+    position: absolute;
+    top: 420px;
+    right: 315px;
+    // width: 236px;
+    // font-family: Roboto;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    border-radius: 19px;
+    border: solid 2px $red-gva;
+    background: $white-gva;
+    color: $red-gva;
+  }
+
+  @mixin icon {
+    display: inline-block;
+    width: 130px;
+    height: 44px;
+  }
+
+  &__icons {
+    position: absolute;
+    top: 350px;
+    right: 236px;
+    .icon-valencia {
+      @include icon;
+      background-color: #1c9799;
+    }
+
+    .icon-castelo {
+      @include icon;
+      background-color: #c80f2e;
+    }
+
+    .icon-alicante {
+      @include icon;
+      background-color: aquamarine;
+    }
+  }
+}
+
+// Sections Cards
+
+.sections-cards {
+  &__title {
+    width: 396px;
+    font-family: Roboto;
+    font-size: 30px;
+    font-weight: 500;
+    color: $red-gva;
+  }
+
+  .card {
+    height: 344px;
+    border-radius: 18px;
+    // box-shadow: 4px 6px 43px 0 rgba(0, 0, 0, 0.21);
+
+    a {
       // box-shadow: 4px 6px 43px 0 rgba(0, 0, 0, 0.21);
 
-      a {
-        // box-shadow: 4px 6px 43px 0 rgba(0, 0, 0, 0.21);
+      // img {
+      //   border-radius: 18px;
+      // }
 
-        // img {
-        //   border-radius: 18px;
-        // }
-
-        &:hover {
-          img {
-            box-shadow: None !important;
-            border-radius: 18px;
-            transform: None !important;
-          }
+      &:hover {
+        img {
+          box-shadow: None !important;
+          border-radius: 18px;
+          transform: None !important;
         }
-      }
-
-      .figcaption {
-        &__title {
-          // width: 107.9px;
-          // font-family: Roboto;
-          padding: 0 0.375rem;
-          font-size: 18px;
-          font-weight: bold;
-          font-stretch: normal;
-          font-style: normal;
-          line-height: normal;
-          letter-spacing: normal;
-          color: $blue-gva;
-        }
-      }
-      &__description {
-        // font-family: Roboto;
-        font-size: 12px;
-        font-weight: normal;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: 1.42;
-        letter-spacing: normal;
-        color: $black-gva;
       }
     }
-    // &__card {
-    //   a {
-    //     &:hover {
-    //       img {
-    //         transform: scale(1);
-    //       }
-    //     }
-    //   }
-    // }
+
+    .figcaption {
+      &__title {
+        // width: 107.9px;
+        // font-family: Roboto;
+        padding: 0 0.375rem;
+        font-size: 18px;
+        font-weight: bold;
+        color: $blue-gva;
+      }
+    }
+    &__description {
+      // font-family: Roboto;
+      font-size: 12px;
+      line-height: 1.42;
+      color: $black-gva;
+    }
   }
+  // &__card {
+  //   a {
+  //     &:hover {
+  //       img {
+  //         transform: scale(1);
+  //       }
+  //     }
+  //   }
+  // }
 }
 
 // Footer
@@ -333,7 +445,7 @@ footer {
 
   .links,
   .privacy {
-    ul > li {
+    ul li {
       margin-top: 10px;
       margin-bottom: 10px;
     }
