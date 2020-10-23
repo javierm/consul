@@ -46,7 +46,6 @@
     }
 
     &__btn {
-      @include custom-button;
       position: absolute;
       top: 420px;
       right: 371px;

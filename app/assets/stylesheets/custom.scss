@@ -4,21 +4,6 @@
 // * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md#css
 //
 
-// 0. Globals
-// 1. Header
-// 2. Banner
-// 3. Sections Icons
-// 4. Slider
-// 5. Sections Cards
-// 6. Footer
-
-@mixin custom-button {
-  background: $white-gva;
-  border-radius: 19px;
-  border: solid 2px $red-gva;
-  color: $red-gva;
-}
-
 // 0. Global
 @import "custom/custom_global";
 

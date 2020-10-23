@@ -1,3 +1,15 @@
+.custom-page a:hover {
+  h3 {
+    color: $link;
+  }
+}
+
 .menu.simple li a {
   color: $link;
+}
+
+.button {
+  background: $brand;
+  font-size: $base-font-size;
+  border: solid 2px $red-gva;
 }
