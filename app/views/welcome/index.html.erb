@@ -14,8 +14,9 @@
 <%= render "header", header: @header %>
 
 <main>
-  <%= render 'sections_icons' %>
   <%= render "sub_banner" %>
+  <%= render 'sections_icons' %>
+  <%= render 'more_info' %>
   <%= render "feeds" %>
   <div class="row">
     <% if @cards.any? %>
