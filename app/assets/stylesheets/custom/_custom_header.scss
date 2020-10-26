@@ -206,3 +206,11 @@
 input:checked + label {
   text-decoration: underline;
 }
+
+#responsive-menu {
+  .social-icons-list {
+    ul li a {
+      color: $red-gva;
+    }
+  }
+}
