@@ -187,3 +187,22 @@
     border-color: $red-gva transparent transparent;
   }
 }
+
+.radio-toolbar {
+  margin: 10px auto;
+  text-align: center;
+}
+
+.radio-toolbar input {
+  display: none;
+}
+
+.radio-toolbar label {
+  margin: 0px;
+  color: $red-gva;
+  cursor: pointer;
+}
+
+input:checked + label {
+  text-decoration: underline;
+}

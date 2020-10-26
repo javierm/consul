@@ -1,10 +1,10 @@
-(function() {
+(function () {
   "use strict";
   App.LocationChanger = {
-    initialize: function() {
-      $(".js-location-changer").on("change", function() {
+    initialize: function () {
+      $("input[type=radio][name=select-local]").on("change", function () {
         window.location.assign($(this).val());
       });
-    }
+    },
   };
-}).call(this);
+}.call(this));
