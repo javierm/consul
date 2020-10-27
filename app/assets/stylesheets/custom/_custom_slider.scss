@@ -1,0 +1,76 @@
+@mixin custom-icon {
+  display: inline-block;
+  width: 130px;
+  height: 44px;
+}
+
+.slider-gva {
+  background-image: image-url("custom/slider.jpg");
+  position: relative;
+  height: 610px;
+  margin: 20px auto;
+  &__body {
+    position: relative;
+    top: 45px;
+    right: -130px;
+    // border: solid 1px red;
+    width: auto;
+    height: 610px;
+    &__title {
+      position: absolute;
+      top: 50px;
+      right: 225px;
+      .month {
+        max-width: 203px;
+        font-size: 100px;
+        font-weight: bold;
+        color: $blue-gva;
+      }
+      .budget-gva {
+        display: inline-block;
+        max-width: 224px;
+        font-size: 36px;
+        font-weight: bold;
+        color: $blue-gva;
+      }
+    }
+    &__txt {
+      position: absolute;
+      top: 200px;
+      right: 187px;
+
+      max-width: 452px;
+      font-size: 16px;
+      line-height: 1.38;
+      color: $black-gva;
+    }
+
+    &__btn {
+      position: absolute;
+      top: 420px;
+      right: 371px;
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    &__icons {
+      position: absolute;
+      top: 350px;
+      right: 241px;
+      .icon-valencia {
+        @include custom-icon;
+        background-color: #1c9799;
+      }
+
+      .icon-castelo {
+        @include custom-icon;
+        background-color: #c80f2e;
+      }
+
+      .icon-alicante {
+        @include custom-icon;
+        background-color: aquamarine;
+      }
+    }
+  }
+}

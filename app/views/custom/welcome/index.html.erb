@@ -1,0 +1,15 @@
+<% content_for :body_class, "home-page" %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: root_url %>
+<% end %>
+<% provide :social_media_meta_tags do %>
+  <%= render "shared/social_media_meta_tags",
+              social_url: root_url %>
+<% end %>
+<%#= render "header", header: @header %>
+<%= render "shared/banner" %>
+<main>
+  <%= render 'sections_icons' %>
+  <%= render 'info' %>
+  <%= render 'sections_cards' %>
+</main>

@@ -1,0 +1,14 @@
+<div id="<%= dom_id(card) %>"
+     class="card small-12 medium-4 columns margin-bottom">
+  <%= link_to card.link_url do %>
+    <figure >
+      <% if card.image.present? %>
+        <%= image_tag(card.image_url(:large), alt: card.image.title) %>
+      <% end %>
+    </figure>
+    <%# TODO cambiar por H3 y buscar porque se vuelve blanco %>
+    <h2 class="card__title"><%= card.title %></h2>
+    <p class="card__description"><%= card.description %></p>
+    <p class="card__link"><%= card.link_text %></p>
+  <% end %>
+</div>

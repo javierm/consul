@@ -1,0 +1,37 @@
+.banner-gva {
+  background-image: image-url("custom/banner.jpg");
+  position: relative;
+  width: auto;
+  height: 605px;
+  margin: 20px auto;
+  &__title {
+    position: absolute;
+    top: 50px;
+    left: 35px;
+    max-width: 588px;
+    max-height: 142px;
+    font-size: 60px;
+    font-weight: bold;
+    color: $white-gva;
+  }
+  &__txt {
+    color: $blue-gva;
+    position: absolute;
+    top: 270px;
+    left: 35px;
+    max-width: 441px;
+    max-height: 110px;
+    font-size: 16px;
+    line-height: 1.38;
+  }
+
+  &__buttons {
+    position: absolute;
+    top: 453.5px;
+    left: 153px;
+    &__btn {
+      font-size: 18px;
+      font-weight: 500;
+    }
+  }
+}

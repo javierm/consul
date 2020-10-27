@@ -3,3 +3,24 @@
 // * English: https://github.com/consul/consul/blob/master/CUSTOMIZE_EN.md#css
 // * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md#css
 //
+
+// 0. Global
+@import "custom/custom_global";
+
+// 1. Header
+@import "custom/custom_header";
+
+// 2. Banner
+@import "custom/custom_banner";
+
+// 3. Sections Icons
+@import "custom/custom_section_icon";
+
+// 4. Slider
+@import "custom/custom_slider";
+
+// 5. Sections Cards
+@import "custom/custom_section_card";
+
+// 6. Footer
+@import "custom/custom_footer";
