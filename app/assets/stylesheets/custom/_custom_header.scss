@@ -63,6 +63,8 @@
 
       @include breakpoint(medium) {
         border-radius: 10px;
+        color: $red-gva;
+
       }
     }
   }
@@ -198,7 +200,7 @@
 }
 
 .radio-toolbar label {
-  margin: 0px;
+  margin: 0;
   color: $red-gva;
   cursor: pointer;
 }
@@ -207,7 +209,9 @@ input:checked + label {
   text-decoration: underline;
 }
 
-#responsive-menu {
+.top-bar-right {
+  margin-top: 10px;
+
   .social-icons-list {
     ul li a {
       color: $red-gva;
