@@ -15,22 +15,18 @@
   // background-image: none;
   background-color: #f6f6f6;
   position: relative;
-  height: 610px;
+  height: 600px;
   margin: 20px 0;
 
   @include breakpoint(large) {
     background-image: image-url("custom/slider.jpg");
     background-repeat: no-repeat;
-    background-size: cover;
   }
 
   &__body {
     // display: none;
     position: relative;
     top: 45px;
-    // right: -130px;
-    // border: solid 1px red;
-    width: auto;
     height: 610px;
 
     &__title {

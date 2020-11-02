@@ -12,11 +12,18 @@
   background: $brand;
   font-size: $base-font-size;
   border: solid 2px $red-gva;
+
+  &:hover,
+  &:focus {
+    background-color: $red-gva;
+    color: #fefefe;
+  }
+
+
 }
 
 .button.button-twitter {
   background: #ecf7fc;
-  // border-left: 3px solid #45b0e3;
   border: 3px solid #45b0e3;
 
   &::before {
@@ -28,7 +35,6 @@
 
 .button.button-facebook {
   background: #ebeef4;
-  border-left: 3px solid #3b5998;
   border: 3px solid #3b5998;
 
   &::before {

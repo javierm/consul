@@ -5,6 +5,7 @@
   &__title {
     text-align: center;
     margin: 0 auto;
+    padding: 1em 0;
     font-size: 30px;
     font-weight: 500;
     line-height: 1.5;
@@ -28,6 +29,7 @@
       font-weight: bold;
       color: $blue-gva;
     }
+
     &__description {
       color: $black-gva;
       text-align: center;

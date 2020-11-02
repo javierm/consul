@@ -571,6 +571,12 @@ header {
   }
 }
 
+
+.title-bar {
+  background: none;
+  float: right;
+}
+
 .top-bar {
   background: $brand !important;
   color: #fff;
@@ -687,6 +693,15 @@ header {
   }
 }
 
+
+.top-bar-right {
+
+  .is-active {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+}
+
 .menu-icon {
 
   &.dark {
@@ -697,11 +712,6 @@ header {
       box-shadow: 0 7px 0 #fff, 0 14px 0 #fff;
     }
   }
-}
-
-.title-bar {
-  background: none;
-  float: right;
 }
 
 .dropdown.menu > li {
@@ -835,14 +845,6 @@ header {
     margin-bottom: 0;
     margin-right: 0;
     width: 100%;
-  }
-}
-
-.top-bar-right {
-
-  .is-active {
-    font-weight: bold;
-    text-decoration: underline;
   }
 }
 
