@@ -3,6 +3,7 @@
   margin-right: none;
   margin-left: none;
 }
+// TODO crear varibles de la altura de los elementos y hacer responsive
 
 .banner-gva {
   background-image: image-url("custom/banner.jpg");
@@ -15,8 +16,9 @@
 
   &__title {
     position: absolute;
-    top: 50px;
-    left: 35px;
+    top: 52.5px;
+    margin-left: 30px;
+
     max-width: 588px;
     max-height: 142px;
     font-size: 60px;
@@ -27,8 +29,8 @@
   &__txt {
     color: $blue-gva;
     position: absolute;
-    top: 270px;
-    left: 35px;
+    top: 270px; // 86.5px de title
+    margin-left: 30px;
     max-width: 441px;
     max-height: 110px;
     font-size: 16px;
@@ -37,10 +39,12 @@
 
   &__buttons {
     position: absolute;
-    top: 453.5px;
-    left: 153px;
+    top: 455.5px; // 63.5px de txt
+    margin-left: 30px;
 
     &__btn {
+      margin-right: 20px;
+      padding: 15px 45px;
       font-size: 18px;
       font-weight: 500;
     }
