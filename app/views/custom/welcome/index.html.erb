@@ -9,9 +9,9 @@
 <%#= render "header", header: @header %>
 <%= render "welcome_header" %>
 <main>
+  <%= render 'sections_icons' %>
+  <%= render 'slider' %>
   <div class="row">
-    <%= render 'sections_icons' %>
-    <%= render 'slider' %>
     <% if @cards.any? %>
       <div class="small-12 columns sections-cards">
         <h3 class="sections-cards__title"><%= t("welcome.cards.title") %></h3>
