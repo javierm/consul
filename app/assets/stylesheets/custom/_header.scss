@@ -1,69 +1,13 @@
 
 header {
-  background: $brand;
+  background: $white-gva;
   border-bottom: 1px solid $border;
-  margin-bottom: 0;
-
-  @include breakpoint(small down) {
-    position: relative;
-    z-index: 10;
-  }
-
-  .selected {
-    border-bottom: 1px solid #fff;
-  }
-
-  .locale {
-    float: left;
-    height: $line-height * 1.5;
-    margin-left: $line-height / 2;
-    position: relative;
-
-    &::after {
-      color: #808080;
-      content: "\61";
-      font-family: "icons" !important;
-      font-size: $small-font-size;
-      pointer-events: none;
-      position: absolute;
-      right: 2px;
-      top: 9px;
-    }
-  }
-
-  .remote-translations-button {
-
-    &.callout {
-      margin: 0;
-      padding: rem-calc(6);
-
-      [type="submit"] {
-        background: none;
-        border: 0;
-        cursor: pointer;
-        font-weight: bold;
-        color: $brand;
-
-        &:hover {
-          text-decoration: underline;
-        }
-      }
-    }
-  }
-
-  .external-links {
-    float: none;
-    padding: rem-calc(6) 0;
-    text-align: center;
-
-    @include breakpoint(medium) {
-      float: right;
-    }
-  }
+  // margin-bottom: 0;
 }
 
 
 .top-bar {
+  background: $white-gva !important;
   color: $red-gva;
   padding-bottom: 0;
   padding-top: 0;

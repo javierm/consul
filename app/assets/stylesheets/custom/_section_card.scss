@@ -1,0 +1,54 @@
+.sections-cards {
+  &__title {
+    font-size: 30px;
+    font-weight: 500;
+    color: $red-gva;
+  }
+
+}
+
+
+.card {
+
+  a {
+    border-radius: 18px;
+    box-shadow: 4px 6px 14px 0 rgba(0, 0, 0, 0.21);
+
+    img {
+      border-top-left-radius: 18px;
+      border-top-right-radius: 18px;
+      transform: None !important;
+    }
+
+
+  }
+
+  a:hover {
+    box-shadow: 4px 6px 14px 0 rgba(0, 0, 0, 0.31) !important;
+  }
+
+
+  &__title {
+    margin-top: 22.3px;
+    margin-left: 14.7px;
+    margin-bottom: 10.2px;
+    font-size: 18px;
+    font-weight: bold;
+    color: $blue-gva;
+  }
+
+  &__description {
+    padding: 0 !important;
+    margin-left: 14.7px;
+    font-size: 12px;
+    line-height: 1.42;
+    color: $black-gva;
+  }
+
+  &__link {
+    color: $red-gva;
+    text-align: center;
+  }
+
+
+}

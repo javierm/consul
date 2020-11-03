@@ -7,11 +7,11 @@
 .banner-gva {
   background-image: image-url("custom/banner.jpg");
   background-repeat: no-repeat;
+  // background-size: contain;
   position: relative;
-  // width: auto;
-  height: 600px;
-  width: 100vw;
-  margin: 20px 0;
+  height: 605px;
+  margin-top: -1.5em;
+  margin-bottom: 20px;
 
   &__title {
     position: absolute;
