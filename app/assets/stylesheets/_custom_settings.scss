@@ -32,10 +32,11 @@ $header-font-family: $body-font-family;
 
 $red-gva: #c80f2e;
 $blue-gva: #1c9799;
+$dark-blue-gva: #009687;
 $black-gva: #191919;
-$white-gva: #ffffff;
+$white-gva: #fff;
 
-$brand: $white-gva;
+$brand: $dark-blue-gva;
 $link: $blue-gva;
 $link-hover: darken($link, 20%);
 

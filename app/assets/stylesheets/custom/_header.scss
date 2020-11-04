@@ -1,4 +1,13 @@
+
+header {
+  background: $white-gva;
+  border-bottom: 1px solid $border;
+  // margin-bottom: 0;
+}
+
+
 .top-bar {
+  background: $white-gva !important;
   color: $red-gva;
   padding-bottom: 0;
   padding-top: 0;
@@ -129,6 +138,8 @@
 }
 
 .subnavigation {
+  border-top: 1px solid $red-gva;
+
   @include breakpoint(medium) {
     background: #fff;
     padding-bottom: 0;
@@ -191,8 +202,9 @@
 }
 
 .radio-toolbar {
-  margin: 10px auto;
-  text-align: center;
+  text-align: right;
+  margin-bottom: 5px;
+  margin-right: 30px;
 }
 
 .radio-toolbar input {
@@ -209,11 +221,16 @@ input:checked + label {
   text-decoration: underline;
 }
 
-.top-bar-right {
-  margin-top: 10px;
 
-  .social-icons-list {
-    ul li a {
+
+.social-header .social-icons-list {
+  text-align: right;
+  margin-right: 30px;
+
+  ul {
+    padding: 0;
+
+    li a {
       color: $red-gva;
     }
   }
