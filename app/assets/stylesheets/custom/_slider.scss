@@ -5,28 +5,28 @@
   height: 44px;
 }
 
+$absolute-left: 60px;
 .slider-gva {
-  // background-image: none;
   background-color: #f6f6f6;
-  position: relative;
   height: 600px;
   margin: 20px 0;
 
   @include breakpoint(large) {
-    background-image: image-url("custom/slider.jpg");
+    background-image: image-url("custom/slider_valencia.png");
     background-repeat: no-repeat;
   }
 
-  &__body {
-    // display: none;
+  .content {
+    // border: 2px solid red;
     position: relative;
-    // top: 45px;
-    height: 610px;
+    left: 50vw;
+    height: 600px;
+    width: auto;
 
     &__title {
       position: absolute;
       top: 50px;
-      right: 225px;
+      left: $absolute-left;
 
       .month {
         max-width: 203px;
@@ -47,7 +47,7 @@
     &__txt {
       position: absolute;
       top: 200px;
-      right: 187px;
+      left: $absolute-left;
 
       max-width: 452px;
       font-size: 16px;
@@ -57,8 +57,8 @@
 
     &__btn {
       position: absolute;
-      top: 420px;
-      right: 371px;
+      top: 440px;
+      left: $absolute-left;
       font-size: 18px;
       font-weight: 500;
     }
@@ -66,21 +66,10 @@
     &__icons {
       position: absolute;
       top: 350px;
-      right: 241px;
+      left: $absolute-left;
 
-      .icon-valencia {
+      .img {
         @include custom-icon;
-        background-color: #1c9799;
-      }
-
-      .icon-castelo {
-        @include custom-icon;
-        background-color: #c80f2e;
-      }
-
-      .icon-alicante {
-        @include custom-icon;
-        background-color: aquamarine;
       }
     }
   }

@@ -1,48 +1,57 @@
 
 // TODO crear varibles de la altura de los elementos y hacer responsive
+$margin-left: 30px;
 
 .welcome-header {
-  background-image: image-url("custom/banner.jpg");
+  background-image: image-url("custom/valencia.png");
   background-repeat: no-repeat;
-  // background-size: contain;
-  position: relative;
-  height: 605px;
+  background-size: cover;
+  height: 700px;
   margin-top: -1.5em;
   margin-bottom: 20px;
 
-  &__title {
-    position: absolute;
-    top: 52.5px;
-    margin-left: 30px;
+  .content {
+    // border: 2px solid red;
+    position: relative;
+    left: 65px;
+    height: 700px;
+    width: 700px;
 
-    max-width: 588px;
-    max-height: 142px;
-    font-size: 60px;
-    font-weight: bold;
-    color: $white-gva;
-  }
+    &__title {
+      position: absolute;
+      top: 52.5px;
+      max-width: 588px;
+      max-height: 142px;
+      margin-left: $margin-left;
+      margin-bottom: 0;
+      font-size: 60px;
+      font-weight: bold;
+      color: $white-gva;
+    }
 
-  &__txt {
-    color: $blue-gva;
-    position: absolute;
-    top: 270px; // 86.5px de title
-    margin-left: 30px;
-    max-width: 441px;
-    max-height: 110px;
-    font-size: 16px;
-    line-height: 1.38;
-  }
+    &__txt {
+      color: $blue-gva;
+      position: absolute;
+      top: 330px; // 86.5px de title
+      margin-left: $margin-left;
+      max-width: 441px;
+      max-height: 110px;
+      font-size: 16px;
+      line-height: 1.38;
+    }
 
-  &__buttons {
-    position: absolute;
-    top: 455.5px; // 63.5px de txt
-    margin-left: 30px;
+    &__buttons {
+      position: absolute;
+      top: 520px; // 63.5px de txt
+      margin-left: $margin-left;
 
-    &__btn {
-      margin-right: 20px;
-      padding: 15px 45px;
-      font-size: 18px;
-      font-weight: 500;
+      &__btn {
+        margin-right: 20px;
+        padding: 15px 45px;
+        font-size: 18px;
+        font-weight: 500;
+      }
     }
   }
+
 }

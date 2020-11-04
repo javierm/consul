@@ -1,13 +1,3 @@
-.sections-cards {
-  &__title {
-    font-size: 30px;
-    font-weight: 500;
-    color: $red-gva;
-  }
-
-}
-
-
 .card {
 
   a {
@@ -20,13 +10,11 @@
       transform: None !important;
     }
 
-
   }
 
   a:hover {
     box-shadow: 4px 6px 14px 0 rgba(0, 0, 0, 0.31) !important;
   }
-
 
   &__title {
     margin-top: 22.3px;
@@ -38,15 +26,14 @@
   }
 
   &__description {
-    padding: 0 !important;
-    margin-left: 14.7px;
+    padding: 0 14.7px !important;
     font-size: 12px;
     line-height: 1.42;
     color: $black-gva;
   }
 
   &__link {
-    color: $red-gva;
+    // color: $red-gva;
     text-align: center;
   }
 
