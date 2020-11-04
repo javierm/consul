@@ -1,3 +1,10 @@
+
+.row.row-slider-gva {
+  max-width: 100vw;
+  margin-right: none;
+  margin-left: none;
+}
+
 @mixin custom-icon {
   display: inline-block;
   width: 130px;
@@ -5,27 +12,39 @@
 }
 
 .slider-gva {
-  background-image: image-url("custom/slider.jpg");
+  // background-image: none;
+  background-color: #f6f6f6;
   position: relative;
   height: 610px;
-  margin: 20px auto;
+  margin: 20px 0;
+
+  @include breakpoint(large) {
+    background-image: image-url("custom/slider.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
   &__body {
+    // display: none;
     position: relative;
     top: 45px;
-    right: -130px;
+    // right: -130px;
     // border: solid 1px red;
     width: auto;
     height: 610px;
+
     &__title {
       position: absolute;
       top: 50px;
       right: 225px;
+
       .month {
         max-width: 203px;
         font-size: 100px;
         font-weight: bold;
         color: $blue-gva;
       }
+
       .budget-gva {
         display: inline-block;
         max-width: 224px;
@@ -34,6 +53,7 @@
         color: $blue-gva;
       }
     }
+
     &__txt {
       position: absolute;
       top: 200px;
@@ -57,6 +77,7 @@
       position: absolute;
       top: 350px;
       right: 241px;
+
       .icon-valencia {
         @include custom-icon;
         background-color: #1c9799;

@@ -13,3 +13,37 @@
   font-size: $base-font-size;
   border: solid 2px $red-gva;
 }
+
+.button.button-twitter {
+  background: #ecf7fc;
+  // border-left: 3px solid #45b0e3;
+  border: 3px solid #45b0e3;
+
+  &::before {
+    color: #45b0e3;
+    content: "f";
+  }
+}
+
+
+.button.button-facebook {
+  background: #ebeef4;
+  border-left: 3px solid #3b5998;
+  border: 3px solid #3b5998;
+
+  &::before {
+    color: #3b5998;
+    content: "A";
+  }
+}
+
+.button.button-google {
+  background: #fcedea;
+  border: 3px solid #de4c34;
+
+
+  &::before {
+    color: #de4c34;
+    content: "B";
+  }
+}
