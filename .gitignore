@@ -41,3 +41,6 @@ public/system/
 
 # VSCode workspace settings
 /.vscode
+
+# PHP files
+lib/custom/connection_census

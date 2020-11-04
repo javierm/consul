@@ -1,4 +1,5 @@
 require "json"
+
 require_dependency Rails.root.join("lib", "census_api").to_s
 
 class CensusApi
@@ -12,16 +13,13 @@ class CensusApi
   end
 
   class Response
-    # def initialize(body)
-    #   @body = body
-    # end
 
     def valid?
-      data[:datos_habitante][:item].present?
+      data[:datos_vivienda]["resultado"]
     end
 
     def date_of_birth
-      str = data[:datos_habitante][:item][:fecha_nacimiento_string]
+      str = data[:datos_habitante]["fecha_nacimiento"]
       day, month, year = str.match(/(\d\d?)\D(\d\d?)\D(\d\d\d?\d?)/)[1..3]
       return nil unless day.present? && month.present? && year.present?
 
@@ -29,113 +27,112 @@ class CensusApi
     end
 
     def postal_code
-      data[:datos_vivienda][:item][:codigo_postal]
+      data[:datos_vivienda]["codigo_postal"]
     end
 
     def district_code
-      data[:datos_vivienda][:item][:codigo_distrito]
+      data[:datos_vivienda]["codigo_provincia"]
     end
 
     def gender
-      case data[:datos_habitante][:item][:descripcion_sexo]
-      when "Varón"
+      case data[:datos_habitante]["sexo"]
+      when "V" # H
         "male"
-      when "Mujer"
+      when "M"
         "female"
       end
     end
 
     def name
-      "#{data[:datos_habitante][:item][:nombre]} #{data[:datos_habitante][:item][:apellido1]}"
+      "#{data[:datos_habitante]["nombre"]} #{data[:datos_habitante]["apellido1"]}"
     end
 
     private
 
       def data
-        @body[:get_habita_datos_response][:get_habita_datos_return]
+        @body
       end
   end
 
-  def validation_end_point(validator_type, document_number)
-    path = Rails.application.secrets.census_api_end_point
-    if validator_type == 'age_validator'
+  class ConnectionCensus
+    def initialize(path)
+      @path = path
+    end
+
+    def call(document_number)
+      data = {}
+      data[:datos_habitante] = JSON.parse(get_age_validation(document_number))
+      data[:datos_vivienda] = JSON.parse(get_residence_validation(document_number))
+      data
+    end
+
+    private
+
+    def get_age_validation(document_number)
       validator = Rails.application.secrets.census_api_age_validator
+      `php -f #{@path}#{validator} -- -n #{document_number}`
     end
-    if validator_type == 'residence_validator'
-      validator = Rails.application.secrets.census_pai_residence_validator
+
+    def get_residence_validation(document_number)
+      validator = Rails.application.secrets.census_api_residence_validator
+      `php -f #{@path}#{validator} -- -n #{document_number}`
     end
-    #TODO poner un validator por defector, mejorar la alternativa al if
-    response = `php -f #{path}#{validator} -- -n #{document_number}`
-    JSON.parse(response)
   end
 
   private
 
-    def get_response_body(document_type, document_number) #TODO pasar número de documento y ypo de petición, edad o residencia
+    def get_response_body(document_type, document_number)
       if end_point_available?
-        client.call(:get_habita_datos, message: request(document_type, document_number)).body
+        byebug
+        client.call(document_number)
       else
+        byebug
         stubbed_response(document_type, document_number)
       end
     end
 
     def client
-      @client = Savon.client(wsdl: Rails.application.secrets.census_api_end_point)
+      @client = ConnectionCensus.new(Rails.application.secrets.census_api_end_point)
     end
 
-    def request(document_type, document_number)
-      { request:
-        { codigo_institucion: Rails.application.secrets.census_api_institution_code,
-          codigo_portal:      Rails.application.secrets.census_api_portal_name,
-          codigo_usuario:     Rails.application.secrets.census_api_user_code,
-          documento:          document_number,
-          tipo_documento:     document_type,
-          codigo_idioma:      102,
-          nivel: 3 }}
+    def end_point_defined?
+      Rails.application.secrets.census_api_end_point.present?
     end
 
+    def end_point_available?
+      (Rails.env.staging? || Rails.env.preproduction? || Rails.env.production?) &&end_point_defined?
+    end
 
-    # def end_point_defined?
-    #   Rails.application.secrets.census_api_end_point.present?
-    # end
+    def stubbed_response(document_type, document_number)
+      if (document_number == "12345678Z" || document_number == "12345678Y") && document_type == "1"
+        stubbed_valid_response
+      else
+        stubbed_invalid_response
+      end
+    end
 
-    # def end_point_available?
-    #   (Rails.env.staging? || Rails.env.preproduction? || Rails.env.production?) && end_point_defined?
-    # end
+    def stubbed_valid_response
+      {
+        datos_habitante: {
+          nacinalidad: "España",
+          nombre: "Francisca",
+          apellido1: "Nomdedéu",
+          apellido2: "Camps",
+          sexo: "M",
+          fecha_nacimiento: "19-10-1977"
+        },
+        datos_vivienda: {
+          resultado: true,
+          codigo_provincia: 46,
+          descripcion_provincia: "Valencia",
+          codigo_municipio: "Alzira",
+          direccion: "C/ Piletes 9, 3º 11",
+          codigo_postal: 46600
+        }
+      }
+    end
 
-    # def stubbed_response(document_type, document_number)
-    #   if (document_number == "12345678Z" || document_number == "12345678Y") && document_type == "1"
-    #     stubbed_valid_response
-    #   else
-    #     stubbed_invalid_response
-    #   end
-    # end
-
-    # def stubbed_valid_response
-    #   {
-    #     get_habita_datos_response: {
-    #       get_habita_datos_return: {
-    #         datos_habitante: {
-    #           item: {
-    #             fecha_nacimiento_string: "31-12-1980",
-    #             identificador_documento: "12345678Z",
-    #             descripcion_sexo: "Varón",
-    #             nombre: "José",
-    #             apellido1: "García"
-    #           }
-    #         },
-    #         datos_vivienda: {
-    #           item: {
-    #             codigo_postal: "28013",
-    #             codigo_distrito: "01"
-    #           }
-    #         }
-    #       }
-    #     }
-    #   }
-    # end
-
-    # def stubbed_invalid_response
-    #   { get_habita_datos_response: { get_habita_datos_return: { datos_habitante: {}, datos_vivienda: {}}}}
-    # end
+    def stubbed_invalid_response
+      { datos_habitante: {}, datos_vivienda: {}}
+    end
 end
