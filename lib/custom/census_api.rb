@@ -3,15 +3,6 @@ require "json"
 require_dependency Rails.root.join("lib", "census_api").to_s
 
 class CensusApi
-  def call(document_type, document_number)
-    response = nil
-    get_document_number_variants(document_type, document_number).each do |variant|
-      response = Response.new(get_response_body(document_type, variant))
-      return response if response.valid?
-    end
-    response
-  end
-
   class Response
 
     def valid?
@@ -43,10 +34,6 @@ class CensusApi
       end
     end
 
-    def name
-      "#{data[:datos_habitante]["nombre"]} #{data[:datos_habitante]["apellido1"]}"
-    end
-
     private
 
       def data
@@ -60,20 +47,20 @@ class CensusApi
     end
 
     def call(document_number)
-      data = {}
-      data[:datos_habitante] = JSON.parse(get_age_validation(document_number))
-      data[:datos_vivienda] = JSON.parse(get_residence_validation(document_number))
-      data
+      {
+        datos_habitante: JSON.parse(get_age(document_number)),
+        datos_vivienda: JSON.parse(get_residence(document_number))
+      }
     end
 
     private
 
-    def get_age_validation(document_number)
+    def get_age(document_number)
       validator = Rails.application.secrets.census_api_age_validator
       `php -f #{@path}#{validator} -- -n #{document_number}`
     end
 
-    def get_residence_validation(document_number)
+    def get_residence(document_number)
       validator = Rails.application.secrets.census_api_residence_validator
       `php -f #{@path}#{validator} -- -n #{document_number}`
     end
@@ -83,10 +70,8 @@ class CensusApi
 
     def get_response_body(document_type, document_number)
       if end_point_available?
-        byebug
         client.call(document_number)
       else
-        byebug
         stubbed_response(document_type, document_number)
       end
     end
@@ -100,7 +85,7 @@ class CensusApi
     end
 
     def end_point_available?
-      (Rails.env.staging? || Rails.env.preproduction? || Rails.env.production?) &&end_point_defined?
+      (Rails.env.development? || Rails.env.staging? || Rails.env.preproduction? || Rails.env.production?) && end_point_defined?
     end
 
     def stubbed_response(document_type, document_number)
@@ -114,20 +99,17 @@ class CensusApi
     def stubbed_valid_response
       {
         datos_habitante: {
-          nacinalidad: "España",
-          nombre: "Francisca",
-          apellido1: "Nomdedéu",
-          apellido2: "Camps",
-          sexo: "M",
-          fecha_nacimiento: "19-10-1977"
+          "nacinalidad" => "España",
+          "sexo" => "M",
+          "fecha_nacimiento" => "19-10-1977"
         },
         datos_vivienda: {
-          resultado: true,
-          codigo_provincia: 46,
-          descripcion_provincia: "Valencia",
-          codigo_municipio: "Alzira",
-          direccion: "C/ Piletes 9, 3º 11",
-          codigo_postal: 46600
+          "resultado" => true,
+          "codigo_provincia" => 46,
+          "descripcion_provincia" => "Valencia",
+          "codigo_municipio" => "Alzira",
+          "direccion" => "C/ Piletes 9, 3º 11",
+          "codigo_postal" => 46600
         }
       }
     end
