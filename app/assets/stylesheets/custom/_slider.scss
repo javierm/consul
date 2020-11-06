@@ -26,6 +26,12 @@ $padding: 30px;
 
   .content {
 
+    @include breakpoint(medium) {
+      float: right;
+      margin-right: 80px;
+    }
+
+
     &__title {
 
       color: $white-gva;
@@ -67,8 +73,7 @@ $padding: 30px;
       color: $black-gva;
 
       @include breakpoint(medium) {
-        max-width: 452px;
-        font-size: 16px;
+
       }
     }
 
@@ -78,7 +83,8 @@ $padding: 30px;
       font-weight: 500;
 
       @include breakpoint(medium) {
-
+        margin: 0;
+        margin-left: $padding;
       }
     }
 
