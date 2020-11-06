@@ -40,7 +40,8 @@
 .groups-and-headings {
   .heading {
     border-radius: 18px;
-    // flex: 1 0 0;
+    display: inline-flex;
+
     a {
       width: 100%;
       border-radius: 18px;
