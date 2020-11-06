@@ -11,7 +11,7 @@
   color: $link;
 }
 
-.button {
+@mixin custom-button {
   background: $white-gva;
   font-size: $base-font-size;
   border: solid 2px $red-gva;
@@ -21,7 +21,10 @@
     background-color: $red-gva;
     color: #fefefe;
   }
+}
 
+.button {
+  @include custom-button;
 }
 
 .view-mode .button {

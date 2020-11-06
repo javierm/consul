@@ -6,6 +6,7 @@
 }
 
 $absolute-left: 60px;
+
 .slider-gva {
   background-color: #f6f6f6;
   height: 600px;
@@ -32,7 +33,7 @@ $absolute-left: 60px;
         max-width: 203px;
         font-size: 100px;
         font-weight: bold;
-        color: $blue-gva;
+        color: $brand;
       }
 
       .budget-gva {
@@ -40,7 +41,7 @@ $absolute-left: 60px;
         max-width: 224px;
         font-size: 36px;
         font-weight: bold;
-        color: $blue-gva;
+        color: $brand;
       }
     }
 
