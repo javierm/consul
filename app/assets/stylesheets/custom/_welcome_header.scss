@@ -7,10 +7,10 @@ $padding: 30px;
   ), image-url("custom/valencia.png");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: 82%;
   height: 700px;
   margin-top: -1.5em;
   margin-bottom: 20px;
-  background-position: 82%;
 
   @include breakpoint(medium) {
     background-image: image-url("custom/valencia.png");
