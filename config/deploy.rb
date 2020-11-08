@@ -8,7 +8,7 @@ end
 
 set :rails_env, fetch(:stage)
 set :rvm1_map_bins, -> { fetch(:rvm_map_bins).to_a.concat(%w[rake gem bundle ruby]).uniq }
-set :rvm_ruby_version, '2.7.1'
+set :rvm_ruby_version, '2.5.8'
 
 set :application, "consul"
 set :full_app_name, deploysecret(:full_app_name)
@@ -25,7 +25,6 @@ set :log_level, :info
 set :pty, true
 set :use_sudo, false
 
-set :bundle_path, -> { release_path.join('vendor/bundle') }
 set :linked_files, %w[config/database.yml config/secrets.yml]
 set :linked_dirs, %w[log tmp public/system public/assets public/ckeditor_assets]
 
