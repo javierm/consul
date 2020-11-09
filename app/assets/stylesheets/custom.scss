@@ -262,10 +262,21 @@ header {
       @include grid-row;
     }
 
-    .sites > * {
-      @include breakpoint(medium) {
-        @include grid-column(3);
+    .sites,
+    .contact {
+
+      > * {
+        @include breakpoint(medium) {
+          @include grid-column(3);
+        }
       }
+
+      > :first-child {
+        padding-left: 0;
+      }
+    }
+
+    .sites {
 
       .title {
         border: 0;
@@ -274,10 +285,6 @@ header {
         margin-top: 0;
         text-decoration: underline;
       }
-    }
-
-    .info {
-      padding-left: 0;
     }
 
     p {
@@ -315,6 +322,34 @@ header {
     }
   }
 
+  .contact {
+
+    > :first-child {
+      @include has-fa-icon(map-marker-alt, "s");
+    }
+
+    > :first-child,
+    a {
+
+      &::before {
+        color: $link;
+        margin-right: rem-calc(4);
+      }
+    }
+
+    a {
+      display: inline-block;
+
+      &[href^="tel:"] {
+        @include has-fa-icon(phone-alt, "s");
+      }
+
+      &[href^="mailto:"] {
+        @include has-fa-icon(envelope, "s");
+      }
+    }
+  }
+
   .subfooter {
     background-color: $gray;
     color: $black;
@@ -335,7 +370,6 @@ header {
 
     a {
       color: $black;
-      font-weight: normal;
 
       &:hover,
       &:focus {

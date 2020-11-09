@@ -9,3 +9,6 @@ es:
     open_data:
       title: "Datos abiertos"
       description: "Todos los datos del Ayuntamiento son tuyos."
+  contact:
+    phone_1: "%{phone} (Centro de Atención Telefónica)"
+    phone_2: "%{phone} (Alcaldía)"
