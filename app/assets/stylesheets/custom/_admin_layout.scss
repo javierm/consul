@@ -1,44 +1,9 @@
 .tabs {
-  border-left: 0;
-  border-right: 0;
-  border-top: 0;
-  margin-bottom: $line-height;
-
-  .tabs-title {
-    font-size: $base-font-size;
-    margin-right: $line-height;
-  }
 
   .tabs-title > a {
-    color: $text-medium;
-    position: relative;
 
     &:hover {
-      background: none;
       color: $red-gva;
-      text-decoration: none;
     }
-
-    &[aria-selected="true"],
-    &.is-active {
-      border-bottom: 0;
-      color: $brand;
-      font-weight: bold;
-
-      &::after {
-        background: $brand;
-        border-bottom: 2px solid $brand;
-        bottom: 0;
-        content: "";
-        left: 0;
-        position: absolute;
-        width: 100%;
-      }
-    }
-  }
-
-  h2,
-  h3 {
-    font-size: $base-font-size;
   }
 }

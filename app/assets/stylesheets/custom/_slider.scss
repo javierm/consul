@@ -95,10 +95,6 @@ $padding: 30px;
       img {
         @include custom-icon-mv;
       }
-
-      @include breakpoint(medium) {
-
-      }
     }
   }
 }
