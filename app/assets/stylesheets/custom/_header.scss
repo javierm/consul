@@ -1,79 +1,29 @@
 
 header {
   background: $white-gva;
-  border-bottom: 1px solid $border;
-  // margin-bottom: 0;
 }
 
 
 .top-bar {
   background: $white-gva !important;
   color: $red-gva;
-  padding-bottom: 0;
-  padding-top: 0;
 
-  @include breakpoint(medium) {
-    padding: 0;
-  }
-
-  ul {
-    background: none;
-    padding-right: rem-calc(15);
-  }
 
   .menu .menu-text {
     padding: 0;
-
-    a {
-      color: #fff;
-      display: inline-block;
-      font-family: "Lato" !important;
-      font-size: rem-calc(24);
-      font-weight: lighter;
-      line-height: $line-height * 2;
-      padding: 0;
-
-      @include breakpoint(medium) {
-        line-height: rem-calc(80);
-        margin-top: 0;
-      }
-
-      img {
-        @include breakpoint(medium) {
-          margin-right: $line-height / 2;
-          margin-top: 0;
-        }
-      }
-    }
   }
 
   .menu > li {
-    display: block;
-    width: 100%;
-
-    @include breakpoint(medium) {
-      width: auto;
-    }
 
     a {
       color: $red-gva;
-      padding-left: 0;
       font-size: 16px;
-
-      @include breakpoint(medium) {
-        font-size: $small-font-size;
-        padding: rem-calc(11) rem-calc(16);
-      }
     }
 
     .button {
-      background: none;
-      text-align: left;
-
       @include breakpoint(medium) {
         border-radius: 10px;
         color: $red-gva;
-
       }
     }
   }
@@ -81,23 +31,12 @@ header {
   .has-submenu {
     &.is-active a {
       color: $red-gva;
-      font-weight: bold;
     }
   }
 
   .menu {
-    &.is-dropdown-submenu {
-      margin: 0;
-      margin-top: rem-calc(-12);
-      padding: 0;
-      z-index: 9;
-    }
 
     .is-submenu-item {
-      display: block;
-      height: auto;
-      margin-bottom: 0;
-
       a {
         color: $red-gva;
       }
@@ -110,20 +49,6 @@ header {
       &::after {
         background: $red-gva;
         box-shadow: 0 7px 0 $red-gva, 0 14px 0$red-gva;
-      }
-    }
-  }
-
-  .top-bar-title {
-    line-height: $line-height;
-
-    a img {
-      height: rem-calc(48);
-      margin: 0;
-      width: auto;
-
-      @include breakpoint(medium up) {
-        height: auto;
       }
     }
   }
@@ -140,36 +65,11 @@ header {
 .subnavigation {
   border-top: 1px solid $red-gva;
 
-  @include breakpoint(medium) {
-    background: #fff;
-    padding-bottom: 0;
-  }
-
-  ul {
-    list-style-type: none;
-    margin: 0;
-
-    li {
-      @include breakpoint(medium) {
-        display: inline-block;
-        margin-right: rem-calc(20);
-      }
-    }
-  }
-
   a {
-    color: $blue-gva;
-    display: inline-block;
-    line-height: $line-height * 2;
-    position: relative;
-    text-align: left;
-    width: 100%;
+    color: $link;
 
     @include breakpoint(medium) {
-      color: $blue-gva;
-      display: block;
-      font-weight: bold;
-      width: auto;
+      color: $link;
 
       &:hover {
         color: $link;
@@ -188,9 +88,6 @@ header {
 }
 
 .dropdown.menu > li {
-  a {
-    background: none;
-  }
 
   &.is-active > a {
     color: $red-gva;

@@ -31,13 +31,13 @@ $header-font-family: $body-font-family;
 // 0. Global
 
 $red-gva: #c80f2e;
-$blue-gva: #1c9799;
-$dark-blue-gva: #009687;
+$blue-gva: #4db6ac;
+$dark-blue-gva: #1c9799;
 $black-gva: #191919;
 $white-gva: #fff;
 
 $brand: $dark-blue-gva;
-$link: $blue-gva;
+$link: $brand;
 $link-hover: darken($link, 20%);
 
 $button-color: $red-gva;

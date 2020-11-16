@@ -1,57 +1,61 @@
-
-// TODO crear varibles de la altura de los elementos y hacer responsive
-$margin-left: 30px;
+$padding: 30px;
 
 .welcome-header {
-  background-image: image-url("custom/valencia.png");
+
+  background-image: linear-gradient(
+    rgba(11, 108, 146 , 0.5)
+  ), image-url("custom/valencia.png");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: 82%;
   height: 700px;
   margin-top: -1.5em;
   margin-bottom: 20px;
 
+  @include breakpoint(medium) {
+    background-image: image-url("custom/valencia.png");
+    background-position: center;
+
+  }
+
   .content {
-    // border: 2px solid red;
-    position: relative;
-    left: 65px;
-    height: 700px;
-    width: 700px;
 
     &__title {
-      position: absolute;
-      top: 52.5px;
-      max-width: 588px;
-      max-height: 142px;
-      margin-left: $margin-left;
-      margin-bottom: 0;
-      font-size: 60px;
+      padding: 60px $padding;
+      margin-bottom: 20px;
+      font-size: 40px;
       font-weight: bold;
       color: $white-gva;
+
+      @include breakpoint(medium) {
+        font-size: 60px;
+        max-width: 640px;
+      }
     }
 
     &__txt {
-      color: $blue-gva;
-      position: absolute;
-      top: 330px; // 86.5px de title
-      margin-left: $margin-left;
-      max-width: 441px;
-      max-height: 110px;
+      color: $white-gva;
+      margin-top: 20px;
+      padding: 20px $padding;
       font-size: 16px;
       line-height: 1.38;
+
+      @include breakpoint(medium) {
+        color: $brand;
+        padding: 35px $padding;
+        max-width: 441px;
+      }
     }
 
     &__buttons {
-      position: absolute;
-      top: 520px; // 63.5px de txt
-      margin-left: $margin-left;
+      padding-left: $padding;
 
       &__btn {
-        margin-right: 20px;
         padding: 15px 45px;
         font-size: 18px;
         font-weight: 500;
       }
     }
   }
-
 }
+

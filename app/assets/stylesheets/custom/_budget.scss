@@ -1,25 +1,51 @@
 .expanded.budget {
   background: $blue-gva;
-  margin-top: -1.5rem;
 
   .info {
     background: $dark-blue-gva;
   }
 }
 
-
 .budget-timeline {
-  border-left: 3px solid $blue-gva;
+  border-left: 3px solid $brand;
 
   .phase.is-active h3 {
-    background: $blue-gva;
+    background: $brand;
   }
 
   .phase.is-active::before {
-    background-color: $blue-gva;
+    background-color: $brand;
   }
 
   .phase::before {
-    border: 4px solid $blue-gva;
+    border: 4px solid $brand;
   }
+}
+
+.jumbo-budget {
+  background: $blue-gva;
+  border-bottom: 1px solid $blue-gva;
+}
+
+
+.expanded.budget .button {
+  @include custom-button;
+  color: $red-gva;
+}
+
+.groups-and-headings {
+  .heading {
+    border-radius: 18px;
+    display: inline-flex;
+
+    a {
+      width: 100%;
+      border-radius: 18px;
+    }
+  }
+}
+
+a.button.budget.expanded {
+  @include custom-button;
+  margin-top: 0;
 }

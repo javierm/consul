@@ -1,76 +1,210 @@
 
-@mixin custom-icon {
+@mixin custom-icon-mv {
   display: inline-block;
   width: 130px;
   height: 44px;
 }
 
-$absolute-left: 60px;
+$padding: 30px;
+
 .slider-gva {
-  background-color: #f6f6f6;
+
+  background-image: linear-gradient(
+    rgba(11, 108, 146 , 0.5)
+  ), image-url("custom/slider_valencia.png");
+  background-repeat: no-repeat;
+  background-position: 11%;
   height: 600px;
   margin: 20px 0;
 
-  @include breakpoint(large) {
+  @include breakpoint(medium) {
+    background-position: center;
     background-image: image-url("custom/slider_valencia.png");
-    background-repeat: no-repeat;
+    background-color: #f6f6f6;
   }
 
+
   .content {
-    // border: 2px solid red;
-    position: relative;
-    left: 50vw;
-    height: 600px;
-    width: auto;
+
+    @include breakpoint(medium) {
+      float: right;
+      margin-right: 80px;
+    }
+
 
     &__title {
-      position: absolute;
-      top: 50px;
-      left: $absolute-left;
+
+      color: $white-gva;
+      padding: 100px 0 10px $padding;
+
+      @include breakpoint(medium) {
+        color: $brand;
+      }
 
       .month {
-        max-width: 203px;
-        font-size: 100px;
+        font-size: 52px;
         font-weight: bold;
-        color: $blue-gva;
+
+        @include breakpoint(medium) {
+          max-width: 203px;
+          font-size: 100px;
+        }
       }
 
       .budget-gva {
         display: inline-block;
-        max-width: 224px;
-        font-size: 36px;
+        font-size: 19px;
+        max-width: 156px;
         font-weight: bold;
-        color: $blue-gva;
+
+        @include breakpoint(medium) {
+          max-width: 224px;
+          font-size: 36px;
+        }
       }
     }
 
     &__txt {
-      position: absolute;
-      top: 200px;
-      left: $absolute-left;
-
+      padding: 10px $padding;
+      margin: 0;
       max-width: 452px;
       font-size: 16px;
       line-height: 1.38;
       color: $black-gva;
+
+      @include breakpoint(medium) {
+
+      }
     }
 
     &__btn {
-      position: absolute;
-      top: 440px;
-      left: $absolute-left;
+      margin: $padding;
       font-size: 18px;
       font-weight: 500;
+
+      @include breakpoint(medium) {
+        margin: 0;
+        margin-left: $padding;
+      }
     }
 
     &__icons {
-      position: absolute;
-      top: 350px;
-      left: $absolute-left;
 
-      .img {
-        @include custom-icon;
+      padding: 0 0 $padding 10px;
+
+      img {
+        @include custom-icon-mv;
       }
     }
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// .slider-gva {
+
+//   background-image: image-url("custom/slider_valencia.png");
+//   background-repeat: no-repeat;
+//   background-position: left;
+//   background-color: #f6f6f6;
+//   height: 600px;
+//   margin: 20px 0;
+
+
+//   @include breakpoint(small) {
+//     background-color: #0B6C92;
+//     filter: brightness(0.5);
+//     background-position: 11%;
+
+//     .content {
+
+//       display: none;
+//     }
+//   }
+
+
+
+//   .content {
+//     // border: 2px solid red;
+//     position: relative;
+//     left: 50vw;
+//     height: 600px;
+//     width: auto;
+
+//     &__title {
+//       position: absolute;
+//       top: 50px;
+//       left: $absolute-left;
+
+//       .month {
+//         max-width: 203px;
+//         font-size: 100px;
+//         font-weight: bold;
+//         color: $brand;
+//       }
+
+//       .budget-gva {
+//         display: inline-block;
+//         max-width: 224px;
+//         font-size: 36px;
+//         font-weight: bold;
+//         color: $brand;
+//       }
+//     }
+
+//     &__txt {
+//       position: absolute;
+//       top: 200px;
+//       left: $absolute-left;
+
+//       max-width: 452px;
+//       font-size: 16px;
+//       line-height: 1.38;
+//       color: $black-gva;
+//     }
+
+//     &__btn {
+//       position: absolute;
+//       top: 440px;
+//       left: $absolute-left;
+//       font-size: 18px;
+//       font-weight: 500;
+//     }
+
+//     &__icons {
+//       position: absolute;
+//       top: 350px;
+//       left: $absolute-left;
+
+//       .img {
+//         @include custom-icon;
+//       }
+//     }
+//   }
+// }
