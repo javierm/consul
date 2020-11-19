@@ -118,4 +118,16 @@ RSpec.describe I18nContent, type: :model do
       })
     end
   end
+
+  describe ".translations_hash" do
+    before { create(:i18n_content, key: "great", value_en: "Custom great", value_es: nil) }
+
+    it "get the translations" do
+      expect(I18nContent.translations_hash(:en)["great"]).to eq "Custom great"
+    end
+
+    it "does not use fallbacks, so YAML files will be used instead" do
+      expect(I18nContent.translations_hash(:es)["great"]).to be nil
+    end
+  end
 end
