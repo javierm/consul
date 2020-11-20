@@ -879,6 +879,11 @@ es:
         one: "Sólo puedes apoyar proyectos de gasto de %{count} distrito. Ya has apoyado en %{supported_headings}."
         other: "Sólo puedes apoyar proyectos de gasto de %{count} distritos. Ya has apoyado en %{supported_headings}."
   welcome:
+    welcome_header:
+      title: Ahora puedes decidir sobre la comunidad
+      txt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel lorem odio. Morbi sit amet consequat purus. Donec augue as vel dui quis, placerat elementum magna.<br><br>Maecenas nec dolor id neque hendrerit tempus sed eu eros."
+      left_button: Más recursos
+      rigth_button: Procesos participativos
     sections:
       title: "Ahora podemos <span class='sections-icon__title__higlight'>debatir, proponer y hacer votaciones</span> para entre todos mejorar nuestra comunidad"
       debate:
@@ -896,6 +901,14 @@ es:
       presupuesto:
         title: Presupuestos participativos
         description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel lorem odio. Morbi sit amet consequat purus.
+    slider:
+      title:
+        month: 18M
+        budget_gva: "<span>Presupuestos</span>
+        <span>2020</span>"
+      txt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel lorem odio.Morbi sit amet consequat purus. Donec augue as vel dui quis, placerat elementum magna.<br><br>Maecenas nec dolor id neque hendrerit tempus sed eu eros."
+      button: "¡Participa en las votaciones!"
+
     feed:
       most_active:
         debates: "Debates más activos"

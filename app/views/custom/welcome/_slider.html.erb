@@ -2,25 +2,20 @@
   <div class="slider-gva">
     <div class="content">
       <h1 class="content__title ">
-        <span class="month">18M</span>
+        <span class="month"><%= sanitize(t("welcome.slider.title.month")) %></span>
         <div class="budget-gva">
-          <span >Presupuestos</span>
-          <span >2020</span>
+           <%= sanitize(t("welcome.slider.title.budget_gva")) %>
         </div>
       </h1>
       <p class="content__txt">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel lorem odio. Morbi sit amet consequat purus. Donec augue as vel dui quis, placerat elementum magna.
-        <br/>
-        <br/>
-        Maecenas nec dolor id neque hendrerit tempus sed eu eros.
-      </p>
+        <%= sanitize(t("welcome.slider.txt")) %>
       <div class="content__icons">
         <%= image_tag("logos/logo Ajuntament vlc.png") %>
         <%= image_tag("logos/logo Ajuntament castello.png") %>
         <%= image_tag("logos/logo ajuntament alacant.png") %>
       </div>
       <button class="button content__btn">
-        ¡Participa en las votaciones!
+       <%= t("welcome.slider.button") %>
       </button>
     </div>
   </div>
