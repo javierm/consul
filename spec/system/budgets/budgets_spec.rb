@@ -474,8 +474,6 @@ describe "Budgets" do
   end
 
   context "In Drafting phase" do
-    let(:admin) { create(:administrator).user }
-
     before do
       logout
       budget.update!(phase: "drafting")
@@ -501,8 +499,7 @@ describe "Budgets" do
         expect { visit budget_path(budget) }.to raise_error(ActionController::RoutingError)
       end
 
-      scenario "Is accesible to admin users" do
-        login_as(admin)
+      scenario "Is accesible to admin users", :admin do
         visit budget_path(budget)
 
         expect(page.status_code).to eq(200)

@@ -372,10 +372,7 @@ describe "Commenting Budget::Investments" do
 
   describe "Administrators" do
     context "comment as administrator" do
-      scenario "can create comment", :js do
-        admin = create(:administrator)
-
-        login_as(admin.user)
+      scenario "can create comment", :js, :admin do
         visit budget_investment_path(investment.budget, investment)
 
         fill_in "Leave your comment", with: "I am your Admin!"
@@ -479,10 +476,7 @@ describe "Commenting Budget::Investments" do
       end
     end
 
-    scenario "can not comment as a moderator" do
-      admin = create(:administrator)
-
-      login_as(admin.user)
+    scenario "can not comment as a moderator", :admin do
       visit budget_investment_path(investment.budget, investment)
 
       expect(page).not_to have_content "Comment as moderator"

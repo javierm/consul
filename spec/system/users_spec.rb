@@ -169,7 +169,7 @@ describe "Users" do
       expect(page).not_to have_content("activity list private")
     end
 
-    scenario "is always visible for admins" do
+    scenario "is always visible for admins", :admin do
       login_as(user)
       visit account_path
 
@@ -178,7 +178,6 @@ describe "Users" do
 
       logout
 
-      login_as(create(:administrator).user)
       visit user_path(user)
       expect(page).not_to have_content("activity list private")
     end
@@ -217,8 +216,7 @@ describe "Users" do
         expect(page).not_to have_content(user.email)
       end
 
-      scenario "is shown if logged in user is admin" do
-        login_as(create(:administrator).user)
+      scenario "is shown if logged in user is admin", :admin do
         visit user_path(user)
         expect(page).to have_content(user.email)
       end
@@ -295,7 +293,7 @@ describe "Users" do
       expect(page).to have_css("#public_interests")
     end
 
-    scenario "Is always visible for admins" do
+    scenario "Is always visible for admins", :admin do
       create(:proposal, tag_list: "Sport", followers: [user])
 
       login_as(user)
@@ -306,7 +304,6 @@ describe "Users" do
 
       logout
 
-      login_as(create(:administrator).user)
       visit user_path(user, filter: "follows", page: "1")
       expect(page).to have_css("#public_interests")
     end
