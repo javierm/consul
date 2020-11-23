@@ -88,10 +88,6 @@ header {
       color: $red-gva;
     }
 
-    @include breakpoint(xlarge down) {
-         line-height: inherit;
-    }
-
     &.is-active {
       color: $red-gva;
 
@@ -180,6 +176,9 @@ header {
   .subnavigation{
     ul li {
       margin: 0.9375rem;
+    }
+    a {
+      line-height: inherit;
     }
   }
   .jumbo.highlight{
