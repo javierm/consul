@@ -28,6 +28,7 @@ es:
   application:
     close: Cerrar
     menu: Menú
+    slogan_text: "Conselleria de Participació, Transparència, <br> Cooperació i Qualitat Democràtica"
   comments:
     comments_closed: Los comentarios están cerrados
     verified_only: Para participar %{verify_account}

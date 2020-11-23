@@ -25,13 +25,6 @@ $padding: 30px;
 
 
   .content {
-
-    @include breakpoint(medium) {
-      float: right;
-      margin-right: 80px;
-    }
-
-
     &__title {
 
       color: $white-gva;

@@ -16,6 +16,7 @@
   font-size: $base-font-size;
   border: solid 2px $red-gva;
   margin-right: 2rem;
+  padding: 15px 45px;
 
   &:hover,
   &:focus {
@@ -71,4 +72,8 @@
   max-width: 100vw;
   margin-right: none;
   margin-left: none;
+}
+
+.custom-locale form label{
+  font-size: 12px;
 }
