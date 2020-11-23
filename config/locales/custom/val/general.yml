@@ -630,6 +630,13 @@ val:
       unfeasible: No es poden votar propostes inviables
       not_voting_allowed: El període de votació està tancat
   welcome:
+    slider:
+      title:
+        month: 18M
+        budget_gva: "<span>Presupuestos</span>
+        <span>2020</span>"
+      txt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel lorem odio.Morbi sit amet consequat purus. Donec augue as vel dui quis, placerat elementum magna.<br><br>Maecenas nec dolor id neque hendrerit tempus sed eu eros."
+      button: "¡Participa en las votaciones!"
     feed:
       most_active:
         debates: "Debats més actius"

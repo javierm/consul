@@ -20,6 +20,9 @@
             <%= render "layouts/notification_item" %>
             <%= render "devise/menu/login_items" %>
           </ul>
+          <div class="slogan">
+            <%= sanitize(t("application.slogan_text"))%>
+          </div>
           <%= render "shared/locale_switcher" %>
           <div class="social-header">
             <%= render "layouts/social_footer" %>
