@@ -7,8 +7,11 @@ header {
 .top-bar {
   background: $white-gva !important;
   color: $red-gva;
-
-
+  ul{
+    padding-top: 0.9375rem;
+    padding-bottom: 0.9375rem;
+    float: right;
+  }
   .menu .menu-text {
     padding: 0;
   }
@@ -17,12 +20,21 @@ header {
 
     a {
       color: $red-gva;
+      &:hover:not(.button){
+        font-weight: bold;
+        text-decoration: none;
+      }
     }
 
     .button {
       @include breakpoint(medium) {
         border-radius: 10px;
         color: $red-gva;
+        margin-right: 0;
+      }
+      &:hover{
+        background-color: $red-gva;
+        color: $white;
       }
     }
   }
@@ -117,10 +129,9 @@ header {
   margin: 0;
   color: $red-gva;
   cursor: pointer;
-}
-
-input:checked + label {
-  text-decoration: underline;
+  &:hover{
+    font-weight: bold;
+  }
 }
 
 .slogan{
@@ -129,6 +140,7 @@ input:checked + label {
   font-size: 14px;
   line-height: normal;
   font-weight: 500;
+  clear: both;
 }
 
 .social-header .social-icons-list {
