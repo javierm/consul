@@ -42,10 +42,6 @@ class CensusApi
   end
 
   class ConnectionCensus
-    def initialize(path)
-      @path = path
-    end
-
     def call(document_number)
       {
         datos_habitante: JSON.parse(get_age(document_number)),
@@ -57,12 +53,12 @@ class CensusApi
 
     def get_age(document_number)
       validator = Rails.application.secrets.census_api_age_validator
-      `php -f #{@path}#{validator} -- -n #{document_number}`
+      `php -f #{validator} -- -n #{document_number}`
     end
 
     def get_residence(document_number)
       validator = Rails.application.secrets.census_api_residence_validator
-      `php -f #{@path}#{validator} -- -n #{document_number}`
+      `php -f #{validator} -- -n #{document_number}`
     end
   end
 
@@ -77,15 +73,16 @@ class CensusApi
     end
 
     def client
-      @client = ConnectionCensus.new(Rails.application.secrets.census_api_end_point)
+      @client = ConnectionCensus.new
     end
 
     def end_point_defined?
-      Rails.application.secrets.census_api_end_point.present?
+      Rails.application.secrets.census_api_age_validator.present? &&
+        Rails.application.secrets.census_api_residence_validator.present?
     end
 
     def end_point_available?
-      (Rails.env.development? || Rails.env.staging? || Rails.env.preproduction? || Rails.env.production?) && end_point_defined?
+      (Rails.env.staging? || Rails.env.preproduction? || Rails.env.production?) && end_point_defined?
     end
 
     def stubbed_response(document_type, document_number)
