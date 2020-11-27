@@ -284,8 +284,8 @@ es:
       mark_as_unread: Marcar como no leída
       notifiable_hidden: Este elemento ya no está disponible.
   map:
-    title: "Distritos"
-    proposal_for_district: "Crea una propuesta para tu distrito"
+    title: "Provincias"
+    proposal_for_district: "Crea una propuesta para tu provincia"
     start_proposal: Crea una propuesta
   omniauth:
     facebook:
@@ -623,7 +623,7 @@ es:
       participate_button: "Participar en esta votación"
       participate_button_expired: "Votación terminada"
       no_geozone_restricted: "Toda la ciudad"
-      geozone_restricted: "Distritos"
+      geozone_restricted: "Provincias"
       geozone_info: "Pueden participar las personas empadronadas en: "
       already_answer: "Ya has participado en esta votación"
       not_logged_in: "Necesitas iniciar sesión o registrarte para participar"
@@ -755,8 +755,8 @@ es:
         see_all: "Ver todas"
     tags_cloud:
       tags: Tendencias
-      districts: "Distritos"
-      districts_list: "Listado de distritos"
+      districts: "Provincias"
+      districts_list: "Listado de provincias"
       categories: "Categorías"
     target_blank: " (se abre en ventana nueva)"
     you_are_in: "Estás en"
@@ -877,26 +877,26 @@ es:
       unfeasible: No se pueden votar propuestas inviables.
       not_voting_allowed: El periodo de votación está cerrado.
       different_heading_assigned:
-        one: "Sólo puedes apoyar proyectos de gasto de %{count} distrito. Ya has apoyado en %{supported_headings}."
-        other: "Sólo puedes apoyar proyectos de gasto de %{count} distritos. Ya has apoyado en %{supported_headings}."
+        one: "Sólo puedes apoyar proyectos de gasto de %{count} provincias. Ya has apoyado en %{supported_headings}."
+        other: "Sólo puedes apoyar proyectos de gasto de %{count} provincias. Ya has apoyado en %{supported_headings}."
   welcome:
     sections:
       title: "Ahora podemos <span class='sections-icon__title__higlight'>debatir, proponer y hacer votaciones</span> para entre todos mejorar nuestra comunidad"
       debate:
         title: Debatir
-        description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel lorem odio. Morbi sit amet consequat puru
+        description: Abre un hilo de discusión para compartir puntos de vista con otras personas sobre aquello que te preocupa.
       propone:
         title: Proponer
-        description: Lorem ipsum dolor sit amet, consectetur adipiscin glorem elit.Pellentesque vel lorem odio. Morbi sit ae
+        description: Crea propuestas de iniciativas públicas que puedan recoger apoyos y pasar a votación.
       vota:
         title: Votar
-        description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel lorem odio. Morbi sit amet consequat purus.
+        description: Vota las propuestas ciudadanas con más apoyos para que puedan llegar a la consideración del Consell.
       normativa:
         title: Elaboración normativa
-        description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel lorem odio. Morbi sit amet consequat purus.
+        description: Participa de manera activa en la elaboración de legislación, planes y programas.
       presupuesto:
         title: Presupuestos participativos
-        description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel lorem odio. Morbi sit amet consequat purus.
+        description: Propón y decide de manera directa a qué se destina parte del presupuesto de la Generalitat Valenciana.
     slider:
       title:
         month: 18M
