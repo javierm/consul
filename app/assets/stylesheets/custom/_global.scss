@@ -91,3 +91,6 @@
 .search-form-header .button.button {
     padding: 14px;
 }
+.input-group > :first-child, .input-group > :first-child.input-group-button > *{
+  width: 100%;
+}
