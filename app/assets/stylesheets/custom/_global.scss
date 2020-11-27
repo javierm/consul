@@ -77,3 +77,17 @@
 .custom-locale form label{
   font-size: 12px;
 }
+.proposal .supports .button-support, .featured-proposals .supports .button-support
+{
+  border: none;
+}
+
+.featured-proposals .supports .button-support
+{
+  background: $red-gva;
+}
+
+
+.search-form-header .button.button {
+    padding: 14px;
+}
