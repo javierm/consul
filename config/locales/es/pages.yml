@@ -16,33 +16,56 @@ es:
         processes: "Legislación colaborativa"
       debates:
         title: "Debates"
-        description: "En la sección de %{link} puedes exponer y compartir tu opinión con otras personas sobre temas que te preocupan relacionados con la ciudad. También es un espacio donde generar ideas que a través de las otras secciones de %{org} lleven a actuaciones concretas por parte del Ayuntamiento."
+        description: "En la sección de %{link} puedes compartir tu opinión con otras personas sobre temas que te preocupen relacionados con la Comunitat Valenciana. Es un lugar para generar conocimiento e inteligencia colectiva que conduzcan a acciones concretas por parte del Consell."
         link: "debates ciudadanos"
-        feature: "Puedes abrir debates, comentarlos y valorarlos con los botones de <strong>Estoy de acuerdo</strong> o <strong>No estoy de acuerdo</strong>. Para ello tienes que %{link}."
+        feature: "Puedes abrir debates, comentarlos y valorarlos con los botones de <strong>Estoy de acuerdo</strong> o <strong>No estoy de acuerdo</strong>. Para ello tienes que %{link}.<br/><br/><strong>¿Cómo funciona?</strong><br/><br/>
+        Antes de nada te recomendamos revisar los debates abiertos por otras personas. De esta manera podrás opinar sobre los que te interesen y, además, evitar plantear un debate que ya está en curso.<br/><br/>
+      Para revisarlos puedes acudir a las pestañas de “más activos”, “mejor valorados” y “nuevos” que encontrarás en la parte superior. También dispones de una opción de “búsqueda avanzada” para buscar por palabras clave, autor y fecha. Ten en cuenta que puede haber varias páginas de debates. Para navegar y consultar los debates abiertos no necesitas registrarte. Si quieres abrir un hilo de debate, dar tu apoyo a uno ya abierto, o hacer comentarios, sí deberás hacerlo."
         feature_link: "registrarte en %{org}"
         image_alt: "Botones para valorar los debates"
         figcaption: 'Botones "Estoy de acuerdo" y "No estoy de acuerdo" para valorar los debates.'
       proposals:
         title: "Propuestas"
-        description: "En la sección de %{link} puedes plantear propuestas para que el Ayuntamiento las lleve a cabo. Las propuestas recaban apoyos, y si alcanzan los apoyos suficientes se someten a votación ciudadana. Las propuestas aprobadas en estas votaciones ciudadanas son asumidas por el Ayuntamiento y se llevan a cabo."
+        description: "En la sección de %{link} existen dos formas de participar:<br/><br/>
+        1) puedes presentar tus propuestas para que los demás expresen su apoyo; <br/><br/>
+        2) puedes apoyar las propuestas presentadas que te parezcan adecuadas. Las propuestas que alcancen un número suficiente de apoyos se someterán a votación pública.<br/><br/>
+      Ten en cuenta que obtener los apoyos suficientes en esta fase no garantiza que tu propuesta se vote favorablemente. puedes plantear propuestas para que el Ayuntamiento las lleve a cabo. Las propuestas recaban apoyos, y si alcanzan los apoyos suficientes se someten a votación ciudadana. Las propuestas aprobadas en estas votaciones ciudadanas son asumidas por el Ayuntamiento y se llevan a cabo.<br/><br/>
+      <strong>¿Cómo funciona?</strong><br/><br/>
+      Antes de nada te recomendamos revisar las propuestas que ya existen. De esta manera, en el caso de que alguien ya la haya planteado, evitarás dividir los apoyos de la propuesta que te interesa, ya que estos serán imprescindibles para que esta siga adelante. Además, así podrás ver el resto de propuestas y dar tu apoyo a las que te convenzan o simplemente comentarlas. Para explorar no es necesario registrarse, pero para comentar o dar apoyo sí.<br/><br/>
+      Al principio de la página visualizarás las propuestas que van en cabeza en número de apoyos, pero también podrás acceder a las demás y navegar entre ellas con las pestañas “más activas”, “más apoyadas”, “nuevas” y “búsqueda avanzada”.<br/><br/>
+      Si no encuentras una propuesta similar a la que tenías en mente, será el momento de plantearla mediante el botón “crea una propuesta”, para lo que deberás registrarte. "
         link: "propuestas ciudadanas"
         image_alt: "Botón para apoyar una propuesta"
         figcaption: 'Botón para "Apoyar" una propuesta.'
       budgets:
         title: "Presupuestos participativos"
-        description: "La sección de %{link} sirve para que la gente decida de manera directa a qué se destina una parte del presupuesto municipal."
+        description: "En la sección de %{link} puedes decidir a qué proyectos irá destinada una parte del presupuesto de la Generalitat Valenciana.<br/><br/>
+      En primer lugar, podrás presentar los proyectos que consideres que han de desarrollarse, que deberán obtener un mínimo de apoyos. Aquellos proyectos que hayan recibido ese mínimo de apoyos se estudiarán por la Administración para comprobar su viabilidad. Después de esto sabremos los proyectos que pasarán a la votación final.<br/><br/>
+      <strong>¿Cómo funciona?</strong><br/><br/>
+      Cuando accedas a esta pestaña, verás indicada la fase en la que se encuentra el proceso de los presupuestos participativos.<br/><br/>
+      Podrás crear nuevas propuestas o apoyar las ya creadas. Las propuestas podrán afectar a toda la Comunitat Valenciana, o a una de sus provincias. Puedes acceder a ellas desde diferentes clasificaciones: por provincia, por materia …<br/><br/>
+      También dispondrás de un mapa en el que podrás localizar los proyectos propuestos. "
         link: "presupuestos participativos"
         image_alt: "Diferentes fases de un presupuesto participativo"
         figcaption: 'Fase de "Apoyos" y fase de "Votación" de los presupuestos participativos.'
       polls:
         title: "Votaciones"
-        description: "La sección de %{link} se activa cada vez que una propuesta alcanza el 1% de apoyos y pasa a votación o cuando el Ayuntamiento propone un tema para que la gente decida sobre él."
+        description: "La sección de %{link} se activa cuando una propuesta ciudadana alcanza el porcentaje mínimo de apoyos necesarios o cuando la Administración quiere someter a votación una propuesta. El resultado de las votaciones determinará qué propuestas pasarán a consideración del Consell.<br/><br/>
+      <strong>¿Cómo funciona?</strong><br/><br/>
+      Cuando accedas a este área podrás ver las votaciones “abiertas” y las “terminadas”. En las primeras podrás votar “sí” o “no” a las propuestas que hayan llegado a esta fase y que se encuentren en plazo para su votación. Para hacerlo es necesario registrarse.<br/><br/>
+      En la pestaña de “terminadas” podrás ver las votaciones que han finalizado y sus resultados. Para ello no será necesario registrarse.<br/><br/>
+      También puedes comentar ambos tipos de votaciones si te has registrado.<br/><br/>"
         link: "votaciones ciudadanas"
         feature_1: "Para participar en las votaciones tienes que %{link} y verificar tu cuenta."
         feature_1_link: "registrarte en %{org_name}"
       processes:
         title: "Legislación colaborativa"
-        description: "En la sección de %{link} la ciudadanía participa en la elaboración y modificación de normativa que afecta a la ciudad y puede dar su opinión sobre las políticas municipales en debates previos."
+        description: "En la sección de %{link} puedes colaborar en la redacción y modificación de:<br/><br/>
+        1) normativa<br/><br/>
+        2) planes y programas de la Comunitat Valenciana. Las aportaciones de la ciudadanía serán analizadas y tenidas en cuenta en la redacción definitiva de las normas o en la planificación de las actuaciones.<br/><br/>
+      <strong>¿Cómo funciona?</strong><br/><br/>
+      Cuando accedas a este área podrás ver los procesos “activos” y los “terminados”. Si seleccionas uno de los procesos podrás acceder a información acerca de la norma o el plan que se está elaborando y revisar las aportaciones que se han hecho al documento.<br/><br/>
+      También puedes hacer tus propias aportaciones, siempre y cuando te hayas registrado. En primer lugar puedes acceder al área de “debate previo”, donde encontrarás preguntas a las que podrás responder y sobre las que podrás debatir. En el apartado de “propuestas” podrás ver las que otras personas han hecho o realizar las tuyas propias. Y, por último, en “comentarios” podrás comentar los documentos, seleccionando el texto que quieres comentar. Para todo ello es necesario registrarse."
         link: "legislación colaborativa"
         feature: "Para participar en la legislación colaborativa tienes que %{link} y verificar tu cuenta."
         feature_link: "registrarte en %{org_name}"
@@ -87,22 +110,22 @@ es:
           key_header: Tecla
           page_header: Página
           rows:
-            - 
+            -
               key_column: 0
               page_column: Inicio
-            - 
+            -
               key_column: 1
               page_column: Debates
-            - 
+            -
               key_column: 2
               page_column: Propuestas
-            - 
+            -
               key_column: 3
               page_column: Votaciones
-            - 
+            -
               key_column: 4
               page_column: Presupuestos participativos
-            - 
+            -
               key_column: 5
               page_column: Legislación colaborativa
         browser_table:
@@ -111,19 +134,19 @@ es:
           browser_header: Navegador
           key_header: Combinación de teclas
           rows:
-            - 
+            -
               browser_column: Explorer
               key_column: ALT + atajo y luego ENTER
-            - 
+            -
               browser_column: Firefox
               key_column: ALT + MAYÚSCULAS + atajo
-            - 
+            -
               browser_column: Chrome
               key_column: ALT + atajo (si es un MAC, CTRL + ALT + atajo)
-            - 
+            -
               browser_column: Safari
               key_column: ALT + atajo (si es un MAC, CMD + atajo)
-            - 
+            -
               browser_column: Opera
               key_column: MAYÚSCULAS + ESC + atajo
       textsize:
@@ -133,28 +156,28 @@ es:
           browser_header: Navegador
           action_header: Acción a realizar
           rows:
-            - 
+            -
               browser_column: Explorer
               action_column: Ver > Tamaño del texto
-            - 
+            -
               browser_column: Firefox
               action_column: Ver > Tamaño
-            - 
+            -
               browser_column: Chrome
               action_column: Ajustes (icono) > Opciones > Avanzada > Contenido web > Tamaño fuente
-            - 
+            -
               browser_column: Safari
               action_column: Visualización > ampliar/reducir
-            - 
+            -
               browser_column: Opera
               action_column: Ver > escala
         browser_shortcuts_table:
           description: "Otra forma de modificar el tamaño de texto es utilizar los atajos de teclado definidos en los navegadores, en particular la combinación de teclas:"
           rows:
-            - 
+            -
               shortcut_column: CTRL y + (CMD y + en MAC)
               description_column: para aumentar el tamaño del texto
-            - 
+            -
               shortcut_column: CTRL y - (CMD y - en MAC)
               description_column: para reducir el tamaño del texto
       compatibility:
