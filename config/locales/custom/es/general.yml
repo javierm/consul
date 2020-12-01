@@ -900,10 +900,9 @@ es:
     slider:
       title:
         month: 18M
-        budget_gva: "<span>Presupuestos</span>
-        <span>2020</span>"
-      txt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel lorem odio.Morbi sit amet consequat purus. Donec augue as vel dui quis, placerat elementum magna.<br><br>Maecenas nec dolor id neque hendrerit tempus sed eu eros."
-      button: "¡Participa en las votaciones!"
+        budget_gva: "<span>Propuestas ciudadanas</span>"
+      txt: "¿Consideras que la Generalitat Valenciana debería actuar en aglún área o proyecto concreto? Presenta tu propuesta de iniciativa pública o apoya las que te parezcan más adecuadas. Las propuestas que obtengan el mínimo de apoyos necesarios se presentarán al Consell para su consdieración."
+      button: "Presenta tu propuesta"
 
     feed:
       most_active:

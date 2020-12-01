@@ -160,6 +160,7 @@ header {
     margin-top: -1.5em;
     border-bottom: 1px solid $red-gva;
     min-height: 500px;
+    padding: 0;
 
     h1{
       color: $white-gva;
@@ -168,7 +169,10 @@ header {
     .lead {
       color: $dark-blue-gva;
       font-size: 1em;
-      margin-bottom: 2.5rem;
+      margin: 1.5rem 0;
+    }
+    .title-background{
+      background-color: rgba(5, 152, 155, 0.85)
     }
 }
 
@@ -181,14 +185,10 @@ header {
       line-height: inherit;
     }
   }
-  .jumbo.highlight{
-    padding: 0 0.9375rem;
-  }
 }
 
 @media print, screen and (max-width: 39.99875em){
   .jumbo.highlight{
-    padding: 0 0.625rem;
     background-position: right;
     .lead {
       color: white;
