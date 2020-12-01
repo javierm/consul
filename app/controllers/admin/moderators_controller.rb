@@ -1,15 +1,9 @@
 class Admin::ModeratorsController < Admin::BaseController
-  load_and_authorize_resource
+  before_action :load_users, only: :index
+  load_and_authorize_resource except: :index
 
   def index
-    @moderators = @moderators.page(params[:page])
-  end
-
-  def search
-    @users = User.search(params[:name_or_email])
-                 .includes(:moderator)
-                 .page(params[:page])
-                 .for_render
+    @users = search_or_moderators.page(params[:page])
   end
 
   def create
@@ -23,4 +17,18 @@ class Admin::ModeratorsController < Admin::BaseController
     @moderator.destroy!
     redirect_to admin_moderators_path
   end
+
+  private
+
+    def load_users
+      @users = User.accessible_by(current_ability)
+    end
+
+    def search_or_moderators
+      if params[:name_or_email]
+        @users.search(params[:name_or_email]).includes(:moderator)
+      else
+        @users.moderators
+      end
+    end
 end

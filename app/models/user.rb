@@ -92,6 +92,7 @@ class User < ApplicationRecord
   attr_accessor :skip_password_validation, :use_redeemable_code, :login
 
   scope :administrators, -> { joins(:administrator) }
+  scope :managers,       -> { joins(:manager) }
   scope :moderators,     -> { joins(:moderator) }
   scope :organizations,  -> { joins(:organization) }
   scope :officials,      -> { where("official_level > 0") }

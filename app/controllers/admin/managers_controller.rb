@@ -1,15 +1,9 @@
 class Admin::ManagersController < Admin::BaseController
-  load_and_authorize_resource
+  before_action :load_users, only: :index
+  load_and_authorize_resource except: :index
 
   def index
-    @managers = @managers.page(params[:page])
-  end
-
-  def search
-    @users = User.search(params[:name_or_email])
-                 .includes(:manager)
-                 .page(params[:page])
-                 .for_render
+    @users = search_or_managers.page(params[:page])
   end
 
   def create
@@ -23,4 +17,18 @@ class Admin::ManagersController < Admin::BaseController
     @manager.destroy!
     redirect_to admin_managers_path
   end
+
+  private
+
+    def load_users
+      @users = User.accessible_by(current_ability)
+    end
+
+    def search_or_managers
+      if params[:name_or_email]
+        @users.search(params[:name_or_email]).includes(:manager)
+      else
+        @users.managers
+      end
+    end
 end

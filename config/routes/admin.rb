@@ -98,9 +98,7 @@ namespace :admin do
   put :update_map, to: "settings#update_map"
   put :update_content_types, to: "settings#update_content_types"
 
-  resources :moderators, only: [:index, :create, :destroy] do
-    get :search, on: :collection
-  end
+  resources :moderators, only: [:index, :create, :destroy]
 
   resources :valuators, only: [:show, :index, :edit, :update, :create, :destroy] do
     get :search, on: :collection
@@ -109,9 +107,7 @@ namespace :admin do
 
   resources :valuator_groups
 
-  resources :managers, only: [:index, :create, :destroy] do
-    get :search, on: :collection
-  end
+  resources :managers, only: [:index, :create, :destroy]
 
   resources :administrators, only: [:index, :create, :destroy, :edit, :update] do
     get :search, on: :collection

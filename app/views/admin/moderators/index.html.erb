@@ -2,11 +2,11 @@
 
 <h2 class="inline-block"><%= t("admin.moderators.index.title") %></h2>
 
-<%= render "admin/shared/user_search", url: search_admin_moderators_path %>
+<%= render "admin/shared/user_search", url: admin_moderators_path %>
 
 <div id="moderators">
-  <% if @moderators.any? %>
-    <h3 class="margin"><%= page_entries_info @moderators %></h3>
+  <% if @users.any? %>
+    <h3 class="margin"><%= page_entries_info @users %></h3>
 
     <table>
       <thead>
@@ -15,23 +15,23 @@
         <th scope="col" class="small-3"><%= t("admin.shared.actions") %></th>
       </thead>
       <tbody>
-        <% @moderators.each do |moderator| %>
+        <% @users.each do |user| %>
           <tr>
             <td>
-              <%= moderator.name %>
+              <%= user.name %>
             </td>
             <td>
-              <%= moderator.email %>
+              <%= user.email %>
             </td>
             <td>
-              <%= render Admin::Roles::TableActionsComponent.new(moderator) %>
+              <%= render Admin::Roles::TableActionsComponent.new(user.moderator || user.build_moderator) %>
             </td>
           </tr>
         <% end %>
       </tbody>
     </table>
 
-    <%= paginate @moderators %>
+    <%= paginate @users %>
   <% else %>
     <div class="callout primary">
       <%= t("admin.moderators.index.no_moderators") %>
