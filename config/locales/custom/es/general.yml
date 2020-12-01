@@ -192,7 +192,7 @@ es:
     site_customization/content_block: el bloque
     site_customization/page: la página
   geozones:
-    none: Toda la ciudad
+    none: Toda la comunitat
   layouts:
     application:
       chrome: Google Chrome
@@ -226,7 +226,7 @@ es:
       intellectual_property: Propiedad intelectual
       open_source: software de código abierto
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
-      participation_text: Decide cómo debe ser la ciudad que quieres.
+      participation_text: Decide cómo debe ser la comunitatn que quieres.
       participation_title: Participación
       privacy: Política de privacidad
       government: "
@@ -404,7 +404,7 @@ es:
         help: Ayuda sobre las propuestas
       section_footer:
         title: Ayuda sobre las propuestas
-        description: Las propuestas ciudadanas son una oportunidad para que los vecinos y colectivos decidan directamente cómo quieren que sea su ciudad, después de conseguir los apoyos suficientes y de someterse a votación ciudadana.
+        description: Las propuestas ciudadanas son una oportunidad para que los vecinos y colectivos decidan directamente cómo quieren que sea su generalitat, después de conseguir los apoyos suficientes y de someterse a votación ciudadana.
     new:
       form:
         submit_button: Crear propuesta
@@ -582,7 +582,7 @@ es:
         title: Previsualización del poster
         poster_title: "No te quedes mirando,"
         poster_subtitle: "¡apóyame! ;)"
-        intro_text: "<strong>Estoy participando en %{org}</strong> con mi propia propuesta ciudadana y sólo si tú también te sumas podré lograr el apoyo necesario para hacer la ciudad que todos queremos."
+        intro_text: "<strong>Estoy participando en %{org}</strong> con mi propia propuesta ciudadana y sólo si tú también te sumas podré lograr el apoyo necesario para hacer la generalitat que todos queremos."
         proposal_code: "Código de la propuesta: %{code}"
         support: Apoya mi propuesta
         footer: "<strong>Entra en %{link} y apoya esta propuesta.</strong> Necesitamos ser muchos. Decide tu también. ¡Gracias!"
@@ -607,7 +607,7 @@ es:
         support_button: Apoyar esta propuesta
         share_in: Compartir en
         hi: "¡Hola!"
-        introduction: Te escribo para comunicarte que estoy participando en %{org}, la plataforma para que podamos decidir qué ciudad queremos. Y para ello, he creado mi propia propuesta ciudadana y ahora, ¡voy a necesitar tu apoyo! Pero no te preocupes porque es muy sencillo.
+        introduction: Te escribo para comunicarte que estoy participando en %{org}, la plataforma para que podamos decidir qué comunitat queremos. Y para ello, he creado mi propia propuesta ciudadana y ahora, ¡voy a necesitar tu apoyo! Pero no te preocupes porque es muy sencillo.
         support: "Tan sólo tienes que hacer clic en el botón que verás a continuación 'Apoyar esta propuesta' y directamente podrás informarte acerca de ella antes de impulsarla. Sólo las propuestas que consigan el máximo apoyo se llevarán a cabo por parte del Ayuntamiento, y he pensado que tú ¡seguro que me ayudas a lograrlo!"
         share: "Y si además, me haces el gran favor de compartir mi propuesta con tus amigos, familiares y contactos ¡sería perfecto!"
   polls:
@@ -622,7 +622,7 @@ es:
       title: "Votaciones"
       participate_button: "Participar en esta votación"
       participate_button_expired: "Votación terminada"
-      no_geozone_restricted: "Toda la ciudad"
+      no_geozone_restricted: "Toda la generalitat"
       geozone_restricted: "Provincias"
       geozone_info: "Pueden participar las personas empadronadas en: "
       already_answer: "Ya has participado en esta votación"
@@ -900,10 +900,9 @@ es:
     slider:
       title:
         month: 18M
-        budget_gva: "<span>Presupuestos</span>
-        <span>2020</span>"
-      txt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel lorem odio.Morbi sit amet consequat purus. Donec augue as vel dui quis, placerat elementum magna.<br><br>Maecenas nec dolor id neque hendrerit tempus sed eu eros."
-      button: "¡Participa en las votaciones!"
+        budget_gva: "<span>Propuestas ciudadanas</span>"
+      txt: "¿Consideras que la Generalitat Valenciana debería actuar en aglún área o proyecto concreto? Presenta tu propuesta de iniciativa pública o apoya las que te parezcan más adecuadas. Las propuestas que obtengan el mínimo de apoyos necesarios se presentarán al Consell para su consdieración."
+      button: "Presenta tu propuesta"
 
     feed:
       most_active:

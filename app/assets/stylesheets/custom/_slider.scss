@@ -8,78 +8,40 @@
 $padding: 30px;
 
 .slider-gva {
-
-  background-image: linear-gradient(
-    rgba(11, 108, 146 , 0.5)
-  ), image-url("custom/slider_valencia.png");
-  background-repeat: no-repeat;
-  background-position: 11%;
-  height: 600px;
   margin: 20px 0;
-
-  @include breakpoint(medium) {
-    background-position: center;
-    background-image: image-url("custom/slider_valencia.png");
-    background-color: #f6f6f6;
-  }
-
+  background-color: #f6f6f6;
 
   .content {
     &__title {
-
-      color: $white-gva;
-      padding: 100px 0 10px $padding;
-
-      @include breakpoint(medium) {
-        color: $brand;
-      }
+      color: $brand;
+      padding-top: 2em;
 
       .month {
-        font-size: 52px;
-        font-weight: bold;
-
-        @include breakpoint(medium) {
-          max-width: 203px;
-          font-size: 100px;
+        img {
+          width: 50px;
         }
       }
 
       .budget-gva {
         display: inline-block;
         font-size: 19px;
-        max-width: 156px;
         font-weight: bold;
 
         @include breakpoint(medium) {
-          max-width: 224px;
           font-size: 36px;
         }
       }
     }
 
     &__txt {
-      padding: 10px $padding;
+      padding: 10px 0px 25px 0;
       margin: 0;
-      max-width: 452px;
       font-size: 16px;
       line-height: 1.38;
       color: $black-gva;
 
-      @include breakpoint(medium) {
-
-      }
     }
 
-    &__btn {
-      margin: $padding;
-      font-size: 18px;
-      font-weight: 500;
-
-      @include breakpoint(medium) {
-        margin: 0;
-        margin-left: $padding;
-      }
-    }
 
     &__icons {
 

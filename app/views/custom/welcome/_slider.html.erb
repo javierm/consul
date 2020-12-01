@@ -1,23 +1,26 @@
-<div class="row row-max-width slider-gva">
-  <div class="small-12 medium-8 medium-offset-4 large-6 large-offset-6 ">
-    <div class="content">
-      <h1 class="content__title ">
-        <span class="month"><%= sanitize(t("welcome.slider.title.month")) %></span>
-        <div class="budget-gva">
-          <%= sanitize(t("welcome.slider.title.budget_gva")) %>
-        </div>
-      </h1>
-      <p class="content__txt">
-        <%= sanitize(t("welcome.slider.txt")) %>
-        <div class="content__icons">
-          <%= image_tag("logos/logo Ajuntament vlc.png") %>
-          <%= image_tag("logos/logo Ajuntament castello.png") %>
-          <%= image_tag("logos/logo ajuntament alacant.png") %>
-        </div>
-        <button class="button content__btn">
-          <%= t("welcome.slider.button") %>
-        </button>
-      </p>
+<div class="jumbo slider-gva">
+  <div class="row">
+
+    <div class="small-12 medium-6 column">
+      <%= image_tag('fondoV.png',
+                    class: "margin",
+                    alt: 'welcome.slider.title') %>
+    </div>
+    <div class="small-12 medium-6 column">
+      <div class="content">
+        <h1 class="content__title ">
+          <span class="month">
+            <%= image_tag("icon-sections/ico-proponer.png") %>
+          </span>
+          <div class="budget-gva">
+            <%= sanitize(t("welcome.slider.title.budget_gva")) %>
+          </div>
+        </h1>
+        <p class="content__txt">
+          <%= sanitize(t("welcome.slider.txt")) %>
+        </p>
+        <%= link_to t("welcome.slider.button"), proposals_path, class: "button" %>
+      </div>
     </div>
   </div>
 </div>
