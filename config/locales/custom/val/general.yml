@@ -169,7 +169,7 @@ val:
     topic: Tema
     image: Imatge
   geozones:
-    none: Tota la ciutat
+    none: Tota la comunitat
   layouts:
     application:
       chrome: Google Chrome
@@ -186,7 +186,7 @@ val:
       description: Este portal utilitza la %{consul} que es %{open_source}.
       open_source: software de codi obert
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
-      participation_text: Decideix com ha de ser la ciutat que vols.
+      participation_text: Decideix com ha de ser la comunitat que vols.
       participation_title: Participació
       privacy: Política de privacitat
       government: "
@@ -340,7 +340,7 @@ val:
         help: Ajuda sobre les propostes
       section_footer:
         title: Ajuda sobre les propostes
-        description: Les propostes ciutadanes son una oportunitat per a que els veins i col·lectius decideixen directament com volen que siga la seua ciutat, després d'aconseguir els avals suficients i de sotmetres a votació ciutadana.
+        description: Les propostes ciutadanes son una oportunitat per a que els veins i col·lectius decideixen directament com volen que siga la seua comunitat, després d'aconseguir els avals suficients i de sotmetres a votació ciutadana.
     new:
       form:
         submit_button: Crear proposta
@@ -411,7 +411,7 @@ val:
       title: "Votacions"
       participate_button: "Participar en esta votació"
       participate_button_expired: "Votació finalitzada"
-      no_geozone_restricted: "Tota la ciutat"
+      no_geozone_restricted: "Tota la comunitat"
       geozone_restricted: "Districtes"
       geozone_info: "Poden participar les persones empadronades en: "
       already_answer: "Ja has participat en esta votació"
@@ -633,20 +633,20 @@ val:
     sections:
       title: "Ahora podemos <span class='sections-icon__title__higlight'>debatir, proponer y hacer votaciones</span> para entre todos mejorar nuestra comunidad"
       debate:
-        title: Debatir
-        description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel lorem odio. Morbi sit amet consequat puru
+        title: Debatre
+        description: obri un fil de discussió per a compartir punts de vista amb altres persones sobre allò que et preocupa.
       propone:
-        title: Proponer
-        description: Lorem ipsum dolor sit amet, consectetur adipiscin glorem elit.Pellentesque vel lorem odio. Morbi sit ae
+        title: Proposar
+        description: Dcrea propostes d’iniciatives públiques que puguen recollir els suports suficients per a elevar-les a la consideració del Consell.
       vota:
         title: Votar
-        description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel lorem odio. Morbi sit amet consequat purus.
+        description: Ara el teu vot és important per a la presa de decisió de les polítiques públiques. Vota les opcions que consideres més rellevants.
       normativa:
-        title: Elaboración normativa
-        description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel lorem odio. Morbi sit amet consequat purus.
+        title: Elaboració normativa
+        description: participa de manera activa en l’elaboració de legislació, plans i programes.
       presupuesto:
-        title: Presupuestos participativos
-        description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel lorem odio. Morbi sit amet consequat purus.
+        title: Pressupostos participatius
+        description: proposa i decideix de manera directa a què es destina part del pressupost de la Generalitat Valenciana.
     slider:
       title:
         month: 18M
@@ -686,6 +686,7 @@ val:
     welcome:
       go_to_index: Vore propostes i debats
       title: Participa
+      more_resources: Més recursos
       user_permission_debates: Participar en debats
       user_permission_info: Amb el teu compte ja pots...
       user_permission_proposal: Crear noves propostes

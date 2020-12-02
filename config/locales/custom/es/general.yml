@@ -404,7 +404,7 @@ es:
         help: Ayuda sobre las propuestas
       section_footer:
         title: Ayuda sobre las propuestas
-        description: Las propuestas ciudadanas son una oportunidad para que los vecinos y colectivos decidan directamente cómo quieren que sea su generalitat, después de conseguir los apoyos suficientes y de someterse a votación ciudadana.
+        description: Las propuestas ciudadanas son una oportunidad para que los vecinos y colectivos decidan directamente cómo quieren que sea su comunitat, después de conseguir los apoyos suficientes y de someterse a votación ciudadana.
     new:
       form:
         submit_button: Crear propuesta
@@ -582,7 +582,7 @@ es:
         title: Previsualización del poster
         poster_title: "No te quedes mirando,"
         poster_subtitle: "¡apóyame! ;)"
-        intro_text: "<strong>Estoy participando en %{org}</strong> con mi propia propuesta ciudadana y sólo si tú también te sumas podré lograr el apoyo necesario para hacer la generalitat que todos queremos."
+        intro_text: "<strong>Estoy participando en %{org}</strong> con mi propia propuesta ciudadana y sólo si tú también te sumas podré lograr el apoyo necesario para hacer la comunitat que todos queremos."
         proposal_code: "Código de la propuesta: %{code}"
         support: Apoya mi propuesta
         footer: "<strong>Entra en %{link} y apoya esta propuesta.</strong> Necesitamos ser muchos. Decide tu también. ¡Gracias!"
@@ -622,7 +622,7 @@ es:
       title: "Votaciones"
       participate_button: "Participar en esta votación"
       participate_button_expired: "Votación terminada"
-      no_geozone_restricted: "Toda la generalitat"
+      no_geozone_restricted: "Toda la comunitat"
       geozone_restricted: "Provincias"
       geozone_info: "Pueden participar las personas empadronadas en: "
       already_answer: "Ya has participado en esta votación"
@@ -937,6 +937,7 @@ es:
       go_to_index: Ahora no, ir a la página de inicio
       start_using_consul: Ir a la página de inicio
       title: Empieza a participar
+      more_resources: Más recursos
       user_permission_debates: Participar en debates
       user_permission_info: Con tu cuenta ya puedes...
       user_permission_proposal: Crear nuevas propuestas
