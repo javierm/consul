@@ -12,8 +12,8 @@
       <div class="small-12 medium-6 <%= "medium-9 small-centered text-center" unless header.image.present? %>">
         <p class="lead"><%= header.description %></p>
         <div class="small-12 <%= "small-centered" unless header.image.present? %>">
+          <%= link_to t("welcome.welcome.more_resources"), 'http://webinterna.gva.es/va/web/portal-de-participacion', class: "button " %>
           <%= link_to header.link_text, header.link_url, class: "button " %>
-          <%= link_to t("layouts.header.budgets"), budgets_path, class: "button " %>
         </div>
       </div>
     </div>
