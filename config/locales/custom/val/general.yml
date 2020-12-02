@@ -169,7 +169,7 @@ val:
     topic: Tema
     image: Imatge
   geozones:
-    none: Tota la comunitat
+    none: Tota la Comunitat
   layouts:
     application:
       chrome: Google Chrome
@@ -186,7 +186,7 @@ val:
       description: Este portal utilitza la %{consul} que es %{open_source}.
       open_source: software de codi obert
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
-      participation_text: Decideix com ha de ser la comunitat que vols.
+      participation_text: Decideix com ha de ser la Comunitat que vols.
       participation_title: Participació
       privacy: Política de privacitat
       government: "
@@ -243,8 +243,8 @@ val:
       mark_as_unread: Marcar com no llegides
       notifiable_hidden: Aquest recurs no esta disponible.
   map:
-    title: "Districtes"
-    proposal_for_district: "Crea una proposta per al teu districte"
+    title: "Províncies"
+    proposal_for_district: "Crea una proposta per al teu província"
     start_proposal: Crea una proposta
   omniauth:
     facebook:
@@ -340,7 +340,7 @@ val:
         help: Ajuda sobre les propostes
       section_footer:
         title: Ajuda sobre les propostes
-        description: Les propostes ciutadanes son una oportunitat per a que els veins i col·lectius decideixen directament com volen que siga la seua comunitat, després d'aconseguir els avals suficients i de sotmetres a votació ciutadana.
+        description: Les propostes ciutadanes son una oportunitat per a que els veins i col·lectius decideixen directament com volen que siga la seua Comunitat, després d'aconseguir els avals suficients i de sotmetres a votació ciutadana.
     new:
       form:
         submit_button: Crear proposta
@@ -411,8 +411,8 @@ val:
       title: "Votacions"
       participate_button: "Participar en esta votació"
       participate_button_expired: "Votació finalitzada"
-      no_geozone_restricted: "Tota la comunitat"
-      geozone_restricted: "Districtes"
+      no_geozone_restricted: "Tota la Comunitat"
+      geozone_restricted: "Provínciens"
       geozone_info: "Poden participar les persones empadronades en: "
       already_answer: "Ja has participat en esta votació"
       not_logged_in: "Has d'iniciar sessió o registrarte per a participar"
@@ -527,7 +527,7 @@ val:
         see_all: "Vore tots"
     tags_cloud:
       tags: Tendencies
-      districts: "Districtes"
+      districts: "Províncies"
       districts_list: "Llista de districtes"
       categories: "Categoríes"
     you_are_in: "Estàs en"
@@ -631,10 +631,10 @@ val:
       not_voting_allowed: El període de votació està tancat
   welcome:
     sections:
-      title: "Ahora podemos <span class='sections-icon__title__higlight'>debatir, proponer y hacer votaciones</span> para entre todos mejorar nuestra comunidad"
+      title: "Ara pots <span class='sections-icon__title__higlight'>debatre, proposar i fer votacions </span> per millorar entre tots i totes la nostra Comunitat"
       debate:
         title: Debatre
-        description: obri un fil de discussió per a compartir punts de vista amb altres persones sobre allò que et preocupa.
+        description: Obri un fil de discussió per a compartir punts de vista amb altres persones sobre allò que et preocupa.
       propone:
         title: Proposar
         description: Dcrea propostes d’iniciatives públiques que puguen recollir els suports suficients per a elevar-les a la consideració del Consell.
@@ -643,17 +643,16 @@ val:
         description: Ara el teu vot és important per a la presa de decisió de les polítiques públiques. Vota les opcions que consideres més rellevants.
       normativa:
         title: Elaboració normativa
-        description: participa de manera activa en l’elaboració de legislació, plans i programes.
+        description: Participa de manera activa en l’elaboració de legislació, plans i programes.
       presupuesto:
         title: Pressupostos participatius
-        description: proposa i decideix de manera directa a què es destina part del pressupost de la Generalitat Valenciana.
+        description: Proposa i decideix de manera directa a què es destina part del pressupost de la Generalitat Valenciana.
     slider:
       title:
         month: 18M
-        budget_gva: "<span>Presupuestos</span>
-        <span>2020</span>"
-      txt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel lorem odio.Morbi sit amet consequat purus. Donec augue as vel dui quis, placerat elementum magna.<br><br>Maecenas nec dolor id neque hendrerit tempus sed eu eros."
-      button: "¡Participa en las votaciones!"
+        budget_gva: "<span>Propostes ciutadanes</span>"
+      txt: "Consideres que la Generalitat Valenciana hauria d’actuar en aguna àrea o projecte concret? Presenta la teua proposta d’iniciativa o dona suport a aquelles que et semblen més adequades. Les propostes que obtinguen el mínim de suports necessaris es presentaran al Consell per a la seua consideració."
+      button: "Presenta la teua proposta!"
     feed:
       most_active:
         debates: "Debats més actius"
