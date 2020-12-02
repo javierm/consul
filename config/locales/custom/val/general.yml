@@ -637,7 +637,7 @@ val:
         description: Obri un fil de discussió per a compartir punts de vista amb altres persones sobre allò que et preocupa.
       propone:
         title: Proposar
-        description: Dcrea propostes d’iniciatives públiques que puguen recollir els suports suficients per a elevar-les a la consideració del Consell.
+        description: Crea propostes d’iniciatives públiques que puguen recollir els suports suficients per a elevar-les a la consideració del Consell.
       vota:
         title: Votar
         description: Ara el teu vot és important per a la presa de decisió de les polítiques públiques. Vota les opcions que consideres més rellevants.
