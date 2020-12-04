@@ -95,3 +95,17 @@ header {
     }
   }
 }
+
+.dropdown.menu > li a {
+    padding-left: 0;
+}
+
+.show-for-small-only .subnavigation .dropdown.menu a{
+  line-height: 1em;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 1060px){
+  body > .wrapper > .banner-title.banner5,  body > .wrapper > .row{
+    padding: 0 1em;
+  }
+}
