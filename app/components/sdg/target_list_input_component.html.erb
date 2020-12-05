@@ -1,1 +1,9 @@
-<%= f.text_field :sdg_target_list, data: { "target-list": target_list } %>
+<div class="sdg-target-list-input">
+  <div class="goals">
+    <% goals.each do |goal| %>
+      <%= image_tag("sdg/goal-#{"%02d" % goal.code}", width: "50", height: "50") %>
+    <% end %>
+  </div>
+
+  <%= f.text_field :sdg_target_list, data: { "target-list": target_list } %>
+</div>

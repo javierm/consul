@@ -6,7 +6,7 @@ class SDG::TargetListInputComponent < ApplicationComponent
   end
 
   def target_list
-    SDG::Goal.order(:code).map do |goal|
+    goals.map do |goal|
       [goal, *goal.targets.sort]
     end.flatten.map do |goal_or_target|
       {
@@ -15,4 +15,10 @@ class SDG::TargetListInputComponent < ApplicationComponent
       }
     end
   end
+
+  private
+
+    def goals
+      SDG::Goal.order(:code)
+    end
 end
