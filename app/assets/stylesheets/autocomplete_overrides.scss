@@ -33,3 +33,7 @@
   }
 
 }
+
+.ui-helper-hidden-accessible {
+  @include element-invisible;
+}
