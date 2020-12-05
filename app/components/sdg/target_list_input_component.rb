@@ -6,10 +6,12 @@ class SDG::TargetListInputComponent < ApplicationComponent
   end
 
   def target_list
-    SDG::Target.all.sort.map do |target|
+    SDG::Goal.order(:code).map do |goal|
+      [goal, *goal.targets.sort]
+    end.flatten.map do |goal_or_target|
       {
-        label: "#{target.code}. #{target.title}",
-        value: target.code
+        label: "#{goal_or_target.code}. #{goal_or_target.title}",
+        value: goal_or_target.code
       }
     end
   end
