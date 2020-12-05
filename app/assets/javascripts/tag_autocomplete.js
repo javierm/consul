@@ -7,6 +7,18 @@
     extractLast: function(term) {
       return App.TagAutocomplete.split(term).pop();
     },
+    select: function(input, event, ui) {
+      var terms;
+
+      event.preventDefault();
+      event.stopPropagation();
+
+      terms = App.TagAutocomplete.split(input.value);
+      terms.pop();
+      terms.push(ui.item.value);
+      terms.push("");
+      input.value = terms.join(", ");
+    },
     init_autocomplete: function() {
       $(".tag-autocomplete").autocomplete({
         source: function(request, response) {
@@ -30,13 +42,7 @@
           return false;
         },
         select: function(event, ui) {
-          var terms;
-          terms = App.TagAutocomplete.split(this.value);
-          terms.pop();
-          terms.push(ui.item.value);
-          terms.push("");
-          this.value = terms.join(", ");
-          return false;
+          App.TagAutocomplete.select(this, event, ui);
         }
       });
     },
