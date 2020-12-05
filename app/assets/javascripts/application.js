@@ -92,6 +92,7 @@ var initialize_modules = function() {
   App.Documentable.initialize();
   App.Imageable.initialize();
   App.TagAutocomplete.initialize();
+  App.SDGTargetListInput.initialize();
   App.PollsAdmin.initialize();
   App.Map.initialize();
   App.Polls.initialize();
