@@ -4,6 +4,9 @@ class Verification::Residence
   validate :postal_code_in_valencia
   validate :residence_in_valencia
 
+  undef gender
+  attr_accessor :gender
+
   def postal_code_in_valencia
     errors.add(:postal_code, I18n.t("verification.residence.new.error_not_allowed_postal_code")) unless valid_postal_code?
   end
