@@ -4,6 +4,8 @@ class Verification::Residence
   validate :postal_code_in_valencia
   validate :residence_in_valencia
 
+  GENDERS = %i[male female other].freeze
+
   undef gender
   attr_accessor :gender
 
