@@ -1,0 +1,15 @@
+.participation-stats {
+  .number-with-info {
+    &.other::before {
+      content: image-url("stats_other.png");
+    }
+  }
+
+  .gender-and-channel {
+    td {
+      &.other::before {
+        content: image-url("stats_other.png");
+      }
+    }
+  }
+}
