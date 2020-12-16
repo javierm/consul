@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200908084257) do
+ActiveRecord::Schema.define(version: 20201216161401) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -838,6 +838,12 @@ ActiveRecord::Schema.define(version: 20200908084257) do
     t.index ["legislation_process_id"], name: "index_legislation_questions_on_legislation_process_id"
   end
 
+  create_table "legislators", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "description"
+    t.index ["user_id"], name: "index_legislators_on_user_id"
+  end
+
   create_table "links", id: :serial, force: :cascade do |t|
     t.string "label"
     t.string "url"
@@ -1622,6 +1628,7 @@ ActiveRecord::Schema.define(version: 20200908084257) do
   add_foreign_key "images", "users"
   add_foreign_key "legislation_draft_versions", "legislation_processes"
   add_foreign_key "legislation_proposals", "legislation_processes"
+  add_foreign_key "legislators", "users"
   add_foreign_key "locks", "users"
   add_foreign_key "managers", "users"
   add_foreign_key "moderators", "users"
