@@ -4,6 +4,7 @@ class User
   has_one :legislator
 
   scope :legislators, -> { joins(:legislator) }
+  scope :other, -> { where(gender: "other") }
 
   def legislator?
     legislator.present?

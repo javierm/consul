@@ -1,8 +1,15 @@
 require_dependency Rails.root.join("app", "models", "verification", "residence").to_s
 
 class Verification::Residence
+  validates :gender, presence: true
+
   validate :postal_code_in_valencia
   validate :residence_in_valencia
+
+  GENDERS = %i[male female other].freeze
+
+  undef gender
+  attr_accessor :gender
 
   def postal_code_in_valencia
     errors.add(:postal_code, I18n.t("verification.residence.new.error_not_allowed_postal_code")) unless valid_postal_code?
