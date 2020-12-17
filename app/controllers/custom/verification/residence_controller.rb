@@ -14,4 +14,11 @@ class Verification::ResidenceController
       render :new
     end
   end
+  
+  private
+  
+    def residence_params
+      params.require(:residence).permit(:document_number, :document_type, :date_of_birth, :postal_code, :terms_of_service, :gender)
+    end
+ 
 end
