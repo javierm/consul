@@ -2,6 +2,7 @@ require_dependency Rails.root.join("app", "models", "user").to_s
 
 class User
   has_one :legislator
+  has_many :legislation_processes, inverse_of: :user
 
   scope :legislators, -> { joins(:legislator) }
   scope :other, -> { where(gender: "other") }
