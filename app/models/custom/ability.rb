@@ -11,6 +11,7 @@ class Ability
 
       if user.administrator?
         merge Abilities::Administrator.new(user)
+        can [:manage], ::Milestone::Status
       elsif user.legislator?
         merge Abilities::Legislator.new(user)
       elsif user.moderator?

@@ -23,6 +23,8 @@ module Abilities
       can [:manage], ::Legislation::Question
       can [:manage], ::Legislation::Proposal
       cannot :comment_as_moderator, [::Legislation::Question, Legislation::Annotation, ::Legislation::Proposal]
+
+      cannot [:manage], ::Milestone::Status
     end
   end
 end
