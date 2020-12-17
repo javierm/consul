@@ -4,6 +4,9 @@ es:
       legislator:
         one: "Legislador"
         other: "Legisladores"
+  layouts:
+    header:
+      legislation: Legislación
   admin:
     menu:
       legislators: Legisladores
