@@ -1,6 +1,11 @@
 require_dependency Rails.root.join("app", "controllers", "admin", "legislation", "processes_controller").to_s
 
 class Admin::Legislation::ProcessesController
+  def index
+    @processes = ::Legislation::Process.send(@current_filter).order(start_date: :desc).accessible_by(current_ability)
+                 .page(params[:page])
+  end
+
   def create
     @process.user = current_user
     if @process.save
