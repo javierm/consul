@@ -1,5 +1,4 @@
-<%# TODO: permissions %>
-<% if true %>
+<% if current_user.legislator? %>
   <%= render 'admin/legislation_menu' %>
 <% else %>
   <%= render 'admin/admin_menu' %>
