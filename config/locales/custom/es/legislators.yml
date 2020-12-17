@@ -8,6 +8,8 @@ es:
     menu:
       legislators: Legisladores
     legislators:
+      header:
+        title: Legislación
       index:
         title: Legisladores
         name: Nombre
