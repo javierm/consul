@@ -8,12 +8,6 @@
         </li>
       <% end %>
 
-      <% if current_user.administrator? || current_user.legislator? %>
-        <li>
-          <%= link_to t("admin.menu.legislation"), admin_legislation_processes_path %>
-        </li>
-      <% end %>
-
       <% if current_user.administrator? || current_user.moderator? %>
         <li>
           <%= link_to t("layouts.header.moderation"), moderation_root_path %>
@@ -36,6 +30,12 @@
       <% if current_user.poll_officer? && Poll.current.any? %>
         <li>
           <%= link_to t("layouts.header.officing"), officing_root_path %>
+        </li>
+      <% end %>
+
+      <% if current_user.legislator? %>
+        <li>
+          <%= link_to t("admin.menu.legislation"), admin_legislation_processes_path %>
         </li>
       <% end %>
     </ul>
