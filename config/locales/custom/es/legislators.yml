@@ -1,0 +1,25 @@
+es:
+  activerecord:
+    models:
+      legislator:
+        one: "Legislador"
+        other: "Legisladores"
+  layouts:
+    header:
+      legislation: Legislación
+  admin:
+    menu:
+      legislators: Legisladores
+    legislators:
+      header:
+        title: Legislación
+      index:
+        title: Legisladores
+        name: Nombre
+        email: Email
+        no_legislators: No hay legisladores.
+      legislator:
+        add: Añadir como legislador
+        delete: Borrar
+      search:
+        title: "Legisladores: Búsqueda de usuarios"

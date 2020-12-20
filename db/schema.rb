@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200908084257) do
+ActiveRecord::Schema.define(version: 20201217125148) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -747,6 +747,7 @@ ActiveRecord::Schema.define(version: 20200908084257) do
     t.boolean "homepage_enabled", default: false
     t.text "background_color"
     t.text "font_color"
+    t.bigint "user_id"
     t.index ["allegations_end_date"], name: "index_legislation_processes_on_allegations_end_date"
     t.index ["allegations_start_date"], name: "index_legislation_processes_on_allegations_start_date"
     t.index ["debate_end_date"], name: "index_legislation_processes_on_debate_end_date"
@@ -758,6 +759,7 @@ ActiveRecord::Schema.define(version: 20200908084257) do
     t.index ["hidden_at"], name: "index_legislation_processes_on_hidden_at"
     t.index ["result_publication_date"], name: "index_legislation_processes_on_result_publication_date"
     t.index ["start_date"], name: "index_legislation_processes_on_start_date"
+    t.index ["user_id"], name: "index_legislation_processes_on_user_id"
   end
 
   create_table "legislation_proposals", id: :serial, force: :cascade do |t|
@@ -836,6 +838,12 @@ ActiveRecord::Schema.define(version: 20200908084257) do
     t.integer "author_id"
     t.index ["hidden_at"], name: "index_legislation_questions_on_hidden_at"
     t.index ["legislation_process_id"], name: "index_legislation_questions_on_legislation_process_id"
+  end
+
+  create_table "legislators", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "description"
+    t.index ["user_id"], name: "index_legislators_on_user_id"
   end
 
   create_table "links", id: :serial, force: :cascade do |t|
@@ -1621,7 +1629,9 @@ ActiveRecord::Schema.define(version: 20200908084257) do
   add_foreign_key "identities", "users"
   add_foreign_key "images", "users"
   add_foreign_key "legislation_draft_versions", "legislation_processes"
+  add_foreign_key "legislation_processes", "users"
   add_foreign_key "legislation_proposals", "legislation_processes"
+  add_foreign_key "legislators", "users"
   add_foreign_key "locks", "users"
   add_foreign_key "managers", "users"
   add_foreign_key "moderators", "users"

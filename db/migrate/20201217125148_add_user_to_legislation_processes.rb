@@ -1,0 +1,5 @@
+class AddUserToLegislationProcesses < ActiveRecord::Migration[5.1]
+  def change
+    add_reference :legislation_processes, :user, index: true, foreign_key: true
+  end
+end
