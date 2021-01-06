@@ -11,11 +11,8 @@
         admin_polymorphic_path(@page.cards.new, action: :new), class: "button" %>
   </div>
 
-  <% if @cards.present? %>
-    <%= render "cards", cards: @cards %>
-  <% else %>
-    <div class="callout primary clear">
-      <%= t("admin.site_customization.pages.cards.no_cards") %>
-    </div>
-  <% end %>
+  <%= render Admin::Widget::Cards::TableComponent.new(
+    @cards,
+    no_cards_message: t("admin.site_customization.pages.cards.no_cards")
+  ) %>
 </div>
