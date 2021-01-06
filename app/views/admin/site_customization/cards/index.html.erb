@@ -8,7 +8,7 @@
 
   <div class="float-right">
     <%= link_to t("admin.site_customization.pages.cards.create_card"),
-        new_admin_widget_card_path(page_id: params[:page_id]), class: "button" %>
+        admin_polymorphic_path(@page.cards.new, action: :new), class: "button" %>
   </div>
 
   <% if @cards.present? %>
