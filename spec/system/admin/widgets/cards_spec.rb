@@ -145,7 +145,7 @@ describe "Cards", :admin do
         fill_in "Title", with: "Card for a custom page"
         click_button "Create card"
 
-        expect(page).to have_current_path admin_site_customization_page_cards_path(custom_page)
+        expect(page).to have_current_path admin_site_customization_page_widget_cards_path(custom_page)
         expect(page).to have_content "Card for a custom page"
       end
 
@@ -181,7 +181,7 @@ describe "Cards", :admin do
       scenario "Edit", :js do
         create(:widget_card, page: custom_page, title: "Original title")
 
-        visit admin_site_customization_page_cards_path(custom_page)
+        visit admin_site_customization_page_widget_cards_path(custom_page)
 
         expect(page).to have_content("Original title")
 
@@ -193,7 +193,7 @@ describe "Cards", :admin do
 
         click_button "Save card"
 
-        expect(page).to have_current_path admin_site_customization_page_cards_path(custom_page)
+        expect(page).to have_current_path admin_site_customization_page_widget_cards_path(custom_page)
         expect(page).to have_content "Updated title"
         expect(page).not_to have_content "Original title"
       end
@@ -201,7 +201,7 @@ describe "Cards", :admin do
       scenario "Destroy", :js do
         create(:widget_card, page: custom_page, title: "Card title")
 
-        visit admin_site_customization_page_cards_path(custom_page)
+        visit admin_site_customization_page_widget_cards_path(custom_page)
 
         expect(page).to have_content("Card title")
 
@@ -209,7 +209,7 @@ describe "Cards", :admin do
           click_link "Delete"
         end
 
-        expect(page).to have_current_path admin_site_customization_page_cards_path(custom_page)
+        expect(page).to have_current_path admin_site_customization_page_widget_cards_path(custom_page)
         expect(page).not_to have_content "Card title"
       end
     end
