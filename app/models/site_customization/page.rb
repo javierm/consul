@@ -1,10 +1,6 @@
 class SiteCustomization::Page < ApplicationRecord
   VALID_STATUSES = %w[draft published].freeze
-  has_many :cards,
-    class_name:  "Widget::Card",
-    foreign_key: "site_customization_page_id",
-    inverse_of:  :page
-
+  has_many :cards, class_name: "Widget::Card", as: :page
   translates :title,       touch: true
   translates :subtitle,    touch: true
   translates :content,     touch: true
