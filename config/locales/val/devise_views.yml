@@ -34,7 +34,7 @@ val:
       login_items:
         login: Iniciar sessió
         logout: Eixir
-        signup: Registrarse
+        signup: Registrar-se
     organizations:
       registrations:
         new:
@@ -45,7 +45,7 @@ val:
           phone_number_label: Telèfon
           responsible_name_label: Nom i cognoms de la persona responsable del colectiu
           responsible_name_note: Sera la persona representant de l'associació/col·lectiu en el nom del qual es presenten les propostes
-          submit: Registrarse
+          submit: Registrar-se
           title: Registrar-se com organització / col·lectiu
         success:
           back_to_index: Entés, tornar a la pàgina principal
@@ -107,11 +107,11 @@ val:
           password_confirmation_label: Repeteix la contrasenya anterior
           password_label: Contrasenya
           redeemable_code: Codi de verificació per correu electronic (opcional)
-          submit: Registrarse
+          submit: Registrar-se
           terms: Al registrarte acceptes les %{terms}
           terms_link: termes i condicions d'us
           terms_title: Al registrar-te acceptes les condicions d'us
-          title: Registrarse
+          title: Registrar-se
           username_is_available: Nom d'usuari disponible
           username_is_not_available: Nom d'usuari ya existeix
           username_label: Nom d'usuari

@@ -1,0 +1,191 @@
+es:
+  pages:
+    conditions:
+      title: Condiciones de uso
+      subtitle: AVISO LEGAL SOBRE LAS CONDICIONES DE USO, PRIVACIDAD Y PROTECCIÓN DE DATOS PERSONALES DEL PORTAL DE GOBIERNO ABIERTO
+      description: Página de información sobre las condiciones de uso, privacidad y protección de datos personales.
+    help:
+      title: "%{org} es una plataforma de participación ciudadana"
+      guide: "Esta guía explica para qué sirven y cómo funcionan cada una de las secciones de %{org}."
+      menu:
+        debates: "Debates"
+        proposals: "Propuestas"
+        budgets: "Presupuestos participativos"
+        polls: "Votaciones"
+        other: "Otra información de interés"
+        processes: "Elaboración normativa"
+      debates:
+        title: "Debates"
+        description: "En la sección de %{link} puedes compartir tu opinión con otras personas sobre temas que te preocupen relacionados con la Comunitat Valenciana. Es un lugar para generar conocimiento e inteligencia colectiva que conduzcan a acciones concretas por parte del Consell. <br/> <br/>Puedes abrir debates, comentarlos y valorarlos con los botones de <strong>Estoy de acuerdo</strong> o <strong>No estoy de acuerdo</strong>.
+        <br/><br/><strong>¿Cómo funciona?</strong><br/><br/>
+        Antes de nada te recomendamos revisar los debates abiertos por otras personas. De esta manera podrás opinar sobre los que te interesen y, además, evitar plantear un debate que ya está en curso.<br/><br/>
+      Para revisarlos puedes acudir a las pestañas de “más activos”, “mejor valorados” y “nuevos” que encontrarás en la parte superior. También dispones de una opción de “búsqueda avanzada” para buscar por palabras clave, autor y fecha. Ten en cuenta que puede haber varias páginas de debates. Para navegar y consultar los debates abiertos no necesitas registrarte. Si quieres abrir un hilo de debate, dar tu apoyo a uno ya abierto, o hacer comentarios, sí deberás hacerlo."
+        link: "debates ciudadanos"
+        feature: "Para navegar y consultar los debates abiertos no necesitas registrarte. Si quieres abrir un hilo de debate, dar tu apoyo a uno ya abierto, o hacer comentarios, deberás registrarte en %{link}"
+        feature_link: "registrarte en %{org}"
+        image_alt: "Botones para valorar los debates"
+        figcaption: 'Botones "Estoy de acuerdo" y "No estoy de acuerdo" para valorar los debates.'
+      proposals:
+        title: "Propuestas"
+        description: "En la sección de %{link} existen dos formas de participar:<br/><br/>
+        1) puedes presentar tus propuestas para que los demás expresen su apoyo; <br/><br/>
+        2) puedes apoyar las propuestas presentadas que te parezcan adecuadas. Las propuestas que alcancen un número suficiente de apoyos se someterán a votación pública.<br/><br/>
+      <strong>¿Cómo funciona?</strong><br/><br/>
+      Antes de nada te recomendamos revisar las propuestas que ya existen. De esta manera, en el caso de que alguien ya la haya planteado, evitarás dividir los apoyos de la propuesta que te interesa, ya que estos serán imprescindibles para que esta siga adelante. Además, así podrás ver el resto de propuestas y dar tu apoyo a las que te convenzan o simplemente comentarlas. Para explorar no es necesario registrarse, pero para comentar o dar apoyo sí.<br/><br/>
+      Al principio de la página visualizarás las propuestas que van en cabeza en número de apoyos, pero también podrás acceder a las demás y navegar entre ellas con las pestañas “más activas”, “más apoyadas”, “nuevas” y “búsqueda avanzada”.<br/><br/>
+      Si no encuentras una propuesta similar a la que tenías en mente, será el momento de plantearla mediante el botón “crea una propuesta”, para lo que deberás registrarte. <br/><br/>
+      Ten en cuenta que obtener los apoyos necesarios no garantiza que la propuesta se vote favorablemente con posterioridad"
+        link: "propuestas ciudadanas"
+        image_alt: "Botón para apoyar una propuesta"
+        figcaption: 'Botón para "Apoyar" una propuesta.'
+      budgets:
+        title: "Presupuestos participativos"
+        description: "En la sección de %{link} puedes decidir a qué proyectos irá destinada una parte del presupuesto de la Generalitat Valenciana.<br/><br/>
+      En primer lugar, podrás presentar los proyectos que consideres que han de desarrollarse, que deberán obtener un mínimo de apoyos. Aquellos proyectos que hayan recibido ese mínimo de apoyos se estudiarán por la Administración para comprobar su viabilidad. Después de esto sabremos los proyectos que pasarán a la votación final.<br/><br/>
+      <strong>¿Cómo funciona?</strong><br/><br/>
+      Cuando accedas a esta pestaña, verás indicada la fase en la que se encuentra el proceso de los presupuestos participativos.<br/><br/>
+      Podrás crear nuevas propuestas o apoyar las ya creadas. Las propuestas podrán afectar a toda la Comunitat Valenciana, o a una de sus provincias. Puedes acceder a ellas desde diferentes clasificaciones: por provincia, por materia …<br/><br/>
+      También dispondrás de un mapa en el que podrás localizar los proyectos propuestos. "
+        link: "presupuestos participativos"
+        image_alt: "Diferentes fases de un presupuesto participativo"
+        figcaption: 'Fase de "Apoyos" y fase de "Votación" de los presupuestos participativos.'
+      polls:
+        title: "Votaciones"
+        description: "La sección de %{link} se activa cuando una propuesta ciudadana alcanza el porcentaje mínimo de apoyos necesarios o cuando la Administración quiere someter a votación una propuesta. El resultado de las votaciones determinará qué propuestas pasarán a consideración del Consell.<br/><br/>
+      <strong>¿Cómo funciona?</strong><br/><br/>
+      Cuando accedas a este área podrás ver las votaciones “abiertas” y las “terminadas”. En las primeras podrás votar “sí” o “no” a las propuestas que hayan llegado a esta fase y que se encuentren en plazo para su votación. Para hacerlo es necesario registrarse.<br/><br/>
+      En la pestaña de “terminadas” podrás ver las votaciones que han finalizado y sus resultados. Para ello no será necesario registrarse.<br/><br/>
+      También puedes comentar ambos tipos de votaciones si te has registrado.<br/><br/>"
+        link: "votaciones ciudadanas"
+        feature_1: "Para participar en las votaciones tienes que %{link} y verificar tu cuenta."
+        feature_1_link: "registrarte en %{org_name}"
+      processes:
+        title: "Elaboración normativa"
+        description: "En la sección de %{link} puedes colaborar en la redacción y modificación de normativa, planes y programas de la Generalitat Valenciana. Las aportaciones de la ciudadanía serán analizadas y tenidas en cuenta en la redacción definitiva de las normas o en la planificación de las actuaciones. <br/> <br/>
+      <strong>¿Cómo funciona?</strong><br/><br/>
+      Cuando accedas a este área podrás ver los procesos “activos” y los “terminados”. Si seleccionas uno de los procesos podrás acceder a información acerca de la norma o el plan que se está elaborando y revisar las aportaciones que se han hecho al documento.<br/><br/>
+      También puedes hacer tus propias aportaciones, siempre y cuando te hayas registrado. En primer lugar puedes acceder al área de “debate previo”, donde encontrarás preguntas a las que podrás responder y sobre las que podrás debatir. En el apartado de “propuestas” podrás ver las que otras personas han hecho o realizar las tuyas propias. Y, por último, en “comentarios” podrás comentar los documentos, seleccionando el texto que quieres comentar."
+        link: "elaboración normativa"
+        feature: "Para participar en la elaboración normativa tienes que %{link} y verificar tu cuenta."
+        feature_link: "registrarte en %{org_name}"
+      faq:
+        title: "¿Problemas técnicos?"
+        description: "Lee las preguntas frecuentes y resuelve tus dudas."
+        button: "Ver preguntas frecuentes"
+        page:
+          title: "Preguntas Frecuentes"
+          description: "Utiliza esta página para resolver las Preguntas frecuentes a los usuarios del sitio."
+      other:
+        title: "Otra información de interés"
+        how_to_use: "Utiliza %{org_name} en tu municipio"
+      how_to_use:
+        text: |-
+          Utilízalo en tu municipio libremente o ayúdanos a mejorarlo, es software libre.
+
+          Este Portal de Gobierno Abierto usa la [aplicación CONSUL](https://github.com/consul/consul 'github consul') que es software libre, con [licencia AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ). Esto significa en palabras sencillas, que cualquiera puede libremente usar el código, copiarlo, verlo en detalle, modificarlo, y redistribuirlo al mundo con las modificaciones que quiera (manteniendo el que otros puedan a su vez hacer lo mismo). Porque creemos que la cultura es mejor y más rica cuando se libera.
+
+          Si eres programador, puedes ver el código y ayudarnos a mejorarlo en [aplicación CONSUL](https://github.com/consul/consul 'github consul').
+      titles:
+        how_to_use: Utilízalo en tu municipio
+    privacy:
+      title: Política de privacidad
+      subtitle: "Página de información de protección de datos"
+    accessibility:
+      title: Accesibilidad
+      description: |-
+        La accesibilidad web se refiere a la posibilidad de acceso a la web y a sus contenidos por todas las personas, independientemente de las discapacidades (físicas, intelectuales o técnicas) que puedan presentar o de las que se deriven del contexto de uso (tecnológicas o ambientales).
+
+        Cuando los sitios web están diseñados pensando en la accesibilidad, todos los usuarios pueden acceder en condiciones de igualdad a los contenidos, por ejemplo:
+      examples:
+        - Proporcionando un texto alternativo a las imágenes, los usuarios invidentes o con problemas de visión pueden utilizar lectores especiales para acceder a la información.
+        - Cuando los vídeos disponen de subtítulos, los usuarios con dificultades auditivas pueden entenderlos plenamente.
+        - Si los contenidos están escritos en un lenguaje sencillo e ilustrados, los usuarios con problemas de aprendizaje están en mejores condiciones de entenderlos.
+        - Si el usuario tiene problemas de movilidad y le cuesta usar el ratón, las alternativas con el teclado le ayudan en la navegación.
+      keyboard_shortcuts:
+        title: '"Atajos" de teclado'
+        navigation_table:
+          description: Para poder navegar por este sitio web de forma accesible, se han programado un grupo de teclas de acceso rápido que recogen las principales secciones de interés general en los que está organizado el sitio.
+          caption: Atajos de teclado para el menú de navegación
+          key_header: Tecla
+          page_header: Página
+          rows:
+            -
+              key_column: 0
+              page_column: Inicio
+            -
+              key_column: 1
+              page_column: Debates
+            -
+              key_column: 2
+              page_column: Propuestas
+            -
+              key_column: 3
+              page_column: Votaciones
+            -
+              key_column: 4
+              page_column: Presupuestos participativos
+            -
+              key_column: 5
+              page_column: Legislación colaborativa
+        browser_table:
+          description: "Dependiendo del sistema operativo y del navegador que se utilice, la combinación de teclas será la siguiente:"
+          caption: Combinación de teclas dependiendo del sistema operativo y navegador
+          browser_header: Navegador
+          key_header: Combinación de teclas
+          rows:
+            -
+              browser_column: Explorer
+              key_column: ALT + atajo y luego ENTER
+            -
+              browser_column: Firefox
+              key_column: ALT + MAYÚSCULAS + atajo
+            -
+              browser_column: Chrome
+              key_column: ALT + atajo (si es un MAC, CTRL + ALT + atajo)
+            -
+              browser_column: Safari
+              key_column: ALT + atajo (si es un MAC, CMD + atajo)
+            -
+              browser_column: Opera
+              key_column: MAYÚSCULAS + ESC + atajo
+      textsize:
+        title: Tamaño del texto
+        browser_settings_table:
+          description: El diseño accesible de este sitio web permite que el usuario pueda elegir el tamaño del texto que le convenga. Esta acción puede llevarse a cabo de diferentes maneras según el navegador que se utilice.
+          browser_header: Navegador
+          action_header: Acción a realizar
+          rows:
+            -
+              browser_column: Explorer
+              action_column: Ver > Tamaño del texto
+            -
+              browser_column: Firefox
+              action_column: Ver > Tamaño
+            -
+              browser_column: Chrome
+              action_column: Ajustes (icono) > Opciones > Avanzada > Contenido web > Tamaño fuente
+            -
+              browser_column: Safari
+              action_column: Visualización > ampliar/reducir
+            -
+              browser_column: Opera
+              action_column: Ver > escala
+        browser_shortcuts_table:
+          description: "Otra forma de modificar el tamaño de texto es utilizar los atajos de teclado definidos en los navegadores, en particular la combinación de teclas:"
+          rows:
+            -
+              shortcut_column: CTRL y + (CMD y + en MAC)
+              description_column: para aumentar el tamaño del texto
+            -
+              shortcut_column: CTRL y - (CMD y - en MAC)
+              description_column: para reducir el tamaño del texto
+      compatibility:
+        title: Compatibilidad con estándares y diseño visual
+        description: 'Todas las páginas de este sitio web cumplen con las <strong>Pautas de Accesibilidad</strong> o Principios Generales de Diseño Accesible establecidas por el Grupo de Trabajo <abbr title="Web Accessibility Initiative" lang="en">WAI</abbr> perteneciente al W3C.'
+    titles:
+      help: "¿Qué es %{org}? - Participación ciudadana"
+    verify:
+      info: "Para verificar tu cuenta introduce los datos con los que te registraste:"
+      info_code: "Ahora introduce el código que has recibido en tu carta:"
+      submit: Verificar mi cuenta
+      title: Verifica tu cuenta

@@ -33,7 +33,7 @@ es:
         unlock_link: Desbloquear mi cuenta
     menu:
       login_items:
-        login: Entrar
+        login: Iniciar sesión
         logout: Salir
         signup: Registrarse
     organizations:

@@ -128,7 +128,7 @@ es:
         title: Ayuda sobre los debates
         description: Inicia un debate para compartir puntos de vista con otras personas sobre los temas que te preocupan.
         help_text_1: "El espacio de debates ciudadanos está dirigido a que cualquier persona pueda exponer temas que le preocupan y sobre los que quiera compartir puntos de vista con otras personas."
-        help_text_2: 'Para abrir un debate es necesario registrarse en %{org}. Los usuarios ya registrados también pueden comentar los debates abiertos y valorarlos con los botones de "Estoy de acuerdo" o "No estoy de acuerdo" que se encuentran en cada uno de ellos.'
+        help_text_2: 'Para abrir un debate es necesario registrarse en %{org}. Las personas usuarias ya registradas también pueden comentar los debates abiertos y valorarlos con los botones de "Estoy de acuerdo" o "No estoy de acuerdo" que se encuentran en cada uno de ellos.'
     new:
       form:
         submit_button: Empieza un debate
@@ -220,7 +220,7 @@ es:
       consul: aplicación CONSUL
       consul_url: https://github.com/consul/consul
       contact_us: Para asistencia técnica entra en
-      copyright: "2019, Generalitat"
+      copyright: "2021, Generalitat"
       description: Este portal usa la %{consul} que es %{open_source}.
       open_source: software de código abierto
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
@@ -230,9 +230,9 @@ es:
       government: "
       %{copyright}<br/>
       Portal de Participació<br/><br/>
-      Conselleria  de Transparència,<br/>
-      Responsabilitat Social,<br/>
-      Participació i Cooperació
+      Conselleria  de Participació,<br/>
+      Transparència, Cooperació i,<br/>
+      Qualitat Democràtica
       "
     header:
       administration_menu: Menú
@@ -402,7 +402,7 @@ es:
         help: Ayuda sobre las propuestas
       section_footer:
         title: Ayuda sobre las propuestas
-        description: Las propuestas ciudadanas son una oportunidad para que los vecinos y colectivos decidan directamente cómo quieren que sea su Comunitat, después de conseguir los apoyos suficientes y de someterse a votación ciudadana.
+        description: Las propuestas ciudadanas son una oportunidad para que los vecinos/as y colectivos decidan directamente cómo quieren que sea su Comunitat, después de conseguir los apoyos suficientes y de someterse a votación ciudadana.
     new:
       form:
         submit_button: Crear propuesta
@@ -888,7 +888,7 @@ es:
         description: Crea propuestas de iniciativas públicas que puedan recoger apoyos y pasar a votación.
       vota:
         title: Votar
-        description: Vota las propuestas ciudadanas con más apoyos para que puedan llegar a la consideración del Consell.
+        description: Ahora tu voto es importante para la toma de decisión de las políticas públicas. Vota las opciones que consideres más relevantes
       normativa:
         title: Elaboración normativa
         description: Participa de manera activa en la elaboración de legislación, planes y programas.
@@ -899,7 +899,7 @@ es:
       title:
         month: 18M
         budget_gva: "<span>Propuestas ciudadanas</span>"
-      txt: "¿Consideras que la Generalitat Valenciana debería actuar en aglún área o proyecto concreto? Presenta tu propuesta de iniciativa pública o apoya las que te parezcan más adecuadas. Las propuestas que obtengan el mínimo de apoyos necesarios se presentarán al Consell para su consdieración."
+      txt: "¿Consideras que la Generalitat Valenciana debería actuar en algún área o proyecto concreto? Presenta tu propuesta de iniciativa pública o apoya las que te parezcan más adecuadas. Las propuestas que obtengan el mínimo de apoyos necesarios se presentarán al Consell para su consideración."
       button: "Presenta tu propuesta!"
 
     feed:

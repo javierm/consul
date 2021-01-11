@@ -5,8 +5,8 @@ val:
       subtitle: AVIS LEGAL SOBRE LES CONDICIONS D'US, PRIVACITAT I PROTECCIÓ DE LES DADES PERSONALS DEL PORTAL DE GOVERN OBERT
       description: Pàgina d'informació sobre les condicions d'us, privacitat i protecció de dades personals.
     help:
-      title: "%{org} es una plataforma de participació ciutadana"
-      guide: "Esta guia explica per a qué serveixen i com funcionen cadascuna de les seccions de %{org}."
+      title: "%{org} és una plataforma de participació ciutadana"
+      guide: "Esta guia explica per a què serveixen i com funcionen cadascuna de les seccions de %{org}."
       menu:
         debates: "Debats"
         proposals: "Propostes"
@@ -16,10 +16,10 @@ val:
         processes: "Processos"
       debates:
         title: "Debats"
-        description: "En la secció de %{link} pots compartir la teua opinió amb altres persones sobre temes que et preocupen relacionats amb la Comunitat Valenciana. És un lloc per a generar coneixement i intel·ligència col·lectiva que conduïsquen a accions concretes per part del Consell.<br/><br/>"
-        feature: "Pots obrir debats, comentar-los i donar-los suport amb els botons “Estic d’acord” o “No estic d’acord”.<br/><br/>
-        <strong>Com funciona?</strong><br/><br/>Abans de res et recomanem revisar els debats oberts per altres persones. D’aquesta  forma podràs opinar sobre els que t’interessen i, a més, evitar plantejar un debat que ja està en curs.<br/><br/>
-        Per a revisar-los pots acudir a les pestanyes de “més actius”, “millor valorats” i “nous” que trobaràs en la part superior. També disposes d’una opció de “cerca avançada” per a buscar per paraules clau, autor i data. Tingues en compte que poden haver-hi diverses pàgines de debats. Per a navegar i consultar els debats oberts no necessites registrar-te. Si vols obrir un fil de debat, donar el teu suport a un ja obert, o fer comentaris, sí que hauràs de fer-ho."
+        description: "En la secció de %{link} pots compartir la teua opinió amb altres persones sobre temes que et preocupen relacionats amb la Comunitat Valenciana. És un lloc per a generar coneixement i intel·ligència col·lectiva que conduïsquen a accions concretes per part del Consell.<br/><br/>
+        Pots obrir debats, comentar-los i donar-los suport amb els botons “Estic d’acord” o “No estic d’acord”.<br/><br/><strong>Com funciona?</strong><br/><br/>Abans de res et recomanem revisar els debats oberts per altres persones. D’aquesta  forma podràs opinar sobre els que t’interessen i, a més, evitar plantejar un debat que ja està en curs.<br/><br/>
+        Per a revisar-los pots acudir a les pestanyes de “més actius”, “millor valorats” i “nous” que trobaràs en la part superior. També disposes d’una opció de “cerca avançada” per a buscar per paraules clau, autor i data. Tingues en compte que poden haver-hi diverses pàgines de debats."
+        feature: "Per a navegar i consultar els debats oberts no necessites registrar-te. Si vols obrir un fil de debat, donar el teu suport a un ja obert, o fer comentaris, sí que hauràs de fer-ho."
         link: "debats ciutadans"
         feature_link: "registrarte en %{org}"
         image_alt: "Botons per a valorar els debats"
@@ -32,12 +32,13 @@ val:
         <strong>Com funciona?</strong><br/><br/>
         Abans de res et recomanem revisar les propostes que ja existeixen. D’aquesta manera, en el cas que alguna persona ja l’haja plantejada, evitaràs dividir els suports de la proposta que t’interessa, ja que aquests seran imprescindibles perquè la proposta esmentada seguisca avant. A més, així podràs veure la resta de propostes i donar el teu suport a les que et convencen o simplement comentar-les. Per a explorar no cal registrar-se, però per a comentar o donar suport sí.<br/><br/>
         Al començament de la pàgina, visualitzaràs les propostes que vagen al capdavant en nombre de suports, però també podràs accedir a la resta i navegar entre aquestes amb les pestanyes “més actives”, “amb més suport”, “noves” i “cerca avançada”.<br/><br/>
-        Si no trobes una proposta similar a la que tenies al cap, serà el moment de plantejar-la mitjançant el botó “crea una proposta”, per a la qual cosa hauràs de registrar-te."
+        Si no trobes una proposta similar a la que tenies al cap, serà el moment de plantejar-la mitjançant el botó “crea una proposta”, per a la qual cosa hauràs de registrar-te. <br/><br/>
+Has de tindre en compte que obtindre els suports necessaris no garanteix que la proposta siga votada favorablement amb posterioritat."
         link: "propostes ciutadanes"
         image_alt: "Botó per a avalar una proposta"
       budgets:
         title: "Pressupostos Participatius"
-        description: "La secció de %{link} pots decidir a quins projectes anirà destinada una part del pressupost de la Generalitat Valenciana.<br/><br/>
+        description: "A la secció de %{link} pots decidir a quins projectes anirà destinada una part del pressupost de la Generalitat Valenciana.<br/><br/>
         En primer lloc, podràs presentar els projectes que consideres que s’han de desenvolupar, que hauran d’obtindre un mínim de suports. Aquells projectes que hagen rebut aquest mínim de suports seran estudiats per l’Administració per tal de comprovar la seua viabilitat. Després d’això sabrem els projectes que passaran a la votació final.<br/><br/>
         <strong>Com funciona?</strong><br/><br/>
         Quan accedisques a aquesta pestanya, veuràs indicada la fase en la qual es troba el procés dels pressupostos participatius.<br/><br/>
@@ -47,23 +48,25 @@ val:
         image_alt: "Diferents fases d'un pressupost participatiu"
       polls:
         title: "Votacions"
-        description: "La secció de %{link} s’activen quan la ciutadania ha d'ajudar en la presa de decisions en els assumptes públics. La votació pot derivar-se d'un procés participatiu que estiga actiu o bé d'una consulta ciutadana que llança l'Administració.<br/><br/>
+        description: "Les %{link} s’activen quan la ciutadania ha d'ajudar en la presa de decisions en els assumptes públics. La votació pot derivar-se d'un procés participatiu que estiga actiu o bé d'una consulta ciutadana que llança l'Administració.<br/><br/>
         <strong>Com funciona?</strong><br/><br/>
-        Quan accedisques a aquest àrea podràs veure les votacions “obertes” i les “acabades”. En les primeres podràs participar en la votació donant el teu suport a l'alternativa que consideres més important. Per a fer-ho cal registrar-se. També pots fer comentaris a la consulta sotmesa a votació.<br/><br/>
+        Quan accedisques a aquesta àrea podràs veure les votacions “obertes” i les “acabades”. En les primeres podràs participar en la votació donant el teu suport a l'alternativa que consideres més important. També pots fer comentaris a la consulta sotmesa a votació.<br/><br/>
         En la pestanya d’“acabades” podràs veure les votacions que han finalitzat i els seus resultats. Per a això no caldrà registrar-se."
         link: "votacions"
         feature_1: "Per a participar en les votacions has de %{link} i verificar el teu compte."
         feature_1_link: "registrar-te en %{org_name}"
       processes:
-        title: "Processos"
-        description: "En la secció de %{link} pots col·laborar en la redacció i modificació de normativa, plans i programes de la Generalitat Valenciana. Les aportacions de la ciutadania seran analitzades i tingudes en compte en la redacció definitiva de les normes o en la planificació de les actuacions.<br/><br/>
+        title: "Elaboració normativa"
+        description: "En la secció d'%{link} pots col·laborar en la redacció i modificació de normativa, plans i programes de la Generalitat Valenciana. Les aportacions de la ciutadania seran analitzades i tingudes en compte en la redacció definitiva de les normes o en la planificació de les actuacions.<br/><br/>
         <strong>Com funciona?</strong><br/><br/>
         Quan accedisques a aquesta àrea podràs veure els processos “actius” i els “acabats”. Si selecciones un dels processos, podràs accedir a informació sobre la norma o el pla que s’està elaborant i revisar les aportacions que s’han fet al document.<br/><br/>
         També pots fer les teues aportacions, sempre que t'hages registrat. En primer lloc, pots accedir a l’àrea de “debat previ”, on trobaràs preguntes a les quals podràs respondre i sobre les quals podràs debatre. En l’apartat de “propostes” podràs veure les que altres persones han fet o realitzar les teues pròpies. I, finalment, en “comentaris” podràs comentar els documents, seleccionant el text que vols comentar. Per a tot això cal registrar-se."
-        link: "processos legislatius"
+        link: "elaboració normativa"
+        feature: "Per a participar en la elaboració normativa has de registrar-te en %{link} i verificar el teu compte."
+        feature_link: "registrar-te en %{org_name}"
       faq:
         title: "Problemes tècnics?"
-        description: "Llig les preguntes frequents i resol els teus dubtes."
+        description: "Llig les preguntes freqüents i resol els teus dubtes."
         button: "Vore les preguntes freqüents"
         page:
           title: "Preguntes Freqüents"
@@ -73,13 +76,13 @@ val:
         how_to_use: "Utilitza %{org_name} en el teu municipi"
       how_to_use:
         text: |-
-          Utilíza-ho en el teu municipi lliurement o ajuda'ns a millorar-lo, es software lliure.
+          Utilitza'l en el teu municipi lliurement o ajuda'ns a millorar-lo, és software lliure.
 
-          Aquest Portal de Govern Obert usa la [aplicació CONSUL] (https://github.com/consul/consul 'github consul') que és software lliure, amb [llicencia AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), açò significa en paraules senzilles, que quansevol pot lliurement gastar el codi, copiar-lo, vorel en detall, modificar-lo, i redistribuirlo al mon amb les modificacions que vullga (mantenint el que altres puguen a la vegada fer el mateix). Perque creiem que la cultura es millor i més rica quant es libera.
+          Aquest Portal de Govern Obert usa l'aplicació CONSUL, que és software lliure, amb llicència AGPLv3. Això significa, en paraules senzilles, que qualsevol pot lliurement usar el codi, copiar-lo, veure'l detalladament, modificar-lo, i redistribuir-ho al món amb les modificacions que vulga (mantenint el que uns altres puguen al seu torn fer el mateix). Perquè creiem que la cultura és millor i més rica quan s'allibera.
 
-          Si eres programador, pots vore el codi i ajudar-nos a millorar-lo en [aplicació CONSUL](https://github.com/consul/consul 'github consul').
+          Si eres programador, pots veure el codi i ajudar-nos a millorar-lo en [aplicació CONSUL](https://github.com/consul/consul 'github consul').
       titles:
-        how_to_use: Utilítzal en el teu municipi
+        how_to_use: Utilitza’l en el teu municipi
     privacy:
       title: Política de privacitat
       subtitle: "INFORMACIÓ RELACIONADA AMB LA PRIVACITAT DE LES DADES"

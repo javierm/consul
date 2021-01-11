@@ -88,9 +88,9 @@ val:
     index:
       featured_debates: Destacades
       orders:
-        confidence_score: més avalades
-        created_at: noves
-        hot_score: més actives hui
+        confidence_score: millor valorats
+        created_at: nous
+        hot_score: més actius
         most_commented: més comentades
         relevance: relevancia
         recommendations: recomanacions
@@ -116,7 +116,7 @@ val:
         title: Ajuda sobre els debats
         description: Inicia un debat per a compartir punts de vista amb altres persones sobre els temes que et preocupen.
         help_text_1: "L'espai de debats ciutadans està dirigit a que quansevol persona puga exposar temes que li preocupen i sobre els que vullga compartir punts de vista amb altres persones."
-        help_text_2: 'Per a obrir un debat es necessari registrar-se en %{org}. Els usuaris ja registrats també poden comentar els debats oberts i varlorar-los amb els botons "Estic d''acord" o "No estic d''acord" que es troben en cadascun d''ells.'
+        help_text_2: "Per a obrir un debat és necessari registrar-se en %{org}. Les persones usuàries ja registrades també poden comentar els debats oberts i valorar-los amb els botons \"Estic d'acord\" o \"No estic d'acord\" que es troben en cadascun d'ells."
     new:
       form:
         submit_button: Iniciar un debat
@@ -182,7 +182,7 @@ val:
       consul: Aplicació CONSUL
       consul_url: https://github.com/consul/consul
       contact_us: Per a assistencia técnica entra en
-      copyright: "2019, Generalitat"
+      copyright: "2021, Generalitat"
       description: Este portal utilitza la %{consul} que es %{open_source}.
       open_source: software de codi obert
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
@@ -192,15 +192,15 @@ val:
       government: "
       %{copyright}<br/>
       Portal de Participació<br/><br/>
-      Conselleria  de Transparència,<br/>
-      Responsabilitat Social,<br/>
-      Participació i Cooperació
+      Conselleria  de Participació,<br/>
+      Transparència, Cooperació i,<br/>
+      Qualitat Democràtica
       "
     header:
       administration_menu: Admin
       administration: Administració
       available_locales: Idiomes disponibles
-      collaborative_legislation: Processos legislatius
+      collaborative_legislation: Elaboración normativa
       debates: Debats
       locale: "Idioma:"
       logo: Logo de CONSUL
@@ -267,7 +267,16 @@ val:
     create:
       form:
         submit_button: Crear proposta
+    created:
+      title: "¡Enhorabuena! Has dado el primer paso."
+      motivation: "Es importante preparar la campaña de lanzamiento de tu propuesta para que tenga éxito. Los primeros días son decisivos."
+      motivation_2: "<strong>Si quieres recomendaciones para preparar la publicación deja tu propuesta como borrador y te guiaremos.</strong>"
+      publish: No, quiero publicar la propuesta ya
+      dashboard: Si, quiero ayuda y publicaré mas tarde
+      preview_title: Así es como quedará tu propuesta cuando la publiques
     share:
+      improve_it: Mejora tu campaña y consigue mas apoyos.
+      dashboard: Ver mas información
       message: "He avalat la proposta %{title} en %{handle}. Si t'interessa, avala tu també!"
     edit:
       editing: Editar proposta
@@ -290,7 +299,7 @@ val:
       proposal_responsible_name_note: "(individualment o com representant d'un col·lectiu; no es mostrarà públicament)"
       proposal_summary_note: "(màxim 200 caracters)"
       proposal_video_url_note: Pots afegir un enllaç a Youtube o Vimeo
-      tag_category_label: "Categoríes"
+      tag_category_label: "Categories"
       tags_instructions: "Etiqueta aquesta proposta. Pots triar entre les categories proposades o introduir les que desitges"
       tags_label: Etiquetes
       tags_placeholder: "Escriu les etiquetes que desitges separades per coma (',')"
@@ -316,7 +325,11 @@ val:
           success: "Les recomanacions per a propostes estan desabilitades per a aquest compte"
           error: "S'ha produït un error. Aneu a la pàgina \"El meu compte\" per desactivar manualment les recomanacions per a propostes"
       retired_proposals: Propostes retirades
-      retired_proposals_link: "Propostes retirades per els seus autors"
+      retired_proposals_link: "Propostes retirades pels seus autors/es"
+      selected_proposals: Propostes seleccionades
+      selected_proposals_link: Veure propostes seleccionades
+      archived_proposals: Propostes arxivades
+      proposals_lists: Llistes de propostes
       retired_links:
         all: Totes
         duplicated: Duplicada
@@ -406,7 +419,7 @@ val:
     final_date: "Recompte final/Resultats"
     index:
       filters:
-        current: "Oberts"
+        current: "Obertes"
         expired: "Acabades"
       title: "Votacions"
       participate_button: "Participar en esta votació"
@@ -526,10 +539,10 @@ val:
         message: "Estas veient %{limit} de %{count} propostes que contenen el terme '%{query}'"
         see_all: "Vore tots"
     tags_cloud:
-      tags: Tendencies
+      tags: Tendències
       districts: "Províncies"
       districts_list: "Llista de districtes"
-      categories: "Categoríes"
+      categories: "Categories"
     you_are_in: "Estàs en"
     unflag: Desfer denuncia
     unfollow_entity: "Deixar de seguir %{entity}"
