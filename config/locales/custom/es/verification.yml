@@ -54,6 +54,10 @@ es:
           passport: Pasaporte
           residence_card: Tarjeta de residencia
           spanish_id: DNI
+        document_type_label: Tipo de documento
+        date_of_birth: Fecha de nacimiento
+        gender_label: Género
+        postal_code: Código postal
         name: Nombre
         first_surname: Apellido 1º
         last_surname: Apellido 2º
