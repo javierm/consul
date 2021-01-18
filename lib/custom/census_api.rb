@@ -3,6 +3,15 @@ require "json"
 require_dependency Rails.root.join("lib", "census_api").to_s
 
 class CensusApi
+  def call(document_type, document_number, other_data = {})
+    response = nil
+    get_document_number_variants(document_type, document_number).each do |variant|
+      response = Response.new(get_response_body(document_type, variant, other_data))
+      return response if response.valid?
+    end
+    response
+  end
+
   class Response
 
     def valid?
@@ -42,7 +51,12 @@ class CensusApi
   end
 
   class ConnectionCensus
-    def call(document_number)
+    def call(document_number, other_data = {})
+      @postal_code = other_data[:postal_code]
+      @name = other_data[:name]
+      @first_surname = other_data[:first_surname]
+      @last_surname = other_data[:last_surname]
+
       {
         datos_habitante: JSON.parse(get_age(document_number)),
         datos_vivienda: JSON.parse(get_residence(document_number))
@@ -53,20 +67,28 @@ class CensusApi
 
     def get_age(document_number)
       validator = Rails.application.secrets.census_api_age_validator
-      `php -f #{validator} -- -n #{document_number}`
+      `php -f #{validator} -- -n #{document_number} -i #{identifier} -e s -o #{@name} -a #{@first_surname} -p #{@last_surname}`
     end
 
     def get_residence(document_number)
       validator = Rails.application.secrets.census_api_residence_validator
-      `php -f #{validator} -- -n #{document_number}`
+      `php -f #{validator} -- -n #{document_number} -i #{identifier} -e s -p #{province_code}`
+    end
+
+    def identifier
+      Time.now.to_i.to_s[0..6]
+    end
+
+    def province_code
+      @postal_code[0..1]
     end
   end
 
   private
 
-    def get_response_body(document_type, document_number)
+    def get_response_body(document_type, document_number, other_data = {})
       if end_point_available?
-        client.call(document_number)
+        client.call(document_number, other_data)
       else
         stubbed_response(document_type, document_number)
       end

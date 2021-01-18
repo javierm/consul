@@ -27,9 +27,9 @@ describe CensusApi do
     end
 
     it "returns the response for the first valid variant" do
-      allow(api).to receive(:get_response_body).with(1, "00123456").and_return(invalid_body)
-      allow(api).to receive(:get_response_body).with(1, "123456").and_return(invalid_body)
-      allow(api).to receive(:get_response_body).with(1, "0123456").and_return(valid_body)
+      allow(api).to receive(:get_response_body).with(1, "00123456", {}).and_return(invalid_body)
+      allow(api).to receive(:get_response_body).with(1, "123456", {}).and_return(invalid_body)
+      allow(api).to receive(:get_response_body).with(1, "0123456", {}).and_return(valid_body)
       response = api.call(1, "0123456")
 
       expect(response).to be_valid
@@ -37,9 +37,9 @@ describe CensusApi do
     end
 
     it "returns the last failed response" do
-      allow(api).to receive(:get_response_body).with(1, "00123456").and_return(invalid_body)
-      allow(api).to receive(:get_response_body).with(1, "123456").and_return(invalid_body)
-      allow(api).to receive(:get_response_body).with(1, "0123456").and_return(invalid_body)
+      allow(api).to receive(:get_response_body).with(1, "00123456", {}).and_return(invalid_body)
+      allow(api).to receive(:get_response_body).with(1, "123456", {}).and_return(invalid_body)
+      allow(api).to receive(:get_response_body).with(1, "0123456", {}).and_return(invalid_body)
       response = api.call(1, "123456")
 
       expect(response).not_to be_valid
