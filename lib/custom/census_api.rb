@@ -27,11 +27,11 @@ class CensusApi
     end
 
     def postal_code
-      data[:datos_vivienda]["codigo_postal"]
+      other_data[:postal_code] # Devolvemos el dato entrado porque el servicio sólo comprueba residencia, no devuelve datos
     end
 
     def district_code
-      data[:datos_vivienda]["codigo_provincia"]
+      other_data[:postal_code][0..1] # Devolvemos el dato entrado porque el servicio sólo comprueba residencia, no devuelve datos
     end
 
     def gender
@@ -59,7 +59,8 @@ class CensusApi
 
       {
         datos_habitante: JSON.parse(get_age(document_number)),
-        datos_vivienda: JSON.parse(get_residence(document_number))
+        datos_vivienda: JSON.parse(get_residence(document_number)),
+        datos_originales: other_data
       }
     end
 

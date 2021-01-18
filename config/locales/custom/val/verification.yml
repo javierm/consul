@@ -49,9 +49,17 @@ val:
           passport: Passaport
           residence_card: Tarjeta de residència
           spanish_id: DNI
+        document_type_label: Tipus de document
+        postal_code: Codi postal
+        gender_label: Gènere
+        gender:
+          male: H
+          female: D
+          other: altres
+        date_of_birth: Data de naixement
         name: Nom
-        first_surname: 1er. cognom
-        last_surname: 2on. cognom
+        first_surname: 1er cognom
+        last_surname: 2on cognom
         error_not_allowed_age: No tens l'edat mínima per a participar
         error_not_allowed_postal_code: Per a verificarte has d'estar empadronat.
         form_errors: evitaren verificar la teua residència
