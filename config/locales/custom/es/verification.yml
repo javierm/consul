@@ -54,6 +54,9 @@ es:
           passport: Pasaporte
           residence_card: Tarjeta de residencia
           spanish_id: DNI
+        name: Nombre
+        first_surname: Apellido 1º
+        last_surname: Apellido 2º
         error_not_allowed_age: No tienes la edad mínima para participar
         error_not_allowed_postal_code: Para verificarte debes estar empadronado.
         error_verifying_census: El Padrón no pudo verificar tu información. Por favor, confirma que tus datos de empadronamiento sean correctos llamando al Ayuntamiento o visitando una Oficina de Atención al Ciudadano.

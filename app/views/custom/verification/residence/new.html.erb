@@ -18,6 +18,29 @@
       <%= render "errors" %>
 
       <div class="row">
+        <div class="small-12 medium-6 clear">
+          <div class="small-12 medium-4 column">
+            <div class="inline-block">
+              <%= f.label t("verification.residence.new.name") %>
+            </div>
+            <%= f.text_field :name, label: false %>
+          </div>
+          <div class="small-12 medium-4 column">
+            <div class="inline-block">
+              <%= f.label t("verification.residence.new.first_surname") %>
+            </div>
+            <%= f.text_field :first_surname, label: false %>
+          </div>
+          <div class="small-12 medium-4 column end">
+            <div class="inline-block">
+              <%= f.label t("verification.residence.new.last_surname") %>
+            </div>
+            <%= f.text_field :last_surname, label: false %>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
         <div class="small-12 medium-8">
           <div class="small-12 medium-3 column">
           <%= f.select :document_type, document_types, prompt: "" %>

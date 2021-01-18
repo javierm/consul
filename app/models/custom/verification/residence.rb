@@ -1,7 +1,7 @@
 require_dependency Rails.root.join("app", "models", "verification", "residence").to_s
 
 class Verification::Residence
-  validates :gender, presence: true
+  validates :gender, :name, :first_surname, :last_surname, presence: true
 
   validate :postal_code_in_valencia
   validate :residence_in_valencia
@@ -9,7 +9,7 @@ class Verification::Residence
   GENDERS = %i[male female other].freeze
 
   undef gender
-  attr_accessor :gender
+  attr_accessor :gender, :name, :first_surname, :last_surname
 
   def postal_code_in_valencia
     errors.add(:postal_code, I18n.t("verification.residence.new.error_not_allowed_postal_code")) unless valid_postal_code?
@@ -26,6 +26,10 @@ class Verification::Residence
   end
 
   private
+    def retrieve_census_data
+      other_data = { date_of_birth: date_of_birth, postal_code: postal_code, name: name, first_surname: first_surname, last_surname: last_surname }
+      @census_data = CensusCaller.new.call(document_type, document_number, other_data)
+    end
 
     def residency_valid?
       @census_data.valid? &&
@@ -34,6 +38,6 @@ class Verification::Residence
     end
 
     def valid_postal_code?
-      postal_code =~ /^46/
+      postal_code =~ /^03|12|46/
     end
 end
