@@ -2,14 +2,14 @@
   <div class="custom-locale" id="js-locale" data-current-locale="<%= I18n.locale %>">
     <form>
       <fieldset>
-        <div  class="radio-toolbar">
+        <legend></legend>
+        <div class="radio-toolbar">
           <% I18n.available_locales.map do |loc| %>
             <input type="radio"
               id="local-<%= name_for_locale(loc) %>"
               name="select-local"
               value="<%= current_path_with_query_params(locale: loc) %>"
               <%= "checked" if loc == I18n.locale %>
-              
             >
             <label for="local-<%= name_for_locale(loc) %>">
               <%= name_for_locale(loc) %>
