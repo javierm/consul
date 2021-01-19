@@ -68,11 +68,13 @@ class CensusApi
 
     def get_age(document_number)
       validator = Rails.application.secrets.census_api_age_validator
+      STDERR.puts "Age validator path: #{validator}"
       `php -f #{validator} -- -n #{document_number} -i #{identifier} -e s -o #{@name} -a #{@first_surname} -p #{@last_surname}`
     end
 
     def get_residence(document_number)
       validator = Rails.application.secrets.census_api_residence_validator
+      STDERR.puts "Residence validator path: #{validator}"
       `php -f #{validator} -- -n #{document_number} -i #{identifier} -e s -p #{province_code}`
     end
 
