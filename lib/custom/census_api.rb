@@ -27,11 +27,11 @@ class CensusApi
     end
 
     def postal_code
-      other_data[:postal_code] # Devolvemos el dato entrado porque el servicio sólo comprueba residencia, no devuelve datos
+      data[:datos_originales][:postal_code] # Devolvemos el dato entrado porque el servicio sólo comprueba residencia, no devuelve datos
     end
 
     def district_code
-      other_data[:postal_code][0..1] # Devolvemos el dato entrado porque el servicio sólo comprueba residencia, no devuelve datos
+      data[:datos_originales][:postal_code][0..1] # Devolvemos el dato entrado porque el servicio sólo comprueba residencia, no devuelve datos
     end
 
     def gender
@@ -70,16 +70,24 @@ class CensusApi
       validator = Rails.application.secrets.census_api_age_validator
       ApplicationLogger.new.info "Age validator path: #{validator}"
       ApplicationLogger.new.info "php -f #{validator} -- -i #{identifier} -n #{document_number} -o \"#{@name}\" -a \"#{@first_surname}\" -p \"#{@last_surname}\""
-      `php -f #{validator} -- -i #{identifier} -n #{document_number} -o "#{@name}" -a "#{@first_surname}" -p "#{@last_surname}"`
+      Rails.env.development? ?
+        CensusApi.new.send(:stubbed_valid_response)[:datos_habitante].to_json :
+        `php -f #{validator} -- -i #{identifier} -n #{document_number} -o "#{@name}" -a "#{@first_surname}" -p "#{@last_surname}"`
     end
 
     def get_residence(document_number)
       validator = Rails.application.secrets.census_api_residence_validator
       ApplicationLogger.new.info "Residence validator path: #{validator}"
-      document_number = '10000322Z' if document_number == '10000320N'
-      province_code = '17' if document_number == '10000320N'
+      # La persona de pruebas en servicio de residencia es diferente que en el servicio de edad
+      # Cambiamos los valores aquí para que en caso de que llegue del formulario el de prueba, aquí ponga los datos necesarios.
+      if document_number == '10000320'
+        document_number = '10000322Z'
+        province_code = '17'
+      end
       ApplicationLogger.new.info "php -f #{validator} -- -i #{identifier} -n #{document_number} -e s -p #{province_code}"
-      `php -f #{validator} -- -i #{identifier} -n #{document_number} -e s -p #{province_code}`
+      Rails.env.development? ?
+        CensusApi.new.send(:stubbed_valid_response)[:datos_vivienda].to_json :
+        `php -f #{validator} -- -i #{identifier} -n #{document_number} -e s -p #{province_code}`
     end
 
     def identifier
@@ -123,24 +131,40 @@ class CensusApi
     end
 
     def stubbed_valid_response
+      # values from php scripts test data
       {
         datos_habitante: {
-          "nacinalidad" => "España",
+          "resultado" => true,
+          "error" => false,
+          "cod_estado" => "cod. estado ok",
+          "literal_estado" => "lit. estado ok",
+          "nacionalidad" => "España",
           "sexo" => "M",
-          "fecha_nacimiento" => "19-10-1977"
+          "fecha_nacimiento" => "18-05-2003"
         },
         datos_vivienda: {
           "resultado" => true,
-          "codigo_provincia" => 46,
-          "descripcion_provincia" => "Valencia",
-          "codigo_municipio" => "Alzira",
-          "direccion" => "C/ Piletes 9, 3º 11",
-          "codigo_postal" => 46600
+          "error" => false,
+          "cod_estado" => "cod. estado ok",
+          "literal_estado" => "lit. estado ok"
         }
       }
     end
 
     def stubbed_invalid_response
-      { datos_habitante: {}, datos_vivienda: {}}
+      {
+        datos_habitante: {
+          "resultado" => false,
+          "error" => "Algún error",
+          "cod_estado" => "cod. estado no ok",
+          "literal_estado" => "lit. estado no ok"
+        },
+        datos_vivienda: {
+          "resultado" => false,
+          "error" => "Algún error",
+          "cod_estado" => "cod. estado no ok",
+          "literal_estado" => "lit. estado no ok"
+        }
+      }
     end
 end
