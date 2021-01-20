@@ -83,7 +83,7 @@ class CensusApi
                  ApplicationLogger.new.error "Residence validator path: #{validator}"
                  # La persona de pruebas en servicio de residencia es diferente que en el servicio de edad
                  # Cambiamos los valores aquí para que en caso de que llegue del formulario el de prueba, aquí ponga los datos necesarios.
-                 if document_number == '10000320'
+                 if document_number.upcase == '10000320N'
                    document_number = '10000322Z'
                    province_code = '17'
                  end
