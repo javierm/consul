@@ -71,11 +71,11 @@ class CensusApi
                  CensusApi.new.send(:stubbed_valid_response)[:datos_habitante].to_json
                else
                  validator = Rails.application.secrets.census_api_age_validator
-                 ApplicationLogger.new.warn "Age validator path: #{validator}"
-                 ApplicationLogger.new.warn "php -f #{validator} -- -i #{identifier} -n #{document_number} -o \"#{@name}\" -a \"#{@first_surname}\" -p \"#{@last_surname}\""
+                 ApplicationLogger.new.error "Age validator path: #{validator}"
+                 ApplicationLogger.new.error "php -f #{validator} -- -i #{identifier} -n #{document_number} -o \"#{@name}\" -a \"#{@first_surname}\" -p \"#{@last_surname}\""
                  `php -f #{validator} -- -i #{identifier} -n #{document_number} -o "#{@name}" -a "#{@first_surname}" -p "#{@last_surname}"`
                end
-      ApplicationLogger.new.warn "result: #{result}"
+      ApplicationLogger.new.error "result: #{result}"
       result
     end
 
@@ -84,17 +84,17 @@ class CensusApi
                  CensusApi.new.send(:stubbed_valid_response)[:datos_vivienda].to_json
                else
                  validator = Rails.application.secrets.census_api_residence_validator
-                 ApplicationLogger.new.warn "Residence validator path: #{validator}"
+                 ApplicationLogger.new.error "Residence validator path: #{validator}"
                  # La persona de pruebas en servicio de residencia es diferente que en el servicio de edad
                  # Cambiamos los valores aquí para que en caso de que llegue del formulario el de prueba, aquí ponga los datos necesarios.
                  if document_number == '10000320'
                    document_number = '10000322Z'
                    province_code = '17'
                  end
-                 ApplicationLogger.new.warn "php -f #{validator} -- -i #{identifier} -n #{document_number} -e s -p #{province_code}"
+                 ApplicationLogger.new.error "php -f #{validator} -- -i #{identifier} -n #{document_number} -e s -p #{province_code}"
                  `php -f #{validator} -- -i #{identifier} -n #{document_number} -e s -p #{province_code}`
                end
-      ApplicationLogger.new.warn "result: #{result}"
+      ApplicationLogger.new.error "result: #{result}"
       result
     end
 
