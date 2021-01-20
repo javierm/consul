@@ -99,7 +99,7 @@ class CensusApi
     end
 
     def identifier
-      Time.now.to_i.to_s[0..6]
+      Time.now.to_i.to_s[-7..-1]
     end
 
     def province_code
