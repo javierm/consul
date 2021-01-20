@@ -15,7 +15,7 @@ class CensusApi
     end
 
     def date_of_birth
-      str = data[:datos_habitante][:fecha_nacimiento]
+      str = data[:datos_habitante]['fecha_nacimiento']
       year, month, day = str.match(/(\d\d\d\d)(\d\d)(\d\d)/)[1..3]
       return nil unless day.present? && month.present? && year.present?
 
@@ -67,11 +67,11 @@ class CensusApi
                  CensusApi.new.send(:stubbed_valid_response)[:datos_habitante].to_json
                else
                  validator = Rails.application.secrets.census_api_age_validator
-                 ApplicationLogger.new.error "Age validator path: #{validator}"
-                 ApplicationLogger.new.error "php -f #{validator} -- -i #{identifier} -n #{document_number} -o \"#{@name}\" -a \"#{@first_surname}\" -p \"#{@last_surname}\""
+                 Logger.new(STDOUT).error "Age validator path: #{validator}"
+                 Logger.new(STDOUT).error "php -f #{validator} -- -i #{identifier} -n #{document_number} -o \"#{@name}\" -a \"#{@first_surname}\" -p \"#{@last_surname}\""
                  `php -f #{validator} -- -i #{identifier} -n #{document_number} -o "#{@name}" -a "#{@first_surname}" -p "#{@last_surname}"`
                end
-      ApplicationLogger.new.error "result: #{result}"
+      Logger.new(STDOUT).error "result: #{result}"
       result
     end
 
@@ -80,17 +80,17 @@ class CensusApi
                  CensusApi.new.send(:stubbed_valid_response)[:datos_vivienda].to_json
                else
                  validator = Rails.application.secrets.census_api_residence_validator
-                 ApplicationLogger.new.error "Residence validator path: #{validator}"
+                 Logger.new(STDOUT).error "Residence validator path: #{validator}"
                  # La persona de pruebas en servicio de residencia es diferente que en el servicio de edad
                  # Cambiamos los valores aquí para que en caso de que llegue del formulario el de prueba, aquí ponga los datos necesarios.
                  if document_number.upcase == '10000320N'
                    document_number = '10000322Z'
                    province_code = '17'
                  end
-                 ApplicationLogger.new.error "php -f #{validator} -- -i #{identifier} -n #{document_number} -e s -p #{province_code}"
+                 Logger.new(STDOUT).error "php -f #{validator} -- -i #{identifier} -n #{document_number} -e s -p #{province_code}"
                  `php -f #{validator} -- -i #{identifier} -n #{document_number} -e s -p #{province_code}`
                end
-      ApplicationLogger.new.error "result: #{result}"
+      Logger.new(STDOUT).error "result: #{result}"
       result
     end
 
