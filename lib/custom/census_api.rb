@@ -67,11 +67,11 @@ class CensusApi
                  CensusApi.new.send(:stubbed_valid_response)[:datos_habitante].to_json
                else
                  validator = Rails.application.secrets.census_api_age_validator
-                 Logger.new(STDOUT).error "Age validator path: #{validator}"
-                 Logger.new(STDOUT).error "php -f #{validator} -- -i #{identifier} -n #{document_number} -o \"#{@name}\" -a \"#{@first_surname}\" -p \"#{@last_surname}\""
+                 ApplicationLogger.new.warn "Age validator path: #{validator}"
+                 ApplicationLogger.new.warn "php -f #{validator} -- -i #{identifier} -n #{document_number} -o \"#{@name}\" -a \"#{@first_surname}\" -p \"#{@last_surname}\""
                  `php -f #{validator} -- -i #{identifier} -n #{document_number} -o "#{@name}" -a "#{@first_surname}" -p "#{@last_surname}"`
                end
-      Logger.new(STDOUT).error "result: #{result}"
+      ApplicationLogger.new.warn "result: #{result}"
       result
     end
 
@@ -80,26 +80,25 @@ class CensusApi
                  CensusApi.new.send(:stubbed_valid_response)[:datos_vivienda].to_json
                else
                  validator = Rails.application.secrets.census_api_residence_validator
-                 Logger.new(STDOUT).error "Residence validator path: #{validator}"
+                 ApplicationLogger.new.warn "Residence validator path: #{validator}"
                  # La persona de pruebas en servicio de residencia es diferente que en el servicio de edad
                  # Cambiamos los valores aquí para que en caso de que llegue del formulario el de prueba, aquí ponga los datos necesarios.
-                 if document_number.upcase == '10000320N'
+                 if Rails.application.secrets.environment == 'development' && document_number.upcase == '10000320N'
                    document_number = '10000322Z'
                    province_code = '17'
+                 else
+                   province_code = @postal_code[0..1]
                  end
-                 Logger.new(STDOUT).error "php -f #{validator} -- -i #{identifier} -n #{document_number} -e s -p #{province_code}"
+                 ApplicationLogger.new.warn "province_code: #{province_code}"
+                 ApplicationLogger.new.warn "php -f #{validator} -- -i #{identifier} -n #{document_number} -e s -p #{province_code}"
                  `php -f #{validator} -- -i #{identifier} -n #{document_number} -e s -p #{province_code}`
                end
-      Logger.new(STDOUT).error "result: #{result}"
+      ApplicationLogger.new.warn "result: #{result}"
       result
     end
 
     def identifier
       Time.now.to_i.to_s[-7..-1]
-    end
-
-    def province_code
-      @postal_code[0..1]
     end
   end
 
@@ -144,7 +143,7 @@ class CensusApi
           "literal_estado" => "lit. estado ok",
           "nacionalidad" => "España",
           "sexo" => "M",
-          "fecha_nacimiento" => "18-05-2003"
+          "fecha_nacimiento" => "20030518"
         },
         datos_vivienda: {
           "resultado" => true,
