@@ -82,7 +82,8 @@ class CensusApi
                  ApplicationLogger.new.warn "Residence validator path: #{validator}"
                  # La persona de pruebas en servicio de residencia es diferente que en el servicio de edad
                  # Cambiamos los valores aquí para que en caso de que llegue del formulario el de prueba, aquí ponga los datos necesarios.
-                 if Rails.application.secrets.environment == 'development' && document_number.upcase == '10000320N'
+                 ApplicationLogger.new.warn "environment: #{Rails.application.secrets.environment}"
+                 if Rails.application.secrets.environment != 'production' && document_number.upcase == '10000320N'
                    document_number = '10000322Z'
                    province_code = '17'
                  else
