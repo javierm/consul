@@ -4,8 +4,7 @@ require_dependency Rails.root.join("lib", "census_api").to_s
 
 class CensusApi
   def call(document_type, document_number, other_data = {})
-    response = Response.new(get_response_body(document_type, document_number, other_data))
-    response if response.valid?
+    Response.new(get_response_body(document_type, document_number, other_data))
   end
 
   class Response
