@@ -34,7 +34,7 @@ es:
     verified_only: Para participar %{verify_account}
     comment:
       admin: Administrador
-      author: Autor
+      author: Autor/a
       deleted: Este comentario ha sido eliminado
       moderator: Moderador
       responses:
@@ -151,7 +151,7 @@ es:
       edit_debate_link: Editar debate
       flag: Este debate ha sido marcado como inapropiado por varios usuarios.
       share: Compartir
-      author: Autor
+      author: Autor/a
     update:
       form:
         submit_button: Guardar cambios
@@ -231,7 +231,7 @@ es:
       %{copyright}<br/>
       Portal de Participació<br/><br/>
       Conselleria  de Participació,<br/>
-      Transparència, Cooperació i,<br/>
+      Transparència, Cooperació i<br/>
       Qualitat Democràtica
       "
     header:
@@ -331,7 +331,7 @@ es:
       show_link: Ver propuesta
     retire_form:
       title: Retirar propuesta
-      warning: "Si sigues adelante tu propuesta podrá seguir recibiendo apoyos, pero dejará de ser listada en la lista principal, y aparecerá un mensaje para todos los usuarios avisándoles de que el autor considera que esta propuesta no debe seguir recogiendo apoyos."
+      warning: "Si sigues adelante tu propuesta podrá seguir recibiendo apoyos, pero dejará de ser listada en la lista principal, y aparecerá un mensaje para todos los usuarios avisándoles de que el autor/a considera que esta propuesta no debe seguir recogiendo apoyos."
       retired_reason_blank: Selecciona una opción
       retired_explanation_placeholder: Explica brevemente por que consideras que esta propuesta no debe recoger más apoyos
       submit_button: Retirar propuesta
@@ -454,14 +454,14 @@ es:
       flag: Esta propuesta ha sido marcada como inapropiada por varios usuarios.
       notifications_tab: Notificaciones
       milestones_tab: Seguimiento
-      retired_warning: "El autor de esta propuesta considera que ya no debe seguir recogiendo apoyos."
+      retired_warning: "El autor/a de esta propuesta considera que ya no debe seguir recogiendo apoyos."
       retired_warning_link_to_explanation: Revisa su explicación antes de apoyarla.
-      retired: Propuesta retirada por el autor
+      retired: Propuesta retirada por el autor/a
       share: Compartir
       no_notifications: "Esta propuesta no tiene notificaciones."
       embed_video_title: "Vídeo en %{proposal}"
       title_video_url: "Vídeo externo"
-      author: Autor
+      author: Autor/a
       draft: Propuesta en borrador. Todavía no puede recoger apoyos, ni aparece en la lista de propuestas.
     update:
       form:
@@ -689,7 +689,7 @@ es:
     "no": "No"
     search_results: "Resultados de la búsqueda"
     advanced_search:
-      author_type: "Por categoría de autor"
+      author_type: "Por categoría de autor/a"
       author_type_blank: "Elige una categoría"
       date: "Por fecha"
       date_placeholder: "DD/MM/AAAA"
@@ -879,7 +879,7 @@ es:
         other: "Sólo puedes apoyar proyectos de gasto de %{count} provincias. Ya has apoyado en %{supported_headings}."
   welcome:
     sections:
-      title: "Ahora podemos <span class='sections-icon__title__higlight'>debatir, proponer y hacer votaciones</span> para entre todos mejorar nuestra comunidad"
+      title: "Ahora podemos <span class='sections-icon__title__higlight'>debatir, proponer y hacer votaciones</span> para entre todos y todas mejorar nuestra comunidad"
       debate:
         title: Debatir
         description: Abre un hilo de discusión para compartir puntos de vista con otras personas sobre aquello que te preocupa.
@@ -900,7 +900,7 @@ es:
         month: 18M
         budget_gva: "<span>Propuestas ciudadanas</span>"
       txt: "¿Consideras que la Generalitat Valenciana debería actuar en algún área o proyecto concreto? Presenta tu propuesta de iniciativa pública o apoya las que te parezcan más adecuadas. Las propuestas que obtengan el mínimo de apoyos necesarios se presentarán al Consell para su consideración."
-      button: "Presenta tu propuesta!"
+      button: "¡Presenta tu propuesta!"
 
     feed:
       most_active:

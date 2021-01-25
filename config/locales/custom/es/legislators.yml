@@ -6,13 +6,13 @@ es:
         other: "Legisladores"
   layouts:
     header:
-      legislation: Legislación
+      legislation: Elaboración normativa
   admin:
     menu:
       legislators: Legisladores
     legislators:
       header:
-        title: Legislación
+        title: Elaboración normativa
       index:
         title: Legisladores
         name: Nombre

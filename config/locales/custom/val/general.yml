@@ -33,7 +33,7 @@ val:
     verified_only: Per a participar %{verify_account}
     comment:
       admin: Administrador
-      author: Autor
+      author: Autor/a
       deleted: Este comentari ha segut eliminat
       moderator: Moderador
       responses:
@@ -105,6 +105,9 @@ val:
         button: Cercar
         placeholder: Cercar debats...
         title: Cercar
+      search_results:
+        one: " que continguen <strong>'%{search_term}'</strong>"
+        other: " que continguen <strong>'%{search_term}'</strong>"
       select_order: Ordenar per
       start_debate: Iniciar un debat
       title: Debats
@@ -116,7 +119,7 @@ val:
         title: Ajuda sobre els debats
         description: Inicia un debat per a compartir punts de vista amb altres persones sobre els temes que et preocupen.
         help_text_1: "L'espai de debats ciutadans està dirigit a que quansevol persona puga exposar temes que li preocupen i sobre els que vullga compartir punts de vista amb altres persones."
-        help_text_2: "Per a obrir un debat és necessari registrar-se en %{org}. Les persones usuàries ja registrades també poden comentar els debats oberts i valorar-los amb els botons \"Estic d'acord\" o \"No estic d'acord\" que es troben en cadascun d'ells."
+        help_text_2: "Per a obrir un debat cal registrar-se en %{org}. Les persones usuàries ja registrades també poden comentar els debats oberts i valorar-los amb els botons \"Estic d'acord\" o \"No estic d'acord\" que es troben en cadascun d'ells."
     new:
       form:
         submit_button: Iniciar un debat
@@ -139,7 +142,7 @@ val:
       edit_debate_link: Editar
       flag: Este debat ha sigut marcat com a inapropiat per alguns usuaris.
       share: Compartir
-      author: Autor
+      author: Autor/a
     update:
       form:
         submit_button: Guardar canvis
@@ -150,11 +153,12 @@ val:
   form:
     accept_terms: Accepte la %{policy} i les %{conditions}
     accept_terms_title: Accepte la Política de privacitat i les Condicions d'us
-    conditions: Termes i condicions d'us
+    conditions: Termes i condicions d'ús
     debate: Debat
     direct_message: el missatge privat
     error: error
     errors: errors
+    not_saved: "van impedir guardar el %{resource}. <br>Per favor revisa els camps marcats per a saber com corregir-los"
     policy: Política de privacitat
     proposal: Proposta
     proposal_notification: "Notificació"
@@ -178,7 +182,7 @@ val:
       ie_title: Esta web no està optimitzada per al teu navegador
     footer:
       accessibility: Accessibilitat
-      conditions: Termes i condicions d'us
+      conditions: Termes i condicions d'ús
       consul: Aplicació CONSUL
       consul_url: https://github.com/consul/consul
       contact_us: Per a assistencia técnica entra en
@@ -193,14 +197,14 @@ val:
       %{copyright}<br/>
       Portal de Participació<br/><br/>
       Conselleria  de Participació,<br/>
-      Transparència, Cooperació i,<br/>
+      Transparència, Cooperació i<br/>
       Qualitat Democràtica
       "
     header:
       administration_menu: Admin
       administration: Administració
       available_locales: Idiomes disponibles
-      collaborative_legislation: Elaboración normativa
+      collaborative_legislation: Elaboració normativa
       debates: Debats
       locale: "Idioma:"
       logo: Logo de CONSUL
@@ -285,7 +289,7 @@ val:
       show_link: Vore proposta
     retire_form:
       title: Retirar proposta
-      warning: "Si segueixes avant la teua proposta podrà seguir rebent avals, però deixarà de ser llistada en la lista principal, i apareixerà un missatge per a tots els usuaris avisant-los de que l'autor considera que esta proposta no ha de seguir rebent avals"
+      warning: "Si segueixes avant la teua proposta podrà seguir rebent avals, però deixarà de ser llistada en la lista principal, i apareixerà un missatge per a tots els usuaris avisant-los de que l'autor/a considera que esta proposta no ha de seguir rebent avals"
       retired_reason_blank: Selecciona una opció
       retired_explanation_placeholder: Explica breument per qué consideres que esta proposta no ha de recollir més avals
       submit_button: Retirar proposta
@@ -341,6 +345,9 @@ val:
         button: Cercar
         placeholder: Cercar propostes...
         title: Cercar
+      search_results:
+        one: " que continguen <strong>'%{search_term}'</strong>"
+        other: " que continguen <strong>'%{search_term}'</strong>"
       select_order: Ordenar per
       select_order_long: "Estas veient les propostes en funció de:"
       start_proposal: Crear una proposta
@@ -401,14 +408,14 @@ val:
       flag: Esta proposta ha sigut marcada com inapropiada per diversos usuaris.
       notifications_tab: Notificacions
       milestones_tab: Seguiments
-      retired_warning: "L'autor d'esta proposta considera que ja no ha de seguir recollint avals."
+      retired_warning: "L'autor/a d'esta proposta considera que ja no ha de seguir recollint avals."
       retired_warning_link_to_explanation: Revisa la seua explicació abans d'avalar-la.
-      retired: Proposta retirada per l'autor
+      retired: Proposta retirada per l'autor/a
       share: Compartir
       no_notifications: "Aquesta proposta no te notificacions."
       embed_video_title: "Vídeo en %{proposal}"
       title_video_url: "Video extern"
-      author: Autor
+      author: Autor/a
     update:
       form:
         submit_button: Guardar canvis
@@ -488,7 +495,7 @@ val:
     "no": "No"
     search_results: "Resultats de la cerca"
     advanced_search:
-      author_type: "Per categoria d'autor"
+      author_type: "Per categoria d'autor/a"
       author_type_blank: "Eligeix una categoria"
       date: "Per data"
       date_placeholder: "DD/MM/AAAA"
@@ -644,7 +651,7 @@ val:
       not_voting_allowed: El període de votació està tancat
   welcome:
     sections:
-      title: "Ara pots <span class='sections-icon__title__higlight'>debatre, proposar i fer votacions </span> per millorar entre tots i totes la nostra Comunitat"
+      title: "Ara podem <span class='sections-icon__title__higlight'>debatre, proposar i fer votacions </span> per a entre tots i totes millorar la nostra Comunitat"
       debate:
         title: Debatre
         description: Obri un fil de discussió per a compartir punts de vista amb altres persones sobre allò que et preocupa.
