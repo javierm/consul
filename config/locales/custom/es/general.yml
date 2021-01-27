@@ -133,7 +133,7 @@ es:
       form:
         submit_button: Empieza un debate
       info: Si lo que quieres es hacer una propuesta, esta es la sección incorrecta, entra en %{info_link}.
-      info_link: crear nueva propuesta
+      info_link: Crear nueva propuesta
       more_info: Más información
       recommendation_four: Disfruta de este espacio, de las voces que lo llenan, también es tuyo.
       recommendation_one: No escribas el título del debate o frases enteras en mayúsculas. En internet eso se considera gritar. Y a nadie le gusta que le griten.
@@ -342,8 +342,8 @@ es:
       done: Realizada
       other: Otra
     form:
-      proposal_responsible_name_note: "(individualmente o como representante de un colectivo; no se mostrará públicamente)"
-      proposal_summary_note: "(máximo 200 caracteres)"
+      proposal_responsible_name_note: "(Individualmente o como representante de un colectivo; no se mostrará públicamente)"
+      proposal_summary_note: "(Máximo 200 caracteres)"
       proposal_video_url_note: Puedes añadir un enlace a YouTube o Vimeo
       tag_category_label: "Categorías"
       tags_instructions: "Etiqueta esta propuesta. Puedes elegir entre las categorías propuestas o introducir las que desees"
@@ -885,7 +885,7 @@ es:
         description: Abre un hilo de discusión para compartir puntos de vista con otras personas sobre aquello que te preocupa.
       propone:
         title: Proponer
-        description: Crea propuestas de iniciativas públicas que puedan recoger apoyos y pasar a votación.
+        description: Crea propuestas de iniciativas públicas que puedan recoger los apoyos suficientes para elevarlas a la consideración del departamento competente.
       vota:
         title: Votar
         description: Ahora tu voto es importante para la toma de decisión de las políticas públicas. Vota las opciones que consideres más relevantes
@@ -899,7 +899,7 @@ es:
       title:
         month: 18M
         budget_gva: "<span>Propuestas ciudadanas</span>"
-      txt: "¿Consideras que la Generalitat Valenciana debería actuar en algún área o proyecto concreto? Presenta tu propuesta de iniciativa pública o apoya las que te parezcan más adecuadas. Las propuestas que obtengan el mínimo de apoyos necesarios se presentarán al Consell para su consideración."
+      txt: "¿Consideras que la Generalitat Valenciana debería actuar en algún área o proyecto concreto? Presenta tu propuesta de iniciativa pública o apoya las que te parezcan más adecuadas. Las propuestas que obtengan 5.000 apoyos se trasladarán a la entidad competente para su consideración."
       button: "¡Presenta tu propuesta!"
 
     feed:

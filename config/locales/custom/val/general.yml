@@ -1,7 +1,7 @@
 val:
   account:
     show:
-      change_credentials_link: Canviar les meues dades d'acces
+      change_credentials_link: "Canviar les meues dades d'accés"
       erase_account_link: Eliminar el meu compte
       finish_verification: Finalitzar verificació
       notifications: Notificacions
@@ -96,7 +96,7 @@ val:
         recommendations: recomanacions
       recommendations:
         without_results: No existeixen debats relacionats amb els teus interessos
-        without_interests: Segueix propostes per a que pugam donar-te recomanacions
+        without_interests: "Segueix propostes perquè puguem donar-te recomanacions."
         disable: "Les recomanacions sobre debats deixaran de mostrar-se si les descartes. Pots tornar-les a activar a la pàgina \"El meu compte\""
         actions:
           success: "Les recomanacions per a debats estàn desabilitades per a aquest compte"
@@ -123,9 +123,9 @@ val:
     new:
       form:
         submit_button: Iniciar un debat
-      info: Si el que vols es fer una proposta, esta es la secció incorrecta, entra en %{info_link}.
-      info_link: crear nova proposta
-      more_info: Més informació
+      info: Si el que vols és fer una proposta, esta és la secció incorrecta, entra en %{info_link}.
+      info_link: Crear nova proposta
+      more_info: Més informació.
       recommendation_four: Gaudeix d'aquest espai, de les veus que l'omplin, també es el teu.
       recommendation_one: No escrigues el títol del debat o frases senceres en majuscules. En internet això es considera cridar. I a ningú li agrada que li criden.
       recommendation_three: Les crítiques despiatades son molt benvingudes. Este es un espai de pensament. Pero et recomanem conservar l'elegancia i l'intel·ligencia. El mon es millor amb elles presents.
@@ -152,7 +152,7 @@ val:
       invalid_date_range: "El rang de dates no es vàlid"
   form:
     accept_terms: Accepte la %{policy} i les %{conditions}
-    accept_terms_title: Accepte la Política de privacitat i les Condicions d'us
+    accept_terms_title: "Accepte la Política de privacitat i els Termes i condicions d'ús"
     conditions: Termes i condicions d'ús
     debate: Debat
     direct_message: el missatge privat
@@ -228,7 +228,7 @@ val:
   notifications:
     index:
       empty_notifications: No tens noves notificacions.
-      mark_all_as_read: Marcar totes como llegides
+      mark_all_as_read: Marcar totes com llegides
       read: Llegides
       title: Notificacions
       unread: Noves
@@ -300,17 +300,17 @@ val:
       done: Realitzades
       other: Altres
     form:
-      proposal_responsible_name_note: "(individualment o com representant d'un col·lectiu; no es mostrarà públicament)"
-      proposal_summary_note: "(màxim 200 caracters)"
-      proposal_video_url_note: Pots afegir un enllaç a Youtube o Vimeo
+      proposal_responsible_name_note: "(Individualment o com representant d'un col·lectiu. No es mostrarà públicament)"
+      proposal_summary_note: "(Màxim 200 caràcters)"
+      proposal_video_url_note: Pots afegir un enllaç a YouTube o Vimeo
       tag_category_label: "Categories"
       tags_instructions: "Etiqueta aquesta proposta. Pots triar entre les categories proposades o introduir les que desitges"
       tags_label: Etiquetes
       tags_placeholder: "Escriu les etiquetes que desitges separades per coma (',')"
       map_location: "Ubicació en el mapa"
-      map_location_instructions: "Navega per el mapa fins la ubicació i deixa el marcador."
+      map_location_instructions: "Navega pel mapa fins la ubicació i deixa el marcador."
       map_remove_marker: "Eliminar el marcador"
-      map_skip_checkbox: "Esta proposta no te una ubicació concreta o no la coneixem."
+      map_skip_checkbox: "Aquesta proposta no té una ubicació concreta o no la coneixem."
     index:
       featured_proposals: Destacar
       orders:
@@ -323,7 +323,7 @@ val:
         recommendations: recomanacions
       recommendations:
         without_results: No existeixen propostes relacionades amb els teus interessos
-        without_interests: Segueix propostes per a que pugam donarte recomanacions
+        without_interests: "Segueix propostes perquè puguem donar-te recomanacions"
         disable: "Les recomanacions sobre propostes deixaran de mostrar-se si les descartes. Pots tornar-les a activar a la pàgina \"El meu compte\""
         actions:
           success: "Les recomanacions per a propostes estan desabilitades per a aquest compte"
@@ -657,7 +657,7 @@ val:
         description: Obri un fil de discussió per a compartir punts de vista amb altres persones sobre allò que et preocupa.
       propone:
         title: Proposar
-        description: Crea propostes d’iniciatives públiques que puguen recollir els suports suficients per a elevar-les a la consideració del Consell.
+        description: Crea propostes d’iniciatives públiques que puguen recollir els suports suficients per a elevar-les a la consideració del departament competent.
       vota:
         title: Votar
         description: Ara el teu vot és important per a la presa de decisió de les polítiques públiques. Vota les opcions que consideres més rellevants.
@@ -671,7 +671,7 @@ val:
       title:
         month: 18M
         budget_gva: "<span>Propostes ciutadanes</span>"
-      txt: "Consideres que la Generalitat Valenciana hauria d’actuar en aguna àrea o projecte concret? Presenta la teua proposta d’iniciativa o dona suport a aquelles que et semblen més adequades. Les propostes que obtinguen el mínim de suports necessaris es presentaran al Consell per a la seua consideració."
+      txt: "Consideres que la Generalitat Valenciana hauria d’actuar en aguna àrea o projecte concret? Presenta la teua proposta d’iniciativa o dona suport a aquelles que et semblen més adequades. Les propostes que obtinguen 5.000 suports es traslladaran a l’entitat competent per a la seua consideració."
       button: "Presenta la teua proposta!"
     feed:
       most_active:
