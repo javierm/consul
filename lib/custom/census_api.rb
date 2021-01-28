@@ -83,12 +83,13 @@ class CensusApi
                  # La persona de pruebas en servicio de residencia es diferente que en el servicio de edad
                  # Cambiamos los valores aquí para que en caso de que llegue del formulario el de prueba, aquí ponga los datos necesarios.
                  ApplicationLogger.new.warn "environment: #{Rails.application.secrets.environment}"
-                 if Rails.application.secrets.environment != 'production' && document_number.upcase == '10000320N'
-                   document_number = '10000322Z'
-                   province_code = '17'
-                 else
-                   province_code = @postal_code[0..1]
-                 end
+                 # Comentamos mientras el servicio del INE en producción no esté activado (ahora mismo sólo detecta si es código correcto)
+                 #  if Rails.application.secrets.environment != 'production' && document_number.upcase == '10000320N'
+                 #    document_number = '10000322Z'
+                 #    province_code = '17'
+                 #  else
+                     province_code = @postal_code[0..1]
+                 #  end
                  ApplicationLogger.new.warn "province_code: #{province_code}"
                  ApplicationLogger.new.warn "php -f #{validator} -- -i #{identifier} -n #{document_number} -e s -p #{province_code}"
                  `php -f #{validator} -- -i #{identifier} -n #{document_number} -e s -p #{province_code}`
@@ -139,17 +140,17 @@ class CensusApi
         datos_habitante: {
           "resultado" => true,
           "error" => false,
-          "cod_estado" => "cod. estado ok",
-          "literal_estado" => "lit. estado ok",
-          "nacionalidad" => "España",
-          "sexo" => "M",
+          "cod_estado" => "00",
+          "literal_error" => "INFORMACION CORRECTA",
+          "nacionalidad" => "ESPA\u00d1A-ESP",
+          "sexo" => "F",
           "fecha_nacimiento" => "20030518"
         },
         datos_vivienda: {
           "resultado" => true,
           "error" => false,
-          "cod_estado" => "cod. estado ok",
-          "literal_estado" => "lit. estado ok"
+          "estado" => "003",
+          "literal" => "Verificaci\u00f3n positiva. \u00c1mbito Territorial de Residencia Correcto."
         }
       }
     end
@@ -158,15 +159,13 @@ class CensusApi
       {
         datos_habitante: {
           "resultado" => false,
-          "error" => "Algún error",
-          "cod_estado" => "cod. estado no ok",
-          "literal_estado" => "lit. estado no ok"
+          "error" => false,
+          "estado" => "0233",
+          "literal" => "Titular no Identificado o \u00c1mbito Territorial de Residencia Incorrecto"
         },
         datos_vivienda: {
           "resultado" => false,
-          "error" => "Algún error",
-          "cod_estado" => "cod. estado no ok",
-          "literal_estado" => "lit. estado no ok"
+          "error" => "0231 Documento incorrecto",
         }
       }
     end
