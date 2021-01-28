@@ -10,11 +10,14 @@ class CensusApi
   class Response
 
     def valid?
+      ApplicationLogger.new.warn "data: #{data}"
       data[:datos_vivienda]["resultado"]
     end
 
     def date_of_birth
       str = data[:datos_habitante]['fecha_nacimiento']
+      return nil if str.blank?
+
       year, month, day = str.match(/(\d\d\d\d)(\d\d)(\d\d)/)[1..3]
       return nil unless day.present? && month.present? && year.present?
 
