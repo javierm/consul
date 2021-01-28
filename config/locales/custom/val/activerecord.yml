@@ -129,10 +129,10 @@ val:
       local_census_record:
         one: Registro del censo local
         other: Registros del censo local
-      attributes:      
-        administrator:
-          description: Descripción
-        budget:
+    attributes:
+      administrator:
+        description: Descripción
+      budget:
         name: "Nom"
         description_accepting: "Descripció durant la fase d'aceptació"
         description_reviewing: "Descripció durant la fase de revisió"
