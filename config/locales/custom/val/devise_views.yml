@@ -113,8 +113,9 @@ val:
           password_label: Contrasenya
           redeemable_code: Codi de verificació per correu electrónic (opcional)
           submit: Registrar-se
-          terms: Al registrar-te acceptes les %{terms}
-          terms_link: condicions d’us i protecció de dades
+          terms: Al registrar-te acceptes les %{use_terms} i %{privacy_terms}
+          use_terms_link: condicions d’us
+          privacy_terms_link: protecció de dades
           terms_title: Al registrar-te acceptes les condicions d’us i protecció de dades
           title: Registrar-se
           username_is_available: Nom de persona usuària disponible
