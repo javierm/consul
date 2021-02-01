@@ -161,14 +161,14 @@ es:
       invalid_date_range: "El rango de fechas no es válido"
   form:
     accept_terms: Acepto la %{policy} y las %{conditions}
-    accept_terms_title: Acepto la Política de privacidad y las Condiciones de uso
+    accept_terms_title: Acepto la Política de protección de datos y las Condiciones de uso
     conditions: Condiciones de uso
     debate: el debate
     direct_message: el mensaje privado
     error: error
     errors: errores
     not_saved: "impidieron guardar %{resource}. <br>Por favor revisa los campos marcados para saber cómo corregirlos:"
-    policy: Política de privacidad
+    policy: Política de protección de datos
     banner: el banner
     proposal: la propuesta
     proposal_notification: "la notificación"
@@ -226,7 +226,7 @@ es:
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
       participation_text: Decide cómo debe ser la Comunitat que quieres.
       participation_title: Participación
-      privacy: Política de privacidad
+      privacy: Política de protección de datos
       government: "
       %{copyright}<br/>
       Portal de Participació<br/><br/>
