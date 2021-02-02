@@ -45,7 +45,7 @@ val:
         flash:
           success: Residència verificada
       new:
-        accept_terms_text: Declare que la informació transmitida es exacta i que accepte els %{terms_url}
+        accept_terms_text: Declare que la informació transmesa és exacta i que accepte els %{terms_url}
         accept_terms_text_title: Accepte els termes i condicions d'accéss al Padró
         document_number: Número de document
         document_number_help_title: Ajuda
@@ -66,7 +66,7 @@ val:
         error_verifying_census: "El Padró no va poder verificar la teua informació. Per favor, confirma que les teues dades d'empadronament són correctes cridant a l'Ajuntament o visitant una Oficina d'Atenció al Ciutadà"
         form_errors: evitaren verificar la teua residència
         postal_code_note: Per a verificar el teu compte has d'estar empadronat en la C.V.
-        terms: termes d'acces als serveis de verificació de edat i residència
+        terms: termes d’accés als serveis de verificació d’edat i residència
         title: Verificar residència
         verify_residence: Verificar residència
         gender:

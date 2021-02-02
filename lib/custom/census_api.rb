@@ -154,6 +154,12 @@ class CensusApi
           "error" => false,
           "estado" => "003",
           "literal" => "Verificaci\u00f3n positiva. \u00c1mbito Territorial de Residencia Correcto."
+        },
+        datos_originales: {
+          postal_code: "46001",
+          name: "NAME",
+          first_surname: "FIRST SURNAME",
+          last_surname: "LAST SURNAME"
         }
       }
     end
@@ -169,6 +175,12 @@ class CensusApi
         datos_vivienda: {
           "resultado" => false,
           "error" => "0231 Documento incorrecto",
+        },
+        datos_originales: {
+          postal_code: "46001",
+          name: "NAME",
+          first_surname: "FIRST SURNAME",
+          last_surname: "LAST SURNAME"
         }
       }
     end
