@@ -55,7 +55,7 @@ val:
           residence_card: Targeta de residència
           spanish_id: DNI
         document_type_label: Tipus de document
-        date_of_birth: Fecha de nacimiento
+        date_of_birth: Data de naixement
         gender_label: Gènere
         postal_code: Codi postal
         name: Nom
@@ -65,7 +65,7 @@ val:
         error_not_allowed_postal_code: Per a verificarte has d'estar empadronat.
         error_verifying_census: "El Padró no va poder verificar la teua informació. Per favor, confirma que les teues dades d'empadronament són correctes cridant a l'Ajuntament o visitant una Oficina d'Atenció al Ciutadà"
         form_errors: evitaren verificar la teua residència
-        postal_code_note: Per a verificar el teu compte has d'estar empadronat en la C.V.
+        postal_code_note: Per a verificar el teu compte has d'estar empadronat/da en la C.V.
         terms: termes d’accés als serveis de verificació d’edat i residència
         title: Verificar residència
         verify_residence: Verificar residència

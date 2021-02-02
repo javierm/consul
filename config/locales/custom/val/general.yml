@@ -20,7 +20,7 @@ val:
       user_permission_support_proposal: Avalar propostes
       user_permission_title: Participació
       user_permission_verify: Per a poder realitzar totes les accions verifica el teu compte.
-      user_permission_verify_info: "* Sols usuaris empadronats."
+      user_permission_verify_info: "* Només persones usuàries empadronades."
       user_permission_votes: Participar en les votacions finals
       username_label: Nom d'usuari
       verified_account: Compte verificat
@@ -671,7 +671,7 @@ val:
       title:
         month: 18M
         budget_gva: "<span>Propostes ciutadanes</span>"
-      txt: "Consideres que la Generalitat Valenciana hauria d’actuar en aguna àrea o projecte concret? Presenta la teua proposta d’iniciativa o dona suport a aquelles que et semblen més adequades. Les propostes que obtinguen 5.000 suports es traslladaran a l’entitat competent per a la seua consideració."
+      txt: "Consideres que la Generalitat Valenciana hauria d’actuar en alguna àrea o projecte concret? Presenta la teua proposta d’iniciativa o dona suport a aquelles que et semblen més adequades. Les propostes que obtinguen 5.000 suports es traslladaran a l’entitat competent per a la seua consideració."
       button: "Presenta la teua proposta!"
     feed:
       most_active:
@@ -711,7 +711,7 @@ val:
       user_permission_proposal: Crear noves propostes
       user_permission_support_proposal: Avalar propostes
       user_permission_verify: "Per a poder realitzar totes les accions verifica el teu compte."
-      user_permission_verify_info: "* Sols usuaris empadronats."
+      user_permission_verify_info: "* Només persones usuàries empadronades."
       user_permission_verify_my_account: Verificar el meu compte
       user_permission_votes: Participar en les votacions finals
   invisible_captcha:
