@@ -367,10 +367,13 @@ a {
         background: $brand;
         border-bottom: 2px solid $brand;
         bottom: 0;
-        content: "";
+        content: '';
         left: 0;
         position: absolute;
         width: 100%;
+
+        &.testing {
+        }
       }
     }
   }
