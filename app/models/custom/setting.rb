@@ -6,6 +6,7 @@ class Setting
 
     def defaults
       consul_defaults.merge({
+        "mailer_from_address": "participa@lorca.es",
         "remote_census.general.endpoint": Rails.application.secrets.census_api_end_point,
         "remote_census.request.date_of_birth": nil,
         "remote_census.request.document_number": "get_habita_datos.request.documento",
