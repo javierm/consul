@@ -6,7 +6,7 @@
         var amsify_suggestags = new AmsifySuggestags($(".sdg-related-list-selector .input"));
 
         amsify_suggestags.getItem = function(value) {
-          var item_key = this.getItemKey(value);
+          var item_key = this.getItemKey(value)
           return this.settings.suggestions[item_key];
         };
 

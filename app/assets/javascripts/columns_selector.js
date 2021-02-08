@@ -6,7 +6,7 @@
       App.ColumnsSelector.hideAll();
       c_value = App.ColumnsSelector.currentValue();
       if (c_value.length === 0) {
-        c_value = $("#js-columns-selector").data("default");
+        c_value = $('#js-columns-selector').data("default");
         App.Cookies.saveCookie($("#js-columns-selector").data("cookie"), c_value, 30);
       }
       columns = c_value.split(",");
@@ -30,7 +30,7 @@
         label.prop("for", "column_selector_" + field);
         label.text(text);
         item.removeClass("hidden");
-        $("#js-columns-selector-wrapper").append(item);
+        $("#js-columns-selector-wrapper").append(item)
       });
     },
     toggleOptions: function(event) {
