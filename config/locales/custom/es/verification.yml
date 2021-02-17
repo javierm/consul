@@ -54,6 +54,7 @@ es:
           passport: Pasaporte
           residence_card: Tarjeta de residencia
           spanish_id: DNI
+          foreign_id: NIE
         document_type_label: Tipo de documento
         date_of_birth: Fecha de nacimiento
         gender_label: Género

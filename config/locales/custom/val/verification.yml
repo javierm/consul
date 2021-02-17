@@ -54,6 +54,7 @@ val:
           passport: Passaport
           residence_card: Targeta de residència
           spanish_id: DNI
+          foreign_id: NIE
         document_type_label: Tipus de document
         date_of_birth: Data de naixement
         gender_label: Gènere

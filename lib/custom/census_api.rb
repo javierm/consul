@@ -49,14 +49,14 @@ class CensusApi
   end
 
   class ConnectionCensus
-    def call(document_number, other_data = {})
+    def call(document_type, document_number, other_data = {})
       @postal_code = other_data[:postal_code]
       @name = other_data[:name]
       @first_surname = other_data[:first_surname]
       @last_surname = other_data[:last_surname]
 
       {
-        datos_habitante: JSON.parse(get_age(document_number)),
+        datos_habitante: JSON.parse(get_age(document_type, document_number)),
         datos_vivienda: JSON.parse(get_residence(document_number)),
         datos_originales: other_data
       }
@@ -64,14 +64,15 @@ class CensusApi
 
     private
 
-    def get_age(document_number)
+    def get_age(document_type, document_number)
       result = if Rails.env.development?
                  CensusApi.new.send(:stubbed_valid_response)[:datos_habitante].to_json
                else
                  validator = Rails.application.secrets.census_api_age_validator
                  ApplicationLogger.new.warn "Age validator path: #{validator}"
-                 ApplicationLogger.new.warn "php -f #{validator} -- -i #{identifier} -n #{document_number} -o \"#{@name}\" -a \"#{@first_surname}\" -p \"#{@last_surname}\""
-                 `php -f #{validator} -- -i #{identifier} -n #{document_number} -o "#{@name}" -a "#{@first_surname}" -p "#{@last_surname}"`
+                 ApplicationLogger.new.warn "Document type: #{document_type}"
+                 ApplicationLogger.new.warn "php -f #{validator} -- -i #{identifier} -n #{document_number} -o \"#{@name}\" -a \"#{@first_surname}\" -p \"#{@last_surname}\" #{'--esp n' if document_type == '4'}"
+                 `php -f #{validator} -- -i #{identifier} -n #{document_number} -o "#{@name}" -a "#{@first_surname}" -p "#{@last_surname}" #{'--esp n' if document_type == '4'}`
                end
       ApplicationLogger.new.warn "result: #{result}"
       result
@@ -110,7 +111,7 @@ class CensusApi
 
     def get_response_body(document_type, document_number, other_data = {})
       if end_point_available?
-        client.call(document_number, other_data)
+        client.call(document_type, document_number, other_data)
       else
         stubbed_response(document_type, document_number)
       end
