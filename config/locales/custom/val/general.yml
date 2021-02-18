@@ -151,7 +151,7 @@ val:
       user_not_found: Usuari no trobat
       invalid_date_range: "El rang de dates no es vàlid"
   form:
-    accept_terms: Accepte la %{policy} i les %{conditions}
+    accept_terms: Accepte la %{policy} i els %{conditions}
     accept_terms_title: "Accepte la Política de protecció de dades i els Termes i condicions d'ús"
     conditions: Termes i condicions d'ús
     debate: Debat
