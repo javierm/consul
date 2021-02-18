@@ -65,6 +65,7 @@ class CensusApi
     private
 
     def get_age(document_type, document_number)
+      ApplicationLogger.new.warn "--- #{Time.now.iso8601} inicio verificación edad (DGP) ---"
       result = if Rails.env.development?
                  CensusApi.new.send(:stubbed_valid_response)[:datos_habitante].to_json
                else
@@ -75,10 +76,12 @@ class CensusApi
                  `php -f #{validator} -- -i #{identifier} -n #{document_number} -o "#{@name}" -a "#{@first_surname}" -p "#{@last_surname}" #{'--esp n' if document_type == '4'}`
                end
       ApplicationLogger.new.warn "result: #{result}"
+      ApplicationLogger.new.warn "--- #{Time.now.iso8601} fin verificación edad (DGP) ---"
       result
     end
 
     def get_residence(document_number)
+      ApplicationLogger.new.warn "--- #{Time.now.iso8601} inicio verificación residencia (INE) ---"
       result = if Rails.env.development?
                  CensusApi.new.send(:stubbed_valid_response)[:datos_vivienda].to_json
                else
@@ -99,6 +102,7 @@ class CensusApi
                  `php -f #{validator} -- -i #{identifier} -n #{document_number} -e s -p #{province_code}`
                end
       ApplicationLogger.new.warn "result: #{result}"
+      ApplicationLogger.new.warn "--- #{Time.now.iso8601} fin verificación residencia (INE) ---"
       result
     end
 
