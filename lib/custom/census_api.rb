@@ -11,9 +11,15 @@ class CensusApi
 
     def valid?
       ApplicationLogger.new.warn "data: #{data}"
-      data[:datos_vivienda]["resultado"]
+      data[:datos_vivienda]["resultado"] == true &&
+      data[:datos_habitante]["resultado"] == true
     end
-
+    
+    def error
+      !data[:datos_vivienda]["resultado"] && data[:datos_vivienda]["error"] ||
+      !data[:datos_habitante]["resultado"] && data[:datos_habitante]["error"]
+    end
+      
     def date_of_birth
       str = data[:datos_habitante]['fecha_nacimiento']
       return nil if str.blank?

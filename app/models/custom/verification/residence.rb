@@ -20,6 +20,10 @@ class Verification::Residence
     return if errors.any?
 
     unless residency_valid?
+      if @census_data.error =~ /^Servicio no disponible/
+         errors.add(:base, I18n.t("verification.residence.new.error_service_not_available"))
+        return
+      end
       errors.add(:residence_in_valencia, false)
       store_failed_attempt
       Lock.increase_tries(user)

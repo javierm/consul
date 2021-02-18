@@ -6,6 +6,7 @@ class CensusCaller
       response = RemoteCensusApi.new.call(document_type, document_number, other_data[:date_of_birth], other_data[:postal_code])
     else
       response = CensusApi.new.call(document_type, document_number, other_data)
+      return response if response.error =~ /^Servicio no disponible/
     end
     response = LocalCensus.new.call(document_type, document_number) unless response.valid?
 
