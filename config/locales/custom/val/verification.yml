@@ -65,6 +65,7 @@ val:
         error_not_allowed_age: No tens l'edat mínima per a participar
         error_not_allowed_postal_code: Per a verificarte has d'estar empadronat.
         error_verifying_census: "El Padró no va poder verificar la teua informació. Per favor, confirma que les teues dades d'empadronament són correctes cridant a l'Ajuntament o visitant una Oficina d'Atenció al Ciutadà"
+        error_service_not_available: "No es va poder connectar amb el servei de verificació. Per favor, intente-ho més tard."
         form_errors: evitaren verificar la teua residència
         postal_code_note: Per a verificar el teu compte has d'estar empadronat/da en la C.V.
         terms: termes d’accés als serveis de verificació d’edat i residència
