@@ -13,7 +13,7 @@
     <button class="close-button" aria-label="<%= t("application.close") %>" type="button" data-close>
       <span aria-hidden="true">&times;</span>
     </button>
-    <%= @residence.errors[:base] %>
+    <%= @residence.errors[:base].join("; ") %>
   </div>
 
 <% else %>
