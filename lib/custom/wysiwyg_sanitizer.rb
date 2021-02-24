@@ -2,7 +2,7 @@ require_dependency Rails.root.join("lib", "wysiwyg_sanitizer").to_s
 
 class WYSIWYGSanitizer
   def allowed_tags
-    %w[p ul ol li strong em u s a h2 h3 iframe script div map area]
+    %w[p ul ol li strong em u s a h2 h3 iframe script div map area canvas]
   end
 
   def allowed_attributes
