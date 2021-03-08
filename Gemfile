@@ -90,6 +90,7 @@ group :test do
   gem "rspec-rails", "~> 3.8"
   gem "selenium-webdriver", "~> 3.141"
   gem "webdrivers", "~> 4.3.0"
+  gem "timecop"
 end
 
 group :development do

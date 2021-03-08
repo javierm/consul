@@ -8,18 +8,17 @@ class CensusApi
   end
 
   class Response
-
     def valid?
       ApplicationLogger.new.warn "data: #{data}"
       data[:datos_vivienda]["resultado"] == true &&
       data[:datos_habitante]["resultado"] == true
     end
-    
+
     def error
       !data[:datos_vivienda]["resultado"] && data[:datos_vivienda]["error"] ||
       !data[:datos_habitante]["resultado"] && data[:datos_habitante]["error"]
     end
-      
+
     def date_of_birth
       str = data[:datos_habitante]['fecha_nacimiento']
       return nil if str.blank?
@@ -63,7 +62,7 @@ class CensusApi
 
       {
         datos_habitante: JSON.parse(get_age(document_type, document_number)),
-        datos_vivienda: JSON.parse(get_residence(document_number)),
+        datos_vivienda: JSON.parse(get_residence(document_type, document_number)),
         datos_originales: other_data
       }
     end
@@ -86,7 +85,7 @@ class CensusApi
       result
     end
 
-    def get_residence(document_number)
+    def get_residence(document_type, document_number)
       ApplicationLogger.new.warn "--- #{Time.now.iso8601} inicio verificación residencia (INE) ---"
       result = if Rails.env.development?
                  CensusApi.new.send(:stubbed_valid_response)[:datos_vivienda].to_json
@@ -104,8 +103,8 @@ class CensusApi
                      province_code = @postal_code[0..1]
                  #  end
                  ApplicationLogger.new.warn "province_code: #{province_code}"
-                 ApplicationLogger.new.warn "php -f #{validator} -- -i #{identifier} -n #{document_number} -e s -p #{province_code}"
-                 `php -f #{validator} -- -i #{identifier} -n #{document_number} -e s -p #{province_code}`
+                 ApplicationLogger.new.warn "php -f #{validator} -- -i #{identifier} -n #{document_number} -p #{province_code} #{'--esp n' if document_type == '4'}"
+                 `php -f #{validator} -- -i #{identifier} -n #{document_number} -p #{province_code} #{'--esp n' if document_type == '4'}`
                end
       ApplicationLogger.new.warn "result: #{result}"
       ApplicationLogger.new.warn "--- #{Time.now.iso8601} fin verificación residencia (INE) ---"
