@@ -103,8 +103,8 @@ class CensusApi
                      province_code = @postal_code[0..1]
                  #  end
                  ApplicationLogger.new.warn "province_code: #{province_code}"
-                 ApplicationLogger.new.warn "php -f #{validator} -- -i #{identifier} -n #{document_number} -p #{province_code} #{'--esp n' if document_type == '4'}"
-                 `php -f #{validator} -- -i #{identifier} -n #{document_number} -p #{province_code} #{'--esp n' if document_type == '4'}`
+                 ApplicationLogger.new.warn "php -f #{validator} -- -i #{identifier} -n #{document_number} -p #{province_code} --esp #{document_type == '4' ? 'n' : 's'}"
+                 `php -f #{validator} -- -i #{identifier} -n #{document_number} -p #{province_code} --esp #{document_type == '4' ? 'n' : 's'}`
                end
       ApplicationLogger.new.warn "result: #{result}"
       ApplicationLogger.new.warn "--- #{Time.now.iso8601} fin verificación residencia (INE) ---"
