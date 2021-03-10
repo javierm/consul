@@ -46,11 +46,9 @@ class CensusApi
       end
     end
 
-    private
-
-      def data
-        @body
-      end
+    def data
+      @body
+    end
   end
 
   class ConnectionCensus

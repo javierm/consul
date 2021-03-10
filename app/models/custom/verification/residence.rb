@@ -12,6 +12,21 @@ class Verification::Residence
   undef gender
   attr_accessor :gender, :name, :first_surname, :last_surname
 
+  def save
+    return false unless valid?
+
+    user.take_votes_if_erased_document(document_number, document_type)
+
+    user.update(document_number:       document_number,
+                document_type:         document_type,
+                geozone:               geozone,
+                postal_code:           postal_code,
+                date_of_birth:         date_of_birth.in_time_zone.to_datetime,
+                gender:                gender,
+                residence_verified_at: Time.current,
+                services_results:      @census_data.data)
+  end
+
   def postal_code_in_valencia
     errors.add(:postal_code, I18n.t("verification.residence.new.error_not_allowed_postal_code")) unless valid_postal_code?
   end
@@ -28,6 +43,17 @@ class Verification::Residence
       store_failed_attempt
       Lock.increase_tries(user)
     end
+  end
+
+  def store_failed_attempt
+    FailedCensusCall.create(
+      user: user,
+      document_number: document_number,
+      document_type: document_type,
+      date_of_birth: date_of_birth,
+      postal_code: postal_code,
+      services_results: @census_data.data
+    )
   end
 
   private
