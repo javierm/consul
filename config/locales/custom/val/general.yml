@@ -17,11 +17,11 @@ val:
       user_permission_debates: Participar en debats
       user_permission_info: Amb el teu compte ja pots...
       user_permission_proposal: Crear noves propostes
-      user_permission_support_proposal: Avalar propostes
+      user_permission_support_proposal: Avalar propostes*
       user_permission_title: Participació
       user_permission_verify: Per a poder realitzar totes les accions verifica el teu compte.
       user_permission_verify_info: "* Només persones usuàries empadronades."
-      user_permission_votes: Participar en les votacions finals
+      user_permission_votes: Participar en les votacions finals*
       username_label: Nom d'usuari
       verified_account: Compte verificat
       verify_my_account: Verificar el meu compte
@@ -272,7 +272,7 @@ val:
       form:
         submit_button: Crear proposta
     created:
-      title: "¡Enhorabuena! Has dado el primer paso."
+      title: "Enhorabona! Has fet el primer pas!"
       motivation: "Es importante preparar la campaña de lanzamiento de tu propuesta para que tenga éxito. Los primeros días son decisivos."
       motivation_2: "<strong>Si quieres recomendaciones para preparar la publicación deja tu propuesta como borrador y te guiaremos.</strong>"
       publish: No, quiero publicar la propuesta ya

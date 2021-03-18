@@ -13,7 +13,7 @@ val:
         budgets: "Pressupostos participatius"
         polls: "Votacions"
         other: "Altra informació d'interés"
-        processes: "Processos"
+        processes: "Elaboració normativa"
       debates:
         title: "Debats"
         description: "En la secció de %{link} pots compartir la teua opinió amb altres persones sobre temes que et preocupen relacionats amb la Comunitat Valenciana. És un lloc per a generar coneixement i intel·ligència col·lectiva que conduïsquen a accions concretes per part del Consell.<br/><br/>
@@ -37,16 +37,18 @@ val:
 Has de tindre en compte que obtindre els suports necessaris no garanteix que la proposta siga votada favorablement amb posterioritat."
         link: "propostes ciutadanes"
         image_alt: "Botó per a avalar una proposta"
+        figcaption: 'Botó per "Avalar" una proposta.'
       budgets:
         title: "Pressupostos Participatius"
         description: "A la secció de %{link} pots decidir a quins projectes anirà destinada una part del pressupost de la Generalitat Valenciana.<br/><br/>
         En primer lloc, podràs presentar els projectes que consideres que s’han de desenvolupar, que hauran d’obtindre un mínim de suports. Aquells projectes que hagen rebut aquest mínim de suports seran estudiats per l’Administració per tal de comprovar la seua viabilitat. Després d’això sabrem els projectes que passaran a la votació final.<br/><br/>
         <strong>Com funciona?</strong><br/><br/>
         Quan accedisques a aquesta pestanya, veuràs indicada la fase en la qual es troba el procés dels pressupostos participatius.<br/><br/>
-        Podràs crear noves propostes o donar suport a les ja creades. Les propostes podran afectar tota la Comunitat Valenciana, o una de les seues províncies. Pots accedir a aquestes des de diferents classificacions: per província, per matèria …<br/><br/>
+        Podràs crear noves propostes o donar suport a les ja creades. Les propostes podran afectar tota la Comunitat Valenciana, o una de les seues províncies. Pots accedir a aquestes des de diferents classificacions: per província, per matèria…<br/><br/>
         També disposaràs d’un mapa en el qual podràs localitzar els projectes proposats."
         link: "pressupostos participatius"
         image_alt: "Diferents fases d'un pressupost participatiu"
+        figcaption: 'Fase d’"Avals" i fase de "Votacions" dels pressupostos participatius'
       polls:
         title: "Votacions"
         description: "Les %{link} s’activen quan la ciutadania ha d'ajudar en la presa de decisions en els assumptes públics. La votació pot derivar-se d'un procés participatiu que estiga actiu o bé d'una consulta ciutadana que llança l'Administració.<br/><br/>
@@ -81,7 +83,7 @@ Has de tindre en compte que obtindre els suports necessaris no garanteix que la 
 
           Aquest Portal de Govern Obert usa l'aplicació CONSUL, que és software lliure, amb llicència AGPLv3. Això significa, en paraules senzilles, que qualsevol pot lliurement usar el codi, copiar-lo, veure'l detalladament, modificar-lo, i redistribuir-ho al món amb les modificacions que vulga (mantenint el que uns altres puguen al seu torn fer el mateix). Perquè creiem que la cultura és millor i més rica quan s'allibera.
 
-          Si eres programador, pots veure el codi i ajudar-nos a millorar-lo en [aplicació CONSUL](https://github.com/consul/consul 'github consul').
+          Si ets programador/a, pots veure el codi i ajudar-nos a millorar-lo en [aplicació CONSUL](https://github.com/consul/consul 'github consul').
       titles:
         how_to_use: Utilitza’l en el teu municipi
     privacy:
@@ -90,7 +92,7 @@ Has de tindre en compte que obtindre els suports necessaris no garanteix que la 
     accessibility:
       title: Accessibilitat
       description: |-
-        L'accessibilitat web es refereix a la possibilitat d'acces a la web i als seus continguts per totes les persones, independentment de les discapacitats (físiques, intelectuals o tècniques) que puguen presentar o de les que es deriven del context d'us (tecnològiques o ambientals)
+        L'accessibilitat web es refereix a la possibilitat d'acces a la web i als seus continguts per totes les persones, independentment de les discapacitats (físiques, intelectuals o tècniques) que puguen presentar o de les que es deriven del context d'ús (tecnològiques o ambientals)
 
         Quant les pàgines web estan disenyades pensant en l'accessibilitat, tots els usuaris poden accedir en condicions d'igualtat als continguts, per exemple:
       examples:
