@@ -197,3 +197,30 @@ header {
   }
 }
 
+@media print, screen and (max-width: 640px){
+  .top-bar {
+    display: inline-block;
+    width: 100%;
+    ul.menu {
+      padding-top: 2.9375rem;
+      padding-right: 0;
+    }
+  }
+  .top-bar .menu-icon { right: 8px; position :absolute; top: 20px;}
+  .top-bar .top-bar-title { margin-left: auto; margin-right: 32px; }
+  .top-bar .button{
+    border: none;
+        margin-right: 0;
+    float: right;
+  }
+  .top-bar ul{
+    float: unset;
+    li a {
+      text-align: right;
+    }
+  }
+  .subnavigation ul li{
+        margin: 0.3em;
+  }
+}
+
