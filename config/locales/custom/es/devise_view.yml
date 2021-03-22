@@ -113,9 +113,9 @@ es:
           password_label: Contraseña que utilizarás para acceder a este sitio web
           redeemable_code: Tu código de verificación (si has recibido una carta con él)
           submit: Registrarse
-          terms: He leído la %{privacy_terms} y acepto los %{use_terms}
+          terms: He leído la política de protección de datos y acepto los %{use_terms}
           use_terms_link: términos y condiciones de uso
-          privacy_terms_link: política de protección de datos
+          privacy_terms: Política de protección de datos
           terms_title: Al registrarte aceptas las condiciones de uso y protección de datos
           title: Registrarse
           username_is_available: Nombre de persona usuaria disponible

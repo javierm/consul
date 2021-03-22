@@ -113,9 +113,9 @@ val:
           password_label: Contrasenya
           redeemable_code: Codi de verificació per correu electrónic (opcional)
           submit: Registrar-se
-          terms: He llegit la %{privacy_terms} i accepte els termes i %{use_terms}
+          terms: He llegit la política de protecció de dades i accepte els termes i %{use_terms}
           use_terms_link: condicions d’ús
-          privacy_terms_link: política de protecció de dades
+          privacy_terms: Política de protecció de dades
           terms_title: "Al registrar-te acceptes les condicions d’ús i protecció de dades"
           title: Registrar-se
           username_is_available: Nom de persona usuària disponible
