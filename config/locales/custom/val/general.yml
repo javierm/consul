@@ -204,6 +204,7 @@ val:
       administration_menu: Admin
       administration: Administració
       available_locales: Idiomes disponibles
+      legislation: Elaboració normativa
       collaborative_legislation: Elaboració normativa
       debates: Debats
       locale: "Idioma:"
