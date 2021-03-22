@@ -353,9 +353,10 @@ val:
         index:
           create: Nou procés
           delete: Eliminar
-          title: Processos legislatius
+          title: Processos de legislació col·laborativa
           filters:
-            all: Totes
+            active: Actius
+            all: Tots
         new:
           back: Tornar
           title: Crear proces de legislació col·laborativa
