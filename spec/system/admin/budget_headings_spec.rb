@@ -64,7 +64,7 @@ describe "Admin budget headings", :admin do
       heading = create(:budget_heading, group: group)
 
       visit admin_budget_group_headings_path(budget, group)
-      within("#budget_heading_#{heading.id}") { click_link "Delete" }
+      within("#budget_heading_#{heading.id}") { accept_confirm { click_link "Delete" } }
 
       expect(page).to have_content "Heading deleted successfully"
       expect(page).not_to have_selector "#budget_heading_#{heading.id}"
@@ -75,7 +75,7 @@ describe "Admin budget headings", :admin do
       create(:budget_investment, heading: heading)
 
       visit admin_budget_group_headings_path(budget, group)
-      within(".heading", text: "Atlantis") { click_link "Delete" }
+      within(".heading", text: "Atlantis") { accept_confirm { click_link "Delete" } }
 
       expect(page).to have_content "You cannot delete a Heading that has associated investments"
       expect(page).to have_content "Atlantis"
