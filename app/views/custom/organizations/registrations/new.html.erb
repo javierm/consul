@@ -27,11 +27,13 @@
                            label: t("devise_views.organizations.registrations.new.password_confirmation_label"),
                            placeholder: t("devise_views.organizations.registrations.new.password_confirmation_label") %>
 
-      <label><%= t('devise_views.users.registrations.new.privacy_terms') %></label>
-      <div class="privacy-registration">
-        <%= raw SiteCustomization::Page.find_by(slug: 'privacy-registration').content %>
-      </div>
-
+      <% privacy_page = SiteCustomization::Page.find_by(slug: 'privacy-registration') %>
+      <% if privacy_page %>
+        <label><%= t('devise_views.users.registrations.new.privacy_terms') %></label>
+        <div class="privacy-registration">
+          <%= raw privacy_page.content %>
+        </div>
+      <% end %>
       <%= f.check_box :terms_of_service,
         title: t("devise_views.users.registrations.new.terms_title"),
         label: t("devise_views.users.registrations.new.terms",
