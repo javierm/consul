@@ -24,7 +24,8 @@ describe "Admin feature flags", :admin do
     within("#edit_setting_#{setting.id}") do
       expect(page).to have_button "Disable"
       expect(page).not_to have_button "Enable"
-      click_button "Disable"
+
+      accept_confirm { click_button "Disable" }
     end
 
     visit admin_root_path
@@ -59,7 +60,8 @@ describe "Admin feature flags", :admin do
     within("#edit_setting_#{setting.id}") do
       expect(page).to have_button "Enable"
       expect(page).not_to have_button "Disable"
-      click_button "Enable"
+
+      accept_confirm { click_button "Enable" }
     end
 
     visit admin_root_path
@@ -77,7 +79,8 @@ describe "Admin feature flags", :admin do
     within("#edit_setting_#{setting.id}") do
       expect(page).to have_button "Disable"
       expect(page).not_to have_button "Enable"
-      click_button "Disable"
+
+      accept_confirm { click_button "Disable" }
     end
 
     expect(page).to have_content "Value updated"
@@ -96,7 +99,8 @@ describe "Admin feature flags", :admin do
     within("#edit_setting_#{setting.id}") do
       expect(page).to have_button "Enable"
       expect(page).not_to have_button "Disable"
-      click_button "Enable"
+
+      accept_confirm { click_button "Enable" }
     end
 
     expect(page).to have_content "Value updated"

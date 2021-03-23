@@ -118,7 +118,7 @@ describe "Admin Notifications", :admin do
 
       visit admin_admin_notifications_path
       within("#admin_notification_#{notification.id}") do
-        click_link "Delete"
+        accept_confirm { click_link "Delete" }
       end
 
       expect(page).to have_content "Notification deleted successfully"
