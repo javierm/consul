@@ -57,7 +57,7 @@ describe "Admin local census records", :admin do
         expect(page).not_to have_content local_census_record.document_number
       end
 
-      scenario "Should show matching records by document number", :js do
+      scenario "Should show matching records by document number" do
         visit admin_local_census_records_path
 
         fill_in :search, with: "X66777888"

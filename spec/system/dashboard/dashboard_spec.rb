@@ -29,7 +29,7 @@ describe "Proposal's dashboard" do
     expect(page).not_to have_link("Publish proposal")
   end
 
-  scenario "Dashboard progress shows current goal", js: true do
+  scenario "Dashboard progress shows current goal" do
     goal = create(:dashboard_action, :resource, :active,
                                      required_supports: proposal.votes_for.size + 1_000)
     future_goal = create(:dashboard_action, :resource, :active,
@@ -72,7 +72,7 @@ describe "Proposal's dashboard" do
     expect(page).to have_selector("a", text: "Show description")
   end
 
-  scenario "Dashboard progress do not display from the fourth proposed actions", js: true do
+  scenario "Dashboard progress do not display from the fourth proposed actions" do
     create_list(:dashboard_action, 4, :proposed_action, :active)
     action_5 = create(:dashboard_action, :proposed_action, :active)
 
@@ -82,7 +82,7 @@ describe "Proposal's dashboard" do
   end
 
   scenario "Dashboard progress display link to new page for proposed actions when
-            there are more than four proposed actions", js: true do
+            there are more than four proposed actions" do
     create_list(:dashboard_action, 4, :proposed_action, :active)
     create(:dashboard_action, :proposed_action, :active)
 
@@ -92,7 +92,7 @@ describe "Proposal's dashboard" do
   end
 
   scenario "Dashboard progress do not display link to new page for proposed actions
-            when there are less than five proposed actions", js: true do
+            when there are less than five proposed actions" do
     create_list(:dashboard_action, 4, :proposed_action, :active)
 
     visit progress_proposal_dashboard_path(proposal)
@@ -275,7 +275,7 @@ describe "Proposal's dashboard" do
     expect(page).to have_link(feature.title)
   end
 
-  scenario "Request resource with admin request", js: true do
+  scenario "Request resource with admin request" do
     feature = create(:dashboard_action, :resource, :active, :admin_request)
 
     visit proposal_dashboard_path(proposal)
@@ -286,7 +286,7 @@ describe "Proposal's dashboard" do
                                  "as soon as possible to inform you about it.")
   end
 
-  scenario "Request already requested resource with admin request", js: true do
+  scenario "Request already requested resource with admin request" do
     feature = create(:dashboard_action, :resource, :active, :admin_request)
 
     visit proposal_dashboard_path(proposal)
@@ -311,7 +311,7 @@ describe "Proposal's dashboard" do
                                  "as soon as possible to inform you about it.")
   end
 
-  scenario "Resource without admin request do not have a request link", js: true do
+  scenario "Resource without admin request do not have a request link" do
     feature = create(:dashboard_action, :resource, :active)
 
     visit proposal_dashboard_path(proposal)
@@ -336,7 +336,7 @@ describe "Proposal's dashboard" do
     expect(page).to have_content("This proposal is archived and can not request resources.")
   end
 
-  scenario "Dashboard has a link to dashboard community", js: true do
+  scenario "Dashboard has a link to dashboard community" do
     expect(page).to have_link("Community")
     click_link "Community"
 
@@ -346,7 +346,7 @@ describe "Proposal's dashboard" do
     expect(page).to have_link("Access the community")
   end
 
-  scenario "Dashboard has a link to recommended_actions if there is any", js: true do
+  scenario "Dashboard has a link to recommended_actions if there is any" do
     expect(page).not_to have_link("Recommended actions")
 
     create_list(:dashboard_action, 3, :proposed_action, :active)
@@ -415,7 +415,7 @@ describe "Proposal's dashboard" do
   end
 
   scenario "On recommended actions section display from the fourth proposed actions
-            when click see_proposed_actions_link", js: true do
+            when click see_proposed_actions_link" do
     create_list(:dashboard_action, 4, :proposed_action, :active)
     action_5 = create(:dashboard_action, :proposed_action, :active)
 
@@ -425,7 +425,7 @@ describe "Proposal's dashboard" do
     expect(page).to have_content(action_5.title)
   end
 
-  scenario "On recommended actions section display four proposed actions", js: true do
+  scenario "On recommended actions section display four proposed actions" do
     create_list(:dashboard_action, 4, :proposed_action, :active)
     action_5 = create(:dashboard_action, :proposed_action, :active)
 
@@ -435,7 +435,7 @@ describe "Proposal's dashboard" do
   end
 
   scenario "On recommended actions section display link for toggle when there are
-            more than four proposed actions", js: true do
+            more than four proposed actions" do
     create_list(:dashboard_action, 4, :proposed_action, :active)
     create(:dashboard_action, :proposed_action, :active)
 
@@ -445,7 +445,7 @@ describe "Proposal's dashboard" do
   end
 
   scenario "On recommended actions section do not display link for toggle when
-            there are less than five proposed actions", js: true do
+            there are less than five proposed actions" do
     create_list(:dashboard_action, 4, :proposed_action, :active)
 
     visit recommended_actions_proposal_dashboard_path(proposal.to_param)

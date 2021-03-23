@@ -143,7 +143,7 @@ describe "Admin collaborative legislation", :admin do
       expect(page).not_to have_content "Describing the process"
     end
 
-    scenario "Create a legislation process with an image", :js do
+    scenario "Create a legislation process with an image" do
       visit new_admin_legislation_process_path
       fill_in "Process Title", with: "An example legislation process"
       fill_in "Summary", with: "Summary of the process"
@@ -227,7 +227,7 @@ describe "Admin collaborative legislation", :admin do
       expect(page).not_to have_content "Draft publication"
     end
 
-    scenario "Enabling/disabling a phase enables/disables its date fields", :js do
+    scenario "Enabling/disabling a phase enables/disables its date fields" do
       process.update!(published: false)
 
       visit edit_admin_legislation_process_path(process)
@@ -249,7 +249,7 @@ describe "Admin collaborative legislation", :admin do
       expect(page).to have_field "end_date", disabled: false, with: "2008-08-08"
     end
 
-    scenario "Enabling/disabling a phase does not enable/disable another phase date fields", :js do
+    scenario "Enabling/disabling a phase does not enable/disable another phase date fields" do
       process.update!(draft_phase_enabled: false, draft_publication_enabled: false)
 
       visit edit_admin_legislation_process_path(process)
@@ -285,7 +285,7 @@ describe "Admin collaborative legislation", :admin do
       expect(page).to have_field("Categories", with: "bicycles, pollution, recycling")
     end
 
-    scenario "Edit milestones summary", :js do
+    scenario "Edit milestones summary" do
       visit admin_legislation_process_milestones_path(process)
 
       expect(page).not_to have_link "Remove language"
@@ -329,7 +329,7 @@ describe "Admin collaborative legislation", :admin do
       Setting["sdg.process.legislation"] = true
     end
 
-    scenario "create Collaborative Legislation with sdg related list", :js do
+    scenario "create Collaborative Legislation with sdg related list" do
       visit new_admin_legislation_process_path
       fill_in "Process Title", with: "Legislation process with SDG related content"
       within_fieldset "Process" do
@@ -346,7 +346,7 @@ describe "Admin collaborative legislation", :admin do
       end
     end
 
-    scenario "edit Collaborative Legislation with sdg related list", :js do
+    scenario "edit Collaborative Legislation with sdg related list" do
       process = create(:legislation_process, title: "Legislation process with SDG related content")
       process.sdg_goals = [SDG::Goal[1], SDG::Goal[17]]
       visit edit_admin_legislation_process_path(process)

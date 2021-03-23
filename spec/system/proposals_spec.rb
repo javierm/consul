@@ -135,7 +135,7 @@ describe "Proposals" do
     expect(page).not_to have_selector ".js-follow"
   end
 
-  describe "Social share buttons", :js do
+  describe "Social share buttons" do
     context "On desktop browsers" do
       scenario "Shows links to share on facebook and twitter" do
         visit proposal_path(create(:proposal))
@@ -228,7 +228,7 @@ describe "Proposals" do
       end
     end
 
-    scenario "After using the browser's back button, social buttons will have one screen reader", :js do
+    scenario "After using the browser's back button, social buttons will have one screen reader" do
       Setting["org_name"] = "CONSUL"
       proposal = create(:proposal)
       visit proposal_path(proposal)
@@ -242,7 +242,7 @@ describe "Proposals" do
     end
   end
 
-  describe "Sticky support button on medium and up screens", :js do
+  describe "Sticky support button on medium and up screens" do
     scenario "is shown anchored to top" do
       proposal = create(:proposal)
       visit proposals_path
@@ -255,7 +255,7 @@ describe "Proposals" do
     end
   end
 
-  describe "Show sticky support button on mobile screens", :js do
+  describe "Show sticky support button on mobile screens" do
     let!(:window_size) { Capybara.current_window.size }
 
     before do
@@ -640,7 +640,7 @@ describe "Proposals" do
       expect(page).to have_content "There are three other better proposals with the same subject"
     end
 
-    scenario "Fields are mandatory", :js do
+    scenario "Fields are mandatory" do
       proposal = create(:proposal)
       login_as(proposal.author)
 
@@ -781,7 +781,7 @@ describe "Proposals" do
   end
 
   describe "Proposal index order filters" do
-    scenario "Default order is hot_score", :js do
+    scenario "Default order is hot_score" do
       best_proposal = create(:proposal, title: "Best proposal")
       best_proposal.update_column(:hot_score, 10)
       worst_proposal = create(:proposal, title: "Worst proposal")
@@ -795,7 +795,7 @@ describe "Proposals" do
       expect(medium_proposal.title).to appear_before(worst_proposal.title)
     end
 
-    scenario "Proposals are ordered by confidence_score", :js do
+    scenario "Proposals are ordered by confidence_score" do
       best_proposal = create(:proposal, title: "Best proposal")
       best_proposal.update_column(:confidence_score, 10)
       worst_proposal = create(:proposal, title: "Worst proposal")
@@ -816,7 +816,7 @@ describe "Proposals" do
       expect(page).to have_current_path(/page=1/)
     end
 
-    scenario "Proposals are ordered by newest", :js do
+    scenario "Proposals are ordered by newest" do
       best_proposal = create(:proposal, title: "Best proposal", created_at: Time.current)
       medium_proposal = create(:proposal, title: "Medium proposal", created_at: Time.current - 1.hour)
       worst_proposal = create(:proposal, title: "Worst proposal", created_at: Time.current - 1.day)
@@ -912,7 +912,7 @@ describe "Proposals" do
         expect(page).not_to have_link("recommendations")
       end
 
-      scenario "are automatically disabled when dismissed from index", :js do
+      scenario "are automatically disabled when dismissed from index" do
         proposal = create(:proposal, tag_list: "Sport")
         user     = create(:user, followables: [proposal])
 
@@ -1185,7 +1185,7 @@ describe "Proposals" do
       end
     end
 
-    scenario "Order by relevance by default", :js do
+    scenario "Order by relevance by default" do
       create(:proposal, title: "In summary", summary: "Title content too", cached_votes_up: 10)
       create(:proposal, title: "Title content", summary: "Summary", cached_votes_up: 1)
       create(:proposal, title: "Title here", summary: "Content here", cached_votes_up: 100)
@@ -1203,7 +1203,7 @@ describe "Proposals" do
       end
     end
 
-    scenario "Reorder results maintaing search", :js do
+    scenario "Reorder results maintaing search" do
       create(:proposal, title: "Show you got",      cached_votes_up: 10,  created_at: 1.week.ago)
       create(:proposal, title: "Show what you got", cached_votes_up: 1,   created_at: 1.month.ago)
       create(:proposal, title: "Show you got",      cached_votes_up: 100, created_at: Time.current)
@@ -1355,7 +1355,7 @@ describe "Proposals" do
         create(:proposal, geozone: new_york, title: "Sully monument")
       end
 
-      scenario "From map" do
+      scenario "From map", :no_js do
         visit proposals_path
 
         click_link "map"
@@ -1408,7 +1408,7 @@ describe "Proposals" do
   end
 
   context "Suggesting proposals" do
-    scenario "Show up to 5 suggestions", :js do
+    scenario "Show up to 5 suggestions" do
       create(:proposal, title: "First proposal, has search term")
       create(:proposal, title: "Second title")
       create(:proposal, title: "Third proposal, has search term")
@@ -1427,7 +1427,7 @@ describe "Proposals" do
       end
     end
 
-    scenario "No found suggestions", :js do
+    scenario "No found suggestions" do
       create(:proposal, title: "First proposal").update_column(:confidence_score, 10)
       create(:proposal, title: "Second proposal").update_column(:confidence_score, 8)
 
@@ -1617,7 +1617,7 @@ describe "Successful proposals" do
       Setting["sdg.process.proposals"] = true
     end
 
-    scenario "create proposal with sdg related list", :js do
+    scenario "create proposal with sdg related list" do
       login_as(user)
       visit new_proposal_path
       fill_in "Proposal title", with: "A title for a proposal related with SDG related content"
@@ -1631,7 +1631,7 @@ describe "Successful proposals" do
       within(".sdg-goal-tag-list") { expect(page).to have_link "1. No Poverty" }
     end
 
-    scenario "edit proposal with sdg related list", :js do
+    scenario "edit proposal with sdg related list" do
       proposal = create(:proposal, author: user)
       proposal.sdg_goals = [SDG::Goal[1], SDG::Goal[2]]
       login_as(user)

@@ -85,7 +85,7 @@ describe "Valuation budget investments" do
       expect(page).to have_css(".budget_investment", count: 2)
     end
 
-    scenario "Index filtering by heading", :js do
+    scenario "Index filtering by heading" do
       group = create(:budget_group, budget: budget)
       valuating_heading = create(:budget_heading, name: "Only Valuating", group: group)
       valuating_finished_heading = create(:budget_heading, name: "Valuating&Finished", group: group)
@@ -324,7 +324,7 @@ describe "Valuation budget investments" do
       expect(find("#budget_investment_feasibility_undecided")).to be_checked
     end
 
-    scenario "Feasibility selection makes proper fields visible", :js do
+    scenario "Feasibility selection makes proper fields visible" do
       feasible_fields = ["Price (€)", "Cost during the first year (€)", "Price explanation",
                          "Time scope"]
       unfeasible_fields = ["Feasibility explanation"]

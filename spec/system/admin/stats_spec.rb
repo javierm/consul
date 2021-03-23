@@ -215,7 +215,7 @@ describe "Stats", :admin do
   end
 
   context "graphs" do
-    scenario "event graphs", :js do
+    scenario "event graphs" do
       campaign = create(:campaign)
 
       visit root_path(track_id: campaign.track_id)
@@ -392,7 +392,7 @@ describe "Stats", :admin do
     end
   end
 
-  context "SDG", :js do
+  context "SDG" do
     scenario "Shows SDG stats link when SDG feature is enabled" do
       Setting["feature.sdg"] = true
 

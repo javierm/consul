@@ -14,7 +14,7 @@ describe "Admin moderators", :admin do
     expect(page).not_to have_content user.name
   end
 
-  scenario "Create Moderator", :js do
+  scenario "Create Moderator" do
     fill_in "search", with: user.email
     click_button "Search"
 

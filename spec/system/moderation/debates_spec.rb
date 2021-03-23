@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe "Moderate debates" do
-  scenario "Hide", :js do
+  scenario "Hide" do
     citizen = create(:user)
     moderator = create(:moderator)
 
@@ -81,7 +81,7 @@ describe "Moderate debates" do
         end
       end
 
-      scenario "select all/none", :js do
+      scenario "select all/none" do
         create_list(:debate, 2)
 
         visit moderation_debates_path

@@ -42,7 +42,7 @@ describe "Admin" do
     expect(page).to have_content "You do not have permission to access this page"
   end
 
-  scenario "Access as SDG manager is not authorized", :js do
+  scenario "Access as SDG manager is not authorized" do
     create(:sdg_manager, user: user)
     login_as(user)
     visit admin_root_path
@@ -91,7 +91,7 @@ describe "Admin" do
     expect(page).not_to have_css("#valuation_menu")
   end
 
-  scenario "Admin menu does not hide active elements", :js, :admin do
+  scenario "Admin menu does not hide active elements", :admin do
     visit admin_budgets_path
 
     within("#admin_menu") do

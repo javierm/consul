@@ -230,7 +230,7 @@ describe "Budgets" do
       Setting["feature.map"] = true
     end
 
-    scenario "Display investment's map location markers", :js do
+    scenario "Display investment's map location markers" do
       investment1 = create(:budget_investment, heading: heading)
       investment2 = create(:budget_investment, heading: heading)
       investment3 = create(:budget_investment, heading: heading)
@@ -246,7 +246,7 @@ describe "Budgets" do
       end
     end
 
-    scenario "Display all investment's map location if there are no selected", :js do
+    scenario "Display all investment's map location if there are no selected" do
       budget.update!(phase: :publishing_prices)
 
       investment1 = create(:budget_investment, heading: heading)
@@ -266,7 +266,7 @@ describe "Budgets" do
       end
     end
 
-    scenario "Display only selected investment's map location from publishing prices phase", :js do
+    scenario "Display only selected investment's map location from publishing prices phase" do
       budget.update!(phase: :publishing_prices)
 
       investment1 = create(:budget_investment, :selected, heading: heading)
@@ -286,7 +286,7 @@ describe "Budgets" do
       end
     end
 
-    scenario "Skip invalid map markers", :js do
+    scenario "Skip invalid map markers" do
       map_locations = []
 
       investment = create(:budget_investment, heading: heading)
