@@ -178,7 +178,7 @@ describe "Emails" do
   context "Comment replies" do
     let(:user) { create(:user, email_on_comment_reply: true) }
 
-    scenario "Send email on comment reply", :js do
+    scenario "Send email on comment reply" do
       reply_to(user)
 
       email = open_last_email
@@ -190,12 +190,12 @@ describe "Emails" do
       expect(email).to have_body_text(account_path)
     end
 
-    scenario "Do not send email about own replies to own comments", :js do
+    scenario "Do not send email about own replies to own comments" do
       reply_to(user, user)
       expect { open_last_email }.to raise_error("No email has been sent!")
     end
 
-    scenario "Do not send email about comment reply unless set in preferences", :js do
+    scenario "Do not send email about comment reply unless set in preferences" do
       user.update!(email_on_comment_reply: false)
       reply_to(user)
       expect { open_last_email }.to raise_error("No email has been sent!")
@@ -433,7 +433,7 @@ describe "Emails" do
   end
 
   context "Polls" do
-    scenario "Send email on poll comment reply", :js do
+    scenario "Send email on poll comment reply" do
       user1 = create(:user, email_on_comment_reply: true)
       user2 = create(:user)
       poll = create(:poll, author: create(:user))

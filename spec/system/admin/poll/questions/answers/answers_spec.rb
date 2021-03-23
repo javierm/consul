@@ -54,7 +54,7 @@ describe "Answers", :admin do
     expect("Another title").to appear_before("New title")
   end
 
-  scenario "Reorder", :js do
+  scenario "Reorder" do
     question = create(:poll_question)
     create(:poll_question_answer, question: question, title: "First", given_order: 1)
     create(:poll_question_answer, question: question, title: "Last", given_order: 2)

@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe "Moderate proposal notifications" do
-  scenario "Hide", :js do
+  scenario "Hide" do
     citizen   = create(:user)
     proposal  = create(:proposal)
     proposal_notification = create(:proposal_notification, proposal: proposal, created_at: Date.current - 4.days)
@@ -84,7 +84,7 @@ describe "Moderate proposal notifications" do
         end
       end
 
-      scenario "select all/none", :js do
+      scenario "select all/none" do
         create_list(:proposal_notification, 2)
 
         visit moderation_proposal_notifications_path

@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe "Moderate comments" do
-  scenario "Hide", :js do
+  scenario "Hide" do
     citizen = create(:user)
     moderator = create(:moderator)
 
@@ -108,7 +108,7 @@ describe "Moderate comments" do
         end
       end
 
-      scenario "select all/none", :js do
+      scenario "select all/none" do
         create_list(:comment, 2)
 
         visit moderation_comments_path

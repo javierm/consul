@@ -6,7 +6,7 @@ describe "Moderate budget investments" do
   let(:mod)         { create(:moderator) }
   let!(:investment) { create(:budget_investment, heading: heading, author: create(:user)) }
 
-  scenario "Hiding an investment", :js do
+  scenario "Hiding an investment" do
     login_as(mod.user)
     visit budget_investment_path(budget, investment)
 
@@ -19,7 +19,7 @@ describe "Moderate budget investments" do
     expect(page).not_to have_content(investment.title)
   end
 
-  scenario "Hiding an investment's author", :js do
+  scenario "Hiding an investment's author" do
     login_as(mod.user)
     visit budget_investment_path(budget, investment)
 
@@ -95,7 +95,7 @@ describe "Moderate budget investments" do
         end
       end
 
-      scenario "select all/none", :js do
+      scenario "select all/none" do
         create_list(:budget_investment, 2, heading: heading, author: create(:user))
 
         visit moderation_budget_investments_path

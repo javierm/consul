@@ -43,7 +43,7 @@ describe "Moderation" do
     expect(page).to have_content "You do not have permission to access this page"
   end
 
-  scenario "Access as SDG manager is not authorized", :js do
+  scenario "Access as SDG manager is not authorized" do
     create(:sdg_manager, user: user)
 
     login_as(user)

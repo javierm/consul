@@ -36,7 +36,7 @@ describe "Legislation Proposals" do
       let(:user2)    { create(:user) }
       let(:per_page) { 12 }
 
-      scenario "Each user has a different and consistent random proposals order", :js do
+      scenario "Each user has a different and consistent random proposals order" do
         first_user_proposals_order = nil
         second_user_proposals_order = nil
 
@@ -66,7 +66,7 @@ describe "Legislation Proposals" do
       end
     end
 
-    scenario "Random order maintained with pagination", :js do
+    scenario "Random order maintained with pagination" do
       login_as user
       visit legislation_process_proposals_path(process)
       first_page_proposals_order = legislation_proposals_order
@@ -137,7 +137,7 @@ describe "Legislation Proposals" do
     all("[id^='legislation_proposal_']").map { |e| e[:id] }
   end
 
-  scenario "Create a legislation proposal with an image", :js do
+  scenario "Create a legislation proposal with an image" do
     create(:legislation_proposal, process: process)
 
     login_as user
@@ -211,7 +211,7 @@ describe "Legislation Proposals" do
     end
   end
 
-  scenario "Shows proposal tags as proposals filter", :js do
+  scenario "Shows proposal tags as proposals filter" do
     create(:legislation_proposal, process: process, tag_list: "Culture", title: "Open concert")
     create(:legislation_proposal, process: process, tag_list: "Sports", title: "Baseball field")
 
@@ -226,7 +226,7 @@ describe "Legislation Proposals" do
     expect(page).to have_content "Open concert"
   end
 
-  scenario "Show proposal tags on show when SDG is enabled", :js do
+  scenario "Show proposal tags on show when SDG is enabled" do
     Setting["feature.sdg"] = true
     Setting["sdg.process.legislation"] = true
 
