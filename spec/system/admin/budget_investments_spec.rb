@@ -948,24 +948,24 @@ describe "Admin budget investments", :admin do
 
       visit admin_budget_budget_investments_path(budget_investment.budget)
 
-      click_link budget_investment.title
+      within_window(window_opened_by { click_link budget_investment.title }) do
+        expect(page).to have_content("Investment preview")
+        expect(page).to have_content(budget_investment.title)
+        expect(page).to have_content(budget_investment.description)
+        expect(page).to have_content(budget_investment.author.name)
+        expect(page).to have_content(budget_investment.heading.name)
+        expect(page).to have_content("1234")
+        expect(page).to have_content("1000")
+        expect(page).to have_content("Unfeasible")
+        expect(page).to have_content("It is impossible")
+        expect(page).to have_content("Ana (ana@admins.org)")
 
-      expect(page).to have_content("Investment preview")
-      expect(page).to have_content(budget_investment.title)
-      expect(page).to have_content(budget_investment.description)
-      expect(page).to have_content(budget_investment.author.name)
-      expect(page).to have_content(budget_investment.heading.name)
-      expect(page).to have_content("1234")
-      expect(page).to have_content("1000")
-      expect(page).to have_content("Unfeasible")
-      expect(page).to have_content("It is impossible")
-      expect(page).to have_content("Ana (ana@admins.org)")
+        within("#assigned_valuators") do
+          expect(page).to have_content("Rachel (rachel@valuators.org)")
+        end
 
-      within("#assigned_valuators") do
-        expect(page).to have_content("Rachel (rachel@valuators.org)")
+        expect(page).to have_button "Publish comment"
       end
-
-      expect(page).to have_button "Publish comment"
     end
 
     scenario "Show image and documents on investment details" do
@@ -980,22 +980,22 @@ describe "Admin budget investments", :admin do
 
       visit admin_budget_budget_investments_path(budget_investment.budget)
 
-      click_link budget_investment.title
-
-      expect(page).to have_content(budget_investment.title)
-      expect(page).to have_content(budget_investment.description)
-      expect(page).to have_content(budget_investment.author.name)
-      expect(page).to have_content(budget_investment.heading.name)
-      expect(page).to have_content("Investment preview")
-      expect(page).to have_content(budget_investment.image.title)
-      expect(page).to have_content("Documents (1)")
-      expect(page).to have_content(document.title)
-      expect(page).to have_content("Download file")
-      expect(page).to have_content("1234")
-      expect(page).to have_content("1000")
-      expect(page).to have_content("Unfeasible")
-      expect(page).to have_content("It is impossible")
-      expect(page).to have_content("Ana (ana@admins.org)")
+      within_window(window_opened_by { click_link budget_investment.title }) do
+        expect(page).to have_content(budget_investment.title)
+        expect(page).to have_content(budget_investment.description)
+        expect(page).to have_content(budget_investment.author.name)
+        expect(page).to have_content(budget_investment.heading.name)
+        expect(page).to have_content("Investment preview")
+        expect(page).to have_content(budget_investment.image.title)
+        expect(page).to have_content("Documents (1)")
+        expect(page).to have_content(document.title)
+        expect(page).to have_content("Download file")
+        expect(page).to have_content("1234")
+        expect(page).to have_content("1000")
+        expect(page).to have_content("Unfeasible")
+        expect(page).to have_content("It is impossible")
+        expect(page).to have_content("Ana (ana@admins.org)")
+      end
     end
 
     scenario "Does not show related content or hide links on preview" do
@@ -1022,14 +1022,14 @@ describe "Admin budget investments", :admin do
                                   administrator: administrator)
       visit admin_budget_budget_investments_path(budget_investment.budget)
 
-      click_link budget_investment.title
+      within_window(window_opened_by { click_link budget_investment.title }) do
+        expect(page).not_to have_link "Edit"
+        expect(page).not_to have_link "Edit classification"
+        expect(page).not_to have_link "Edit dossier"
+        expect(page).to have_link "Create new milestone"
 
-      expect(page).not_to have_link "Edit"
-      expect(page).not_to have_link "Edit classification"
-      expect(page).not_to have_link "Edit dossier"
-      expect(page).to have_link "Create new milestone"
-
-      expect(page).not_to have_button "Publish comment"
+        expect(page).not_to have_button "Publish comment"
+      end
     end
   end
 
