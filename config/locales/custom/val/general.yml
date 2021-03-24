@@ -571,6 +571,14 @@ val:
       title: Recomanacions
       see_more: Veure més recomanacions
       hide: Ocultar recomanacions
+    translations:
+      select_language_prompt: Seleccionar idioma
+      remove_language: Eliminar idioma
+      add_language: Afegir idioma
+      languages_in_use:
+        zero: "0 idiomes en ús"
+        one: "1 idioma en ús"
+        other: "%{count} idiomes en ús"
   social:
     facebook: "Facebook de %{org}"
     twitter: "Twitter de %{org}"

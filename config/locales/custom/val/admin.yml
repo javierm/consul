@@ -282,6 +282,7 @@ val:
       delete:
         notice: Estat de la proposta esborrat correctament
     progress_bars:
+      manage: "Gestionar barres de progrés"
       index:
         title: "Barres de progrés"
         table_kind: "Tipus"
@@ -336,11 +337,11 @@ val:
           back: Tornar
           submit_button: Guardar canvis
         form:
-          enabled: Actiu
-          process: Proces
+          enabled: Activa
+          process: Procés
           debate_phase: Fase prèvia
           draft_phase: Fase de redacció
-          draft_phase_description: Si aquesta fase està activa, el procés no es mostrarà en el llistat de processos. Permet una vista previa del procés i crea contingut abans de que comence.
+          draft_phase_description: Si aquesta fase està activa, el procés no es mostrarà en el llistat de processos. Permet una vista previa del procés i crea contingut abans que comence.
           allegations_phase: Fase de comentaris
           proposals_phase: Fase de propostes
           use_markdown: Usa Markdown per a formatejar el text
@@ -349,7 +350,7 @@ val:
           description_placeholder: Afegeix una descripció del procés
           additional_info_placeholder: Afegeix qualsevol informació addicional que puga ser d'interès
           homepage_description: Ací pots explicar el contingut del procés
-          banner_title: Colors de capçelera
+          banner_title: Colors de capçalera
         index:
           create: Nou procés
           delete: Eliminar
@@ -359,7 +360,7 @@ val:
             all: Tots
         new:
           back: Tornar
-          title: Crear proces de legislació col·laborativa
+          title: Crear procés de legislació col·laborativa
           submit_button: Crear procés
         proposals:
           select_order: Ordenar per
@@ -368,8 +369,10 @@ val:
             title: Títol
             supports: Avals
         process:
-          title: Proces
+          title: Procés
           comments: Comentaris
+          start_date: Data d'obertura
+          end_date: Data de tancament
           status: Estat
           status_open: Oberts
           status_closed: Tancat
@@ -391,8 +394,8 @@ val:
           id: Id
           supports: Avals
         form:
-          custom_categories: Categoríes
-          custom_categories_description: Categoríes que l'usuari pot seleccionar al crear la proposta.
+          custom_categories: Categories
+          custom_categories_description: Categories que la persona usuària pot seleccionar al crear la proposta.
           custom_categories_placeholder: Escriu les etiquetes que desitges separades per comes (',') i entre cometes ("")
       draft_versions:
         create:
@@ -412,9 +415,9 @@ val:
           close_text_editor: Tancar editor de text
           use_markdown: Fes servir Markdown per formatar el text
           hints:
-            final_version: Serà la versió que es publiqui en Publicació de resultats. Aquesta versió no es podrà comentar.
+            final_version: Serà la versió que es publique en Publicació de resultats. Aquesta versió no es podrà comentar.
             status:
-              draft: Podràs previsualitzar-com loguejat, ningú més ho podrà veure
+              draft: Podràs previsualitzar-ho com a loguejat, ningú més ho podrà veure
               published: Serà visible per a tots
           title_placeholder: Escriu el títol d'aquesta versió de l'esborrany
           changelog_placeholder: Descriu qualsevol canvi rellevant amb la versió anterior
@@ -454,7 +457,7 @@ val:
           question_options: "Possibles respostes (opcional, per defecte respostes obertes)"
         index:
           back: Tornar
-          title: Preguntes associades a aquest proces
+          title: Preguntes associades a aquest procés
           create: Crear pregunta
           delete: Eliminar
         new:
@@ -1028,6 +1031,7 @@ val:
       description: Descripció
       image: Imatge
       show_image: Mostrar imatge
+      color_help: Format hexadecimal
       moderated_content: "Revisa el contigut moderat pels moderadors, i confirma si la moderació s'ha realitzat correctament."
       view: Veure
       proposal: Proposta

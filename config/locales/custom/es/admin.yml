@@ -481,10 +481,10 @@ es:
           back: Volver
           submit_button: Guardar cambios
         form:
-          enabled: Habilitado
+          enabled: Activa
           process: Proceso
           debate_phase: Fase previa
-          draft_phase: Fase de borrador
+          draft_phase: Fase de redacción
           draft_phase_description: Si esta fase está activa, el proceso no aparecerá en la página de procesos. Permite previsualizar el proceso y crear contenido antes del inicio.
           allegations_phase: Fase de comentarios
           proposals_phase: Fase de propuestas

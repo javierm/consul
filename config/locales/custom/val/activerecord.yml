@@ -85,7 +85,7 @@ val:
         one: Documento
         other: Documentos
       legislation/process:
-        one: "Proces"
+        one: "Procés"
         other: "Processos legislatius"
       legislation/proposal:
         one: "Proposta"
@@ -216,8 +216,8 @@ val:
         ends_at: "Fecha de fin"
         starts_at: "Fecha de inicio"
       budget/phase/translation:
-        description: "Descripción"
-        summary: "Resumen"
+        description: "Descripció"
+        summary: "Resum"
       comment:
         body: "Comentari"
         user: "Usuari"
@@ -277,7 +277,7 @@ val:
         starts_at: "Data d'inici"
         ends_at: "Data de tancament"
         geozone_restricted: "Restringida per zones"
-        summary: "Resumen"
+        summary: "Resum"
         description: "Descripció"
       active_poll/translation:
         description: "Descripción"
@@ -286,7 +286,7 @@ val:
         location: "Ubicación"
       poll/translation:
         name: "Nom"
-        summary: "Resumen"
+        summary: "Resum"
         description: "Descripció"
       poll/question:
         poll_id: "Votación"
@@ -316,7 +316,7 @@ val:
         subtitle: Subtítol
         slug: Slug
         status: Estat
-        status_draft: "Borrador"
+        status_draft: "Esborrany"
         status_published: "Publicada"
         title: Títol
         updated_at: Actualitzada el
@@ -350,43 +350,43 @@ val:
         description: "Descripción"
       legislation/process:
         title: Títol del Procés
-        summary: Resumen
+        summary: Resum
         description: Descripció
         additional_info: Informació addicional
         start_date: Data d'inici del procés
         end_date: Data de fi del procés
         debate_start_date: Data d'inici del debat
         debate_end_date: Data de fi del debat
-        draft_start_date: Data d'inici del esborrany
-        draft_end_date: Data en la que s'acaba la redacció
+        draft_start_date: Data d'inici de l'esborrany
+        draft_end_date: Data en què s'acaba la redacció
         draft_publication_date: Data de publicació de l'esborrany
         allegations_start_date: Data d'inici d'al·legacions
         allegations_end_date: Data de fi d'al·legacions
-        proposals_phase_start_date: Inicio
-        proposals_phase_end_date: Fin
+        proposals_phase_start_date: Inici
+        proposals_phase_end_date: Fi
         result_publication_date: Data de publicació del resultat final
         background_color: Color de fons
         font_color: Color de font
-        homepage_enabled: "Homepage activada"
+        homepage_enabled: "Pàgina principal activada"
       legislation/process/translation:
         title: Títol del procés
-        summary: Resumen
+        summary: Resum
         description: Descripció
         additional_info: Informació addicional
-        homepage: "Descripción"
-        milestones_summary: Resumen
+        homepage: "Descripció"
+        milestones_summary: Resum
       legislation/proposal:
         description: "Texto desarrollado de la propuesta"
-        summary: "Resumen de la propuesta"
-        title: "Título de la propuesta"
+        summary: "Resum de la proposta"
+        title: "Títol de la proposta"
         video_url: "Enlace a vídeo externo"
       legislation/draft_version:
         title: Títol de la versió
         body: Text
         changelog: Canvis
         status: Estat
-        status_draft: "Borrador"
-        status_published: "Publicado"
+        status_draft: "Esborrany"
+        status_published: "Publicat"
         final_version: Versió final
       legislation/draft_version/translation:
         title: Títol de la versió
