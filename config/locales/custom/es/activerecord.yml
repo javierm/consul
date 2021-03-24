@@ -371,7 +371,7 @@ es:
       legislation/process/translation:
         title: Título del proceso
         summary: Resumen
-        description: En qué consiste
+        description: Descripción
         additional_info: Información adicional
         homepage: "Descripción"
         milestones_summary: Seguimiento del proceso

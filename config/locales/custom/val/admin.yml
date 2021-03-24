@@ -24,7 +24,7 @@ val:
           all: Totes
           with_active: Actius
           with_inactive: Inactius
-        preview: Vista previa
+        preview: Vista prèvia
       banner:
         sections_label: Seccions on apareixerà
         sections:
@@ -341,7 +341,7 @@ val:
           process: Procés
           debate_phase: Fase prèvia
           draft_phase: Fase de redacció
-          draft_phase_description: Si aquesta fase està activa, el procés no es mostrarà en el llistat de processos. Permet una vista previa del procés i crea contingut abans que comence.
+          draft_phase_description: Si aquesta fase està activa, el procés no es mostrarà en el llistat de processos. Permet una vista prèvia del procés i crea contingut abans que comence.
           allegations_phase: Fase de comentaris
           proposals_phase: Fase de propostes
           use_markdown: Usa Markdown per a formatejar el text
@@ -426,7 +426,7 @@ val:
           title: Versions esborrany
           create: Crear versió
           delete: Eliminar
-          preview: Vista previa
+          preview: Vista prèvia
         new:
           back: Tornar
           title: Crear nova versió
@@ -593,14 +593,14 @@ val:
         draft: Esborrany
         edit: Editar
         delete: Eliminar
-        preview: Vista previa
+        preview: Vista prèvia
         empty_newsletters: No hi ha butlletins informatius per a mostrar
       new:
         title: Nou butlletí informatiu
       edit:
         title: Editar butlletí informatiu
       show:
-        title: Vista previa del butlletí informatiu
+        title: Vista prèvia del butlletí informatiu
         send: Enviar
         affected_users: (%{n} usuaris afectats)
         sent_emails:
@@ -628,7 +628,7 @@ val:
         draft: Esborrany
         edit: Editar
         delete: Eliminar
-        preview: Vista previa
+        preview: Vista prèvia
         view: Vista
         empty_notifications: No hi ha notificacions per a mostrar
       new:
@@ -638,7 +638,7 @@ val:
         section_title: Editar notificació
         submit_button: Actualizar notificació
       show:
-        section_title: Vista previa de notificació
+        section_title: Vista prèvia de notificació
         send: Enviar notificació
         will_get_notified: (%{n} usuaris seran notificats)
         got_notified: (%{n} usuaris han sigut notificats)
@@ -653,7 +653,7 @@ val:
     system_emails:
       preview_pending:
         action: Previsualitzar pendents
-        preview_of: Vista previa de %{name}
+        preview_of: Vista prèvia de %{name}
         pending_to_be_sent: Este es tot el contingut pendent d'enviar
         moderate_pending: Moderar l'enviament de notificació
         send_pending: Enviar pendents
