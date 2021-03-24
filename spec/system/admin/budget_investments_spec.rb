@@ -1042,7 +1042,7 @@ describe "Admin budget investments", :admin do
       click_link "Edit"
 
       fill_in "Title", with: "Potatoes"
-      fill_in "Description", with: "Carrots"
+      fill_in_ckeditor "Description", with: "Carrots"
       select "#{budget_investment.group.name}: Barbate", from: "budget_investment[heading_id]"
       uncheck "budget_investment_incompatible"
       check "budget_investment_selected"
