@@ -375,7 +375,7 @@ describe "Emails" do
 
       within_fieldset("Feasibility") { choose "Unfeasible" }
       fill_in "Feasibility explanation", with: "This is not legal as stated in Article 34.9"
-      check "Valuation finished"
+      accept_confirm { check "Valuation finished" }
       click_button "Save changes"
 
       expect(page).to have_content "Dossier updated"
