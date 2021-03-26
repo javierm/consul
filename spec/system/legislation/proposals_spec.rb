@@ -86,7 +86,7 @@ describe "Legislation Proposals" do
       login_as user
       visit legislation_process_proposals_path(process, random_seed: "Spoof")
 
-      expect(page).to have_content "You're on page 1"
+      expect(page).to have_content "Random"
     end
   end
 
