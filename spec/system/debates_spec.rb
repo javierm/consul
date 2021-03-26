@@ -805,8 +805,9 @@ describe "Debates" do
     create(:debate)
 
     visit debates_path
+
     within("#debates") do
-      expect(page).to have_content("Featured")
+      expect(page).to have_content("FEATURED")
     end
   end
 
