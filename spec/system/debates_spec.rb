@@ -244,7 +244,7 @@ describe "Debates" do
 
     visit new_debate_path
     fill_in "Debate title", with: "I am a bot"
-    fill_in "Initial debate text", with: "This is the description"
+    fill_in_ckeditor "Initial debate text", with: "This is the description"
     check "debate_terms_of_service"
 
     click_button "Start a debate"
