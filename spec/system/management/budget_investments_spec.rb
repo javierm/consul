@@ -52,7 +52,7 @@ describe "Budget Investments" do
 
       select "Health", from: "budget_investment_heading_id"
       fill_in "Title", with: "Build a park in my neighborhood"
-      fill_in "Description", with: "There is no parks here..."
+      fill_in_ckeditor "Description", with: "There is no parks here..."
       fill_in "budget_investment_location", with: "City center"
       fill_in "budget_investment_organization_name", with: "T.I.A."
       fill_in "budget_investment_tag_list", with: "green"
