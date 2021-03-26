@@ -216,6 +216,8 @@ describe "Admin booths assignments", :admin do
 
       visit admin_poll_booth_assignment_path(poll, booth_assignment)
 
+      click_link "Recounts"
+
       within("#totals") do
         within("#total_final") do
           expect(page).to have_content "10"
