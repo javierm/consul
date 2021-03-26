@@ -66,7 +66,8 @@ describe "Moderate budget investments" do
         end
 
         scenario "Hide the investment" do
-          click_button "Hide budget investments"
+          accept_confirm { click_button "Hide budget investments" }
+
           expect(page).not_to have_css("investment_#{investment.id}")
 
           investment.reload
@@ -75,7 +76,8 @@ describe "Moderate budget investments" do
         end
 
         scenario "Block the author" do
-          click_button "Block authors"
+          accept_confirm { click_button "Block authors" }
+
           expect(page).not_to have_css("investment_#{investment.id}")
 
           investment.reload
@@ -84,7 +86,8 @@ describe "Moderate budget investments" do
         end
 
         scenario "Ignore the investment" do
-          click_button "Mark as viewed"
+          accept_confirm { click_button "Mark as viewed" }
+
           expect(page).not_to have_css("investment_#{investment.id}")
 
           investment.reload
@@ -117,7 +120,7 @@ describe "Moderate budget investments" do
 
         visit moderation_budget_investments_path(filter: "all", page: "2", order: "created_at")
 
-        click_button "Mark as viewed"
+        accept_confirm { click_button "Mark as viewed" }
 
         expect(page).to have_selector(".js-order-selector[data-order='created_at']")
 
