@@ -17,6 +17,8 @@ describe "Poll budget ballot sheets" do
 
     scenario "Budget polls are visible" do
       visit root_path
+
+      click_link "Menu"
       click_link "Polling officers"
 
       within("#side_menu") do
