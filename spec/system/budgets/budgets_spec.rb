@@ -107,7 +107,7 @@ describe "Budgets" do
 
       within("#budget_info") do
         expect(page).not_to have_link heading.name
-        expect(page).to have_content "#{heading.name} €1,000,000"
+        expect(page).to have_content "#{heading.name}\n€1,000,000"
 
         expect(page).not_to have_link("List of all investment projects")
         expect(page).not_to have_link("List of all unfeasible investment projects")
