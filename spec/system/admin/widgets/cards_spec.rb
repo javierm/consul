@@ -193,7 +193,7 @@ describe "Cards", :admin do
         visit custom_page.url
 
         within("#widget_card_#{card_1.id}") do
-          expect(page).to have_selector("span", text: "My label")
+          expect(page).to have_selector("span", text: "MY LABEL")
         end
 
         within("#widget_card_#{card_2.id}") do
