@@ -287,7 +287,7 @@ describe "Debates" do
 
     visit new_debate_path
     fill_in "Debate title", with: "Testing auto link"
-    fill_in "Initial debate text", with: "<p>This is a link www.example.org</p>"
+    fill_in_ckeditor "Initial debate text", with: "This is a link www.example.org"
     check "debate_terms_of_service"
 
     click_button "Start a debate"
@@ -355,7 +355,7 @@ describe "Debates" do
     expect(page).to have_current_path(edit_debate_path(debate))
 
     fill_in "Debate title", with: "End child poverty"
-    fill_in "Initial debate text", with: "Let's do something to end child poverty"
+    fill_in_ckeditor "Initial debate text", with: "Let's do something to end child poverty"
 
     click_button "Save changes"
 
