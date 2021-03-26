@@ -33,7 +33,7 @@ describe "Budgets" do
       end
 
       within(".budget-subheader") do
-        expect(page).to have_content "Current phase"
+        expect(page).to have_content "CURRENT PHASE"
         expect(page).to have_content "Information"
       end
 
