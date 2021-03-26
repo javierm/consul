@@ -206,7 +206,7 @@ describe "Legislation Proposals" do
     visit legislation_process_proposal_path(proposal.process, proposal)
 
     within(".process-proposal") do
-      expect(page).to have_content("Collaborative legislation process")
+      expect(page).to have_content("COLLABORATIVE LEGISLATION PROCESS")
       expect(page).to have_link(process.title)
     end
   end
