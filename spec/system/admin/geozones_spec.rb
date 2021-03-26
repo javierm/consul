@@ -14,7 +14,10 @@ describe "Admin geozones", :admin do
   scenario "Create new geozone" do
     visit admin_root_path
 
-    within("#side_menu") { click_link "Manage geozones" }
+    within("#side_menu") do
+      click_link "Settings"
+      click_link "Manage geozones"
+    end
 
     click_link "Create geozone"
 

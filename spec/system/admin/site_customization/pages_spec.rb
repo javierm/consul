@@ -33,6 +33,7 @@ describe "Admin custom pages", :admin do
       visit admin_root_path
 
       within("#side_menu") do
+        click_link "Site content"
         click_link "Custom pages"
       end
 
@@ -44,7 +45,7 @@ describe "Admin custom pages", :admin do
       fill_in "Title", with: "An example custom page"
       fill_in "Subtitle", with: "Page subtitle"
       fill_in "site_customization_page_slug", with: "example-page"
-      fill_in "Content", with: "This page is about..."
+      fill_in_ckeditor "Content", with: "This page is about..."
 
       click_button "Create Custom page"
 
@@ -62,6 +63,7 @@ describe "Admin custom pages", :admin do
       visit admin_root_path
 
       within("#side_menu") do
+        click_link "Site content"
         click_link "Custom pages"
       end
 

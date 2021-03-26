@@ -10,7 +10,7 @@ describe "Admin feature flags", :admin do
 
     within("#side_menu") do
       expect(page).to have_link "Participatory budgets"
-      expect(page).to have_link "Hidden debates"
+      expect(page).to have_link "Debates"
     end
   end
 
