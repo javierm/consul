@@ -8,6 +8,9 @@ describe "Admin hidden proposals", :admin do
     expect(page).to have_content(proposal.title)
     expect(page).to have_content(proposal.summary)
     expect(page).to have_content(proposal.description)
+
+    find("td", text: proposal.summary).hover
+
     expect(page).to have_content(proposal.video_url)
   end
 
