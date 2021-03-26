@@ -932,7 +932,7 @@ describe "Budget Investments" do
     visit budget_investment_path(budget, id: investment.id)
 
     within("aside") do
-      expect(page).to have_content("Investment project")
+      expect(page).to have_content("INVESTMENT PROJECT")
       expect(page).to have_css(".label-budget-investment")
     end
   end
@@ -1214,7 +1214,7 @@ describe "Budget Investments" do
       visit budget_investment_path(budget, investment)
 
       within("aside") do
-        expect(page).to have_content "Votes"
+        expect(page).to have_content "VOTES"
       end
     end
 
@@ -1313,7 +1313,7 @@ describe "Budget Investments" do
       expect(page).to have_css("#progress_bar")
 
       within("#sidebar") do
-        expect(page).to have_content("My ballot")
+        expect(page).to have_content("MY BALLOT")
         expect(page).to have_link("Submit my ballot")
       end
     end
@@ -1526,7 +1526,7 @@ describe "Budget Investments" do
         visit budget_investment_path(budget, investment)
 
         within("aside") do
-          expect(page).to have_content "Author"
+          expect(page).to have_content "AUTHOR"
           expect(page).not_to have_link "Edit"
           expect(page).to have_link "Remove image"
         end
