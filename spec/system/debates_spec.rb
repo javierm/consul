@@ -207,7 +207,7 @@ describe "Debates" do
 
     visit new_debate_path
     fill_in "Debate title", with: "A title for a debate"
-    fill_in "Initial debate text", with: "This is very important because..."
+    fill_in_ckeditor "Initial debate text", with: "This is very important because..."
     check "debate_terms_of_service"
 
     click_button "Start a debate"
