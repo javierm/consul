@@ -107,7 +107,7 @@ describe "Moderate proposal notifications" do
 
         visit moderation_proposal_notifications_path(filter: "all", page: "2", order: "created_at")
 
-        click_button "Mark as viewed"
+        accept_confirm { click_button "Mark as viewed" }
 
         expect(page).to have_selector(".js-order-selector[data-order='created_at']")
 
