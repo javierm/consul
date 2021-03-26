@@ -542,7 +542,7 @@ describe "Budget Investments" do
 
       select  heading.name, from: "budget_investment_heading_id"
       fill_in "Title", with: "Build a skyscraper"
-      fill_in "Description", with: "I want to live in a high tower over the clouds"
+      fill_in_ckeditor "Description", with: "I want to live in a high tower over the clouds"
       fill_in "budget_investment_location", with: "City center"
       fill_in "budget_investment_organization_name", with: "T.I.A."
       fill_in "budget_investment_tag_list", with: "Towers"
