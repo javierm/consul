@@ -476,7 +476,9 @@ describe "Emails" do
 
       expect(page).to have_content "Newsletter created successfully"
 
-      click_link "Send"
+      accept_confirm { click_link "Send" }
+
+      expect(page).to have_content "Newsletter sent successfully"
 
       expect(unread_emails_for(user_with_newsletter_in_segment_1.email).count).to eq 1
       expect(unread_emails_for(user_with_newsletter_in_segment_2.email).count).to eq 1
