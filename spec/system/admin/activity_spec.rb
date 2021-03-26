@@ -177,7 +177,9 @@ describe "Admin activity" do
         check "comment_#{comment3.id}_check"
       end
 
-      click_on "Hide comments"
+      accept_confirm { click_button "Hide comments" }
+
+      expect(page).not_to have_content(comment1.body)
 
       visit admin_activity_path
 
