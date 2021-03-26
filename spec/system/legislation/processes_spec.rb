@@ -169,10 +169,10 @@ describe "Legislation" do
         visit legislation_process_path(process)
 
         within("aside") do
-          expect(page).to have_content("Draft publication")
-          expect(page).to have_content("10 Jan 2019")
-          expect(page).to have_content("Final result publication")
-          expect(page).to have_content("20 Jan 2019")
+          expect(page).to have_content "DRAFT PUBLICATION"
+          expect(page).to have_content "10 Jan 2019"
+          expect(page).to have_content "FINAL RESULT PUBLICATION"
+          expect(page).to have_content "20 Jan 2019"
         end
       end
 
