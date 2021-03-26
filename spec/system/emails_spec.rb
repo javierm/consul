@@ -348,7 +348,7 @@ describe "Emails" do
 
       select  heading.name, from: "budget_investment_heading_id"
       fill_in "Title", with: "Build a hospital"
-      fill_in "Description", with: "We have lots of people that require medical attention"
+      fill_in_ckeditor "Description", with: "We have lots of people that require medical attention"
       check   "budget_investment_terms_of_service"
 
       click_button "Create Investment"

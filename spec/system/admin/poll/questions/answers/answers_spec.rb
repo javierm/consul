@@ -8,7 +8,7 @@ describe "Answers", :admin do
     click_link "Add answer"
 
     fill_in "Answer", with: "The answer is always 42"
-    fill_in "Description", with: "The Hitchhiker's Guide To The Universe"
+    fill_in_ckeditor "Description", with: "The Hitchhiker's Guide To The Universe"
 
     click_button "Save"
 
@@ -24,7 +24,7 @@ describe "Answers", :admin do
     click_link "Add answer"
 
     fill_in "Answer", with: "Second"
-    fill_in "Description", with: "Description"
+    fill_in_ckeditor "Description", with: "Description"
 
     click_button "Save"
 
