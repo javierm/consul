@@ -31,6 +31,7 @@ describe "Moderate proposal notifications" do
 
     login_as(moderator.user)
     visit proposal_path(proposal)
+    click_link "Notifications (1)"
 
     within("#proposal_notification_#{proposal_notification.id}") do
       expect(page).not_to have_link("Hide")
