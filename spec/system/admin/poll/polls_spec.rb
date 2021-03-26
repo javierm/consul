@@ -84,12 +84,12 @@ describe "Admin polls", :admin do
     visit admin_poll_path(poll)
     click_link "Edit poll"
 
-    end_date = 1.year.from_now
+    end_date = 1.year.from_now.to_date
 
     expect(page).to have_css("img[alt='#{poll.image.title}']")
 
     fill_in "Name", with: "Next Poll"
-    fill_in "poll_ends_at", with: end_date.strftime("%d/%m/%Y")
+    fill_in "poll_ends_at", with: end_date
 
     click_button "Update poll"
 
