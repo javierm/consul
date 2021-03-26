@@ -17,6 +17,7 @@ describe "Admin custom content blocks", :admin do
       visit admin_root_path
 
       within("#side_menu") do
+        click_link "Settings"
         click_link "Custom content blocks"
       end
 
@@ -41,6 +42,7 @@ describe "Admin custom content blocks", :admin do
       visit admin_root_path
 
       within("#side_menu") do
+        click_link "Settings"
         click_link "Custom content blocks"
       end
 
@@ -67,6 +69,7 @@ describe "Admin custom content blocks", :admin do
       visit admin_root_path
 
       within("#side_menu") do
+        click_link "Settings"
         click_link "Custom content blocks"
       end
 
