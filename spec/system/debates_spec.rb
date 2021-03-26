@@ -781,24 +781,22 @@ describe "Debates" do
     end
 
     click_link debate.title
-
-    click_link "Featured"
-
-    visit debates_path
+    accept_confirm { click_link "Featured" }
 
     within("#debates") do
-      expect(page).to have_content "Featured"
+      expect(page).to have_content "FEATURED"
     end
 
     within("#featured-debates") do
       expect(page).to have_content debate.title
+
+      click_link debate.title
     end
 
-    visit debate_path(debate)
-    click_link "Unmark featured"
+    accept_confirm { click_link "Unmark featured" }
 
     within("#debates") do
-      expect(page).not_to have_content "Featured"
+      expect(page).not_to have_content "FEATURED"
     end
   end
 
