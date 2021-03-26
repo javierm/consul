@@ -526,7 +526,7 @@ describe "Budget Investments" do
 
       select  heading.name, from: "budget_investment_heading_id"
       fill_in "Title", with: "I am a bot"
-      fill_in "Description", with: "This is the description"
+      fill_in_ckeditor "Description", with: "This is the description"
       check   "budget_investment_terms_of_service"
 
       click_button "Create Investment"
