@@ -1085,7 +1085,7 @@ describe "Budget Investments" do
       visit budget_investment_path(budget, investment)
 
       within("aside") do
-        expect(page).to have_content "Supports"
+        expect(page).to have_content "SUPPORTS"
       end
     end
   end
@@ -1101,7 +1101,7 @@ describe "Budget Investments" do
       visit budget_investment_path(budget, investment)
 
       within("aside") do
-        expect(page).to have_content "Supports"
+        expect(page).to have_content "SUPPORTS"
         expect(page).to have_content "1 support"
       end
     end
@@ -1122,7 +1122,7 @@ describe "Budget Investments" do
       visit budget_investment_path(budget, investment)
 
       within("#budget_investment_#{investment.id}") do
-        expect(page).to have_content "Supports"
+        expect(page).to have_content "SUPPORTS"
         expect(page).to have_content "1 support"
       end
     end
@@ -1512,7 +1512,7 @@ describe "Budget Investments" do
         visit budget_investment_path(budget, investment)
 
         within("aside") do
-          expect(page).to have_content "Author"
+          expect(page).to have_content "AUTHOR"
           expect(page).to have_link "Edit"
           expect(page).not_to have_link "Remove image"
         end
