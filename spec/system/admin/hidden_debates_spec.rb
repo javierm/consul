@@ -5,7 +5,7 @@ describe "Admin hidden debates", :admin do
     debate = create(:debate, :hidden)
     visit admin_hidden_debates_path
 
-    click_link "Restore"
+    accept_confirm { click_link "Restore" }
 
     expect(page).not_to have_content(debate.title)
 
@@ -71,7 +71,7 @@ describe "Admin hidden debates", :admin do
 
     visit admin_hidden_debates_path(filter: "with_confirmed_hide", page: 2)
 
-    click_on("Restore", match: :first, exact: true)
+    accept_confirm { click_link "Restore", match: :first, exact: true }
 
     expect(page).to have_current_path(/filter=with_confirmed_hide/)
     expect(page).to have_current_path(/page=2/)
