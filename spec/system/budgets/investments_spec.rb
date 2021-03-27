@@ -314,10 +314,10 @@ describe "Budget Investments" do
       expect(order).not_to be_empty
 
       click_link "Next"
-      expect(page).to have_content "You're on page 2"
+      expect(page).to have_css ".pagination .current", text: "2"
 
       click_link "Previous"
-      expect(page).to have_content "You're on page 1"
+      expect(page).to have_css ".pagination .current", text: "1"
 
       new_order = all(".budget-investment h3").map(&:text)
       expect(order).to eq(new_order)
@@ -346,7 +346,7 @@ describe "Budget Investments" do
       first_page_investments = investments_order
 
       click_link "Next"
-      expect(page).to have_content "You're on page 2"
+      expect(page).to have_css ".pagination .current", text: "2"
 
       second_page_investments = investments_order
 
@@ -395,20 +395,20 @@ describe "Budget Investments" do
 
       in_browser(:one) do
         click_link "Next"
-        expect(page).to have_content "You're on page 2"
+        expect(page).to have_css ".pagination .current", text: "2"
 
         click_link "Previous"
-        expect(page).to have_content "You're on page 1"
+        expect(page).to have_css ".pagination .current", text: "1"
 
         expect(investments_order).to eq(first_user_investments_order)
       end
 
       in_browser(:two) do
         click_link "Next"
-        expect(page).to have_content "You're on page 2"
+        expect(page).to have_css ".pagination .current", text: "2"
 
         click_link "Previous"
-        expect(page).to have_content "You're on page 1"
+        expect(page).to have_css ".pagination .current", text: "1"
 
         expect(investments_order).to eq(second_user_investments_order)
       end
