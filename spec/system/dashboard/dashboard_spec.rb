@@ -69,7 +69,7 @@ describe "Proposal's dashboard" do
     expect(page).to have_content(action.description)
     expect(page).to have_content("This is a really very long description for a proposed")
     expect(page).to have_selector("#truncated_description_dashboard_action_#{action_long.id}")
-    expect(page).to have_selector("a", text: "Show description")
+    expect(page).to have_button("Show description")
   end
 
   scenario "Dashboard progress do not display from the fourth proposed actions", js: true do

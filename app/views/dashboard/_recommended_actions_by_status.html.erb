@@ -7,9 +7,9 @@
     <% if actions.count > 4 %>
       <div class="margin small" id="proposed_actions_<%= status %>_link" data-toggler=".hide">
         <% if toggle == true %>
-          <a id="see_proposed_actions_link_<%= status %>" data-toggle="last_proposed_actions_<%= status %> proposed_actions_<%= status %>_link">
+          <button id="see_proposed_actions_link_<%= status %>" data-toggle="last_proposed_actions_<%= status %> proposed_actions_<%= status %>_link">
             <strong><%= t("dashboard.recommended_actions.see_proposed_actions") %></strong>
-          </a>
+          </button>
         <% else %>
           <%= link_to recommended_actions_proposal_dashboard_path(proposal.to_param) do %>
             <strong><%= t("dashboard.recommended_actions.goto_proposed_actions") %></strong>
@@ -23,9 +23,9 @@
       <div id="last_proposed_actions_<%= status %>" class="hide" data-toggler=".hide">
         <%= render partial: "proposed_action", collection: actions - actions.first(4) %>
         <div class="margin small">
-          <a data-toggle="last_proposed_actions_<%= status %> proposed_actions_<%= status %>_link">
+          <button data-toggle="last_proposed_actions_<%= status %> proposed_actions_<%= status %>_link">
             <strong><%= t("dashboard.recommended_actions.hide_proposed_actions") %></strong>
-          </a>
+          </button>
         </div>
       </div>
     <% end %>
