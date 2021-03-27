@@ -1696,7 +1696,7 @@ describe "Admin budget investments", :admin do
   end
 
   context "Selecting csv" do
-    scenario "Downloading CSV file" do
+    scenario "Downloading CSV file", :no_js do
       admin = create(:administrator, user: create(:user, username: "Admin"))
       valuator = create(:valuator, user: create(:user, username: "Valuator"))
       valuator_group = create(:valuator_group, name: "Valuator Group")
