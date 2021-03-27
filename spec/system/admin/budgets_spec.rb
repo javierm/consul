@@ -41,7 +41,7 @@ describe "Admin budgets", :admin do
       expect(page).to have_content(finished_budget.name)
 
       within "#budget_#{finished_budget.id}" do
-        expect(page).to have_content("Completed")
+        expect(page).to have_content("COMPLETED")
       end
 
       click_link "Finished"
