@@ -31,7 +31,10 @@ describe "Admin proposals", :admin do
       within("#proposal_#{proposal.id}") { click_link "Select" }
 
       within("#proposal_#{proposal.id}") { expect(page).to have_link "Selected" }
-      expect(proposal.reload.selected?).to be true
+
+      visit admin_proposals_path
+
+      within("#proposal_#{proposal.id}") { expect(page).to have_link "Selected" }
     end
 
     scenario "Unselect a proposal" do
@@ -42,7 +45,10 @@ describe "Admin proposals", :admin do
       within("#proposal_#{proposal.id}") { click_link "Selected" }
 
       within("#proposal_#{proposal.id}") { expect(page).to have_link "Select" }
-      expect(proposal.reload.selected?).to be false
+
+      visit admin_proposals_path
+
+      within("#proposal_#{proposal.id}") { expect(page).to have_link "Select" }
     end
   end
 
