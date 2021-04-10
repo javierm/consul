@@ -4,7 +4,7 @@ describe "Proposals" do
   let(:user) { create(:user, :level_two) }
 
   context "Create" do
-    scenario "Creating proposals on behalf of someone" do
+    scenario "Creating proposals on behalf of someone", :with_frozen_time do
       login_managed_user(user)
       login_as_manager
       click_link "Create proposal"
@@ -26,14 +26,13 @@ describe "Proposals" do
 
       expect(page).to have_content "Proposal created successfully."
 
+      expect(page).to have_current_path(/management/)
       expect(page).to have_content "Help refugees"
       expect(page).to have_content "In summary, what we want is..."
       expect(page).to have_content "This is very important because..."
       expect(page).to have_content "https://www.youtube.com/watch?v=yRYFKcMa_Ek"
       expect(page).to have_content user.name
-      expect(page).to have_content I18n.l(Proposal.last.created_at.to_date)
-
-      expect(page).to have_current_path(management_proposal_path(Proposal.last))
+      expect(page).to have_content I18n.l(Date.current)
     end
 
     scenario "Should not allow unverified users to create proposals" do
