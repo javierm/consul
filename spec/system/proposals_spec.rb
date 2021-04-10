@@ -446,7 +446,12 @@ describe "Proposals" do
     click_link "No, I want to publish the proposal"
     click_link "Not now, go to my proposal"
 
-    expect(Proposal.last.responsible_name).to eq("Isabel Garcia")
+    click_link "Dashboard"
+    click_link "Edit my proposal"
+
+    within_window(window_opened_by { click_link "Edit proposal" }) do
+      expect(page).to have_field "Full name of the person submitting the proposal", with: "Isabel Garcia"
+    end
   end
 
   scenario "Responsible name field is not shown for verified users" do
@@ -554,7 +559,7 @@ describe "Proposals" do
 
     click_link "Edit proposal"
 
-    expect(page).to have_current_path(edit_proposal_path(Proposal.last))
+    expect(page).to have_field "Proposal title", with: "Testing auto link"
     expect(page).not_to have_link("click me")
     expect(page.html).not_to include "<script>alert('hey')</script>"
   end
