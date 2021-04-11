@@ -1325,7 +1325,6 @@ describe "Proposals" do
                   {}
 
   scenario "Erased author" do
-    Setting["feature.featured_proposals"] = true
     user = create(:user)
     proposal = create(:proposal, author: user)
     user.erase
@@ -1335,10 +1334,17 @@ describe "Proposals" do
 
     visit proposal_path(proposal)
     expect(page).to have_content("User deleted")
+  end
+
+  scenario "Erased author with featured proposals" do
+    Setting["feature.featured_proposals"] = true
+    user = create(:proposal).author
+    user.erase
 
     create_featured_proposals
 
     visit proposals_path
+
     expect(page).to have_content("User deleted")
   end
 
