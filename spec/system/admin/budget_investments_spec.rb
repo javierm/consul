@@ -1738,7 +1738,7 @@ describe "Admin budget investments", :admin do
       expect(page.body).to eq(csv_contents)
     end
 
-    scenario "Downloading CSV file with applied filter" do
+    scenario "Downloading CSV file with applied filter", :no_js do
       create(:budget_investment, :unfeasible, budget: budget, title: "Unfeasible one")
       create(:budget_investment, :finished, budget: budget, title: "Finished Investment")
 
