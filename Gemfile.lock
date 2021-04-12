@@ -329,7 +329,7 @@ GEM
       activerecord
       kaminari-core (= 1.2.1)
     kaminari-core (1.2.1)
-    knapsack_pro (2.6.0)
+    knapsack_pro (2.12.0)
       rake
     kramdown (2.3.0)
       rexml
@@ -360,7 +360,9 @@ GEM
     mime-types (3.3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2020.1104)
-    mimemagic (0.3.5)
+    mimemagic (0.3.10)
+      nokogiri (~> 1)
+      rake
     mini_mime (1.0.2)
     mini_portile2 (2.5.0)
     minitest (5.14.4)
@@ -491,7 +493,7 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.19.0, < 2.0)
     rainbow (3.0.0)
-    rake (13.0.1)
+    rake (13.0.3)
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
@@ -724,7 +726,7 @@ DEPENDENCIES
   jquery-rails (~> 4.4.0)
   jquery-ui-rails (~> 6.0.1)
   kaminari (~> 1.2.1)
-  knapsack_pro (~> 2.6.0)
+  knapsack_pro (~> 2.12.0)
   launchy (~> 2.5.0)
   letter_opener_web (~> 1.4.0)
   mdl (~> 0.11.0)
