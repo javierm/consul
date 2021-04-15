@@ -21,16 +21,6 @@ $padding: 30px;
           width: 50px;
         }
       }
-
-      .budget-gva {
-        display: inline-block;
-        font-size: 19px;
-        font-weight: bold;
-
-        @include breakpoint(medium) {
-          font-size: 36px;
-        }
-      }
     }
 
     &__txt {
@@ -50,6 +40,15 @@ $padding: 30px;
       img {
         @include custom-icon-mv;
       }
+    }
+  }
+
+  .row div:first-child {
+    padding-top: 5em;
+    text-align: center;
+    a.button {
+      margin: 0;
+      margin-top: 2em;
     }
   }
 }

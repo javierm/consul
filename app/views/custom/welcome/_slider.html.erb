@@ -2,25 +2,15 @@
   <div class="row">
 
     <div class="small-12 medium-6 column">
-      <%= image_tag('fondoV.png',
+      <%= image_tag('participa_i_decideix.png',
                     class: "margin",
                     alt: 'welcome.slider.title') %>
+      <%= link_to t("welcome.slider.button"), proposals_path, class: "button" %>
     </div>
     <div class="small-12 medium-6 column">
-      <div class="content">
-        <h1 class="content__title ">
-          <span class="month">
-            <%= image_tag("icon-sections/ico-proponer.png") %>
-          </span>
-          <div class="budget-gva">
-            <%= sanitize(t("welcome.slider.title.budget_gva")) %>
-          </div>
-        </h1>
-        <p class="content__txt">
-          <%= sanitize(t("welcome.slider.txt")) %>
-        </p>
-        <%= link_to t("welcome.slider.button"), proposals_path, class: "button" %>
-      </div>
+      <%= image_tag('manos.png',
+                    class: "margin",
+                    alt: 'welcome.slider.title') %>
     </div>
   </div>
 </div>
