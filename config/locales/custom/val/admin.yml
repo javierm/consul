@@ -1143,10 +1143,20 @@ val:
         email: Correu electrònic
         document_number: Número de document
         roles: Rols
-        verification_level: Nivell de verficació
+        verification_level: Nivell de verificació
+        postal_code: Cód. postal
+        services_results: Resultat verificació
+        residence_requested_reason: Pdt. per
+        residence_requested_reasons:
+          foreign_residence: Resideix fora de C.V.
+          older_than_soft_minimum_required_age: Menor de 16 anys
       index:
         title: Usuari
         no_users: No hi ha usuaris.
+        filters:
+          active: Actius
+          erased: Esborrats
+          residence_requested: Verificació pendent
       search:
         placeholder: Cercar usuari per email, nom o Dni
         search: Cercar

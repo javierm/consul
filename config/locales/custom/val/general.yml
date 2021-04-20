@@ -13,6 +13,11 @@ val:
       public_interests_user_title_list: Etiquetes d'elements que segueix aquest usuari
       save_changes_submit: Guardar canvis
       recommendations: Recomanacions
+      required_age_verification_request: Les teues dades de verificació estan guardades, però com eres menor de 16 anys has de seguir aquest %{link} per a completar la verificació.
+      foreign_residence_verification_request: Les teues dades de verificació estan guardades, però el Padró no ha pogut verificar la teua informació. Per favor, confirma que les teues dades d'empadronament siguen correctes informant-te en el teu municipi d'empadronament. Si vas nàixer en la Comunitat Valenciana, però eres resident a l'estranger o fora de la Comunitat, i no estàs empadronat, has de seguir aquest %{link}.
+      required_age_foreign_residence_verification_request: "Les teues dades de verificació estan guardades, però el Padró no ha pogut verificar la teua informació. Per favor, confirma que les teues dades d'empadronament siguen correctes informant-te en el teu municipi d'empadronament. Si vas nàixer en la Comunitat Valenciana, però eres resident a l'estranger o fora de la Comunitat, i no estàs empadronat, has de seguir aquest %{foreign_link}.
+      D'altra banda, com eres menor de 16 anys, també has de seguir aquest %{age_link} per a completar la verificació."
+      residence_request_procedure: procediment
       title: El meu compte
       user_permission_debates: Participar en debats
       user_permission_info: Amb el teu compte ja pots...
@@ -185,7 +190,7 @@ val:
       conditions: Termes i condicions d'ús
       consul: Aplicació CONSUL
       consul_url: https://github.com/consul/consul
-      contact_us_short: Contacta'ns en 
+      contact_us_short: Contacta'ns en
       contact_us: Per a assistencia técnica entra en
       copyright: "2021, Generalitat"
       description: Este portal utilitza la %{consul} que es %{open_source}.

@@ -2,10 +2,10 @@ require "rails_helper"
 
 describe CensusApi do
   let(:api) { CensusApi.new }
-  
+
   let(:other_data) do
     {
-      nombre: 'Francisca',
+      name: 'Francisca',
       first_surname: 'Nomdedéu',
       last_surname: 'Camps',
       date_of_birth: '19771019',
@@ -44,11 +44,11 @@ describe CensusApi do
   let(:invalid_residence_body) do
     valid_body.merge({ datos_vivienda: { "resultado" => false, "error" => 'error servicio residencia' } })
   end
-  
+
   let(:unavailable_age_body) do
     valid_body.merge({ datos_habitante: { "resultado" => false, "error" => 'Servicio no disponible...' } })
   end
-  
+
   let(:unavailable_residence_body) do
     valid_body.merge({ datos_vivienda: { "resultado" => false, "error" => 'Servicio no disponible...' } })
   end
@@ -72,7 +72,7 @@ describe CensusApi do
       expect(response.error).to eq('error servicio edad')
     end
 
-    it "returns failed age response" do
+    it "returns failed residence response" do
       allow(api).to receive(:get_response_body).with('1', "123456", other_data).and_return(invalid_residence_body)
       response = api.call('1', "123456", other_data)
 
@@ -96,7 +96,7 @@ describe CensusApi do
       expect(response.error).to eq('Servicio no disponible...')
     end
   end
-  
+
   context 'ConnectionCensus' do
     let(:conn) { CensusApi::ConnectionCensus.new }
     let(:other_data) { { name: 'Francisca', first_surname: 'Nomdedéu', last_surname: 'Camps', date_of_birth: '19771019', postal_code: '46001' } }
@@ -113,7 +113,7 @@ describe CensusApi do
             valid_age_call = %|php -f validadorEdad -- -i #{Time.now.to_i.to_s[-7..-1]} -n 12345678Z -o "Francisca" -a "Nomdedéu" -p "Camps" |
             expect_any_instance_of(CensusApi::ConnectionCensus).to receive(:`).with(valid_age_call).and_return(valid_body[:datos_habitante].to_json)
 
-            valid_residence_call = %|php -f validadorResidencia -- -i #{Time.now.to_i.to_s[-7..-1]} -n 12345678Z -p 46 |
+            valid_residence_call = %|php -f validadorResidencia -- -i #{Time.now.to_i.to_s[-7..-1]} -n 12345678Z -p 46 --esp s|
             expect_any_instance_of(CensusApi::ConnectionCensus).to receive(:`).with(valid_residence_call).and_return(valid_body[:datos_vivienda].to_json)
 
             expected = { datos_habitante: valid_body[:datos_habitante], datos_vivienda: valid_body[:datos_vivienda], datos_originales: other_data}

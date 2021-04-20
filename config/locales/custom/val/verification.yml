@@ -44,6 +44,11 @@ val:
       create:
         flash:
           success: Residència verificada
+          procedure: procediment
+          required_age_request_form: S'han guardat les teues dades per a verificar la teua residència, però com eres menor de 16 anys has de seguir aquest %{link}
+          foreign_residence_request_form: El Padró no ha pogut verificar la teua informació. Per favor, confirma que les teues dades d'empadronament siguen correctes informant-te en el teu municipi d'empadronament. Si vas nàixer en la Comunitat Valenciana, però eres resident a l'estranger o fora de la Comunitat, i no estàs empadronat, has de seguir aquest %{link}
+          required_age_foreign_residence_request_form: "El Padró no ha pogut verificar la teua informació. Per favor, confirma que les teues dades d'empadronament siguen correctes informant-te en el teu municipi d'empadronament. Si vas nàixer en la Comunitat Valenciana, però eres resident a l'estranger o fora de la Comunitat, i no estàs empadronat, has de seguir aquest %{foreign_link}.
+          D'altra banda, com eres menor de 16 anys, també has de seguir aquest %{age_link} per a completar la verificació."
       new:
         accept_terms_text: Declare que la informació transmesa és exacta i que accepte els %{terms_url}
         accept_terms_text_title: Accepte els termes i condicions d'accéss al Padró
@@ -57,6 +62,7 @@ val:
           foreign_id: NIE
         document_type_label: Tipus de document
         date_of_birth: Data de naixement
+        invalid_date_of_birth: La data de naixement no coincideix
         gender_label: Gènere
         postal_code: Codi postal
         name: Nom
@@ -66,8 +72,10 @@ val:
         error_not_allowed_postal_code: Per a verificarte has d'estar empadronat.
         error_verifying_census: "El Padró no va poder verificar la teua informació. Per favor, confirma que les teues dades d'empadronament són correctes cridant a l'Ajuntament o visitant una Oficina d'Atenció al Ciutadà"
         error_service_not_available: "No es va poder connectar amb el servei de verificació. Per favor, intente-ho més tard."
+        foreign_residence: Soc nascut a la Comunitat Valenciana però residisc fora
         form_errors: evitaren verificar la teua residència
-        postal_code_note: Per a verificar el teu compte has d'estar empadronat/da en la C.V.
+        postal_code_note: Per a verificar les teues dades has d’estar empadronat/ada a la Comunitat Valenciana. Si has nascut a la Comunitat Valenciana, però resideixes fora, pots indicar-ho a continuació i seguir el següent %{link}. En aquest cas indica l'últim codi postal on vas viure.
+        procedure: procediment
         terms: termes d’accés als serveis de verificació d’edat i residència
         title: Verificar residència
         verify_residence: Verificar residència

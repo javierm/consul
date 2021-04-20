@@ -11,4 +11,8 @@ module Custom::VerificationHelper
      # [t("verification.residence.new.document_type.residence_card"), 3],
      [t("verification.residence.new.document_type.foreign_id"), 4]]
   end
+
+  def soft_minimum_required_age
+    (Setting["soft_min_age_to_participate"] || 12).to_i
+  end
 end

@@ -60,12 +60,25 @@
             <%= f.date_select :date_of_birth,
                         label: t("verification.residence.new.date_of_birth"),
                         prompt: true,
-                        start_year: 1900, end_year: minimum_required_age.years.ago.year %>
+                        start_year: 1900, end_year: soft_minimum_required_age.years.ago.year %>
         </div>
 
         <div class="small-12 medium-5 clear">
+            <% link_locale = I18n.locale == :val ? 'va' : I18n.locale %>
+            <% foreign_url = Verification::Residence.procedure_url(:foreign, link_locale) %>
+            <% link = link_to t('verification.residence.new.procedure'), foreign_url %>
             <%= f.text_field :postal_code, label: t("verification.residence.new.postal_code"),
-          hint: t("verification.residence.new.postal_code_note") %>
+          hint: raw(t("verification.residence.new.postal_code_note", link: link)) %>
+        </div>
+
+        <div class="small-12">
+            <%= f.check_box :foreign_residence,
+          title: t("verification.residence.new.foreign_residence"),
+          label: t("verification.residence.new.foreign_residence",
+                   terms_url: link_to(t("verification.residence.new.terms"), "/census_terms",
+                                      title: t("shared.target_blank"),
+                                      target: "_blank")
+                  ) %>
         </div>
 
         <div class="small-12 medium-5 clear">

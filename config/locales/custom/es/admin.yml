@@ -1447,7 +1447,13 @@ es:
         email: Email
         document_number: Número de documento
         roles: Roles
-        verification_level: Nivel de verficación
+        verification_level: Nivel de verificación
+        postal_code: Cód. postal
+        services_results: Resultado verificación
+        residence_requested_reason: Pdte. por
+        residence_requested_reasons:
+          foreign_residence: Reside fuera de C.V.
+          older_than_soft_minimum_required_age: Menor de 16 años
       index:
         title: Usuarios
         no_users: No hay usuarios.
@@ -1455,6 +1461,7 @@ es:
         filters:
           active: Activos
           erased: Borrados
+          residence_requested: Verificación pendiente
       search:
         placeholder: Buscar usuario por email, nombre o DNI
         search: Buscar
@@ -1463,6 +1470,13 @@ es:
         phone_not_given: No ha dado su teléfono
         sms_code_not_confirmed: No ha introducido su código de seguridad
         title: Verificaciones incompletas
+        verify: Marcar como verificados
+        confirm: ¿Está seguro que desea marcar los registros seleccionados como verificados?"
+      update:
+        flash:
+          success: Se actualizó los registros correctamente
+          failure: No se pudo actualizar algunos registros, por favor revise el listado e inténtelo de nuevo. Si el problema persiste contacte con los administradores
+          error: Ocurrió un error en la actualización, por favor revise los resultados e inténtelo de nuevo. Si el problema persiste contacte con los administradores
     site_customization:
       content_blocks:
         information: Información sobre los bloques de contenido

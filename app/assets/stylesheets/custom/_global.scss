@@ -108,3 +108,17 @@
   border: 1px solid #cacaca;
   margin-bottom: 0.5em;
 }
+
+.icon-info-circle::before {
+  content: "\f05a";
+}
+
+.verification-requested span.icon-info-circle {
+  color: #f04124;
+}
+
+.services_results {
+  max-width: 350px;
+  white-space: nowrap;
+  overflow-x: scroll;
+}

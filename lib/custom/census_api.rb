@@ -69,15 +69,11 @@ class CensusApi
 
     def get_age(document_type, document_number)
       ApplicationLogger.new.warn "--- #{Time.now.iso8601} inicio verificación edad (DGP) ---"
-      result = if Rails.env.development?
-                 CensusApi.new.send(:stubbed_valid_response)[:datos_habitante].to_json
-               else
-                 validator = Rails.application.secrets.census_api_age_validator
-                 ApplicationLogger.new.warn "Age validator path: #{validator}"
-                 ApplicationLogger.new.warn "Document type: #{document_type}"
-                 ApplicationLogger.new.warn "php -f #{validator} -- -i #{identifier} -n #{document_number} -o \"#{@name}\" -a \"#{@first_surname}\" -p \"#{@last_surname}\" #{'--esp n' if document_type == '4'}"
-                 `php -f #{validator} -- -i #{identifier} -n #{document_number} -o "#{@name}" -a "#{@first_surname}" -p "#{@last_surname}" #{'--esp n' if document_type == '4'}`
-               end
+      validator = Rails.application.secrets.census_api_age_validator
+      ApplicationLogger.new.warn "Age validator path: #{validator}"
+      ApplicationLogger.new.warn "Document type: #{document_type}"
+      ApplicationLogger.new.warn "php -f #{validator} -- -i #{identifier} -n #{document_number} -o \"#{@name}\" -a \"#{@first_surname}\" -p \"#{@last_surname}\" #{'--esp n' if document_type == '4'}"
+      result = `php -f #{validator} -- -i #{identifier} -n #{document_number} -o "#{@name}" -a "#{@first_surname}" -p "#{@last_surname}" #{'--esp n' if document_type == '4'}`
       ApplicationLogger.new.warn "result: #{result}"
       ApplicationLogger.new.warn "--- #{Time.now.iso8601} fin verificación edad (DGP) ---"
       result
@@ -85,25 +81,21 @@ class CensusApi
 
     def get_residence(document_type, document_number)
       ApplicationLogger.new.warn "--- #{Time.now.iso8601} inicio verificación residencia (INE) ---"
-      result = if Rails.env.development?
-                 CensusApi.new.send(:stubbed_valid_response)[:datos_vivienda].to_json
-               else
-                 validator = Rails.application.secrets.census_api_residence_validator
-                 ApplicationLogger.new.warn "Residence validator path: #{validator}"
-                 # La persona de pruebas en servicio de residencia es diferente que en el servicio de edad
-                 # Cambiamos los valores aquí para que en caso de que llegue del formulario el de prueba, aquí ponga los datos necesarios.
-                 ApplicationLogger.new.warn "environment: #{Rails.application.secrets.environment}"
-                 # Comentamos mientras el servicio del INE en producción no esté activado (ahora mismo sólo detecta si es código correcto)
-                 #  if Rails.application.secrets.environment != 'production' && document_number.upcase == '10000320N'
-                 #    document_number = '10000322Z'
-                 #    province_code = '17'
-                 #  else
-                     province_code = @postal_code[0..1]
-                 #  end
-                 ApplicationLogger.new.warn "province_code: #{province_code}"
-                 ApplicationLogger.new.warn "php -f #{validator} -- -i #{identifier} -n #{document_number} -p #{province_code} --esp #{document_type == '4' ? 'n' : 's'}"
-                 `php -f #{validator} -- -i #{identifier} -n #{document_number} -p #{province_code} --esp #{document_type == '4' ? 'n' : 's'}`
-               end
+      validator = Rails.application.secrets.census_api_residence_validator
+      ApplicationLogger.new.warn "Residence validator path: #{validator}"
+      # La persona de pruebas en servicio de residencia es diferente que en el servicio de edad
+      # Cambiamos los valores aquí para que en caso de que llegue del formulario el de prueba, aquí ponga los datos necesarios.
+      ApplicationLogger.new.warn "environment: #{Rails.application.secrets.environment}"
+      # Comentamos mientras el servicio del INE en producción no esté activado (ahora mismo sólo detecta si es código correcto)
+      #  if Rails.application.secrets.environment != 'production' && document_number.upcase == '10000320N'
+      #    document_number = '10000322Z'
+      #    province_code = '17'
+      #  else
+          province_code = @postal_code[0..1]
+      #  end
+      ApplicationLogger.new.warn "province_code: #{province_code}"
+      ApplicationLogger.new.warn "php -f #{validator} -- -i #{identifier} -n #{document_number} -p #{province_code} --esp #{document_type == '4' ? 'n' : 's'}"
+      result = `php -f #{validator} -- -i #{identifier} -n #{document_number} -p #{province_code} --esp #{document_type == '4' ? 'n' : 's'}`
       ApplicationLogger.new.warn "result: #{result}"
       ApplicationLogger.new.warn "--- #{Time.now.iso8601} fin verificación residencia (INE) ---"
       result

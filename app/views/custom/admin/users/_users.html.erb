@@ -1,0 +1,93 @@
+<%= render "shared/filter_subnav", i18n_namespace: "admin.users.index" %>
+
+<% if @users.any? %>
+  <h3 class="margin"><%= page_entries_info @users %></h3>
+
+  <%= form_tag request_verification_admin_verifications_path(request.query_parameters), method: :put do %>
+    <% if @current_filter == 'residence_requested' %>
+      <p class="js-check">
+        <%= t('shared.check') %>:
+        <%= link_to t('shared.check_all'), '#', data: {check_all: "user_ids[]"} %>
+        |
+        <%= link_to t('shared.check_none'), '#', data: {check_none: "user_ids[]"} %>
+      </p>
+    <% end %>
+
+    <table>
+      <thead>
+        <tr>
+          <% if @current_filter == 'residence_requested' %>
+            <th />
+          <% end %>
+          <% if @current_filter == "erased" %>
+            <th scope="col"><%= t("admin.users.columns.id") %></th>
+            <th scope="col"><%= t("admin.users.columns.erase_reason") %></th>
+          <% else %>
+            <th scope="col"><%= t("admin.users.columns.name") %></th>
+            <th scope="col"><%= t("admin.users.columns.email") %></th>
+            <th scope="col"><%= t("admin.users.columns.document_number") %></th>
+            <th scope="col"><%= t("admin.users.columns.postal_code") %></th>
+            <th scope="col"><%= t("admin.users.columns.residence_requested_reason") %></th>
+            <th scope="col"><%= t("admin.users.columns.services_results") %></th>
+          <% end %>
+        </tr>
+      </thead>
+      <tbody>
+        <% @users.each do |user| %>
+          <tr>
+            <% if @current_filter == 'residence_requested' %>
+              <td class="text-center">
+                <% if user.residence_requested? %>
+                  <%= check_box_tag "user_ids[]", user.id, nil, id: "#{dom_id(user)}_check" %>
+                <% end %>
+              </td>
+            <% end %>
+            <% if @current_filter == "erased" %>
+              <td><%= link_to user.id, user_path(user), target: "_blank" %></td>
+              <td><%= user.erase_reason %></td>
+            <% else %>
+              <td><%= link_to user.name, user_path(user), target: "_blank" %></td>
+              <td><%= user.email %></td>
+              <td><%= user.document_number %></td>
+              <td><%= user.postal_code %></td>
+              <td>
+                <%=
+                  text = []
+                  if user.residence_requested?
+                    text << t("admin.users.columns.residence_requested_reasons.foreign_residence") if user.residence_requested_foreign?
+                    text << t("admin.users.columns.residence_requested_reasons.older_than_soft_minimum_required_age") if user.residence_requested_age?
+                  else
+                    text << t('verification.residence.new.not_verified')
+                  end
+                  text.join(', ')
+                %>
+              <td>
+                <div class="services_results"
+                     title="<%= user.services_results %>"
+                     onclick="RevealHiddenOverflow(this)"
+                >
+                  <%= user.services_results %>
+                </div>
+              </td>
+            <% end %>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <% if @current_filter == 'residence_requested' %>
+      <div class="float-right">
+        <%= submit_tag t('admin.verifications.index.verify'),
+          name: "request_verification",
+          class: "button hollow alert",
+          data: {confirm: t('admin.verifications.index.confirm')}
+        %>
+      </div>
+    <% end %>
+    <%= paginate @users %>
+  <% end %>
+<% else %>
+  <div class="callout primary">
+    <%= t("admin.users.index.no_users") %>
+  </div>
+<% end %>
