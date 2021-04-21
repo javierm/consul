@@ -73,7 +73,7 @@ es:
         error_not_allowed_postal_code: Para verificarte debes estar empadronado/a.
         error_verifying_census: El Padrón no pudo verificar tu información. Por favor, confirma que tus datos de empadronamiento sean correctos llamando al Ayuntamiento o visitando una Oficina de Atención al Ciudadano.
         error_service_not_available: No se pudo conectar con el servicio de verificación. Por favor, inténtalo más tarde.
-        foreign_residence: Soy nacido en la Comunitat Valenciana pero resido fuera
+        foreign_residence: Soy nacido/a en la Comunitat Valenciana pero resido fuera
         form_errors: evitaron verificar tu residencia
         postal_code_note: Para verificar tus datos debes estar empadronado/a en la Comunitat Valenciana. Si eres nacido en la Comunitat Valenciana pero resides fuera puedes indicarlo a continuación y seguir el siguiente %{link}. En ese caso indica aquí el último cód. postal donde viviste.
         procedure: procedimiento
