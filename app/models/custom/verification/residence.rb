@@ -84,18 +84,19 @@ class Verification::Residence
   end
 
   private
+
     def retrieve_census_data
       other_data = { date_of_birth: date_of_birth, postal_code: postal_code, name: name, first_surname: first_surname, last_surname: last_surname }
       @census_data = CensusCaller.new.call(document_type, document_number, other_data)
     end
 
     def residency_valid?
-      # If age service is ok, foreign residence is checked and residence service returns 0239 (wrong residence) we return true
+      # If age service returns ok, foreign residence is checked and residence service returns no residence error, we return true
       return true if !@census_data.valid? &&
                      date_of_birth_valid? &&
                      foreign_residence? &&
                      @census_data.respond_to?(:error) &&
-                     @census_data.error =~ /^0239/
+                     @census_data.error == "No residente"
 
       @census_data.valid? &&
         postal_code_valid? && date_of_birth_valid?

@@ -209,41 +209,114 @@ describe Verification::Residence do
       let!(:geozone) { create(:geozone, census_code: "46") }
       let(:now) { Time.zone.now }
 
-      before do
-        Timecop.freeze(now)
-        valid_body[:datos_habitante]['fecha_nacimiento'] = age.strftime('%Y%m%d')
-        valid_body[:datos_originales]['date_of_birth'] = age.strftime('%Y%m%d')
-        valid_body[:datos_originales]['postal_code'] = postal_code
-        valid_body[:datos_vivienda]['resultado'] = false
-        valid_body[:datos_vivienda]['error'] = '0239 residencia no válida'
-        allow_any_instance_of(CensusCaller).to receive(:call).and_return(CensusApi::Response.new(valid_body))
-      end
-
       after do
         Timecop.return
       end
 
-      it "stores all required fields" do
-        user = create(:user)
-        residence.user = user
-        residence.save!
+      describe "with 0231 code (Documento incorrecto)" do
+        before do
+          Timecop.freeze(now)
+          valid_body[:datos_habitante]['fecha_nacimiento'] = age.strftime('%Y%m%d')
+          valid_body[:datos_originales]['date_of_birth'] = age.strftime('%Y%m%d')
+          valid_body[:datos_originales]['postal_code'] = postal_code
+          valid_body[:datos_vivienda]['resultado'] = false
+          valid_body[:datos_vivienda]['error'] = "0231 Documento incorrecto"
+          allow_any_instance_of(CensusCaller).to receive(:call).and_return(CensusApi::Response.new(valid_body))
+        end
 
-        user.reload
-        expect(user.document_number).to eq("12345678Z")
-        expect(user.document_type).to eq("1")
-        expect(user.date_of_birth.year).to eq(age.year)
-        expect(user.date_of_birth.month).to eq(age.month)
-        expect(user.date_of_birth.day).to eq(age.day)
-        expect(user.gender).to eq("female")
-        expect(user.geozone).to eq(geozone)
-        expect(user.postal_code).to eq('36100')
-        expect(user.residence_verified_at).to eq(nil)
-        expect(user.residence_requested_at).to eq(now)
-        expect(user.foreign_residence).to eq(true)
-        expect(user.services_results).to eq(JSON.parse(valid_body.to_json))
+        it "stores all required fields" do
+          user = create(:user)
+          residence.user = user
+          residence.save!
 
-        expect(user.residence_requested_age?).to equal(false)
-        expect(user.residence_requested_foreign?).to equal(true)
+          user.reload
+          expect(user.document_number).to eq("12345678Z")
+          expect(user.document_type).to eq("1")
+          expect(user.date_of_birth.year).to eq(age.year)
+          expect(user.date_of_birth.month).to eq(age.month)
+          expect(user.date_of_birth.day).to eq(age.day)
+          expect(user.gender).to eq("female")
+          expect(user.geozone).to eq(geozone)
+          expect(user.postal_code).to eq('36100')
+          expect(user.residence_verified_at).to eq(nil)
+          expect(user.residence_requested_at).to eq(now)
+          expect(user.foreign_residence).to eq(true)
+          expect(user.services_results).to eq(JSON.parse(valid_body.to_json))
+
+          expect(user.residence_requested_age?).to equal(false)
+          expect(user.residence_requested_foreign?).to equal(true)
+        end
+      end
+
+      describe "with 0233 code (Titular no identificado o ámbito de residencia incorrecto" do
+        before do
+          Timecop.freeze(now)
+          valid_body[:datos_habitante]['fecha_nacimiento'] = age.strftime('%Y%m%d')
+          valid_body[:datos_originales]['date_of_birth'] = age.strftime('%Y%m%d')
+          valid_body[:datos_originales]['postal_code'] = postal_code
+          valid_body[:datos_vivienda]['resultado'] = false
+          valid_body[:datos_vivienda]['error'] = false
+          valid_body[:datos_vivienda]['estado'] = "0233"
+          allow_any_instance_of(CensusCaller).to receive(:call).and_return(CensusApi::Response.new(valid_body))
+        end
+
+        it "stores all required fields" do
+          user = create(:user)
+          residence.user = user
+          residence.save!
+
+          user.reload
+          expect(user.document_number).to eq("12345678Z")
+          expect(user.document_type).to eq("1")
+          expect(user.date_of_birth.year).to eq(age.year)
+          expect(user.date_of_birth.month).to eq(age.month)
+          expect(user.date_of_birth.day).to eq(age.day)
+          expect(user.gender).to eq("female")
+          expect(user.geozone).to eq(geozone)
+          expect(user.postal_code).to eq('36100')
+          expect(user.residence_verified_at).to eq(nil)
+          expect(user.residence_requested_at).to eq(now)
+          expect(user.foreign_residence).to eq(true)
+          expect(user.services_results).to eq(JSON.parse(valid_body.to_json))
+
+          expect(user.residence_requested_age?).to equal(false)
+          expect(user.residence_requested_foreign?).to equal(true)
+        end
+      end
+
+      describe "with 0239 code (Error al tratar los datos. Municipio inexistente..." do
+        before do
+          Timecop.freeze(now)
+          valid_body[:datos_habitante]['fecha_nacimiento'] = age.strftime('%Y%m%d')
+          valid_body[:datos_originales]['date_of_birth'] = age.strftime('%Y%m%d')
+          valid_body[:datos_originales]['postal_code'] = postal_code
+          valid_body[:datos_vivienda]['resultado'] = false
+          valid_body[:datos_vivienda]['error'] = "0239 Error al tratar"
+          allow_any_instance_of(CensusCaller).to receive(:call).and_return(CensusApi::Response.new(valid_body))
+        end
+
+        it "stores all required fields" do
+          user = create(:user)
+          residence.user = user
+          residence.save!
+
+          user.reload
+          expect(user.document_number).to eq("12345678Z")
+          expect(user.document_type).to eq("1")
+          expect(user.date_of_birth.year).to eq(age.year)
+          expect(user.date_of_birth.month).to eq(age.month)
+          expect(user.date_of_birth.day).to eq(age.day)
+          expect(user.gender).to eq("female")
+          expect(user.geozone).to eq(geozone)
+          expect(user.postal_code).to eq('36100')
+          expect(user.residence_verified_at).to eq(nil)
+          expect(user.residence_requested_at).to eq(now)
+          expect(user.foreign_residence).to eq(true)
+          expect(user.services_results).to eq(JSON.parse(valid_body.to_json))
+
+          expect(user.residence_requested_age?).to equal(false)
+          expect(user.residence_requested_foreign?).to equal(true)
+        end
       end
     end
 

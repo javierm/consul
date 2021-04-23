@@ -4,19 +4,22 @@ require_dependency Rails.root.join("lib", "census_api").to_s
 
 class CensusApi
   def call(document_type, document_number, other_data = {})
-    Response.new(get_response_body(document_type, document_number, other_data))
+    response = Response.new(get_response_body(document_type, document_number, other_data))
+    ApplicationLogger.new.warn "data (#{document_number}): #{response.data}"
+    response
   end
 
   class Response
     def valid?
-      ApplicationLogger.new.warn "data: #{data}"
       data[:datos_vivienda]["resultado"] == true &&
       data[:datos_habitante]["resultado"] == true
     end
 
     def error
-      !data[:datos_vivienda]["resultado"] && data[:datos_vivienda]["error"] ||
+      error = !data[:datos_vivienda]["resultado"] && data[:datos_vivienda]["error"] ||
       !data[:datos_habitante]["resultado"] && data[:datos_habitante]["error"]
+
+      error =~ /^(0231|0239)/ || data[:datos_vivienda]["estado"] =~ /^0233/ ? "No residente" : error
     end
 
     def date_of_birth
@@ -68,24 +71,24 @@ class CensusApi
     private
 
     def get_age(document_type, document_number)
-      ApplicationLogger.new.warn "--- #{Time.now.iso8601} inicio verificación edad (DGP) ---"
+      logger.warn "--- #{Time.now.iso8601} inicio verificación edad (DGP) ---"
       validator = Rails.application.secrets.census_api_age_validator
-      ApplicationLogger.new.warn "Age validator path: #{validator}"
-      ApplicationLogger.new.warn "Document type: #{document_type}"
-      ApplicationLogger.new.warn "php -f #{validator} -- -i #{identifier} -n #{document_number} -o \"#{@name}\" -a \"#{@first_surname}\" -p \"#{@last_surname}\" #{'--esp n' if document_type == '4'}"
+      logger.warn "Age validator path: #{validator}"
+      logger.warn "Document type: #{document_type}"
+      logger.warn "php -f #{validator} -- -i #{identifier} -n #{document_number} -o \"#{@name}\" -a \"#{@first_surname}\" -p \"#{@last_surname}\" #{'--esp n' if document_type == '4'}"
       result = `php -f #{validator} -- -i #{identifier} -n #{document_number} -o "#{@name}" -a "#{@first_surname}" -p "#{@last_surname}" #{'--esp n' if document_type == '4'}`
-      ApplicationLogger.new.warn "result: #{result}"
-      ApplicationLogger.new.warn "--- #{Time.now.iso8601} fin verificación edad (DGP) ---"
+      logger.warn "result (#{document_number}): #{result}"
+      logger.warn "--- #{Time.now.iso8601} fin verificación edad (DGP) ---"
       result
     end
 
     def get_residence(document_type, document_number)
-      ApplicationLogger.new.warn "--- #{Time.now.iso8601} inicio verificación residencia (INE) ---"
+      logger.warn "--- #{Time.now.iso8601} inicio verificación residencia (INE) ---"
       validator = Rails.application.secrets.census_api_residence_validator
-      ApplicationLogger.new.warn "Residence validator path: #{validator}"
+      logger.warn "Residence validator path: #{validator}"
       # La persona de pruebas en servicio de residencia es diferente que en el servicio de edad
       # Cambiamos los valores aquí para que en caso de que llegue del formulario el de prueba, aquí ponga los datos necesarios.
-      ApplicationLogger.new.warn "environment: #{Rails.application.secrets.environment}"
+      logger.warn "environment: #{Rails.application.secrets.environment}"
       # Comentamos mientras el servicio del INE en producción no esté activado (ahora mismo sólo detecta si es código correcto)
       #  if Rails.application.secrets.environment != 'production' && document_number.upcase == '10000320N'
       #    document_number = '10000322Z'
@@ -93,16 +96,20 @@ class CensusApi
       #  else
           province_code = @postal_code[0..1]
       #  end
-      ApplicationLogger.new.warn "province_code: #{province_code}"
-      ApplicationLogger.new.warn "php -f #{validator} -- -i #{identifier} -n #{document_number} -p #{province_code} --esp #{document_type == '4' ? 'n' : 's'}"
+      logger.warn "province_code: #{province_code}"
+      logger.warn "php -f #{validator} -- -i #{identifier} -n #{document_number} -p #{province_code} --esp #{document_type == '4' ? 'n' : 's'}"
       result = `php -f #{validator} -- -i #{identifier} -n #{document_number} -p #{province_code} --esp #{document_type == '4' ? 'n' : 's'}`
-      ApplicationLogger.new.warn "result: #{result}"
-      ApplicationLogger.new.warn "--- #{Time.now.iso8601} fin verificación residencia (INE) ---"
+      logger.warn "result (#{document_number}): #{result}"
+      logger.warn "--- #{Time.now.iso8601} fin verificación residencia (INE) ---"
       result
     end
 
     def identifier
       Time.now.to_i.to_s[-7..-1]
+    end
+
+    def logger
+      @logger ||= ApplicationLogger.new
     end
   end
 
@@ -183,5 +190,9 @@ class CensusApi
           last_surname: "LAST SURNAME"
         }
       }
+    end
+
+    def logger
+      @logger ||= ApplicationLogger.new
     end
 end
