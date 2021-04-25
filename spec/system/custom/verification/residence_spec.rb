@@ -109,7 +109,7 @@ describe "Residence" do
     user = create(:user)
     login_as(user)
 
-    valid_body[:datos_originales][:postal_code] = '36100'
+    valid_body[:datos_originales][:postal_code] = '46100'
 
     visit account_path
     click_link "Verify my account"
@@ -120,7 +120,7 @@ describe "Residence" do
     fill_in "residence_document_number", with: "12345678Z"
     select "DNI", from: "residence_document_type"
     select_date "19-October-1977", from: "residence_date_of_birth"
-    fill_in "residence_postal_code", with: "36100"
+    fill_in "residence_postal_code", with: "46100"
     check "residence_foreign_residence"
     select "Male", from: "residence_gender"
     check "residence_terms_of_service"
@@ -137,7 +137,7 @@ describe "Residence" do
     user = create(:user)
     login_as(user)
 
-    valid_body[:datos_originales][:postal_code] = '36100'
+    valid_body[:datos_originales][:postal_code] = '46100'
     valid_body[:datos_originales][:date_of_birth] = 13.years.ago.to_date
     valid_body[:datos_habitante]['fecha_nacimiento'] = 13.years.ago.strftime('%Y%m%d')
 
@@ -150,7 +150,7 @@ describe "Residence" do
     fill_in "residence_document_number", with: "12345678Z"
     select "DNI", from: "residence_document_type"
     select_date 13.years.ago.strftime('%d-%B-%Y'), from: "residence_date_of_birth"
-    fill_in "residence_postal_code", with: "36100"
+    fill_in "residence_postal_code", with: "46100"
     check "residence_foreign_residence"
     select "Male", from: "residence_gender"
     check "residence_terms_of_service"
@@ -179,6 +179,32 @@ describe "Residence" do
     select "DNI", from: "residence_document_type"
     select_date "19-October-1977", from: "residence_date_of_birth"
     fill_in "residence_postal_code", with: "36100"
+    select "Male", from: "residence_gender"
+    check "residence_terms_of_service"
+
+    click_button "Verify residence"
+
+    expect(page).to have_content(/\d errors? prevented the verification of your residence/)
+    expect(page).to have_content("In order to be verified, you must be registered")
+  end
+
+  scenario "Error on foreign residence" do
+    user = create(:user)
+    login_as(user)
+
+    valid_body[:datos_originales][:postal_code] = '36100'
+
+    visit account_path
+    click_link "Verify my account"
+
+    fill_in "residence_name", with: "Francisca"
+    fill_in "residence_first_surname", with: "Nomdedéu"
+    fill_in "residence_last_surname", with: "Camps"
+    fill_in "residence_document_number", with: "12345678Z"
+    select "DNI", from: "residence_document_type"
+    select_date "19-October-1977", from: "residence_date_of_birth"
+    fill_in "residence_postal_code", with: "36100"
+    check "residence_foreign_residence"
     select "Male", from: "residence_gender"
     check "residence_terms_of_service"
 

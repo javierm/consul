@@ -111,8 +111,6 @@ class Verification::Residence
     end
 
     def valid_postal_code?
-      return true if foreign_residence?
-
       postal_code =~ /^03|12|46/
     end
 

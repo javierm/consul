@@ -204,7 +204,7 @@ describe Verification::Residence do
 
     describe "born in valencia but residence outside and age above 16" do
       let(:age) { 16.years.ago }
-      let(:postal_code) { '36100' }
+      let(:postal_code) { '46100' }
       let(:residence) { build(:verification_residence, document_number: "12345678Z", document_type: '1', gender: 'female', postal_code: postal_code, foreign_residence: '1', date_of_birth: age.to_date, name: 'Francisca', first_surname: 'Nomdedéu') }
       let!(:geozone) { create(:geozone, census_code: "46") }
       let(:now) { Time.zone.now }
@@ -237,7 +237,7 @@ describe Verification::Residence do
           expect(user.date_of_birth.day).to eq(age.day)
           expect(user.gender).to eq("female")
           expect(user.geozone).to eq(geozone)
-          expect(user.postal_code).to eq('36100')
+          expect(user.postal_code).to eq('46100')
           expect(user.residence_verified_at).to eq(nil)
           expect(user.residence_requested_at).to eq(now)
           expect(user.foreign_residence).to eq(true)
@@ -273,7 +273,7 @@ describe Verification::Residence do
           expect(user.date_of_birth.day).to eq(age.day)
           expect(user.gender).to eq("female")
           expect(user.geozone).to eq(geozone)
-          expect(user.postal_code).to eq('36100')
+          expect(user.postal_code).to eq('46100')
           expect(user.residence_verified_at).to eq(nil)
           expect(user.residence_requested_at).to eq(now)
           expect(user.foreign_residence).to eq(true)
@@ -308,7 +308,7 @@ describe Verification::Residence do
           expect(user.date_of_birth.day).to eq(age.day)
           expect(user.gender).to eq("female")
           expect(user.geozone).to eq(geozone)
-          expect(user.postal_code).to eq('36100')
+          expect(user.postal_code).to eq('46100')
           expect(user.residence_verified_at).to eq(nil)
           expect(user.residence_requested_at).to eq(now)
           expect(user.foreign_residence).to eq(true)
@@ -322,7 +322,7 @@ describe Verification::Residence do
 
     describe "born in valencia but residence outside and age above 12" do
       let(:age) { 12.years.ago }
-      let(:postal_code) { '36100' }
+      let(:postal_code) { '46100' }
       let(:residence) { build(:verification_residence, document_number: "12345678Z", document_type: '1', gender: 'female', postal_code: postal_code, foreign_residence: '1', date_of_birth: age.to_date, name: 'Francisca', first_surname: 'Nomdedéu') }
       let!(:geozone) { create(:geozone, census_code: "46") }
       let(:now) { Time.zone.now }
@@ -354,7 +354,7 @@ describe Verification::Residence do
         expect(user.date_of_birth.day).to eq(age.day)
         expect(user.gender).to eq("female")
         expect(user.geozone).to eq(geozone)
-        expect(user.postal_code).to eq('36100')
+        expect(user.postal_code).to eq('46100')
         expect(user.residence_verified_at).to eq(nil)
         expect(user.residence_requested_at).to eq(now)
         expect(user.foreign_residence).to eq(true)
