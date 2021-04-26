@@ -3,6 +3,8 @@ module Abilities
     include CanCan::Ability
 
     def initialize(user)
+      merge Abilities::Common.new(user)
+
       can :comment_as_administrator, [Budget::Investment]
 
       can [:index, :read, :new, :create, :update, :destroy, :calculate_winners], Budget
