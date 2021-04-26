@@ -1,0 +1,25 @@
+es:
+  activerecord:
+    models:
+      budget_manager:
+        one: "Administrador de presupuestos"
+        other: "Administradores de presupuestos"
+  layouts:
+    header:
+      budget_management: Administrar presupuestos
+  admin:
+    menu:
+      budget_managers: Administradores de presupuestos
+    budget_managers:
+      header:
+        title: Presupuestos participativos
+      index:
+        title: Administradores de presupuestos
+        name: Nombre
+        email: Email
+        no_budget_managers: No hay administradores de presupuestos.
+      budget_manager:
+        add: Añadir como administrador de presupuestos
+        delete: Borrar
+      search:
+        title: "Administradores de presupuestos: Búsqueda de usuarios"

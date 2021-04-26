@@ -190,7 +190,7 @@
       <span class="icon-organizations"></span>
       <strong><%= t("admin.menu.title_profiles") %></strong>
     </a>
-    <ul <%= "class=is-active" if menu_profiles? || controller_name == "legislators" %>>
+    <ul <%= "class=is-active" if menu_profiles? %>>
       <li <%= "class=is-active" if controller_name == "administrators" %>>
         <%= link_to t("admin.menu.administrators"), admin_administrators_path %>
       </li>
@@ -217,6 +217,10 @@
 
       <li <%= "class=is-active" if controller_name == "legislators" %>>
         <%= link_to t("admin.menu.legislators"), admin_legislators_path %>
+      </li>
+
+      <li <%= "class=is-active" if controller_name == "budget_managers" %>>
+        <%= link_to t("admin.menu.budget_managers"), admin_budget_managers_path %>
       </li>
 
       <li <%= "class=is-active" if controller_name == "users" %>>
