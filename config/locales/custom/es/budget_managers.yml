@@ -2,27 +2,27 @@ es:
   activerecord:
     models:
       budget_manager:
-        one: "Administrador de presupuestos participativos"
-        other: "Administradores de presupuestos participativos"
+        one: "Administrador de los presupuestos participativos"
+        other: "Administradores de los presupuestos participativos"
   layouts:
     header:
       budget_management: Presupuestos
   admin:
     menu:
-      budget_managers: Administradores de presupuestos participativos
+      budget_managers: Administradores de los presupuestos
     budget_managers:
       header:
         title: Presupuestos participativos
       index:
-        title: Administradores de presupuestos participativos
+        title: Administradores de los presupuestos participativos
         name: Nombre
         email: Email
-        no_budget_managers: No hay administradores de presupuestos participativos.
+        no_budget_managers: No hay administradores de los presupuestos participativos.
       budget_manager:
-        add: Añadir como administrador de presupuestos participativos
+        add: Añadir como administrador de los presupuestos participativos
         delete: Borrar
       search:
-        title: "Administradores de presupuestos participativos: Búsqueda de usuarios"
+        title: "Administradores de los presupuestos participativos: Búsqueda de usuarios"
   comments:
     comment:
-      budget_manager: Administrador de presupuestos participativos
+      budget_manager: Administrador de los presupuestos participativos
