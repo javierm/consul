@@ -63,6 +63,7 @@ val:
         document_type_label: Tipus de document
         date_of_birth: Data de naixement
         invalid_date_of_birth: La data de naixement no coincideix
+        invalid_postal_code: El codi postal no coincideix
         gender_label: Gènere
         postal_code: Codi postal
         name: Nom
