@@ -4,6 +4,12 @@
   .info {
     background: $dark-blue-gva;
   }
+
+  .callout.warning {
+    a {
+      color: $color-warning;
+    }
+  }
 }
 
 .budget-timeline {
