@@ -27,12 +27,12 @@
 
           <% if comment.as_administrator? %>
             <span class="user-name">
-              <% if comment.administrator_id.present? %>
-                <%= t("comments.comment.admin") %>
+              <% if comment.legislator_id.present? %>
+                <%= t("comments.comment.legislator") %>
                 <% if valuation %>
-                  <%= Administrator.find(comment.administrator_id).description_or_name %>
+                  <%= Legislator.find(comment.legislator_id).description_or_name %>
                 <% else %>
-                  #<%= comment.administrator_id %>
+                  #<%= comment.legislator_id %>
                 <% end %>
               <% elsif comment.budget_manager_id.present? %>
                 <%= t("comments.comment.budget_manager") %>
@@ -40,6 +40,13 @@
                   <%= BudgetManager.find(comment.budget_manager_id).description_or_name %>
                 <% else %>
                   #<%= comment.budget_manager_id %>
+                <% end %>
+              <% else %>
+                <%= t("comments.comment.admin") %>
+                <% if valuation %>
+                  <%= Administrator.find(comment.administrator_id).description_or_name %>
+                <% else %>
+                  #<%= comment.administrator_id %>
                 <% end %>
               <% end %>
             </span>

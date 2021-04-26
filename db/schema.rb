@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210426120920) do
+ActiveRecord::Schema.define(version: 20210426125854) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -420,6 +420,7 @@ ActiveRecord::Schema.define(version: 20210426120920) do
     t.integer "confidence_score", default: 0, null: false
     t.boolean "valuation", default: false
     t.integer "budget_manager_id"
+    t.integer "legislator_id"
     t.index ["ancestry"], name: "index_comments_on_ancestry"
     t.index ["cached_votes_down"], name: "index_comments_on_cached_votes_down"
     t.index ["cached_votes_total"], name: "index_comments_on_cached_votes_total"
