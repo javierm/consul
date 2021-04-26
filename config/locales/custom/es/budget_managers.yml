@@ -6,7 +6,7 @@ es:
         other: "Administradores de presupuestos"
   layouts:
     header:
-      budget_management: Administrar presupuestos
+      budget_management: Presupuestos
   admin:
     menu:
       budget_managers: Administradores de presupuestos
