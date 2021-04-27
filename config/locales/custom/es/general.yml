@@ -886,6 +886,7 @@ es:
   welcome:
     sections:
       title: "Ahora podemos <span class='sections-icon__title__higlight'>debatir, proponer y hacer votaciones</span> para entre todos y todas mejorar nuestra Comunitat"
+      registrations_counter: "Ya somos <span class='sections-icon__title__higlight'>%{count}</span> personas registradas"
       debate:
         title: Debatir
         description: Abre un hilo de discusión para compartir puntos de vista con otras personas sobre aquello que te preocupa.
