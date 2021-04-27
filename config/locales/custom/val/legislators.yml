@@ -1,0 +1,25 @@
+es:
+  activerecord:
+    models:
+      legislator:
+        one: "Legislador"
+        other: "Legisladores"
+  admin:
+    menu:
+      legislators: Legisladores
+    legislators:
+      header:
+        title: Elaboración normativa
+      index:
+        title: Legisladores
+        name: Nombre
+        email: Email
+        no_legislators: No hay legisladores.
+      legislator:
+        add: Añadir como legislador
+        delete: Borrar
+      search:
+        title: "Legisladores: Búsqueda de usuarios"
+  comments:
+    comment:
+      legislator: Administrador legislador
