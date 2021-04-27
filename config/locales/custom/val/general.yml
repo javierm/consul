@@ -667,6 +667,7 @@ val:
   welcome:
     sections:
       title: "Ara podem <span class='sections-icon__title__higlight'>debatre, proposar i fer votacions </span> per a entre tots i totes millorar la nostra Comunitat"
+      registrations_counter: "Ja som <span class='sections-icon__title__higlight welcome-counter'>%{count}</span> persones registrades"
       debate:
         title: Debatre
         description: Obri un fil de discussió per a compartir punts de vista amb altres persones sobre allò que et preocupa.
