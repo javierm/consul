@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210414160324) do
+ActiveRecord::Schema.define(version: 20210426125854) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -279,6 +279,12 @@ ActiveRecord::Schema.define(version: 20210414160324) do
     t.index ["tsv"], name: "index_budget_investments_on_tsv", using: :gin
   end
 
+  create_table "budget_managers", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "description"
+    t.index ["user_id"], name: "index_budget_managers_on_user_id"
+  end
+
   create_table "budget_phase_translations", id: :serial, force: :cascade do |t|
     t.integer "budget_phase_id", null: false
     t.string "locale", null: false
@@ -413,6 +419,8 @@ ActiveRecord::Schema.define(version: 20210414160324) do
     t.string "ancestry"
     t.integer "confidence_score", default: 0, null: false
     t.boolean "valuation", default: false
+    t.integer "budget_manager_id"
+    t.integer "legislator_id"
     t.index ["ancestry"], name: "index_comments_on_ancestry"
     t.index ["cached_votes_down"], name: "index_comments_on_cached_votes_down"
     t.index ["cached_votes_total"], name: "index_comments_on_cached_votes_total"
@@ -1620,6 +1628,7 @@ ActiveRecord::Schema.define(version: 20210414160324) do
   add_foreign_key "budget_administrators", "administrators"
   add_foreign_key "budget_administrators", "budgets"
   add_foreign_key "budget_investments", "communities"
+  add_foreign_key "budget_managers", "users"
   add_foreign_key "budget_valuators", "budgets"
   add_foreign_key "budget_valuators", "valuators"
   add_foreign_key "dashboard_administrator_tasks", "users"

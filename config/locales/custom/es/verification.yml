@@ -63,6 +63,7 @@ es:
         document_type_label: Tipo de documento
         date_of_birth: Fecha de nacimiento
         invalid_date_of_birth: La fecha de nacimiento no coincide
+        invalid_postal_code: El código postal no coincide
         gender_label: Género
         not_verified: No verificada
         postal_code: Código postal

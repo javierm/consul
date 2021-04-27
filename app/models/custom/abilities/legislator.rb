@@ -3,6 +3,8 @@ module Abilities
     include CanCan::Ability
 
     def initialize(user)
+      merge Abilities::Common.new(user)
+
       can :create, Legislation::Proposal
       can :show, Legislation::Proposal
       can :proposals, ::Legislation::Process

@@ -2,19 +2,25 @@ require_dependency Rails.root.join("app", "models", "user").to_s
 
 class User
   has_one :legislator
+  has_one :budget_manager
   has_many :legislation_processes, inverse_of: :user
 
   scope :residence_requested, -> { where.not(residence_requested_at: nil).where(residence_verified_at: nil) }
   scope :legislators, -> { joins(:legislator) }
+  scope :budget_managers, -> { joins(:budget_manager) }
   scope :other, -> { where(gender: "other") }
 
   def legislator?
     legislator.present?
   end
 
+  def budget_manager?
+    budget_manager.present?
+  end
+
   def show_welcome_screen?
     verification = Setting["feature.user.skip_verification"].present? ? true : unverified?
-    sign_in_count == 1 && verification && !organization && !administrator? && !legislator?
+    sign_in_count == 1 && verification && !organization && !administrator? && !legislator? && !budget_manager?
   end
 
   def self.soft_minimum_required_age

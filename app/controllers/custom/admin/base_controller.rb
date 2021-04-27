@@ -4,6 +4,6 @@ class Admin::BaseController < ApplicationController
   private
 
     def verify_administrator
-      raise CanCan::AccessDenied unless current_user&.administrator? || current_user&.legislator?
+      raise CanCan::AccessDenied unless current_user&.administrator? || current_user&.legislator? || current_user&.budget_manager?
     end
 end

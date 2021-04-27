@@ -30,7 +30,16 @@
               <h1>
                 <%= link_to namespaced_root_path do %>
                   <%= setting["org_name"] %>
-                  <br><small><%= t("admin.legislators.header.title") %></small>
+                  <br><small><%= t("admin.legislators.header.title") %> - </small>
+                  <small><%= namespaced_header_title %></small>
+                <% end %>
+              </h1>
+            <% elsif current_budget_manager? %>
+              <h1>
+                <%= link_to namespaced_root_path do %>
+                  <%= setting["org_name"] %>
+                  <br><small><%= t("admin.budget_managers.header.title") %> - </small>
+                  <small><%= namespaced_header_title %></small>
                 <% end %>
               </h1>
             <% else %>
