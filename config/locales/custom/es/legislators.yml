@@ -4,9 +4,6 @@ es:
       legislator:
         one: "Legislador"
         other: "Legisladores"
-  layouts:
-    header:
-      legislation: Elaboración normativa
   admin:
     menu:
       legislators: Legisladores
@@ -25,4 +22,4 @@ es:
         title: "Legisladores: Búsqueda de usuarios"
   comments:
     comment:
-      legislator: Legislador
+      legislator: Administrador legislador

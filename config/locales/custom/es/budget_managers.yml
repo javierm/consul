@@ -4,9 +4,6 @@ es:
       budget_manager:
         one: "Administrador de los presupuestos participativos"
         other: "Administradores de los presupuestos participativos"
-  layouts:
-    header:
-      budget_management: Presupuestos
   admin:
     menu:
       budget_managers: Administradores de los presupuestos
