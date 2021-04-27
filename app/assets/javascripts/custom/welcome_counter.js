@@ -32,7 +32,7 @@ class WelcomeCounter {
         if (data.count > this.countTo) {
           clearInterval(this.countFetchInterval);
           this.countTo = data.count;
-          this.countInterval = setInterval(this.countUp.bind(this), 1);
+          this.countInterval = setInterval(this.countUp.bind(this), 10);
         }
       }.bind(this));
   }
