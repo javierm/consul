@@ -26,15 +26,17 @@ class WelcomeCounter {
   }
 
   countFetch() {
-    fetch('/users_count.json')
-      .then(function(response) { return response.json(); })
-      .then(function(data) {
+    $.ajax({
+      url: '/users_count.json',
+      dataType: 'json',
+      success: function(data) {
         if (data.count > this.countTo) {
           clearInterval(this.countFetchInterval);
           this.countTo = data.count;
           this.countInterval = setInterval(this.countUp.bind(this), 10);
         }
-      }.bind(this));
+      }.bind(this)
+    });
   }
 
   random(min, max) {
