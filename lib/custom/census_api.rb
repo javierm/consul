@@ -19,7 +19,7 @@ class CensusApi
       error = !data[:datos_vivienda]["resultado"] && data[:datos_vivienda]["error"] ||
       !data[:datos_habitante]["resultado"] && data[:datos_habitante]["error"]
 
-      error =~ /^(0231|0239)/ || data[:datos_vivienda]["estado"] =~ /^0233/ ? "No residente" : error
+      data[:datos_vivienda]["estado"] =~ /^0233/ ? "No residente" : error
     end
 
     def date_of_birth

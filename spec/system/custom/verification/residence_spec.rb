@@ -40,7 +40,7 @@ describe "Residence" do
   end
 
   let(:invalid_residence_body) do
-    valid_body.merge({ datos_vivienda: { "resultado" => false, "error" => 'error servicio residencia' } })
+    valid_body.merge({ datos_vivienda: { "resultado" => false, "estado" => '0233', "error" => 'error servicio residencia' } })
   end
 
   let(:unavailable_age_body) do
@@ -105,7 +105,8 @@ describe "Residence" do
     expect(page).to have_content "Required Age Verification Request"
   end
 
-  scenario "Verify foreign resident" do
+  scenario "Verify resident with foreign checked" do
+
     user = create(:user)
     login_as(user)
 
@@ -126,11 +127,38 @@ describe "Residence" do
     check "residence_terms_of_service"
     click_button "Verify residence"
 
-    # We don't have english translations
-    # flash appears as missing translation
-    expect(page).to have_content "foreign_residence_request_form"
-    # Bottom message as string
-    expect(page).to have_content "Foreign Residence Verification Request"
+    expect(page).to have_content "Account verified"
+  end
+
+  context 'foreign residence' do
+    before { expect_any_instance_of(CensusApi).to receive(:get_response_body).with('1', '12345678Z', other_data).and_return(invalid_residence_body) }
+
+    scenario "Verify foreign resident" do
+
+      user = create(:user)
+      login_as(user)
+
+      visit account_path
+      click_link "Verify my account"
+
+      fill_in "residence_name", with: "Francisca"
+      fill_in "residence_first_surname", with: "Nomdedéu"
+      fill_in "residence_last_surname", with: "Camps"
+      fill_in "residence_document_number", with: "12345678Z"
+      select "DNI", from: "residence_document_type"
+      select_date "19-October-1977", from: "residence_date_of_birth"
+      fill_in "residence_postal_code", with: "46100"
+      check "residence_foreign_residence"
+      select "Male", from: "residence_gender"
+      check "residence_terms_of_service"
+      click_button "Verify residence"
+
+      # We don't have english translations
+      # flash appears as missing translation
+      expect(page).to have_content "foreign_residence_request_form"
+      # Bottom message as string
+      expect(page).to have_content "Foreign Residence Verification Request"
+    end
   end
 
   scenario "Verify foreign resident above 12 years" do

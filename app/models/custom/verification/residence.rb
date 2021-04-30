@@ -21,7 +21,7 @@ class Verification::Residence
 
     user.take_votes_if_erased_document(document_number, document_type)
 
-    if foreign_residence? || Age.in_years(date_of_birth).in?(User.soft_minimum_required_age...User.minimum_required_age)
+    if !@census_data.valid? && foreign_residence? || Age.in_years(date_of_birth).in?(User.soft_minimum_required_age...User.minimum_required_age)
       residence_requested_at = Time.current
     else
       residence_verified_at = Time.current

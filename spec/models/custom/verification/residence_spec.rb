@@ -224,27 +224,10 @@ describe Verification::Residence do
           allow_any_instance_of(CensusCaller).to receive(:call).and_return(CensusApi::Response.new(valid_body))
         end
 
-        it "stores all required fields" do
+        it "does not save user" do
           user = create(:user)
           residence.user = user
-          residence.save!
-
-          user.reload
-          expect(user.document_number).to eq("12345678Z")
-          expect(user.document_type).to eq("1")
-          expect(user.date_of_birth.year).to eq(age.year)
-          expect(user.date_of_birth.month).to eq(age.month)
-          expect(user.date_of_birth.day).to eq(age.day)
-          expect(user.gender).to eq("female")
-          expect(user.geozone).to eq(geozone)
-          expect(user.postal_code).to eq('46100')
-          expect(user.residence_verified_at).to eq(nil)
-          expect(user.residence_requested_at).to eq(now)
-          expect(user.foreign_residence).to eq(true)
-          expect(user.services_results).to eq(JSON.parse(valid_body.to_json))
-
-          expect(user.residence_requested_age?).to equal(false)
-          expect(user.residence_requested_foreign?).to equal(true)
+          expect { residence.save! }.to raise_exception(ActiveModel::ValidationError).with_message('Validation failed: Residence in valencia false')
         end
       end
 
@@ -295,28 +278,55 @@ describe Verification::Residence do
           allow_any_instance_of(CensusCaller).to receive(:call).and_return(CensusApi::Response.new(valid_body))
         end
 
-        it "stores all required fields" do
+        it "does not save user" do
           user = create(:user)
           residence.user = user
-          residence.save!
-
-          user.reload
-          expect(user.document_number).to eq("12345678Z")
-          expect(user.document_type).to eq("1")
-          expect(user.date_of_birth.year).to eq(age.year)
-          expect(user.date_of_birth.month).to eq(age.month)
-          expect(user.date_of_birth.day).to eq(age.day)
-          expect(user.gender).to eq("female")
-          expect(user.geozone).to eq(geozone)
-          expect(user.postal_code).to eq('46100')
-          expect(user.residence_verified_at).to eq(nil)
-          expect(user.residence_requested_at).to eq(now)
-          expect(user.foreign_residence).to eq(true)
-          expect(user.services_results).to eq(JSON.parse(valid_body.to_json))
-
-          expect(user.residence_requested_age?).to equal(false)
-          expect(user.residence_requested_foreign?).to equal(true)
+          expect { residence.save! }.to raise_exception(ActiveModel::ValidationError).with_message('Validation failed: Residence in valencia false')
         end
+      end
+    end
+
+    describe "born in valencia and resident in valencia but foreign residence checked and age above 16" do
+      let(:age) { 16.years.ago }
+      let(:postal_code) { '46100' }
+      let(:residence) { build(:verification_residence, document_number: "12345678Z", document_type: '1', gender: 'female', postal_code: postal_code, foreign_residence: '1', date_of_birth: age.to_date, name: 'Francisca', first_surname: 'Nomdedéu') }
+      let!(:geozone) { create(:geozone, census_code: "46") }
+      let(:now) { Time.zone.now }
+
+      before do
+        Timecop.freeze(now)
+        valid_body[:datos_habitante]['fecha_nacimiento'] = age.strftime('%Y%m%d')
+        valid_body[:datos_originales]['date_of_birth'] = age.strftime('%Y%m%d')
+        valid_body[:datos_originales]['postal_code'] = postal_code
+        valid_body[:datos_vivienda]['resultado'] = true
+        allow_any_instance_of(CensusCaller).to receive(:call).and_return(CensusApi::Response.new(valid_body))
+      end
+
+      after do
+        Timecop.return
+      end
+
+      it "stores all required fields with verified" do
+        user = create(:user)
+        residence.user = user
+        residence.save!
+
+        user.reload
+        expect(user.document_number).to eq("12345678Z")
+        expect(user.document_type).to eq("1")
+        expect(user.date_of_birth.year).to eq(age.year)
+        expect(user.date_of_birth.month).to eq(age.month)
+        expect(user.date_of_birth.day).to eq(age.day)
+        expect(user.gender).to eq("female")
+        expect(user.geozone).to eq(geozone)
+        expect(user.postal_code).to eq('46100')
+        expect(user.residence_verified_at).to eq(now)
+        expect(user.residence_requested_at).to eq(nil)
+        expect(user.foreign_residence).to eq(true)
+        expect(user.services_results).to eq(JSON.parse(valid_body.to_json))
+
+        expect { user.residence_requested_age? }.to raise_exception # no birth date
+        expect(user.residence_requested_foreign?).to equal(true)
       end
     end
 
@@ -333,7 +343,7 @@ describe Verification::Residence do
         valid_body[:datos_originales]['date_of_birth'] = age.strftime('%Y%m%d')
         valid_body[:datos_originales]['postal_code'] = postal_code
         valid_body[:datos_vivienda]['resultado'] = false
-        valid_body[:datos_vivienda]['error'] = '0239 residencia no válida'
+        valid_body[:datos_vivienda]['estado'] = '0233'
         allow_any_instance_of(CensusCaller).to receive(:call).and_return(CensusApi::Response.new(valid_body))
       end
 
