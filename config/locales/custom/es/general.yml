@@ -907,7 +907,8 @@ es:
         month: 18M
         budget_gva: "<span>Propuestas ciudadanas</span>"
       txt: "¿Consideras que la Generalitat Valenciana debería actuar en algún área o proyecto concreto? Presenta tu propuesta de iniciativa pública o apoya las que te parezcan más adecuadas. Las propuestas que obtengan 5.000 apoyos se trasladarán a la entidad competente para su consideración."
-      button: "¡Presenta tu propuesta!"
+      button_debates: "Participa en los debates"
+      button_proposal: "¡Presenta tu propuesta!"
 
     feed:
       most_active:

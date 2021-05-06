@@ -1,14 +1,14 @@
 <div class="jumbo slider-gva">
   <div class="row">
 
-    <div class="small-12 medium-6 column">
-      <%= image_tag('participa_i_decideix.png',
-                    class: "margin",
+    <div class="small-12 medium-6 column content-text">
+      <%= image_tag("welcome/#{I18n.locale}/text.png",
                     alt: 'welcome.slider.title') %>
-      <%= link_to t("welcome.slider.button"), proposals_path, class: "button" %>
+      <div><%= link_to t("welcome.slider.button_debates"), proposals_path, class: "button" %></div>
+      <div><%= link_to t("welcome.slider.button_proposal"), budgets_path, class: "button" %></div>
     </div>
-    <div class="small-12 medium-6 column">
-      <%= image_tag('manos.png',
+    <div class="small-12 medium-6 column content-image">
+      <%= image_tag("welcome/#{I18n.locale}/image.png",
                     class: "margin",
                     alt: 'welcome.slider.title') %>
     </div>

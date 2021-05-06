@@ -11,6 +11,15 @@ $padding: 30px;
   margin: 20px 0;
   background-color: #f6f6f6;
 
+  .content-text {
+    img {
+      max-width: 70%;
+    }
+    div a {
+      margin-top: 1em;
+    }
+  }
+
   .content {
     &__title {
       color: $brand;
