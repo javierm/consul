@@ -4,7 +4,8 @@
     <div class="small-12 medium-6 column content-text">
       <%= image_tag("welcome/#{I18n.locale}/text.png",
                     alt: 'welcome.slider.title') %>
-      <div><%= link_to t("welcome.slider.button_debates"), proposals_path, class: "button" %></div>
+                  <% loc = I18n.locale == :val ? 'va' : I18n.locale %>
+                  <div><%= link_to t("welcome.slider.button_debates"), "http://participem.gva.es/#{loc}/fase-1-informacio", class: "button" %></div>
       <div><%= link_to t("welcome.slider.button_proposal"), budgets_path, class: "button" %></div>
     </div>
     <div class="small-12 medium-6 column content-image">
