@@ -441,6 +441,9 @@ es:
         title: Título
         description: Descripción
         link_text: Texto del enlace
+        link_url: URL del enlace
+        link_text_2: Texto del enlace 2
+        link_url_2: URL del enlace 2
       widget/feed:
         limit: Número de elementos
       dashboard/action:

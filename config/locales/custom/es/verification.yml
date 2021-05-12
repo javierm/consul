@@ -76,7 +76,7 @@ es:
         error_service_not_available: No se pudo conectar con el servicio de verificación. Por favor, inténtalo más tarde.
         foreign_residence: Resido fuera de la Comunitat Valenciana, pero soy valenciano
         form_errors: evitaron verificar tu residencia
-        postal_code_note: Para verificar tus datos debes estar empadronado/a en la Comunitat Valenciana. Si eres nacido en la Comunitat Valenciana pero resides fuera puedes indicarlo a continuación y seguir el siguiente %{link}. En ese caso indica aquí el último cód. postal donde viviste.
+        postal_code_note: Para verificar tus datos debes estar empadronado/a en la Comunitat Valenciana. Si eres valenciano, pero eres residente en el extranjero o fuera de la Comunitat, puedes indicarlo a continuación y seguir el siguiente %{link}. En ese caso, indica aquí el último código postal donde viviste.
         procedure: procedimiento
         terms: los términos de acceso a los servicios de verificación de edad y residencia
         title: Verificar residencia

@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210426125854) do
+ActiveRecord::Schema.define(version: 20210512112604) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-  enable_extension "unaccent"
   enable_extension "pg_trgm"
+  enable_extension "unaccent"
 
   create_table "active_poll_translations", id: :serial, force: :cascade do |t|
     t.integer "active_poll_id", null: false
@@ -1603,12 +1603,14 @@ ActiveRecord::Schema.define(version: 20210426125854) do
     t.string "title"
     t.text "description"
     t.string "link_text"
+    t.string "link_url"
+    t.string "link_text_2"
+    t.string "link_url_2"
     t.index ["locale"], name: "index_widget_card_translations_on_locale"
     t.index ["widget_card_id"], name: "index_widget_card_translations_on_widget_card_id"
   end
 
   create_table "widget_cards", id: :serial, force: :cascade do |t|
-    t.string "link_url"
     t.boolean "header", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

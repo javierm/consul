@@ -441,6 +441,9 @@ val:
         title: Títol
         description: Descripció
         link_text: Text de l'enllaç
+        link_url: URL de l'enllaç
+        link_text_2: Text de l'enllaç 2
+        link_url_2: URL de l'enllaç 2
       widget/feed:
         limit: Número d'elements
       dashboard/action:
