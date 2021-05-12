@@ -13,7 +13,7 @@ $padding: 30px;
 
   .content-text {
     img {
-      max-width: 70%;
+      margin: 0 10px;
     }
     div a {
       margin-top: 1em;
@@ -52,12 +52,13 @@ $padding: 30px;
     }
   }
 
-  .row div:first-child {
+  .row .content-text {
     padding-top: 5em;
     text-align: center;
-    a.button {
-      margin: 0;
-      margin-top: 2em;
+
+    .buttons {
+      margin: 0 10px;
+      display: flex;
     }
   }
 }
