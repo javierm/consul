@@ -6,3 +6,4 @@
 //
 
 //= require welcome_counter
+//= require select_local
