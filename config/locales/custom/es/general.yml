@@ -881,8 +881,8 @@ es:
       unfeasible: No se pueden votar propuestas inviables.
       not_voting_allowed: El periodo de votación está cerrado.
       different_heading_assigned:
-        one: "Sólo puedes apoyar proyectos de gasto de %{count} provincias. Ya has apoyado en %{supported_headings}."
-        other: "Sólo puedes apoyar proyectos de gasto de %{count} provincias. Ya has apoyado en %{supported_headings}."
+        one: "Sólo puedes apoyar propuestas de inversión de %{count} distrito"
+        other: "Sólo puedes apoyar propuestas de inversión de %{count} distritos"
   welcome:
     sections:
       title: "Ahora podemos <span class='sections-icon__title__higlight'>debatir, proponer y hacer votaciones</span> para entre todos y todas mejorar nuestra Comunitat"

@@ -80,6 +80,12 @@ val:
           by_feasibility: Per viabilitat
           feasible: Veure les propostes d'inversió viables
           unfeasible: Veure les propostes d'inversió inviables
+          my_votes: Els meus avals
+          supported_html:
+            one: "<strong>Has avalat una proposta, pots continuar avalant propostes fins a arribar al màxim de %{max_supported_count}. Pots canviar els teus avals en qualsevol moment fins al %{phase_end_date}.</strong>"
+            other: "<strong>Has avalat %{count} propostes, pots continuar avalant propostes fins a arribar al màxim de %{max_supported_count}. Pots canviar els teus avals en qualsevol moment fins al %{phase_end_date}.</strong>"
+            all: "Ja no pots avalar més propostes d’inversió. Pots canviar els teus avals fins al %{phase_end_date}."
+          zero_supports: Encara no has avalat cap proposta d'inversió en este pressupost
         orders:
           random: aleatòries
           confidence_score: millor valorats
@@ -107,13 +113,15 @@ val:
         already_supported: Ja has avalat aquest projecte d'inversió. Comparteixlo!
         support_title: Avalar este projecte
         confirm_group:
-          one: "Sols pots avalar propostes en %{count} districtes. Si segueixes no podras canviar la elecció d'aquest districte. ¿Estas segur?"
-          other: "Sols pots avalar propostes en %{count} districtes. Si segueixes no podras canviar la elecció d'aquest districte. ¿Estas segur?"
+          one: "Sols pots avalar propostes en %{count} comarca. Si segueixes no podras canviar la elecció d'aquesta comarca. ¿Estas segur/a?"
+          other: "Sols pots avalar propostes en %{count} comarca. Si segueixes no podras canviar la elecció d'aquesta comarca. ¿Estas segur/a?"
         supports:
           zero: Sense avals
           one: 1 aval
           other: "%{count} avals"
         give_support: Avalar
+        max_support_limit_reached_html: "Has arribat al nombre màxim d'avals permés (%{max})."
+        remove_support: Retirar aval
       header:
         check_ballot: Revisar els meus vots
         change_ballot: "Si canvies d'opinió pots esborrar els teus vots en %{check_ballot} i tornar a començar."
@@ -161,3 +169,6 @@ val:
         dates_range_invalid: "La data d'inici no ha de ser igual o posterior a la data de fi"
         prev_phase_dates_invalid: "La data d'inici ha de ser posterior a la data d'inici de la fase anterior (%{phase_name})"
         next_phase_dates_invalid: "La data de fi ha de ser posterior a la data de fi de la seguent fase (%{phase_name})"
+  votes:
+    budget_investments:
+      max_votes_per_budget_per_user_limit_reached: "Has avalat el màxim de propostes permés."

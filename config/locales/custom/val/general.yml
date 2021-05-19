@@ -664,6 +664,9 @@ val:
       organization: Les organitzacions no poden votar
       unfeasible: No es poden votar propostes inviables
       not_voting_allowed: El període de votació està tancat
+      different_heading_assigned:
+        one: "Sols pots avalar propostes de %{count} districte. Ya has avalat en %{supported_headings}."
+        other: "Sols pots avalar propostes de %{count} districtes. Ya has avalat en %{supported_headings}."
   welcome:
     sections:
       title: "Ara podem <span class='sections-icon__title__higlight'>debatre, proposar i fer votacions </span> per a entre tots i totes millorar la nostra Comunitat"

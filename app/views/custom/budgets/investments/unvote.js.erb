@@ -1,0 +1,12 @@
+$("#<%= dom_id(@investment) %>_votes").html('<%= j render("/budgets/investments/votes",
+                                                          investment: @investment,
+                                                          investment_votes: @investment_votes,
+                                                          vote_url: namespaced_budget_investment_unvote_path(@investment, value: 'no')) %>');
+$("#sidebar").html('<%= j render("budgets/investments/sidebar") %>');
+$("#investment_sidebar").html('<%= j render("/budgets/investments/investment_sidebar",
+                                                          investment: @investment) %>');
+
+remaining_votes = "<%= current_user.number_of_budget_investment_votes_left_per_budget(@investment.budget_id) %>"
+if (remaining_votes > 0) {
+    $(".js-participation-not-allowed.participation-not-allowed").remove()
+}
