@@ -429,8 +429,8 @@ val:
   dashboard:
     mailer:
       forward:
-        subtitle: "Si me apoyas, <br>lo conseguiremos."
-        support_button: Apoyar esta propuesta
+        subtitle: "Si em dones suport, <br>ho aconseguirem."
+        support_button: Avalar aquesta proposta
         share_in: Compartir en
         hi: "Hola!"
         introduction: T'escric per a comunicar-te que estic participant en %{org}, la plataforma perquè puguem decidir quina Comunitat volem. I per a això, he creat la meua pròpia proposta ciutadana i ara, necessitaré el teu suport! Però no et preocupes perquè és molt senzill.

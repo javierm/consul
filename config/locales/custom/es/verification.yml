@@ -72,7 +72,7 @@ es:
         last_surname: Apellido 2º
         error_not_allowed_age: No tienes la edad mínima para participar
         error_not_allowed_postal_code: Para verificarte debes estar empadronado/a.
-        error_verifying_census: El Padrón no pudo verificar tu información. Por favor, confirma que tus datos de empadronamiento sean correctos llamando al Ajuntament o visitando una Oficina de Atención al Ciudadano.
+        error_verifying_census: El Padrón no pudo verificar tu información. Por favor, confirma que tus datos de empadronamiento sean correctos llamando al Ayuntamiento o visitando una Oficina de Atención al Ciudadano.
         error_service_not_available: No se pudo conectar con el servicio de verificación. Por favor, inténtalo más tarde.
         foreign_residence: Resido fuera de la Comunitat Valenciana, pero soy valenciano
         form_errors: evitaron verificar tu residencia
