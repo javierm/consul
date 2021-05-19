@@ -435,7 +435,7 @@ val:
         hi: "Hola!"
         introduction: T'escric per a comunicar-te que estic participant en %{org}, la plataforma perquè puguem decidir quina Comunitat volem. I per a això, he creat la meua pròpia proposta ciutadana i ara, necessitaré el teu suport! Però no et preocupes perquè és molt senzill.
         support: "Tan sols has de fer clic en el botó que veuràs a continuació ‘Donar suport a aquesta proposta’ i directament podràs informar-te sobre ella abans d'impulsar-la. Només les proposta que aconseguisquen el màxim suport es portaran a terme per part de la Generalitat, i he pensat que tu segur que m'ajudes a aconseguir-ho!"
-        share: "Y si además, me haces el gran favor de compartir mi propuesta con tus amigos, familiares y contactos ¡sería perfecto!"
+        share: "I si a més, em fas el gran favor de compartir la meua proposta amb els teus amics, familiars i contactes seria perfecte!"
   polls:
     all: "Totes"
     no_dates: "sense data asignada"
