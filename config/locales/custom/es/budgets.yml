@@ -121,6 +121,12 @@ es:
           by_feasibility: Por viabilidad
           feasible: Ver los proyectos viables
           unfeasible: Ver los proyectos inviables
+          my_votes: Mis Apoyos
+          supported_html:
+            one: "<strong>Has apoyado una propuesta, puedes seguir apoyando propuestas hasta llegar al máximo de %{max_supported_count}. Puedes cambiar tus apoyos en cualquier momento hasta el %{phase_end_date}.</strong>"
+            other: "<strong>Has apoyado %{count} propuestas, puedes seguir apoyando propuestas hasta llegar al máximo de %{max_supported_count}. Puedes cambiar tus apoyos en cualquier momento hasta el %{phase_end_date}.</strong>"
+            all: "Ya no puedes apoyar más propuestas de inversión. Puedes cambiar tus apoyos en cualquier momento hasta el %{phase_end_date}."
+          zero_supports: Aún no has apoyado ninguna propuesta de inversión en este presupuesto
         orders:
           random: Aleatorios
           confidence_score: Mejor valorados
@@ -154,13 +160,15 @@ es:
         already_supported: Ya has apoyado este proyecto de gasto. ¡Compártelo!
         support_title: Apoyar este proyecto
         confirm_group:
-          one: "Sólo puedes apoyar proyectos en %{count} distrito. Si sigues adelante no podrás cambiar la elección de este distrito. ¿Estás seguro/a?"
-          other: "Sólo puedes apoyar proyectos en %{count} distritos. Si sigues adelante no podrás cambiar la elección de este distrito. ¿Estás seguro/a?"
+          one: "Sólo puedes apoyar proyectos en %{count} comarca. Si sigues adelante no podrás cambiar la elección de esta comarca. ¿Estás seguro/a?"
+          other: "Sólo puedes apoyar proyectos en %{count} comarcas. Si sigues adelante no podrás cambiar la elección de esta comarca. ¿Estás seguro/a?"
         supports:
           zero: Sin apoyos
           one: 1 apoyo
           other: "%{count} apoyos"
         give_support: Apoyar
+        max_support_limit_reached_html: "Has alcanzado el número máximo de votos permitido (%{max})."
+        remove_support: Retirar apoyo
       header:
         check_ballot: Revisar y confirmar mis votos
         different_heading_assigned: "Ya apoyaste proyectos de otra sección del presupuesto: %{heading_link}"
@@ -217,3 +225,6 @@ es:
         dates_range_invalid: "La fecha de comienzo no puede ser igual o superior a la de finalización"
         prev_phase_dates_invalid: "La fecha de inicio debe ser posterior a la fecha de inicio de la anterior fase habilitada (%{phase_name})"
         next_phase_dates_invalid: "La fecha de fin debe ser anterior a la fecha de fin de la siguiente fase habilitada (%{phase_name})"
+  votes:
+    budget_investments:
+      max_votes_per_budget_per_user_limit_reached: "Has apoyado el máximo de propuestas permitido."
