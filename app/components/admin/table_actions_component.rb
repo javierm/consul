@@ -1,5 +1,4 @@
 class Admin::TableActionsComponent < ApplicationComponent
-  include TableActionLink
   attr_reader :record, :options
   delegate :namespace, to: :helpers
 
