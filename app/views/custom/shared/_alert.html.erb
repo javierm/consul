@@ -3,14 +3,14 @@
 <div class="callout" style="background-color: <%= color %>">
   <h2><%= title %></h2>
   <p><%= description %></p>
-  <p><%= link_to url_text, url %></p>
+  <p><%= link_to url_text, url, target: :_blank %></p>
 </div>
 
 <% if modal %>
   <div class="reveal" id="modal" data-reveal>
     <h2><%= title %></h2>
     <p><%= description %></p>
-    <p><%= link_to url_text, url %></p>
+    <p><%= link_to url_text, url, target: :_blank %></p>
     <button class="close-button" data-close aria-label="Close modal" type="button">
       <span aria-hidden="true">&times;</span>
     </button>
