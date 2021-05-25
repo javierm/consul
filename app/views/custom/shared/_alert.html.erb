@@ -1,0 +1,23 @@
+<% modal ||= false %>
+
+<div class="callout" style="background-color: <%= color %>">
+  <h2><%= title %></h2>
+  <p><%= description %></p>
+  <p><%= link_to url_text, url %></p>
+</div>
+
+<% if modal %>
+  <div class="reveal" id="modal" data-reveal>
+    <h2><%= title %></h2>
+    <p><%= description %></p>
+    <p><%= link_to url_text, url %></p>
+    <button class="close-button" data-close aria-label="Close modal" type="button">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <script>
+    jQuery(document).ready(function($) {
+      $("#modal").foundation("open");
+    });
+  </script>
+<% end %>
