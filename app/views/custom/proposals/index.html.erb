@@ -49,6 +49,8 @@
   <div class="row">
     <div id="proposals" class="proposals-list small-12 medium-9 column">
 
+      <%= render 'shared/alert', title: t('go_to_budgets.title'), description: t('go_to_budgets.description'), url_text: t('go_to_budgets.url_text'), color: '#ffdc5c', url: budgets_path %>
+
       <%= render "shared/banner" %>
 
       <% if show_featured_proposals? %>

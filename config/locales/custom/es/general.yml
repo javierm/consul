@@ -1005,3 +1005,7 @@ es:
     create:
       enqueue_remote_translation: Se han solicitado correctamente las traducciones.
     button: Traducir página
+  go_to_budgets:
+    title: ⚠ ¿Seguro que quieres publicar tu propuesta aquí? ⚠
+    description: ¡Hasta el 30 de mayo puedes presentar tu propuesta directamente en los Presupuestos Participativos!
+    url_text: Presupuestos Participativos

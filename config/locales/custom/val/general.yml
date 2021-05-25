@@ -772,3 +772,7 @@ val:
       alt: Selecciona el text que vols comentar i polsa el botó amb el llapis.
       text: Per a comentar este document has de %{sign_in} o %{sign_up}. Després selecciona el texte que vols comentar i polsa el botó amb el llapis.
       title: Com puc comentar aquest document?
+  go_to_budgets:
+    title: ⚠ Segur que vols publicar la teua proposta ací? ⚠
+    description: Fins al 30 de maig pots presentar la teua proposta directament als Pressupostos Participatius!
+    url_text: Pressupostos Participatius
