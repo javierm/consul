@@ -198,7 +198,7 @@ describe "Admin budgets", :admin do
 
     scenario "Destroy a budget without investments" do
       visit admin_budgets_path
-      click_link "Edit budget"
+      click_link "Edit"
       click_link "Delete budget"
 
       expect(page).to have_content("Budget deleted successfully")
@@ -209,7 +209,7 @@ describe "Admin budgets", :admin do
       create(:budget_investment, heading: heading)
 
       visit admin_budgets_path
-      click_link "Edit budget"
+      click_link "Edit"
       click_link "Delete budget"
 
       expect(page).to have_content("You cannot delete a budget that has associated investments")

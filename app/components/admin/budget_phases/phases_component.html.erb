@@ -29,10 +29,7 @@
           <%= enabled_text(phase) %>
         </td>
         <td>
-          <%= render Admin::TableActionsComponent.new(phase,
-            actions: [:edit],
-            edit_text: t("admin.budgets.edit.edit_phase")
-          ) %>
+          <%= render Admin::TableActionsComponent.new(phase, actions: [:edit]) %>
         </td>
       </tr>
     <% end %>
