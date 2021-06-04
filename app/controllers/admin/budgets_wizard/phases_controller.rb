@@ -1,5 +1,7 @@
 class Admin::BudgetsWizard::PhasesController < Admin::BaseController
   include Admin::BudgetPhasesActions
+  before_action :set_budget_mode, only: [:index, :edit, :update]
+  before_action :set_url_params, only: [:index, :edit]
 
   def index
   end
@@ -13,7 +15,7 @@ class Admin::BudgetsWizard::PhasesController < Admin::BaseController
   private
 
     def phases_index
-      admin_budgets_wizard_budget_budget_phases_path(@phase.budget)
+      admin_budgets_wizard_budget_budget_phases_path(@phase.budget, url_params)
     end
 
     def phases_params

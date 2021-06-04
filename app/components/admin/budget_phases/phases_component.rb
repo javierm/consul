@@ -1,8 +1,9 @@
 class Admin::BudgetPhases::PhasesComponent < ApplicationComponent
-  attr_reader :budget, :form
+  attr_reader :budget, :url_params, :form
 
-  def initialize(budget, form: nil)
+  def initialize(budget, url_params:, form: nil)
     @budget = budget
+    @url_params = url_params
     @form = form
   end
 

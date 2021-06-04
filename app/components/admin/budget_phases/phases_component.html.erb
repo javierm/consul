@@ -29,6 +29,7 @@
           <%= enabled_cell(phase) %>
         </td>
         <td>
+          <%# TODO: Add mode parameter to edit URL %>
           <%= render Admin::TableActionsComponent.new(phase,
             actions: [:edit],
             edit_text: t("admin.budgets.edit.edit_phase")

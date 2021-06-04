@@ -3,6 +3,7 @@
 <%= translatable_form_for [namespace, phase.budget, phase], html: { class: "budget-phases-form" } do |f| %>
 
   <%= render "shared/errors", resource: phase %>
+  <%= hidden_field :budget, :mode, value: @mode %>
 
   <fieldset>
     <legend aria-describedby="phase_duration_description">
