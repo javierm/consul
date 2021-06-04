@@ -5,6 +5,9 @@
 <%= render Admin::Budgets::HelpComponent.new("budget_headings") %>
 <%= render Admin::BudgetsWizard::CreationTimelineComponent.new("headings") %>
 
-<%= render Admin::BudgetsWizard::Headings::GroupSwitcherComponent.new(group) %>
-<%= render Admin::BudgetHeadings::HeadingsComponent.new(headings) %>
+<% if @mode == "multiple" %>
+  <%= render Admin::BudgetsWizard::Headings::GroupSwitcherComponent.new(group) %>
+  <%= render Admin::BudgetHeadings::HeadingsComponent.new(headings) %>
+<% end %>
+<%# TODO: only show controls in it's a multiple heading budget %>
 <%= render Admin::BudgetsWizard::Headings::CreationStepComponent.new(new_heading) %>
