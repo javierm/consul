@@ -5,7 +5,10 @@ class Admin::BudgetsWizard::BudgetsController < Admin::BaseController
 
   load_and_authorize_resource
 
+  before_action :set_budget_mode
+
   def new
+    @mode ||= "multiple"
   end
 
   def edit
@@ -42,6 +45,12 @@ class Admin::BudgetsWizard::BudgetsController < Admin::BaseController
     end
 
     def groups_index
-      admin_budgets_wizard_budget_groups_path(@budget)
+      admin_budgets_wizard_budget_groups_path(@budget, mode: @mode)
+    end
+
+    def set_budget_mode
+      if params[:mode] || budget_heading_params.present?
+        @mode = params[:mode] || budget_heading_params[:mode]
+      end
     end
 end

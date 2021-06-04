@@ -1,4 +1,5 @@
 <%= translatable_form_for [namespace, budget], html: { class: "budgets-form" } do |f| %>
+  <%= hidden_field :heading, :mode, value: @mode %>
   <fieldset>
     <legend><%= t("admin.budgets.edit.info.budget_settings") %></legend>
     <%= render "shared/globalize_locales", resource: budget %>
