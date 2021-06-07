@@ -10,14 +10,14 @@ val:
         not_logged_in: Necessites %{signin} o %{signup}.
         not_verified: Les propostes d'inversió només poden ser avalades per usuaris verificats, %{verify_account}.
         organization: Les organitzacions no poden votar
-        not_selected: No es poden votar propostes inviables
+        not_selected: No es poden votar propostes no seleccionades en la fase de revisió interna
         no_ballots_allowed: El període de votació està tancat
         change_ballot: canviar els teus vots
     groups:
       show:
         title: Selecciona una opció
-        unfeasible_title: Propostes inviables
-        unfeasible: Vore les propostes inviables
+        unfeasible_title: Propostes no seleccionades en la fase de revisió interna
+        unfeasible: Vore les propostes no seleccionades en la fase de revisió interna
         unselected_title: Propostes no seleccionades per a la votació final
         unselected: Veure les propostes no seleccionades per a la votació final
     phase:
@@ -42,7 +42,7 @@ val:
       all_phases: Fases de pressupostos participatius
       map: Propostes de pressupostos ubicades geogràficament
       investment_proyects: Llista de totes les propostes d'inversió
-      unfeasible_investment_proyects: Llista de tots els projectes d'inversió inviables
+      unfeasible_investment_proyects: Vore el llistat de propostes no seleccionades en la fase de revisió interna
       not_selected_investment_proyects: Llista de tots els projectes d'inversió no seleccionats per a votació
       finished_budgets: Pressupostos participatius finalitzats
       see_results: Vore resultats
@@ -62,7 +62,7 @@ val:
         map_skip_checkbox: "Esta proposta no te una ubicació concreta o no la conec."
       index:
         title: Pressupostos participatius
-        unfeasible: Propostes d'inversió no viables
+        unfeasible: Propostes d'inversió no seleccionades a la fase de revisió interna
         unfeasible_text: "Les propostes presentades han de complir una sèrie de criteris (legalitat, concreció, no superar el límit del pressupost) per a ser declarades viables i arribar fins la fase de votació final. Totes les propostes que no compleixen aquests criteris són marcades com a inviables i publicades en la següent llista, juntament amb el seu informe d'inviabilitat."
         by_heading: "Propostes d'inversió amb àmbit: %{heading}"
         search_form:
@@ -79,7 +79,7 @@ val:
           not_logged_in: "Per a crear una nova proposta d'inversió has de %{sign_in} o %{sign_up}."
           by_feasibility: Per viabilitat
           feasible: Veure les propostes d'inversió viables
-          unfeasible: Veure les propostes d'inversió inviables
+          unfeasible: Veure les propostes d'inversió no seleccionades en la fase de revisió interna
           my_votes: Els meus avals
           supported_html:
             one: "<strong>Has avalat una proposta, pots continuar avalant propostes fins a arribar al màxim de %{max_supported_count}. Pots canviar els teus avals en qualsevol moment fins al %{phase_end_date}.</strong>"
@@ -133,8 +133,8 @@ val:
     show:
       group: Grup
       phase: Fase actual
-      unfeasible_title: Propostes inviables
-      unfeasible: Veure propostes inviables
+      unfeasible_title: Propostes no seleccionades en la fase de revisió interna
+      unfeasible: Veure propostes no seleccionades en la fase de revisió interna
       unselected_title: Propostes no seleccionades per a la votació final
       unselected: Veure les propostes no seleccionades per a la votació final
       see_results: Vore resultats
@@ -152,7 +152,7 @@ val:
       discarded: "Proposta d'inversió descartada: "
       incompatibles: Incompatibles
       investment_proyects: Llista de totes les propostes d'inversió
-      unfeasible_investment_proyects: Llista de projectes d'inversió inviables
+      unfeasible_investment_proyects: Llista de projectes d'inversió no seleccionats en la fase de revisió interna
       not_selected_investment_proyects: Llista de tots els projectes d'inversió no seleccionats per a votació
     executions:
       link: "Seguiments"

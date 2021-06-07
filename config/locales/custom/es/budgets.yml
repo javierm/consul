@@ -32,7 +32,7 @@ es:
         not_logged_in: Necesitas %{signin} o %{signup} para continuar.
         not_verified: Los proyectos de gasto sólo pueden ser apoyados por usuarios verificados, %{verify_account}.
         organization: Las organizaciones no pueden votar.
-        not_selected: No se pueden votar proyectos inviables.
+        not_selected: No se pueden votar proyectos no seleccionados en la fase de revisión interna.
         not_enough_money: "Ya has asignado el presupuesto disponible.<br><small>Recuerda que puedes %{change_ballot} en cualquier momento</small>"
         no_ballots_allowed: El periodo de votación está cerrado.
         different_heading_assigned: "Ya has votado proyectos de otra partida: %{heading_link}"
@@ -42,8 +42,8 @@ es:
     groups:
       show:
         title: Selecciona una opción
-        unfeasible_title: Proyectos de gasto inviables
-        unfeasible: Ver proyectos inviables
+        unfeasible_title: Proyectos de gasto no seleccionados en la fase de revisión interna
+        unfeasible: Ver proyectos no seleccionados en la fase de revisión interna
         unselected_title: Proyectos no seleccionados para la votación final
         unselected: Ver los proyectos no seleccionados para la votación final
     phase:
@@ -68,7 +68,7 @@ es:
       all_phases: Fases de los presupuestos participativos
       map: Proyectos localizables geográficamente
       investment_proyects: Ver lista completa de proyectos de gasto
-      unfeasible_investment_proyects: Ver lista de proyectos de gasto inviables
+      unfeasible_investment_proyects: Ver el listado de propuestas no seleccionadas en la fase de revisión interna
       not_selected_investment_proyects: Ver lista de proyectos de gasto no seleccionados para la votación final
       finished_budgets: Presupuestos participativos terminados
       see_results: Ver resultados
@@ -88,7 +88,7 @@ es:
         map_skip_checkbox: "Este proyecto no tiene una ubicación concreta o no la conozco."
       index:
         title: Presupuestos participativos
-        unfeasible: Proyectos de gasto no viables
+        unfeasible: Proyectos de gasto no seleccionados en la fase de revisión interna
         unfeasible_text: "Los proyectos presentados deben cumplir una serie de criterios (legalidad, concreción, no superar el tope del presupuesto) para ser declarados viables y llegar hasta la fase de votación final. Todos los proyectos que no cumplen estos criterios son marcados como inviables y publicados en la siguiente lista, junto con su informe de inviabilidad."
         by_heading: "Proyectos de gasto con ámbito: %{heading}"
         search_form:
@@ -120,7 +120,7 @@ es:
           not_logged_in: "Para crear un nuevo proyecto de gasto debes %{sign_in} o %{sign_up}."
           by_feasibility: Por viabilidad
           feasible: Ver los proyectos viables
-          unfeasible: Ver los proyectos inviables
+          unfeasible: Ver los proyectos no seleccionados en la fase de revisión interna
           my_votes: Mis Apoyos
           supported_html:
             one: "<strong>Has apoyado una propuesta, puedes seguir apoyando propuestas hasta llegar al máximo de %{max_supported_count}. Puedes cambiar tus apoyos en cualquier momento hasta el %{phase_end_date}.</strong>"
@@ -148,7 +148,7 @@ es:
         comments_tab: Comentarios
         milestones_tab: Seguimiento
         author: Autor
-        project_unfeasible: "Este proyecto de gasto <strong>ha sido marcado como inviable</strong> y no pasará a la fase de votación."
+        project_unfeasible: "Este proyecto de gasto <strong>ha sido marcado como no seleccionado en la fase de revisión interna</strong> y no pasará a la fase de votación."
         project_selected: "Este proyecto de gasto <strong>ha sido seleccionado</strong> para la fase de votación."
         project_winner: "Proyecto de gasto ganador"
         project_not_selected: "Este proyecto de gasto <strong>no ha sido seleccionado</strong> para la fase de votación."
@@ -185,8 +185,8 @@ es:
     show:
       group: Grupo
       phase: Fase actual
-      unfeasible_title: Proyectos de gasto inviables
-      unfeasible: Ver los proyectos inviables
+      unfeasible_title: Proyectos de gasto no seleccionados en la fase de revisión interna
+      unfeasible: Ver los proyectos no seleccionados en la fase de revisión interna
       unselected_title: Proyectos no seleccionados para la votación final
       unselected: Ver los proyectos no seleccionados para la votación final
       see_results: Ver resultados
@@ -205,7 +205,7 @@ es:
       incompatibles: Incompatibles
       investment_title: Título del proyecto de gasto
       investment_proyects: Ver lista completa de proyectos de gasto
-      unfeasible_investment_proyects: Ver lista de proyectos de gasto inviables
+      unfeasible_investment_proyects: Ver lista de proyectos de gasto no seleccionados en la fase de revisión interna
       not_selected_investment_proyects: Ver lista de proyectos de gasto no seleccionados para la votación final
     executions:
       link: "Seguimiento"

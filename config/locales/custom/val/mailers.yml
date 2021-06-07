@@ -59,7 +59,7 @@ val:
       new_href: "nova proposta d'inversió"
       sincerely: "Atentament"
       sorry: "Sentim les molèsties ocasionades i tornem a donarte les gràcies per la teua inestimable participació."
-      subject: "La teua proposta d'inversió '%{code}' ha sigut marcada com inviable"
+      subject: "La teua proposta d'inversió '%{code}' no ha sigut seleccionada en la fase de revisió interna"
     budget_investment_selected:
       subject: "La teua proposta d'inversió '%{code}' ha sigut seleccionada"
       hi: "Estimat/da usuari/a,"
