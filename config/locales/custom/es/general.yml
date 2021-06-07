@@ -698,6 +698,8 @@ es:
       author_type: "Por categoría de autor/a"
       author_type_blank: "Elige una categoría"
       date: "Por fecha"
+      category_type: "Por categoría"
+      category_type_blank: "Elige una categoría"
       date_placeholder: "DD/MM/AAAA"
       date_range_blank: "Elige una fecha"
       date_1: "Últimas 24 horas"

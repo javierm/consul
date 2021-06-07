@@ -3,10 +3,33 @@ require_dependency Rails.root.join('app', 'models', 'budget', 'investment').to_s
 
 class Budget
   class Investment
+
+    scope :by_tag_filter, ->(tag_name) { tagged_with(tag_name) }
+
+    def self.apply_filters_and_search(_budget, params, current_filter = nil)
+      investments = all
+      investments = investments.send(current_filter)             if current_filter.present?
+      investments = investments.by_heading(params[:heading_id])  if params[:heading_id].present?
+
+      if params[:search].present?
+        if params[:search].to_i.positive?
+          params[:advanced_search][:id] = params[:search]
+        else
+          investments = @resources.search(params[:search])
+        end
+      end
+
+      if params[:advanced_search].present?
+        investments = investments.by_tag_filter(params[:advanced_search].delete("tag")) if params[:advanced_search][:tag].present?
+        investments = investments.filter(params[:advanced_search])
+      end
+      investments
+    end
+
     def register_selection_vote_and_unvote(user, vote)
-      if vote === "no" 
-        vote_by(voter: user, vote: vote) 
-      else 
+      if vote === "no"
+        vote_by(voter: user, vote: vote)
+      else
         vote_by(voter: user, vote: vote) if selectable_by?(user)
       end
     end
