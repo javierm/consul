@@ -85,7 +85,7 @@ module Abilities
       end
 
       if user.level_two_or_three_verified?
-        if Budget.find_by(phase: "selecting").present?
+        if !Budget.find_by(phase: "selecting").present?
           can :vote, Proposal, &:published?
           can :vote_featured, Proposal
         end
