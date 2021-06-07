@@ -11,7 +11,7 @@
           title: t("proposals.proposal.support_title"), method: "post", remote: true do %>
         <%= t("proposals.proposal.support") %>
       <% end %>
-    <% elsif (user_signed_in? && !budget_phase_selecting?) || !user_signed_in? %>
+    <% elsif (user_signed_in? && !budget_phase_selecting?) %>
       <div class="button button-support small expanded">
         <%= t("proposals.proposal.support") %>
       </div>

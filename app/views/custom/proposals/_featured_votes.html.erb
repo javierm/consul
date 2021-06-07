@@ -4,13 +4,11 @@
       <div class="supported">
         <%= t("proposals.proposal.already_supported") %>
       </div>
-    <% else %>
-      <% if !budget_phase_selecting? %>
-        <%= link_to vote_featured_proposal_path(proposal, value: "yes"),
-          class: "button button-support small expanded",
-          title: t("proposals.proposal.support_title"), method: "post", remote: true do %>
-          <%= t("proposals.proposal.support") %>
-        <% end %>
+    <% elsif !budget_phase_selecting? %>
+      <%= link_to vote_featured_proposal_path(proposal, value: "yes"),
+        class: "button button-support small expanded",
+        title: t("proposals.proposal.support_title"), method: "post", remote: true do %>
+        <%= t("proposals.proposal.support") %>
       <% end %>
     <% end %>
   </div>
