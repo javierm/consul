@@ -85,8 +85,10 @@ module Abilities
       end
 
       if user.level_two_or_three_verified?
-        can :vote, Proposal, &:published?
-        can :vote_featured, Proposal
+        if !Budget.find_by(phase: "selecting").present?
+          can :vote, Proposal, &:published?
+          can :vote_featured, Proposal
+        end
 
         can :vote, Legislation::Proposal
         can :vote_featured, Legislation::Proposal
