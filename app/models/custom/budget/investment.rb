@@ -19,8 +19,9 @@ class Budget
       end
 
       if params[:advanced_search].present?
-        investments = investments.by_tag_filter(params[:advanced_search].delete("tag")) if params[:advanced_search][:tag].present?
-        investments = investments.filter(params[:advanced_search])
+        investments = investments.by_tag_filter(params[:advanced_search][:tag]) if params[:advanced_search][:tag].present?
+        investments = investments.filter(params[:advanced_search].reject{|k,v| k == "tag"}
+        )
       end
       investments
     end
