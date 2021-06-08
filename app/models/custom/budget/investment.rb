@@ -4,7 +4,7 @@ require_dependency Rails.root.join('app', 'models', 'budget', 'investment').to_s
 class Budget
   class Investment
 
-    scope :by_tag_filter, ->(tag_name) { tagged_with(tag_name) }
+    scope :by_tag_filter, ->(tag_name) { joins(:tags).where(tags: { kind: 'category' }).tagged_with(tag_name) }
 
     def self.apply_filters_and_search(_budget, params, current_filter = nil)
       investments = all
