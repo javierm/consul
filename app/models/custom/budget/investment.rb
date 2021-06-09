@@ -12,6 +12,7 @@ class Budget
       investments = investments.by_heading(params[:heading_id])  if params[:heading_id].present?
       if params[:search].present?
         if params[:search].to_i.positive?
+          params[:advanced_search] ||= {}
           params[:advanced_search][:id] = params[:search]
         else
           investments = investments.search(params[:search])
