@@ -9,6 +9,7 @@ module CommentableActions
 
     if @search_terms.present?
       if @search_terms.to_i.positive?
+        @advanced_search_terms = ActionController::Parameters.new if @advanced_search_terms.nil?
         @advanced_search_terms[:id] = @search_terms
       else
         @resources = @resources.search(@search_terms)

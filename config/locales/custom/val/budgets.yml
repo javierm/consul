@@ -104,6 +104,7 @@ val:
         comments_tab: Comentaris
         milestones_tab: Fites
         author: Autor
+        project_unfeasible: "Aquesta proposta d'inversió <strong>ha sigut marcada com no seleccionada en la fase de revisió interna</strong> i no passarà a la fase següent."
         project_winner: "Proposta d'inversió guanyadora"
         see_price_explanation: Veure informe de cost
       wrong_price_format: Solament pot incloure caràcters numèrics
