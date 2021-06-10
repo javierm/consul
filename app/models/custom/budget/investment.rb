@@ -15,7 +15,9 @@ class Budget
         else
           investments = investments.search(params[:search])
         end
-      elsif params[:advanced_search].present?
+      end
+
+      if params[:advanced_search].present?
         investments = investments.search(params[:advanced_search][:tag]) if params[:advanced_search][:tag].present?
         investments = investments.filter(params[:advanced_search].reject{|k,v| k == "tag"})
       end
