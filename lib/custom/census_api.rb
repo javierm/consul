@@ -11,11 +11,15 @@ class CensusApi
 
   class Response
     def valid?
+      return false if data =~ /^ERROR/
+
       data[:datos_vivienda]["resultado"] == true &&
       data[:datos_habitante]["resultado"] == true
     end
 
     def error
+      return data if data =~ /^ERROR/
+
       error = !data[:datos_vivienda]["resultado"] && data[:datos_vivienda]["error"] ||
       !data[:datos_habitante]["resultado"] && data[:datos_habitante]["error"]
 
@@ -61,9 +65,16 @@ class CensusApi
       @first_surname = other_data[:first_surname]
       @last_surname = other_data[:last_surname]
 
+      age_response = get_age(document_type, document_number)
+      residence_response = get_residence(document_type, document_number)
+
+      # we return the script error if some
+      return age_response if age_response =~ /^ERROR/
+      return residence_response if residence_response =~ /^ERROR/
+
       {
-        datos_habitante: JSON.parse(get_age(document_type, document_number)),
-        datos_vivienda: JSON.parse(get_residence(document_type, document_number)),
+        datos_habitante: JSON.parse(age_response),
+        datos_vivienda: JSON.parse(residence_response),
         datos_originales: other_data
       }
     end
