@@ -277,7 +277,7 @@ describe "Budget Investments" do
       expect(page).to have_content(budget_investment.title)
 
       within("#budget-investments") do
-        find(".js-in-favor a").click
+        find("in-favor a").click
 
         expect(page).to have_content "1 support"
         expect(page).to have_content "You have already supported this investment project. Share it!"
@@ -300,7 +300,7 @@ describe "Budget Investments" do
         click_link budget_investment.title
       end
 
-      find(".js-in-favor a").click
+      find("in-favor a").click
       expect(page).to have_content "1 support"
       expect(page).to have_content "You have already supported this. Share it!"
     end
