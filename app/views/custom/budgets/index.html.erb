@@ -80,8 +80,7 @@
               <% end %>
             </ul>
             <% if group.headings.size > 1 %>
-              <%# render "budgets/districts_map.svg" %>
-              <%= image_tag("budgets/districts_map_#{I18n.locale}.jpg", alt: 'Mapa comarques') %>
+              <%= render "budgets/districts_map_#{I18n.locale}.svg" %>
             <% end %>
           <% end %>
         </div>
