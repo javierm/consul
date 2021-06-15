@@ -18,7 +18,12 @@
               title: investment.title.mb_chars.upcase,
               image_url: image_absolute_url(investment.image, :thumb),
               url: budget_investment_url(investment.budget, investment),
-              description: investment.title.mb_chars.upcase
+              description: t("budgets.investments.share.message",
+                              title: investment.title.mb_chars.upcase,
+                              handle: setting["org_name"]),
+              mobile: t("budgets.investments.share.message",
+                              title: investment.title.mb_chars.upcase,
+                              handle: setting["twitter_handle"])
             } %>
           </div>
         <% end %>
@@ -39,7 +44,7 @@
             method: "post",
             remote: (current_user&.voted_in_group?(investment.group) ? true : false),
             "aria-hidden" => css_for_aria_hidden(reason) do %>
-            <%= t("budgets.investments.investment.give_support") %>
+          <%= t("budgets.investments.investment.give_support") %>
         <% end %>
       <% else %>
         <%= link_to vote_url,
@@ -48,7 +53,7 @@
             method: "post",
             remote: (current_user&.voted_in_group?(investment.group) ? true : false),
             "aria-hidden" => css_for_aria_hidden(reason) do %>
-            <%= t("budgets.investments.investment.give_support") %>
+          <%= t("budgets.investments.investment.give_support") %>
         <% end %>
       <% end %>
     <% end %>

@@ -72,6 +72,8 @@ val:
     create:
       form:
         submit_button: Iniciar un debat
+    share:
+      message: "Compartisc el debat %{title} de %{handle}, accedeix al portal, informa't i participa!"
     debate:
       comments:
         zero: Sense comentaris
@@ -288,7 +290,7 @@ val:
     share:
       improve_it: Mejora tu campaña y consigue mas apoyos.
       dashboard: Ver mas información
-      message: "He avalat la proposta %{title} en %{handle}. Si t'interessa, avala tu també!"
+      message: "Compartisc aquesta iniciativa %{title} de %{handle}, accedeix al portal, informa't i participa!"
     edit:
       editing: Editar proposta
       form:
