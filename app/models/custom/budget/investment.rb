@@ -4,8 +4,6 @@ require_dependency Rails.root.join('app', 'models', 'budget', 'investment').to_s
 class Budget
   class Investment
 
-    scope :by_tag_filter, ->(tag_name) { joins(:tags).where(tags: { kind: 'category' }).tagged_with(tag_name) }
-
     def self.apply_filters_and_search(_budget, params, current_filter = nil)
       investments = all
       investments = investments.send(current_filter)             if current_filter.present?
@@ -20,9 +18,8 @@ class Budget
       end
 
       if params[:advanced_search].present?
-        investments = investments.by_tag_filter(params[:advanced_search][:tag]) if params[:advanced_search][:tag].present?
-        investments = investments.filter(params[:advanced_search].reject{|k,v| k == "tag"}
-        )
+        investments = investments.search(params[:advanced_search][:tag]) if params[:advanced_search][:tag].present?
+        investments = investments.filter(params[:advanced_search].reject{|k,v| k == "tag"})
       end
       investments
     end

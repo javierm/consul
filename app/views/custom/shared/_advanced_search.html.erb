@@ -13,7 +13,7 @@
       </div>
       <% if resource_model.name != 'Debate' %>
         <div class="small-12 large-3 column">
-          <label for="advanced_search_categories"><%= t("shared.advanced_search.category_type") %></label>
+          <label for="advanced_search_tag"><%= t("shared.advanced_search.category_type") %></label>
           <%= select_tag("advanced_search[tag]", categories_search_options,
                       include_blank: t("shared.advanced_search.category_type_blank")) %>
         </div>
