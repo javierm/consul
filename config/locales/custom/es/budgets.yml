@@ -132,7 +132,7 @@ es:
           confidence_score: Mejor valorados
           price: Por coste
       share:
-        message: "Comparto este proyecto %{title} de %{handle}, accede al portal, infórmate y participa!"
+        message: "Comparto este proyecto %{title} de %{handle}, accede al portal, ¡infórmate y participa!"
       show:
         author_deleted: Usuario eliminado
         price_explanation: Informe de coste
