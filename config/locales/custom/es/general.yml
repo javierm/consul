@@ -81,6 +81,8 @@ es:
     create:
       form:
         submit_button: Empieza un debate
+    share:
+      message: "Comparto el debate %{title} de %{handle}, accede al portal, ¡infórmate y participa!"
     debate:
       comments:
         zero: Sin comentarios
@@ -329,7 +331,7 @@ es:
     share:
       improve_it: Mejora tu campaña y consigue mas apoyos.
       dashboard: Ver mas información
-      message: "He apoyado la propuesta %{title} en %{handle}. Si te interesa, ¡apoya tú también!"
+      message: "Comparto esta iniciativa %{title} de %{handle}, accede al portal, ¡infórmate y participa!"
     edit:
       editing: Editar propuesta
       form:
