@@ -91,7 +91,7 @@ val:
           confidence_score: millor valorats
           price: per cost
       share:
-        message: "Compartisc aquest projecte %{title} de %{handle}accedeix al portal, informa't i participa!"
+        message: "Compartisc aquest projecte %{title} de %{handle}, accedeix al portal, informa't i participa!"
       show:
         author_deleted: Usuari eliminat
         price_explanation: Informe de cost
