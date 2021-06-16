@@ -125,7 +125,7 @@ es:
           supported_html:
             one: "<strong>Has apoyado una propuesta, puedes seguir apoyando propuestas hasta llegar al máximo de %{max_supported_count}. Puedes cambiar tus apoyos en cualquier momento hasta el %{phase_end_date}.</strong>"
             other: "<strong>Has apoyado %{count} propuestas, puedes seguir apoyando propuestas hasta llegar al máximo de %{max_supported_count}. Puedes cambiar tus apoyos en cualquier momento hasta el %{phase_end_date}.</strong>"
-            all: "Ya no puedes apoyar más propuestas de inversión. Puedes cambiar tus apoyos en cualquier momento hasta el %{phase_end_date}."
+          all_supports_html: "<strong>Ya no puedes apoyar más propuestas de inversión. Puedes cambiar tus apoyos en cualquier momento hasta el %{phase_end_date}</strong>"
           zero_supports: Aún no has apoyado ninguna propuesta de inversión en este presupuesto
         orders:
           random: Aleatorios

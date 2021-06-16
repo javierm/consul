@@ -84,7 +84,7 @@ val:
           supported_html:
             one: "<strong>Has avalat una proposta, pots continuar avalant propostes fins a arribar al màxim de %{max_supported_count}. Pots canviar els teus avals en qualsevol moment fins al %{phase_end_date}.</strong>"
             other: "<strong>Has avalat %{count} propostes, pots continuar avalant propostes fins a arribar al màxim de %{max_supported_count}. Pots canviar els teus avals en qualsevol moment fins al %{phase_end_date}.</strong>"
-            all: "Ja no pots avalar més propostes d’inversió. Pots canviar els teus avals fins al %{phase_end_date}."
+          all_supports_html: "<strong>Ja no pots avalar més propostes d’inversió. Pots canviar els teus avals fins al %{phase_end_date}.</strong>"
           zero_supports: Encara no has avalat cap proposta d'inversió en este pressupost
         orders:
           random: aleatòries

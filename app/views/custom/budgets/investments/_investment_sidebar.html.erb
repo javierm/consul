@@ -101,11 +101,9 @@
                   phase_end_date: (I18n.l(@budget.phases.find_by(kind: 'selecting').ends_at.to_date - 1.day, format: :long) rescue '-')
                 ) %>
           <% else %>
-            <strong>
-              <%= t("budgets.investments.index.sidebar.supported_html.all",
-                  phase_end_date: (I18n.l(@budget.phases.find_by(kind: 'selecting').ends_at.to_date - 1.day, format: :long) rescue '-')
-              ) %>
-            </strong>
+            <%= t("budgets.investments.index.sidebar.all_supports_html",
+                phase_end_date: (I18n.l(@budget.phases.find_by(kind: 'selecting').ends_at.to_date - 1.day, format: :long) rescue '-')
+            ) %>
           <% end %>
         </em>
       </p>
