@@ -29,9 +29,9 @@ describe "Local Targets" do
 
       visit sdg_management_local_targets_path
 
-      expect(target_1.title).to appear_before(target_1_local_target.title)
-      expect(target_1_local_target.title).to appear_before(target_2.title)
-      expect(target_2.title).to appear_before(target_2_local_target.title)
+      expect(target_1.official_title).to appear_before(target_1_local_target.title)
+      expect(target_1_local_target.title).to appear_before(target_2.official_title)
+      expect(target_2.official_title).to appear_before(target_2_local_target.title)
     end
   end
 
