@@ -166,6 +166,7 @@ val:
           selected: Seleccionada
           undecided: Sense decidir
           unfeasible: Inviable
+          not_selected: No seleccionades
           min_total_supports: Avals mínims
           winners: Guanyadores
         buttons:
@@ -179,6 +180,7 @@ val:
         feasibility:
           feasible: "Viable"
           unfeasible: "Inviable"
+          not_selected: No seleccionada
           undecided: "Sense decidir"
         selected: "Seleccionades"
         select: "Seleccionar"

@@ -6,6 +6,9 @@ class Budgets::InvestmentsController
   before_action :load_votes, only: [:index, :show]
   before_action :load_categories, only: [:index, :new, :create, :vote, :unvote, :edit, :update]
 
+  valid_filters = %w[not_unfeasible feasible unfeasible unselected selected winners not_selected]
+  has_filters valid_filters, only: [:index, :show, :suggest]
+
   def unvote
     @investment.register_selection_vote_and_unvote(current_user, "no")
     load_investment_votes(@investment)

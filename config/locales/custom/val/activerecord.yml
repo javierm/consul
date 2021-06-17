@@ -147,7 +147,7 @@ val:
         voting_style_knapsack: Bolsa de dinero
         voting_style_approval: Por aprobación
       budget/translation:
-        name: "Nombre"
+        name: "Nom"
       budget/investment:
         heading_id: "Partida"
         title: "Títol"
@@ -158,28 +158,30 @@ val:
         organization_name: "Si estàs proposant en nom d'una associació o col·lectiu, escriu el seu nom"
         image: "Imatge descriptiva de la proposta d'inversió"
         image_title: "Títol de la imatge"
-        duration: "Plazo de ejecución <small>(opcional, dato no público)</small>"
+        duration: "Termini d'execució <small>(opcional, dada no pública)</small>"
         feasibility_feasible: "Viable"
-        feasibility_undecided: "Sin decidir"
+        feasibility_undecided: "Sense decidir"
         feasibility_unfeasible: "Inviable"
-        incompatible: "Marcar como incompatible"
-        milestone_tag_list: "Etiquetas de Seguimiento"
-        price_explanation: "Informe de coste <small>(opcional, dato público)</small>"
-        selected: "Marcar como seleccionado"
-        selected_true: "Seleccionado"
-        selected_false: "No seleccionado"
-        unfeasibility_explanation: "Informe de inviabilidad <small>(en caso de que lo sea, dato público)</small>"
-        valuation_finished: "Informe finalizado"
-        valuator_ids: "Grupos"
-        valuation_tag_list: "Etiquetas"
+        feasibility_not_selected: "No seleccionada"
+        incompatible: "Marcar com a incompatible"
+        milestone_tag_list: "Etiquetes de Seguiment"
+        price_explanation: "Informe de cost <small>(opcional, dada pública)</small>"
+        selected: "Marcar com a seleccionada"
+        selected_true: "Seleccionada"
+        selected_false: "No seleccionada"
+        unfeasibility_explanation: "Informe d'inviabilitat <small>(en cas que ho siga, dada pública)</small>"
+        not_selected_explanation: "Informe de no selecció <small>(en cas que ho siga, dada pública)</small>"
+        valuation_finished: "Informe finalitzat"
+        valuator_ids: "Grups"
+        valuation_tag_list: "Etiquetes"
       budget/investment/translation:
-        title: "Título"
-        description: "Descripción"
+        title: "Títol"
+        description: "Descripció"
       geozone:
         name: Nombre
-        external_code: "Código externo (opcional)"
-        census_code: "Código del censo (opcional)"
-        html_map_coordinates: "Coordenadas HTML <map> (opcional)"
+        external_code: "Códi extern (opcional)"
+        census_code: "Códi del cens (opcional)"
+        html_map_coordinates: "Coordinades HTML <map> (opcional)"
       milestone:
         status_id: "Estat actual (opcional)"
         title: "Títol"
@@ -477,7 +479,7 @@ val:
         document_type: Tipo de documento
         document_number: Número de documento
         date_of_birth: Fecha de nacimiento
-        postal_code: Código postal
+        postal_code: Códi postal
     errors:
       models:
         user:

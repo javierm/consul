@@ -55,8 +55,13 @@ val:
       share: "Comparteix el teu projecte"
     budget_investment_unfeasible:
       hi: "Estimat usuari/a,"
-      new: " Per tot això, et convidem a què elabores un <strong>nou projecte de despesa o</strong> que s’ajuste a les condicions daquest procés. Això ho pots fer en aquest enllaç: %{url}."
-      new_href: "nova proposta d'inversió"
+      pre_explanation: "La proposta no és viable."
+      sincerely: "Atentament"
+      sorry: "Sentim les molèsties ocasionades i tornem a donarte les gràcies per la teua inestimable participació."
+      subject: "La teua proposta d'inversió '%{code}' ha sigut marcada com inviable"
+    budget_investment_not_selected:
+      hi: "Estimat usuari/a,"
+      pre_explanation: "La proposta no compleix algun dels requisits establits:"
       sincerely: "Atentament"
       sorry: "Sentim les molèsties ocasionades i tornem a donarte les gràcies per la teua inestimable participació."
       subject: "La teua proposta d'inversió '%{code}' no ha sigut seleccionada en la fase de revisió interna"
