@@ -183,6 +183,7 @@ es:
           selected: Seleccionados
           undecided: Sin decidir
           unfeasible: Inviables
+          not_selected: No seleccionadas
           min_total_supports: Apoyos mínimos
           max_total_supports: Apoyos máximos
           winners: Ganadores
@@ -201,6 +202,7 @@ es:
           feasible: "Viable"
           unfeasible: "Inviable"
           undecided: "Sin decidir"
+          not_selected: "No seleccionada"
         selected: "Seleccionado"
         select: "Seleccionar"
         list:
@@ -832,6 +834,9 @@ es:
       budget_investment_unfeasible:
         title: "Proyecto de gasto inviable"
         description: "Enviado al autor de un proyecto de presupuestos participativos que ha sido marcado como inviable."
+      budget_investment_not_selected:
+        title: "Proyecto de gasto no seleccionado"
+        description: "Enviado al autor de un proyecto de presupuestos participativos que ha sido marcado como no seleccionado en fase de revisión interna."
       budget_investment_unselected:
         title: "Proyecto de gasto no seleccionado"
         description: "Enviado al autor de un proyecto de presupuestos participativos que no ha sido seleccionado para la fase de votación."

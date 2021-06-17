@@ -9,6 +9,12 @@
       <%= t("budgets.investments.show.project_unfeasible_html") %>
     </div>
   </div>
+<% elsif investment.not_selected? %>
+  <div class="hide sidebar-item">
+    <div class="callout warning">
+      <%= t("budgets.investments.show.project_not_selected_html") %>
+    </div>
+  </div>
 <% elsif investment.selected? %>
   <div class="hide sidebar-item">
     <div class="callout success">
@@ -18,7 +24,7 @@
 <% elsif @budget.balloting_or_later? %>
   <div class="sidebar-item">
     <div class="callout warning">
-      <%= t("budgets.investments.show.project_not_selected_html") %>
+      <%= t("budgets.investments.show.project_unselected_html") %>
     </div>
   </div>
 <% end %>
