@@ -5,6 +5,8 @@ class Budget
   class Investment
 
     scope :not_selected, -> { where(feasibility: "not_selected") }
+    # NOTE: This scope includes not_selected because is a filter used by default
+    scope :not_unfeasible, -> { where.not(feasibility: ["unfeasible", "not_selected"]) }
 
     def self.apply_filters_and_search(_budget, params, current_filter = nil)
       investments = all

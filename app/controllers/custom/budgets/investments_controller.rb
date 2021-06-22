@@ -37,7 +37,7 @@ class Budgets::InvestmentsController
     session["ballot_referer"] = request.env["REQUEST_URI"]
     @back_link_map_path = session[:back_link_map_path].present? ? session[:back_link_map_path] : budget_path(@budget)
     session[:back_link_investment_list] = request.fullpath
-  @investments = investments.page(params[:page]).per(investments_per_page).for_render
+    @investments = investments.page(params[:page]).per(investments_per_page).for_render
 
     @investment_ids = @investments.pluck(:id)
     load_investment_votes(@investments)
