@@ -1577,6 +1577,8 @@ es:
       cards_title: Tarjetas
       create_card: Crear tarjeta
       no_cards: No hay tarjetas.
+      middle_title: Sección central
+      no_header: No hay sección central.
       cards:
         title: Título
         description: Descripción
