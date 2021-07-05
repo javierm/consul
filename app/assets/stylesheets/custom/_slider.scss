@@ -11,164 +11,19 @@ $padding: 30px;
   margin: 20px 0;
   background-color: #f6f6f6;
 
-  .content-text {
+  .content-left, .content-right {
     img {
       margin: 0 10px;
     }
     div a {
       margin-top: 1em;
     }
-  }
-
-  .content {
-    &__title {
-      color: $brand;
-      padding-top: 2em;
-
-      .month {
-        img {
-          width: 50px;
-        }
-      }
-    }
-
-    &__txt {
-      padding: 10px 0px 25px 0;
-      margin: 0;
-      font-size: 16px;
-      line-height: 1.38;
-      color: $black-gva;
-
-    }
-
-
-    &__icons {
-
-      padding: 0 0 $padding 10px;
-
-      img {
-        @include custom-icon-mv;
-      }
-    }
-  }
-
-  .row .content-text {
-    padding-top: 5em;
+    padding: 5em 1em;
     text-align: center;
 
     .buttons {
-      margin: 0 10px;
+      margin: 15px 10px;
       display: flex;
     }
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// .slider-gva {
-
-//   background-image: image-url("custom/slider_valencia.png");
-//   background-repeat: no-repeat;
-//   background-position: left;
-//   background-color: #f6f6f6;
-//   height: 600px;
-//   margin: 20px 0;
-
-
-//   @include breakpoint(small) {
-//     background-color: #0B6C92;
-//     filter: brightness(0.5);
-//     background-position: 11%;
-
-//     .content {
-
-//       display: none;
-//     }
-//   }
-
-
-
-//   .content {
-//     // border: 2px solid red;
-//     position: relative;
-//     left: 50vw;
-//     height: 600px;
-//     width: auto;
-
-//     &__title {
-//       position: absolute;
-//       top: 50px;
-//       left: $absolute-left;
-
-//       .month {
-//         max-width: 203px;
-//         font-size: 100px;
-//         font-weight: bold;
-//         color: $brand;
-//       }
-
-//       .budget-gva {
-//         display: inline-block;
-//         max-width: 224px;
-//         font-size: 36px;
-//         font-weight: bold;
-//         color: $brand;
-//       }
-//     }
-
-//     &__txt {
-//       position: absolute;
-//       top: 200px;
-//       left: $absolute-left;
-
-//       max-width: 452px;
-//       font-size: 16px;
-//       line-height: 1.38;
-//       color: $black-gva;
-//     }
-
-//     &__btn {
-//       position: absolute;
-//       top: 440px;
-//       left: $absolute-left;
-//       font-size: 18px;
-//       font-weight: 500;
-//     }
-
-//     &__icons {
-//       position: absolute;
-//       top: 350px;
-//       left: $absolute-left;
-
-//       .img {
-//         @include custom-icon;
-//       }
-//     }
-//   }
-// }

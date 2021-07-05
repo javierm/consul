@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210622103554) do
+ActiveRecord::Schema.define(version: 20210701132745) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -1618,6 +1618,7 @@ ActiveRecord::Schema.define(version: 20210622103554) do
     t.datetime "updated_at", null: false
     t.integer "site_customization_page_id"
     t.integer "columns", default: 4
+    t.boolean "middle", default: false
     t.index ["site_customization_page_id"], name: "index_widget_cards_on_site_customization_page_id"
   end
 

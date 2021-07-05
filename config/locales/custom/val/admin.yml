@@ -1254,6 +1254,8 @@ val:
       cards_title: Targetes
       create_card: Crear targeta
       no_cards: No hi ha targetes.
+      middle_title: Secció central
+      no_header: No hi ha secció central.
       cards:
         title: Títol
         description: Descripció
