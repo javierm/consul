@@ -13,6 +13,10 @@
       </div>
       <div class="small-12 medium-6 column content-right">
         <%= image_tag(card_right.image_url(:large), alt: 'welcome.slider.title') if card_right.image.present? %>
+        <div class="buttons">
+          <%= link_to card_right.link_text, card_right.link_url, class: "button" if card_right.link_text.present? && card_right.link_url.present? %>
+          <%= link_to card_right.link_text_2, card_right.link_url_2, class: "button" if card_right.link_text_2.present? && card_right.link_url_2.present? %>
+        </div>
       </div>
     </div>
   </div>
