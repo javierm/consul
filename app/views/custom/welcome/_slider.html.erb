@@ -4,20 +4,27 @@
 <% if card_left && card_right %>
   <div class="jumbo slider-gva">
     <div class="row">
-      <div class="small-12 medium-6 column content-left">
-        <%= image_tag(card_left.image_url(:large), alt: 'welcome.slider.title') if card_left.image.present? %>
-        <div class="buttons">
-          <%= link_to card_left.link_text, card_left.link_url, class: "button" if card_left.link_text.present? && card_left.link_url.present? %>
-          <%= link_to card_left.link_text_2, card_left.link_url_2, class: "button" if card_left.link_text_2.present? && card_left.link_url_2.present? %>
+      <% [:left, :right].each do |position| %>
+        <% card = eval("card_#{position}") %>
+        <div class="small-12 medium-6 column content-left">
+          <% if card.title.present? || card.description.present? %>
+            <div class="content-text">
+              <% if card.title.present? %>
+                <h1><%= card.title %></h1>
+              <% end %>
+              <% if card.description.present? %>
+                <p><%= card.description %></p>
+              <% end %>
+            </div>
+          <% elsif card.image.present? %>
+            <%= image_tag(card.image_url(:large), alt: 'welcome.slider.title') %>
+          <% end %>
+          <div class="buttons">
+            <%= link_to card.link_text, card.link_url, class: "button" if card.link_text.present? && card.link_url.present? %>
+            <%= link_to card.link_text_2, card.link_url_2, class: "button" if card.link_text_2.present? && card.link_url_2.present? %>
+          </div>
         </div>
-      </div>
-      <div class="small-12 medium-6 column content-right">
-        <%= image_tag(card_right.image_url(:large), alt: 'welcome.slider.title') if card_right.image.present? %>
-        <div class="buttons">
-          <%= link_to card_right.link_text, card_right.link_url, class: "button" if card_right.link_text.present? && card_right.link_url.present? %>
-          <%= link_to card_right.link_text_2, card_right.link_url_2, class: "button" if card_right.link_text_2.present? && card_right.link_url_2.present? %>
-        </div>
-      </div>
+      <% end %>
     </div>
   </div>
 <% end %>
