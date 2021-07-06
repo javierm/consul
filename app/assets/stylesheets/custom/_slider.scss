@@ -12,18 +12,44 @@ $padding: 30px;
   background-color: #f6f6f6;
 
   .content-left, .content-right {
+    padding: 5em 1em;
+    text-align: center;
+    display:flex;
+    flex-direction: column;
+    height: 30em;
+    justify-content: center;
+    h1 {
+      font-family: Roboto;
+      font-size: 36px;
+      font-weight: bold;
+      color: #1C9799;
+    }
+    p {
+      width: 70%;
+      margin: auto;
+      font-family: Roboto;
+      font-size: 16px;
+      color: #191919;
+    }
     img {
       margin: 0 10px;
     }
-    div a {
-      margin-top: 1em;
-    }
-    padding: 5em 1em;
-    text-align: center;
-
     .buttons {
-      margin: 15px 10px;
+      margin: 15px 0px;
       display: flex;
+      justify-content: space-around;
+      a.button {
+        margin: 1em;
+      }
+    }
+  }
+}
+
+@media print, screen and (max-width: 640px){
+  .slider-gva {
+    .content-left, .content-right {
+      height: 25em;
+      padding: 2em 5em;
     }
   }
 }
