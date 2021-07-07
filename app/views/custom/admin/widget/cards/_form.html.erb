@@ -5,7 +5,7 @@
   <div class="row">
     <%= f.translatable_fields do |translations_form| %>
       <div class="small-12 medium-6 column end">
-        <%= translations_form.text_field :label, readonly: @card.middle? %>
+        <%= translations_form.text_field :label, readonly: @card.middle?, disabled: @card.middle? %>
       </div>
 
       <div class="column">
