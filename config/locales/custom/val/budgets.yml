@@ -100,7 +100,7 @@ val:
         author_deleted: Usuari eliminat
         price_explanation: Informe de cost
         unfeasibility_explanation: Informe de inviabilitat
-        code: "Codi de proposta d'inversió"
+        code: "Codi de proposta d'inversió: <strong>%{code}</strong>"
         share: Compartir
         title: Proposta d'inversió
         supports: Avals
