@@ -153,8 +153,8 @@ es:
         comments_tab: Comentarios
         milestones_tab: Seguimiento
         author: Autor
-        project_unfeasible: "Este proyecto de gasto <strong>ha sido marcado como no inviable</strong> y no pasará a la fase siguiente."
-        project_not_selected: "Este proyecto de gasto <strong>ha sido marcado como no seleccionado</strong> en la fase de revisión interna."
+        project_unfeasible: "Este proyecto de gasto <strong>ha sido marcado como inviable</strong> y no pasará a la fase siguiente."
+        project_not_selected: "Este proyecto de gasto <strong>ha sido marcado como no seleccionado</strong> en la fase de revisión interna y no pasará a la fase siguiente."
         project_selected: "Este proyecto de gasto <strong>ha sido seleccionado</strong> para la fase de votación."
         project_winner: "Proyecto de gasto ganador"
         project_unselected: "Este proyecto de gasto <strong>no ha sido seleccionado</strong> para la fase de votación."

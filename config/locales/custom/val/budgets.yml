@@ -111,6 +111,7 @@ val:
         author: Autor
         project_unfeasible: "Aquesta proposta d'inversió <strong>ha sigut marcada com a inviable</strong> i no passarà a la fase següent."
         project_not_selected: "Aquesta proposta d'inversió <strong>ha sigut marcada com a no seleccionada en la fase de revisió interna</strong> i no passarà a la fase següent."
+        project_selected: "Aquesta proposta d'inversió <strong>ha sigut seleccionada</strong> para la fase de votació."
         project_winner: "Proposta d'inversió guanyadora"
         project_unselected: "Aquesta proposta d'inversió <strong>no ha sigut seleccionada</strong> para la fase de votació."
         see_price_explanation: Veure informe de cost

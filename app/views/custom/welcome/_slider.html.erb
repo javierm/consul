@@ -1,18 +1,30 @@
-<div class="jumbo slider-gva">
-  <div class="row">
-    <div class="small-12 medium-6 column content-text">
-      <%= image_tag("welcome/#{I18n.locale}/text.png",
-                    alt: 'welcome.slider.title') %>
-                  <% loc = I18n.locale == :val ? 'va' : I18n.locale %>
-      <div class="buttons">
-        <%= link_to t("welcome.slider.button_debates"), "http://participem.gva.es/#{loc}/fase-1-informacio", class: "button" %>
-        <%= link_to t("welcome.slider.button_proposal"), budgets_path, class: "button" %>
-      </div>
-    </div>
-    <div class="small-12 medium-6 column content-image">
-      <%= image_tag("welcome/#{I18n.locale}/image.png",
-                    class: "margin",
-                    alt: 'welcome.slider.title') %>
+<% card_left = Widget::Card.find_by(label: "middle_left_#{I18n.locale}") %>
+<% card_right = Widget::Card.find_by(label: "middle_right_#{I18n.locale}") %>
+
+<% if card_left && card_right %>
+  <div class="jumbo slider-gva">
+    <div class="row">
+      <% [:left, :right].each do |position| %>
+        <% card = eval("card_#{position}") %>
+        <div class="small-12 medium-6 column content-left">
+          <% if card.title.present? || card.description.present? %>
+            <div class="content-text">
+              <% if card.title.present? %>
+                <h1><%= card.title %></h1>
+              <% end %>
+              <% if card.description.present? %>
+                <p><%= card.description %></p>
+              <% end %>
+            </div>
+          <% elsif card.image.present? %>
+            <%= image_tag(card.image_url(:original), alt: 'welcome.slider.title') %>
+          <% end %>
+          <div class="buttons">
+            <%= link_to card.link_text, card.link_url, class: "button" if card.link_text.present? && card.link_url.present? %>
+            <%= link_to card.link_text_2, card.link_url_2, class: "button" if card.link_text_2.present? && card.link_url_2.present? %>
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
-</div>
+<% end %>
