@@ -84,6 +84,14 @@ module Abilities
         can :vote, Comment
       end
 
+      if user.organization? && user.organization.verified?
+        can :create, Budget::Investment,               budget: { phase: "accepting" }
+        can :edit, Budget::Investment,                 budget: { phase: "accepting" }, author_id: user.id
+        can :update, Budget::Investment,               budget: { phase: "accepting" }, author_id: user.id
+        can :suggest, Budget::Investment,              budget: { phase: "accepting" }
+        can :destroy, Budget::Investment,              budget: { phase: ["accepting", "reviewing"] }, author_id: user.id
+      end
+
       if user.level_two_or_three_verified?
         if !Budget.find_by(phase: "selecting").present?
           can :vote, Proposal, &:published?
