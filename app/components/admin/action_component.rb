@@ -21,6 +21,7 @@ class Admin::ActionComponent < ApplicationComponent
     def html_options
       {
         class: html_class,
+        "aria-label": label,
         data: { confirm: confirmation_text }
       }.merge(options.reject { |key, _| %i[confirm text path].include?(key) })
     end
@@ -29,11 +30,23 @@ class Admin::ActionComponent < ApplicationComponent
       "#{action.to_s.gsub("_", "-")}-link"
     end
 
+    def label
+      t("admin.actions.label", action: text, name: record_name)
+    end
+
     def confirmation_text
       if options[:confirm] == true
         t("admin.actions.confirm")
       else
         options[:confirm]
+      end
+    end
+
+    def record_name
+      if record.respond_to?(:human_name)
+        record.human_name
+      else
+        record.to_s.humanize
       end
     end
 
