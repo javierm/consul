@@ -44,10 +44,25 @@ class Admin::TableActionComponent < ApplicationComponent
 
     def confirmation_text
       if options[:confirm] == true
-        t("admin.actions.confirm")
+        if action == :destroy
+          t("admin.actions.confirm_delete",
+            resource_name: resource_name,
+            name: record_name)
+        else
+          t("admin.actions.confirm_detailed",
+            action: text,
+            resource_name: resource_name,
+            name: record_name)
+        end
       else
         options[:confirm]
       end
+    end
+
+    def resource_name
+      t("admin.models.#{record.model_name.i18n_key}",
+        default: record.model_name.human,
+        fallback: nil)
     end
 
     def default_path
