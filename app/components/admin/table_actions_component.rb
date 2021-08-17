@@ -7,6 +7,10 @@ class Admin::TableActionsComponent < ApplicationComponent
     @options = options
   end
 
+  def action(action_name, **args)
+    render Admin::TableActionComponent.new(action_name, record, **args)
+  end
+
   private
 
     def actions
@@ -14,15 +18,15 @@ class Admin::TableActionsComponent < ApplicationComponent
     end
 
     def edit_text
-      options[:edit_text] || t("admin.actions.edit")
+      options[:edit_text]
     end
 
     def edit_path
-      options[:edit_path] || namespaced_polymorphic_path(namespace, record, action: :edit)
+      options[:edit_path]
     end
 
     def edit_options
-      { class: "edit-link" }.merge(options[:edit_options] || {})
+      options[:edit_options] || {}
     end
 
     def destroy_text
@@ -30,18 +34,13 @@ class Admin::TableActionsComponent < ApplicationComponent
     end
 
     def destroy_path
-      options[:destroy_path] || namespaced_polymorphic_path(namespace, record)
+      options[:destroy_path]
     end
 
     def destroy_options
       {
         method: :delete,
-        class: "destroy-link",
-        data: { confirm: destroy_confirmation }
+        confirm: options[:destroy_confirmation] || true,
       }.merge(options[:destroy_options] || {})
-    end
-
-    def destroy_confirmation
-      options[:destroy_confirmation] || t("admin.actions.confirm")
     end
 end
