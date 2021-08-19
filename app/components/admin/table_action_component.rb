@@ -26,6 +26,18 @@ class Admin::TableActionComponent < ApplicationComponent
       }.merge(options.reject { |key, _| %i[confirm text path].include?(key) })
     end
 
+    def form_id
+      path.gsub("/", "_")
+    end
+
+    def form_options
+      { id: form_id, method: options[:method] }
+    end
+
+    def button_options
+      html_options.reject { |key, _| key == :method }.merge(form: form_id)
+    end
+
     def html_class
       "#{action.to_s.gsub("_", "-")}-link"
     end

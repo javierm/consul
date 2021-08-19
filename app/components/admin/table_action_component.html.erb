@@ -1,5 +1,6 @@
 <% if options[:method] && options[:method] != :get %>
-  <%= button_to(path, html_options) { text } %>
+  <% content_for(:hidden_content, form_tag(path, form_options) {}) %>
+  <%= button_tag text, button_options %>
 <% else %>
   <%= link_to text, path, html_options %>
 <% end %>
