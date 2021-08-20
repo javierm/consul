@@ -28,7 +28,7 @@ describe "Admin proposals", :admin do
 
       visit admin_proposals_path
 
-      within("#proposal_#{proposal.id}") { click_link "Select" }
+      within("#proposal_#{proposal.id}") { click_button "Select" }
 
       within("#proposal_#{proposal.id}") { expect(page).to have_link "Selected" }
 
@@ -42,7 +42,7 @@ describe "Admin proposals", :admin do
 
       visit admin_proposals_path
 
-      within("#proposal_#{proposal.id}") { click_link "Selected" }
+      within("#proposal_#{proposal.id}") { click_button "Selected" }
 
       within("#proposal_#{proposal.id}") { expect(page).to have_link "Select" }
 
