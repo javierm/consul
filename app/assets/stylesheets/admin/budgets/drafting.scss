@@ -1,41 +1,21 @@
 .admin .drafting {
-  margin-bottom: 2 * $line-height / 3;
-  margin-left: auto;
+  @include flex-with-gap($line-height / 2);
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: $line-height * 1.5;
 
-  @include breakpoint(large) {
-    align-items: flex-start;
-    display: flex;
+  .callout {
+    flex-basis: $global-width / 3;
+    flex-grow: 1;
 
-    .callout {
-      flex: 1;
+    @include breakpoint(large) {
       margin-bottom: 0;
-    }
-  }
-
-  @include breakpoint(small medium only) {
-    text-align: right;
-
-    .callout {
-      text-align: left;
-    }
-  }
-
-  .preview-link {
-    @include has-fa-icon(eye, regular);
-    @include hollow-button;
-
-    &::before {
-      margin-right: $font-icon-margin;
     }
   }
 
   .publish-link {
     @include regular-button;
     margin-bottom: 0;
-  }
-
-  .preview-link,
-  .publish-link {
-    margin-left: $line-height / 2;
+    margin-#{$global-left}: $line-height / 2;
   }
 }
