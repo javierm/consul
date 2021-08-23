@@ -1,6 +1,6 @@
 nl:
   mailers:
-    no_reply: "Dit bericht is verzonden vanaf een e-mailadres dat geen reacties accepteert."
+    no_reply: "Dit bericht is verzonden vanaf een e-mailadres dat geen reacties accepteert"
     comment:
       hi: Hoi
       new_comment_by_html: Er is een reactie van <b>%{commenter}</b>
@@ -20,30 +20,33 @@ nl:
       title: Nieuwe reactie op je reactie
     proposal:
       remove_voting_review:
-        subject: "Pending translation"
-        title: "Pending translation"
-        intro: "Pending translation"
-        information: "Pending translation"
-        sincerely: "Pending translation"
+        subject: "Motie wordt gechecked"
+        title: "We checken (opnieuw) of jouw motie %{link} voldoet aan de richtlijnen."
+        intro: "Beste <strong>%{author}</strong>,"
+        text: "Om de kwaliteit van de Ledenkamer te waarborgen, controleert het presidium jouw motie %{link} of deze voldoet aan de gestelde richtlijnen. Zo ja, dan ontvang je zo snel mogelijk bericht dat er op jouw motie gestemd kan worden. Wanneer onderdelen missen of de motie onduidelijk is. Dan ontvang je zo snel mogelijk een mail om de motie aan te passen. In het menu kan je bij <a href='%{user_url}'>Mijn bijdragen</a> de status van jouw motie volgen. <br><br> Heb je vragen? Neem dan contact op met <a href='mailto:ledendemocratie@pvda.nl'>ledendemocratie@pvda.nl</a>. <br><br>Heel veel dank jouw bijdragen aan een sterke en democratische PvdA."
+        information: "Team Ondersteuning"
+        sincerely: "Met vriendelijke groet,"
       voting_disabled:
-        subject: "Pending translation"
-        title: "Pending translation"
-        intro: "Pending translation"
-        information: "Pending translation"
-        sincerely: "Pending translation"
+        subject: Motie is afgekeurd
+        title: "Jouw motie %{link} voldoet niet aan de richtlijnen en is afgekeurd."
+        intro: "Beste <strong>%{author}</strong>,"
+        text: "Om de kwaliteit van de Ledenkamer te waarborgen, heeft het presidium helaas jouw motie afgekeurd. We kunnen ons voorstellen dat dit een teleurstelling is. Het presidium licht deze keuze daarom graag toe. De toelichting vind je onderaan de motie %{link}. <br><br> Heb je vragen? Neem dan contact op met <a href='mailto:ledendemocratie@pvda.nl'>ledendemocratie@pvda.nl</a>. <br><br> We hopen natuurlijk dat je gebruik blijft maken van de mogelijkheid om een motie in te dienen. En zo je stem te laten horen binnen onze partij. We zien graag een nieuwe motie tegemoet! <br><br> Heel veel dank jouw bijdragen aan een sterke en democratische PvdA."
+        information: "Team Ondersteuning"
+        sincerely: "Met vriendelijke groet,"
       voting_enabled:
-        subject: "Pending translation"
-        title: "Pending translation"
-        intro: "Pending translation"
-        information: "Pending translation"
-        sincerely: "Pending translation"
+        subject: Motie is goedgekeurd
+        title: "Jouw motie %{link} is door het presidium goedgekeurd!."
+        intro: "Beste <strong>%{author}</strong>,"
+        text: "Je kan nu starten met het verzamelen van steun. Hiervoor kan je deze %{link} met andere PvdA-leden delen. Op deze pagina kunnen zij direct jouw motie steunen of een reactie achterlaten. Je kan <a href='%{dashboard_url}'>de voortgang van je motie hier volgen</a>. Hier lees je meer over de vervolgstappen. <br><br>Heel veel dank voor deze motie en daarmee jouw bijdragen aan een sterke en democratische PvdA!"
+        sincerely: "Met vriendelijke groet,"
+        information: "Team Ondersteuning"
       voting_review:
-        subject: "Pending translation"
-        title: "Pending translation"
-        intro: "Pending translation"
-        text: "Pending translation"
-        information: "Pending translation"
-        sincerely: "Pending translation"
+        subject: Jouw motie ingediend Ledenkamer
+        title: "Dank voor het indienen van jouw motie %{link}."
+        intro: "Beste <strong>%{author}</strong>,"
+        text: "Wij hebben de motie doorgestuurd naar het presidium. Zij gaat nu checken of de motie voldoet aan de richtlijnen. Zo ja, dan ontvang je zo snel mogelijk bericht dat er op jouw motie gestemd kan worden. Wanneer onderdelen missen of de motie onduidelijk is. Dan ontvang je zo snel mogelijk een mail om de motie aan te passen. In het menu kan je bij <a href='%{url}'>Mijn bijdragen</a> de status van jouw motie volgen.<br><br>Heel veel dank voor deze motie en daarmee jouw bijdragen aan een sterke en democratische PvdA!"
+        information: "Team Ondersteuning"
+        sincerely: "Met vriendelijke groet,"
     proposal_notification_digest:
       info: "Dit zijn de nieuwe meldingen die zijn gepubliceerd door auteurs van de voorstellen die u hebt ondersteund in %{org_name}."
       title: "Voorstelmeldingen in %{org_name}"
