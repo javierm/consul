@@ -2,6 +2,7 @@ require_dependency Rails.root.join("app", "controllers", "users_controller").to_
 
 class UsersController
   alias_method :consul_show, :show
+  before_action :authenticate_user!
 
   def show
     unless @user == current_user

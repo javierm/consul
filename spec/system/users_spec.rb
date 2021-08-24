@@ -1,6 +1,16 @@
 require "rails_helper"
 
 describe "Users" do
+  before { login_as(create(:user)) }
+
+  scenario "redirects anonymous users to the login page" do
+    logout
+
+    visit user_path(create(:user))
+
+    expect(page).to have_content "You must sign in or register to continue"
+  end
+
   describe "Show (public page)" do
     let(:user) { create(:user) }
 
