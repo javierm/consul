@@ -398,7 +398,8 @@ describe "Users" do
       expect(page).to have_css("#public_interests")
     end
 
-    scenario "Should display generic interests title" do
+    scenario "Should display generic interests title",
+      skip: "Public interests checkbox was removed from custom view" do
       create(:proposal, tag_list: "Sport", followers: [user])
 
       user.update!(public_interests: true)
@@ -479,7 +480,8 @@ describe "Users" do
       expect(page).not_to have_content("0 Following")
     end
 
-    scenario "Active following tab by default when follows filters selected", :js do
+    scenario "Active following tab by default when follows filters selected", :js,
+     skip: "Users cannot see other users' follows" do
       create(:proposal, author: user, followers: [user])
 
       visit user_path(user, filter: "follows")
@@ -487,7 +489,8 @@ describe "Users" do
       expect(page).to have_selector(".activity li.is-active", text: "1 Following")
     end
 
-    scenario "Gracefully handle followables that have been hidden" do
+    scenario "Gracefully handle followables that have been hidden",
+     skip: "Users cannot see other users' follows" do
       create(:proposal, followers: [user])
       create(:proposal, followers: [user], &:hide)
 
@@ -496,8 +499,27 @@ describe "Users" do
       expect(page).to have_content("1 Following")
     end
 
+    scenario "Do not show follows to other users", :js do
+      create(:proposal, followers: [user])
+
+      login_as(create(:administrator).user)
+
+      visit user_path(user)
+
+      expect(page).not_to have_content("Following")
+    end
+
+    scenario "Do now allow other users to access the follows page" do
+      create(:proposal, followers: [user])
+
+      login_as(create(:administrator).user)
+
+      expect { visit user_path(user, filter: "follows") }.to raise_exception ActionController::RoutingError
+    end
+
     describe "Proposals" do
-      scenario "Display following tab when user is following one proposal at least" do
+      scenario "Display following tab when user is following one proposal at least",
+       skip: "Users cannot see other users' follows" do
         create(:proposal, followers: [user])
 
         visit user_path(user)
@@ -505,7 +527,8 @@ describe "Users" do
         expect(page).to have_content("1 Following")
       end
 
-      scenario "Display proposal tab when user is following one proposal at least" do
+      scenario "Display proposal tab when user is following one proposal at least",
+       skip: "Users cannot see other users' follows" do
         create(:proposal, followers: [user])
 
         visit user_path(user, filter: "follows")
@@ -513,7 +536,8 @@ describe "Users" do
         expect(page).to have_link("Citizen proposals", href: "#citizen_proposals")
       end
 
-      scenario "Do not display proposals' tab when user is not following any proposal" do
+      scenario "Do not display proposals' tab when user is not following any proposal",
+       skip: "Users cannot see other users' follows" do
         visit user_path(user, filter: "follows")
 
         expect(page).not_to have_link("Citizen proposals", href: "#citizen_proposals")
@@ -553,7 +577,8 @@ describe "Users" do
     end
 
     describe "Budget Investments" do
-      scenario "Display following tab when user is following one budget investment at least" do
+      scenario "Display following tab when user is following one budget investment at least",
+       skip: "Users cannot see other users' follows" do
         create(:budget_investment, followers: [user])
 
         visit user_path(user)
@@ -561,7 +586,8 @@ describe "Users" do
         expect(page).to have_content("1 Following")
       end
 
-      scenario "Display budget investment tab when user is following one budget investment at least" do
+      scenario "Display budget investment tab when user is following one budget investment at least",
+       skip: "Users cannot see other users' follows" do
         create(:budget_investment, followers: [user])
 
         visit user_path(user, filter: "follows")
@@ -569,13 +595,15 @@ describe "Users" do
         expect(page).to have_link("Investments", href: "#investments")
       end
 
-      scenario "Not display budget investment tab when user is not following any budget investment" do
+      scenario "Not display budget investment tab when user is not following any budget investment",
+       skip: "Users cannot see other users' follows" do
         visit user_path(user, filter: "follows")
 
         expect(page).not_to have_link("Investments", href: "#investments")
       end
 
-      scenario "Display budget investment with link to budget investment" do
+      scenario "Display budget investment with link to budget investment",
+       skip: "Users cannot see other users' follows" do
         user = create(:user, :level_two)
         budget_investment = create(:budget_investment, author: user, followers: [user])
 
