@@ -216,7 +216,7 @@ describe "Emails" do
   end
 
   context "Direct Message" do
-    scenario "Receiver email" do
+    scenario "Receiver email", skip: "Profiles are not public" do
       sender   = create(:user, :level_two)
       receiver = create(:user, :level_two)
 
@@ -231,7 +231,7 @@ describe "Emails" do
       expect(email).to have_body_text(/#{user_path(direct_message.sender_id)}/)
     end
 
-    scenario "Sender email" do
+    scenario "Sender email", skip: "Profiles are not public" do
       sender   = create(:user, :level_two)
       receiver = create(:user, :level_two)
 

@@ -5,7 +5,7 @@ describe "Direct messages" do
     Setting[:direct_message_max_per_day] = 3
   end
 
-  scenario "Create" do
+  scenario "Create", skip: "Profiles are not public" do
     sender   = create(:user, :level_two)
     receiver = create(:user, :level_two)
 
@@ -35,7 +35,7 @@ describe "Direct messages" do
       expect(page).not_to have_link "Send private message"
     end
 
-    scenario "Do not display link if direct message for user not allowed" do
+    scenario "Do not display link if direct message for user not allowed", skip: "Profiles are not public" do
       sender   = create(:user, :level_two)
       receiver = create(:user, :level_two, email_on_direct_message: false)
 
@@ -91,7 +91,7 @@ describe "Direct messages" do
   end
 
   context "Limits" do
-    scenario "Can only send a maximum number of direct messages per day" do
+    scenario "Can only send a maximum number of direct messages per day", skip: "Profiles are not public" do
       sender   = create(:user, :level_two)
       receiver = create(:user, :level_two)
 

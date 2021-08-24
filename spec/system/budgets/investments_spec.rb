@@ -1337,7 +1337,7 @@ describe "Budget Investments", :pvda_access do
                   { "budget_id": "budget_id" }
 
   context "Destroy" do
-    scenario "Admin cannot destroy budget investments" do
+    scenario "Admin cannot destroy budget investments", skip: "Profiles are not public" do
       user = create(:user, :level_two)
       investment = create(:budget_investment, heading: heading, author: user)
 

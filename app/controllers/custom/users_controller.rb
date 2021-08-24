@@ -5,12 +5,8 @@ class UsersController
   before_action :authenticate_user!
 
   def show
-    unless @user == current_user
-      @valid_filters = @valid_filters.reject { |filter| filter.to_s == "follows" }
-    end
-
-    if params[:filter] == "follows" && @user != current_user
-      raise ActionController::RoutingError, "Not Found"
+    if @user != current_user
+      raise CanCan::AccessDenied
     else
       consul_show
     end

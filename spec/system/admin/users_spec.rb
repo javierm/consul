@@ -16,10 +16,16 @@ describe "Admin users" do
     expect(page).to have_content admin.email
   end
 
-  scenario "The username links to their public profile" do
+  scenario "The username links to their public profile", skip: "Profiles are not public" do
     click_link user.name
 
     expect(page).to have_current_path(user_path(user))
+  end
+
+  scenario "The username links to an unauthorized page" do
+    click_link user.name
+
+    expect(page).to have_content "You do not have permission to access this page"
   end
 
   scenario "Show active or erased users using filters" do

@@ -1,18 +1,24 @@
 require "rails_helper"
 
 describe "Users" do
-  before { login_as(create(:user)) }
-
-  scenario "redirects anonymous users to the login page" do
-    logout
-
+  scenario "redirects anonymous users to the login page", :js do
     visit user_path(create(:user))
 
     expect(page).to have_content "You must sign in or register to continue"
   end
 
+  scenario "access is not authorized for other users", :js do
+    login_as(create(:administrator).user)
+
+    visit user_path(create(:user))
+
+    expect(page).to have_content "You do not have permission to access this page"
+
+  end
+
   describe "Show (public page)" do
     let(:user) { create(:user) }
+    before { login_as(user) }
 
     before do
       1.times { create(:debate, author: user) }
@@ -148,6 +154,7 @@ describe "Users" do
 
   describe "Render status in the proposal section of the user show page", :js do
     let(:user) { create(:user) }
+    before { login_as(user) }
 
     scenario "when a proposal is retired" do
       retired = create(:proposal, :retired, author: user)
@@ -207,6 +214,7 @@ describe "Users" do
 
   describe "Public activity" do
     let(:user) { create(:user) }
+    before { login_as(user) }
 
     scenario "visible by default" do
       visit user_path(user)
@@ -292,7 +300,7 @@ describe "Users" do
         expect(page).not_to have_content(user.email)
       end
 
-      scenario "is shown if logged in user is admin" do
+      scenario "is shown if logged in user is admin", skip: "Profiles are not public" do
         login_as(create(:administrator).user)
         visit user_path(user)
         expect(page).to have_content(user.email)
@@ -302,6 +310,7 @@ describe "Users" do
 
   describe "Public interests" do
     let(:user) { create(:user) }
+    before { login_as(user) }
 
     scenario "Display interests",
     skip: "Public interests checkbox was removed from custom view" do
@@ -435,6 +444,7 @@ describe "Users" do
       comment = create(:comment, user: moderator)
       moderator_comment = create(:comment, user: moderator, moderator_id: moderator.id)
 
+      login_as(moderator)
       visit user_path(moderator)
       expect(page).to have_content("1 Comment")
       expect(page).to have_content(comment.body)
@@ -446,6 +456,7 @@ describe "Users" do
       comment = create(:comment, user: admin)
       admin_comment = create(:comment, user: admin, administrator_id: admin.id)
 
+      login_as(admin)
       visit user_path(admin)
       expect(page).to have_content(comment.body)
       expect(page).not_to have_content(admin_comment.body)
@@ -457,6 +468,7 @@ describe "Users" do
       investment = create(:budget_investment)
       valuation_comment = create(:comment, :valuation, user: admin, commentable: investment)
 
+      login_as(admin)
       visit user_path(admin)
       expect(page).to have_content(comment.body)
       expect(page).not_to have_content(valuation_comment.body)
@@ -468,6 +480,7 @@ describe "Users" do
       2.times { create(:comment, user: user, commentable: create(:budget_investment)) }
       4.times { create(:comment, user: user, commentable: create(:proposal)) }
 
+      login_as(user)
       visit user_path(user)
       expect(page).to have_content("7 Comments")
 
@@ -507,24 +520,6 @@ describe "Users" do
       visit user_path(user)
 
       expect(page).to have_content("1 Following")
-    end
-
-    scenario "Do not show follows to other users", :js do
-      create(:proposal, followers: [user])
-
-      login_as(create(:administrator).user)
-
-      visit user_path(user)
-
-      expect(page).not_to have_content("Following")
-    end
-
-    scenario "Do now allow other users to access the follows page" do
-      create(:proposal, followers: [user])
-
-      login_as(create(:administrator).user)
-
-      expect { visit user_path(user, filter: "follows") }.to raise_exception ActionController::RoutingError
     end
 
     describe "Proposals" do
