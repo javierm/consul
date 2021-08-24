@@ -165,7 +165,7 @@ val:
         feasibility_not_selected: "No seleccionada"
         incompatible: "Marcar com a incompatible"
         milestone_tag_list: "Etiquetes de Seguiment"
-        price_explanation: "Informe de cost <small>(opcional, dada pública)</small>"
+        price_explanation: "Informe de viabilitat <small>(opcional, dada pública)</small>"
         selected: "Marcar com a seleccionada"
         selected_true: "Seleccionada"
         selected_false: "No seleccionada"

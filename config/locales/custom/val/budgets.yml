@@ -98,7 +98,7 @@ val:
         message: "Compartisc aquest projecte %{title} de %{handle}, accedeix al portal, informa't i participa!"
       show:
         author_deleted: Usuari eliminat
-        price_explanation: Informe de cost
+        price_explanation: Informe de viabilitat
         unfeasibility_explanation: Informe de inviabilitat
         code: "Codi de proposta d'inversió: <strong>%{code}</strong>"
         share: Compartir
@@ -114,7 +114,7 @@ val:
         project_selected: "Aquesta proposta d'inversió <strong>ha sigut seleccionada</strong> para la fase de votació."
         project_winner: "Proposta d'inversió guanyadora"
         project_unselected: "Aquesta proposta d'inversió <strong>no ha sigut seleccionada</strong> para la fase de votació."
-        see_price_explanation: Veure informe de cost
+        see_price_explanation: Veure informe de viabilitat
       wrong_price_format: Solament pot incloure caràcters numèrics
       investment:
         add: Vot
