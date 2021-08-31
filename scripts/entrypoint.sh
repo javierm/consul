@@ -14,3 +14,6 @@ chown -R -h "consul" "/usr/local/bundle"
 chgrp -R -h "consul" "/usr/local/bundle"
 
 /usr/bin/sudo -EH -u consul "$@"
+
+# Remove a potentially pre-existing server.pid for Rails.
+rm -f /var/www/consul/tmp/pids/server.pid
