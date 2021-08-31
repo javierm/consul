@@ -40,7 +40,7 @@ COPY Gemfile_custom Gemfile_custom
 RUN gem install bundler
 
 # Finish establishing our Ruby environment
-#RUN bundle install --full-index
+RUN bundle install --full-index
 
 # Install Chromium for E2E integration tests
 #RUN apt-get update -qq && apt-get install -y chromium

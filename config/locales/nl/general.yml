@@ -390,6 +390,7 @@ nl:
       embed_video_title: "Video voor %{proposal}"
       title_video_url: "Externe video"
       author: Author
+      draft: "Deze motie wordt gecheckt, je kan deze nog niet steunen. Probeer het later nogmaals!"
     update:
       form:
         submit_button: Bewaar wijzigingen

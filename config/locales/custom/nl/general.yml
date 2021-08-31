@@ -691,7 +691,7 @@ nl:
       voting_disabled: "Afgekeurd"
       voting_in_review: "Wordt gecheckt"
       retired: "Teruggetrokken"
-      draft: Concept
+      draft: "Wordt gecheckt"
       published: Goedgekeurd
       see: "Bekijk moties"
       actions: Acties
