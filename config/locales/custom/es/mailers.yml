@@ -55,9 +55,9 @@ es:
       share: "Comparte tu proyecto"
     budget_investment_unfeasible:
       hi: "Estimado/a usuario/a"
-      pre_explanation: "La propuesta no es viable."
+      pre_explanation: "Finalizada la fase de evaluación de propuestas de los presupuestos participativos, le informamos que su proyecto no ha superado dicha fase, por los siguientes motivos:"
       sincerely: "Atentamente"
-      sorry: "Sentimos las molestias ocasionadas y volvemos a darte las gracias por tu inestimable participación."
+      sorry: "No obstante, agradecemos su contribución y le invitamos a seguir participando en el Portal GVA Participa mediante los recursos que este le ofrece, tales como debates e iniciativas."
       subject: "Tu proyecto de gasto '%{code}' ha sido marcado como inviable"
     budget_investment_not_selected:
       hi: "Estimado/a usuario/a"
@@ -68,9 +68,9 @@ es:
     budget_investment_selected:
       subject: "Tu proyecto de gasto '%{code}' ha sido seleccionado"
       hi: "Estimado/a usuario/a"
-      share: "Empieza ya a conseguir votos, comparte tu proyecto de gasto en redes sociales. La difusión es fundamental para conseguir que se haga realidad."
+      share: "¡Enhorabuena! ¡Tu proyecto ha superado la fase de evaluación de propuestas de los presupuestos participativos! ¡Ya puedes empezar a conseguir votos! Comparte tu proyecto de gasto en redes sociales, la difusión es fundamental para hacerlo realidad."
       share_button: "Comparte tu proyecto"
-      thanks: "Gracias de nuevo por tu participación."
+      thanks: "Gracias de nuevo por tu participación. Te animamos a seguir participando en el Portal GVA Participa mediante los recursos que este le ofrece, tales como debates e iniciativas."
       sincerely: "Atentamente"
     budget_investment_unselected:
       subject: "Tu proyecto de gasto '%{code}' no ha sido seleccionado"

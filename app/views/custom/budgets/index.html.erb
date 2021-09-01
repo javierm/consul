@@ -116,6 +116,13 @@
                 <% end %>
               </li>
             <% end %>
+            <% if show_links %>
+              <li>
+		<%= link_to page_path('assumed') do %>
+                  <small><%= t("budgets.index.assumed_investment_proyects") %></small>
+                <% end %>
+              </li>
+            <% end %>
           </ul>
         <% end %>
 

@@ -42,10 +42,11 @@ val:
         all_phases: Vore totes les fases
       all_phases: Fases de pressupostos participatius
       map: Propostes de pressupostos ubicades geogràficament
-      investment_proyects: Llista de totes les propostes d'inversió
+      investment_proyects: Vore el llistat de totes les propostes d'inversió
       unfeasible_investment_proyects: Vore el llistat de propostes no viables
       not_selected_investment_proyects: Vore el llistat de propostes no seleccionades en la fase de revisió interna
-      unselected_investment_proyects: Llista de tots els projectes d'inversió no seleccionats per a votació
+      unselected_investment_proyects: Vore el llistat  de tots els projectes d'inversió no seleccionats per a votació
+      assumed_investment_proyects: Vore el llistat de propostes assumides
       finished_budgets: Pressupostos participatius finalitzats
       see_results: Vore resultats
       section_footer:
@@ -113,7 +114,7 @@ val:
         project_not_selected: "Aquesta proposta d'inversió <strong>ha sigut marcada com a no seleccionada en la fase de revisió interna</strong> i no passarà a la fase següent."
         project_selected: "Aquesta proposta d'inversió <strong>ha sigut seleccionada</strong> para la fase de votació."
         project_winner: "Proposta d'inversió guanyadora"
-        project_unselected: "Aquesta proposta d'inversió <strong>no ha sigut seleccionada</strong> para la fase de votació."
+        project_unselected: "Aquesta proposta d'inversió <strong>no ha sigut seleccionada</strong> para la fase d'avaluació de propostes."
         see_price_explanation: Veure informe de viabilitat
       wrong_price_format: Solament pot incloure caràcters numèrics
       investment:

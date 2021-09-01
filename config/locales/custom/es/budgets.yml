@@ -46,8 +46,8 @@ es:
         unfeasible: Ver proyectos inviables
         not_selected_title: Proyectos de gasto no seleccionados en la fase de revisión interna
         not_selected: Ver proyectos no seleccionados en la fase de revisión interna
-        unselected_title: Proyectos no seleccionados para la votación final
-        unselected: Ver los proyectos no seleccionados para la votación final
+        unselected_title: Proyectos no seleccionados para la fase de evaluación
+        unselected: Ver los proyectos no seleccionados para la fase de evaluación
     phase:
       drafting: Fase de borrador (No visible para el público)
       informing: Fase de información y debates
@@ -72,7 +72,8 @@ es:
       investment_proyects: Ver lista completa de proyectos de gasto
       unfeasible_investment_proyects: Ver el listado de proyectos de gasto inviables
       not_selected_investment_proyects: Ver el listado de proyectos de gasto no seleccionados en la fase de revisión interna
-      unselected_investment_proyects: Ver lista de proyectos de gasto no seleccionados para la votación final
+      unselected_investment_proyects: Ver lista de proyectos de gasto no seleccionados para la fase de evaluación
+      assumed_investment_proyects: Ver lista de proyectos asumidos
       finished_budgets: Presupuestos participativos terminados
       see_results: Ver resultados
       section_footer:
@@ -157,7 +158,7 @@ es:
         project_not_selected: "Este proyecto de gasto <strong>ha sido marcado como no seleccionado</strong> en la fase de revisión interna y no pasará a la fase siguiente."
         project_selected: "Este proyecto de gasto <strong>ha sido seleccionado</strong> para la fase de votación."
         project_winner: "Proyecto de gasto ganador"
-        project_unselected: "Este proyecto de gasto <strong>no ha sido seleccionado</strong> para la fase de votación."
+        project_unselected: "Este proyecto de gasto <strong>no ha sido seleccionado</strong> para la fase de evaluación."
         see_price_explanation: Ver informe de viabilidad
       wrong_price_format: Solo puede incluir caracteres numéricos
       investment:
@@ -195,8 +196,8 @@ es:
       unfeasible: Ver los proyectos inviables
       not_selected_title: Proyectos de gasto no seleccionados en la fase de revisión interna
       not_selected: Ver los proyectos no seleccionados en la fase de revisión interna
-      unselected_title: Proyectos no seleccionados para la votación final
-      unselected: Ver los proyectos no seleccionados para la votación final
+      unselected_title: Proyectos no seleccionados para la fase de evaluación
+      unselected: Ver los proyectos no seleccionados para la fase de evaluación
       see_results: Ver resultados
     results:
       link: Resultados
@@ -215,7 +216,7 @@ es:
       investment_proyects: Ver lista completa de proyectos de gasto
       unfeasible_investment_proyects: Ver lista de proyectos de gasto inviables
       not_selected_investment_proyects: Ver el listado de propuestas no seleccionados en la fase de revisión interna
-      unselected_investment_proyects: Ver lista de proyectos de gasto no seleccionados para la votación final
+      unselected_investment_proyects: Ver lista de proyectos de gasto no seleccionados para la fase de evaluación
     executions:
       link: "Seguimiento"
       page_title: "%{budget} - Seguimiento de proyectos"
