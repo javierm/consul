@@ -17,8 +17,8 @@ val:
       show:
         title: Selecciona una opció
         unfeasible_title: Propostes no seleccionades en la fase de revisió interna
-        unfeasible: Vore les propostes no viables
-        not_selected: Vore les propostes no seleccionades en la fase de revisió interna
+        unfeasible: Veure les propostes no viables
+        not_selected: Veure les propostes no seleccionades en la fase de revisió interna
         unselected_title: Propostes no seleccionades per a la votació final
         unselected: Veure les propostes no seleccionades per a la votació final
     phase:
@@ -42,10 +42,10 @@ val:
         all_phases: Vore totes les fases
       all_phases: Fases de pressupostos participatius
       map: Propostes de pressupostos ubicades geogràficament
-      investment_proyects: Vore el llistat de totes les propostes d'inversió
-      unfeasible_investment_proyects: Vore el llistat de propostes no viables
-      not_selected_investment_proyects: Vore el llistat de propostes no seleccionades en la fase de revisió interna
-      unselected_investment_proyects: Vore el llistat  de tots els projectes d'inversió no seleccionats per a votació
+      investment_proyects: Veure el llistat de totes les propostes d'inversió 
+      unfeasible_investment_proyects: Veure el llistat de propostes no viables
+      not_selected_investment_proyects: Veure el llistat de propostes no seleccionades en la fase de revisió interna
+      unselected_investment_proyects: Veure el llistat de tots els projectes d'inversió no seleccionats per a la fase d'avaluació de propostes 
       assumed_investment_proyects: Vore el llistat de propostes assumides
       finished_budgets: Pressupostos participatius finalitzats
       see_results: Vore resultats
@@ -112,9 +112,9 @@ val:
         author: Autor
         project_unfeasible: "Aquesta proposta d'inversió <strong>ha sigut marcada com a inviable</strong> i no passarà a la fase següent."
         project_not_selected: "Aquesta proposta d'inversió <strong>ha sigut marcada com a no seleccionada en la fase de revisió interna</strong> i no passarà a la fase següent."
-        project_selected: "Aquesta proposta d'inversió <strong>ha sigut seleccionada</strong> para la fase de votació."
+        project_selected: "Aquesta proposta d'inversió <strong>ha sigut seleccionada</strong> per a la fase de votació."
         project_winner: "Proposta d'inversió guanyadora"
-        project_unselected: "Aquesta proposta d'inversió <strong>no ha sigut seleccionada</strong> para la fase d'avaluació de propostes."
+        project_unselected: "Aquesta proposta d'inversió <strong>no ha sigut seleccionada</strong> per a la fase d'avaluació de propostes."
         see_price_explanation: Veure informe de viabilitat
       wrong_price_format: Solament pot incloure caràcters numèrics
       investment:
