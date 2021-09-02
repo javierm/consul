@@ -54,13 +54,13 @@ val:
       sincerely: "Atentament,"
       share: "Comparteix el teu projecte"
     budget_investment_unfeasible:
-      hi: "Estimat usuari/a,"
+      hi: "Estimat/da usuari/a,"
       pre_explanation: "Finalitzada la fase d'avaluació de propostes dels pressupostos participatius, l'informem que el seu projecte no ha superat aquesta fase, pels següents motius:"
       sincerely: "Atentament"
       sorry: "No obstant això, agraïm la seua contribució i li convidem a continuar participant en el Portal GVA Participa mitjançant els recursos que aquest li ofereix, com ara debats i iniciatives."
       subject: "La teua proposta d'inversió '%{code}' ha sigut marcada com inviable"
     budget_investment_not_selected:
-      hi: "Estimat usuari/a,"
+      hi: "Estimat/da usuari/a,"
       pre_explanation: "La proposta no compleix algun dels requisits establits:"
       sincerely: "Atentament"
       sorry: "Sentim les molèsties ocasionades i tornem a donarte les gràcies per la teua inestimable participació."

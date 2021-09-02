@@ -42,11 +42,11 @@ val:
         all_phases: Vore totes les fases
       all_phases: Fases de pressupostos participatius
       map: Propostes de pressupostos ubicades geogràficament
-      investment_proyects: Veure el llistat de totes les propostes d'inversió 
+      investment_proyects: Veure el llistat de totes les propostes d'inversió
       unfeasible_investment_proyects: Veure el llistat de propostes no viables
       not_selected_investment_proyects: Veure el llistat de propostes no seleccionades en la fase de revisió interna
-      unselected_investment_proyects: Veure el llistat de tots els projectes d'inversió no seleccionats per a la fase d'avaluació de propostes 
-      assumed_investment_proyects: Vore el llistat de propostes assumides
+      unselected_investment_proyects: Veure el llistat de tots els projectes d'inversió no seleccionats per a la fase d'avaluació de propostes
+      assumed_investment_proyects: Veure el llistat de propostes assumides
       finished_budgets: Pressupostos participatius finalitzats
       see_results: Vore resultats
       section_footer:
