@@ -39,6 +39,7 @@ class DirectUpload
 
   def save_attachment
     @relation.attachment.blob.save!
+    @relation.attachment_changes["attachment"].upload
   end
 
   def persisted?
