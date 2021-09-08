@@ -23,11 +23,8 @@ describe "Level two verification" do
     expect(page).to have_content "Code correct"
   end
 
-  context "In Spanish, with no fallbacks" do
-    before do
-      skip unless I18n.available_locales.include?(:es)
-      allow(I18n.fallbacks).to receive(:[]).and_return([:es])
-    end
+  context "In Spanish, with no fallbacks", if: I18n.available_locales.include?(:es) do
+    before { allow(I18n.fallbacks).to receive(:[]).and_return([:es]) }
 
     scenario "Works normally" do
       user = create(:user)

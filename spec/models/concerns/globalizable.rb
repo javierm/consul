@@ -1,6 +1,10 @@
 require "spec_helper"
 
 shared_examples_for "globalizable" do |factory_name|
+  model_class = FactoryBot.factories[factory_name].build_class
+  fields = model_class.translated_attribute_names
+  required_fields = fields.select { |field| model_class.new.send(:required_attribute?, field) }
+
   let(:record) do
     if factory_name == :budget_phase
       create(:budget).phases.last
@@ -8,8 +12,6 @@ shared_examples_for "globalizable" do |factory_name|
       create(factory_name)
     end
   end
-  let(:fields) { record.translated_attribute_names }
-  let(:required_fields) { fields.select { |field| record.send(:required_attribute?, field) } }
   let(:attribute) { required_fields.sample || fields.sample }
 
   before do
@@ -46,9 +48,7 @@ shared_examples_for "globalizable" do |factory_name|
       I18n.with_locale(:"pt-BR") { expect(record.send(attribute)).to eq "Português" }
     end
 
-    it "Does not create invalid translations in the database" do
-      skip("cannot have invalid translations") if required_fields.empty?
-
+    it "Does not create invalid translations in the database", if: required_fields.any? do
       record.update(translations_attributes: [{ locale: :fr }])
 
       expect(record.translations.map(&:locale)).to match_array %i[en es fr]
@@ -83,9 +83,7 @@ shared_examples_for "globalizable" do |factory_name|
       I18n.with_locale(:es) { expect(record.send(attribute)).to eq "Actualizado" }
     end
 
-    it "Does not save invalid translations" do
-      skip("cannot have invalid translations") if required_fields.empty?
-
+    it "Does not save invalid translations", if: required_fields.any? do
       record.update(translations_attributes: [
         { id: record.translations.find_by(locale: :es).id, attribute => "" }
       ])
@@ -121,9 +119,7 @@ shared_examples_for "globalizable" do |factory_name|
       expect(record.translations.map(&:locale)).to eq [:es]
     end
 
-    it "Does not remove all translations" do
-      skip("cannot have invalid translations") if required_fields.empty?
-
+    it "Does not remove all translations", if: required_fields.any? do
       record.translations_attributes = [
         { id: record.translations.find_by(locale: :en).id, _destroy: true },
         { id: record.translations.find_by(locale: :es).id, _destroy: true }
@@ -136,9 +132,7 @@ shared_examples_for "globalizable" do |factory_name|
       expect(record.translations.map(&:locale)).to match_array %i[en es]
     end
 
-    it "Does not remove translations when there's invalid data" do
-      skip("cannot have invalid translations") if required_fields.empty?
-
+    it "Does not remove translations when there's invalid data", if: required_fields.any? do
       record.translations_attributes = [
         { id: record.translations.find_by(locale: :es).id, attribute => "" },
         { id: record.translations.find_by(locale: :en).id, _destroy: true }
