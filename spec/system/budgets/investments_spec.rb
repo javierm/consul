@@ -1471,14 +1471,6 @@ describe "Budget Investments" do
 
       expect(page).to have_css("#budget_heading_#{heading_1.id}.is-active")
       expect(page).to have_css("#budget_heading_#{heading_2.id}")
-
-      click_link "See unfeasible investments"
-
-      within("#headings") do
-        expect(page).to have_css("#budget_heading_#{heading_1.id}")
-        expect(page).to have_css("#budget_heading_#{heading_2.id}")
-        expect(page).not_to have_css(".is-active")
-      end
     end
 
     scenario "Ballot is visible" do
