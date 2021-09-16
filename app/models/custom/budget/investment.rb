@@ -10,7 +10,7 @@ class Budget
 
     def self.apply_filters_and_search(_budget, params, current_filter = nil)
       investments = all
-      investments = investments.send(current_filter)             if current_filter.present?
+      investments = investments.send(current_filter)             if current_filter.present? && !params[:search].present?
       investments = investments.by_heading(params[:heading_id])  if params[:heading_id].present?
       if params[:search].present?
         if params[:search].to_i.positive?
