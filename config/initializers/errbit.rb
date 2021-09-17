@@ -32,3 +32,7 @@ if Rails.application.secrets.errbit_self_hosted_ssl.present?
 
   Airbrake::SyncSender.prepend(::Patches::Airbrake::SyncSender)
 end
+
+if Rails.env.test?
+  ActiveSupport::Notifications.unsubscribe("start_processing.action_controller")
+end
