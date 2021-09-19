@@ -1,4 +1,3 @@
-require "translator-text"
 include RemoteTranslations::Microsoft::SentencesParser
 
 class RemoteTranslations::Microsoft::Client
