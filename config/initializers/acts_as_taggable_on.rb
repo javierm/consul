@@ -5,7 +5,7 @@ module ActsAsTaggableOn
 
     scope :public_for_api, -> do
       where(
-        tag: Tag.where(kind: [nil, "category"]),
+        tag: Tag.default_scoped.where(kind: [nil, "category"]),
         taggable: [Debate.public_for_api, Proposal.public_for_api]
       )
     end
