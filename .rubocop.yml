@@ -244,6 +244,7 @@ Rails/CreateTableWithTimestamps:
   Exclude:
     - "db/migrate/201[5-8]*"
     - "db/migrate/*install_audited.rb"
+    - "db/migrate/*create_active_storage_variant_records.active_storage.rb"
 
 Rails/Date:
   Enabled: true
