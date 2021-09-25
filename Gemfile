@@ -90,6 +90,7 @@ group :test do
   gem "email_spec", "~> 2.2.0"
   gem "rspec-rails", "~> 5.0"
   gem "selenium-webdriver", "~> 3.142"
+  gem "w3c_rspec_validators", "~> 0.3.0", require: false
   gem "webdrivers", "~> 4.6.0"
 end
 
