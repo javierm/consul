@@ -2,6 +2,7 @@ require "factory_bot_rails"
 require "email_spec"
 require "devise"
 require "knapsack_pro"
+require "w3c_rspec_validators"
 
 Dir["./spec/factory_bot/**/*.rb"].sort.each { |f| require f }
 Dir["./spec/models/concerns/*.rb"].each { |f| require f }

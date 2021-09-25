@@ -90,6 +90,7 @@ group :test do
   gem "selenium-webdriver", "~> 4.16.0"
   gem "simplecov", "~> 0.22.0", require: false
   gem "simplecov-lcov", "~> 0.8.0", require: false
+  gem "w3c_rspec_validators", "~> 0.3.0", require: false
 end
 
 group :development do
