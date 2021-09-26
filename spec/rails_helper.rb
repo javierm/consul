@@ -27,8 +27,10 @@ module Capybara
 
     def visit(...)
       original_visit(...)
+      html = page.source
+      html = "<!DOCTYPE html>\n#{html}" unless html.strip.starts_with?("<!DOCTYPE")
 
-      expect(page).to be_axe_clean
+      expect(html).to be_valid_html
     end
   end
 end
