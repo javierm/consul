@@ -84,6 +84,7 @@ group :development, :test do
 end
 
 group :test do
+  gem "axe-core-rspec", "~> 4.3.1", require: false
   gem "capybara", github: "javierm/capybara", branch: "animation_disabler_invalid_html"
   gem "capybara-webmock", "~> 0.6.0"
   gem "coveralls", "~> 0.8.23", require: false
