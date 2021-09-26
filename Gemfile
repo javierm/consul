@@ -84,7 +84,7 @@ group :development, :test do
 end
 
 group :test do
-  gem "capybara", "~> 3.35.3"
+  gem "capybara", github: "javierm/capybara", branch: "animation_disabler_invalid_html"
   gem "capybara-webmock", "~> 0.6.0"
   gem "coveralls", "~> 0.8.23", require: false
   gem "email_spec", "~> 2.2.0"
