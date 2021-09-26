@@ -60,6 +60,11 @@ module Capybara
     def visit(url, ...)
       original_visit(url, ...)
 
+      html = page.source
+      html = "<!DOCTYPE html>\n#{html}" unless html.strip.starts_with?("<!DOCTYPE")
+
+      expect(html).to be_valid_html
+
       unless url.match?("robots.txt") || url.match?("active_storage/representations")
         expect(page).to have_css "main", count: 1
         expect(page).to have_css "#main", count: 1
