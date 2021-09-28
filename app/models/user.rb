@@ -152,11 +152,6 @@ class User < ApplicationRecord
     voted.each_with_object({}) { |v, h| h[v.votable_id] = v.value }
   end
 
-  def proposal_votes(proposals)
-    voted = votes.for_proposals(Array(proposals).map(&:id))
-    voted.each_with_object({}) { |v, h| h[v.votable_id] = v.value }
-  end
-
   def legislation_proposal_votes(proposals)
     voted = votes.for_legislation_proposals(proposals)
     voted.each_with_object({}) { |v, h| h[v.votable_id] = v.value }
