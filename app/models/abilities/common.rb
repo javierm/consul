@@ -91,7 +91,6 @@ module Abilities
         can :vote_featured, Proposal
 
         can :vote, Legislation::Proposal
-        can :vote_featured, Legislation::Proposal
         can :create, Legislation::Answer
 
         can :create, Budget::Investment,               budget: { phase: "accepting" }
