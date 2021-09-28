@@ -1,11 +1,9 @@
 <div class="supports text-center">
-  <% unless featured? %>
-    <%= render "proposals/supports", proposal: proposal %>
-  <% end %>
+  <%= render "proposals/supports", proposal: proposal %>
 
   <div class="in-favor">
     <% if current_user&.voted_for?(proposal) %>
-      <div class="supported <%= "callout success" unless featured? %>">
+      <div class="supported callout success">
         <%= t("proposals.proposal.already_supported") %>
       </div>
     <% elsif user_signed_in? && proposal.votable_by?(current_user) %>

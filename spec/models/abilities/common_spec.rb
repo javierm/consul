@@ -68,7 +68,6 @@ describe Abilities::Common do
   it { should     be_able_to(:index, Proposal) }
   it { should     be_able_to(:show, proposal) }
   it { should_not be_able_to(:vote, Proposal) }
-  it { should_not be_able_to(:vote_featured, Proposal) }
 
   it { should_not be_able_to(:comment_as_administrator, debate)   }
   it { should_not be_able_to(:comment_as_moderator, debate)       }
@@ -208,7 +207,6 @@ describe Abilities::Common do
 
     describe "Proposal" do
       it { should be_able_to(:vote, Proposal) }
-      it { should be_able_to(:vote_featured, Proposal) }
     end
 
     describe "Direct Message" do
@@ -288,7 +286,6 @@ describe Abilities::Common do
     before { user.update(verified_at: Time.current) }
 
     it { should be_able_to(:vote, Proposal)          }
-    it { should be_able_to(:vote_featured, Proposal) }
 
     it { should     be_able_to(:new, DirectMessage)            }
     it { should     be_able_to(:create, DirectMessage)         }

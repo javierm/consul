@@ -88,7 +88,6 @@ module Abilities
 
       if user.level_two_or_three_verified?
         can :vote, Proposal, &:published?
-        can :vote_featured, Proposal
 
         can :vote, Legislation::Proposal
         can :create, Legislation::Answer
