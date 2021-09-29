@@ -68,10 +68,6 @@ class ApplicationController < ActionController::Base
       end
     end
 
-    def set_debate_votes(debates)
-      @debate_votes = current_user ? current_user.debate_votes(debates) : {}
-    end
-
     def set_comment_flags(comments)
       @comment_flags = current_user ? current_user.comment_flags(comments) : {}
     end

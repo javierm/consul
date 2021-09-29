@@ -20,19 +20,16 @@ class DebatesController < ApplicationController
   respond_to :html, :js
 
   def index_customization
-    set_debate_votes(@debates)
     @featured_debates = @debates.featured
   end
 
   def show
     super
-    set_debate_votes(@debate)
     redirect_to debate_path(@debate), status: :moved_permanently if request.path != debate_path(@debate)
   end
 
   def vote
     @debate.register_vote(current_user, params[:value])
-    set_debate_votes(@debate)
   end
 
   def unmark_featured
