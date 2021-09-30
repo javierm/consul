@@ -18,7 +18,7 @@ describe Budgets::Investments::BallotComponent do
 
       render_inline component
 
-      expect(page).to have_link "Vote"
+      expect(page).to have_button "Vote", disabled: true
       expect(page).to have_content "Only verified users can vote on investments; verify your account."
     end
 
@@ -27,10 +27,10 @@ describe Budgets::Investments::BallotComponent do
 
       render_inline component
 
-      expect(page).to have_link count: 1
-      expect(page).to have_link "Vote", title: "Support this project"
-      expect(page).to have_link "Vote New Sports Center"
-      expect(page).not_to have_link "Remove vote"
+      expect(page).to have_button count: 1
+      expect(page).to have_button "Vote", title: "Support this project"
+      expect(page).to have_button "Vote New Sports Center"
+      expect(page).not_to have_button "Remove vote", disabled: :all
     end
 
     it "is replaced with a link to remove the vote when the user has already voted" do
@@ -38,10 +38,10 @@ describe Budgets::Investments::BallotComponent do
 
       render_inline component
 
-      expect(page).to have_link count: 1
-      expect(page).to have_link "Remove vote"
-      expect(page).to have_link "Remove your vote for New Sports Center"
-      expect(page).not_to have_link "Vote"
+      expect(page).to have_button count: 1
+      expect(page).to have_button "Remove vote"
+      expect(page).to have_button "Remove your vote for New Sports Center"
+      expect(page).not_to have_button "Vote", disabled: :all
     end
   end
 end
