@@ -53,6 +53,7 @@ class ProposalsController < ApplicationController
     load_selected
     load_featured
     remove_archived_from_order_links
+    @resources = @resources.includes(:sdg_goals).includes(:tags).includes(:sdg_global_targets).includes(:sdg_local_targets)
   end
 
   def vote
