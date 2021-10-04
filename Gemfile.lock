@@ -366,6 +366,7 @@ GEM
       mixlib-cli (~> 2.1, >= 2.1.1)
       mixlib-config (>= 2.2.1, < 4)
       mixlib-shellout
+    memory_profiler (1.0.0)
     method_source (1.0.0)
     mime-types (3.3.1)
       mime-types-data (~> 3.2015)
@@ -469,6 +470,8 @@ GEM
     rack (2.2.3)
     rack-accept (0.4.5)
       rack (>= 0.4)
+    rack-mini-profiler (2.3.3)
+      rack (>= 1.2.0)
     rack-protection (2.1.0)
       rack
     rack-proxy (0.7.0)
@@ -627,6 +630,7 @@ GEM
     sshkit (1.21.2)
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
+    stackprof (0.2.17)
     sync (0.5.0)
     term-ansicolor (1.7.1)
       tins (~> 1.0)
@@ -744,6 +748,7 @@ DEPENDENCIES
   launchy (~> 2.5.0)
   letter_opener_web (~> 1.4.0)
   mdl (~> 0.11.0)
+  memory_profiler
   newrelic_rpm (~> 4.1.0.333)
   omniauth (~> 2.0.4)
   omniauth-facebook (~> 8.0.0)
@@ -760,6 +765,7 @@ DEPENDENCIES
   pronto-rubocop (~> 0.11.1)
   pronto-scss (~> 0.11.0)
   puma (~> 4.3.8)
+  rack-mini-profiler
   rails (= 5.2.6)
   rails-assets-leaflet!
   rails-assets-markdown-it (~> 9.0.1)!
@@ -783,6 +789,7 @@ DEPENDENCIES
   spring (~> 2.1.1)
   spring-commands-rspec (~> 1.0.4)
   sprockets (~> 3.7.2)
+  stackprof
   translator-text (~> 0.1.0)
   turbolinks (~> 5.2.1)
   turnout (~> 2.5.0)

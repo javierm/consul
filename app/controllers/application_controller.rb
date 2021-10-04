@@ -1,6 +1,10 @@
 require "application_responder"
 
 class ApplicationController < ActionController::Base
+  before_action do
+    Rack::MiniProfiler.authorize_request
+  end
+
   include GlobalizeFallbacks
   include HasFilters
   include HasOrders

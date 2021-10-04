@@ -1,37 +1,11 @@
-#!/usr/bin/env puma
+# Puma can serve each request in a thread from an internal thread pool.
+# Default is set to 5 threads for minimum and maximum, matching the
+# default thread size of Active Record.
+threads_count = ENV.fetch("RAILS_MAX_THREADS") { 5 }.to_i
+threads threads_count, threads_count
 
-rails_root = File.expand_path("../../..", __FILE__)
+port        ENV.fetch("PORT") { 3000 }
+environment "development"
 
-directory rails_root
-rackup "#{rails_root}/config.ru"
-
-tag ""
-
-pidfile "#{rails_root}/tmp/pids/puma.pid"
-state_path "#{rails_root}/tmp/pids/puma.state"
-stdout_redirect "#{rails_root}/log/puma_access.log", "#{rails_root}/log/puma_error.log", true
-
-bind "unix://#{rails_root}/tmp/sockets/puma.sock"
-daemonize
-
-threads 0, 16
-workers 2
-preload_app!
-
-restart_command "bundle exec --keep-file-descriptors puma"
+# Allow puma to be restarted by `rails restart` command.
 plugin :tmp_restart
-
-on_restart do
-  puts "Refreshing Gemfile"
-  ENV["BUNDLE_GEMFILE"] = ""
-end
-
-before_fork do
-  ActiveRecord::Base.connection_pool.disconnect!
-end
-
-on_worker_boot do
-  ActiveSupport.on_load(:active_record) do
-    ActiveRecord::Base.establish_connection
-  end
-end
