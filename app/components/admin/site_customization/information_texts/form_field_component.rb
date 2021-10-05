@@ -14,12 +14,12 @@ class Admin::SiteCustomization::InformationTexts::FormFieldComponent < Applicati
     end
 
     def database_text
-      if i18n_content.present?
+      if i18n_content.persisted?
         I18nContentTranslation.find_by(i18n_content_id: i18n_content.id, locale: locale)&.value
       end
     end
 
     def i18n_text
-      t(i18n_content.key, locale: locale)
+      I18n.translate(i18n_content.key, locale: locale)
     end
 end
