@@ -21,7 +21,7 @@
     <%= render "layouts/header", with_subnavigation: false %>
 
     <div class="menu-and-content">
-      <%= check_box_tag :show_menu, nil, false, role: "switch" %>
+      <%= check_box_tag :show_menu, nil, false %>
 
       <nav id="side_menu" class="dashboard-sidebar">
         <%= render "dashboard/menu" %>
