@@ -11,7 +11,7 @@
     <%= render Layout::AdminHeaderComponent.new(current_user) %>
 
     <div class="menu-and-content">
-      <%= check_box_tag :show_menu, nil, false, role: "switch" %>
+      <%= check_box_tag :show_menu, nil, false %>
 
       <nav id="side_menu" class="admin-sidebar">
         <% if namespace == "admin" %>
