@@ -41,19 +41,21 @@ end
 
 FactoryBot.use_parent_strategy = false
 
-Capybara.register_driver :headless_chrome do |app|
-  capabilities = Selenium::WebDriver::Remote::Capabilities.chrome(
-    "goog:chromeOptions" => {
-      args: %W[headless no-sandbox window-size=1200,800 proxy-server=#{Capybara.app_host}:#{Capybara::Webmock.port_number}]
-    }
-  )
+require "capybara/cuprite"
 
-  Capybara::Selenium::Driver.new(
+# Then, we need to register our driver to be able to use it later
+# with #driven_by method.
+Capybara.register_driver(:cuprite) do |app|
+  Capybara::Cuprite::Driver.new(
     app,
-    browser: :chrome,
-    desired_capabilities: capabilities
+    window_size: [1200, 800],
+    browser_options: {},
+    # Increase Chrome startup wait time (required for stable CI builds)
+    process_timeout: 10,
+    headless: true
   )
 end
+# args: %W[headless no-sandbox window-size=1200,800 proxy-server=#{Capybara.app_host}:#{Capybara::Webmock.port_number}]
 
 Capybara.exact = true
 Capybara.enable_aria_label = true
