@@ -51,12 +51,6 @@ jobs:
           KNAPSACK_PRO_FIXED_QUEUE_SPLIT: true
           KNAPSACK_PRO_LOG_LEVEL: info
         run: TEST_RUBY_PROF=1 bin/knapsack_pro_rspec
-      - name: Upload screenshots
-        if: failure()
-        uses: actions/upload-artifact@v2
-        with:
-          name: screenshots
-          path: tmp/screenshots
       - name: Upload test performance
         uses: actions/upload-artifact@v2
         with:
