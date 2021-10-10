@@ -82,8 +82,10 @@ group :development, :test do
   gem "knapsack_pro", "~> 3.0.0"
   gem "launchy", "~> 2.5.0"
   gem "letter_opener_web", "~> 1.4.0"
+  gem "ruby-prof", ">= 0.17.0", require: false
   gem "spring", "~> 2.1.1"
   gem "spring-commands-rspec", "~> 1.0.4"
+  gem "test-prof", "~> 1.0"
 end
 
 group :test do
