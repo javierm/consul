@@ -50,7 +50,7 @@ jobs:
           KNAPSACK_PRO_CI_NODE_INDEX: ${{ matrix.ci_node_index }}
           KNAPSACK_PRO_FIXED_QUEUE_SPLIT: true
           KNAPSACK_PRO_LOG_LEVEL: info
-        run: TEST_RUBY_PROF=1 bin/knapsack_pro_rspec
+        run: FDOC=1 bin/knapsack_pro_rspec
       - name: Upload test performance
         uses: actions/upload-artifact@v2
         with:
