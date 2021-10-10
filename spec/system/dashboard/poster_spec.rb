@@ -8,14 +8,6 @@ describe "Poster" do
     visit new_proposal_dashboard_poster_path(proposal)
   end
 
-  scenario "Has a link to preview the poster" do
-    expect(page).to have_link("Preview")
-  end
-
-  scenario "Has a link to download the poster" do
-    expect(page).to have_link("Download")
-  end
-
   scenario "Preview contains the proposal details" do
     click_link "Preview"
 
