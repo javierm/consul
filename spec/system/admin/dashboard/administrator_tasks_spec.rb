@@ -43,10 +43,6 @@ describe "Admin administrator tasks", :admin do
       expect(page).to have_content(task.source.action.title)
     end
 
-    scenario "contains a button that solves the request" do
-      expect(page).to have_button("Mark as solved")
-    end
-
     scenario "After it is solved appears on solved filter" do
       click_button "Mark as solved"
 
