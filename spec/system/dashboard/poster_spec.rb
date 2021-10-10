@@ -8,18 +8,13 @@ describe "Poster" do
     visit new_proposal_dashboard_poster_path(proposal)
   end
 
-  scenario "Preview contains the proposal details" do
+  scenario "Preview contains the proposal details and a link to download" do
     click_link "Preview"
 
-    expect(page).to have_content(proposal.title)
-    expect(page).to have_content(proposal.code)
-  end
-
-  scenario "Preview page can download the poster as well" do
-    click_link "Preview"
-
-    expect(page).not_to have_link("Preview")
-    expect(page).to have_link("Download")
+    expect(page).not_to have_link "Preview"
+    expect(page).to have_content proposal.title
+    expect(page).to have_content proposal.code
+    expect(page).to have_link "Download"
   end
 
   scenario "PDF contains the proposal details" do
