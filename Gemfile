@@ -78,7 +78,7 @@ group :development, :test do
   gem "i18n-tasks", "~> 0.9.31"
   gem "knapsack_pro", "~> 2.6.0"
   gem "launchy", "~> 2.5.0"
-  gem "letter_opener_web", "~> 1.4.0"
+  gem "letter_opener_web", "~> 1.4.1"
   gem "spring", "~> 2.1.1"
   gem "spring-commands-rspec", "~> 1.0.4"
 end
