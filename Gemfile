@@ -79,7 +79,7 @@ group :development, :test do
   gem "knapsack_pro", "~> 3.0.0"
   gem "launchy", "~> 2.5.0"
   gem "letter_opener_web", "~> 1.4.0"
-  gem "spring", "~> 2.1.1"
+  gem "spring", "~> 3.0.0"
   gem "spring-commands-rspec", "~> 1.0.4"
 end
 
