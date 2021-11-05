@@ -41,9 +41,9 @@ module Globalizable
         return false unless validator.options[:unless]
 
         if validator.options[:unless].to_proc.arity.zero?
-          !instance_exec(&validator.options[:unless])
+          instance_exec(&validator.options[:unless])
         else
-          !validator.options[:unless].to_proc.call(self)
+          validator.options[:unless].to_proc.call(self)
         end
       end
 
