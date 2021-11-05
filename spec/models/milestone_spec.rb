@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe Milestone do
-  it_behaves_like "globalizable", :milestone_with_description
+  it_behaves_like "globalizable", :milestone
 
   describe "Validations" do
     let(:milestone) { build(:milestone) }
