@@ -33,7 +33,17 @@ module Globalizable
 
       def required_attribute?(attribute)
         self.class.validators_on(attribute).any? do |validator|
-          validator.kind == :presence && !validator.options[:unless]
+          validator.kind == :presence && !conditional_validator?(validator)
+        end
+      end
+
+      def conditional_validator?(validator)
+        return false unless validator.options[:unless]
+
+        if validator.options[:unless].to_proc.arity.zero?
+          !instance_exec(&validator.options[:unless])
+        else
+          !validator.options[:unless].to_proc.call(self)
         end
       end
 

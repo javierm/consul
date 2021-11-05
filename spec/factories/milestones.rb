@@ -29,5 +29,7 @@ FactoryBot.define do
       kind { :secondary }
       sequence(:title) { |n| "Progress bar #{n} title" }
     end
+
+    factory :secondary_progress_bar, traits: [:secondary]
   end
 end
