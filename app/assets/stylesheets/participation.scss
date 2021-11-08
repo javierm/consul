@@ -11,6 +11,8 @@
 // 09. Polls results and stats
 //
 
+$panel-padding: rem-calc(12);
+
 // 01. Votes and supports
 // ----------------------
 
@@ -510,17 +512,6 @@
   }
 }
 
-.budget-investments-list {
-
-  @include breakpoint(medium) {
-    min-height: $line-height * 15;
-  }
-
-  .with-image > .row {
-    display: flex;
-  }
-}
-
 .budget-investments-list .budget-investment,
 .proposals-list .proposal,
 .legislation-proposals .proposal {
@@ -553,6 +544,57 @@
   }
 }
 
+.budget-investments-list {
+
+  @include breakpoint(medium) {
+    min-height: $line-height * 15;
+  }
+
+  .budget-investment .panel {
+    $votes-width: rem-calc(225);
+
+    display: flex;
+    flex-wrap: wrap;
+
+    > * {
+      @include grid-column-gutter;
+      flex-grow: 1;
+    }
+
+    > :last-child {
+      flex-basis: $votes-width;
+    }
+
+    .budget-investment-content {
+      $image-width: 140px;
+      $investment-content-width: rem-calc(250);
+      $breakpoint: unquote("#{$votes-width} + #{$investment-content-width} + #{$image-width}");
+
+      flex-basis: calc((#{$breakpoint} - 100%) * 999);
+      flex-grow: 1000;
+    }
+
+    > :not(.budget-investment-content) {
+      text-align: center;
+    }
+
+    &,
+    &.with-image {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .investment-image {
+      padding: 0;
+    }
+
+    img {
+      max-width: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
 %panel {
   background: $body-background;
   border: 1px solid;
@@ -561,11 +603,11 @@
   box-shadow: 0 1px 3px 0 $border;
   margin-bottom: rem-calc(12);
   min-height: rem-calc(192);
-  padding: rem-calc(12) rem-calc(12) 0;
+  padding: $panel-padding $panel-padding 0;
 
   @include breakpoint(medium) {
     margin-bottom: rem-calc(-1);
-    padding-bottom: rem-calc(12);
+    padding-bottom: $panel-padding;
   }
 
   @include breakpoint(medium) {
