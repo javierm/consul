@@ -1,12 +1,25 @@
-<span class="moderation-actions">
+<div class="moderation-actions">
   <% if can? :hide, record %>
-    <%= link_to t("admin.actions.hide").capitalize, hide_path,
-                method: :put, remote: true, data: { confirm: t("admin.actions.confirm") } %>
+    <%= render Admin::ActionComponent.new(
+      :hide,
+      record,
+      path: hide_path,
+      method: :put,
+      remote: true,
+      confirm: true
+    ) %>
   <% end %>
 
-  <% if can? :hide, record.author %>
+  <% if can? :hide, author %>
     <%= raw separator %>
-    <%= link_to t("admin.actions.hide_author").capitalize, block_moderation_user_path(record.author_id),
-                method: :put, data: { confirm: t("admin.actions.confirm") } %>
+
+    <%= render Admin::ActionComponent.new(
+      :hide_author,
+      author,
+      path: block_moderation_user_path(author),
+      id: dom_id(author, "#{dom_id(record)}_hide_author"),
+      method: :put,
+      confirm: true
+    ) %>
   <% end %>
-</span>
+</div>

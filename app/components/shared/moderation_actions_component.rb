@@ -12,6 +12,10 @@ class Shared::ModerationActionsComponent < ApplicationComponent
 
   private
 
+    def author
+      record.author
+    end
+
     def hide_path
       polymorphic_path([:moderation, record], action: :hide)
     end
