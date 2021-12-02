@@ -10,7 +10,7 @@ en:
       confirm_hide: Confirm moderation
       delete: "Delete"
       hide: Hide
-      hide_author: Hide author
+      hide_author: Block author
       label: "%{action} %{name}"
       restore: Restore
       mark_featured: Featured
