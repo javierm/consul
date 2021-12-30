@@ -39,6 +39,9 @@ module Abilities
       can [:retire_form, :retire], Proposal, author_id: user.id
 
       can :read, Legislation::Proposal
+      can [:edit, :update], Legislation::Proposal do |proposal|
+        proposal.editable_by?(user)
+      end
       can [:retire_form, :retire], Legislation::Proposal, author_id: user.id
 
       can :create, Comment
