@@ -457,7 +457,7 @@ describe "Valuation budget investments" do
       fill_in "Cost during the first year (€) (optional, data not public)", with: "9876.6"
       click_button "Save changes"
 
-      expect(page).to have_content("2 errors")
+      expect(page).to have_content("errors")
       expect(page).to have_content("Only integer numbers", count: 2)
     end
 

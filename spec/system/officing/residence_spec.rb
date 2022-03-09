@@ -49,7 +49,7 @@ describe "Residence", :with_frozen_time do
         click_button "Validate document"
       end
 
-      expect(page).to have_content(/\d errors? prevented the verification of this document/)
+      expect(page).to have_content(/prevented the verification of this document/)
     end
 
     scenario "Error on Census (document number)" do

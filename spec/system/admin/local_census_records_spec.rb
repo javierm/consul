@@ -75,7 +75,7 @@ describe "Admin local census records", :admin do
 
       click_on "Save"
 
-      expect(page).to have_content "4 errors prevented this Local Census Record from being saved."
+      expect(page).to have_content "errors prevented this Local Census Record from being saved."
       expect(page).to have_content "can't be blank", count: 4
     end
 
@@ -107,7 +107,7 @@ describe "Admin local census records", :admin do
       fill_in :local_census_record_document_number, with: ""
       click_on "Save"
 
-      expect(page).to have_content "1 error prevented this Local Census Record from being saved."
+      expect(page).to have_content "errors prevented this Local Census Record from being saved."
       expect(page).to have_content "can't be blank", count: 1
     end
 

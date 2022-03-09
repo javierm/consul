@@ -87,7 +87,7 @@ describe "Residence" do
 
     click_button "Verify residence"
 
-    expect(page).to have_content(/\d errors? prevented the verification of your residence/)
+    expect(page).to have_content(/prevented the verification of your residence/)
   end
 
   scenario "Error on postal code not in census" do

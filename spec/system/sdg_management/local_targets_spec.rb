@@ -82,7 +82,7 @@ describe "Local Targets" do
       fill_in "Title", with: ""
       click_button "Update local target"
 
-      expect(page).to have_content("1 error prevented this local target from being saved.")
+      expect(page).to have_content("errors prevented this local target from being saved.")
     end
   end
 

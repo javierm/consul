@@ -55,7 +55,7 @@ describe "Sessions" do
     click_link "Verify my account"
     click_button "Verify residence"
 
-    expect(page).to have_content(/errors prevented the verification of your residence/)
+    expect(page).to have_content(/prevented the verification of your residence/)
 
     click_link "Sign out"
 

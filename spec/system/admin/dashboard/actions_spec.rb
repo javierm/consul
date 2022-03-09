@@ -58,7 +58,7 @@ describe "Admin dashboard actions", :admin do
     scenario "Renders create form in case data is invalid" do
       click_button "Save"
 
-      expect(page).to have_content("error prevented this Dashboard/Action from being saved.")
+      expect(page).to have_content("errors prevented this Dashboard/Action from being saved.")
     end
   end
 
@@ -82,7 +82,7 @@ describe "Admin dashboard actions", :admin do
     scenario "Renders edit form in case data is invalid" do
       fill_in "dashboard_action_title", with: "x"
       click_button "Save"
-      expect(page).to have_content("error prevented this Dashboard/Action from being saved.")
+      expect(page).to have_content("errors prevented this Dashboard/Action from being saved.")
     end
   end
 

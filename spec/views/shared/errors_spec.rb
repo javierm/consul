@@ -14,7 +14,7 @@ describe "shared errors" do
     stub_const("DummyModel", dummy_model)
   end
 
-  it "counts the number of fields with errors" do
+  it "counts the number of fields with errors", :consul do
     resource = DummyModel.new(title: "Present", description: "", days: 3)
     resource.valid?
 
@@ -23,7 +23,7 @@ describe "shared errors" do
     expect(rendered).to have_content "2 errors"
   end
 
-  it "doesn't include `base` errors in new records" do
+  it "doesn't include `base` errors in new records", :consul do
     resource = build(:debate, title: "", description: "")
     resource.valid?
 
@@ -32,7 +32,7 @@ describe "shared errors" do
     expect(rendered).to have_content "2 errors"
   end
 
-  it "doesn't include `base` errors in existing records" do
+  it "doesn't include `base` errors in existing records", :consul do
     resource = create(:debate)
     resource.translations << Debate::Translation.new(title: "Title", description: "", locale: "es")
     resource.valid?
