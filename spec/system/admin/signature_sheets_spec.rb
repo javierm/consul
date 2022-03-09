@@ -55,7 +55,7 @@ describe "Signature sheets", :admin do
       visit new_admin_signature_sheet_path
 
       fill_in "signature_sheet_title", with: "definitive signature sheet"
-      select "Investment", from: "signature_sheet_signable_type"
+      select "Project", from: "signature_sheet_signable_type"
       fill_in "signature_sheet_signable_id", with: investment.id
       fill_in "signature_sheet_required_fields_to_verify", with: "12345678Z; 1234567L; 99999999Z"
       click_button "Create signature sheet"
@@ -100,7 +100,7 @@ describe "Signature sheets", :admin do
 
       visit new_admin_signature_sheet_path
 
-      select "Investment", from: "signature_sheet_signable_type"
+      select "Project", from: "signature_sheet_signable_type"
       fill_in "signature_sheet_signable_id", with: investment.id
       fill_in "signature_sheet_required_fields_to_verify", with: "12345678Z, 31/12/1980, 28013; 99999999Z, 31/12/1980, 28013"
       click_button "Create signature sheet"

@@ -516,7 +516,7 @@ describe "Budget Investments" do
       fill_in "Description", with: "This is the description"
       check   "I agree to the Privacy Policy and the Terms and conditions of use"
 
-      click_button "Create Investment"
+      click_button "Create Project"
 
       expect(page.status_code).to eq(200)
       expect(page.html).to be_empty
@@ -533,7 +533,7 @@ describe "Budget Investments" do
       fill_in_ckeditor "Description", with: "This is the description"
       check   "budget_investment_terms_of_service"
 
-      click_button "Create Investment"
+      click_button "Create Project"
 
       expect(page).to have_content "Sorry, that was too quick! Please resubmit"
       expect(page).to have_current_path(new_budget_investment_path(budget))
@@ -555,7 +555,7 @@ describe "Budget Investments" do
       fill_in "Tags", with: "Towers"
       check "I agree to the Privacy Policy and the Terms and conditions of use"
 
-      click_button "Create Investment"
+      click_button "Create Project"
 
       expect(page).to have_content "Investment created successfully"
       expect(page).to have_content "Build a skyscraper"
@@ -607,7 +607,7 @@ describe "Budget Investments" do
       fill_in "Tags", with: "Towers"
       check "I agree to the Privacy Policy and the Terms and conditions of use"
 
-      click_button "Create Investment"
+      click_button "Create Project"
 
       expect(page).to have_content "Investment created successfully"
       expect(page).to have_content "Build a skyscraper"
@@ -634,7 +634,7 @@ describe "Budget Investments" do
       click_link("Edit", match: :first)
       fill_in "Title", with: "Park improvements"
 
-      click_button "Update Investment"
+      click_button "Update Project"
 
       expect(page).to have_content "Investment project updated succesfully"
       expect(page).to have_content "Park improvements"
@@ -651,7 +651,7 @@ describe "Budget Investments" do
       click_link("Edit", match: :first)
       fill_in "Title", with: ""
 
-      click_button "Update Investment"
+      click_button "Update Project"
 
       expect(page).to have_content message_error
     end
@@ -670,7 +670,7 @@ describe "Budget Investments" do
       login_as(author)
 
       visit new_budget_investment_path(budget)
-      click_button "Create Investment"
+      click_button "Create Project"
       expect(page).to have_content error_message
     end
 
@@ -737,7 +737,7 @@ describe "Budget Investments" do
         scenario "for update action" do
           fill_in "Title", with: ""
 
-          click_button "Update Investment"
+          click_button "Update Project"
           fill_in "Title", with: "search"
 
           expect(page).not_to have_content "There is an investment with the term 'search'"
@@ -1043,7 +1043,7 @@ describe "Budget Investments" do
                   "new_budget_investment_path",
                   { "budget_id": "budget_id" },
                   "imageable_fill_new_valid_budget_investment",
-                  "Create Investment",
+                  "Create Project",
                   "Budget Investment created successfully."
 
   it_behaves_like "documentable", "budget_investment", "budget_investment_path", { "budget_id": "budget_id", "id": "id" }
@@ -1054,7 +1054,7 @@ describe "Budget Investments" do
                   "new_budget_investment_path",
                   { "budget_id": "budget_id" },
                   "documentable_fill_new_valid_budget_investment",
-                  "Create Investment",
+                  "Create Project",
                   "Budget Investment created successfully."
 
   it_behaves_like "mappable",
@@ -1682,7 +1682,7 @@ describe "Budget Investments" do
       click_sdg_goal(1)
       check "budget_investment_terms_of_service"
 
-      click_button "Create Investment"
+      click_button "Create Project"
 
       within(".sdg-goal-tag-list") { expect(page).to have_link "1. No Poverty" }
     end
@@ -1694,7 +1694,7 @@ describe "Budget Investments" do
       visit edit_budget_investment_path(budget, investment)
 
       remove_sdg_goal_or_target_tag(1)
-      click_button "Update Investment"
+      click_button "Update Project"
 
       within(".sdg-goal-tag-list") do
         expect(page).not_to have_link "1. No Poverty"

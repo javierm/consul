@@ -21,7 +21,7 @@ describe Budgets::SubheaderComponent, type: :component do
 
       render_inline Budgets::SubheaderComponent.new(budget)
 
-      expect(page).to have_link "Create a budget investment"
+      expect(page).to have_link "Submit a project proposal"
 
       (Budget::Phase::PHASE_KINDS - ["accepting"]).each do |phase|
         budget.update!(phase: phase)
@@ -29,7 +29,7 @@ describe Budgets::SubheaderComponent, type: :component do
 
         render_inline Budgets::SubheaderComponent.new(budget)
 
-        expect(page).not_to have_link "Create a budget investment"
+        expect(page).not_to have_link "Submit a project proposal"
       end
     end
 

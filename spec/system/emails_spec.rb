@@ -101,7 +101,7 @@ describe "Emails" do
       comment_on(investment)
 
       email = open_last_email
-      expect(email).to have_subject("Someone has commented on your investment")
+      expect(email).to have_subject("Someone has commented on your project")
       expect(email).to deliver_to(investment.author)
       expect(email).to have_body_text(budget_investment_path(investment, budget_id: investment.budget_id))
       expect(email).to have_body_text("To stop receiving these emails change your settings in")
@@ -354,7 +354,7 @@ describe "Emails" do
       fill_in_ckeditor "Description", with: "We have lots of people that require medical attention"
       check   "budget_investment_terms_of_service"
 
-      click_button "Create Investment"
+      click_button "Create Project"
       expect(page).to have_content "Investment created successfully"
 
       email = open_last_email

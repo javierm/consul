@@ -501,13 +501,13 @@ describe "Users" do
 
         visit user_path(user, filter: "follows")
 
-        expect(page).to have_link("Investments", href: "#investments")
+        expect(page).to have_link("Projects", href: "#projects")
       end
 
       scenario "Not display budget investment tab when user is not following any budget investment" do
         visit user_path(user, filter: "follows")
 
-        expect(page).not_to have_link("Investments", href: "#investments")
+        expect(page).not_to have_link("Projects", href: "#projects")
       end
 
       scenario "Display budget investment with link to budget investment" do
@@ -515,7 +515,7 @@ describe "Users" do
         budget_investment = create(:budget_investment, author: user, followers: [user])
 
         visit user_path(user, filter: "follows")
-        click_link "Investments"
+        click_link "Projects"
 
         expect(page).to have_link budget_investment.title
       end

@@ -48,7 +48,7 @@ describe "Public area translatable records" do
       fill_in_ckeditor "Description", with: "Contenu en Français"
 
       check "budget_investment_terms_of_service"
-      click_button "Create Investment"
+      click_button "Create Project"
 
       expect(page).to have_content "Budget Investment created successfully"
     end
@@ -76,7 +76,7 @@ describe "Public area translatable records" do
       fill_in_ckeditor "Description", with: "Contenu en Français"
 
       check "budget_investment_terms_of_service"
-      click_button "Create Investment"
+      click_button "Create Project"
 
       expect(page).to have_content "Budget Investment created successfully"
     end
@@ -98,7 +98,7 @@ describe "Public area translatable records" do
       click_link "Remove language"
 
       check "budget_investment_terms_of_service"
-      click_button "Create Investment"
+      click_button "Create Project"
 
       expect(page).to have_css "#error_explanation"
       expect(page).to have_field "Title", with: ""

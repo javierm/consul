@@ -72,7 +72,7 @@ describe "Tags" do
 
     fill_in "budget_investment_tag_list", with: "#{tag_medio_ambiente.name}, #{tag_economia.name}"
 
-    click_button "Create Investment"
+    click_button "Create Project"
 
     expect(page).to have_content "Investment created successfully."
     expect(page).to have_content tag_economia.name
@@ -89,7 +89,7 @@ describe "Tags" do
     check "budget_investment_terms_of_service"
 
     find(".js-add-tag-link", text: tag_economia.name).click
-    click_button "Create Investment"
+    click_button "Create Project"
 
     expect(page).to have_content "Investment created successfully."
     expect(page).to have_content "Build a skyscraper"
@@ -106,14 +106,14 @@ describe "Tags" do
 
     login_as(author)
     visit budget_path(budget)
-    click_link "Create a budget investment"
+    click_link "Submit a project proposal"
 
     fill_in "Title", with: "Build a skyscraper"
     fill_in_ckeditor "Description", with: "If I had a gym near my place I could go do Zumba"
     check "budget_investment_terms_of_service"
 
     find(".js-add-tag-link", text: "Education").click
-    click_button "Create Investment"
+    click_button "Create Project"
 
     expect(page).to have_content "Investment created successfully."
     expect(page).to have_content "Build a skyscraper"
@@ -130,14 +130,14 @@ describe "Tags" do
 
     login_as(author)
     visit budget_investments_path(budget, heading_id: heading.id)
-    click_link "Create a budget investment"
+    click_link "Submit a project proposal"
 
     fill_in "Title", with: "Build a skyscraper"
     fill_in_ckeditor "Description", with: "If I had a gym near my place I could go do Zumba"
     check "budget_investment_terms_of_service"
 
     find(".js-add-tag-link", text: "Education").click
-    click_button "Create Investment"
+    click_button "Create Project"
 
     expect(page).to have_content "Investment created successfully."
     expect(page).to have_content "Build a skyscraper"
@@ -159,7 +159,7 @@ describe "Tags" do
 
     fill_in "budget_investment_tag_list", with: "Impuestos, Economía, Hacienda, Sanidad, Educación, Política, Igualdad"
 
-    click_button "Create Investment"
+    click_button "Create Project"
 
     expect(page).to have_content error_message
     expect(page).to have_content "tags must be less than or equal to 6"
@@ -176,7 +176,7 @@ describe "Tags" do
 
     fill_in "budget_investment_tag_list", with: "user_id=1, &a=3, <script>alert('hey');</script>"
 
-    click_button "Create Investment"
+    click_button "Create Project"
 
     expect(page).to have_content "Investment created successfully."
     expect(page).to have_content "user_id1"

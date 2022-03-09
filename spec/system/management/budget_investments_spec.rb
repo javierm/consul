@@ -13,8 +13,8 @@ describe "Budget Investments" do
                   "new_management_budget_investment_path",
                   { "budget_id": "budget_id" },
                   "documentable_fill_new_valid_budget_investment",
-                  "Create Investment",
-                  "Investment created successfully.",
+                  "Create Project",
+                  "Project created successfully.",
                   management: true
 
   it_behaves_like "nested imageable",
@@ -22,8 +22,8 @@ describe "Budget Investments" do
                   "new_management_budget_investment_path",
                   { "budget_id": "budget_id" },
                   "imageable_fill_new_valid_budget_investment",
-                  "Create Investment",
-                  "Investment created successfully.",
+                  "Create Project",
+                  "Project created successfully.",
                   management: true
 
   it_behaves_like "mappable",
@@ -71,9 +71,9 @@ describe "Budget Investments" do
       fill_in "budget_investment_organization_name", with: "T.I.A."
       fill_in "budget_investment_tag_list", with: "green"
 
-      click_button "Create Investment"
+      click_button "Create Project"
 
-      expect(page).to have_content "Investment created successfully."
+      expect(page).to have_content "Project created successfully."
 
       expect(page).to have_content "Health"
       expect(page).to have_content "Build a park in my neighborhood"

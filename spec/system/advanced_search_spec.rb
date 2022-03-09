@@ -55,7 +55,7 @@ describe "Advanced search" do
     fill_in "Write the text", with: "Schwifty"
     click_button "Filter"
 
-    expect(page).to have_content("There are 2 investments")
+    expect(page).to have_content("There are 2 projects")
 
     within("#budget-investments") do
       expect(page).to have_content(bdgt_invest1.title)
@@ -128,7 +128,7 @@ describe "Advanced search" do
       select "Official position 3", from: "advanced_search_official_level"
       click_button "Filter"
 
-      expect(page).to have_content("There are 2 investments")
+      expect(page).to have_content("There are 2 projects")
 
       within("#budget-investments") do
         expect(page).to have_content(bdgt_invest1.title)
@@ -198,7 +198,7 @@ describe "Advanced search" do
           select "Last 24 hours", from: "js-advanced-search-date-min"
           click_button "Filter"
 
-          expect(page).to have_content("There are 2 investments")
+          expect(page).to have_content("There are 2 projects")
 
           within("#budget-investments") do
             expect(page).to have_content(bdgt_invest1.title)
@@ -258,7 +258,7 @@ describe "Advanced search" do
           select "Last year", from: "js-advanced-search-date-min"
           click_button "Filter"
 
-          expect(page).to have_content("There are 2 investments")
+          expect(page).to have_content("There are 2 projects")
 
           within("#budget-investments") do
             expect(page).to have_content(bdgt_invest1.title)
@@ -332,7 +332,7 @@ describe "Advanced search" do
 
         click_button "Filter"
 
-        expect(page).to have_content("There is 1 investment")
+        expect(page).to have_content("There is 1 project")
 
         within("#budget-investments") do
           expect(page).to have_content "Get Schwifty"
@@ -395,7 +395,7 @@ describe "Advanced search" do
         select "6. Clean Water and Sanitation", from: "By SDG"
         click_button "Filter"
 
-        expect(page).to have_content("There is 1 investment")
+        expect(page).to have_content("There is 1 project")
 
         within("#budget-investments") do
           expect(page).to have_content "Purifier"

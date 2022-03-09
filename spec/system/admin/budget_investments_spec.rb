@@ -147,7 +147,7 @@ describe "Admin budget investments", :admin do
       select "Admin 1", from: "administrator_id"
       click_button "Filter"
 
-      expect(page).to have_content("There is 1 investment")
+      expect(page).to have_content("There is 1 project")
       expect(page).not_to have_link("Destroy the city")
       expect(page).to have_link("Realocate visitors")
 
@@ -161,14 +161,14 @@ describe "Admin budget investments", :admin do
       select "All administrators", from: "administrator_id"
       click_button "Filter"
 
-      expect(page).to have_content("There are 2 investments")
+      expect(page).to have_content("There are 2 projects")
       expect(page).to have_link("Destroy the city")
       expect(page).to have_link("Realocate visitors")
 
       select "Admin 1", from: "administrator_id"
       click_button "Filter"
 
-      expect(page).to have_content("There is 1 investment")
+      expect(page).to have_content("There is 1 project")
       expect(page).not_to have_link("Destroy the city")
       expect(page).to have_link("Realocate visitors")
     end
@@ -188,20 +188,20 @@ describe "Admin budget investments", :admin do
       select "Valuator 1", from: "valuator_or_group_id"
       click_button "Filter"
 
-      expect(page).to have_content("There is 1 investment")
+      expect(page).to have_content("There is 1 project")
       expect(page).not_to have_link("Destroy the city")
       expect(page).to have_link("Realocate visitors")
 
       select "All valuators", from: "valuator_or_group_id"
       click_button "Filter"
 
-      expect(page).to have_content("There are 2 investments")
+      expect(page).to have_content("There are 2 projects")
       expect(page).to have_link("Destroy the city")
       expect(page).to have_link("Realocate visitors")
 
       select "Valuator 1", from: "valuator_or_group_id"
       click_button "Filter"
-      expect(page).to have_content("There is 1 investment")
+      expect(page).to have_content("There is 1 project")
       expect(page).not_to have_link("Destroy the city")
       expect(page).to have_link("Realocate visitors")
     end
@@ -220,21 +220,21 @@ describe "Admin budget investments", :admin do
       select "Health", from: "valuator_or_group_id"
       click_button "Filter"
 
-      expect(page).to have_content("There is 1 investment")
+      expect(page).to have_content("There is 1 project")
       expect(page).to have_link("Build a hospital")
       expect(page).not_to have_link("Build a theatre")
 
       select "All valuators", from: "valuator_or_group_id"
       click_button "Filter"
 
-      expect(page).to have_content("There are 2 investments")
+      expect(page).to have_content("There are 2 projects")
       expect(page).to have_link("Build a hospital")
       expect(page).to have_link("Build a theatre")
 
       select "Culture", from: "valuator_or_group_id"
       click_button "Filter"
 
-      expect(page).to have_content("There is 1 investment")
+      expect(page).to have_content("There is 1 project")
       expect(page).to have_link("Build a theatre")
       expect(page).not_to have_link("Build a hospital")
     end
@@ -256,14 +256,14 @@ describe "Admin budget investments", :admin do
       check("Without assigned admin")
       click_button "Filter"
 
-      expect(page).to have_content("There is 1 investment")
+      expect(page).to have_content("There is 1 project")
       expect(page).to have_link("Investment without admin")
       expect(page).not_to have_link("Investment with admin")
 
       uncheck("Without assigned admin")
       click_button "Filter"
 
-      expect(page).to have_content("There are 2 investments")
+      expect(page).to have_content("There are 2 projects")
       expect(page).to have_link("Investment without admin")
       expect(page).to have_link("Investment with admin")
     end
@@ -287,14 +287,14 @@ describe "Admin budget investments", :admin do
       check "Without assigned valuator"
       click_button "Filter"
 
-      expect(page).to have_content("There is 1 investment")
+      expect(page).to have_content("There is 1 project")
       expect(page).to have_link("Investment without valuator")
       expect(page).not_to have_link("Investment with valuator")
 
       uncheck "Without assigned valuator"
       click_button "Filter"
 
-      expect(page).to have_content("There are 2 investments")
+      expect(page).to have_content("There are 2 projects")
       expect(page).to have_link("Investment without valuator")
       expect(page).to have_link("Investment with valuator")
     end
@@ -321,14 +321,14 @@ describe "Admin budget investments", :admin do
       check "Under valuation"
       click_button "Filter"
 
-      expect(page).to have_content("There is 1 investment")
+      expect(page).to have_content("There is 1 project")
       expect(page).to have_link("Investment without valuation")
       expect(page).not_to have_link("Investment with valuation")
 
       uncheck "Under valuation"
       click_button "Filter"
 
-      expect(page).to have_content("There are 2 investments")
+      expect(page).to have_content("There are 2 projects")
       expect(page).to have_link("Investment without valuation")
       expect(page).to have_link("Investment with valuation")
     end
@@ -350,14 +350,14 @@ describe "Admin budget investments", :admin do
       check "Valuation finished"
       click_button "Filter"
 
-      expect(page).to have_content("There is 1 investment")
+      expect(page).to have_content("There is 1 project")
       expect(page).not_to have_link("Investment valuation open")
       expect(page).to have_link("Investment valuation finished")
 
       uncheck "Valuation finished"
       click_button "Filter"
 
-      expect(page).to have_content("There are 2 investments")
+      expect(page).to have_content("There are 2 projects")
       expect(page).to have_link("Investment valuation open")
       expect(page).to have_link("Investment valuation finished")
     end
@@ -380,14 +380,14 @@ describe "Admin budget investments", :admin do
       check "Winners"
       click_button "Filter"
 
-      expect(page).to have_content("There is 1 investment")
+      expect(page).to have_content("There is 1 project")
       expect(page).to have_link("Investment winner")
       expect(page).not_to have_link("Investment without winner")
 
       uncheck "Winners"
       click_button "Filter"
 
-      expect(page).to have_content("There are 2 investments")
+      expect(page).to have_content("There are 2 projects")
       expect(page).to have_link("Investment winner")
       expect(page).to have_link("Investment without winner")
     end
@@ -577,7 +577,7 @@ describe "Admin budget investments", :admin do
       fill_in "min_total_supports", with: 180
       click_button "Filter"
 
-      expect(page).to have_content("There are 3 investments")
+      expect(page).to have_content("There are 3 projects")
       expect(page).to have_link("Road 199 supports")
       expect(page).to have_link("St. 200 supports")
       expect(page).to have_link("St. 300 supports")
@@ -613,7 +613,7 @@ describe "Admin budget investments", :admin do
       fill_in "max_total_supports", with: 180
       click_button "Filter"
 
-      expect(page).to have_content("There are 3 investments")
+      expect(page).to have_content("There are 3 projects")
       expect(page).not_to have_link("Road 199 supports")
       expect(page).not_to have_link("St. 200 supports")
       expect(page).not_to have_link("St. 300 supports")
@@ -1507,7 +1507,7 @@ describe "Admin budget investments", :admin do
       within("#advanced_filters") { check("Selected") }
       click_button("Filter")
 
-      expect(page).to have_content("There are 2 investments")
+      expect(page).to have_content("There are 2 projects")
 
       within("#budget_investment_#{selected_bi.id}") do
         click_link("Selected")
@@ -1517,7 +1517,7 @@ describe "Admin budget investments", :admin do
 
       click_button("Filter")
       expect(page).not_to have_content(selected_bi.title)
-      expect(page).to have_content("There is 1 investment")
+      expect(page).to have_content("There is 1 project")
 
       visit admin_budget_budget_investments_path(budget)
 
