@@ -166,7 +166,7 @@ describe "Home" do
 
     visit root_path
 
-    expect(page).to have_css(".title", text: "Featured")
+    expect(page).to have_css(".title", text: "How it works")
   end
 
   scenario "if there are no cards, the 'featured' title will not render" do
