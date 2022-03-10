@@ -24,7 +24,13 @@ class Setting
       else
         consul_defaults.merge({
           # Overwrite default CONSUL settings or add new settings here
-          "feature.user.skip_verification": false
+          "feature.help_page": true,
+          "feature.sdg": false,
+          "feature.user.skip_verification": false,
+          "process.debates": false,
+          "process.proposals": false,
+          "process.polls": false,
+          "process.legislation": false
         })
       end
     end
