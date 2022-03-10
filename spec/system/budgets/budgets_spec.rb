@@ -371,7 +371,7 @@ describe "Budgets" do
 
       within(".investments-list") do
         expect(page).to have_content "List of investments"
-        expect(page).to have_content("SUPPORTS", count: 3)
+        expect(page).not_to have_content "SUPPORTS"
         expect(page).not_to have_content "PRICE"
       end
 
@@ -433,7 +433,7 @@ describe "Budgets" do
       expect(page).to have_content "So far you've supported 3 projects."
     end
 
-    scenario "Show supports only if the support has not been removed" do
+    scenario "Show supports only if the support has not been removed", :consul do
       voter = create(:user, :level_two)
       budget = create(:budget, phase: "selecting")
       investment = create(:budget_investment, :selected, budget: budget)

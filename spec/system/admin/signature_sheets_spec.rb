@@ -64,10 +64,6 @@ describe "Signature sheets", :admin do
       expect(page).to have_content "There is 1 valid signature"
       expect(page).to have_content "There is 1 vote created from the verified signatures"
       expect(page).to have_content "There are 2 invalid signatures"
-
-      visit budget_investment_path(budget, investment)
-
-      expect(page).to have_content "1 support"
     end
   end
 
@@ -106,10 +102,6 @@ describe "Signature sheets", :admin do
       click_button "Create signature sheet"
 
       expect(page).to have_content "Signature sheet created successfully"
-
-      visit budget_investment_path(budget, investment)
-
-      expect(page).to have_content "1 support"
     end
   end
 

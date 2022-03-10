@@ -22,7 +22,7 @@ describe Budgets::InvestmentComponent, type: :component do
     expect(page).to have_css "img[src*='budget_investment_no_image']"
   end
 
-  it "shows supports count when budget is valuating" do
+  it "shows supports count when budget is valuating", :consul do
     budget = create(:budget, :valuating)
     investment = create(:budget_investment, budget: budget)
     render_inline Budgets::InvestmentComponent.new(investment)

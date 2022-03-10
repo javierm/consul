@@ -152,11 +152,11 @@ describe Budget::Investment do
   end
 
   describe "#should_show_votes?" do
-    it "returns true in selecting phase" do
+    it "returns false in selecting phase" do
       budget = create(:budget, :selecting)
       investment = create(:budget_investment, budget: budget)
 
-      expect(investment.should_show_votes?).to eq(true)
+      expect(investment.should_show_votes?).to eq(false)
     end
 
     it "returns false in any other phase" do
@@ -170,11 +170,11 @@ describe Budget::Investment do
   end
 
   describe "#should_show_vote_count?" do
-    it "returns true in valuating phase" do
+    it "returns false in valuating phase" do
       budget = create(:budget, :valuating)
       investment = create(:budget_investment, budget: budget)
 
-      expect(investment.should_show_vote_count?).to eq(true)
+      expect(investment.should_show_vote_count?).to eq(false)
     end
 
     it "returns false in any other phase" do

@@ -263,7 +263,7 @@ describe "Budget Investments" do
     expect(page).not_to have_content(finished.name)
   end
 
-  context "Supporting" do
+  context "Supporting", :consul do
     scenario "Supporting budget investments on behalf of someone in index view" do
       budget_investment = create(:budget_investment, heading: heading)
 

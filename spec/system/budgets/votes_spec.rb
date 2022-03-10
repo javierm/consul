@@ -10,7 +10,7 @@ describe "Votes" do
 
     before { login_as(manuela) }
 
-    describe "Index" do
+    describe "Index", :consul do
       scenario "Index shows user votes on proposals" do
         investment1 = create(:budget_investment, heading: heading, voters: [manuela])
         investment2 = create(:budget_investment, heading: heading)
@@ -51,7 +51,7 @@ describe "Votes" do
       end
     end
 
-    describe "Single investment" do
+    describe "Single investment", :consul do
       let(:investment) { create(:budget_investment, heading: heading) }
 
       scenario "Show no votes" do
@@ -103,7 +103,7 @@ describe "Votes" do
       end
     end
 
-    context "Voting in multiple headings of a single group" do
+    context "Voting in multiple headings of a single group", :consul do
       let(:new_york) { heading }
       let(:san_francisco) { create(:budget_heading, group: group) }
       let(:third_heading) { create(:budget_heading, group: group) }
