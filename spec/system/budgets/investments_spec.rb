@@ -1486,7 +1486,7 @@ describe "Budget Investments" do
       visit budget_investments_path(budget, heading_id: heading.id, filter: "unselected")
 
       expect(page).to have_content investment.title
-      expect(page).not_to have_link("Vote")
+      within(".budget-investment") { expect(page).not_to have_link("Vote") }
     end
 
     scenario "Do not display vote button for unselected investments in show" do
@@ -1495,7 +1495,7 @@ describe "Budget Investments" do
       visit budget_investment_path(budget, investment)
 
       expect(page).to have_content investment.title
-      expect(page).not_to have_link("Vote")
+      within(".budget-investment-show") { expect(page).not_to have_link("Vote") }
     end
 
     describe "Reclassification" do
