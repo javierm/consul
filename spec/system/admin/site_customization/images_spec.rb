@@ -60,7 +60,7 @@ describe "Admin custom images", :admin do
     end
   end
 
-  scenario "Image is replaced on admin newsletters" do
+  scenario "Image is replaced on admin newsletters", :consul do
     newsletter = create(:newsletter, segment_recipient: "all_users")
 
     visit admin_site_customization_images_path
