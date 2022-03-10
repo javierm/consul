@@ -52,7 +52,7 @@
 
     <% if feature?(:budgets) %>
       <li>
-        <%= layout_menu_link_to "Proiecte Bugetare Participativa",
+        <%= layout_menu_link_to t("layouts.header.budget_projects"),
                                   "/budgets/2",
                                   controller_name == "budgets" || controller_name == "investments",
                                   accesskey: "2" %>
