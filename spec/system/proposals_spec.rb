@@ -913,10 +913,6 @@ describe "Proposals" do
         expect(page).not_to have_link("recommendations")
         expect(page).not_to have_css(".recommendation", count: 3)
         expect(page).to have_content("Recommendations for proposals are now disabled for this account")
-
-        visit account_path
-
-        expect(find("#account_recommended_proposals")).not_to be_checked
       end
     end
   end

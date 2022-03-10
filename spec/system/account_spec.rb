@@ -174,17 +174,15 @@ describe "Account" do
   end
 
   context "Recommendations" do
-    scenario "are enabled by default" do
+    scenario "are enabled by default", :consul do
       visit account_path
 
       expect(page).to have_content("Recommendations")
       expect(page).to have_content("Show debates recommendations")
       expect(page).to have_content("Show proposals recommendations")
-      expect(find("#account_recommended_debates")).to be_checked
-      expect(find("#account_recommended_proposals")).to be_checked
     end
 
-    scenario "can be disabled through 'My account' page" do
+    scenario "can be disabled through 'My account' page", :consul do
       visit account_path
 
       expect(page).to have_content("Recommendations")

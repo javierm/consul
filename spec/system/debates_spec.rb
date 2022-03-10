@@ -519,10 +519,6 @@ describe "Debates" do
         expect(page).not_to have_link("recommendations")
         expect(page).not_to have_css(".recommendation", count: 3)
         expect(page).to have_content("Recommendations for debates are now disabled for this account")
-
-        visit account_path
-
-        expect(find("#account_recommended_debates")).not_to be_checked
       end
     end
   end
