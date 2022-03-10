@@ -132,18 +132,12 @@ describe "Homepage", :admin do
     within("#widget_card_#{card1.id}") do
       expect(page).to have_content("CARD1 LABEL")
       expect(page).to have_content("CARD1 TEXT")
-      expect(page).to have_content("Card1 description")
-      expect(page).to have_content("Link1 text")
-      expect(page).to have_link(href: "consul1.dev")
       expect(page).to have_css("img[alt='#{card1.image.title}']")
     end
 
     within("#widget_card_#{card2.id}") do
       expect(page).to have_content("CARD2 LABEL")
       expect(page).to have_content("CARD2 TEXT")
-      expect(page).to have_content("Card2 description")
-      expect(page).to have_content("Link2 text")
-      expect(page).to have_link(href: "consul2.dev")
       expect(page).to have_css("img[alt='#{card2.image.title}']")
     end
   end
