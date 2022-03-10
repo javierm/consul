@@ -999,7 +999,7 @@ describe "Budget Investments" do
     expect(page).to have_content("This investment project has not been selected for balloting phase")
   end
 
-  scenario "Show title (no message)" do
+  scenario "Show title (no message)", :consul do
     investment = create(:budget_investment,
                         :feasible,
                         :finished,
