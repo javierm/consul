@@ -13,9 +13,12 @@ shared_examples "relationable" do |relationable_model_name|
       expect(page).to have_content related1.title
     end
 
-    visit related1.url
-    within("#related-content-list") do
-      expect(page).to have_content relationable.title
+    unless related1.is_a?(Budget::Investment)
+      visit related1.url
+
+      within("#related-content-list") do
+        expect(page).to have_content relationable.title
+      end
     end
   end
 
@@ -44,21 +47,23 @@ shared_examples "relationable" do |relationable_model_name|
       expect(page).to have_content related1.title
     end
 
-    visit related1.url
+    unless related1.is_a?(Budget::Investment)
+      visit related1.url
 
-    within("#related-content-list") do
-      expect(page).to have_content relationable.title
-    end
+      within("#related-content-list") do
+        expect(page).to have_content relationable.title
+      end
 
-    click_button "Add related content"
+      click_button "Add related content"
 
-    within("#related_content") do
-      fill_in "Link to related content", with: "#{url + related2.url}"
-      click_button "Add"
-    end
+      within("#related_content") do
+        fill_in "Link to related content", with: "#{url + related2.url}"
+        click_button "Add"
+      end
 
-    within("#related-content-list") do
-      expect(page).to have_content related2.title
+      within("#related-content-list") do
+        expect(page).to have_content related2.title
+      end
     end
   end
 
