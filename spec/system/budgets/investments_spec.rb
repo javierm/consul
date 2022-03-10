@@ -1625,7 +1625,7 @@ describe "Budget Investments" do
 
     context "Author actions section" do
       scenario "Is not shown if investment is not editable or does not have an image" do
-        budget.update!(phase: "reviewing")
+        budget.update!(phase: "balloting")
         investment = create(:budget_investment, heading: heading, author: author)
 
         login_as(author)
@@ -1651,8 +1651,8 @@ describe "Budget Investments" do
         end
       end
 
-      scenario "Contains remove image button in phases different from accepting" do
-        budget.update!(phase: "reviewing")
+      scenario "Contains remove image button in phases where investments can't be edited" do
+        budget.update!(phase: "balloting")
         investment = create(:budget_investment, :with_image, heading: heading, author: author)
 
         login_as(author)
