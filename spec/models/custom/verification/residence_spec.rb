@@ -4,7 +4,7 @@ describe Verification::Residence do
   let(:residence) { build(:verification_residence, document_number: "12345678Z") }
 
   describe "verification" do
-    describe "postal code" do
+    describe "postal code", :consul do
       it "is valid with postal codes starting with 280" do
         residence.postal_code = "28012"
         residence.valid?
