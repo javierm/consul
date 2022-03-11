@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe "Level two verification" do
-  scenario "Verification with residency and sms" do
+  scenario "Verification with residency and sms", :consul do
     create(:geozone)
     user = create(:user)
     login_as(user)

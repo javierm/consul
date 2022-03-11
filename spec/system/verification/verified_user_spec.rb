@@ -88,7 +88,7 @@ describe "Verified users" do
     expect(page).to have_current_path(account_path)
   end
 
-  scenario "Select a verified phone" do
+  scenario "Select a verified phone", :consul do
     user = create(:user,
                   residence_verified_at: Time.current,
                   document_number:       "12345678Z")

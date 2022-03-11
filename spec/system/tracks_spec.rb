@@ -51,7 +51,7 @@ describe "Tracking" do
       expect(page).to have_selector "[data-track-event-action='start_census']", visible: :all
     end
 
-    scenario "Verification: success census & start sms" do
+    scenario "Verification: success census & start sms", :consul do
       create(:geozone)
       user = create(:user)
       login_as(user)
@@ -68,7 +68,7 @@ describe "Tracking" do
       expect(page).to have_selector "[data-track-event-action='start_sms']", visible: :all
     end
 
-    scenario "Verification: success sms" do
+    scenario "Verification: success sms", :consul do
       create(:geozone)
       user = create(:user)
       login_as(user)
@@ -89,7 +89,7 @@ describe "Tracking" do
       expect(page).to have_selector "[data-track-event-action='success_sms']", visible: :all
     end
 
-    scenario "Verification: letter" do
+    scenario "Verification: letter", :consul do
       create(:geozone)
       user = create(:user)
       login_as(user)

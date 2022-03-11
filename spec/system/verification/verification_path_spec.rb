@@ -21,7 +21,7 @@ describe "Verification path" do
     expect(page).to have_content "Your account is already verified"
   end
 
-  scenario "User requested a letter" do
+  scenario "User requested a letter", :consul do
     user = create(:user, confirmed_phone: "623456789", residence_verified_at: Time.current,
                          letter_requested_at: Time.current, letter_verification_code: "666")
 
@@ -40,7 +40,7 @@ describe "Verification path" do
     expect(page).to have_current_path(account_path)
   end
 
-  scenario "User received a verification sms" do
+  scenario "User received a verification sms", :consul do
     user = create(:user, residence_verified_at: Time.current, unconfirmed_phone: "666666666", sms_confirmation_code: "666")
 
     login_as(user)
