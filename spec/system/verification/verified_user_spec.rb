@@ -65,7 +65,7 @@ describe "Verified users" do
     login_as(user)
     visit verified_user_path
 
-    expect(page).to have_current_path(new_sms_path)
+    expect(page).to have_current_path(account_path)
   end
 
   scenario "Select a verified email" do
@@ -130,6 +130,6 @@ describe "Verified users" do
     login_as(user)
     visit verified_user_path
 
-    expect(page).to have_current_path(new_sms_path)
+    expect(page).to have_current_path(account_path)
   end
 end
