@@ -206,10 +206,8 @@ describe "Budgets" do
 
     click_link "Custom name for accepting phase"
 
-    within("#phase-2-custom-name-for-accepting-phase") do
-      expect(page).to have_link "Previous phase", href: "#phase-1-custom-name-for-informing-phase"
-      expect(page).to have_link "Next phase", href: "#phase-3-custom-name-for-selecting-phase"
-    end
+    expect(page).not_to have_link "Previous phase"
+    expect(page).not_to have_link "Next phase"
 
     expect(page).to have_content "Description of accepting phase"
     expect(page).to have_content "January 01, 2018 - January 20, 2018"
