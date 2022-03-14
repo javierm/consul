@@ -24,7 +24,6 @@ ro:
       new:
         phone_note: Introduceți numărul dumneavoastră de telefon
         phone: Număr de telefon
-        phone_error: Număr de telefon invalid
 
     residence:
       new:
@@ -34,11 +33,7 @@ ro:
         help_needed: |
           Dacă întâmpini probleme cu procesul de verificare, contactează-ne: %{email}
         document_number_help_text: "<strong>Exemplu CNP: 2900411192534</strong>"
-        accept_terms_residence: "Declar pe proprie răspundere că am reședinta temporară sau permanentă în "
-        accept_terms_age: "Declar pe proprie răspundere că am împlinit 18 ani"
         document_number: Cod Numeric Personal (CNP)
-        accept_terms_all: |
-          Sunt de acord cu toate afirmațiile de mai jos
         accept_terms_adult: Declar pe proprie răspundere că am împlinit 18 ani
         accept_terms_resident: Declar pe proprie răspundere că am reședinta temporară sau permanentă în %{residence}
         accept_terms_terms: Accept %{terms_url} și %{privacy_url}
