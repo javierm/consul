@@ -56,6 +56,10 @@ class Verification::Residence
     end
   end
 
+  def local_postal_code
+    errors.add(:postal_code, I18n.t("verification.residence.new.error_not_allowed_postal_code")) unless valid_postal_code?
+  end
+
   def looks_like_cnp? doc_num
     is_number?(doc_num) && doc_num.size == 13 && doc_num[0] != '9'
   end
