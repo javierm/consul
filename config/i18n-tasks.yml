@@ -48,6 +48,7 @@ data:
     - config/locales/%{locale}/sdg.yml
     - config/locales/%{locale}/sdg_management.yml
     - config/locales/%{locale}/stats.yml
+    - config/locales/custom/*[^rails]*.yml
 
   # Locale files to write new keys to, based on a list of key pattern => file rules. Matched from top to bottom:
   # `i18n-tasks normalize -p` will force move the keys according to these rules
