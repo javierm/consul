@@ -29,7 +29,7 @@ class Welcome::FinancedDomainsComponent < ApplicationComponent
   end
 
   def translation(keys)
-    t ['welcome.financed_domains', CITY, *keys].join('.')
+    t("welcome.financed_domains.#{CITY}.#{Array(keys).join(".")}")
   end
 
   def bg_image
