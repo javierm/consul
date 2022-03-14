@@ -21,6 +21,8 @@ FactoryBot.define do
     date_of_birth    { Time.zone.local(1980, 12, 31).to_date }
     postal_code      { "28013" }
     terms_of_service { "1" }
+    adult { "1" }
+    resident { "1" }
 
     trait :invalid do
       postal_code { "28001" }
@@ -36,7 +38,7 @@ FactoryBot.define do
   end
 
   factory :verification_sms, class: "Verification::Sms" do
-    phone { "699999999" }
+    phone { "0745123456" }
   end
 
   factory :verification_letter, class: "Verification::Letter" do

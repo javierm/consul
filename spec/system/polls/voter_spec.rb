@@ -190,7 +190,7 @@ describe "Voter" do
       end
     end
 
-    scenario "Voting in poll and then verifiying account" do
+    scenario "Voting in poll and then verifiying account", :consul do
       user = create(:user)
 
       login_through_form_as_officer(officer.user)

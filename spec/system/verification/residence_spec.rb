@@ -3,7 +3,7 @@ require "rails_helper"
 describe "Residence" do
   before { create(:geozone) }
 
-  scenario "Verify resident" do
+  scenario "Verify resident", :consul do
     user = create(:user)
     login_as(user)
 
@@ -20,7 +20,7 @@ describe "Residence" do
     expect(page).to have_content "Residence verified"
   end
 
-  scenario "Verify resident throught RemoteCensusApi", :remote_census do
+  scenario "Verify resident throught RemoteCensusApi", :remote_census, :consul do
     user = create(:user)
     login_as(user)
     mock_valid_remote_census_response
@@ -38,7 +38,7 @@ describe "Residence" do
     expect(page).to have_content "Residence verified"
   end
 
-  scenario "Residence form use min age to participate" do
+  scenario "Residence form use min age to participate", :consul do
     min_age = (Setting["min_age_to_participate"] = 16).to_i
     underage = min_age - 1
     user = create(:user)
@@ -54,7 +54,7 @@ describe "Residence" do
   end
 
   scenario "When trying to verify a deregistered account old votes are reassigned" do
-    erased_user = create(:user, document_number: "12345678Z", document_type: "1", erased_at: Time.current)
+    erased_user = create(:user, document_number: "7010101890123", document_type: nil, erased_at: Time.current)
     vote = create(:vote, voter: erased_user)
     new_user = create(:user)
 
@@ -63,19 +63,19 @@ describe "Residence" do
     visit account_path
     click_link "Verify my account"
 
-    fill_in "residence_document_number", with: "12345678Z"
-    select "DNI", from: "residence_document_type"
-    select_date "31-December-1980", from: "residence_date_of_birth"
-    fill_in "residence_postal_code", with: "28013"
+    fill_in "residence_document_number", with: "7010101890123"
+    fill_in "verification_sms_phone", with: "1234567890"
     check "residence_terms_of_service"
+    check "residence_adult"
+    check "residence_resident"
 
     click_button "Verify residence"
 
-    expect(page).to have_content "Residence verified"
+    expect(page).to have_content "Your account is now verified"
 
     expect(vote.reload.voter).to eq(new_user)
     expect(erased_user.reload.document_number).to be_blank
-    expect(new_user.reload.document_number).to eq("12345678Z")
+    expect(new_user.reload.document_number).to eq("7010101890123")
   end
 
   scenario "Error on verify" do
@@ -90,7 +90,7 @@ describe "Residence" do
     expect(page).to have_content(/prevented the verification of your residence/)
   end
 
-  scenario "Error on postal code not in census" do
+  scenario "Error on postal code not in census", :consul do
     user = create(:user)
     login_as(user)
 
@@ -110,7 +110,7 @@ describe "Residence" do
     expect(page).to have_content "In order to be verified, you must be registered"
   end
 
-  scenario "Error on census" do
+  scenario "Error on census", :consul do
     user = create(:user)
     login_as(user)
 
@@ -130,7 +130,7 @@ describe "Residence" do
     expect(page).to have_content "The Census was unable to verify your information"
   end
 
-  scenario "5 tries allowed" do
+  scenario "5 tries allowed", :consul do
     user = create(:user)
     login_as(user)
 

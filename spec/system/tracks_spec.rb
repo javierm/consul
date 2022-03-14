@@ -28,14 +28,7 @@ describe "Tracking" do
 
       verify_residence
 
-      fill_in "sms_phone", with: "611111111"
-      click_button "Send"
-
-      user = user.reload
-      fill_in "sms_confirmation_code", with: user.sms_confirmation_code
-      click_button "Send"
-
-      expect(page.html).to include "level_2_user"
+      expect(page.html).to include "level_3_user"
     end
   end
 

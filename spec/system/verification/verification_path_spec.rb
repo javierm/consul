@@ -89,12 +89,17 @@ describe "Verification path" do
 
     login_as(user)
 
-    verification_paths = [new_residence_path, verified_user_path, new_letter_path]
+    verification_paths = [new_residence_path, verified_user_path]
     verification_paths.each do |step_path|
       visit step_path
 
       expect(page).to have_current_path(account_path)
       expect(page).to have_content "Your account is already verified"
     end
+
+    visit new_letter_path
+
+    expect(page).to have_current_path(account_path)
+    expect(page).to have_content "Account verified"
   end
 end

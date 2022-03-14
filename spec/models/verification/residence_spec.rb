@@ -2,14 +2,14 @@ require "rails_helper"
 
 describe Verification::Residence do
   let!(:geozone) { create(:geozone, census_code: "01") }
-  let(:residence) { build(:verification_residence, document_number: "12345678Z") }
+  let(:residence) { build(:verification_residence, document_number: "7010101890123") }
 
   describe "validations" do
     it "is valid" do
       expect(residence).to be_valid
     end
 
-    describe "dates" do
+    describe "dates", :consul do
       it "is valid with a valid date of birth" do
         residence = Verification::Residence.new("date_of_birth(3i)" => "1", "date_of_birth(2i)" => "1", "date_of_birth(1i)" => "1980")
 
@@ -23,7 +23,7 @@ describe Verification::Residence do
       end
     end
 
-    it "validates user has allowed age" do
+    it "validates user has allowed age", :consul do
       residence = Verification::Residence.new("date_of_birth(3i)" => "1",
                                       "date_of_birth(2i)" => "1",
                                       "date_of_birth(1i)" => 5.years.ago.year.to_s)
@@ -48,7 +48,7 @@ describe Verification::Residence do
     end
   end
 
-  describe "new" do
+  describe "new", :consul do
     it "upcases document number" do
       residence = Verification::Residence.new(document_number: "x1234567z")
       expect(residence.document_number).to eq("X1234567Z")
@@ -61,7 +61,7 @@ describe Verification::Residence do
   end
 
   describe "save" do
-    it "stores document number, document type, geozone, date of birth and gender" do
+    it "stores document number, document type, geozone, date of birth and gender", :consul do
       user = create(:user)
       residence.user = user
       residence.save!
@@ -77,7 +77,7 @@ describe Verification::Residence do
     end
   end
 
-  describe "tries" do
+  describe "tries", :consul do
     it "increases tries after a call to the Census" do
       residence.postal_code = "28011"
       residence.valid?
@@ -91,7 +91,7 @@ describe Verification::Residence do
     end
   end
 
-  describe "Failed census call" do
+  describe "Failed census call", :consul do
     it "stores failed census API calls" do
       residence = build(:verification_residence, :invalid, document_number: "12345678Z")
       residence.save

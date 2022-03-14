@@ -26,4 +26,19 @@ describe Verification::Residence do
       end
     end
   end
+
+  describe "save" do
+    let(:residence) { build(:verification_residence, document_number: "7010101890123") }
+
+    it "stores document number and gender" do
+      user = create(:user)
+      residence.user = user
+      residence.save!
+
+      user.reload
+      expect(user.document_number).to eq("7010101890123")
+      expect(user.document_type).to eq("1")
+      expect(user.gender).to eq("male")
+    end
+  end
 end

@@ -78,11 +78,10 @@ describe "Stats", :admin do
       visit account_path
       click_link "Verify my account"
       verify_residence
-      confirm_phone
 
       visit admin_stats_path
 
-      expect(page).to have_content "LEVEL TWO USERS\n1"
+      expect(page).to have_content "LEVEL THREE USERS\n1"
     end
   end
 

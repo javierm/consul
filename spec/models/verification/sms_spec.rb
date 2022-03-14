@@ -7,12 +7,12 @@ describe Verification::Sms do
   end
 
   it "validates uniqness of phone" do
-    create(:user, confirmed_phone: "699999999")
-    sms = Verification::Sms.new(phone: "699999999")
+    create(:user, confirmed_phone: "0745123456")
+    sms = Verification::Sms.new(phone: "0745123456")
     expect(sms).not_to be_valid
   end
 
-  it "only allows spaces, numbers and the + sign" do
+  it "only allows spaces, numbers and the + sign", :consul do
     expect(build(:verification_sms, phone: "0034 666666666")).to be_valid
     expect(build(:verification_sms, phone: "+34 666666666")).to be_valid
     expect(build(:verification_sms, phone: "hello there")).not_to be_valid
