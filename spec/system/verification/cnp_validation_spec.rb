@@ -25,7 +25,7 @@ describe "CNP" do
     document_number = "1870113780091"
     email = "foo@bar.com"
     phone_number = "0745123456"
-    user = create(:user, document_number: document_number, email: email, phone_number: phone_number)
+    user = create(:user, document_number: document_number, email: email, confirmed_phone: phone_number)
     admin = create(:administrator)
     login_as(admin.user)
 
