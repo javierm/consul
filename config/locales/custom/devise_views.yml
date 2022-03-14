@@ -1,13 +1,9 @@
 ro:
-  sessions:
+  devise_views:
+    sessions:
       new:
         submit: Conectare
-  shared:
-      links:
-        login: Conectare
-        signup_link: Înregistrați-vă
-
-  devise_views:
     shared:
       links:
+        login: Conectare
         signup_link: Creați un cont.

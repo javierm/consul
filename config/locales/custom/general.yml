@@ -64,8 +64,7 @@ en:
     not_saved: "errors prevented this %{resource} from being saved. <br>Please check the marked fields to know how to correct them:"
   investment_help_text: Specifică obiectivele proiectului formulate SMART (Specific, Măsurabil, Abordabil, Relevant, încadrat în Timp), publicul țintă căruia i se adresează, descriere calitativă și cantitativă, impactul pe care preconizezi că il va avea proiectul (câți oameni și în ce fel vor beneficia de acest proiect) și bugetul estimat. Dacă ai un buget detaliat, te rugăm să îl încarci în secțiunea de Documente.
   shared:
-    translations:
-      required: "Fill in the form"
+    required: "Fill in the form"
 
   layouts:
     footer:

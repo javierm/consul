@@ -4,6 +4,6 @@ ro:
       header:
         create: "Creează antet"
       create_card: "Creează un card %{phase}"
-  local_targets:
-    index:
-      new: "Creează o țintă locală"
+    local_targets:
+      index:
+        new: "Creează o țintă locală"
