@@ -14,3 +14,6 @@ load Rails.root.join("db", "pages.rb")
 
 # Sustainable Development Goals
 load Rails.root.join("db", "sdg.rb")
+
+# Innoviris open survey
+load Rails.root.join("db", "polls.rb") unless Rails.env.test?
