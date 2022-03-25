@@ -2,3 +2,20 @@
 //
 // You can also create SCSS files in the app/assets/stylesheets/custom/
 // folder and they will be loaded automatically.
+
+.poll-answers-form {
+  .help-text {
+    display: block;
+    font-size: 1rem;
+    margin: 10px 0;
+  }
+
+  .question-answer {
+    display: flex;
+    margin-bottom: 0.5rem;
+  }
+
+  [type="radio"] {
+    margin-bottom: 0;
+  }
+}

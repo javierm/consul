@@ -1,0 +1,5 @@
+en:
+  polls:
+    answers:
+      create:
+        success_notice: "Poll saved successfully!"
