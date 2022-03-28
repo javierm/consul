@@ -13,7 +13,9 @@
       <% end %>
       <%= errors_for :answer_id %>
     <% else %>
-      <%= answer_form.text_field :open_answer, label: question.title, disabled: question.poll.expired? %>
+      <%= answer_form.text_field :open_answer, label: question.title,
+                                               hint: question.description,
+                                               disabled: question.poll.expired? %>
     <% end %>
   <% end %>
 </fieldset>
