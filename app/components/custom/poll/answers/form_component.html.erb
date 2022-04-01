@@ -1,6 +1,7 @@
 <%= form_with url: answer_poll_path(poll), id: "#{dom_id(poll)}_answers", local: true, class: "poll-answers-form" do |f| %>
   <%= f.invisible_captcha :title %>
   <%= hidden_field_tag :token, token, class: "js-poll-answers-form-token" %>
+  <%= render ErrorsComponent.new(error_message) %>
   <% questions.each do |question| %>
     <%= render Poll::Question::FieldsComponent.new(f, question, question_answer(question)) %>
   <% end %>

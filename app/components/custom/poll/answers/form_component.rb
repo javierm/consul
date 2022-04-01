@@ -15,4 +15,10 @@ class Poll::Answers::FormComponent < ApplicationComponent
   def question_answer(question)
     answers.find { |answer| answer.question == question }
   end
+
+  def error_message
+    count = answers.select { |a| a.errors.any? }.map(&:errors).flatten.count
+
+    I18n.t("polls.answers.form.error", count: count) if count > 0
+  end
 end

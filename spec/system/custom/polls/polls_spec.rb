@@ -247,5 +247,15 @@ describe "Polls" do
       expect(page).to have_content "Sorry, that was too quick! Please resubmit"
       expect(page).to have_current_path(poll_path(poll))
     end
+
+    scenario "Shows errors on create" do
+      create(:poll_question, poll: poll, mandatory_answer: true)
+      visit poll_path(poll)
+
+      click_button "Send"
+
+      expect(page).to have_content "1 error prevented your answers from being saved. Please check the " \
+                                   "marked field to know how to correct it:"
+    end
   end
 end
