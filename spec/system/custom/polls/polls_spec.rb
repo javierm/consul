@@ -219,4 +219,33 @@ describe "Polls" do
       end
     end
   end
+
+  describe "Answer" do
+    let(:poll) { create(:poll) }
+    let(:user) { create(:user, :verified) }
+
+    before do
+      login_as(user)
+    end
+
+    scenario "Answer poll with invisible_captcha honeypot field", :no_js do
+      visit poll_path(poll)
+      fill_in :title, with: "I am a bot"
+      click_button "Send"
+
+      expect(page.status_code).to eq(200)
+      expect(page.html).to be_empty
+      expect(page).to have_current_path(answer_poll_path(poll))
+    end
+
+    scenario "Answer poll too fast" do
+      allow(InvisibleCaptcha).to receive(:timestamp_threshold).and_return(Float::INFINITY)
+
+      visit poll_path(poll)
+      click_button "Send"
+
+      expect(page).to have_content "Sorry, that was too quick! Please resubmit"
+      expect(page).to have_current_path(poll_path(poll))
+    end
+  end
 end

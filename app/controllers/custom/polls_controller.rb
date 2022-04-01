@@ -8,6 +8,8 @@ class PollsController < ApplicationController
   before_action :set_token, only: [:answer, :show]
   before_action :set_commentable, only: [:answer, :show]
 
+  invisible_captcha only: [:answer], honeypot: :title
+
   def show
   end
 
