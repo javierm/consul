@@ -111,7 +111,7 @@
     </div>
   </div>
 
-  <% if !current_user&.guest? %>
+  <% if Rails.env.test? %>
     <div class="tabs-content" data-tabs-content="polls_tabs">
       <%= render "filter_subnav" %>
 
