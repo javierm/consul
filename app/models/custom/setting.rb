@@ -24,6 +24,9 @@ class Setting
       else
         consul_defaults.merge({
           # Overwrite default CONSUL settings or add new settings here
+          "homepage.widgets.feeds.debates": false,
+          "homepage.widgets.feeds.processes": false,
+          "homepage.widgets.feeds.proposals": false,
           "feature.facebook_login": false,
           "feature.google_login": false,
           "feature.twitter_login": false,
