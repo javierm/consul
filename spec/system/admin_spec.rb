@@ -1,71 +1,32 @@
 require "rails_helper"
 
 describe "Admin" do
-  let(:user) { create(:user) }
-
-  scenario "Access as regular user is not authorized" do
-    login_as(user)
-    visit admin_root_path
-
-    expect(page).not_to have_current_path(admin_root_path)
-    expect(page).to have_current_path(root_path)
-    expect(page).to have_content "You do not have permission to access this page"
-  end
-
-  scenario "Access as moderator is not authorized" do
-    create(:moderator, user: user)
-    login_as(user)
-    visit admin_root_path
-
-    expect(page).not_to have_current_path(admin_root_path)
-    expect(page).to have_current_path(root_path)
-    expect(page).to have_content "You do not have permission to access this page"
-  end
-
-  scenario "Access as valuator is not authorized" do
-    create(:valuator, user: user)
-    login_as(user)
-    visit admin_root_path
-
-    expect(page).not_to have_current_path(admin_root_path)
-    expect(page).to have_current_path(root_path)
-    expect(page).to have_content "You do not have permission to access this page"
-  end
-
-  scenario "Access as manager is not authorized" do
-    create(:manager, user: user)
-    login_as(user)
-    visit admin_root_path
-
-    expect(page).not_to have_current_path(admin_root_path)
-    expect(page).to have_current_path(root_path)
-    expect(page).to have_content "You do not have permission to access this page"
-  end
-
-  scenario "Access as SDG manager is not authorized" do
-    create(:sdg_manager, user: user)
-    login_as(user)
-    visit admin_root_path
-
-    expect(page).not_to have_current_path(admin_root_path)
-    expect(page).to have_current_path(root_path)
-    expect(page).to have_content "You do not have permission to access this page"
-  end
-
-  scenario "Access as poll officer is not authorized" do
-    login_as(create(:poll_officer).user)
-    visit admin_root_path
-
-    expect(page).not_to have_current_path(admin_root_path)
-    expect(page).to have_current_path(root_path)
-    expect(page).to have_content "You do not have permission to access this page"
-  end
-
   scenario "Access as administrator is authorized", :admin do
     visit admin_root_path
 
     expect(page).to have_current_path(admin_root_path)
     expect(page).not_to have_content "You do not have permission to access this page"
+  end
+
+  scenario "Access as other roles is not authorized" do
+    unauthorized = [
+      create(:user),
+      create(:moderator).user,
+      create(:valuator).user,
+      create(:manager).user,
+      create(:sdg_manager).user,
+      create(:poll_officer).user
+    ]
+
+    unauthorized.each do |user|
+      login_as(user)
+
+      visit admin_root_path
+
+      expect(page).not_to have_current_path(admin_root_path)
+      expect(page).to have_current_path(root_path)
+      expect(page).to have_content "You do not have permission to access this page"
+    end
   end
 
   scenario "Admin access links", :admin do
