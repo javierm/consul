@@ -36,8 +36,7 @@ describe "Users" do
       scenario "sign in with email" do
         create(:user, email: "manuela@consul.dev", password: "judgementday")
 
-        visit "/"
-        click_link "Sign in"
+        visit new_user_session_path
         fill_in "Email or username", with: "manuela@consul.dev"
         fill_in "Password", with: "judgementday"
         click_button "Enter"
@@ -48,8 +47,7 @@ describe "Users" do
       scenario "Sign in with username" do
         create(:user, username: "中村広", email: "ash@nostromo.dev", password: "xenomorph")
 
-        visit "/"
-        click_link "Sign in"
+        visit new_user_session_path
         fill_in "Email or username", with: "中村広"
         fill_in "Password", with: "xenomorph"
         click_button "Enter"
@@ -61,8 +59,7 @@ describe "Users" do
         u1 = create(:user, username: "Spidey", email: "peter@nyc.dev", password: "greatpower")
         u2 = create(:user, username: "peter@nyc.dev", email: "venom@nyc.dev", password: "symbiote")
 
-        visit "/"
-        click_link "Sign in"
+        visit new_user_session_path
         fill_in "Email or username", with: "peter@nyc.dev"
         fill_in "Password", with: "greatpower"
         click_button "Enter"
@@ -246,8 +243,7 @@ describe "Users" do
         confirm_email
         expect(page).to have_content "Your account has been confirmed"
 
-        visit "/"
-        click_link "Sign in"
+        visit new_user_session_path
         click_link "Sign in with Twitter"
         expect_to_be_signed_in
 
@@ -276,8 +272,7 @@ describe "Users" do
         confirm_email
         expect(page).to have_content "Your account has been confirmed"
 
-        visit "/"
-        click_link "Sign in"
+        visit new_user_session_path
         click_link "Sign in with Twitter"
         expect_to_be_signed_in
 
@@ -309,8 +304,7 @@ describe "Users" do
         create(:identity, uid: "12345", provider: "twitter", user: user)
         OmniAuth.config.add_mock(:twitter, twitter_hash)
 
-        visit "/"
-        click_link "Sign in"
+        visit new_user_session_path
         click_link "Sign in with Twitter"
 
         expect_to_be_signed_in
@@ -373,8 +367,7 @@ describe "Users" do
 
         expect(page).to have_content "Your account has been confirmed"
 
-        visit "/"
-        click_link "Sign in"
+        visit new_user_session_path
         click_link "Sign in with Twitter"
 
         within("#notice") { click_button "Close" }
@@ -408,8 +401,7 @@ describe "Users" do
         confirm_email
         expect(page).to have_content "Your account has been confirmed"
 
-        visit "/"
-        click_link "Sign in"
+        visit new_user_session_path
         click_link "Sign in with Twitter"
         expect_to_be_signed_in
 
@@ -441,8 +433,7 @@ describe "Users" do
         confirm_email
         expect(page).to have_content "Your account has been confirmed"
 
-        visit "/"
-        click_link "Sign in"
+        visit new_user_session_path
         click_link "Sign in with Twitter"
         expect_to_be_signed_in
 
@@ -481,8 +472,7 @@ describe "Users" do
         confirm_email
         expect(page).to have_content "Your account has been confirmed"
 
-        visit "/"
-        click_link "Sign in"
+        visit new_user_session_path
         click_link "Sign in with Wordpress"
         expect_to_be_signed_in
 
@@ -521,8 +511,7 @@ describe "Users" do
         confirm_email
         expect(page).to have_content "Your account has been confirmed"
 
-        visit "/"
-        click_link "Sign in"
+        visit new_user_session_path
         click_link "Sign in with Wordpress"
 
         expect_to_be_signed_in
@@ -551,8 +540,7 @@ describe "Users" do
   scenario "Reset password" do
     create(:user, email: "manuela@consul.dev")
 
-    visit "/"
-    click_link "Sign in"
+    visit new_user_session_path
     click_link "Forgotten your password?"
 
     fill_in "Email", with: "manuela@consul.dev"
@@ -573,8 +561,7 @@ describe "Users" do
   end
 
   scenario "Reset password with unexisting email" do
-    visit "/"
-    click_link "Sign in"
+    visit new_user_session_path
     click_link "Forgotten your password?"
 
     fill_in "Email", with: "fake@mail.dev"
@@ -587,8 +574,7 @@ describe "Users" do
   scenario "Re-send confirmation instructions" do
     create(:user, email: "manuela@consul.dev")
 
-    visit "/"
-    click_link "Sign in"
+    visit new_user_session_path
     click_link "Haven't received instructions to activate your account?"
 
     fill_in "Email", with: "manuela@consul.dev"
@@ -600,8 +586,7 @@ describe "Users" do
   end
 
   scenario "Re-send confirmation instructions with unexisting email" do
-    visit "/"
-    click_link "Sign in"
+    visit new_user_session_path
     click_link "Haven't received instructions to activate your account?"
 
     fill_in "Email", with: "fake@mail.dev"

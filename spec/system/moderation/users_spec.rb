@@ -40,9 +40,7 @@ describe "Moderate users" do
 
     click_link("Sign out")
 
-    visit root_path
-
-    click_link "Sign in"
+    visit new_user_session_path
     fill_in "user_login",    with: citizen.email
     fill_in "user_password", with: citizen.password
     click_button "Enter"

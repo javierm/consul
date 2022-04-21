@@ -71,8 +71,7 @@ describe "Account" do
     visit_in_email("Confirm my account")
 
     logout
-    visit root_path
-    click_link "Sign in"
+    visit new_user_session_path
     fill_in "user_login", with: "new_user_email@example.com"
     fill_in "user_password", with: "new_password"
     click_button "Enter"
