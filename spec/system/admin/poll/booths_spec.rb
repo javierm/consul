@@ -14,15 +14,10 @@ describe "Admin booths", :admin do
 
   scenario "Index" do
     3.times { create(:poll_booth) }
-
-    visit admin_root_path
-
-    within("#side_menu") do
-      click_link "Voting booths"
-      click_link "Booths location"
-    end
-
     booths = Poll::Booth.all
+
+    visit admin_booths_path
+
     booths.each do |booth|
       within("#booth_#{booth.id}") do
         expect(page).to have_content booth.name

@@ -130,12 +130,7 @@ describe "Admin banners magement", :admin do
                     background_color: "#FF0000",
                     font_color: "#FFFFFF")
 
-    visit admin_root_path
-
-    within("#side_menu") do
-      click_link "Site content"
-      click_link "Manage banners"
-    end
+    visit admin_banners_path
 
     click_link "Edit"
 

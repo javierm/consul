@@ -19,17 +19,9 @@ describe "Admin legislation draft versions", :admin do
 
   context "Create" do
     scenario "Valid legislation draft version" do
-      create(:legislation_process, title: "An example legislation process")
+      process = create(:legislation_process, title: "An example legislation process")
 
-      visit admin_root_path
-
-      within("#side_menu") do
-        click_link "Collaborative Legislation"
-      end
-
-      within("tr", text: "An example legislation process") { click_link "Edit" }
-      click_link "Drafting"
-
+      visit admin_legislation_process_draft_versions_path(process)
       click_link "Create version"
 
       fill_in "Version title", with: "Version 3"
@@ -47,23 +39,9 @@ describe "Admin legislation draft versions", :admin do
 
   context "Update" do
     scenario "Valid legislation draft version" do
-      process = create(:legislation_process, title: "An example legislation process")
-      create(:legislation_draft_version, title: "Version 1", process: process)
+      version = create(:legislation_draft_version, title: "Version 1")
 
-      visit admin_root_path
-
-      within("#side_menu") do
-        click_link "Collaborative Legislation"
-      end
-
-      click_link "All"
-
-      expect(page).not_to have_link "All"
-
-      within("tr", text: "An example legislation process") { click_link "Edit" }
-      click_link "Drafting"
-
-      click_link "Version 1"
+      visit edit_admin_legislation_process_draft_version_path(version.process, version)
 
       fill_in "Version title", with: "Version 1b"
       fill_in_markdown_editor "Text", with: "# Version 1 body\r\n\r\nParagraph\r\n\r\n>Quote"

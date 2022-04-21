@@ -20,15 +20,9 @@ describe "Admin legislation questions", :admin do
 
   context "Create" do
     scenario "Valid legislation question" do
-      visit admin_root_path
+      visit edit_admin_legislation_process_path(process)
 
-      within("#side_menu") do
-        click_link "Collaborative Legislation"
-      end
-
-      within("tr", text: "An example legislation process") { click_link "Edit" }
       click_link "Debate"
-
       click_link "Create question"
 
       fill_in "Question", with: "Question 3"
@@ -42,18 +36,8 @@ describe "Admin legislation questions", :admin do
     scenario "Valid legislation question" do
       create(:legislation_question, title: "Question 2", process: process)
 
-      visit admin_root_path
+      visit admin_legislation_process_questions_path(process)
 
-      within("#side_menu") do
-        click_link "Collaborative Legislation"
-      end
-
-      click_link "All"
-
-      expect(page).not_to have_link "All"
-
-      within("tr", text: "An example legislation process") { click_link "Edit" }
-      click_link "Debate"
       click_link "Question 2"
 
       fill_in "Question", with: "Question 2b"

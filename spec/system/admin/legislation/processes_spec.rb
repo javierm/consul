@@ -118,15 +118,7 @@ describe "Admin collaborative legislation", :admin do
     end
 
     scenario "Legislation process in draft phase" do
-      visit admin_root_path
-
-      within("#side_menu") do
-        click_link "Collaborative Legislation"
-      end
-
-      expect(page).not_to have_content "An example legislation process"
-
-      click_link "New process"
+      visit new_admin_legislation_process_path
 
       fill_in "Process Title", with: "An example legislation process in draft phase"
       fill_in "Summary", with: "Summary of the process"
@@ -206,12 +198,7 @@ describe "Admin collaborative legislation", :admin do
     end
 
     scenario "Remove summary text" do
-      visit admin_root_path
-
-      within("#side_menu") do
-        click_link "Collaborative Legislation"
-      end
-
+      visit admin_legislation_processes_path
       within("tr", text: "An example legislation process") { click_link "Edit" }
 
       expect(page).to have_selector("h2", text: "An example legislation process")
@@ -229,13 +216,7 @@ describe "Admin collaborative legislation", :admin do
     end
 
     scenario "Deactivate draft publication" do
-      visit admin_root_path
-
-      within("#side_menu") do
-        click_link "Collaborative Legislation"
-      end
-
-      within("tr", text: "An example legislation process") { click_link "Edit" }
+      visit edit_admin_legislation_process_path(process)
 
       expect(find("#legislation_process_draft_publication_enabled")).to be_checked
 

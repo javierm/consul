@@ -60,12 +60,7 @@ describe "Admin custom pages", :admin do
     end
 
     scenario "Valid custom page" do
-      visit admin_root_path
-
-      within("#side_menu") do
-        click_link "Site content"
-        click_link "Custom pages"
-      end
+      visit admin_site_customization_pages_path
 
       within("tr", text: "An example custom page") { click_link "Edit" }
 

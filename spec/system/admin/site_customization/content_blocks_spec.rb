@@ -39,16 +39,7 @@ describe "Admin custom content blocks", :admin do
     scenario "Invalid custom block" do
       create(:site_customization_content_block)
 
-      visit admin_root_path
-
-      within("#side_menu") do
-        click_link "Settings"
-        click_link "Custom content blocks"
-      end
-
-      expect(page).to have_content "top_links (en)"
-
-      click_link "Create new content block"
+      visit new_admin_site_customization_content_block_path
 
       select I18n.t("admin.site_customization.content_blocks.content_block.names.top_links"),
                    from: "site_customization_content_block_name"
@@ -66,13 +57,7 @@ describe "Admin custom content blocks", :admin do
     scenario "Valid custom block" do
       create(:site_customization_content_block)
 
-      visit admin_root_path
-
-      within("#side_menu") do
-        click_link "Settings"
-        click_link "Custom content blocks"
-      end
-
+      visit admin_site_customization_content_blocks_path
       click_link "top_links (en)"
 
       fill_in "site_customization_content_block_body", with: "Some other custom content"

@@ -13,15 +13,13 @@ describe "Admin polls", :admin do
     poll_1 = create(:poll, name: "Poll first",  starts_at: 15.days.ago)
     poll_2 = create(:poll, name: "Poll second", starts_at: 1.month.ago)
     poll_3 = create(:poll, name: "Poll third",  starts_at: 2.days.ago)
+    polls = Poll.all
 
-    visit admin_root_path
-
-    click_link "Polls"
+    visit admin_polls_path
 
     expect(page).to have_content "List of polls"
     expect(page).to have_css ".poll", count: 3
 
-    polls = Poll.all
     polls.each do |poll|
       within("#poll_#{poll.id}") do
         expect(page).to have_content poll.name
