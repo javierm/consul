@@ -15,7 +15,7 @@ describe Users::ConfirmationsController do
 
       get :show, params: { user: user, confirmation_token: "token1" }
 
-      expect(flash[:notice]).to eq "You have already been verified; please attempt to sign in."
+      expect(flash[:alert]).to eq "You have already been verified; please attempt to sign in."
     end
   end
 end

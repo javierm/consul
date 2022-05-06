@@ -49,8 +49,7 @@ class Users::ConfirmationsController < Devise::ConfirmationsController
     elsif resource.errors.empty?
       set_official_position if resource.has_official_email?
 
-      if !resource.confirmed_at || resource.unconfirmed_email
-        resource.confirm # Last change: confirm happens here for people with passwords instead of af the top of the show action
+      if resource.confirm # Last change: confirm happens here for people with passwords instead of af the top of the show action
         set_flash_message(:notice, :confirmed) if is_flashing_format?
       else
         set_flash_message(:alert, :already_confirmed) if is_flashing_format?
