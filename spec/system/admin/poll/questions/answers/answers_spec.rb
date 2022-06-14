@@ -31,6 +31,16 @@ describe "Answers", :admin do
     expect("First").to appear_before("Second")
   end
 
+  scenario "Back link goes to poll show" do
+    question = create(:poll_question)
+
+    visit admin_question_path(question)
+
+    click_link "Go back"
+
+    expect(page).to have_current_path(admin_poll_path(question.poll))
+  end
+
   scenario "Update" do
     question = create(:poll_question)
     answer = create(:poll_question_answer, question: question, title: "Answer title", given_order: 2)
