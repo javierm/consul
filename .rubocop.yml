@@ -67,7 +67,7 @@ Layout/LeadingEmptyLines:
   Enabled: true
 
 Layout/LineLength:
-  Max: 2073
+  Max: 3073
   Severity: refactor
 
 Layout/MultilineBlockLayout:
