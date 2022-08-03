@@ -1,7 +1,7 @@
 (function() {
   "use strict";
   App.LegislationAnnotatable = {
-    makeEditableAndHighlight: function(colour) {
+    makeEditableAndHighlight: function( colour) {
       var range, sel;
       sel = window.getSelection();
       if (sel.rangeCount && sel.getRangeAt) {
