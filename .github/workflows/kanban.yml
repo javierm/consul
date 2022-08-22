@@ -24,4 +24,4 @@ jobs:
       with:
         project: "https://github.com/users/javierm/projects/4"
         column_name: "Doing"
-        position: "after:85157953"
+        position: "top"
