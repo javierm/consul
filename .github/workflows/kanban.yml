@@ -24,3 +24,4 @@ jobs:
       with:
         project: "https://github.com/users/javierm/projects/4"
         column_name: "Doing"
+        position: "after:card-85157953"
