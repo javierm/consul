@@ -8,14 +8,13 @@ env:
 jobs:
   assign_one_project:
     name: Add new pull requests to the kanban
-    if: github.repository_owner == 'consul'
     runs-on: ubuntu-latest
     steps:
     - name: Assign new pull requests to the reviewing column
       uses: andrenarchy/assign-one-project-github-action
       if: github.event.pull_request.draft == false
       with:
-        project: "https://github.com/orgs/consul/projects/1"
+        project: "https://github.com/users/javierm/projects/4"
         column_name: "Reviewing"
         position: "bottom"
 
@@ -23,5 +22,5 @@ jobs:
       uses: andrenarchy/assign-one-project-github-action
       if: github.event.pull_request.draft == true
       with:
-        project: "https://github.com/orgs/consul/projects/1"
+        project: "https://github.com/users/javierm/projects/4"
         column_name: "Doing"
