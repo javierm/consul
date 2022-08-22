@@ -1,9 +1,3 @@
-<!--
-  Title: CONSUL
-  Description: Aplicación de Participación Ciudadana y Gobierno Abierto
-  Keywords: democracia, participación ciudadana, participación electrónica, debates, propuestas, votaciones, consultas, legislación colaborativa, presupuestos participativos
--->
-
 ![Logotipo de CONSUL](https://raw.githubusercontent.com/consul/consul/master/public/consul_logo.png)
 
 # CONSUL
