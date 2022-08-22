@@ -1,6 +1,6 @@
 <%= form_tag(budget_executions_path(budget), method: :get, class: "budget-executions-filters") do %>
   <div class="filter">
-    <%= label_tag :milestone_tag, t("budgets.executions.filters.milestone_tag.label") %>
+    <%= label_tag :milestone_tag,t("budgets.executions.filters.milestone_tag.label") %>
     <%= select_tag :milestone_tag,
                   options_for_select(
                     options_for_milestone_tags,

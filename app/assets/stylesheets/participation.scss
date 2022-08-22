@@ -24,7 +24,8 @@
     height: rem-calc(14);
     position: relative;
 
-    .meter {
+    .meter
+    {
       background: $proposals;
       border-radius: 0;
       border-bottom-right-radius: rem-calc(3);
