@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Assign new pull requests to the reviewing column
-      uses: andrenarchy/assign-one-project-github-action
+      uses: andrenarchy/assign-one-project-github-action@master
       if: github.event.pull_request.draft == false
       with:
         project: "https://github.com/users/javierm/projects/4"
@@ -19,7 +19,7 @@ jobs:
         position: "bottom"
 
     - name: Assign new draft pull requests to the doing column
-      uses: andrenarchy/assign-one-project-github-action
+      uses: andrenarchy/assign-one-project-github-action@master
       if: github.event.pull_request.draft == true
       with:
         project: "https://github.com/users/javierm/projects/4"
