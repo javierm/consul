@@ -3,5 +3,5 @@
   "extends": [
     "config:base"
   ],
-  "ignoreDeps": ["autoprefixer-rails", "ckeditor", "font-awesome-sass", "puma", "sprockets"]
+  "ignorePaths": ["Gemfile"]
 }
