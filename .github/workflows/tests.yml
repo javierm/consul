@@ -41,7 +41,7 @@ jobs:
         with:
           bundler-cache: true
       - name: Setup NPM
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
       - name: Copy secrets and database files
         run: for i in config/*.example; do cp "$i" "${i/.example}"; done
       - name: Setup database
