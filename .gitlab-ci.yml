@@ -6,7 +6,7 @@ tests:
   image: "ruby:2.7.6"
   stage: test
   services:
-    - postgres:10.10
+    - postgres:10.21
   cache:
     key: consul
     paths:
