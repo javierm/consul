@@ -171,7 +171,7 @@ class Budget < ApplicationRecord
   end
 
   def heading_price(heading)
-    heading_ids.include?(heading.id) ? heading.price : -1
+    heading_ids.include?( heading.id) ?  heading.price : -1
   end
 
   def formatted_amount(amount)
@@ -187,7 +187,7 @@ class Budget < ApplicationRecord
 
   def investments_orders
     case phase
-    when "accepting", "reviewing", "finished"
+    when 'accepting', 'reviewing', "finished"
       %w[random]
     when "publishing_prices", "balloting", "reviewing_ballots"
       hide_money? ? %w[random] : %w[random price]
