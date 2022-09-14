@@ -74,6 +74,21 @@ describe "Admin polls", :admin do
     expect(page).to have_content "Upcoming poll"
   end
 
+  scenario "Can not create with start date is in the past" do
+    visit admin_polls_path
+    click_link "Create poll"
+
+    fill_in "Name", with: "Upcoming poll"
+    fill_in "Start Date", with: 1.week.ago
+    fill_in "Closing Date", with: 2.weeks.from_now
+    fill_in "Summary", with: "Upcoming poll's summary. This poll..."
+    fill_in "Description", with: "Upcomming poll's description. This poll..."
+
+    click_button "Create poll"
+
+    expect(page).to have_content "Must not be past date"
+  end
+
   scenario "Edit" do
     travel_to(Time.zone.local(2015, 7, 15, 13, 32, 13))
     poll = create(:poll, :with_image, ends_at: 1.month.from_now.beginning_of_minute)
