@@ -109,6 +109,21 @@ describe "Admin polls", :admin do
     expect(page).to have_content "2016-07-15 13:32"
   end
 
+  scenario "Can not edit start date for current poll" do
+    poll = create(:poll, starts_at: 1.month.ago.beginning_of_minute,
+                         ends_at: 1.month.from_now.beginning_of_minute)
+
+    visit admin_poll_path(poll)
+    click_link "Edit poll"
+
+    fill_in "Name", with: "Next Poll"
+    fill_in "Start Date", with: 1.day.from_now
+
+    click_button "Update poll"
+
+    expect(page).to have_content "Cannot be changed if voting has already started"
+  end
+
   scenario "Edit from index" do
     poll = create(:poll)
     visit admin_polls_path
@@ -568,7 +583,10 @@ describe "Admin polls", :admin do
     end
 
     scenario "edit poll with sdg related list" do
-      poll = create(:poll, name: "Upcoming poll with SDG related content")
+      poll = create(:poll, name: "Upcoming poll with SDG related content",
+                           starts_at: 1.month.ago.beginning_of_minute,
+                           ends_at: 1.month.from_now.beginning_of_minute)
+
       poll.sdg_goals = [SDG::Goal[1], SDG::Goal[17]]
       visit edit_admin_poll_path(poll)
 
