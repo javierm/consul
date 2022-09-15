@@ -30,6 +30,7 @@ RSpec.configure do |config|
   end
 
   config.before do |example|
+    puts example.full_description
     Globalize.set_fallbacks_to_all_available_locales
     Setting["feature.user.skip_verification"] = nil
   end
