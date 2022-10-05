@@ -213,9 +213,9 @@ describe Tenant do
       end
     end
 
-    it "is not valid with nested subdomains" do
-      tenant.subdomain = "multiple.sub.domains"
-      expect(tenant).not_to be_valid
+    it "is valid with domains" do
+      tenant.subdomain = "my.domain"
+      expect(tenant).to be_valid
     end
 
     it "is not valid with an invalid subdomain" do

@@ -4,7 +4,6 @@ class Tenant < ApplicationRecord
     uniqueness: true,
     exclusion: { in: ->(*) { excluded_subdomains }},
     format: { with: URI::DEFAULT_PARSER.regexp[:HOST] }
-  validates :subdomain, format: { without: /\./ }
   validates :name, presence: true
 
   after_create :create_schema
@@ -45,6 +44,8 @@ class Tenant < ApplicationRecord
   def self.host_for(schema)
     if schema == "public"
       default_host
+    elsif schema.include?(".")
+      schema
     elsif default_host == "localhost"
       "#{schema}.lvh.me"
     else
