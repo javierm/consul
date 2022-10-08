@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_03_112944) do
+ActiveRecord::Schema.define(version: 2022_09_24_170801) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -1022,6 +1022,8 @@ ActiveRecord::Schema.define(version: 2021_11_03_112944) do
     t.string "answer"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer "value"
+    t.integer "order"
     t.index ["author_id"], name: "index_poll_answers_on_author_id"
     t.index ["question_id", "answer"], name: "index_poll_answers_on_question_id_and_answer"
     t.index ["question_id"], name: "index_poll_answers_on_question_id"
@@ -1211,7 +1213,6 @@ ActiveRecord::Schema.define(version: 2021_11_03_112944) do
     t.integer "user_id"
     t.string "origin"
     t.integer "officer_id"
-    t.string "token"
     t.index ["booth_assignment_id"], name: "index_poll_voters_on_booth_assignment_id"
     t.index ["document_number"], name: "index_poll_voters_on_document_number"
     t.index ["officer_assignment_id"], name: "index_poll_voters_on_officer_assignment_id"
@@ -1639,6 +1640,7 @@ ActiveRecord::Schema.define(version: 2021_11_03_112944) do
     t.boolean "public_interests", default: false
     t.boolean "recommended_debates", default: true
     t.boolean "recommended_proposals", default: true
+    t.string "blah"
     t.string "subscriptions_token"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["date_of_birth"], name: "index_users_on_date_of_birth"
@@ -1706,6 +1708,16 @@ ActiveRecord::Schema.define(version: 2021_11_03_112944) do
     t.datetime "started_at"
     t.index ["started_at"], name: "index_visits_on_started_at"
     t.index ["user_id"], name: "index_visits_on_user_id"
+  end
+
+  create_table "votation_types", force: :cascade do |t|
+    t.integer "questionable_id"
+    t.string "questionable_type"
+    t.integer "enum_type"
+    t.boolean "prioritized"
+    t.integer "max_votes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "votes", id: :serial, force: :cascade do |t|
