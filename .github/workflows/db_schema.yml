@@ -1,11 +1,6 @@
 name: schema
 on:
   push:
-    branches:
-      - master
-  pull_request:
-    branches-ignore:
-      - i18n_master
 
 permissions:
   contents: read
