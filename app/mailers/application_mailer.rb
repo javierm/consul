@@ -1,6 +1,7 @@
 class ApplicationMailer < ActionMailer::Base
   helper :application, :layouts, :mailer, :settings
   default from: proc { "#{Setting["mailer_from_name"]} <#{Setting["mailer_from_address"]}>" }
+  default reply_to: proc { "#{Setting["mailer_from_name"]} <#{Setting["mailer_from_address"]}>" }
   layout "mailer"
   before_action :set_asset_host
   after_action :set_smtp_settings
