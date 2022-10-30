@@ -29,7 +29,9 @@ describe SubscriptionsController do
     end
 
     it "only accepts available locales" do
-      create(:user, locale: "wl", subscriptions_token: "mytoken")
+      Setting["locales.enabled"] = "en nl"
+
+      create(:user, locale: "es", subscriptions_token: "mytoken")
 
       get :edit, params: { token: "mytoken" }
 
