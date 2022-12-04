@@ -9,7 +9,7 @@ permissions:
   contents: read
 
 env:
-  TEST_COVERAGE: ${{ github.event_name == 'push' && github.ref == 'master' && 1 || '' }}
+  TEST_COVERAGE: ${{ github.event_name == 'push' && 1 || '' }}
 
 jobs:
   tests:
