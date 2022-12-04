@@ -54,7 +54,7 @@ jobs:
           KNAPSACK_PRO_LOG_LEVEL: info
         run: bin/knapsack_pro_rspec
       - name: Coveralls Parallel
-        if: ${{ env.TEST_COVERAGE == 1 }}
+        if: ${{ env.TEST_COVERAGE }}
         uses: coverallsapp/github-action@master
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -73,7 +73,7 @@ jobs:
     needs: tests
     steps:
       - name: Finish coveralls
-        if: ${{ env.TEST_COVERAGE == 1 }}
+        if: ${{ env.TEST_COVERAGE }}
         uses: coverallsapp/github-action@master
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
