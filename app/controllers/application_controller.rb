@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
 
   layout :set_layout
   respond_to :html
-  helper_method :current_budget
+  helper_method :current_budget, :multitenancy_management_mode?
 
   private
 
@@ -115,5 +115,9 @@ class ApplicationController < ActionController::Base
       path = url_for(request.query_parameters.merge(path_options))
 
       redirect_to path, response_status
+    end
+
+    def multitenancy_management_mode?
+      Rails.application.multitenancy_management_mode?
     end
 end
