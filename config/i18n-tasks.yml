@@ -22,33 +22,7 @@ data:
     ## Another gem (replace %#= with %=):
     # - "<%#= %x[bundle show vagrant].chomp %>/templates/locales/%{locale}.yml"
     - config/locales/custom/%{locale}/*.yml
-    - config/locales/%{locale}/rails_date_order.yml
-    - config/locales/%{locale}/general.yml
-    - config/locales/%{locale}/activerecord.yml
-    - config/locales/%{locale}/activemodel.yml
-    - config/locales/%{locale}/admin.yml
-    - config/locales/%{locale}/moderation.yml
-    - config/locales/%{locale}/valuation.yml
-    - config/locales/%{locale}/management.yml
-    - config/locales/%{locale}/verification.yml
-    - config/locales/%{locale}/mailers.yml
-    - config/locales/%{locale}/pages.yml
-    - config/locales/%{locale}/devise_views.yml
-    - config/locales/%{locale}/responders.yml
-    - config/locales/%{locale}/kaminari.yml
-    - config/locales/%{locale}/officing.yml
-    - config/locales/%{locale}/budgets.yml
-    - config/locales/%{locale}/legislation.yml
-    - config/locales/%{locale}/community.yml
-    - config/locales/%{locale}/documents.yml
-    - config/locales/%{locale}/images.yml
-    - config/locales/%{locale}/user_groups.yml
-    - config/locales/%{locale}/i18n.yml
-    - config/locales/%{locale}/milestones.yml
-    - config/locales/%{locale}/sdg.yml
-    - config/locales/%{locale}/sdg_management.yml
-    - config/locales/%{locale}/seeds.yml
-    - config/locales/%{locale}/stats.yml
+    - config/locales/%{locale}/**[^devise|rails|seeds|settings|social_share_button]*.yml
 
   # Locale files to write new keys to, based on a list of key pattern => file rules. Matched from top to bottom:
   # `i18n-tasks normalize -p` will force move the keys according to these rules
