@@ -1,10 +1,9 @@
 class Shared::MapLocationComponent < ApplicationComponent
-  attr_reader :parent_class, :remove_marker_label, :investments_coordinates
+  attr_reader :remove_marker_label, :investments_coordinates
   delegate :map_location_input_id, to: :helpers
 
-  def initialize(map_location, parent_class, remove_marker_label: nil, investments_coordinates: nil)
+  def initialize(map_location, remove_marker_label: nil, investments_coordinates: nil)
     @map_location = map_location
-    @parent_class = parent_class
     @remove_marker_label = remove_marker_label
     @investments_coordinates = investments_coordinates
   end
@@ -53,9 +52,9 @@ class Shared::MapLocationComponent < ApplicationComponent
         map_tiles_provider_attribution: Rails.application.secrets.map_tiles_provider_attribution,
         marker_editable: editable?,
         marker_remove_selector: "##{remove_marker_link_id}",
-        latitude_input_selector: "##{map_location_input_id(parent_class, "latitude")}",
-        longitude_input_selector: "##{map_location_input_id(parent_class, "longitude")}",
-        zoom_input_selector: "##{map_location_input_id(parent_class, "zoom")}",
+        latitude_input_selector: "##{map_location_input_id(map_location, "latitude")}",
+        longitude_input_selector: "##{map_location_input_id(map_location, "longitude")}",
+        zoom_input_selector: "##{map_location_input_id(map_location, "zoom")}",
         marker_investments_coordinates: investments_coordinates,
         marker_latitude: map_location.latitude.presence,
         marker_longitude: map_location.longitude.presence

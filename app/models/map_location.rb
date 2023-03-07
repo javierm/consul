@@ -17,6 +17,14 @@ class MapLocation < ApplicationRecord
     }
   end
 
+  def mappable
+    proposal || investment
+  end
+
+  def mappable_type
+    mappable.class.name
+  end
+
   def self.load_from_heading(heading)
     new.tap do |map|
       map.zoom = Budget::Heading::OSM_DISTRICT_LEVEL_ZOOM

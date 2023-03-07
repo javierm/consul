@@ -58,11 +58,10 @@
       <div>
         <%= render "map_locations/form_fields",
                    form:     f,
-                   map_location: proposal.map_location || MapLocation.new,
+                   map_location: proposal.map_location || proposal.build_map_location,
                    label:    t("proposals.form.map_location"),
                    help:     t("proposals.form.map_location_instructions"),
                    remove_marker_label: t("proposals.form.map_remove_marker"),
-                   parent_class: "proposal",
                    i18n_namespace: "proposals" %>
       </div>
     <% end %>
