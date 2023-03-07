@@ -24,7 +24,9 @@
 <%= render Budgets::Investments::ContentBlocksComponent.new(@heading) %>
 
 <% if @map_location&.available? %>
-  <%= render "budgets/investments/map" %>
+  <div class="map">
+    <%= render_map(@map_location, "budgets", nil, @investments_map_coordinates) %>
+  </div>
 <% end %>
 <%= render "shared/tag_cloud", taggable: "Budget::Investment" %>
 <%= render "budgets/investments/categories" %>
