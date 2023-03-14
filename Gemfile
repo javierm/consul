@@ -65,7 +65,7 @@ gem "whenever", "~> 1.0.0", require: false
 gem "wicked_pdf", "~> 2.6.3"
 gem "wkhtmltopdf-binary", "~> 0.12.6"
 
-source "https://rails-assets.org" do
+source "http://insecure.rails-assets.org" do
   gem "rails-assets-leaflet"
   gem "rails-assets-markdown-it", "~> 9.0.1"
 end
