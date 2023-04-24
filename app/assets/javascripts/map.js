@@ -15,9 +15,8 @@
       App.Map.maps = [];
     },
     initializeMap: function(element) {
-      var addMarkerInvestments, centerData, createMarker, editable, markerData,
-        map, mapCenterLatLng, marker, markerIcon, moveOrPlaceMarker,
-        removeMarker, removeMarkerSelector;
+      var addMarkerInvestments, createMarker, editable, markerData, map, marker,
+        markerIcon, moveOrPlaceMarker, removeMarker, removeMarkerSelector;
       App.Map.cleanInvestmentCoordinates(element);
       removeMarkerSelector = $(element).data("marker-remove-selector");
       addMarkerInvestments = $(element).data("marker-investments-coordinates");
@@ -61,9 +60,7 @@
         App.Map.updateFormfields(map, marker);
       };
 
-      centerData = App.Map.centerData(element);
-      mapCenterLatLng = new L.LatLng(centerData.lat, centerData.long);
-      map = L.map(element.id, { scrollWheelZoom: false }).setView(mapCenterLatLng, centerData.zoom);
+      map = App.Map.leafletMap(element);
       App.Map.maps.push(map);
       App.Map.addAttribution(map);
 
@@ -89,6 +86,15 @@
           }
         });
       }
+    },
+    leafletMap: function(element) {
+      var centerData, mapCenterLatLng, map;
+
+      centerData = App.Map.centerData(element);
+      mapCenterLatLng = new L.LatLng(centerData.lat, centerData.long);
+      map = L.map(element.id, { scrollWheelZoom: false }).setView(mapCenterLatLng, centerData.zoom);
+
+      return map;
     },
     attributionPrefix: function() {
       return '<a href="https://leafletjs.com" title="A JavaScript library for interactive maps">Leaflet</a>';
