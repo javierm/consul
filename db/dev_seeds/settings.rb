@@ -16,7 +16,9 @@ section "Creating Settings" do
     "twitter_handle": "@consuldemocracy_dev",
     "twitter_hashtag": "#consuldemocracy_dev",
     "votes_for_proposal_success": "100",
-    "youtube_handle": "CONSUL DEMOCRACY"
+    "youtube_handle": "CONSUL DEMOCRACY",
+    "map.longitude": "-3.703790",
+    "map.latitude": "40.416775"
   }.each do |name, value|
     Setting[name] = value
   end
