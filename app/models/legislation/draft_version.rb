@@ -22,7 +22,6 @@ class Legislation::DraftVersion < ApplicationRecord
   scope :published, -> { where(status: "published").order("id DESC") }
 
   def body_html
-    # See https://github.com/vmg/redcarpet for options
     render_options = {
       with_toc_data: true
     }
