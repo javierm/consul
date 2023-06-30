@@ -18,7 +18,7 @@ class Setting < ApplicationRecord
   end
 
   def feature?
-    %w[feature process sdg].include?(type)
+    %w[feature process sdg].include?(type) || self.class.feature_keys.include?(key)
   end
 
   def enabled?
@@ -81,6 +81,10 @@ class Setting < ApplicationRecord
       }
     end
 
+    def feature_keys
+      ["map.marker_clustering"]
+    end
+
     def defaults
       {
         "feature.featured_proposals": nil,
@@ -117,6 +121,7 @@ class Setting < ApplicationRecord
         "map.latitude": 51.48,
         "map.longitude": 0.0,
         "map.zoom": 10,
+        "map.marker_clustering": false,
         "process.debates": true,
         "process.proposals": true,
         "process.polls": true,

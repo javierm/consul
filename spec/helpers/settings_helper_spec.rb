@@ -23,5 +23,17 @@ RSpec.describe SettingsHelper do
       expect(feature?("f3")).to be nil
       expect(feature?("f4")).to be nil
     end
+
+    it "finds settings by the given name without a prefix and returns its presence" do
+      Setting["map.feature.f1"] = true
+      Setting["map.feature.f2"] = false
+      Setting["map.feature.f3"] = nil
+      Setting["map.feature.f4"] = ""
+
+      expect(feature?("map.feature.f1")).to eq("t")
+      expect(feature?("map.feature.f2")).to be nil
+      expect(feature?("map.feature.f3")).to be nil
+      expect(feature?("map.feature.f4")).to be nil
+    end
   end
 end
