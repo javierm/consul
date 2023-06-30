@@ -48,5 +48,10 @@ class Admin::Settings::TableComponent < ApplicationComponent
 
   def feature_settings
     @feature_settings ||= Setting.with_any_prefix(%w[feature process sdg])
+                                 .or(Setting.where(key: feature_keys))
+  end
+
+  def feature_keys
+    ["map.marker_clustering"]
   end
 end
