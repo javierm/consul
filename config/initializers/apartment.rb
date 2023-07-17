@@ -1,3 +1,5 @@
+# TODO: check https://github.com/rails-on-services/apartment/issues/147
+
 # You can have Apartment route to the appropriate Tenant by adding some Rack middleware.
 # Apartment can support many different "Elevators" that can take care of this routing to your data.
 # Require whichever Elevator you're using below or none if you have a custom one.
