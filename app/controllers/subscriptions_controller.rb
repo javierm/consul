@@ -30,10 +30,10 @@ class SubscriptionsController < ApplicationController
       [:email_on_comment, :email_on_comment_reply, :email_on_direct_message, :email_digest, :newsletter]
     end
 
-    def set_user_locale(&action)
+    def set_user_locale(&)
       if params[:locale].blank?
         session[:locale] = I18n.available_locales.find { |locale| locale == @user.locale&.to_sym }
       end
-      I18n.with_locale(session[:locale], &action)
+      I18n.with_locale(session[:locale], &)
     end
 end

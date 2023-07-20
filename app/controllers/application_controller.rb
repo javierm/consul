@@ -42,7 +42,7 @@ class ApplicationController < ActionController::Base
       end
     end
 
-    def switch_locale(&action)
+    def switch_locale(&)
       locale = current_locale
 
       if current_user && current_user.locale != locale.to_s
@@ -50,7 +50,7 @@ class ApplicationController < ActionController::Base
       end
 
       session[:locale] = locale
-      I18n.with_locale(locale, &action)
+      I18n.with_locale(locale, &)
     end
 
     def current_locale

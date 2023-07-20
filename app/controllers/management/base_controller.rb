@@ -39,14 +39,14 @@ class Management::BaseController < ActionController::Base
       redirect_to management_document_verifications_path, alert: message
     end
 
-    def switch_locale(&action)
+    def switch_locale(&)
       if params[:locale] && I18n.available_locales.include?(params[:locale].to_sym)
         session[:locale] = params[:locale]
       end
 
       session[:locale] ||= I18n.default_locale
 
-      I18n.with_locale(session[:locale], &action)
+      I18n.with_locale(session[:locale], &)
     end
 
     def clear_password
