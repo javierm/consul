@@ -39,10 +39,7 @@ class User
     ].freeze
 
 
-  validates :gender, presence: true, on: :create
   validates :gender, inclusion: { in: GENDER }, unless: -> { gender.blank? }, on: :create
-  validates :date_of_birth, presence: true, on: :create
-  validates :location, presence: true, on: :create
   validates :location, inclusion: { in: LOCATION }, unless: -> { location.blank? }, on: :create
 
   scope :male,           -> { where(gender: "male") }
