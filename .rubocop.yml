@@ -511,6 +511,7 @@ Style/HashExcept:
 
 Style/HashSyntax:
   Enabled: true
+  EnforcedShorthandSyntax: either
 
 Style/HashTransformKeys:
   Enabled: true
