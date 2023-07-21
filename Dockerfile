@@ -13,7 +13,6 @@ RUN apt-get update -qq \
     libpq-dev \
     libxss1 \
     memcached \
-    nodejs \
     pkg-config \
     postgresql-client \
     shared-mime-info \
@@ -39,6 +38,13 @@ RUN mkdir -p $RAILS_ROOT/tmp/pids
 
 # Set our working directory inside the image
 WORKDIR $RAILS_ROOT
+
+# Install Node
+COPY .node-version ./
+ENV PATH=/usr/local/node/bin:$PATH
+RUN curl -sL https://github.com/nodenv/node-build/archive/master.tar.gz | tar xz -C /tmp/ && \
+    /tmp/node-build-master/bin/node-build `cat .node-version` /usr/local/node && \
+    rm -rf /tmp/node-build-master
 
 # Use the Gemfiles as Docker cache markers. Always bundle before copying app src.
 # (the src likely changed and we don't want to invalidate Docker's cache too early)
