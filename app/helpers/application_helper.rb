@@ -18,6 +18,18 @@ module ApplicationHelper
     WYSIWYGSanitizer.new.sanitize(text)
   end
 
+  def include_javascript_in_head(filename)
+    @loaded_scripts ||= {}
+
+    unless @loaded_scripts[filename]
+      content_for :head do
+        javascript_include_tag(filename, "data-turbolinks-track" => "reload")
+      end
+
+      @loaded_scripts[filename] = true
+    end
+  end
+
   def author_of?(authorable, user)
     return false if authorable.blank? || user.blank?
 

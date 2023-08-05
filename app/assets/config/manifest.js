@@ -5,6 +5,7 @@
 //= link application.css
 //= link application-rtl.css
 //= link application.js
+//= link annotator_loader.js
 //
 //= link ckeditor/config.js
 //= link stat_graphs.js

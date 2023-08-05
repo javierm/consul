@@ -61,7 +61,6 @@
 //= require moderator_proposal_notifications
 //= require moderator_legislation_proposals
 //= require gettext
-//= require annotator
 //= require jquery.amsify.suggestags
 //= require tags
 //= require users
@@ -85,7 +84,6 @@
 //= require legislation_admin
 //= require legislation
 //= require legislation_allegations
-//= require legislation_annotatable
 //= require legislation_draft_versions
 //= require followable
 //= require flaggable
@@ -144,9 +142,6 @@ var initialize_modules = function() {
   App.HTMLEditor.initialize();
   App.LegislationAdmin.initialize();
   App.Legislation.initialize();
-  if ($(".legislation-annotatable").length) {
-    App.LegislationAnnotatable.initialize();
-  }
   App.TreeNavigator.initialize();
   App.Documentable.initialize();
   App.Imageable.initialize();
@@ -182,7 +177,6 @@ var destroy_non_idempotent_modules = function() {
   App.ColumnsSelector.destroy();
   App.Datepicker.destroy();
   App.HTMLEditor.destroy();
-  App.LegislationAnnotatable.destroy();
   App.Map.destroy();
   App.SocialShare.destroy();
 };
