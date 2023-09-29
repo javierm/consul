@@ -62,6 +62,8 @@ module Capybara
 
       unless url.match?("robots.txt") || url.match?("active_storage/representations")
         expect(page).to have_css "main", count: 1
+        expect(page).to have_css "main#main"
+        expect(page).to have_link "Skip to main content", href: "#main", visible: :all
       end
     end
   end
