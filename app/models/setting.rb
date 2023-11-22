@@ -17,6 +17,10 @@ class Setting < ApplicationRecord
     end
   end
 
+  def feature?
+    %w[feature process sdg].include?(type)
+  end
+
   def enabled?
     value.present?
   end
