@@ -25,6 +25,10 @@ class Setting < ApplicationRecord
     key.split(".").last == "content_types"
   end
 
+  def feature?
+    %w[feature process sdg].include?(prefix)
+  end
+
   def content_type_group
     key.split(".").second
   end
