@@ -55,6 +55,6 @@ class Admin::SettingsController < Admin::BaseController
     end
 
     def request_referer
-      request.referer + params[:setting][:tab].to_s
+      request.referer + params[:tab].to_s
     end
 end
