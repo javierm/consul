@@ -27,10 +27,26 @@ class Admin::Settings::TableComponent < ApplicationComponent
   end
 
   def table_class
-    if settings.all?(&:feature?)
+    if settings & feature_settings == settings
       "featured-settings-table"
     else
       "mixed-settings-table"
     end
+  end
+
+  def content_type_setting?(setting)
+    content_type_settings.include?(setting)
+  end
+
+  def feature_setting?(setting)
+    feature_settings.include?(setting)
+  end
+
+  def content_type_settings
+    @content_type_settings ||= Setting.with_suffix("content_types")
+  end
+
+  def feature_settings
+    @feature_settings ||= Setting.with_any_prefix(%w[feature process sdg])
   end
 end

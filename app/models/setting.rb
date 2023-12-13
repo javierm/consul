@@ -2,31 +2,18 @@ class Setting < ApplicationRecord
   validates :key, presence: true, uniqueness: true
 
   default_scope { order(id: :asc) }
+  scope :with_prefix, ->(prefix) { where("key LIKE ?", "#{prefix}.%") }
+  scope :with_suffix, ->(suffix) { where("key LIKE ?", "%.#{suffix}") }
+  scope :with_any_prefix, ->(prefixes) do
+    where("key LIKE ANY (array[?])", prefixes.map { |prefix| "#{prefix}.%" })
+  end
 
   def prefix
     key.split(".").first
   end
 
-  def type
-    if %w[feature process proposals map html homepage uploads sdg machine_learning].include? prefix
-      prefix
-    elsif %w[remote_census].include? prefix
-      key.rpartition(".").first
-    else
-      "configuration"
-    end
-  end
-
   def enabled?
     value.present?
-  end
-
-  def content_type?
-    key.split(".").last == "content_types"
-  end
-
-  def feature?
-    %w[feature process sdg].include?(prefix)
   end
 
   def content_type_group
