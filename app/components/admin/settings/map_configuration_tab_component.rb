@@ -1,7 +1,5 @@
 class Admin::Settings::MapConfigurationTabComponent < ApplicationComponent
-  attr_reader :settings
-
-  def initialize(settings)
-    @settings = settings
+  def settings
+    Setting.with_prefix("map")
   end
 end

@@ -1,9 +1,13 @@
 class Admin::Settings::RemoteCensusConfigurationTabComponent < ApplicationComponent
-  attr_reader :general_settings, :request_settings, :response_settings
+  def general_settings
+    Setting.with_prefix("remote_census.general")
+  end
 
-  def initialize(general_settings:, request_settings:, response_settings:)
-    @general_settings = general_settings
-    @request_settings = request_settings
-    @response_settings = response_settings
+  def request_settings
+    Setting.with_prefix("remote_census.request")
+  end
+
+  def response_settings
+    Setting.with_prefix("remote_census.response")
   end
 end

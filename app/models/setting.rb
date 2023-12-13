@@ -2,19 +2,10 @@ class Setting < ApplicationRecord
   validates :key, presence: true, uniqueness: true
 
   default_scope { order(id: :asc) }
+  scope :with_prefix, ->(prefix) { where("key LIKE ?", "#{prefix}.%") }
 
   def prefix
     key.split(".").first
-  end
-
-  def type
-    if %w[feature process proposals map html homepage uploads sdg machine_learning].include? prefix
-      prefix
-    elsif %w[remote_census].include? prefix
-      key.rpartition(".").first
-    else
-      "configuration"
-    end
   end
 
   def enabled?

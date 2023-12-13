@@ -3,38 +3,34 @@
   <%= render "filter_subnav" %>
 
   <div class="tabs-panel is-active" id="tab-configuration">
-    <%= render Admin::Settings::ConfigurationSettingsTabComponent.new(@configuration_settings) %>
+    <%= render Admin::Settings::ConfigurationSettingsTabComponent.new %>
   </div>
 
   <div class="tabs-panel" id="tab-participation-processes">
-    <%= render Admin::Settings::ParticipationProcessesTabComponent.new(@participation_processes_settings) %>
+    <%= render Admin::Settings::ParticipationProcessesTabComponent.new %>
   </div>
 
   <div class="tabs-panel" id="tab-feature-flags">
-    <%= render Admin::Settings::FeaturesTabComponent.new(@feature_settings) %>
+    <%= render Admin::Settings::FeaturesTabComponent.new %>
   </div>
 
   <div class="tabs-panel" id="tab-map-configuration">
-    <%= render Admin::Settings::MapConfigurationTabComponent.new(@map_configuration_settings) %>
+    <%= render Admin::Settings::MapConfigurationTabComponent.new %>
   </div>
 
   <div class="tabs-panel" id="tab-images-and-documents">
-    <%= render Admin::Settings::ImagesAndDocumentsTabComponent.new(@uploads_settings) %>
+    <%= render Admin::Settings::ImagesAndDocumentsTabComponent.new %>
   </div>
 
   <div class="tabs-panel" id="tab-proposals">
-    <%= render Admin::Settings::ProposalsDashboardComponent.new(@proposals_settings) %>
+    <%= render Admin::Settings::ProposalsDashboardComponent.new %>
   </div>
 
   <div class="tabs-panel" id="tab-remote-census-configuration">
-    <%= render Admin::Settings::RemoteCensusConfigurationTabComponent.new(
-      general_settings: @remote_census_general_settings,
-      request_settings: @remote_census_request_settings,
-      response_settings: @remote_census_response_settings
-    ) %>
+    <%= render Admin::Settings::RemoteCensusConfigurationTabComponent.new %>
   </div>
 
   <div class="tabs-panel" id="tab-sdg-configuration">
-    <%= render Admin::Settings::SDGConfigurationTabComponent.new(@sdg_settings) %>
+    <%= render Admin::Settings::SDGConfigurationTabComponent.new %>
   </div>
 </div>
