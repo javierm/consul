@@ -3,34 +3,38 @@
   <%= render "filter_subnav" %>
 
   <div class="tabs-panel is-active" id="tab-configuration">
-    <%= render "configuration_settings_tab" %>
+    <%= render Admin::Settings::ConfigurationSettingsTabComponent.new(@configuration_settings) %>
   </div>
 
   <div class="tabs-panel" id="tab-participation-processes">
-    <%= render "participation_processes_tab" %>
+    <%= render Admin::Settings::ParticipationProcessesTabComponent.new(@participation_processes_settings) %>
   </div>
 
   <div class="tabs-panel" id="tab-feature-flags">
-    <%= render "features_tab" %>
+    <%= render Admin::Settings::FeaturesTabComponent.new(@feature_settings) %>
   </div>
 
   <div class="tabs-panel" id="tab-map-configuration">
-    <%= render "map_configuration_tab" %>
+    <%= render Admin::Settings::MapConfigurationTabComponent.new(@map_configuration_settings) %>
   </div>
 
   <div class="tabs-panel" id="tab-images-and-documents">
-    <%= render "images_and_documents_tab" %>
+    <%= render Admin::Settings::ImagesAndDocumentsTabComponent.new(@uploads_settings) %>
   </div>
 
   <div class="tabs-panel" id="tab-proposals">
-    <%= render "proposals_dashboard" %>
+    <%= render Admin::Settings::ProposalsDashboardComponent.new(@proposals_settings) %>
   </div>
 
   <div class="tabs-panel" id="tab-remote-census-configuration">
-    <%= render "remote_census_configuration_tab" %>
+    <%= render Admin::Settings::RemoteCensusConfigurationTabComponent.new(
+      general_settings: @remote_census_general_settings,
+      request_settings: @remote_census_request_settings,
+      response_settings: @remote_census_response_settings
+    ) %>
   </div>
 
   <div class="tabs-panel" id="tab-sdg-configuration">
-    <%= render "sdg_configuration_tab" %>
+    <%= render Admin::Settings::SDGConfigurationTabComponent.new(@sdg_settings) %>
   </div>
 </div>

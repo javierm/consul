@@ -1,0 +1,3 @@
+<h2><%= t("admin.settings.index.feature_flags") %></h2>
+
+<%= render Admin::Settings::TableComponent.new(settings: settings, setting_name: "feature", tab: "#tab-feature-flags") %>
