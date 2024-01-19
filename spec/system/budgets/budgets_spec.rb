@@ -257,8 +257,6 @@ describe "Budgets" do
 
     before do
       Setting["feature.map"] = true
-      Setting["map.longitude"] = heading.longitude
-      Setting["map.latitude"] = heading.latitude
     end
 
     scenario "Display investment's map location markers" do
