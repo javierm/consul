@@ -74,8 +74,8 @@ FactoryBot.define do
   end
 
   factory :map_location do
-    latitude { 40.416775 }
-    longitude { -3.703790 }
+    latitude { 51.48 }
+    longitude { 0.0 }
     zoom { 10 }
 
     trait :proposal_map_location do

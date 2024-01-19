@@ -198,7 +198,11 @@ FactoryBot.define do
     end
 
     trait :with_map_location do
-      map_location
+      map_location do
+        association :map_location,
+                    longitude: heading.longitude.to_f + rand(-0.001..0.001),
+                    latitude: heading.latitude.to_f + rand(-0.001..0.001)
+      end
     end
 
     trait :flagged do
