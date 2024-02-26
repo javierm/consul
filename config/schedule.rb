@@ -40,5 +40,4 @@ every 1.day, at: "3:00 am", roles: [:cron] do
 end
 
 every :reboot do
-  command "cd #{@path} && bundle exec puma -C config/puma/#{@environment}.rb"
 end
