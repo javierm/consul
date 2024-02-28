@@ -644,6 +644,9 @@ Style/AccessorGrouping:
 Style/AndOr:
   Enabled: true
 
+Style/ArgumentsForwarding:
+  Enabled: true
+
 Style/ArrayCoercion:
   Enabled: true
 
