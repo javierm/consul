@@ -7,7 +7,7 @@ describe "Admin geozones", :admin do
 
     visit admin_geozones_path
 
-    expect(page).to have_content(chamberi.name)
+    expect(page).not_to have_content(chamberi.name)
     expect(page).to have_content(retiro.name)
   end
 
