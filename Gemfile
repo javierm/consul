@@ -9,17 +9,20 @@ gem "airbrake", "~> 13.0.2"
 gem "ancestry", "~> 4.3.3"
 gem "audited", "~> 5.4.0"
 gem "autoprefixer-rails", "~> 8.2.0"
+gem "bigdecimal" # Remove after Rails 7.0 or 7.1
 gem "bing_translator", "~> 6.2.0"
 gem "cancancan", "~> 3.5.0"
 gem "caxlsx", "~> 3.4.1"
 gem "caxlsx_rails", "~> 0.6.3"
 gem "ckeditor", "~> 4.3.0"
 gem "cocoon", "~> 1.2.15"
+gem "csv" # Remove after Rails 7.0 or 7.1
 gem "daemons", "~> 1.4.1"
 gem "dalli", "~> 3.2.6"
 gem "delayed_job_active_record", "~> 4.1.7"
 gem "devise", "~> 4.9.2"
 gem "devise-security", "~> 0.18.0"
+gem "drb" # Remove after Rails 7.0 or 7.1
 gem "exiftool_vendored", "~> 12.60.0"
 gem "file_validators", "~> 3.0.0"
 gem "font-awesome-sass", "~> 5.15.1" # Remember to update vendor/assets/images/fontawesome when updating this gem
@@ -36,6 +39,8 @@ gem "invisible_captcha", "~> 2.1.0"
 gem "jquery-fileupload-rails"
 gem "kaminari", "~> 1.2.2"
 gem "mini_magick", "~> 4.12.0"
+gem "mutex_m" # Remove after Rails 7.0 or 7.1
+gem "nkf" # Remove after Rails 7.0 or 7.1
 gem "omniauth", "~> 2.1.1"
 gem "omniauth-facebook", "~> 9.0.0"
 gem "omniauth-google-oauth2", "~> 1.1.1"
