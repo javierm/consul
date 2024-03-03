@@ -50,6 +50,10 @@ jobs:
         run: bundle exec rake db:setup
       - name: Compile assets
         run: bundle exec rake assets:precompile > /dev/null 2>&1
+      - name: check YJIT
+        run: RUBY_YJIT_ENABLE=1 ruby -v
+      - name: check without YJIT
+        run: ruby -v
       - name: Run test suite
         env:
           KNAPSACK_PRO_TEST_SUITE_TOKEN_RSPEC: ${{ secrets.KNAPSACK_PRO_TEST_SUITE_TOKEN_RSPEC }}
