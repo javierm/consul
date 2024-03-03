@@ -18,13 +18,13 @@ module TranslatableFormHelper
   class TranslatableFormBuilder < ConsulFormBuilder
     attr_accessor :translations
 
-    def translatable_fields(&)
+    def translatable_fields(&temp)
       @translations = {}
       visible_locales.map do |locale|
         @translations[locale] = translation_for(locale)
       end
       safe_join(visible_locales.map do |locale|
-        Globalize.with_locale(locale) { fields_for_locale(locale, &) }
+        Globalize.with_locale(locale) { fields_for_locale(locale, &temp) }
       end)
     end
 
