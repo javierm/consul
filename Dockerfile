@@ -1,4 +1,4 @@
-FROM ruby:3.2.3-bullseye
+FROM ruby:3.3.0-bullseye
 
 ENV DEBIAN_FRONTEND noninteractive
 
