@@ -57,6 +57,7 @@ jobs:
           KNAPSACK_PRO_CI_NODE_INDEX: ${{ matrix.ci_node_index }}
           KNAPSACK_PRO_FIXED_QUEUE_SPLIT: true
           KNAPSACK_PRO_LOG_LEVEL: info
+          RUBY_YJIT_ENABLE: 1
         run: bin/knapsack_pro_rspec
       - name: Coveralls Parallel
         if: ${{ env.TEST_COVERAGE == 1 }}
