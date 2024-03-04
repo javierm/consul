@@ -8,9 +8,7 @@ describe Comments::VotesComponent do
   it "generates valid HTML" do
     render_inline component
 
-    expect(page).not_to have_css "span form"
-    expect(page).to have_css "div.in-favor > form"
-    expect(page).to have_css "div.against > form"
+    expect(page).to have_valid_html
   end
 
   describe "aria-pressed and method attributes" do

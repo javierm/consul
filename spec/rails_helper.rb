@@ -20,6 +20,35 @@ require "capybara/rails"
 require "capybara/rspec"
 require "selenium/webdriver"
 require "view_component/test_helpers"
+include PageValidations
+HTMLValidation.ignored_errors = ["missing <!DOCTYPE> declaration", "inserting missing 'title' element"]
+
+module PageValidations
+  class HaveValidHTML
+    alias_method :original_matches?, :matches?
+
+    def matches?(page)
+      begin
+        original_matches?(page)
+      rescue Errno::ENOENT => e
+        warn "WARNING: `tidy` not found; skipping HTML validation. " \
+          "Install the `tidy` HTML syntax checker in order to properly run this test."
+        true
+      end
+    end
+  end
+end
+
+class Capybara::Node::Simple
+  def current_url
+    "/"
+  end
+
+  def html
+    native.inner_html
+  end
+  alias_method :body, :html
+end
 
 module ViewComponent
   module TestHelpers

@@ -37,3 +37,4 @@ node_modules/
 # Test results
 spec/examples.txt
 coverage/
+spec/.validation/

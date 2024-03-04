@@ -52,6 +52,8 @@ jobs:
         run: bundle exec rake db:setup
       - name: Compile assets
         run: bundle exec rake assets:precompile > /dev/null 2>&1
+      - name: Install tidy
+        run: sudo apt install tidy
       - name: Run test suite
         env:
           KNAPSACK_PRO_TEST_SUITE_TOKEN_RSPEC: ${{ secrets.KNAPSACK_PRO_TEST_SUITE_TOKEN_RSPEC }}
