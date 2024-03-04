@@ -29,13 +29,14 @@ describe SubscriptionsController do
     end
 
     it "only accepts available locales" do
-      Setting["locales.enabled"] = "en nl"
+      Setting["locales.enabled"] = "fr nl"
+      Setting["locales.default"] = "fr"
 
       create(:user, locale: "es", subscriptions_token: "mytoken")
 
       get :edit, params: { token: "mytoken" }
 
-      expect(session[:locale]).to eq "en"
+      expect(session[:locale]).to eq "fr"
     end
   end
 end
