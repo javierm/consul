@@ -73,7 +73,7 @@ describe "Admin custom content blocks", :admin do
         click_link "Custom content blocks"
       end
 
-      click_link "top_links (en)"
+      within("tr", text: "top_links (en)") { click_link "Edit" }
 
       fill_in "site_customization_content_block_body", with: "Some other custom content"
       click_button "Update Custom content block"
