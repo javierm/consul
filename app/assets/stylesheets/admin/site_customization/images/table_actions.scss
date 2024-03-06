@@ -1,0 +1,19 @@
+.site-customization-images-table-actions {
+  @include flex-with-gap;
+  align-items: flex-start;
+
+  form {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+  }
+
+  > * + :last-child {
+    @include admin-action-icons;
+
+    .destroy-link {
+      @include icon-on-top;
+      cursor: pointer;
+    }
+  }
+}
