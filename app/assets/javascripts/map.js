@@ -7,13 +7,6 @@
         App.Map.initializeMap(this);
       });
     },
-    destroy: function() {
-      App.Map.maps.forEach(function(map) {
-        map.off();
-        map.remove();
-      });
-      App.Map.maps = [];
-    },
     initializeMap: function(element) {
       var createMarker, editable, investmentsMarkers, map, marker, markerClustering,
         markerData, markerIcon, markers, moveOrPlaceMarker, removeMarker, removeMarkerSelector;

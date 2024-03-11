@@ -94,7 +94,7 @@ describe "Admin legislation draft versions", :admin do
       expect(page).to have_current_path(path)
     end
 
-    scenario "asks for confimation after the page is restored from browser history" do
+    scenario "asks for confimation after the page is restored from browser history" do # TODO
       visit path
       fill_in_markdown_editor "Text", with: "Version 1b"
 
@@ -115,7 +115,7 @@ describe "Admin legislation draft versions", :admin do
       expect(page).to have_css("h2", text: "Proposals")
     end
 
-    scenario "does not ask for confirmation when restoring the original content" do
+    scenario "does not ask for confirmation when restoring the original content" do # TODO
       visit path
       fill_in_markdown_editor "Text", with: "Version 1b"
 
