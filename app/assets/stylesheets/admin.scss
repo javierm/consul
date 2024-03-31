@@ -503,8 +503,12 @@ code {
 
   a,
   button {
-    @include regular-button;
-    margin-left: auto;
+    margin-#{$global-left}: auto;
+
+    &:not(.delete) {
+      @include regular-button;
+      margin-#{$global-left}: auto;
+    }
   }
 }
 
