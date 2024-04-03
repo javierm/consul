@@ -797,6 +797,9 @@ footer {
 // --------------
 
 .auth-page {
+  .wrapper > header {
+    margin-bottom: 0;
+  }
 
   .footer {
     margin-top: 0;
