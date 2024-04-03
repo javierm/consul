@@ -804,6 +804,23 @@ footer {
   .footer {
     margin-top: 0;
   }
+
+  .wrapper {
+    @include breakpoint(medium) {
+      display: flex;
+
+      header {
+        flex-basis: 25%;
+      }
+
+      main {
+        flex-basis: 75%;
+        max-width: 32rem;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
 }
 
 .auth-image {
