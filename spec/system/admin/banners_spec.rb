@@ -8,7 +8,7 @@ describe "Admin banners magement", :admin do
                       target_url: "http://www.url.com",
                       post_started_at: (Date.current + 4.days),
                       post_ended_at: (Date.current + 10.days),
-                      background_color: "#FF0000",
+                      background_color: "#EE0000",
                       font_color: "#FFFFFF")
 
       create(:banner, title: "Banner number two",
@@ -16,7 +16,7 @@ describe "Admin banners magement", :admin do
                       target_url: "http://www.url.com",
                       post_started_at: (Date.current - 10.days),
                       post_ended_at: (Date.current - 3.days),
-                      background_color: "#00FF00",
+                      background_color: "#008800",
                       font_color: "#FFFFFF")
 
       create(:banner, title: "Banner number three",
@@ -32,7 +32,7 @@ describe "Admin banners magement", :admin do
                       target_url: "http://www.url.com",
                       post_started_at: (Date.current - 10.days),
                       post_ended_at: (Date.current + 10.days),
-                      background_color: "#FFF000",
+                      background_color: "#807700",
                       font_color: "#FFFFFF")
 
       create(:banner, title: "Banner number five",
@@ -40,7 +40,7 @@ describe "Admin banners magement", :admin do
                       target_url: "http://www.url.com",
                       post_started_at: (Date.current - 10.days),
                       post_ended_at: (Date.current + 10.days),
-                      background_color: "#FFFF00",
+                      background_color: "#777700",
                       font_color: "#FFFFFF")
     end
 
@@ -127,7 +127,7 @@ describe "Admin banners magement", :admin do
                     target_url: "http://www.url.com",
                     post_started_at: (Date.current + 4.days),
                     post_ended_at: (Date.current + 10.days),
-                    background_color: "#FF0000",
+                    background_color: "#EE0000",
                     font_color: "#FFFFFF")
 
     visit admin_root_path
@@ -166,7 +166,7 @@ describe "Admin banners magement", :admin do
                     target_url: "http://www.url.com",
                     post_started_at: (Date.current + 4.days),
                     post_ended_at: (Date.current + 10.days),
-                    background_color: "#FF0000",
+                    background_color: "#EE0000",
                     font_color: "#FFFFFF")
 
     visit admin_banners_path
