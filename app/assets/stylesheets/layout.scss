@@ -730,6 +730,9 @@ body > header,
 // --------------
 
 .auth-page {
+  .wrapper > header {
+    margin-bottom: 0;
+  }
 
   .cancel-button {
     cursor: pointer;
