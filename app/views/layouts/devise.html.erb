@@ -10,26 +10,20 @@
     <%= render Layout::SkipToMainContentComponent.new %>
     <%= raw setting["html.per_page_code_body"] %>
     <div class="wrapper">
-      <header class="auth-image small-12 medium-3 column"
+      <header class="auth-image"
            style="<%= attached_background_css asset_url(image_path_for("auth_bg.jpg")) %>">
-        <h1 class="logo margin">
+        <h1 class="logo">
           <%= link_to root_path do %>
             <%= image_tag(image_path_for("logo_header.png"), class: "float-left", alt: setting["org_name"]) %>
           <% end %>
         </h1>
       </header>
 
-      <div class="small-12 medium-9 column">
-        <div class="row">
-          <div class="small-12 medium-9 large-7 small-centered column">
-            <main id="main" class="auth-form margin <%= yield(:main_class) %>">
-              <%= render "layouts/flash" %>
+      <main id="main" class="auth-form <%= yield(:main_class) %>">
+        <%= render "layouts/flash" %>
 
-              <%= yield %>
-            </main>
-          </div>
-        </div>
-      </div>
+        <%= yield %>
+      </main>
     </div>
 
     <div class="footer">
