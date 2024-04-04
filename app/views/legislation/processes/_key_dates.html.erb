@@ -1,8 +1,8 @@
-<nav class="<%= "legislation-process-list" if process.enabled_phases? %>">
+<nav class="<%= "legislation-process-list" if process.enabled_phases? %>" aria-labelledby="legislation_process_list_heading"><%# TODO What if there are no enabled phases? %>
   <div class="row">
     <div class="small-12 column">
       <% if process.enabled_phases? %>
-        <h3><%= t("legislation.processes.shared.key_dates") %></h3>
+        <h3 id="legislation_process_list_heading"><%= t("legislation.processes.shared.key_dates") %></h3>
       <% end %>
 
       <ul class="key-dates">
