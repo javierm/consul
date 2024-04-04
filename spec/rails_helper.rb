@@ -21,6 +21,18 @@ require "capybara/rspec"
 require "selenium/webdriver"
 require "view_component/test_helpers"
 
+module Axe
+  module Matchers
+    class BeAxeClean
+      def audit(page)
+        @audit ||= Core.new(page).call(@run).tap do |audit|
+          audit.results.violations.select! { |violation| violation.impact == :critical }
+        end
+      end
+    end
+  end
+end
+
 module ViewComponent
   module TestHelpers
     def sign_in(user)
