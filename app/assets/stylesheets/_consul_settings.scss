@@ -158,7 +158,7 @@ $sdg-colors: (
 // 3. Foundation overrides depending on CONSUL DEMOCRACY variables
 // ---------------------------------------------------------------
 
-$anchor-color: $brand !default;
+$anchor-color: color.adjust($brand, $lightness: 12.5%) !default;
 $anchor-color-hover: color.adjust($anchor-color, $lightness: -20%) !default;
 
 $tab-background-active: $white !default;
