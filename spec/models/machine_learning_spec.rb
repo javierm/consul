@@ -378,6 +378,10 @@ describe MachineLearning do
   end
 
   describe "#run_machine_learning_scripts" do
+    before do
+      ENV["RUBY_DEBUG_FORK_MODE"] = "parent"
+    end
+
     it "returns true if python script executed correctly" do
       machine_learning = MachineLearning.new(job)
 
