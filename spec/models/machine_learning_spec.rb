@@ -379,7 +379,7 @@ describe MachineLearning do
 
   describe "#run_machine_learning_scripts" do
     before do
-      ENV["RUBY_DEBUG_FORK_MODE"] = "child"
+      DEBUGGER__::CONFIG[:fork_mode] = "parent"
     end
 
     it "returns true if python script executed correctly" do
