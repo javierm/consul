@@ -111,11 +111,11 @@ class Tenant < ApplicationRecord
     end
   end
 
-  def self.subfolder_path
-    if default?
+  def self.subfolder_path(schema = current_schema)
+    if schema == "public"
       ""
     else
-      File.join("tenants", current_schema)
+      File.join("tenants", schema)
     end
   end
 
@@ -178,12 +178,15 @@ class Tenant < ApplicationRecord
     end
 
     def rename_storage
-      return unless ActiveStorage::Blob.service.is_a?(ActiveStorage::Service::TenantDiskService)
+      service = ActiveStorage::Blob.service
 
-      old_storage = File.join(ActiveStorage::Blob.service.root, "tenants", schema_before_last_save)
+      return unless service.is_a?(ActiveStorage::Service::TenantDiskService)
+
+      old_storage = service.tenant_root(schema_before_last_save)
+
       return unless File.directory?(old_storage)
 
-      new_storage = File.join(ActiveStorage::Blob.service.root, "tenants", schema)
+      new_storage = service.tenant_root(schema)
       File.rename(old_storage, new_storage)
     end
 
