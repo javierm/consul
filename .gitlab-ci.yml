@@ -12,6 +12,7 @@ tests:
     paths:
       - vendor/
   variables:
+    DB_HOST: postgres
     POSTGRES_USER: consul
     POSTGRES_PASSWORD: password
     RAILS_ENV: test

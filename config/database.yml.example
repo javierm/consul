@@ -1,11 +1,11 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  host: localhost
+  host: <%= ENV["DB_HOST"] || "localhost" %>
   pool: 5
   schema_search_path: "public,shared_extensions"
-  username:
-  password:
+  username: <%= ENV["POSTGRES_USER"] %>
+  password: <%= ENV["POSTGRES_PASSWORD"] %>
 
 development: &development
   <<: *default
