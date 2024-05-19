@@ -29,7 +29,7 @@ class Shared::EmbeddedVideoComponent < ApplicationComponent
       end
     end
 
-    def reg_exp
+    def regex
       if server == "Vimeo"
         record.class::VIMEO_REGEX
       elsif server == "YouTube"
@@ -46,6 +46,6 @@ class Shared::EmbeddedVideoComponent < ApplicationComponent
     end
 
     def match
-      @match ||= link.match(reg_exp) if reg_exp
+      @match ||= link.match(regex) if regex
     end
 end
