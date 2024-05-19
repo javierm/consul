@@ -8,8 +8,6 @@ class Shared::EmbeddedVideoComponent < ApplicationComponent
   def embedded_video_code
     if match && match[2]
       '<iframe src="' + src + match[2] + '" style="border:0;" allowfullscreen title="' + title + '"></iframe>'
-    else
-      ""
     end
   end
 
