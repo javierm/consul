@@ -31,7 +31,6 @@ module Auditable
           Budget::ValuatorGroupAssignment
           BudgetAdministrator
           BudgetValuator
-          Campaign
           Comment
           Community
           Dashboard::Action
