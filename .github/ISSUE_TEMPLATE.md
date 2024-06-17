@@ -2,7 +2,7 @@
 
 [comment]: # (As a <user type>, I want to <task> so that <goal>.)
 
-## Why is this Needed?
+## Why this is needed
 
 [comment]: # (Describe the problem and why this task is needed. Provide a description of the current state, what you would like to happen, and what actually happened)
 
