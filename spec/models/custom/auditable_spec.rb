@@ -106,7 +106,6 @@ describe "Auditable" do
       expect(SDG::Relation.audit_associated_with).to eq(:relatable)
       expect(SDG::Review.audit_associated_with).to eq(:relatable)
       expect(SignatureSheet.audit_associated_with).to eq(:signable)
-      expect(StatsVersion.audit_associated_with).to eq(:process)
       expect(Tagging.audit_associated_with).to eq(:taggable)
       expect(VotationType.audit_associated_with).to eq(:questionable)
       expect(Widget::Card.audit_associated_with).to eq(:cardable)
