@@ -302,6 +302,7 @@
   .action {
     flex: 1 0 10%;
     margin: 0 rem-calc(12);
+
     img {
       height: 80px;
       width: auto;
@@ -426,6 +427,7 @@
     align-self: stretch;
   }
 }
+
 .auth-image {
   background-image: none !important;
 
