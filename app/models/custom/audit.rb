@@ -1,4 +1,4 @@
-require_dependency Rails.root.join("app", "models", "audit")
+load Rails.root.join("app", "models", "audit.rb")
 
 class Audit
   scope :by_class_and_id, ->(class_name, id) do

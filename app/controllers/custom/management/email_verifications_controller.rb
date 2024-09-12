@@ -1,4 +1,4 @@
-require_dependency Rails.root.join("app", "controllers", "management", "email_verifications_controller").to_s
+load Rails.root.join("app", "controllers", "management", "email_verifications_controller.rb")
 
 class Management::EmailVerificationsController
   def create

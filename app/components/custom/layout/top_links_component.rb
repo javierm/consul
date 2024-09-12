@@ -1,6 +1,6 @@
 class Layout::TopLinksComponent < ApplicationComponent; end
 
-require_dependency Rails.root.join("app", "components", "layout", "top_links_component").to_s
+load Rails.root.join("app", "components", "layout", "top_links_component.rb")
 
 class Layout::TopLinksComponent
   use_helpers :current_user

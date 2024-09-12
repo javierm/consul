@@ -1,4 +1,4 @@
-require_dependency Rails.root.join("app", "controllers", "admin", "system_emails_controller").to_s
+load Rails.root.join("app", "controllers", "admin", "system_emails_controller.rb")
 
 class Admin::SystemEmailsController
   alias_method :consul_index, :index

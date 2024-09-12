@@ -1,7 +1,6 @@
 class Admin::SiteCustomization::Pages::IndexComponent < ApplicationComponent; end
 
-require_dependency Rails.root.join("app", "components", "admin", "site_customization", "pages",
-                                   "index_component").to_s
+load Rails.root.join("app", "components", "admin", "site_customization", "pages", "index_component.rb")
 
 class Admin::SiteCustomization::Pages::IndexComponent
   attr_reader :search

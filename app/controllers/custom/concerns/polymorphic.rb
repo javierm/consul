@@ -1,4 +1,4 @@
-require_dependency Rails.root.join("app", "controllers", "concerns", "polymorphic").to_s
+load Rails.root.join("app", "controllers", "concerns", "polymorphic.rb")
 
 module Polymorphic
   private
