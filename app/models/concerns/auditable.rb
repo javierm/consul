@@ -101,7 +101,6 @@ module Auditable
           SiteCustomization::ContentBlock
           SiteCustomization::Image
           SiteCustomization::Page
-          StatsVersion
           Tenant
           Topic
           Valuator
