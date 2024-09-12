@@ -11,7 +11,7 @@ module AuditsHelper
     value.to_s
   end
 
-  def field_name(audit, field)
+  def audit_field_name(audit, field)
     audit.auditable_type.constantize.human_attribute_name(field)
   rescue NameError
     field
