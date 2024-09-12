@@ -5,7 +5,7 @@
 
 <% audit.audited_changes.each do |field, changes| %>
   <strong><%= t("admin.audits.field") %></strong>
-  <p><%= sanitize(field_name(audit, field)) %></p>
+  <p><%= sanitize(audit_field_name(audit, field)) %></p>
   <strong><%= t("admin.audits.old_value") %></strong>
   <p><%= wysiwyg(audit_value(old_value(audit, changes))) %></p>
   <strong><%= t("admin.audits.new_value") %></strong>
