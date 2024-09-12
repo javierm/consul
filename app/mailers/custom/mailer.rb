@@ -6,7 +6,7 @@ class Mailer
     @intro = intro
     @email_to = Rails.application.secrets.contact_email
 
-    I18n.with_locale(I18n.default_locale) do
+    I18n.with_locale(Setting.default_locale) do
       mail(to: @email_to, subject: subject)
     end
   end
