@@ -73,8 +73,8 @@ module Auditable
           Poll::OfficerAssignment
           Poll::PartialResult
           Poll::Question
-          Poll::Question::Answer
-          Poll::Question::Answer::Video
+          Poll::Question::Option
+          Poll::Question::Option::Video
           Poll::Recount
           Poll::Shift
           Poll::Voter
