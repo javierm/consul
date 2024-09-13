@@ -1,3 +1,10 @@
+Rails.application.reloader.to_prepare do
+  Globalize::ActiveRecord::Translation.class_eval do
+    include SkipValidation
+    include Auditable
+  end
+end
+
 module Globalize
   module ActiveRecord
     module InstanceMethods
@@ -8,11 +15,6 @@ module Globalize
           super
         end
       end
-    end
-
-    class Translation
-      include SkipValidation
-      include Auditable
     end
   end
 end
