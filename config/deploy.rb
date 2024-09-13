@@ -71,6 +71,7 @@ namespace :deploy do
   after "deploy:migrate", "add_new_settings"
 
   after :publishing, "setup_puma"
+  after :publishing, "systemd:delayed_job@:setup"
   after :published, "systemd:delayed_job@:restart"
   after :finished, "refresh_sitemap"
 
