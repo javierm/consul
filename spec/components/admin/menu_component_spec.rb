@@ -20,7 +20,7 @@ describe Admin::MenuComponent, controller: Admin::NewslettersController do
     expect(page).to have_css "button[aria-expanded='false']", exact_text: "Settings"
   end
 
-  it "only renders the multitenancy and administrators sections in multitenancy management mode" do
+  it "only renders the multitenancy and administrators sections in multitenancy management mode", :admin do
     allow(Rails.application.config).to receive(:multitenancy_management_mode).and_return(true)
 
     render_inline Admin::MenuComponent.new
