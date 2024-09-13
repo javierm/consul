@@ -10,7 +10,8 @@ describe Layout::CookiesConsent::BannerComponent do
   end
 
   it "does not render the banner when cookies were accepted" do
-    allow_any_instance_of(Layout::CookiesConsent::BannerComponent).to receive(:current_value).and_return("all")
+    allow_any_instance_of(Layout::CookiesConsent::BannerComponent).to receive(:current_value)
+                                                                  .and_return("all")
 
     render_inline Layout::CookiesConsent::BannerComponent.new
 
@@ -18,7 +19,8 @@ describe Layout::CookiesConsent::BannerComponent do
   end
 
   it "does not render the banner when third party cookies were rejected" do
-    allow_any_instance_of(Layout::CookiesConsent::BannerComponent).to receive(:current_value).and_return("essential")
+    allow_any_instance_of(Layout::CookiesConsent::BannerComponent).to receive(:current_value)
+                                                                  .and_return("essential")
 
     render_inline Layout::CookiesConsent::BannerComponent.new
 

@@ -1,5 +1,5 @@
 module Cookies
   def self.table_name_prefix
-    'cookies_'
+    "cookies_"
   end
 end
