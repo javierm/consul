@@ -22,8 +22,8 @@ describe "Admin menu", :admin do
   end
 
   scenario "it does not show the audited link for the main tenant when it is in management mode" do
-    allow(Rails.application.config).to receive(:auditing_enabled).and_return(true)
-    allow(Rails.application.config).to receive(:multitenancy_management_mode).and_return(true)
+    allow(Rails.application.config).to receive_messages(auditing_enabled: true,
+                                                        multitenancy_management_mode: true)
 
     visit admin_root_path
 
