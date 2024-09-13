@@ -1,4 +1,4 @@
-require_dependency Rails.root.join("app", "models", "abilities", "administrator")
+load Rails.root.join("app", "models", "abilities", "administrator.rb")
 
 class Abilities::Administrator
   alias_method :original_initialize, :initialize

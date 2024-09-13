@@ -1,4 +1,4 @@
-require_dependency Rails.root.join("app", "components", "admin", "menu_component")
+load Rails.root.join("app", "components", "admin", "menu_component.rb")
 
 class Admin::MenuComponent
   alias_method :original_default_links, :default_links
