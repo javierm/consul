@@ -12,8 +12,8 @@ AssertPathExists = <%= current_path %>
 [Service]
 Type = forking
 WorkingDirectory = <%= current_path %>
-ExecStart=/bin/bash -lc 'RAILS_ENV=<%= fetch(:rails_env) %> bin/delayed_job -i %i start'
-ExecStop=/bin/bash -lc 'RAILS_ENV=<%= fetch(:rails_env) %> bin/delayed_job -i %i stop'
+ExecStart=/bin/bash -lc 'RAILS_ENV=<%= fetch(:rails_env) %> bundle exec bin/delayed_job -i %i start'
+ExecStop=/bin/bash -lc 'RAILS_ENV=<%= fetch(:rails_env) %> bundle exec bin/delayed_job -i %i stop'
 ExecReload = /bin/kill -HUP $MAINPID
 PIDFile = <%= shared_path %>/tmp/pids/delayed_job.%i.pid
 # Restart after 1 minute delay
