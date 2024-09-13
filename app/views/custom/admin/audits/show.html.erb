@@ -1,6 +1,4 @@
-<% provide(:title) do %>
-  <%= t("admin.audits.title") %>
-<% end %>
+<% provide :title, t("admin.audits.title") %>
 <%= back_link_to request.referer || admin_audits_path %>
 
 <h2><%= t("admin.audits.title") %></h2>
