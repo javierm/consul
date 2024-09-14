@@ -3,7 +3,6 @@ FactoryBot.define do
     sequence(:title)     { |n| "Proposal #{n} title" }
     sequence(:summary)   { |n| "In summary, what we want is... #{n}" }
     description          { "Proposal description" }
-    video_url            { "https://youtu.be/nhuNb0XtRhQ" }
     responsible_name     { "John Snow" }
     terms_of_service     { "1" }
     published_at         { Time.current }
@@ -79,6 +78,10 @@ FactoryBot.define do
 
     trait :with_image do
       after(:create) { |proposal| create(:image, imageable: proposal) }
+    end
+
+    trait :with_video do
+      video_url { "https://youtu.be/nhuNb0XtRhQ" }
     end
 
     transient do
