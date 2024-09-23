@@ -4,7 +4,6 @@ class RemoteTranslationsController < ApplicationController
 
   def create
     RemoteTranslation.create_all(remote_translations_params)
-    puts "I18n locale: #{I18n.locale}"
 
     redirect_to request.referer, notice: t("remote_translations.create.enqueue_remote_translation")
   end

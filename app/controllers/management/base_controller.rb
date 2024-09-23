@@ -41,11 +41,9 @@ class Management::BaseController < ActionController::Base
 
     def switch_locale(&action)
       if params[:locale] && Setting.enabled_locales.include?(params[:locale].to_sym)
-        puts "Shouldn't be here 1"
         session[:locale] = params[:locale].to_s
       end
 
-      puts "Shouldn't be here 2"
       session[:locale] ||= Setting.default_locale.to_s
 
       I18n.with_locale(session[:locale], &action)

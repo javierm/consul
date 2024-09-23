@@ -20,31 +20,24 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
     describe "without delayed jobs" do
       scenario "request a translation of an already translated text" do
         response = generate_response(resource)
+        path_with_a_different_locale = send(path_name, arguments.merge(locale: :es))
+
         expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
 
         in_browser(:one) do
-          visit path
-          puts "First"
-          select "Español", from: "Language:"
+          visit path_with_a_different_locale
 
-          puts "Second"
           expect(page).to have_button "Traducir página"
         end
 
         in_browser(:two) do
-          puts "Third"
-          visit path
-          puts "Fourth"
-          select "Español", from: "Language:"
-          puts "Fifth"
+          visit path_with_a_different_locale
           click_button "Traducir página"
-          puts "Sixth"
 
           expect(page).to have_content "Se han solicitado correctamente las traducciones"
         end
 
         in_browser(:one) do
-          puts "Seventh"
           click_button "Traducir página"
 
           expect(page).not_to have_button "Traducir página"
