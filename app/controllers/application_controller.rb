@@ -49,10 +49,12 @@ class ApplicationController < ActionController::Base
       puts "Switch locale: #{locale} for #{params}"
       puts "Enabled locales: #{Setting.enabled_locales}"
       puts "params: #{params[:locale]}"
-      puts "session: #{session[:locale]}"
+      puts "session before assignment: #{session[:locale]}"
       puts "recalculating: #{current_locale}"
 
       session[:locale] = locale.to_s
+
+      puts "session after assignment: #{session[:locale]}"
 
       I18n.with_locale(locale, &action)
     end

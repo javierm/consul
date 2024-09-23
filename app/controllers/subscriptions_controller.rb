@@ -32,8 +32,10 @@ class SubscriptionsController < ApplicationController
 
     def set_user_locale(&action)
       if params[:locale].blank?
+        puts "Shouldn't be here 3"
         session[:locale] = find_locale.to_s
       end
+      puts "Shouldn't be here 4"
       I18n.with_locale(session[:locale], &action)
     end
 
