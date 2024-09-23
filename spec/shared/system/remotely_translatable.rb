@@ -24,20 +24,27 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
 
         in_browser(:one) do
           visit path
+          puts "First"
           select "Español", from: "Language:"
 
+          puts "Second"
           expect(page).to have_button "Traducir página"
         end
 
         in_browser(:two) do
+          puts "Third"
           visit path
+          puts "Fourth"
           select "Español", from: "Language:"
+          puts "Fifth"
           click_button "Traducir página"
+          puts "Sixth"
 
           expect(page).to have_content "Se han solicitado correctamente las traducciones"
         end
 
         in_browser(:one) do
+          puts "Seventh"
           click_button "Traducir página"
 
           expect(page).not_to have_button "Traducir página"

@@ -47,6 +47,7 @@ class ApplicationController < ActionController::Base
       end
 
       session[:locale] = locale.to_s
+      puts "Switch locale: #{locale} for #{params}"
       I18n.with_locale(locale, &action)
     end
 
