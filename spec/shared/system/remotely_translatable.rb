@@ -43,6 +43,1541 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
           expect(page).not_to have_button "Traducir página"
         end
       end
+
+      scenario "request a translation of an already translated text" do
+        response = generate_response(resource)
+        path_with_a_different_locale = send(path_name, arguments.merge(locale: :es))
+
+        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+
+        in_browser(:one) do
+          visit path_with_a_different_locale
+
+          expect(page).to have_button "Traducir página"
+        end
+
+        in_browser(:two) do
+          visit path_with_a_different_locale
+          click_button "Traducir página"
+
+          expect(page).to have_content "Se han solicitado correctamente las traducciones"
+        end
+
+        in_browser(:one) do
+          click_button "Traducir página"
+
+          expect(page).not_to have_button "Traducir página"
+        end
+      end
+
+      scenario "request a translation of an already translated text" do
+        response = generate_response(resource)
+        path_with_a_different_locale = send(path_name, arguments.merge(locale: :es))
+
+        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+
+        in_browser(:one) do
+          visit path_with_a_different_locale
+
+          expect(page).to have_button "Traducir página"
+        end
+
+        in_browser(:two) do
+          visit path_with_a_different_locale
+          click_button "Traducir página"
+
+          expect(page).to have_content "Se han solicitado correctamente las traducciones"
+        end
+
+        in_browser(:one) do
+          click_button "Traducir página"
+
+          expect(page).not_to have_button "Traducir página"
+        end
+      end
+
+      scenario "request a translation of an already translated text" do
+        response = generate_response(resource)
+        path_with_a_different_locale = send(path_name, arguments.merge(locale: :es))
+
+        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+
+        in_browser(:one) do
+          visit path_with_a_different_locale
+
+          expect(page).to have_button "Traducir página"
+        end
+
+        in_browser(:two) do
+          visit path_with_a_different_locale
+          click_button "Traducir página"
+
+          expect(page).to have_content "Se han solicitado correctamente las traducciones"
+        end
+
+        in_browser(:one) do
+          click_button "Traducir página"
+
+          expect(page).not_to have_button "Traducir página"
+        end
+      end
+
+      scenario "request a translation of an already translated text" do
+        response = generate_response(resource)
+        path_with_a_different_locale = send(path_name, arguments.merge(locale: :es))
+
+        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+
+        in_browser(:one) do
+          visit path_with_a_different_locale
+
+          expect(page).to have_button "Traducir página"
+        end
+
+        in_browser(:two) do
+          visit path_with_a_different_locale
+          click_button "Traducir página"
+
+          expect(page).to have_content "Se han solicitado correctamente las traducciones"
+        end
+
+        in_browser(:one) do
+          click_button "Traducir página"
+
+          expect(page).not_to have_button "Traducir página"
+        end
+      end
+
+      scenario "request a translation of an already translated text" do
+        response = generate_response(resource)
+        path_with_a_different_locale = send(path_name, arguments.merge(locale: :es))
+
+        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+
+        in_browser(:one) do
+          visit path_with_a_different_locale
+
+          expect(page).to have_button "Traducir página"
+        end
+
+        in_browser(:two) do
+          visit path_with_a_different_locale
+          click_button "Traducir página"
+
+          expect(page).to have_content "Se han solicitado correctamente las traducciones"
+        end
+
+        in_browser(:one) do
+          click_button "Traducir página"
+
+          expect(page).not_to have_button "Traducir página"
+        end
+      end
+
+      scenario "request a translation of an already translated text" do
+        response = generate_response(resource)
+        path_with_a_different_locale = send(path_name, arguments.merge(locale: :es))
+
+        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+
+        in_browser(:one) do
+          visit path_with_a_different_locale
+
+          expect(page).to have_button "Traducir página"
+        end
+
+        in_browser(:two) do
+          visit path_with_a_different_locale
+          click_button "Traducir página"
+
+          expect(page).to have_content "Se han solicitado correctamente las traducciones"
+        end
+
+        in_browser(:one) do
+          click_button "Traducir página"
+
+          expect(page).not_to have_button "Traducir página"
+        end
+      end
+
+      scenario "request a translation of an already translated text" do
+        response = generate_response(resource)
+        path_with_a_different_locale = send(path_name, arguments.merge(locale: :es))
+
+        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+
+        in_browser(:one) do
+          visit path_with_a_different_locale
+
+          expect(page).to have_button "Traducir página"
+        end
+
+        in_browser(:two) do
+          visit path_with_a_different_locale
+          click_button "Traducir página"
+
+          expect(page).to have_content "Se han solicitado correctamente las traducciones"
+        end
+
+        in_browser(:one) do
+          click_button "Traducir página"
+
+          expect(page).not_to have_button "Traducir página"
+        end
+      end
+
+      scenario "request a translation of an already translated text" do
+        response = generate_response(resource)
+        path_with_a_different_locale = send(path_name, arguments.merge(locale: :es))
+
+        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+
+        in_browser(:one) do
+          visit path_with_a_different_locale
+
+          expect(page).to have_button "Traducir página"
+        end
+
+        in_browser(:two) do
+          visit path_with_a_different_locale
+          click_button "Traducir página"
+
+          expect(page).to have_content "Se han solicitado correctamente las traducciones"
+        end
+
+        in_browser(:one) do
+          click_button "Traducir página"
+
+          expect(page).not_to have_button "Traducir página"
+        end
+      end
+
+      scenario "request a translation of an already translated text" do
+        response = generate_response(resource)
+        path_with_a_different_locale = send(path_name, arguments.merge(locale: :es))
+
+        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+
+        in_browser(:one) do
+          visit path_with_a_different_locale
+
+          expect(page).to have_button "Traducir página"
+        end
+
+        in_browser(:two) do
+          visit path_with_a_different_locale
+          click_button "Traducir página"
+
+          expect(page).to have_content "Se han solicitado correctamente las traducciones"
+        end
+
+        in_browser(:one) do
+          click_button "Traducir página"
+
+          expect(page).not_to have_button "Traducir página"
+        end
+      end
+
+      scenario "request a translation of an already translated text" do
+        response = generate_response(resource)
+        path_with_a_different_locale = send(path_name, arguments.merge(locale: :es))
+
+        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+
+        in_browser(:one) do
+          visit path_with_a_different_locale
+
+          expect(page).to have_button "Traducir página"
+        end
+
+        in_browser(:two) do
+          visit path_with_a_different_locale
+          click_button "Traducir página"
+
+          expect(page).to have_content "Se han solicitado correctamente las traducciones"
+        end
+
+        in_browser(:one) do
+          click_button "Traducir página"
+
+          expect(page).not_to have_button "Traducir página"
+        end
+      end
+
+      scenario "request a translation of an already translated text" do
+        response = generate_response(resource)
+        path_with_a_different_locale = send(path_name, arguments.merge(locale: :es))
+
+        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+
+        in_browser(:one) do
+          visit path_with_a_different_locale
+
+          expect(page).to have_button "Traducir página"
+        end
+
+        in_browser(:two) do
+          visit path_with_a_different_locale
+          click_button "Traducir página"
+
+          expect(page).to have_content "Se han solicitado correctamente las traducciones"
+        end
+
+        in_browser(:one) do
+          click_button "Traducir página"
+
+          expect(page).not_to have_button "Traducir página"
+        end
+      end
+
+      scenario "request a translation of an already translated text" do
+        response = generate_response(resource)
+        path_with_a_different_locale = send(path_name, arguments.merge(locale: :es))
+
+        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+
+        in_browser(:one) do
+          visit path_with_a_different_locale
+
+          expect(page).to have_button "Traducir página"
+        end
+
+        in_browser(:two) do
+          visit path_with_a_different_locale
+          click_button "Traducir página"
+
+          expect(page).to have_content "Se han solicitado correctamente las traducciones"
+        end
+
+        in_browser(:one) do
+          click_button "Traducir página"
+
+          expect(page).not_to have_button "Traducir página"
+        end
+      end
+
+      scenario "request a translation of an already translated text" do
+        response = generate_response(resource)
+        path_with_a_different_locale = send(path_name, arguments.merge(locale: :es))
+
+        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+
+        in_browser(:one) do
+          visit path_with_a_different_locale
+
+          expect(page).to have_button "Traducir página"
+        end
+
+        in_browser(:two) do
+          visit path_with_a_different_locale
+          click_button "Traducir página"
+
+          expect(page).to have_content "Se han solicitado correctamente las traducciones"
+        end
+
+        in_browser(:one) do
+          click_button "Traducir página"
+
+          expect(page).not_to have_button "Traducir página"
+        end
+      end
+
+      scenario "request a translation of an already translated text" do
+        response = generate_response(resource)
+        path_with_a_different_locale = send(path_name, arguments.merge(locale: :es))
+
+        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+
+        in_browser(:one) do
+          visit path_with_a_different_locale
+
+          expect(page).to have_button "Traducir página"
+        end
+
+        in_browser(:two) do
+          visit path_with_a_different_locale
+          click_button "Traducir página"
+
+          expect(page).to have_content "Se han solicitado correctamente las traducciones"
+        end
+
+        in_browser(:one) do
+          click_button "Traducir página"
+
+          expect(page).not_to have_button "Traducir página"
+        end
+      end
+
+      scenario "request a translation of an already translated text" do
+        response = generate_response(resource)
+        path_with_a_different_locale = send(path_name, arguments.merge(locale: :es))
+
+        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+
+        in_browser(:one) do
+          visit path_with_a_different_locale
+
+          expect(page).to have_button "Traducir página"
+        end
+
+        in_browser(:two) do
+          visit path_with_a_different_locale
+          click_button "Traducir página"
+
+          expect(page).to have_content "Se han solicitado correctamente las traducciones"
+        end
+
+        in_browser(:one) do
+          click_button "Traducir página"
+
+          expect(page).not_to have_button "Traducir página"
+        end
+      end
+
+      scenario "request a translation of an already translated text" do
+        response = generate_response(resource)
+        path_with_a_different_locale = send(path_name, arguments.merge(locale: :es))
+
+        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+
+        in_browser(:one) do
+          visit path_with_a_different_locale
+
+          expect(page).to have_button "Traducir página"
+        end
+
+        in_browser(:two) do
+          visit path_with_a_different_locale
+          click_button "Traducir página"
+
+          expect(page).to have_content "Se han solicitado correctamente las traducciones"
+        end
+
+        in_browser(:one) do
+          click_button "Traducir página"
+
+          expect(page).not_to have_button "Traducir página"
+        end
+      end
+
+      scenario "request a translation of an already translated text" do
+        response = generate_response(resource)
+        path_with_a_different_locale = send(path_name, arguments.merge(locale: :es))
+
+        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+
+        in_browser(:one) do
+          visit path_with_a_different_locale
+
+          expect(page).to have_button "Traducir página"
+        end
+
+        in_browser(:two) do
+          visit path_with_a_different_locale
+          click_button "Traducir página"
+
+          expect(page).to have_content "Se han solicitado correctamente las traducciones"
+        end
+
+        in_browser(:one) do
+          click_button "Traducir página"
+
+          expect(page).not_to have_button "Traducir página"
+        end
+      end
+
+      scenario "request a translation of an already translated text" do
+        response = generate_response(resource)
+        path_with_a_different_locale = send(path_name, arguments.merge(locale: :es))
+
+        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+
+        in_browser(:one) do
+          visit path_with_a_different_locale
+
+          expect(page).to have_button "Traducir página"
+        end
+
+        in_browser(:two) do
+          visit path_with_a_different_locale
+          click_button "Traducir página"
+
+          expect(page).to have_content "Se han solicitado correctamente las traducciones"
+        end
+
+        in_browser(:one) do
+          click_button "Traducir página"
+
+          expect(page).not_to have_button "Traducir página"
+        end
+      end
+
+      scenario "request a translation of an already translated text" do
+        response = generate_response(resource)
+        path_with_a_different_locale = send(path_name, arguments.merge(locale: :es))
+
+        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+
+        in_browser(:one) do
+          visit path_with_a_different_locale
+
+          expect(page).to have_button "Traducir página"
+        end
+
+        in_browser(:two) do
+          visit path_with_a_different_locale
+          click_button "Traducir página"
+
+          expect(page).to have_content "Se han solicitado correctamente las traducciones"
+        end
+
+        in_browser(:one) do
+          click_button "Traducir página"
+
+          expect(page).not_to have_button "Traducir página"
+        end
+      end
+
+      scenario "request a translation of an already translated text" do
+        response = generate_response(resource)
+        path_with_a_different_locale = send(path_name, arguments.merge(locale: :es))
+
+        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+
+        in_browser(:one) do
+          visit path_with_a_different_locale
+
+          expect(page).to have_button "Traducir página"
+        end
+
+        in_browser(:two) do
+          visit path_with_a_different_locale
+          click_button "Traducir página"
+
+          expect(page).to have_content "Se han solicitado correctamente las traducciones"
+        end
+
+        in_browser(:one) do
+          click_button "Traducir página"
+
+          expect(page).not_to have_button "Traducir página"
+        end
+      end
+
+      scenario "request a translation of an already translated text" do
+        response = generate_response(resource)
+        path_with_a_different_locale = send(path_name, arguments.merge(locale: :es))
+
+        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+
+        in_browser(:one) do
+          visit path_with_a_different_locale
+
+          expect(page).to have_button "Traducir página"
+        end
+
+        in_browser(:two) do
+          visit path_with_a_different_locale
+          click_button "Traducir página"
+
+          expect(page).to have_content "Se han solicitado correctamente las traducciones"
+        end
+
+        in_browser(:one) do
+          click_button "Traducir página"
+
+          expect(page).not_to have_button "Traducir página"
+        end
+      end
+
+      scenario "request a translation of an already translated text" do
+        response = generate_response(resource)
+        path_with_a_different_locale = send(path_name, arguments.merge(locale: :es))
+
+        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+
+        in_browser(:one) do
+          visit path_with_a_different_locale
+
+          expect(page).to have_button "Traducir página"
+        end
+
+        in_browser(:two) do
+          visit path_with_a_different_locale
+          click_button "Traducir página"
+
+          expect(page).to have_content "Se han solicitado correctamente las traducciones"
+        end
+
+        in_browser(:one) do
+          click_button "Traducir página"
+
+          expect(page).not_to have_button "Traducir página"
+        end
+      end
+
+      scenario "request a translation of an already translated text" do
+        response = generate_response(resource)
+        path_with_a_different_locale = send(path_name, arguments.merge(locale: :es))
+
+        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+
+        in_browser(:one) do
+          visit path_with_a_different_locale
+
+          expect(page).to have_button "Traducir página"
+        end
+
+        in_browser(:two) do
+          visit path_with_a_different_locale
+          click_button "Traducir página"
+
+          expect(page).to have_content "Se han solicitado correctamente las traducciones"
+        end
+
+        in_browser(:one) do
+          click_button "Traducir página"
+
+          expect(page).not_to have_button "Traducir página"
+        end
+      end
+
+      scenario "request a translation of an already translated text" do
+        response = generate_response(resource)
+        path_with_a_different_locale = send(path_name, arguments.merge(locale: :es))
+
+        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+
+        in_browser(:one) do
+          visit path_with_a_different_locale
+
+          expect(page).to have_button "Traducir página"
+        end
+
+        in_browser(:two) do
+          visit path_with_a_different_locale
+          click_button "Traducir página"
+
+          expect(page).to have_content "Se han solicitado correctamente las traducciones"
+        end
+
+        in_browser(:one) do
+          click_button "Traducir página"
+
+          expect(page).not_to have_button "Traducir página"
+        end
+      end
+
+      scenario "request a translation of an already translated text" do
+        response = generate_response(resource)
+        path_with_a_different_locale = send(path_name, arguments.merge(locale: :es))
+
+        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+
+        in_browser(:one) do
+          visit path_with_a_different_locale
+
+          expect(page).to have_button "Traducir página"
+        end
+
+        in_browser(:two) do
+          visit path_with_a_different_locale
+          click_button "Traducir página"
+
+          expect(page).to have_content "Se han solicitado correctamente las traducciones"
+        end
+
+        in_browser(:one) do
+          click_button "Traducir página"
+
+          expect(page).not_to have_button "Traducir página"
+        end
+      end
+
+      scenario "request a translation of an already translated text" do
+        response = generate_response(resource)
+        path_with_a_different_locale = send(path_name, arguments.merge(locale: :es))
+
+        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+
+        in_browser(:one) do
+          visit path_with_a_different_locale
+
+          expect(page).to have_button "Traducir página"
+        end
+
+        in_browser(:two) do
+          visit path_with_a_different_locale
+          click_button "Traducir página"
+
+          expect(page).to have_content "Se han solicitado correctamente las traducciones"
+        end
+
+        in_browser(:one) do
+          click_button "Traducir página"
+
+          expect(page).not_to have_button "Traducir página"
+        end
+      end
+
+      scenario "request a translation of an already translated text" do
+        response = generate_response(resource)
+        path_with_a_different_locale = send(path_name, arguments.merge(locale: :es))
+
+        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+
+        in_browser(:one) do
+          visit path_with_a_different_locale
+
+          expect(page).to have_button "Traducir página"
+        end
+
+        in_browser(:two) do
+          visit path_with_a_different_locale
+          click_button "Traducir página"
+
+          expect(page).to have_content "Se han solicitado correctamente las traducciones"
+        end
+
+        in_browser(:one) do
+          click_button "Traducir página"
+
+          expect(page).not_to have_button "Traducir página"
+        end
+      end
+
+      scenario "request a translation of an already translated text" do
+        response = generate_response(resource)
+        path_with_a_different_locale = send(path_name, arguments.merge(locale: :es))
+
+        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+
+        in_browser(:one) do
+          visit path_with_a_different_locale
+
+          expect(page).to have_button "Traducir página"
+        end
+
+        in_browser(:two) do
+          visit path_with_a_different_locale
+          click_button "Traducir página"
+
+          expect(page).to have_content "Se han solicitado correctamente las traducciones"
+        end
+
+        in_browser(:one) do
+          click_button "Traducir página"
+
+          expect(page).not_to have_button "Traducir página"
+        end
+      end
+
+      scenario "request a translation of an already translated text" do
+        response = generate_response(resource)
+        path_with_a_different_locale = send(path_name, arguments.merge(locale: :es))
+
+        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+
+        in_browser(:one) do
+          visit path_with_a_different_locale
+
+          expect(page).to have_button "Traducir página"
+        end
+
+        in_browser(:two) do
+          visit path_with_a_different_locale
+          click_button "Traducir página"
+
+          expect(page).to have_content "Se han solicitado correctamente las traducciones"
+        end
+
+        in_browser(:one) do
+          click_button "Traducir página"
+
+          expect(page).not_to have_button "Traducir página"
+        end
+      end
+
+      scenario "request a translation of an already translated text" do
+        response = generate_response(resource)
+        path_with_a_different_locale = send(path_name, arguments.merge(locale: :es))
+
+        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+
+        in_browser(:one) do
+          visit path_with_a_different_locale
+
+          expect(page).to have_button "Traducir página"
+        end
+
+        in_browser(:two) do
+          visit path_with_a_different_locale
+          click_button "Traducir página"
+
+          expect(page).to have_content "Se han solicitado correctamente las traducciones"
+        end
+
+        in_browser(:one) do
+          click_button "Traducir página"
+
+          expect(page).not_to have_button "Traducir página"
+        end
+      end
+
+      scenario "request a translation of an already translated text" do
+        response = generate_response(resource)
+        path_with_a_different_locale = send(path_name, arguments.merge(locale: :es))
+
+        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+
+        in_browser(:one) do
+          visit path_with_a_different_locale
+
+          expect(page).to have_button "Traducir página"
+        end
+
+        in_browser(:two) do
+          visit path_with_a_different_locale
+          click_button "Traducir página"
+
+          expect(page).to have_content "Se han solicitado correctamente las traducciones"
+        end
+
+        in_browser(:one) do
+          click_button "Traducir página"
+
+          expect(page).not_to have_button "Traducir página"
+        end
+      end
+
+      scenario "request a translation of an already translated text" do
+        response = generate_response(resource)
+        path_with_a_different_locale = send(path_name, arguments.merge(locale: :es))
+
+        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+
+        in_browser(:one) do
+          visit path_with_a_different_locale
+
+          expect(page).to have_button "Traducir página"
+        end
+
+        in_browser(:two) do
+          visit path_with_a_different_locale
+          click_button "Traducir página"
+
+          expect(page).to have_content "Se han solicitado correctamente las traducciones"
+        end
+
+        in_browser(:one) do
+          click_button "Traducir página"
+
+          expect(page).not_to have_button "Traducir página"
+        end
+      end
+
+      scenario "request a translation of an already translated text" do
+        response = generate_response(resource)
+        path_with_a_different_locale = send(path_name, arguments.merge(locale: :es))
+
+        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+
+        in_browser(:one) do
+          visit path_with_a_different_locale
+
+          expect(page).to have_button "Traducir página"
+        end
+
+        in_browser(:two) do
+          visit path_with_a_different_locale
+          click_button "Traducir página"
+
+          expect(page).to have_content "Se han solicitado correctamente las traducciones"
+        end
+
+        in_browser(:one) do
+          click_button "Traducir página"
+
+          expect(page).not_to have_button "Traducir página"
+        end
+      end
+
+      scenario "request a translation of an already translated text" do
+        response = generate_response(resource)
+        path_with_a_different_locale = send(path_name, arguments.merge(locale: :es))
+
+        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+
+        in_browser(:one) do
+          visit path_with_a_different_locale
+
+          expect(page).to have_button "Traducir página"
+        end
+
+        in_browser(:two) do
+          visit path_with_a_different_locale
+          click_button "Traducir página"
+
+          expect(page).to have_content "Se han solicitado correctamente las traducciones"
+        end
+
+        in_browser(:one) do
+          click_button "Traducir página"
+
+          expect(page).not_to have_button "Traducir página"
+        end
+      end
+
+      scenario "request a translation of an already translated text" do
+        response = generate_response(resource)
+        path_with_a_different_locale = send(path_name, arguments.merge(locale: :es))
+
+        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+
+        in_browser(:one) do
+          visit path_with_a_different_locale
+
+          expect(page).to have_button "Traducir página"
+        end
+
+        in_browser(:two) do
+          visit path_with_a_different_locale
+          click_button "Traducir página"
+
+          expect(page).to have_content "Se han solicitado correctamente las traducciones"
+        end
+
+        in_browser(:one) do
+          click_button "Traducir página"
+
+          expect(page).not_to have_button "Traducir página"
+        end
+      end
+
+      scenario "request a translation of an already translated text" do
+        response = generate_response(resource)
+        path_with_a_different_locale = send(path_name, arguments.merge(locale: :es))
+
+        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+
+        in_browser(:one) do
+          visit path_with_a_different_locale
+
+          expect(page).to have_button "Traducir página"
+        end
+
+        in_browser(:two) do
+          visit path_with_a_different_locale
+          click_button "Traducir página"
+
+          expect(page).to have_content "Se han solicitado correctamente las traducciones"
+        end
+
+        in_browser(:one) do
+          click_button "Traducir página"
+
+          expect(page).not_to have_button "Traducir página"
+        end
+      end
+
+      scenario "request a translation of an already translated text" do
+        response = generate_response(resource)
+        path_with_a_different_locale = send(path_name, arguments.merge(locale: :es))
+
+        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+
+        in_browser(:one) do
+          visit path_with_a_different_locale
+
+          expect(page).to have_button "Traducir página"
+        end
+
+        in_browser(:two) do
+          visit path_with_a_different_locale
+          click_button "Traducir página"
+
+          expect(page).to have_content "Se han solicitado correctamente las traducciones"
+        end
+
+        in_browser(:one) do
+          click_button "Traducir página"
+
+          expect(page).not_to have_button "Traducir página"
+        end
+      end
+
+      scenario "request a translation of an already translated text" do
+        response = generate_response(resource)
+        path_with_a_different_locale = send(path_name, arguments.merge(locale: :es))
+
+        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+
+        in_browser(:one) do
+          visit path_with_a_different_locale
+
+          expect(page).to have_button "Traducir página"
+        end
+
+        in_browser(:two) do
+          visit path_with_a_different_locale
+          click_button "Traducir página"
+
+          expect(page).to have_content "Se han solicitado correctamente las traducciones"
+        end
+
+        in_browser(:one) do
+          click_button "Traducir página"
+
+          expect(page).not_to have_button "Traducir página"
+        end
+      end
+
+      scenario "request a translation of an already translated text" do
+        response = generate_response(resource)
+        path_with_a_different_locale = send(path_name, arguments.merge(locale: :es))
+
+        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+
+        in_browser(:one) do
+          visit path_with_a_different_locale
+
+          expect(page).to have_button "Traducir página"
+        end
+
+        in_browser(:two) do
+          visit path_with_a_different_locale
+          click_button "Traducir página"
+
+          expect(page).to have_content "Se han solicitado correctamente las traducciones"
+        end
+
+        in_browser(:one) do
+          click_button "Traducir página"
+
+          expect(page).not_to have_button "Traducir página"
+        end
+      end
+
+      scenario "request a translation of an already translated text" do
+        response = generate_response(resource)
+        path_with_a_different_locale = send(path_name, arguments.merge(locale: :es))
+
+        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+
+        in_browser(:one) do
+          visit path_with_a_different_locale
+
+          expect(page).to have_button "Traducir página"
+        end
+
+        in_browser(:two) do
+          visit path_with_a_different_locale
+          click_button "Traducir página"
+
+          expect(page).to have_content "Se han solicitado correctamente las traducciones"
+        end
+
+        in_browser(:one) do
+          click_button "Traducir página"
+
+          expect(page).not_to have_button "Traducir página"
+        end
+      end
+
+      scenario "request a translation of an already translated text" do
+        response = generate_response(resource)
+        path_with_a_different_locale = send(path_name, arguments.merge(locale: :es))
+
+        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+
+        in_browser(:one) do
+          visit path_with_a_different_locale
+
+          expect(page).to have_button "Traducir página"
+        end
+
+        in_browser(:two) do
+          visit path_with_a_different_locale
+          click_button "Traducir página"
+
+          expect(page).to have_content "Se han solicitado correctamente las traducciones"
+        end
+
+        in_browser(:one) do
+          click_button "Traducir página"
+
+          expect(page).not_to have_button "Traducir página"
+        end
+      end
+
+      scenario "request a translation of an already translated text" do
+        response = generate_response(resource)
+        path_with_a_different_locale = send(path_name, arguments.merge(locale: :es))
+
+        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+
+        in_browser(:one) do
+          visit path_with_a_different_locale
+
+          expect(page).to have_button "Traducir página"
+        end
+
+        in_browser(:two) do
+          visit path_with_a_different_locale
+          click_button "Traducir página"
+
+          expect(page).to have_content "Se han solicitado correctamente las traducciones"
+        end
+
+        in_browser(:one) do
+          click_button "Traducir página"
+
+          expect(page).not_to have_button "Traducir página"
+        end
+      end
+
+      scenario "request a translation of an already translated text" do
+        response = generate_response(resource)
+        path_with_a_different_locale = send(path_name, arguments.merge(locale: :es))
+
+        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+
+        in_browser(:one) do
+          visit path_with_a_different_locale
+
+          expect(page).to have_button "Traducir página"
+        end
+
+        in_browser(:two) do
+          visit path_with_a_different_locale
+          click_button "Traducir página"
+
+          expect(page).to have_content "Se han solicitado correctamente las traducciones"
+        end
+
+        in_browser(:one) do
+          click_button "Traducir página"
+
+          expect(page).not_to have_button "Traducir página"
+        end
+      end
+
+      scenario "request a translation of an already translated text" do
+        response = generate_response(resource)
+        path_with_a_different_locale = send(path_name, arguments.merge(locale: :es))
+
+        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+
+        in_browser(:one) do
+          visit path_with_a_different_locale
+
+          expect(page).to have_button "Traducir página"
+        end
+
+        in_browser(:two) do
+          visit path_with_a_different_locale
+          click_button "Traducir página"
+
+          expect(page).to have_content "Se han solicitado correctamente las traducciones"
+        end
+
+        in_browser(:one) do
+          click_button "Traducir página"
+
+          expect(page).not_to have_button "Traducir página"
+        end
+      end
+
+      scenario "request a translation of an already translated text" do
+        response = generate_response(resource)
+        path_with_a_different_locale = send(path_name, arguments.merge(locale: :es))
+
+        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+
+        in_browser(:one) do
+          visit path_with_a_different_locale
+
+          expect(page).to have_button "Traducir página"
+        end
+
+        in_browser(:two) do
+          visit path_with_a_different_locale
+          click_button "Traducir página"
+
+          expect(page).to have_content "Se han solicitado correctamente las traducciones"
+        end
+
+        in_browser(:one) do
+          click_button "Traducir página"
+
+          expect(page).not_to have_button "Traducir página"
+        end
+      end
+
+      scenario "request a translation of an already translated text" do
+        response = generate_response(resource)
+        path_with_a_different_locale = send(path_name, arguments.merge(locale: :es))
+
+        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+
+        in_browser(:one) do
+          visit path_with_a_different_locale
+
+          expect(page).to have_button "Traducir página"
+        end
+
+        in_browser(:two) do
+          visit path_with_a_different_locale
+          click_button "Traducir página"
+
+          expect(page).to have_content "Se han solicitado correctamente las traducciones"
+        end
+
+        in_browser(:one) do
+          click_button "Traducir página"
+
+          expect(page).not_to have_button "Traducir página"
+        end
+      end
+
+      scenario "request a translation of an already translated text" do
+        response = generate_response(resource)
+        path_with_a_different_locale = send(path_name, arguments.merge(locale: :es))
+
+        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+
+        in_browser(:one) do
+          visit path_with_a_different_locale
+
+          expect(page).to have_button "Traducir página"
+        end
+
+        in_browser(:two) do
+          visit path_with_a_different_locale
+          click_button "Traducir página"
+
+          expect(page).to have_content "Se han solicitado correctamente las traducciones"
+        end
+
+        in_browser(:one) do
+          click_button "Traducir página"
+
+          expect(page).not_to have_button "Traducir página"
+        end
+      end
+
+      scenario "request a translation of an already translated text" do
+        response = generate_response(resource)
+        path_with_a_different_locale = send(path_name, arguments.merge(locale: :es))
+
+        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+
+        in_browser(:one) do
+          visit path_with_a_different_locale
+
+          expect(page).to have_button "Traducir página"
+        end
+
+        in_browser(:two) do
+          visit path_with_a_different_locale
+          click_button "Traducir página"
+
+          expect(page).to have_content "Se han solicitado correctamente las traducciones"
+        end
+
+        in_browser(:one) do
+          click_button "Traducir página"
+
+          expect(page).not_to have_button "Traducir página"
+        end
+      end
+
+      scenario "request a translation of an already translated text" do
+        response = generate_response(resource)
+        path_with_a_different_locale = send(path_name, arguments.merge(locale: :es))
+
+        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+
+        in_browser(:one) do
+          visit path_with_a_different_locale
+
+          expect(page).to have_button "Traducir página"
+        end
+
+        in_browser(:two) do
+          visit path_with_a_different_locale
+          click_button "Traducir página"
+
+          expect(page).to have_content "Se han solicitado correctamente las traducciones"
+        end
+
+        in_browser(:one) do
+          click_button "Traducir página"
+
+          expect(page).not_to have_button "Traducir página"
+        end
+      end
+
+      scenario "request a translation of an already translated text" do
+        response = generate_response(resource)
+        path_with_a_different_locale = send(path_name, arguments.merge(locale: :es))
+
+        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+
+        in_browser(:one) do
+          visit path_with_a_different_locale
+
+          expect(page).to have_button "Traducir página"
+        end
+
+        in_browser(:two) do
+          visit path_with_a_different_locale
+          click_button "Traducir página"
+
+          expect(page).to have_content "Se han solicitado correctamente las traducciones"
+        end
+
+        in_browser(:one) do
+          click_button "Traducir página"
+
+          expect(page).not_to have_button "Traducir página"
+        end
+      end
+
+      scenario "request a translation of an already translated text" do
+        response = generate_response(resource)
+        path_with_a_different_locale = send(path_name, arguments.merge(locale: :es))
+
+        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+
+        in_browser(:one) do
+          visit path_with_a_different_locale
+
+          expect(page).to have_button "Traducir página"
+        end
+
+        in_browser(:two) do
+          visit path_with_a_different_locale
+          click_button "Traducir página"
+
+          expect(page).to have_content "Se han solicitado correctamente las traducciones"
+        end
+
+        in_browser(:one) do
+          click_button "Traducir página"
+
+          expect(page).not_to have_button "Traducir página"
+        end
+      end
+
+      scenario "request a translation of an already translated text" do
+        response = generate_response(resource)
+        path_with_a_different_locale = send(path_name, arguments.merge(locale: :es))
+
+        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+
+        in_browser(:one) do
+          visit path_with_a_different_locale
+
+          expect(page).to have_button "Traducir página"
+        end
+
+        in_browser(:two) do
+          visit path_with_a_different_locale
+          click_button "Traducir página"
+
+          expect(page).to have_content "Se han solicitado correctamente las traducciones"
+        end
+
+        in_browser(:one) do
+          click_button "Traducir página"
+
+          expect(page).not_to have_button "Traducir página"
+        end
+      end
+
+      scenario "request a translation of an already translated text" do
+        response = generate_response(resource)
+        path_with_a_different_locale = send(path_name, arguments.merge(locale: :es))
+
+        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+
+        in_browser(:one) do
+          visit path_with_a_different_locale
+
+          expect(page).to have_button "Traducir página"
+        end
+
+        in_browser(:two) do
+          visit path_with_a_different_locale
+          click_button "Traducir página"
+
+          expect(page).to have_content "Se han solicitado correctamente las traducciones"
+        end
+
+        in_browser(:one) do
+          click_button "Traducir página"
+
+          expect(page).not_to have_button "Traducir página"
+        end
+      end
+
+      scenario "request a translation of an already translated text" do
+        response = generate_response(resource)
+        path_with_a_different_locale = send(path_name, arguments.merge(locale: :es))
+
+        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+
+        in_browser(:one) do
+          visit path_with_a_different_locale
+
+          expect(page).to have_button "Traducir página"
+        end
+
+        in_browser(:two) do
+          visit path_with_a_different_locale
+          click_button "Traducir página"
+
+          expect(page).to have_content "Se han solicitado correctamente las traducciones"
+        end
+
+        in_browser(:one) do
+          click_button "Traducir página"
+
+          expect(page).not_to have_button "Traducir página"
+        end
+      end
+
+      scenario "request a translation of an already translated text" do
+        response = generate_response(resource)
+        path_with_a_different_locale = send(path_name, arguments.merge(locale: :es))
+
+        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+
+        in_browser(:one) do
+          visit path_with_a_different_locale
+
+          expect(page).to have_button "Traducir página"
+        end
+
+        in_browser(:two) do
+          visit path_with_a_different_locale
+          click_button "Traducir página"
+
+          expect(page).to have_content "Se han solicitado correctamente las traducciones"
+        end
+
+        in_browser(:one) do
+          click_button "Traducir página"
+
+          expect(page).not_to have_button "Traducir página"
+        end
+      end
+
+      scenario "request a translation of an already translated text" do
+        response = generate_response(resource)
+        path_with_a_different_locale = send(path_name, arguments.merge(locale: :es))
+
+        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+
+        in_browser(:one) do
+          visit path_with_a_different_locale
+
+          expect(page).to have_button "Traducir página"
+        end
+
+        in_browser(:two) do
+          visit path_with_a_different_locale
+          click_button "Traducir página"
+
+          expect(page).to have_content "Se han solicitado correctamente las traducciones"
+        end
+
+        in_browser(:one) do
+          click_button "Traducir página"
+
+          expect(page).not_to have_button "Traducir página"
+        end
+      end
+
+      scenario "request a translation of an already translated text" do
+        response = generate_response(resource)
+        path_with_a_different_locale = send(path_name, arguments.merge(locale: :es))
+
+        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+
+        in_browser(:one) do
+          visit path_with_a_different_locale
+
+          expect(page).to have_button "Traducir página"
+        end
+
+        in_browser(:two) do
+          visit path_with_a_different_locale
+          click_button "Traducir página"
+
+          expect(page).to have_content "Se han solicitado correctamente las traducciones"
+        end
+
+        in_browser(:one) do
+          click_button "Traducir página"
+
+          expect(page).not_to have_button "Traducir página"
+        end
+      end
+
+      scenario "request a translation of an already translated text" do
+        response = generate_response(resource)
+        path_with_a_different_locale = send(path_name, arguments.merge(locale: :es))
+
+        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+
+        in_browser(:one) do
+          visit path_with_a_different_locale
+
+          expect(page).to have_button "Traducir página"
+        end
+
+        in_browser(:two) do
+          visit path_with_a_different_locale
+          click_button "Traducir página"
+
+          expect(page).to have_content "Se han solicitado correctamente las traducciones"
+        end
+
+        in_browser(:one) do
+          click_button "Traducir página"
+
+          expect(page).not_to have_button "Traducir página"
+        end
+      end
+
+      scenario "request a translation of an already translated text" do
+        response = generate_response(resource)
+        path_with_a_different_locale = send(path_name, arguments.merge(locale: :es))
+
+        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+
+        in_browser(:one) do
+          visit path_with_a_different_locale
+
+          expect(page).to have_button "Traducir página"
+        end
+
+        in_browser(:two) do
+          visit path_with_a_different_locale
+          click_button "Traducir página"
+
+          expect(page).to have_content "Se han solicitado correctamente las traducciones"
+        end
+
+        in_browser(:one) do
+          click_button "Traducir página"
+
+          expect(page).not_to have_button "Traducir página"
+        end
+      end
+
     end
   end
 end
