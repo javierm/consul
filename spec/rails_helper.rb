@@ -61,7 +61,7 @@ module Capybara
       original_visit(url, ...)
 
       unless driver.name == :rack_test
-        expect(page).to be_axe_clean.checking_only :"link-in-text-block", :"color-contrast"
+        expect(page).to be_axe_clean.checking_only :"link-name"
       end
 
       unless url.match?("robots.txt") || url.match?("active_storage/representations")
@@ -77,7 +77,7 @@ module Capybara
       original_click_link(url, ...)
 
       unless driver.name == :rack_test
-        expect(page).to be_axe_clean.checking_only :"link-in-text-block", :"color-contrast"
+        expect(page).to be_axe_clean.checking_only :"link-name"
       end
     end
   end
