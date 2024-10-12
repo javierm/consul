@@ -30,9 +30,9 @@ describe Admin::BudgetsWizard::Headings::GroupSwitcherComponent do
     render_inline Admin::BudgetsWizard::Headings::GroupSwitcherComponent.new(group)
 
     expect(page).to have_content "Showing headings from the Parks group"
-    expect(page).to have_button "Manage headings from a different group"
+    expect(page).to have_link "Manage headings from a different group"
 
-    page.find("button + ul") do |list|
+    page.find("a + ul") do |list|
       expect(list).to have_link "Recreation"
       expect(list).to have_link "Entertainment"
     end
