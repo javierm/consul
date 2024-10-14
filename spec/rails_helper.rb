@@ -30,6 +30,13 @@ module ViewComponent
     def within(...)
       raise "`within` doesn't work in component tests. Use `page.find` instead."
     end
+
+    alias_method :original_render_inline, :render_inline
+    def render_inline(...)
+      original_render_inline(...)
+
+      expect(page).not_to have_css("label:not(:has(:is(input,output,textarea,select))):not([for])")
+    end
   end
 end
 
@@ -68,6 +75,7 @@ module Capybara
         expect(page).to have_css "main", count: 1
         expect(page).to have_css "#main", count: 1
         expect(page).to have_css "main#main"
+        expect(page).not_to have_css("label:not(:has(:is(input,output,textarea,select))):not([for])")
       end
     end
 
