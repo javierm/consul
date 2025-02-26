@@ -36,9 +36,7 @@ describe "Commenting legislation annotations" do
     end
 
     scenario "View comments of annotations in an included range" do
-      within("#annotation-link") do
-        find(".icon-expand").click
-      end
+      click_link "2 comment"
 
       expect(page).to have_content "Comments about"
       expect(page).to have_css ".comment", count: 2
@@ -72,9 +70,7 @@ describe "Commenting legislation annotations" do
         expect(page).to have_content "my other annotation"
       end
 
-      within("#annotation-link") do
-        find(".icon-expand").click
-      end
+      click_link "2 comment"
 
       expect(page).to have_css(".comment", count: 3)
       expect(page).to have_content("my annotation")
@@ -83,9 +79,7 @@ describe "Commenting legislation annotations" do
     end
 
     scenario "Reply on a multiple annotation thread and display it in the single annotation thread" do
-      within("#annotation-link") do
-        find(".icon-expand").click
-      end
+      click_link "2 comment"
 
       within("#comment_#{comment2.id}") do
         click_link "Reply"
