@@ -33,7 +33,7 @@
           className: "map-marker",
           iconSize: [30, 30],
           iconAnchor: [15, 40],
-          html: $('<div class="map-icon"></div>').attr("aria-label", alt_text)[0].outerHTML
+          html: $('<div class="map-icon" aria-label="tempo"></div>').attr("aria-label", alt_text)[0].outerHTML
         });
       };
       createMarker = function(latitude, longitude, text) {
