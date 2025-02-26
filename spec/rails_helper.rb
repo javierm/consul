@@ -26,7 +26,7 @@ module Axe
     class BeAxeClean
       def audit(page)
         @audit ||= Core.new(page).call(@run).tap do |audit|
-          audit.results.violations.select! { |violation| [:critical, :serious].include?(violation.impact) }
+          audit.results.violations.select! { |violation| [:critical, :serious, :moderate].include?(violation.impact) }
         end
       end
     end
