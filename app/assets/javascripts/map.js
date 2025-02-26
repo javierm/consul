@@ -32,7 +32,7 @@
         className: "map-marker",
         iconSize: [30, 30],
         iconAnchor: [15, 40],
-        html: '<div class="map-icon"></div>'
+        html: '<div class="map-icon" aria-label="tempo"></div>'
       });
       createMarker = function(latitude, longitude) {
         var newMarker, markerLatLng;
