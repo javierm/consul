@@ -281,7 +281,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       visit send(mappable_show_path, arguments)
 
       within ".map-location" do
-        expect(page).to have_css(".map-icon")
+        expect(page).to have_css ".map-icon[aria-label='#{mappable.title}']"
       end
     end
 
