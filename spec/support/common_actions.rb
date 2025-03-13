@@ -53,18 +53,21 @@ module CommonActions
 
   def fill_in_new_proposal_title(with:)
     fill_in "Proposal title", with: with
+    fill_in "Proposal summary", with: find_field("Proposal summary").value
 
     expect(page).to have_css ".suggest-success"
   end
 
   def fill_in_new_debate_title(with:)
     fill_in "Debate title", with: with
+    fill_in "Topics", with: find_field("Topics").value
 
     expect(page).to have_css ".suggest-success"
   end
 
   def fill_in_new_investment_title(with:)
     fill_in "Title", with: with
+    fill_in "Tags", with: find_field("Tags").value
 
     expect(page).to have_css ".suggest-success"
   end
