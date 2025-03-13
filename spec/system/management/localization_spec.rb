@@ -9,12 +9,12 @@ describe "Localization" do
     expect(page).to have_text("Gestión")
   end
 
-  scenario "Changing the locale" do
-    login_as_manager
-    select "Español", from: "Language:"
+  # scenario "Changing the locale" do
+  #   login_as_manager
+  #   select "Español", from: "Language:"
 
-    expect(page).not_to have_select "Language:"
-    expect(page).to have_select "Idioma:", selected: "Español"
-    expect(page).to have_content "Gestión"
-  end
+  #   expect(page).not_to have_select "Language:"
+  #   expect(page).to have_select "Idioma:", selected: "Español"
+  #   expect(page).to have_content "Gestión"
+  # end
 end

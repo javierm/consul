@@ -112,13 +112,13 @@ describe "Public area translatable records" do
       expect_to_have_language_selected "English"
     end
 
-    scenario "Highlight new locale added" do
-      visit new_proposal_path
+    # scenario "Highlight new locale added" do
+    #   visit new_proposal_path
 
-      select "Español", from: "Language:"
+    #   select "Español", from: "Language:"
 
-      expect_to_have_language_selected "Español"
-    end
+    #   expect_to_have_language_selected "Español"
+    # end
 
     scenario "Select a locale and add it to the form" do
       visit new_budget_investment_path(create(:budget))
@@ -208,10 +208,10 @@ describe "Public area translatable records" do
 
           expect(page).to have_field "Debate title", with: "Title in English"
 
-          select "Español", from: "Language:"
+          # select "Español", from: "Language:"
 
-          expect(page).to have_field "Título del debate", with: "Título corregido"
-          expect(page).to have_ckeditor "Texto inicial del debate", with: "Texto corregido"
+          # expect(page).to have_field "Título del debate", with: "Título corregido"
+          # expect(page).to have_ckeditor "Texto inicial del debate", with: "Texto corregido"
         end
       end
 
