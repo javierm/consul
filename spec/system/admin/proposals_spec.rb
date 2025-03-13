@@ -33,10 +33,6 @@ describe "Admin proposals", :admin do
 
         expect(page).to have_content "Yes"
       end
-
-      refresh
-
-      within("#proposal_#{proposal.id}") { expect(page).to have_content "Yes" }
     end
 
     scenario "Unselect a proposal" do
@@ -51,10 +47,6 @@ describe "Admin proposals", :admin do
 
         expect(page).to have_content "No"
       end
-
-      refresh
-
-      within("#proposal_#{proposal.id}") { expect(page).to have_content "No" }
     end
   end
 

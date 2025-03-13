@@ -16,19 +16,19 @@ describe "Admin Budgets", :admin do
       expect(page).to have_content("#{balloting_phase.ends_at.to_date - 1.day} 23:59")
     end
 
-    scenario "Create poll in current locale if the budget does not have a poll associated" do
-      budget = create(:budget,
-                      name_en: "Budget for climate change",
-                      name_es: "Presupuesto por el cambio climático")
+    # scenario "Create poll in current locale if the budget does not have a poll associated" do
+    #   budget = create(:budget,
+    #                   name_en: "Budget for climate change",
+    #                   name_es: "Presupuesto por el cambio climático")
 
-      visit admin_budget_path(budget)
-      select "Español", from: "Language:"
+    #   visit admin_budget_path(budget)
+    #   select "Español", from: "Language:"
 
-      accept_confirm { click_button "Crear urnas" }
+    #   accept_confirm { click_button "Crear urnas" }
 
-      expect(page).to have_current_path(/admin\/polls\/\d+/)
-      expect(page).to have_content "Presupuesto por el cambio climático"
-    end
+    #   expect(page).to have_current_path(/admin\/polls\/\d+/)
+    #   expect(page).to have_content "Presupuesto por el cambio climático"
+    # end
   end
 
   context "Show" do

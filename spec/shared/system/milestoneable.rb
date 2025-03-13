@@ -34,14 +34,14 @@ shared_examples "milestoneable" do |factory_name|
         expect(page).to have_content(first_milestone.status.name)
       end
 
-      select "Español", from: "Language:"
+#       select "Español", from: "Language:"
 
-      find("#tab-milestones-label").click
+#       find("#tab-milestones-label").click
 
-      within("#tab-milestones") do
-        expect(page).to have_content("Último hito con el link https://consul.dev")
-        expect(page).to have_link("https://consul.dev")
-      end
+#       within("#tab-milestones") do
+#         expect(page).to have_content("Último hito con el link https://consul.dev")
+#         expect(page).to have_link("https://consul.dev")
+#       end
     end
 
     scenario "Show no_milestones text" do

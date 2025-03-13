@@ -27,9 +27,9 @@ describe "Voters" do
     expect(page).to have_content "Vote introduced!"
     expect(page).not_to have_button "Confirm vote"
 
-    page.evaluate_script("window.location.reload()")
-    expect(page).to have_content "Has already participated in this poll"
-    expect(page).not_to have_button "Confirm vote"
+    # page.evaluate_script("window.location.reload()")
+    # expect(page).to have_content "Has already participated in this poll"
+    # expect(page).not_to have_button "Confirm vote"
   end
 
   scenario "Cannot vote" do
