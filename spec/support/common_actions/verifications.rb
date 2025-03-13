@@ -38,10 +38,6 @@ module Verifications
   def fill_in_ckeditor(label, with:)
     locator = find("label", text: label)[:for]
 
-    until page.execute_script("return CKEDITOR.instances.#{locator}.status === 'ready';") do
-      sleep 0.01
-    end
-
     within("#cke_#{locator}") do
       within_frame(0) { find("body").set(with) }
     end
