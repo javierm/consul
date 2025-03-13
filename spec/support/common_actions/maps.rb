@@ -35,18 +35,10 @@ module Maps
   end
 
   def map_zoom_in
-    initial_zoom = page.execute_script("return App.Map.maps[0].getZoom();")
     find(".leaflet-control-zoom-in").click
-    until page.execute_script("return App.Map.maps[0].getZoom() === #{initial_zoom + 1};") do
-      sleep 0.01
-    end
   end
 
   def place_map_at(latitude, longitude)
     page.execute_script("App.Map.maps[0].setView(new L.LatLng(#{latitude}, #{longitude}))")
-
-    until page.execute_script("return App.Map.maps[0].getCenter().lat === #{latitude};") do
-      sleep 0.01
-    end
   end
 end
