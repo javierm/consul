@@ -18,7 +18,6 @@ require "spec_helper"
 require "custom_spec_helper"
 require "capybara/rails"
 require "capybara/rspec"
-require "selenium/webdriver"
 require "view_component/test_helpers"
 
 module ViewComponent
@@ -69,15 +68,8 @@ module Capybara
   end
 end
 
-Capybara.register_driver :headless_chrome do |app|
-  options = Selenium::WebDriver::Chrome::Options.new.tap do |opts|
-    opts.add_argument "--headless"
-    opts.add_argument "--no-sandbox"
-    opts.add_argument "--window-size=1200,800"
-    opts.add_argument "--proxy-server=#{Capybara.app_host}:#{Capybara::Webmock.port_number}"
-  end
-
-  Capybara::Selenium::Driver.new(app, browser: :chrome, options: options)
+Capybara.register_driver(:playwright) do |app|
+  Capybara::Playwright::Driver.new(app, browser_type: :chromium, headless: true)
 end
 
 Capybara.exact = true

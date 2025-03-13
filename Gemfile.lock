@@ -139,6 +139,10 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
+    capybara-playwright-driver (0.5.4)
+      addressable
+      capybara
+      playwright-ruby-client (>= 1.16.0)
     capybara-webmock (0.7.0)
       capybara (>= 2.4, < 4)
       rack (>= 1.4)
@@ -448,6 +452,9 @@ GEM
     pg_search (2.3.7)
       activerecord (>= 6.1)
       activesupport (>= 6.1)
+    playwright-ruby-client (1.50.1)
+      concurrent-ruby (>= 1.1.6)
+      mime-types (>= 3.0)
     pronto (0.11.3)
       gitlab (>= 4.4.0, < 5.0)
       httparty (>= 0.13.7, < 1.0)
@@ -732,6 +739,7 @@ DEPENDENCIES
   capistrano3-delayed-job (~> 1.7.6)
   capistrano3-puma (~> 5.2.0)
   capybara (~> 3.40.0)
+  capybara-playwright-driver
   capybara-webmock (~> 0.7.0)
   caxlsx (~> 4.1.0)
   caxlsx_rails (~> 0.6.4)
@@ -800,7 +808,6 @@ DEPENDENCIES
   sassc-embedded (~> 1.77.5)
   sassc-rails (~> 2.1.2)
   savon (~> 2.15.1)
-  selenium-webdriver (~> 4.29.1)
   simplecov (~> 0.22.0)
   simplecov-lcov (~> 0.8.0)
   sitemap_generator (~> 6.3.0)
