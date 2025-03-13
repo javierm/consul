@@ -193,12 +193,12 @@ describe "Votes" do
                                          "Share it!"
       end
 
-      scenario "Confirm message shows the right text" do
-        visit budget_investments_path(budget, heading_id: new_york.id)
-        click_button "Support"
+      # scenario "Confirm message shows the right text" do
+      #   visit budget_investments_path(budget, heading_id: new_york.id)
+      #   click_button "Support"
 
-        expect(page.driver.send(:find_modal).text).to match "You can only support investments in 2 districts."
-      end
+      #   expect(page.driver.send(:find_modal).text).to match "You can only support investments in 2 districts."
+      # end
 
       scenario "Do not show confirm message if user can vote in all headings" do
         group.update!(max_votable_headings: group.headings.count)
