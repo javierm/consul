@@ -178,15 +178,17 @@ describe "Executions" do
 
       visit budget_executions_path(budget)
 
-      select "Studying the project (1)", from: "Project's current state"
-      click_button "Filter"
-
-      expect(page).to have_content(investment1.title)
+      expect(page).to have_content investment1.title
 
       select "Bidding (0)", from: "Project's current state"
       click_button "Filter"
 
-      expect(page).not_to have_content(investment1.title)
+      expect(page).not_to have_content investment1.title
+
+      select "Studying the project (1)", from: "Project's current state"
+      click_button "Filter"
+
+      expect(page).to have_content investment1.title
     end
 
     scenario "by milestone tag, only display tags for winner investments" do
