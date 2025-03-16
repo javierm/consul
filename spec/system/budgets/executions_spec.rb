@@ -109,10 +109,7 @@ describe "Executions" do
                          publication_date: Date.yesterday,
                          status: status2)
 
-      visit budget_path(budget)
-
-      click_link "See results"
-      click_link "Milestones"
+      visit budget_executions_path(budget)
 
       expect(page).to have_content("All (2)")
       expect(page).to have_content("#{status1.name} (1)")
@@ -124,10 +121,7 @@ describe "Executions" do
       create(:milestone, milestoneable: investment2, status: status2)
       create(:milestone_status, name: I18n.t("seeds.budgets.statuses.executing_project"))
 
-      visit budget_path(budget)
-
-      click_link "See results"
-      click_link "Milestones"
+      visit budget_executions_path(budget)
 
       expect(page).to have_content(investment1.title)
       expect(page).to have_content(investment2.title)
@@ -160,9 +154,7 @@ describe "Executions" do
                          publication_date: Date.yesterday,
                          status: status2)
 
-      visit budget_path(budget)
-      click_link "See results"
-      click_link "Milestones"
+      visit budget_executions_path(budget)
 
       select "Studying the project (0)", from: "Project's current state"
       click_button "Filter"
@@ -184,9 +176,7 @@ describe "Executions" do
                          publication_date: Date.tomorrow,
                          status: status2)
 
-      visit budget_path(budget)
-      click_link "See results"
-      click_link "Milestones"
+      visit budget_executions_path(budget)
 
       select "Studying the project (1)", from: "Project's current state"
       click_button "Filter"
@@ -210,10 +200,7 @@ describe "Executions" do
       investment3.milestone_tag_list.add("tag2")
       investment3.save!
 
-      visit budget_path(budget)
-
-      click_link "See results"
-      click_link "Milestones"
+      visit budget_executions_path(budget)
 
       expect(page).to have_content(investment1.title)
       expect(page).to have_content(investment2.title)
