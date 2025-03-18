@@ -71,6 +71,7 @@ end
 
 Capybara.register_driver :headless_chrome do |app|
   options = Selenium::WebDriver::Chrome::Options.new.tap do |opts|
+    opts.web_socket_url = true
     opts.add_argument "--headless"
     opts.add_argument "--no-sandbox"
     opts.add_argument "--window-size=1200,800"
