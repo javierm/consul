@@ -51,7 +51,7 @@ jobs:
       - name: Setup Chrome/Chromium
         uses: browser-actions/setup-chrome@v1
         with:
-          chrome-version: 128
+          chrome-version: 129
           install-chromedriver: true
           install-dependencies: true
       - name: Copy secrets and database files
