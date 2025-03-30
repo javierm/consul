@@ -45,7 +45,7 @@ jobs:
       - name: Install node packages
         run: npm clean-install
       - name: Install ImageMagick
-        run: sudo apt-get install imagemagick
+        run: sudo apt-get update -y && sudo apt-get install imagemagick
       - name: Copy secrets and database files
         run: for i in config/*.example; do cp "$i" "${i/.example}"; done
       - name: Setup database
