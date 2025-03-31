@@ -12,8 +12,9 @@ describe "Admin legislation draft versions", :admin do
       click_link "Drafting"
       click_link "Version 1"
 
-      expect(page).to have_content(draft_version.title)
-      expect(page).to have_content(draft_version.changelog)
+      expect(page).not_to have_link "Version 1"
+      expect(page).to have_content "Version 1"
+      expect(page).to have_field "Changes", with: draft_version.changelog
     end
   end
 

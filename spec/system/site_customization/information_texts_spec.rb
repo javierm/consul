@@ -44,7 +44,7 @@ describe "Custom information texts", :admin do
 
     visit admin_site_customization_information_texts_path(tab: "mailers")
 
-    expect(page).to have_content "Hi %{author}"
+    expect(page).to have_field intro_key, with: "Hi %{author}"
 
     fill_in "contents[content_#{intro_key}]values[value_en]", with: "Custom hi to %{author}"
     click_button "Save"

@@ -65,7 +65,7 @@ shared_examples "admin_milestoneable" do |factory_name, path_name|
 
         within "#new_milestone" do
           expect(page).to have_content "can't be blank", count: 1
-          expect(page).to have_content "New description milestone"
+          expect(page).to have_field "Description", with: "New description milestone"
         end
       end
 
