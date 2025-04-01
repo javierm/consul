@@ -12,7 +12,7 @@ describe "Moderate comments" do
 
     within("#comment_#{comment.id}") do
       accept_confirm("Are you sure? Hide") { click_button "Hide" }
-      expect(page).to have_css(".comment .faded")
+      expect(page).to have_css(".comment .faded") # TODO
     end
 
     login_as(citizen)

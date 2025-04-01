@@ -29,7 +29,7 @@ shared_examples "flaggable" do |factory_name, admin: false|
       click_button "Flag as inappropriate"
       click_link "Flag as inappropriate"
 
-      expect(page).to have_button "Unflag"
+      expect(page).to have_button "Unflag" # TODO: Cannot read properties of null ??? Might work if we replace links with buttons... or is it because the element is replaced after an AJAX call?
       expect(page).to have_link "Unflag", visible: :hidden
       expect(page).not_to have_link "Flag as inappropriate", visible: :all
     end

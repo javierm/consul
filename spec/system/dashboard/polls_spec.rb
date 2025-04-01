@@ -49,7 +49,7 @@ describe "Polls" do
       find_field("Start Date").click
       within(".ui-datepicker") { click_link "22" }
 
-      expect(page).to have_field "Start Date", with: "22/02/2002"
+      expect(page).to have_field "Start Date", with: "22/02/2002" # TODO
     end
 
     scenario "is closed after using the browser back button" do

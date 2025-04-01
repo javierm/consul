@@ -188,7 +188,7 @@ describe "Home" do
     it "is visible on focus" do
       visit root_path
 
-      expect(page).to have_link "Skip to main content", visible: :hidden
+      expect(page).to have_link "Skip to main content", visible: :hidden # TODO
       expect(page).to have_css "main"
       expect(page).not_to have_css "main:target"
 

@@ -287,7 +287,7 @@ describe "Admin edit translatable records", :admin do
         fill_in "Title", with: ""
         click_button "Save changes"
 
-        expect(page).to have_css "#error_explanation"
+        expect(page).to have_css "#error_explanation" # TODO: fails with playwright
 
         select "Español", from: "Current language"
 

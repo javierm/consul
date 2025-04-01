@@ -1272,7 +1272,7 @@ describe "Admin budget investments", :admin do
       visit admin_budget_budget_investment_path(budget_investment.budget, budget_investment)
       click_link "Edit dossier"
 
-      dismiss_confirm { check("Valuation finished") }
+      dismiss_confirm { check("Valuation finished") } # TODO: playwright error: Clicking the checkbox did not change its state
 
       expect(find("#js-investment-report-alert")).not_to be_checked
     end

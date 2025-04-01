@@ -753,7 +753,7 @@ describe "Budget Investments" do
 
         login_as(author)
         visit new_budget_investment_path(budget)
-        fill_in "Title", with: "search"
+        fill_in "Title", with: "search" # TODO: need to focus somewhere else
 
         within("div.js-suggest") do
           expect(page).to have_content "You are seeing 5 of 6 investments containing the term 'search'"

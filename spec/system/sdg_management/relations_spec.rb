@@ -297,7 +297,7 @@ describe "SDG Relations" do
 
       visit sdg_management_edit_legislation_process_path(process)
 
-      find(:css, ".sdg-related-list-selector-input").set("1.2, 2, 1.1.1, ")
+      find(:css, ".sdg-related-list-selector-input").set("1.2, 2, 1.1.1, ") # TODO
 
       click_button "Update Process"
 
@@ -339,7 +339,7 @@ describe "SDG Relations" do
       debate = create(:sdg_review, relatable: create(:debate, title: "SDG debate")).relatable
 
       visit sdg_management_edit_debate_path(debate, filter: "sdg_reviewed")
-      find(:css, ".sdg-related-list-selector-input").set("1.2, 2.1,")
+      find(:css, ".sdg-related-list-selector-input").set("1.2, 2.1,") # TODO
       click_button "Update Debate"
 
       expect(page).not_to have_content "Debate updated successfully and marked as reviewed"
@@ -358,7 +358,7 @@ describe "SDG Relations" do
       visit sdg_management_edit_legislation_process_path(process)
 
       fill_in "Goals and Targets", with: "3"
-      within(".amsify-list") { find(:css, "[data-val='3']").click }
+      within(".amsify-list") { find(:css, "[data-val='3']").click } # TODO
 
       within(".amsify-suggestags-input-area") { expect(page).to have_content "SDG3" }
 

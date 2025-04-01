@@ -1361,7 +1361,7 @@ describe "Proposals" do
         visit proposals_path
 
         click_link "map"
-        within("#html_map") { find("area[title='California']").click }
+        within("#html_map") { find("area[title='California']").click } # TODO: playwright doesn't click here
 
         within("#proposals") do
           expect(page).to have_css(".proposal", count: 2)

@@ -58,7 +58,7 @@ describe "Admin legislation questions", :admin do
       click_link "Question 2"
 
       fill_in "Question", with: "Question 2b"
-      fill_in_ckeditor "Description", with: "Description 2b"
+      fill_in_ckeditor "Description", with: "Description 2b" # TODO
       click_button "Save changes"
 
       expect(page).to have_content "Question 2b"

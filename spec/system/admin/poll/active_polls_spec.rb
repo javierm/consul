@@ -33,7 +33,7 @@ describe "Admin Active polls", :admin do
 
     visit polls_path
     within ".polls-description" do
-      expect(page).not_to have_content "Old description"
+      expect(page).not_to have_content "Old description" # TODO: value is New descriptionOld description
       expect(page).to have_content "New description"
     end
   end
