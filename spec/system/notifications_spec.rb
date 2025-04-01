@@ -112,7 +112,7 @@ describe "Notifications" do
     first(".notification a").click
 
     within("#notifications") do
-      expect(page).not_to have_css(".unread-notifications")
+      expect(page).not_to have_css(".unread-notifications") # TODO
     end
   end
 
