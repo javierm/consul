@@ -5,7 +5,7 @@ describe "Admin custom information texts", :admin do
     visit admin_site_customization_information_texts_path
 
     click_link "Basic customization"
-    expect(page).to have_content "Help with debates"
+    expect(page).to have_content "Help with debates" # TODO: use have_field instead
     expect(page).to have_content "Help with proposals"
     expect(page).to have_content "Help with voting"
     expect(page).to have_content "Help with collaborative legislation"
