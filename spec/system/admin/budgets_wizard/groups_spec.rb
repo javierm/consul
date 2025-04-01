@@ -73,7 +73,7 @@ describe "Budgets wizard, groups step", :admin do
       expect(page).to have_css ".creation-timeline"
 
       within("tr", text: "Group wiht a typo") { click_link "Edit" }
-      fill_in "Group name", with: "Group without typos"
+      fill_in "Group name", with: "Group without typos" # Flaky wtf
       click_button "Save group"
 
       expect(page).to have_content "Group updated successfully"
