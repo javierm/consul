@@ -78,8 +78,6 @@ describe "Admin custom information texts", :admin do
 
       expect(page).not_to have_content "Translation updated successfully"
 
-      select "Français", from: "Current language"
-
       expect(page).to have_field key, with: "Aide personalise sur les débats"
       expect(page).not_to have_content "Aide sur les débats"
     end
