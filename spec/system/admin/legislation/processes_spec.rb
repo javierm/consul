@@ -260,8 +260,8 @@ describe "Admin collaborative legislation", :admin do
       expect(page).to have_field "end_date", disabled: true
 
       check "legislation_process[published]"
-      fill_in "start_date", with: "07/07/2007"
-      fill_in "end_date", with: "08/08/2008"
+      fill_in "start_date", with: Date.new(2007, 7, 7)
+      fill_in "end_date", with: Date.new(2008, 8, 8)
       uncheck "legislation_process[published]"
 
       expect(page).to have_field "start_date", disabled: true
