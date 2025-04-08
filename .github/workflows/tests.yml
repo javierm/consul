@@ -50,10 +50,10 @@ jobs:
         run: sudo apt-get update && sudo apt-get install imagemagick
       - name: Remove image-bundled Chrome
         run: sudo apt-get purge google-chrome-stable
-      - name: Setup Chrome/Chromium 128
+      - name: Setup Chrome/Chromium 135
         uses: browser-actions/setup-chrome@v1
         with:
-          chrome-version: 128
+          chrome-version: 135
           install-chromedriver: true
           install-dependencies: true
       - name: Copy secrets and database files
