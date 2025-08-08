@@ -1,12 +1,13 @@
 .poll-form {
-  fieldset {
+  fieldset,
+  .poll-question-essay {
     border: 1px solid $border;
     border-radius: $global-radius;
     padding: $line-height;
-  }
 
-  fieldset + fieldset {
-    margin-top: calc($line-height / 2);
+    + * {
+      margin-top: calc($line-height / 2);
+    }
   }
 
   legend {
@@ -19,7 +20,6 @@
     }
   }
 
-
   label {
     @include radio-or-checkbox-and-label-alignment;
     font-weight: normal;
@@ -28,6 +28,17 @@
       content: "\A";
       margin-top: calc($line-height / 2);
       white-space: pre;
+    }
+  }
+
+  .poll-question-essay {
+    label {
+      @include header-font-size(h3);
+      font-weight: bold;
+    }
+
+    textarea {
+      margin-top: calc($line-height / 3);
     }
   }
 
