@@ -5,6 +5,23 @@ updates:
   schedule:
     interval: monthly
   open-pull-requests-limit: 50
+  groups:
+    rails-deps:
+      applies-to: security-updates
+      patterns:
+        - "rails"
+        - "actioncable"
+        - "actionmailbox"
+        - "actionmailer"
+        - "actionpack"
+        - "actiontext"
+        - "actionview"
+        - "activejob"
+        - "activemodel"
+        - "activerecord"
+        - "activestorage"
+        - "activesupport"
+        - "railties"
   labels:
     - "dependencies"
 - package-ecosystem: npm
