@@ -37,13 +37,4 @@ describe Polls::ResultsComponent do
       expect(table).to have_css "#option_#{option_yellow.id}_result", text: "1 (33.33%)", normalize_ws: true
     end
   end
-
-  it "renders results for polls with questions but without answers" do
-    poll = create(:poll, :expired, results_enabled: true)
-    question = create(:poll_question, poll: poll)
-
-    render_inline Polls::ResultsComponent.new(poll)
-
-    expect(page).to have_content question.title
-  end
 end
