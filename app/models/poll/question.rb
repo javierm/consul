@@ -27,7 +27,7 @@ class Poll::Question < ApplicationRecord
   accepts_nested_attributes_for :question_options, reject_if: :all_blank, allow_destroy: true
   accepts_nested_attributes_for :votation_type
 
-  delegate :multiple?, :essay?, :vote_type, :accepts_options?, to: :votation_type, allow_nil: true
+  delegate :multiple?, :essay?, :vote_type, to: :votation_type, allow_nil: true
 
   scope :sort_for_list, -> { order(Arel.sql("poll_questions.proposal_id IS NULL"), :created_at) }
   scope :for_render,    -> { includes(:author, :proposal) }
@@ -62,6 +62,10 @@ class Poll::Question < ApplicationRecord
 
   def unique?
     votation_type.nil? || votation_type.unique?
+  end
+
+  def accepts_options?
+    votation_type.nil? || votation_type.accepts_options?
   end
 
   def max_votes
