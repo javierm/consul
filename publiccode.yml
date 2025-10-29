@@ -116,7 +116,7 @@ localisation:
 dependsOn:
   open:
     - name: Ruby
-      version: "3.3.10"
+      version: "3.4.7"
     - name: Rails
       version: "7.1.6"
     - name: Node.js
