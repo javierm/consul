@@ -72,8 +72,7 @@ module Capybara
 
     def axe_tests_to_skip
       [
-        :"link-in-text-block",
-        :"color-contrast"
+        :"link-in-text-block"
       ]
     end
 
