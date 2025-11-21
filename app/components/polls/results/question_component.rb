@@ -1,5 +1,6 @@
 class Polls::Results::QuestionComponent < ApplicationComponent
   attr_reader :question
+  use_helpers :number_to_stats_percentage
 
   def initialize(question)
     @question = question
@@ -16,7 +17,7 @@ class Polls::Results::QuestionComponent < ApplicationComponent
   def number_with_percentage(number, percentage)
     safe_join([
       number,
-      "(#{percentage.round(2)} %)"
+      "(#{number_to_stats_percentage(percentage)})"
     ], " ")
   end
 end
