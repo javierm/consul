@@ -1,9 +1,17 @@
 .proposal-featured {
   min-height: $line-height * 3.5;
 
-  .info > .bullet,
-  .is-association {
-    display: none;
+  .info {
+    .is-association {
+      display: none;
+    }
+
+    > :last-child {
+      &::before {
+        @include circle-separator;
+        background: currentcolor;
+      }
+    }
   }
 
   .supports {
