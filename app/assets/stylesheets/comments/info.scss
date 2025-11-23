@@ -1,0 +1,8 @@
+.comment-info {
+  > * + * {
+    &::before {
+      @include circle-separator;
+      background: currentcolor;
+    }
+  }
+}
