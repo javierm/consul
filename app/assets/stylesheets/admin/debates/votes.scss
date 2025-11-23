@@ -1,0 +1,13 @@
+.admin-debates-votes {
+  > span + *,
+  > div + * {
+    &::before {
+      @include circle-separator;
+      background: currentcolor;
+    }
+  }
+
+  > div {
+    display: inline-block;
+  }
+}
