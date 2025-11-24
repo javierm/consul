@@ -32,4 +32,12 @@
   .comment-form form {
     margin-top: calc($line-height / 2);
   }
+
+  .flag-content,
+  .js-add-comment-link {
+    &::before {
+      @include vertical-separator;
+      color: $text-light;
+    }
+  }
 }

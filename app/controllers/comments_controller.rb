@@ -28,13 +28,13 @@ class CommentsController < ApplicationController
   def flag
     Flag.flag(current_user, @comment)
 
-    render "shared/_refresh_flag_actions", locals: { flaggable: @comment, divider: true }
+    render "shared/_refresh_flag_actions", locals: { flaggable: @comment }
   end
 
   def unflag
     Flag.unflag(current_user, @comment)
 
-    render "shared/_refresh_flag_actions", locals: { flaggable: @comment, divider: true }
+    render "shared/_refresh_flag_actions", locals: { flaggable: @comment }
   end
 
   def hide
