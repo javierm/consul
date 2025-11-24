@@ -1,11 +1,14 @@
 .proposals-summary {
   .bullet,
-  .is-association {
+  .is-association,
+  .sdg-tag-list,
+  .machine-learning-info,
+  .tags {
     display: none;
   }
 
   .panel,
-  .proposal-content {
+  .basic-content {
     min-height: 0;
   }
 }
