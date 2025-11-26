@@ -39,4 +39,14 @@ describe Proposals::SupportsComponent do
       expect(supports_percentage(proposal)).to eq "100%"
     end
   end
+
+  it "renders the completed percentage" do
+    proposal = build(:proposal)
+    Setting["votes_for_proposal_success"] = 5
+    allow(proposal).to receive(:total_votes).and_return(4)
+
+    render_inline Proposals::SupportsComponent.new(proposal)
+
+    expect(page).to have_css ".percentage", exact_text: "80%"
+  end
 end
