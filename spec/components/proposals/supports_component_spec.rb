@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe ProposalsHelper do
+describe Proposals::SupportsComponent do
   describe "#progress_bar_percentage" do
     it "is 0 if no votes" do
       proposal = create(:proposal)
