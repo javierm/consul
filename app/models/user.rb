@@ -162,6 +162,18 @@ class User < ApplicationRecord
     }.merge(params))
   end
 
+  def self.random_password
+    lowercase = ("a".."z").to_a
+    uppercase = ("A".."Z").to_a
+    digits    = ("0".."9").to_a
+    all_chars = lowercase + uppercase + digits
+
+    guaranteed = [lowercase.sample, uppercase.sample, digits.sample]
+    rest = (0...17).map { all_chars.sample }
+
+    (guaranteed + rest).shuffle.join
+  end
+
   def name
     organization? ? organization.name : username
   end
@@ -465,9 +477,5 @@ class User < ApplicationRecord
         maximum: User.username_max_length
       )
       validator.validate(self)
-    end
-
-    def random_password
-      (0...20).map { ("a".."z").to_a[rand(26)] }.join
     end
 end
