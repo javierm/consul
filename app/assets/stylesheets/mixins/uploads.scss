@@ -59,14 +59,19 @@
       }
     }
 
-    .suggested-images-grid .suggested-image-cell {
-      margin-bottom: 1rem;
+    .suggested-images {
+      @include dynamic-grid($min-column-width: 10rem);
+      list-style: none;
 
-      .suggested-image {
+      button,
+      img {
+        width: 100%;
+      }
+
+      img {
         height: auto;
         min-height: rem-calc(120);
         object-fit: cover;
-        width: 100%;
       }
     }
 
