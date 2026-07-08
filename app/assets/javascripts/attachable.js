@@ -3,9 +3,10 @@
 
   App.Attachable = {
     setupInput: function(config) {
-      var $input, $container, uploadData, dropzone, $zone, dropzoneOptions;
+      var $input, $container, $fieldsContainer, uploadData, dropzone, $zone, dropzoneOptions;
 
       $input = $(config.input);
+      $fieldsContainer = $input.closest(".nested-fields");
       $container = $input.closest(config.attachmentContainer);
       $zone = $("<div>", { class: "hidden-dropzone-upload" });
       $container.append($zone);
@@ -40,32 +41,18 @@
       });
 
       dropzone.on("success", function(_file, response) {
-        var destroyAttachmentLink;
-
-        $(uploadData.cachedAttachmentField).val(response.cached_attachment);
-        App.Attachable.setTitleFromFile(uploadData, response.filename);
-        App.Attachable.setProgressBar(uploadData, "complete");
-        App.Attachable.setFilename(uploadData, response.filename);
-        App.Attachable.clearInputErrors(uploadData);
-        destroyAttachmentLink = $(response.destroy_link);
-        $(uploadData.destroyAttachmentLinkContainer).html(destroyAttachmentLink);
+        App.Attachable.setNewContent($fieldsContainer, response, "complete");
 
         if (config.onSuccess) {
-          config.onSuccess(uploadData, response);
+          config.onSuccess($fieldsContainer.find("[type=file]"));
         }
       });
 
-      dropzone.on("error", function(file, message) {
-        $(uploadData.cachedAttachmentField).val("");
-        App.Attachable.clearFilename(uploadData);
-        App.Attachable.setProgressBar(uploadData, "errors");
-        App.Attachable.clearInputErrors(uploadData);
-        App.Attachable.setInputErrors(uploadData, message.errors);
-        $(uploadData.destroyAttachmentLinkContainer).find("a.delete:not(.remove-nested)").remove();
-        $(uploadData.addAttachmentLabel).addClass("error");
+      dropzone.on("error", function(file, response) {
+        App.Attachable.setNewContent($fieldsContainer, response, "errors");
 
         if (config.onError) {
-          config.onError(uploadData);
+          config.onError($fieldsContainer.find("[type=file]"));
         }
 
         dropzone.removeFile(file);
@@ -79,22 +66,11 @@
 
       data.wrapper = wrapper;
       data.progressBar = $(wrapper).find(".progress-bar-placeholder");
-      data.errorContainer = $(wrapper).find(".attachment-errors");
       data.fileNameContainer = $(wrapper).find("p.file-name");
-      data.destroyAttachmentLinkContainer = $(wrapper).find(".action-remove");
-      data.addAttachmentLabel = $(wrapper).find(".action-add label");
-      data.cachedAttachmentField = $(wrapper).find("input[name$='[cached_attachment]']");
-      data.titleField = $(wrapper).find("input[name$='[title]']");
 
       $(wrapper).find(".progress-bar-placeholder").css("display", "block");
 
       return data;
-    },
-    clearFilename: function(data) {
-      $(data.fileNameContainer).text("");
-    },
-    clearInputErrors: function(data) {
-      $(data.errorContainer).find("small.error").remove();
     },
     clearProgressBar: function(data) {
       $(data.progressBar).find(".loading-bar").removeClass("complete errors uploading").css("width", "0px");
@@ -105,16 +81,10 @@
     setProgressBar: function(data, klass) {
       $(data.progressBar).find(".loading-bar").addClass(klass);
     },
-    setTitleFromFile: function(data, title) {
-      if ($(data.titleField).val() === "") {
-        $(data.titleField).val(title);
-      }
-    },
-    setInputErrors: function(data, errors) {
-      if (!errors) {
-        return;
-      }
-      $(data.errorContainer).append("<small class='error'>" + errors + "</small>");
+    setNewContent: function(fields_container, response, progress_bar_class) {
+      fields_container.html($(response.content).html())
+        .find(".progress-bar-placeholder").css("display", "block")
+        .find(".loading-bar").addClass(progress_bar_class).css("width", "100%");
     }
   };
 }).call(this);

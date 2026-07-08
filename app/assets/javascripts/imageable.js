@@ -25,19 +25,9 @@
       App.Attachable.setupInput({
         input: input,
         attachmentContainer: ".image-attachment",
-        onSuccess: function(uploadData, response) {
-          uploadData.result = response;
-          App.Imageable.setPreview(uploadData);
-        },
-        onError: function(uploadData) {
-          App.Imageable.clearPreview(uploadData);
-        }
+        onError: App.Imageable.initializeDirectUploadInput
       });
     },
-    clearPreview: function(data) {
-      $(data.wrapper).find(".image-preview").remove();
-    },
-
     setPreview: function(data) {
       var preview, image_preview;
 

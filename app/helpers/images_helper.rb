@@ -10,9 +10,13 @@ module ImagesHelper
   end
 
   def render_image(image, version, show_caption = true)
-    render "images/image", image: image,
-                           version: (version if image.persisted?),
-                           show_caption: show_caption
+    render partial: "images/image",
+           formats: [:html],
+           locals: {
+             image: image,
+             version: (version if image.persisted?),
+             show_caption: show_caption
+           }
   end
 
   def attached_background_css(path)
