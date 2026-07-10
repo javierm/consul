@@ -18,7 +18,7 @@
         App.Imageable.initializeDirectUploadInput(input);
       });
       App.Imageable.initializeRemoveCachedImageLinks();
-      App.Imageable.initializeSuggestImage();
+      App.Imageable.initializeSuggestImage(); // TODO
       App.Imageable.initializeAttachSuggestedImage();
     },
     initializeDirectUploadInput: function(input) {
