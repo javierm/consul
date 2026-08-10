@@ -163,7 +163,5 @@ var destroy_non_idempotent_modules = function() {
   App.SocialShare.destroy();
 };
 
-Turbo.setFormMode("optin");
-
 $(document).on("turbo:load", initialize_modules);
 $(document).on("turbo:before-cache", destroy_non_idempotent_modules);
