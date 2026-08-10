@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   include HasFilters
   include HasOrders
   include AccessDeniedHandler
+  include Turbo::Redirection
 
   default_form_builder ConsulFormBuilder
 

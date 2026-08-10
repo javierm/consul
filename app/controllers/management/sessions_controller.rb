@@ -2,6 +2,7 @@ class Management::SessionsController < ActionController::Base
   include TenantVariants
   include GlobalizeFallbacks
   include AccessDeniedHandler
+  include Turbo::Redirection
 
   default_form_builder ConsulFormBuilder
 

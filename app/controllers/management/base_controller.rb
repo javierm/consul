@@ -1,6 +1,7 @@
 class Management::BaseController < ActionController::Base
   include TenantVariants
   include GlobalizeFallbacks
+  include Turbo::Redirection
 
   layout "management"
   default_form_builder ConsulFormBuilder
