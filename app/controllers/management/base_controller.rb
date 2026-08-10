@@ -38,12 +38,7 @@ class Management::BaseController < ActionController::Base
 
       message = managed_user.persisted? ? alert_msg : t("management.sessions.need_managed_user")
 
-      if request.xhr?
-        flash[:alert] = message
-        render js: "Turbo.visit('#{management_document_verifications_path}');"
-      else
-        redirect_to management_document_verifications_path, alert: message
-      end
+      redirect_to management_document_verifications_path, alert: message
     end
 
     def switch_locale(&action)
