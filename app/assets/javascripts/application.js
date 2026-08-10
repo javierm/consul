@@ -25,7 +25,6 @@
 //= require jquery-ui/ui/widgets/sortable
 //= require @deltablot/dropzone/dist/dropzone-min
 //= require foundation-sites
-//= require @hotwired/turbo
 //= require ckeditor/loader
 //= require_directory ./ckeditor
 //= require social-share-button
