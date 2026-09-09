@@ -1,13 +1,49 @@
 require "rails_helper"
 
 describe Management::BaseController do
-  before { session[:manager] = double }
-
   controller do
     skip_authorization_check
 
     def index
       render plain: I18n.locale
+    end
+  end
+
+  describe "#verify_manager" do
+    before do
+      request.env["devise.mapping"] = Devise.mappings[:user]
+      Warden.test_reset!
+    end
+
+    it "redirects to the login form when not signed in" do
+      get :index
+
+      expect(response).to redirect_to new_user_session_path
+    end
+
+    it "denies access to signed in users who are not administrators or managers" do
+      sign_in create(:user)
+
+      get :index
+
+      expect(response).to redirect_to root_path
+      expect(flash[:alert]).to eq "You do not have permission to access this page."
+    end
+
+    it "allows access to signed in administrators" do
+      sign_in create(:administrator).user
+
+      get :index
+
+      expect(response).to have_http_status :ok
+    end
+
+    it "allows access to signed in managers" do
+      sign_in create(:manager).user
+
+      get :index
+
+      expect(response).to have_http_status :ok
     end
   end
 
@@ -33,6 +69,8 @@ describe Management::BaseController do
   end
 
   describe "#switch_locale" do
+    before { sign_in create(:manager).user }
+
     it "uses the default locale by default" do
       Setting["locales.default"] = "pt-BR"
 
