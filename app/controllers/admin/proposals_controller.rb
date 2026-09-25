@@ -32,10 +32,10 @@ class Admin::ProposalsController < Admin::BaseController
 
   def update
     if @proposal.update(proposal_params)
-      redirect_to admin_proposal_path(@proposal), notice: t("admin.proposals.update.notice")
-    else
-      render :show
+      flash[:notice] = t("admin.proposals.update.notice")
     end
+
+    respond_with @proposal, location: admin_proposal_path(@proposal), action: :show
   end
 
   def select
