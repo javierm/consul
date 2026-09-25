@@ -28,9 +28,6 @@ module CommentableActions
     set_resource_instance
   end
 
-  def suggest
-  end
-
   def edit
   end
 
