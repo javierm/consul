@@ -29,7 +29,6 @@ module CommentableActions
   end
 
   def suggest
-    @resources = @search_terms.present? ? resource_relation.search(@search_terms) : nil
   end
 
   def edit
