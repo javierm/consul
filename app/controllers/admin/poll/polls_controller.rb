@@ -44,11 +44,13 @@ class Admin::Poll::PollsController < Admin::Poll::BaseController
 
   def destroy
     if ::Poll::Voter.where(poll: @poll).any?
-      redirect_to admin_poll_path(@poll), alert: t("admin.polls.destroy.unable_notice")
+      @poll.errors.add(:id, t("admin.polls.destroy.unable_notice"))
+
+      respond_with @poll, location: admin_poll_path(@poll), alert: t("admin.polls.destroy.unable_notice")
     else
       @poll.destroy!
 
-      redirect_to admin_polls_path, notice: t("admin.polls.destroy.success_notice")
+      respond_with @poll, location: admin_polls_path, notice: t("admin.polls.destroy.success_notice")
     end
   end
 
