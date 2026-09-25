@@ -21,12 +21,7 @@ class Admin::Poll::PollsController < Admin::Poll::BaseController
     @poll.author = current_user
 
     if @poll.save
-      notice = t("flash.actions.create.poll")
-      if @poll.budget.present?
-        redirect_to admin_poll_booth_assignments_path(@poll), notice: notice
-      else
-        redirect_to [:admin, @poll], notice: notice
-      end
+      redirect_to booth_assignments_or_poll_path, notice: t("flash.actions.create.poll")
     else
       render :new
     end
@@ -37,7 +32,7 @@ class Admin::Poll::PollsController < Admin::Poll::BaseController
 
   def update
     if @poll.update(poll_params)
-      redirect_to [:admin, @poll], notice: t("flash.actions.update.poll")
+      redirect_to booth_assignments_or_poll_path, notice: t("flash.actions.update.poll")
     else
       render :edit
     end
@@ -61,6 +56,14 @@ class Admin::Poll::PollsController < Admin::Poll::BaseController
 
     def load_geozones
       @geozones = Geozone.order(:name)
+    end
+
+    def booth_assignments_or_poll_path
+      if @poll.budget.present?
+        admin_poll_booth_assignments_path(@poll)
+      else
+        [:admin, @poll]
+      end
     end
 
     def poll_params
