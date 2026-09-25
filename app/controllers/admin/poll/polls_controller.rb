@@ -21,10 +21,10 @@ class Admin::Poll::PollsController < Admin::Poll::BaseController
     @poll.author = current_user
 
     if @poll.save
-      redirect_to booth_assignments_or_poll_path, notice: t("flash.actions.create.poll")
-    else
-      render :new
+      flash[:notice] = t("flash.actions.create.poll")
     end
+
+    respond_with @poll, location: booth_assignments_or_poll_path
   end
 
   def edit
@@ -32,10 +32,10 @@ class Admin::Poll::PollsController < Admin::Poll::BaseController
 
   def update
     if @poll.update(poll_params)
-      redirect_to booth_assignments_or_poll_path, notice: t("flash.actions.update.poll")
-    else
-      render :edit
+      flash[:notice] = t("flash.actions.update.poll")
     end
+
+    respond_with @poll, location: booth_assignments_or_poll_path
   end
 
   def booth_assignments
