@@ -1,6 +1,10 @@
 require "rails_helper"
 
 describe "Proposals API" do
+  around do |example|
+    ActionController::Base.with(allow_forgery_protection: true) { example.run }
+  end
+
   describe "GET index" do
     it "lists all proposals" do
       titles = ["API for me!", "API for you!", "API for everyone!"]
