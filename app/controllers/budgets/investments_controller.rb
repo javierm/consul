@@ -64,6 +64,9 @@ module Budgets
       end
     end
 
+    def edit
+    end
+
     def update
       if @investment.update(investment_params)
         redirect_to budget_investment_path(@budget, @investment),
