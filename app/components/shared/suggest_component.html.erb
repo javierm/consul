@@ -10,7 +10,7 @@
 
     <ul>
       <% suggestions.limit(limit).each do |resource| %>
-        <li><%= link_to resource.title, resource_path_method.present? ? send(resource_path_method, resource) : resource %></li>
+        <li><%= link_to resource.title, polymorphic_path(resource) %></li>
       <% end %>
     </ul>
 
