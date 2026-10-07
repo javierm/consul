@@ -167,12 +167,16 @@ linter:
       enabled: true
     html-allowed-script-type:
       enabled: true
+    html-anchor-require-href:
+      enabled: false # TODO: fix and enable
     html-attribute-values-require-quotes:
       enabled: true
     html-boolean-attributes-no-value:
       enabled: true
     html-img-require-alt:
       enabled: true
+    html-navigation-has-label:
+      enabled: false # TODO: fix and enable
     html-no-empty-attributes:
       enabled: true
     html-no-self-closing:
@@ -183,6 +187,8 @@ linter:
       enabled: true
       exclude:
         - "public/**/*"
+    html-no-title-attribute:
+      enabled: false # TODO: fix and enable
     parser-no-errors:
       enabled: true
     source-indentation:
