@@ -1,5 +1,5 @@
-<div id="cookies_consent_banner" class="cookies-consent-banner">
-  <h2><%= t("cookies_consent.title") %></h2>
+<section id="cookies_consent_banner" aria-labelledby="cookies_consent_title" class="cookies-consent-banner">
+  <h2 id="cookies_consent_title"><%= t("cookies_consent.title") %></h2>
   <p><%= t("cookies_consent.message") %></p>
   <% if more_info_link.present? %>
     <p><%= link_to t("cookies_consent.more_info_link"), more_info_link %></p>
@@ -10,4 +10,4 @@
   <% end %>
   <button type="button" class="accept-essential-cookies"><%= t("cookies_consent.accept_essential_cookies") %></button>
   <button type="button" data-open="cookies_consent_management" class="manage-cookies"><%= t("cookies_consent.management") %></button>
-</div>
+</section>
