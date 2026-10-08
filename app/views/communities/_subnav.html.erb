@@ -9,20 +9,16 @@
 
     <li class="tabs-title is-active">
       <%= link_to "#tab-participants" do %>
-        <h3>
-          <%= t("community.show.tab.participants") %>
-          <span class="js-comments-count">(<%= @participants.count %>)</span>
-        </h3>
+        <%= t("community.show.tab.participants") %>
+        <span class="js-comments-count">(<%= @participants.count %>)</span>
       <% end %>
     </li>
 
     <% if @community.proposal.present? %>
       <li class="tabs-title">
         <%= link_to "#tab-polls" do %>
-          <h3>
-            <%= t("communities.subnav.surveys") %>
-            <span class="js-comments-count">(<%= @community.proposal.polls.count %>)</span>
-          </h3>
+          <%= t("communities.subnav.surveys") %>
+          <span class="js-comments-count">(<%= @community.proposal.polls.count %>)</span>
         <% end %>
       </li>
     <% end %>
