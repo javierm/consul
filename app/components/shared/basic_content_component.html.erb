@@ -1,6 +1,6 @@
 <div class="basic-content">
   <% cache [locale_and_user_status(record), "index", record, record.author] do %>
-    <h3><%= link_to record.title, path %></h3>
+    <h3><%= link_to record.title, path %></h3><%# TODO: not always h3 %>
 
     <%= content %>
 
