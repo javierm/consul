@@ -6,7 +6,7 @@
       if ($("[data-alert]").length > 0) {
         $("[data-alert]").replaceWith(notice);
       } else {
-        $("body").append(notice);
+        $("main").append(notice);
       }
     }
   };
