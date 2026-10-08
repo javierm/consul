@@ -33,7 +33,10 @@ module CapybaraAccessibilityAudit
       install
 
       results = run(options)
-      results[:violations].select! { |violation| %w[critical serious].include?(violation[:impact]) }
+
+      results[:violations].select! do |violation|
+        %w[critical serious moderate].include?(violation[:impact])
+      end
 
       @reporter.report Axe::API::Results.new(results)
     end
