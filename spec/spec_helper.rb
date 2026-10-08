@@ -58,7 +58,12 @@ RSpec.configure do |config|
   end
 
   config.around(:each, type: :system) do |example|
-    with_accessibility_audit_options checking_only: %i[heading-order page-has-heading-one region] do
+    axe_tests_to_skip = %i[
+      link-in-text-block
+      color-contrast
+    ]
+
+    with_accessibility_audit_options skipping: axe_tests_to_skip do
       example.run
     end
   end
