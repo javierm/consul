@@ -58,7 +58,7 @@ RSpec.configure do |config|
   end
 
   config.around(:each, type: :system) do |example|
-    with_accessibility_audit_options checking_only: %i[heading-order page-has-heading-one] do
+    with_accessibility_audit_options checking_only: %i[heading-order page-has-heading-one region] do
       example.run
     end
   end
