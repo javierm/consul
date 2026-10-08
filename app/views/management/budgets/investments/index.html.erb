@@ -8,12 +8,14 @@
     <div class="small-12 search-results">
       <%= tag.h2 t("management.budget_investments.filters.unfeasible") if params[:unfeasible].present? %>
       <%= tag.h2 t("management.budget_investments.filters.heading", heading: @heading.name) if @heading.present? %>
-      <% if params[:search].present? %>
-        <h2>
+      <h2>
+        <% if params[:search].present? %>
           <%= page_entries_info @investments %>
           <%= t("management.budget_investments.search_results", count: @investments.size, search_term: params[:search]) %>
-        </h2>
-      <% end %>
+        <% else %>
+          <%= t("management.budgets.support_investments") %>
+        <% end %>
+      </h2>
     </div>
 
     <% @investments.each do |investment| %>
