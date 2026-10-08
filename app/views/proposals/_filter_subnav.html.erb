@@ -7,26 +7,20 @@
     data-tabs>
   <li class="tabs-title is-active">
     <%= link_to "#tab-comments" do %>
-      <h3>
-        <%= t("proposals.show.comments_tab") %>
-        <span class="js-comments-count">(<%= @proposal.comments_count %>)</span>
-      </h3>
+      <%= t("proposals.show.comments_tab") %>
+      <span class="js-comments-count">(<%= @proposal.comments_count %>)</span>
     <% end %>
   </li>
   <li class="tabs-title">
     <%= link_to "#tab-notifications" do %>
-      <h3>
-        <%= t("proposals.show.notifications_tab") %>
-        (<%= @notifications.count %>)
-      </h3>
+      <%= t("proposals.show.notifications_tab") %>
+      (<%= @notifications.count %>)
     <% end %>
   </li>
   <li class="tabs-title">
     <%= link_to "#tab-milestones" do %>
-      <h3>
-        <%= t("proposals.show.milestones_tab") %>
-        (<%= @proposal.milestones.count %>)
-      </h3>
+      <%= t("proposals.show.milestones_tab") %>
+      (<%= @proposal.milestones.count %>)
     <% end %>
   </li>
 </ul>
