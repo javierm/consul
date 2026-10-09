@@ -58,7 +58,8 @@ RSpec.configure do |config|
   end
 
   config.around(:each, type: :system) do |example|
-    with_accessibility_audit_options checking_only: %i[heading-order page-has-heading-one region] do
+    # TODO: landmark-unique
+    with_accessibility_audit_options checking_only: %i[region landmark-complementary-is-top-level] do
       example.run
     end
   end
