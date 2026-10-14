@@ -1,7 +1,6 @@
 require "factory_bot_rails"
 require "email_spec"
 require "devise"
-require "knapsack_pro"
 
 Dir["./spec/factory_bot/**/*.rb"].sort.each { |f| require f }
 Dir["./spec/models/concerns/*.rb"].each { |f| require f }
@@ -225,6 +224,3 @@ RSpec.configure do |config|
 
   config.expect_with(:rspec) { |c| c.syntax = :expect }
 end
-
-# Parallel build helper configuration for CI
-KnapsackPro::Adapters::RSpecAdapter.bind

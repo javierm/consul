@@ -29,11 +29,6 @@ jobs:
       PGUSER: consul
       PGPASSWORD: password
       RAILS_ENV: test
-    strategy:
-      fail-fast: false
-      matrix:
-        ci_node_total: [5]
-        ci_node_index: [0, 1, 2, 3, 4]
     steps:
       - uses: actions/checkout@v7
       - uses: ruby/setup-ruby@v1
@@ -55,35 +50,15 @@ jobs:
       - name: Compile assets
         run: bundle exec rake assets:precompile > /dev/null 2>&1
       - name: Run test suite
-        env:
-          KNAPSACK_PRO_TEST_SUITE_TOKEN_RSPEC: ${{ secrets.KNAPSACK_PRO_TEST_SUITE_TOKEN_RSPEC }}
-          KNAPSACK_PRO_CI_NODE_TOTAL: ${{ matrix.ci_node_total }}
-          KNAPSACK_PRO_CI_NODE_INDEX: ${{ matrix.ci_node_index }}
-          KNAPSACK_PRO_FIXED_QUEUE_SPLIT: true
-          KNAPSACK_PRO_LOG_LEVEL: info
-        run: bin/knapsack_pro_rspec
-      - name: Coveralls Parallel
+        run: bin/rspec-queue --tag ~consul
+      - name: Coveralls
         if: ${{ env.TEST_COVERAGE == 1 }}
         uses: coverallsapp/github-action@master
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          flag-name: run-${{ matrix.ci_node_index }}
-          parallel: true
       - name: Upload screenshots
         if: failure()
         uses: actions/upload-artifact@v7
         with:
-          name: screenshots-${{ matrix.ci_node_index }}
+          name: screenshots
           path: tmp/capybara/
-  coveralls:
-    permissions:
-      contents: none
-    runs-on: ubuntu-24.04
-    needs: tests
-    steps:
-      - name: Finish coveralls
-        if: ${{ env.TEST_COVERAGE == 1 }}
-        uses: coverallsapp/github-action@master
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          parallel-finished: true

@@ -14,6 +14,7 @@ require File.expand_path("../../config/environment", __FILE__)
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 
 require "rspec/rails"
+require "rake"
 require "spec_helper"
 require "custom_spec_helper"
 require "capybara/rails"
@@ -57,6 +58,14 @@ RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
   config.after do
     Warden.test_reset!
+  end
+
+  # test-queue workers exit with `Kernel.exit!`, which skips the at_exit hooks
+  # SimpleCov relies on to write its report, so flush it explicitly. With
+  # TEST_ENV_NUMBER and PARALLEL_TEST_GROUPS set, SimpleCov stores each worker's
+  # coverage slice and the first worker merges them into coverage/lcov.info.
+  config.after(:suite) do
+    SimpleCov.at_exit.call if defined?(SimpleCov)
   end
 end
 

@@ -19,6 +19,11 @@ require "test_queue/runner/rspec"
 
 class TestQueueRunner < TestQueue::Runner::RSpec
   def prepare(concurrency)
+    # Lets SimpleCov know how many workers to expect so the first worker can
+    # wait for and merge the coverage resultsets of all the other workers
+    # (together with TEST_ENV_NUMBER, set in `after_fork`, this is what makes
+    # coverage work under test-queue).
+    ENV["PARALLEL_TEST_GROUPS"] = concurrency.to_s
     prepare_base_database
     create_worker_databases(concurrency)
   end
