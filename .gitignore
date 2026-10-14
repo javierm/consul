@@ -38,4 +38,5 @@ tmp/
 
 # Test results
 /spec/examples.txt
+.test_queue_stats
 /coverage/

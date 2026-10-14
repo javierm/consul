@@ -1,0 +1,104 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require "pathname"
+ENV["BUNDLE_GEMFILE"] ||= File.expand_path("../../Gemfile",
+                                           Pathname.new(__FILE__).realpath)
+
+require "rubygems"
+require "bundler/setup"
+
+require "active_support/core_ext/object/blank"
+require "erb"
+require "open3"
+require "pg"
+require "rbconfig"
+require "yaml"
+require "test_queue"
+require "test_queue/runner/rspec"
+
+class TestQueueRunner < TestQueue::Runner::RSpec
+  def prepare(concurrency)
+    prepare_base_database
+    create_worker_databases(concurrency)
+  end
+
+  def after_fork(num)
+    ENV["TEST_ENV_NUMBER"] = num.to_s
+  end
+
+  private
+
+    def test_config
+      yaml = ERB.new(File.read(File.expand_path("../config/database.yml", __dir__))).result
+      YAML.safe_load(yaml, aliases: true).fetch("test")
+    end
+
+    def base_database_name
+      test_config["database"]
+    end
+
+    # test-queue loads spec files lazily (one suite at a time, as they are
+    # pulled from the queue). The test database is seeded from a `before(:suite)`
+    # hook registered in spec/spec_helper.rb, but that file is only required once
+    # the first spec file is loaded - i.e. after test-queue has already run the
+    # `before(:suite)` hooks. As a result the hook never runs in the workers and
+    # the worker databases are never seeded on their own.
+    #
+    # So we prepare and seed the base test database here; the worker databases
+    # are then created as fresh copies of it, which guarantees they all start
+    # with the same schema and seed data.
+    def prepare_base_database
+      env = { "RAILS_ENV" => "test", "TEST_ENV_NUMBER" => "" }
+      rails = File.expand_path("rails", __dir__)
+      out, err, status = Open3.capture3(env, RbConfig.ruby, rails, "db:test:prepare", "db:seed")
+      raise "Could not prepare and seed the base test database #{base_database_name.inspect}:\n#{out}#{err}" \
+        unless status.success?
+    end
+
+    def create_worker_databases(concurrency)
+      config = test_config
+      base = config["database"]
+      connection = nil
+
+      begin
+        connection = PG.connect(
+          host: config["host"],
+          user: config["username"],
+          password: config["password"],
+          dbname: "postgres"
+        )
+
+        existing = connection.exec("SELECT datname FROM pg_database").values.flatten
+
+        unless existing.include?(base)
+          raise "The base test database #{base.inspect} does not exist; it must be prepared first."
+        end
+
+        concurrency.times do |i|
+          database = "#{base}#{i + 1}"
+          terminate_worker_connections(connection, database)
+          quoted_database = connection.quote_ident(database)
+          quoted_base = connection.quote_ident(base)
+          connection.exec("DROP DATABASE IF EXISTS #{quoted_database}")
+          connection.exec("CREATE DATABASE #{quoted_database} TEMPLATE #{quoted_base}")
+        end
+      rescue PG::Error => e
+        raise "Could not create worker databases: #{e.message}"
+      ensure
+        connection&.finish unless connection&.finished?
+      end
+    end
+
+    def terminate_worker_connections(connection, database)
+      connection.exec(
+        "SELECT pg_terminate_backend(pid) FROM pg_stat_activity " \
+        "WHERE datname = $1 AND pid <> pg_backend_pid()",
+        [database]
+      )
+    rescue PG::Error
+      nil
+    end
+end
+
+TestQueueRunner.new.execute
