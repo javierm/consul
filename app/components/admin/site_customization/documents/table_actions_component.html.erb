@@ -6,6 +6,10 @@
 ) do |actions| %>
   <%= actions.action(:download,
                      text: t("documents.buttons.download_document"),
-                     path: permanent_document_path,
+                     path: permanent_document_url(only_path: true),
                      rel: "nofollow") %>
+  <%= actions.action(:copy_link,
+                     text: t("shared.actions.copy_link"),
+                     button_tag: true,
+                     data: { url: permanent_document_url }) %>
 <% end %>

@@ -7,7 +7,7 @@ class Admin::SiteCustomization::Documents::TableActionsComponent < ApplicationCo
 
   private
 
-    def permanent_document_path
-      rails_storage_proxy_path(document.attachment)
+    def permanent_document_url(**)
+      rails_storage_proxy_url(document.attachment, **)
     end
 end

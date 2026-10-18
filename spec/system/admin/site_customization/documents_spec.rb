@@ -20,6 +20,25 @@ describe "Documents", :admin do
     visit admin_site_customization_documents_path
 
     expect(page).to have_content "There are 3 documents"
+    expect(page).not_to have_content "Download file"
+
+    within("tbody tr:first-child") do
+      click_button "Copy link"
+    end
+
+    page.driver.browser.execute_cdp("Browser.setPermission",
+                                    origin: page.server_url,
+                                    permission: { name: "clipboard-read" },
+                                    setting: "granted")
+    clip_text = page.evaluate_async_script("navigator.clipboard.readText().then(arguments[0])")
+
+    expect(clip_text).to include "active_storage"
+  end
+
+  scenario "Index shows the link to download file when JavaScript is disabled", :no_js do
+    create(:document, :admin)
+
+    visit admin_site_customization_documents_path
 
     ActiveStorage.with(service_urls_expire_in: 0.001.seconds) do
       within("tbody tr:first-child") do
