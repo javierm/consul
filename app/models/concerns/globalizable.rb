@@ -21,6 +21,10 @@ module Globalizable
       translated_attribute_names.any? { |attr| required_attribute?(attr) }
     end
 
+    def direct_attribute_validation?(attribute)
+      translations.blank? || translation_pending?(attribute)
+    end
+
     if paranoid? && translation_class.attribute_names.include?("hidden_at")
       translation_class.send :acts_as_paranoid, column: :hidden_at
     end
@@ -73,11 +77,18 @@ module Globalizable
         end
         values
       end
+
+      def translation_pending?(attribute)
+        globalize.stash.values.any? { |attributes| attributes.key?(attribute.to_s) }
+      end
   end
 
   class_methods do
     def validates_translation(method, options = {})
-      validates(method, options.merge(if: lambda { |resource| resource.translations.blank? }))
+      validates(method, options.merge(if: lambda { |resource|
+        resource.direct_attribute_validation?(method)
+      }))
+
       if options.include?(:length)
         translation_class.instance_eval do
           validates method,

@@ -11,7 +11,9 @@ describe Globalizable do
       translates :title, touch: true
       include Globalizable
 
-      has_many :translations, class_name: "DummyBanner::Translation", foreign_key: "banner_id"
+      has_many :translations, class_name: "DummyBanner::Translation",
+                              foreign_key: "banner_id",
+                              autosave: true
 
       validates_translation :title, length: { minimum: 7 }
     end
@@ -42,6 +44,50 @@ describe Globalizable do
 
       I18n.with_locale(:fr) do
         expect(dummy).to be_valid
+      end
+    end
+
+    describe "validation error placement" do
+      context "when creating a record" do
+        it "reports the error on the attribute when it is sent directly" do
+          dummy = DummyBanner.new(title: "Short")
+
+          expect(dummy).not_to be_valid
+          expect(dummy.errors.count).to eq 1
+          expect(dummy.errors[:title]).to be_present
+          expect(dummy.errors["translations.title"]).to be_blank
+        end
+
+        it "reports the error on the translations when it is sent through the translations" do
+          dummy = DummyBanner.new(translations_attributes: [{ locale: "en", title: "Short" }])
+
+          expect(dummy).not_to be_valid
+          expect(dummy.errors.count).to eq 1
+          expect(dummy.errors["translations.title"]).to be_present
+          expect(dummy.errors[:title]).to be_blank
+        end
+      end
+
+      context "when updating a record" do
+        let(:dummy) { DummyBanner.create!(title: "Long enough") }
+
+        it "reports the error on the attribute when it is sent directly" do
+          dummy.update(title: "Short")
+
+          expect(dummy.errors.count).to eq 1
+          expect(dummy.errors[:title]).to be_present
+          expect(dummy.errors["translations.title"]).to be_blank
+        end
+
+        it "reports the error on the translations when it is sent through the translations" do
+          dummy.update(translations_attributes: [{ id: dummy.translations.first.id,
+                                                   locale: "en",
+                                                   title: "Short" }])
+
+          expect(dummy.errors.count).to eq 1
+          expect(dummy.errors["translations.title"]).to be_present
+          expect(dummy.errors[:title]).to be_blank
+        end
       end
     end
   end
