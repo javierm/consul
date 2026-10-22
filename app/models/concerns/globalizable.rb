@@ -22,7 +22,21 @@ module Globalizable
     end
 
     def direct_attribute_validation?(attribute)
-      translations.blank? || translation_pending?(attribute)
+      translations.blank? || translation_pending?(attribute) || creating_translation?
+    end
+
+    def read_attribute_for_validation(attribute)
+      name = attribute.to_s
+      return super unless translated?(name)
+
+      locale = Globalize.locale
+      if globalize.stash.contains?(locale, name)
+        globalize.stash.read(locale, name)
+      elsif creating_translation?
+        nil
+      else
+        super
+      end
     end
 
     if paranoid? && translation_class.attribute_names.include?("hidden_at")
@@ -80,6 +94,11 @@ module Globalizable
 
       def translation_pending?(attribute)
         globalize.stash.values.any? { |attributes| attributes.key?(attribute.to_s) }
+      end
+
+      def creating_translation?
+        locale = Globalize.locale
+        globalize.stash.key?(locale) && globalize.stash[locale].any? && translation_for(locale, false).nil?
       end
   end
 
