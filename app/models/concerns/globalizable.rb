@@ -6,6 +6,9 @@ module Globalizable
     globalize_accessors
     accepts_nested_attributes_for :translations, allow_destroy: true
 
+    before_validation :sync_direct_translations
+    after_validation :relocate_direct_translation_errors
+
     validate :check_translations_number, on: :update, if: :translations_required?
     after_validation :copy_error_to_current_translation, on: :update
 
@@ -21,29 +24,49 @@ module Globalizable
       translated_attribute_names.any? { |attr| required_attribute?(attr) }
     end
 
-    def direct_attribute_validation?(attribute)
-      translations.blank? || translation_pending?(attribute) || creating_translation?
-    end
-
-    def read_attribute_for_validation(attribute)
-      name = attribute.to_s
-      return super unless translated?(name)
-
-      locale = Globalize.locale
-      if globalize.stash.contains?(locale, name)
-        globalize.stash.read(locale, name)
-      elsif creating_translation?
-        nil
-      else
-        super
-      end
-    end
-
     if paranoid? && translation_class.attribute_names.include?("hidden_at")
       translation_class.send :acts_as_paranoid, column: :hidden_at
     end
 
     private
+
+      def sync_direct_translations
+        return if globalize.stash.empty?
+
+        @directly_edited_translation = nil
+        globalize.stash.each do |locale, attributes|
+          next if attributes.empty?
+
+          translation = translation_for(locale)
+          @directly_edited_translation = translation if locale == Globalize.locale
+          attributes.each do |name, value|
+            value = value.val if value.is_a?(Arel::Nodes::Casted)
+            translation[name] = value
+          end
+        end
+
+        globalize.reset
+      end
+
+      def relocate_direct_translation_errors
+        translation = @directly_edited_translation
+        @directly_edited_translation = nil
+        return unless translation
+
+        default_locale_errors = nil
+        I18n.with_locale(Setting.default_locale) do
+          translation.valid?
+          default_locale_errors = translation.errors.to_hash
+        end
+
+        default_locale_errors.each do |attribute, messages|
+          attribute = attribute.to_sym
+          next if attribute == :base || messages.empty?
+
+          errors.delete("translations.#{attribute}")
+          messages.each { |message| errors.add(attribute, message) }
+        end
+      end
 
       def required_attribute?(attribute)
         self.class.validators_on(attribute).any? do |validator|
@@ -91,23 +114,11 @@ module Globalizable
         end
         values
       end
-
-      def translation_pending?(attribute)
-        globalize.stash.values.any? { |attributes| attributes.key?(attribute.to_s) }
-      end
-
-      def creating_translation?
-        locale = Globalize.locale
-        globalize.stash.key?(locale) && globalize.stash[locale].any? && translation_for(locale, false).nil?
-      end
   end
 
   class_methods do
     def validates_translation(method, options = {})
-      validates(method, options.merge(if: lambda { |resource|
-        resource.direct_attribute_validation?(method)
-      }))
-
+      validates(method, options.merge(if: lambda { |resource| resource.translations.blank? }))
       if options.include?(:length)
         translation_class.instance_eval do
           validates method,
