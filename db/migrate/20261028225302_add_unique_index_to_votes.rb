@@ -1,0 +1,9 @@
+class AddUniqueIndexToVotes < ActiveRecord::Migration[8.0]
+  def change
+    add_index :votes, [:votable_id, :votable_type, :voter_id, :voter_type, :vote_scope], unique: true
+    add_index :votes,
+              [:votable_id, :votable_type, :voter_id, :voter_type],
+              unique: true,
+              where: "vote_scope IS NULL"
+  end
+end
